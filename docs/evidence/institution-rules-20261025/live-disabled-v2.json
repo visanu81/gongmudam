@@ -1,0 +1,250 @@
+{
+  "request": {
+    "query": "합성 관리검증기관 검증자료 제출 기한은?",
+    "guidance": true,
+    "use_ai": false,
+    "today": "2026-10-25",
+    "institution_rule_id": "dd145b9ef0884bf0922f1de64f56dbe1"
+  },
+  "document": {
+    "id": "dd145b9ef0884bf0922f1de64f56dbe1",
+    "revision": 5,
+    "enabled": false,
+    "active_version_id": "565fa741158347a5839c197d23520c64",
+    "deleted_at": null,
+    "created_at": "2026-10-25T14:42:19.131299+00:00",
+    "updated_at": "2026-10-25T14:47:43.046634+00:00",
+    "title": "[합성 검증] 교육자료 제출 안내",
+    "kind": "기관 규정",
+    "institution": "합성 관리검증기관",
+    "keywords": [
+      "검증자료 제출"
+    ],
+    "effective_date": "2026-10-01",
+    "scope_notes": "실제 업무에 적용하지 않는 합성 검증 자료",
+    "source_id": "institution:dd145b9ef0884bf0922f1de64f56dbe1",
+    "deleted": false,
+    "active_version_number": 2,
+    "pending_count": 0,
+    "version_count": 2,
+    "versions": [
+      {
+        "id": "d4d68270925b425fa051a8f3df2de8df",
+        "number": 1,
+        "created_at": "2026-10-25T14:42:19.131299+00:00",
+        "based_on": null,
+        "sha256": "2cd7c83c50c7251824a6a3bf711cabf3c6ac6cd775dacde3dc0d36836c617792",
+        "origin": {},
+        "units": [
+          {
+            "loc": "편집 본문",
+            "text": "제1조(제출기한)\n검증자료 제출기한은 교육 시작 3일 전입니다.\n제2조(적용범위)\n합성 관리검증기관의 기능 검증에만 사용하는 모의 안내입니다."
+          }
+        ],
+        "title": "[합성 검증] 교육자료 제출 안내",
+        "institution": "합성 관리검증기관",
+        "kind": "기관 규정",
+        "keywords": [
+          "검증자료 제출"
+        ],
+        "text": "제1조(제출기한)\n검증자료 제출기한은 교육 시작 3일 전입니다.\n제2조(적용범위)\n합성 관리검증기관의 기능 검증에만 사용하는 모의 안내입니다.",
+        "effective_date": "2026-10-01",
+        "scope_notes": "실제 업무에 적용하지 않는 합성 검증 자료",
+        "change_note": ""
+      },
+      {
+        "id": "565fa741158347a5839c197d23520c64",
+        "number": 2,
+        "created_at": "2026-10-25T14:46:01.350493+00:00",
+        "based_on": "d4d68270925b425fa051a8f3df2de8df",
+        "sha256": "270a0a193fd5879c20c707e2a2cfcf5a2e6dd9e94628a5becca95281c52fda79",
+        "origin": {},
+        "units": [
+          {
+            "loc": "편집 본문",
+            "text": "제1조(제출기한)\n검증자료 제출기한은 교육 시작 5일 전입니다.\n제2조(적용범위)\n합성 관리검증기관의 기능 검증에만 사용하는 모의 안내입니다."
+          }
+        ],
+        "title": "[합성 검증] 교육자료 제출 안내",
+        "institution": "합성 관리검증기관",
+        "kind": "기관 규정",
+        "keywords": [
+          "검증자료 제출"
+        ],
+        "text": "제1조(제출기한)\n검증자료 제출기한은 교육 시작 5일 전입니다.\n제2조(적용범위)\n합성 관리검증기관의 기능 검증에만 사용하는 모의 안내입니다.",
+        "effective_date": "2026-10-01",
+        "scope_notes": "실제 업무에 적용하지 않는 합성 검증 자료",
+        "change_note": "합성 기한 3일 전 → 5일 전 변경 검증"
+      }
+    ],
+    "events": [
+      {
+        "id": "9bf7ff82ac1a4f6bb0b83774b8fafab6",
+        "at": "2026-10-25T14:47:43.047630+00:00",
+        "kind": "disable",
+        "version_id": "565fa741158347a5839c197d23520c64",
+        "note": "",
+        "revision": 5
+      },
+      {
+        "id": "943ad71297ae4274bfa6a540a4b777d8",
+        "at": "2026-10-25T14:46:31.278302+00:00",
+        "kind": "apply",
+        "version_id": "565fa741158347a5839c197d23520c64",
+        "note": "",
+        "revision": 4
+      },
+      {
+        "id": "8c13044b4b5642fc8aee14117cdeb142",
+        "at": "2026-10-25T14:46:01.351522+00:00",
+        "kind": "draft",
+        "version_id": "565fa741158347a5839c197d23520c64",
+        "note": "합성 기한 3일 전 → 5일 전 변경 검증",
+        "revision": 3
+      },
+      {
+        "id": "7d77ea020c3548b283f126b3e367775b",
+        "at": "2026-10-25T14:45:44.277952+00:00",
+        "kind": "apply",
+        "version_id": "d4d68270925b425fa051a8f3df2de8df",
+        "note": "",
+        "revision": 2
+      },
+      {
+        "id": "c7e52aeb1b644649bc23d02b4a5903be",
+        "at": "2026-10-25T14:42:19.131299+00:00",
+        "kind": "create",
+        "version_id": "d4d68270925b425fa051a8f3df2de8df",
+        "note": "",
+        "revision": 1
+      }
+    ]
+  },
+  "answer": {
+    "query": "합성 관리검증기관 검증자료 제출 기한은?",
+    "mode": "structured_guidance",
+    "model": null,
+    "profile": null,
+    "summary": "등록 자료로 처리 방법을 함께 확인해요.",
+    "answer": "",
+    "notice": "이 질문에 직접 답하는 등록 근거를 확인하지 못했어요. 업무 종류와 관련 규정·지침을 알려주세요.",
+    "plan": null,
+    "alternatives": [],
+    "cited": [],
+    "related": [],
+    "personal_notes": [],
+    "knowledge": {
+      "evidence": [],
+      "experiences": [],
+      "excluded": [],
+      "mode": "source_unavailable",
+      "model": null,
+      "notice": "이 질문에 직접 답하는 등록 근거를 확인하지 못했어요. 업무 종류와 관련 규정·지침을 알려주세요.",
+      "answer": "",
+      "intent": null,
+      "scope": "등록한 자료의 범위에서 확인되지 않았습니다. 해당 기관·신분의 규정과 누락된 별표를 추가해 주세요.",
+      "tree": {
+        "kind": "unavailable",
+        "title": "자료를 더 확인해야 답할 수 있어요",
+        "branches": [
+          {
+            "label": "어떤 자료가 필요한가요?",
+            "items": [
+              {
+                "text": "이 질문에 직접 답하는 등록 근거를 확인하지 못했어요. 업무 종류와 관련 규정·지침을 알려주세요.",
+                "ref": null
+              }
+            ]
+          },
+          {
+            "label": "지금 할 일",
+            "items": [
+              {
+                "text": "국가·지방 등 적용 대상과 등록 자료를 확인해 주세요.",
+                "ref": null
+              },
+              {
+                "text": "자료를 등록한 뒤 같은 질문을 다시 해보세요.",
+                "ref": null
+              }
+            ]
+          }
+        ],
+        "note": "질문에 직접 답하는 원문을 확인한 뒤 안내할게요."
+      }
+    },
+    "guidance": {
+      "topic": "general",
+      "title": "서무 업무 처리 방법",
+      "context": "합성 관리검증기관 검증자료 제출 기한은?",
+      "questions": [
+        "어떤 서무업무인지, 지금 무엇을 처리하려는지 알려주세요."
+      ],
+      "steps": [
+        {
+          "id": "scope",
+          "title": "상황과 적용 기준 확인",
+          "detail": "기관·업무 종류와 현재 처리 단계를 알려주세요.",
+          "kind": "preparation"
+        },
+        {
+          "id": "materials",
+          "title": "근거·서식 확인",
+          "detail": "질문에 직접 답하는 규정·지침·매뉴얼을 등록하면 원문을 확인할 수 있어요.",
+          "kind": "preparation"
+        }
+      ],
+      "deadlines": [],
+      "forms": [],
+      "service_guide": {
+        "evidence": [],
+        "coverage": {
+          "guide_pages": 10,
+          "faq_questions": 26
+        },
+        "notice": "국가공무원 제도 설명·FAQ의 보관본입니다. 확인일은 수집일이며 답변의 개정일을 뜻하지 않아요. 실제 적용·일수·예외는 현행 법령과 기관 기준을 확인하세요.",
+        "problems": []
+      },
+      "manual": {
+        "evidence": [],
+        "scope": "",
+        "notice": "이 업무에 맞는 시스템 매뉴얼을 등록하면 사용법을 연결할 수 있어요."
+      },
+      "ai_requested": false,
+      "ai_used": false,
+      "notice": "진행 순서는 실무 준비 제안입니다. 법정 기한·필수 서류·적용 조건은 아래 등록 근거에서 확인하세요.",
+      "map": {
+        "nodes": [
+          {
+            "id": "topic:general",
+            "label": "general",
+            "kind": "topic"
+          },
+          {
+            "id": "step:general:scope",
+            "label": "상황과 적용 기준 확인",
+            "kind": "preparation"
+          },
+          {
+            "id": "step:general:materials",
+            "label": "근거·서식 확인",
+            "kind": "preparation"
+          }
+        ],
+        "edges": [
+          {
+            "source": "topic:general",
+            "target": "step:general:scope",
+            "relation": "준비 순서"
+          },
+          {
+            "source": "topic:general",
+            "target": "step:general:materials",
+            "relation": "준비 순서"
+          }
+        ],
+        "note": "자료의 관련을 보여줍니다. 법적 적용 관계를 자동 판정한 결과는 아닙니다."
+      }
+    }
+  }
+}

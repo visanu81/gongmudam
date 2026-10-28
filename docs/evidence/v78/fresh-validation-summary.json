@@ -1,0 +1,51 @@
+{
+  "release": "v78",
+  "checked_at": "2026-10-25T23:28:01.075697+00:00",
+  "same_pc_fresh_environment": true,
+  "physical_other_pc_test": false,
+  "offline_install": true,
+  "pip_check_passed": true,
+  "registered_sources": 86,
+  "manuals": 6,
+  "manual_pdf_pages": 221,
+  "tests": {
+    "service_python": 910,
+    "root_python": 19,
+    "root_node": 36,
+    "service_node": 37,
+    "agency_directory": 8
+  },
+  "total_tests": 1010,
+  "context_checks": 34,
+  "context_questions": 18,
+  "actual_model_calls": 0,
+  "actual_models_retested": false,
+  "ui_checks": {
+    "private_B_desktop": true,
+    "temporary_affiliation_configured": true,
+    "natural_question_without_agency": true,
+    "AI_off": true,
+    "latest_policy_5_days": true,
+    "related_form_original": true,
+    "followup_fields": true,
+    "source_version_sha_visible": true,
+    "manage_link": true,
+    "category_keyboard_filter": true,
+    "temporary_affiliation_cleared": true,
+    "synthetic_docs_inactive": true
+  },
+  "restart": {
+    "passed": true,
+    "documents_identical": true,
+    "all_inactive": true,
+    "config_identical": true,
+    "document_count": 4
+  },
+  "post_restart": {
+    "child-care": true,
+    "health-check": true,
+    "manual": true,
+    "manual_pdf_original": true
+  },
+  "original_data_preserved": true
+}

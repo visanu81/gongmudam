@@ -1,0 +1,39 @@
+{
+  "release": "v79",
+  "checked_at": "2026-10-26T06:33:50.707534+00:00",
+  "physical_other_pc_test": false,
+  "same_pc_fresh_environment": true,
+  "offline_install": true,
+  "registered_sources": 96,
+  "new_document_articles": 10,
+  "law_guidance_excerpts": 90,
+  "manuals": 6,
+  "manual_pdf_pages": 221,
+  "tests": {
+    "service_python": 917,
+    "root_python": 19,
+    "root_node": 36,
+    "service_node": 37,
+    "agency_directory": 8
+  },
+  "total_tests": 1017,
+  "office_checks": 31,
+  "office_questions": 23,
+  "original_queries": 10,
+  "context_checks": 34,
+  "context_questions": 18,
+  "actual_model_calls": 0,
+  "actual_models_retested": false,
+  "restart_checks": 67,
+  "ui_checks": {
+    "release": "v79",
+    "base": "http://127.0.0.1:8899",
+    "b_design": true,
+    "ai_checkbox_off": true,
+    "receipt_summary": true,
+    "receipt_article18_source_effective_date_and_hash": true,
+    "drafting_summary": true,
+    "no_institution_setup_required": true
+  },
+  "original_data_preserved": true
+}

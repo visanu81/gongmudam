@@ -1,0 +1,164 @@
+[
+  {
+    "id": "office-goods-national-act-2",
+    "sha256": "c48f68327fc791be68267bb30cad00fb856babebfa2579cb6a174696655179a9",
+    "url": "http://127.0.0.1:8787/api/office-sources/c48f68327fc791be68267bb30cad00fb856babebfa2579cb6a174696655179a9/original",
+    "original_matches": true
+  },
+  {
+    "id": "office-goods-national-act-3",
+    "sha256": "47c5e1cbab4b8e860c786230cc6170d72c4777881c10b995ec9bbd777f5b5c26",
+    "url": "http://127.0.0.1:8787/api/office-sources/47c5e1cbab4b8e860c786230cc6170d72c4777881c10b995ec9bbd777f5b5c26/original",
+    "original_matches": true
+  },
+  {
+    "id": "office-goods-national-act-4",
+    "sha256": "f8a471b3b952f7095642214bf92812b7af06e3f3474c108a39220247c5ee38a7",
+    "url": "http://127.0.0.1:8787/api/office-sources/f8a471b3b952f7095642214bf92812b7af06e3f3474c108a39220247c5ee38a7/original",
+    "original_matches": true
+  },
+  {
+    "id": "office-goods-national-act-19",
+    "sha256": "e3e92819cbe43835a633af451228f2528c5934d2eb4ad0fc6bfd63d9125c5613",
+    "url": "http://127.0.0.1:8787/api/office-sources/e3e92819cbe43835a633af451228f2528c5934d2eb4ad0fc6bfd63d9125c5613/original",
+    "original_matches": true
+  },
+  {
+    "id": "office-goods-national-act-24",
+    "sha256": "6f4aaa0b92532df65f1eed1cb5fad4c7775d23acaeae96328eb62e142f7fddff",
+    "url": "http://127.0.0.1:8787/api/office-sources/6f4aaa0b92532df65f1eed1cb5fad4c7775d23acaeae96328eb62e142f7fddff/original",
+    "original_matches": true
+  },
+  {
+    "id": "office-goods-national-act-35",
+    "sha256": "71ed2da8c4f16d7b8ac379ae2bec5e4184445f6ad811dfb26cdd85197f1d3b24",
+    "url": "http://127.0.0.1:8787/api/office-sources/71ed2da8c4f16d7b8ac379ae2bec5e4184445f6ad811dfb26cdd85197f1d3b24/original",
+    "original_matches": true
+  },
+  {
+    "id": "office-goods-national-decree-22",
+    "sha256": "3c6e1a82673ca8568488709b015f9244e091bcd802da1f60049b17b9b36beb24",
+    "url": "http://127.0.0.1:8787/api/office-sources/3c6e1a82673ca8568488709b015f9244e091bcd802da1f60049b17b9b36beb24/original",
+    "original_matches": true
+  },
+  {
+    "id": "office-goods-national-decree-39",
+    "sha256": "78967e878b9a8fc2105856b07d11167a13c182fdd5780647019a749d0e705122",
+    "url": "http://127.0.0.1:8787/api/office-sources/78967e878b9a8fc2105856b07d11167a13c182fdd5780647019a749d0e705122/original",
+    "original_matches": true
+  },
+  {
+    "id": "office-goods-national-decree-40",
+    "sha256": "d2b097de3b1c958939eee61c455d054f367ee6231aac88cfb6351ea2ec834fb1",
+    "url": "http://127.0.0.1:8787/api/office-sources/d2b097de3b1c958939eee61c455d054f367ee6231aac88cfb6351ea2ec834fb1/original",
+    "original_matches": true
+  },
+  {
+    "id": "office-goods-national-rule-27",
+    "sha256": "dc5cd97ecab1cc64ac5bcf72faa2b60575d3495df8b427ad6b08492395e730c4",
+    "url": "http://127.0.0.1:8787/api/office-sources/dc5cd97ecab1cc64ac5bcf72faa2b60575d3495df8b427ad6b08492395e730c4/original",
+    "original_matches": true
+  },
+  {
+    "id": "office-goods-national-rule-34",
+    "sha256": "55c458f2a631837a971c192a45520a1bbf5230f1c07fd717d74178b78432ceec",
+    "url": "http://127.0.0.1:8787/api/office-sources/55c458f2a631837a971c192a45520a1bbf5230f1c07fd717d74178b78432ceec/original",
+    "original_matches": true
+  },
+  {
+    "id": "office-goods-national-rule-35",
+    "sha256": "bd8ce1b35771474fd2a8c65958cc9c82251620a32b495f5522178a2496abfa01",
+    "url": "http://127.0.0.1:8787/api/office-sources/bd8ce1b35771474fd2a8c65958cc9c82251620a32b495f5522178a2496abfa01/original",
+    "original_matches": true
+  },
+  {
+    "id": "office-goods-national-rule-37",
+    "sha256": "2ad8b3d431b3b34c78be6b0ce0f044d601793e48914d56865ee68318b3cd5b7d",
+    "url": "http://127.0.0.1:8787/api/office-sources/2ad8b3d431b3b34c78be6b0ce0f044d601793e48914d56865ee68318b3cd5b7d/original",
+    "original_matches": true
+  },
+  {
+    "id": "office-goods-national-rule-51",
+    "sha256": "e62b0d683c3ad8cc8d3d93ed6de8e12052e56c94de8fe9cdcda00869aa452cc1",
+    "url": "http://127.0.0.1:8787/api/office-sources/e62b0d683c3ad8cc8d3d93ed6de8e12052e56c94de8fe9cdcda00869aa452cc1/original",
+    "original_matches": true
+  },
+  {
+    "id": "office-goods-national-rule-52",
+    "sha256": "ffcb7f9ef0b14ac5242e0b9ce21c88719d881e7e2006a800113edbbc8549506f",
+    "url": "http://127.0.0.1:8787/api/office-sources/ffcb7f9ef0b14ac5242e0b9ce21c88719d881e7e2006a800113edbbc8549506f/original",
+    "original_matches": true
+  },
+  {
+    "id": "office-goods-national-rule-57",
+    "sha256": "196d3bd9120862963e2342795e8ad4699169d8a00888337a21456b5d4fe49779",
+    "url": "http://127.0.0.1:8787/api/office-sources/196d3bd9120862963e2342795e8ad4699169d8a00888337a21456b5d4fe49779/original",
+    "original_matches": true
+  },
+  {
+    "id": "office-goods-national-rule-58",
+    "sha256": "76edec01bd2a7a6c05b58c00fd31a070ddd90c033841d8c95fa01afbabb70233",
+    "url": "http://127.0.0.1:8787/api/office-sources/76edec01bd2a7a6c05b58c00fd31a070ddd90c033841d8c95fa01afbabb70233/original",
+    "original_matches": true
+  },
+  {
+    "id": "office-goods-local-act-2",
+    "sha256": "345a093995ffa6c30e629e772a82cb425e24fc851b736f13a0e0ca0b78eb8b21",
+    "url": "http://127.0.0.1:8787/api/office-sources/345a093995ffa6c30e629e772a82cb425e24fc851b736f13a0e0ca0b78eb8b21/original",
+    "original_matches": true
+  },
+  {
+    "id": "office-goods-local-act-52",
+    "sha256": "326d12146ab55d5fd4623a62defb2f2f4cba14ca0743c3cdb61de92f4ed5ccbb",
+    "url": "http://127.0.0.1:8787/api/office-sources/326d12146ab55d5fd4623a62defb2f2f4cba14ca0743c3cdb61de92f4ed5ccbb/original",
+    "original_matches": true
+  },
+  {
+    "id": "office-goods-local-act-60",
+    "sha256": "eb13ddc4f52ff2bee9f490e30c55cbe3718aeaa07196958b64ddcb8f9b5919e9",
+    "url": "http://127.0.0.1:8787/api/office-sources/eb13ddc4f52ff2bee9f490e30c55cbe3718aeaa07196958b64ddcb8f9b5919e9/original",
+    "original_matches": true
+  },
+  {
+    "id": "office-goods-local-act-75",
+    "sha256": "407ece049eec1340482193a26375780216098c976fdeb96b61ed64d9845ccf6d",
+    "url": "http://127.0.0.1:8787/api/office-sources/407ece049eec1340482193a26375780216098c976fdeb96b61ed64d9845ccf6d/original",
+    "original_matches": true
+  },
+  {
+    "id": "office-goods-local-act-76",
+    "sha256": "4c7d673012896d3ca375dcbf00f589141391ddfc25fa5998fbaa6ce1c850f4bf",
+    "url": "http://127.0.0.1:8787/api/office-sources/4c7d673012896d3ca375dcbf00f589141391ddfc25fa5998fbaa6ce1c850f4bf/original",
+    "original_matches": true
+  },
+  {
+    "id": "office-goods-local-decree-59",
+    "sha256": "dcd2b45a6ab83edadaade8c78c94cc612e7492e4640408f9cf0c8bba7f049d39",
+    "url": "http://127.0.0.1:8787/api/office-sources/dcd2b45a6ab83edadaade8c78c94cc612e7492e4640408f9cf0c8bba7f049d39/original",
+    "original_matches": true
+  },
+  {
+    "id": "office-goods-local-decree-76",
+    "sha256": "3bfeb8d4bc8db6b52d74605c4d78981676817ae821b3d7042692cff170de6527",
+    "url": "http://127.0.0.1:8787/api/office-sources/3bfeb8d4bc8db6b52d74605c4d78981676817ae821b3d7042692cff170de6527/original",
+    "original_matches": true
+  },
+  {
+    "id": "office-goods-local-decree-77",
+    "sha256": "703980f178ba1f88098aa0fcec496473699f806aae8ddb8e270af7cdba616d05",
+    "url": "http://127.0.0.1:8787/api/office-sources/703980f178ba1f88098aa0fcec496473699f806aae8ddb8e270af7cdba616d05/original",
+    "original_matches": true
+  },
+  {
+    "id": "office-goods-local-decree-78",
+    "sha256": "af13ffc07a814ee28988b7767e4108c7302536018f99cceb35c36713f55d06bd",
+    "url": "http://127.0.0.1:8787/api/office-sources/af13ffc07a814ee28988b7767e4108c7302536018f99cceb35c36713f55d06bd/original",
+    "original_matches": true
+  },
+  {
+    "id": "office-goods-local-decree-91",
+    "sha256": "a0ff45cffeff52425fad05695add351a5f32c83419ee598c3a40598670dc1f22",
+    "url": "http://127.0.0.1:8787/api/office-sources/a0ff45cffeff52425fad05695add351a5f32c83419ee598c3a40598670dc1f22/original",
+    "original_matches": true
+  }
+]

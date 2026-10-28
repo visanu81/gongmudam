@@ -1,0 +1,76 @@
+{
+  "release": "v76",
+  "created_at": "2026-10-25T11:02:30.835306+00:00",
+  "verification_environment": "same Windows PC; fresh ZIP extraction into Korean/space path; new venv; private loopback server8896",
+  "physical_other_pc_test": false,
+  "install": {
+    "exit_code": 0,
+    "seconds": 29.641,
+    "root": "C:\\AI작업\\프로그램 제작\\gongmudam\\.local-verification\\v76_새 설치 검증\\공무담",
+    "new_venv": true,
+    "no_private_runtime_before_install": true
+  },
+  "tests": {
+    "service": {
+      "exit_code": 0,
+      "seconds": 175.359,
+      "count": 831,
+      "test_seconds": 171.293
+    },
+    "root-python": {
+      "exit_code": 0,
+      "seconds": 2.218,
+      "count": 19
+    },
+    "root-node": {
+      "exit_code": 0,
+      "seconds": 0.313,
+      "count": 31
+    },
+    "service-node": {
+      "exit_code": 0,
+      "seconds": 1.25,
+      "count": 25
+    }
+  },
+  "installed_test_total": 906,
+  "source_tests_separate": 156,
+  "service_manifest_sha256": "7ecbe6f8efc157a1fbb0b9fd6dd76e294b438c7b5c6da11819f9008ed13da203",
+  "managed_service_files": 581,
+  "scenario_results": {
+    "fresh-project-tasks.json": true,
+    "fresh-gui.json": true,
+    "fresh-long-documents.json": true,
+    "fresh-knowledge.json": true,
+    "fresh-restart.json": true
+  },
+  "offline_default": true,
+  "actual_models_retested": false,
+  "model_regression_tests": "mocked only; actual v74 results preserved as historical",
+  "registered_sources": 36,
+  "manuals": 6,
+  "manual_pages": 221,
+  "knowledge_snapshot_unchanged": true,
+  "native_picker": "unchanged from v75; automatic picker tests included in full suite; native GUI not repeated v76",
+  "evidence": [
+    "compare-result-screen.jpg",
+    "compare-screen.jpg",
+    "draft-screen.jpg",
+    "fresh-compare-evidence.jpg",
+    "fresh-compare-result.jpg",
+    "fresh-gui.json",
+    "fresh-knowledge.json",
+    "fresh-long-documents.json",
+    "fresh-project-tasks.json",
+    "fresh-restart.json",
+    "root-node-tests.txt",
+    "root-python-tests.txt",
+    "schedule-screen.jpg",
+    "service-node-tests.txt",
+    "service-tests.txt",
+    "summary-screen.jpg",
+    "tasks-api.json",
+    "tasks-gui.json"
+  ],
+  "passed": true
+}

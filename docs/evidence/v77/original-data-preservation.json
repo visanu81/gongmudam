@@ -1,0 +1,75 @@
+{
+  "existing_tables": {
+    "libraries": {
+      "before": 6,
+      "after_existing": 6,
+      "unchanged": true
+    },
+    "knowledge_sources": {
+      "before": 86,
+      "after_existing": 86,
+      "unchanged": true
+    },
+    "work_experiences": {
+      "before": 0,
+      "after_existing": 0,
+      "unchanged": true
+    },
+    "folder_scan_jobs": {
+      "before": 0,
+      "after_existing": 0,
+      "unchanged": true
+    },
+    "folder_projects": {
+      "before": 5,
+      "after_existing": 5,
+      "unchanged": true
+    },
+    "project_sources": {
+      "before": 6,
+      "after_existing": 6,
+      "unchanged": true
+    },
+    "project_files": {
+      "before": 12,
+      "after_existing": 12,
+      "unchanged": true
+    },
+    "project_messages": {
+      "before": 46,
+      "after_existing": 46,
+      "unchanged": true
+    },
+    "project_jobs": {
+      "before": 6,
+      "after_existing": 6,
+      "unchanged": true
+    },
+    "project_units": {
+      "before": 86,
+      "after_existing": 86,
+      "unchanged": true
+    },
+    "folder_ai_runs": {
+      "before": 0,
+      "after_existing": 0,
+      "unchanged": true
+    },
+    "folder_watches": {
+      "before": 0,
+      "after_existing": 0,
+      "unchanged": true
+    }
+  },
+  "config_unchanged": true,
+  "other_databases_unchanged": {
+    "adhoc.db": true,
+    "calendar.db": true,
+    "regulation-monitor.db": true,
+    "seomu.db": true,
+    "travel.db": true
+  },
+  "managed_documents": 1,
+  "managed_versions": 2,
+  "pass": true
+}

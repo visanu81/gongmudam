@@ -1,0 +1,21 @@
+{
+  "version": "v79",
+  "files": 865,
+  "destination": "C:\\AI작업\\프로그램 제작\\gongmudam\\.local-verification\\v79-package\\final",
+  "archive": "C:\\AI작업\\대회참여\\2026년 공공AI 대전환 챌린지 행사\\제출자료\\공무담_다른PC_제출패키지_v79.zip",
+  "sha256": "b6d6550547fb8b75f6c227353a0f11027f423aa28b870cc9ac931929f7a6ee20",
+  "bytes": 128173375,
+  "registered_sources": 96,
+  "manuals": 6,
+  "manual_pdf_pages": 221,
+  "crc_ok": true,
+  "all_managed_hashes_match": true,
+  "runtime_matches_tested_installation": true,
+  "zip_entries": 866,
+  "automatic_tests": 1017,
+  "office_questions": 23,
+  "institution_questions": 18,
+  "actual_model_calls": 0,
+  "physical_other_pc_test": false,
+  "personal_data_excluded": true
+}

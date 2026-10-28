@@ -1,0 +1,5 @@
+{
+  "command": "py -3.12 -X utf8 -m unittest discover -s tests -p test_*.py -q",
+  "tests": 33,
+  "exit_code": 0
+}

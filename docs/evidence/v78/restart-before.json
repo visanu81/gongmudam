@@ -1,0 +1,464 @@
+{
+  "documents": [
+    {
+      "id": "b0c91b1f92c64e499d8e9fb798b08326",
+      "revision": 5,
+      "enabled": false,
+      "active_version_id": "d834500d87b0451fa93772554e089a87",
+      "deleted_at": null,
+      "created_at": "2026-10-25T23:12:09.245429+00:00",
+      "updated_at": "2026-10-25T23:18:35.903912+00:00",
+      "title": "[합성 예제] 교육참가 신청서",
+      "kind": "서식",
+      "category": "교육·행사",
+      "institution": "합성 제출검증기관",
+      "keywords": [
+        "교육참가 신청서"
+      ],
+      "effective_date": "2026-01-01",
+      "scope_notes": "실제 기관 업무에 적용하지 않는 합성 제출 검증 자료",
+      "source_id": "institution:b0c91b1f92c64e499d8e9fb798b08326",
+      "deleted": false,
+      "active_version_number": 1,
+      "pending_count": 0,
+      "version_count": 1,
+      "versions": [
+        {
+          "category": "교육·행사",
+          "id": "d834500d87b0451fa93772554e089a87",
+          "number": 1,
+          "created_at": "2026-10-25T23:12:09.246428+00:00",
+          "based_on": null,
+          "sha256": "bb7a3b4c8dea1e97c19d289a876e38e9f940006d01e7ccb6fcda0d4c9d7dbc2e",
+          "origin": {
+            "filename": "교육참가_신청서.txt",
+            "asset": "28b1e3714dbf7868bcf33125182e89a3340315ab191fdc32768ae63da450a101.txt",
+            "sha256": "28b1e3714dbf7868bcf33125182e89a3340315ab191fdc32768ae63da450a101",
+            "bytes": 79
+          },
+          "units": [
+            {
+              "loc": "1행",
+              "text": "교육참가 신청서의 필수 항목은 부서, 성명, 연락처입니다."
+            }
+          ],
+          "title": "[합성 예제] 교육참가 신청서",
+          "institution": "합성 제출검증기관",
+          "kind": "서식",
+          "keywords": [
+            "교육참가 신청서"
+          ],
+          "text": "교육참가 신청서의 필수 항목은 부서, 성명, 연락처입니다.",
+          "effective_date": "2026-01-01",
+          "scope_notes": "실제 기관 업무에 적용하지 않는 합성 제출 검증 자료",
+          "change_note": ""
+        }
+      ],
+      "events": [
+        {
+          "id": "4fe9cd57a81d43929918e0417b15aa0e",
+          "at": "2026-10-25T23:18:35.906637+00:00",
+          "kind": "disable",
+          "version_id": "d834500d87b0451fa93772554e089a87",
+          "note": "새 설치 B안 화면 검증 완료",
+          "revision": 5
+        },
+        {
+          "id": "f04f420978a14045b120ca33290706e3",
+          "at": "2026-10-25T23:13:02.516675+00:00",
+          "kind": "enable",
+          "version_id": "d834500d87b0451fa93772554e089a87",
+          "note": "합성 B안 화면 검증",
+          "revision": 4
+        },
+        {
+          "id": "b6a449919d52434cab245deba85c0bc5",
+          "at": "2026-10-25T23:12:15.938802+00:00",
+          "kind": "disable",
+          "version_id": "d834500d87b0451fa93772554e089a87",
+          "note": "합성 제출 검증 완료",
+          "revision": 3
+        },
+        {
+          "id": "a2325203cf6f492aa11adb67db74f0ad",
+          "at": "2026-10-25T23:12:09.267128+00:00",
+          "kind": "apply",
+          "version_id": "d834500d87b0451fa93772554e089a87",
+          "note": "",
+          "revision": 2
+        },
+        {
+          "id": "7635138355014b54900bba00e8519a5f",
+          "at": "2026-10-25T23:12:09.246428+00:00",
+          "kind": "create",
+          "version_id": "d834500d87b0451fa93772554e089a87",
+          "note": "",
+          "revision": 1
+        }
+      ]
+    },
+    {
+      "id": "d65eb16eb5ad4151a06f24f9a9a5ffcd",
+      "revision": 9,
+      "enabled": false,
+      "active_version_id": "099d0582f3eb411e95cfca7d0249e9e5",
+      "deleted_at": null,
+      "created_at": "2026-10-25T23:12:09.284829+00:00",
+      "updated_at": "2026-10-25T23:18:35.941690+00:00",
+      "title": "[합성 예제] 연수 참가 접수 안내",
+      "kind": "기관 지침",
+      "category": "기타",
+      "institution": "합성 제출검증기관",
+      "keywords": [
+        "연수 신청 접수"
+      ],
+      "effective_date": "2026-01-01",
+      "scope_notes": "실제 기관 업무에 적용하지 않는 합성 제출 검증 자료",
+      "source_id": "institution:d65eb16eb5ad4151a06f24f9a9a5ffcd",
+      "deleted": false,
+      "active_version_number": 3,
+      "pending_count": 0,
+      "version_count": 3,
+      "versions": [
+        {
+          "category": "교육·행사",
+          "id": "c1bbe89d6d6e4bfdbe52c35903af6834",
+          "number": 1,
+          "created_at": "2026-10-25T23:12:09.285837+00:00",
+          "based_on": null,
+          "sha256": "0b1e7df26a6e17b091e13fe880a12511a26c62f473e2a7260ce00edcf51ceb79",
+          "origin": {
+            "filename": "연수_참가_접수_v1.txt",
+            "asset": "23fc9e2b35604e97bd09c6b75ef662f498db47669c44bf466528f1b258407f6e.txt",
+            "sha256": "23fc9e2b35604e97bd09c6b75ef662f498db47669c44bf466528f1b258407f6e",
+            "bytes": 120
+          },
+          "units": [
+            {
+              "loc": "1행",
+              "text": "교육 희망자 회신 마감은 교육 시작 3일 전입니다."
+            },
+            {
+              "loc": "2행",
+              "text": "필요한 서식은 교육참가 신청서입니다."
+            }
+          ],
+          "title": "[합성 예제] 연수 참가 접수 안내",
+          "institution": "합성 제출검증기관",
+          "kind": "기관 지침",
+          "keywords": [
+            "연수 신청 접수"
+          ],
+          "text": "교육 희망자 회신 마감은 교육 시작 3일 전입니다.\n필요한 서식은 교육참가 신청서입니다.",
+          "effective_date": "2026-01-01",
+          "scope_notes": "실제 기관 업무에 적용하지 않는 합성 제출 검증 자료",
+          "change_note": ""
+        },
+        {
+          "category": "교육·행사",
+          "id": "d10255e70d4d4bbbac5927875b863b4f",
+          "number": 2,
+          "created_at": "2026-10-25T23:12:12.131412+00:00",
+          "based_on": null,
+          "sha256": "e93264456bfd27e1fb04503b164c0750d1cfe856d6f7f03c97ff78714f48cbdb",
+          "origin": {
+            "filename": "연수_참가_접수_v2.txt",
+            "asset": "007698ab377b592d3dd2b2425ee0dcd84ddc509d2f6d111f4b8a982e67891b40.txt",
+            "sha256": "007698ab377b592d3dd2b2425ee0dcd84ddc509d2f6d111f4b8a982e67891b40",
+            "bytes": 120
+          },
+          "units": [
+            {
+              "loc": "1행",
+              "text": "교육 희망자 회신 마감은 교육 시작 5일 전입니다."
+            },
+            {
+              "loc": "2행",
+              "text": "필요한 서식은 교육참가 신청서입니다."
+            }
+          ],
+          "title": "[합성 예제] 연수 참가 접수 안내",
+          "institution": "합성 제출검증기관",
+          "kind": "기관 지침",
+          "keywords": [
+            "연수 신청 접수"
+          ],
+          "text": "교육 희망자 회신 마감은 교육 시작 5일 전입니다.\n필요한 서식은 교육참가 신청서입니다.",
+          "effective_date": "2026-01-01",
+          "scope_notes": "실제 기관 업무에 적용하지 않는 합성 제출 검증 자료",
+          "change_note": "합성 기한 3일 전 → 5일 전"
+        },
+        {
+          "category": "기타",
+          "id": "099d0582f3eb411e95cfca7d0249e9e5",
+          "number": 3,
+          "created_at": "2026-10-25T23:12:12.940130+00:00",
+          "based_on": null,
+          "sha256": "e93264456bfd27e1fb04503b164c0750d1cfe856d6f7f03c97ff78714f48cbdb",
+          "origin": {},
+          "units": [
+            {
+              "loc": "편집 본문",
+              "text": "교육 희망자 회신 마감은 교육 시작 5일 전입니다.\n필요한 서식은 교육참가 신청서입니다."
+            }
+          ],
+          "title": "[합성 예제] 연수 참가 접수 안내",
+          "institution": "합성 제출검증기관",
+          "kind": "기관 지침",
+          "keywords": [
+            "연수 신청 접수"
+          ],
+          "text": "교육 희망자 회신 마감은 교육 시작 5일 전입니다.\n필요한 서식은 교육참가 신청서입니다.",
+          "effective_date": "2026-01-01",
+          "scope_notes": "실제 기관 업무에 적용하지 않는 합성 제출 검증 자료",
+          "change_note": "합성 분류 변경"
+        }
+      ],
+      "events": [
+        {
+          "id": "0e7ee6e28b0d4fcca39efe2236f3bacd",
+          "at": "2026-10-25T23:18:35.945150+00:00",
+          "kind": "disable",
+          "version_id": "099d0582f3eb411e95cfca7d0249e9e5",
+          "note": "새 설치 B안 화면 검증 완료",
+          "revision": 9
+        },
+        {
+          "id": "677cb5fd766d4861b4c327ec5852f40a",
+          "at": "2026-10-25T23:13:02.537952+00:00",
+          "kind": "enable",
+          "version_id": "099d0582f3eb411e95cfca7d0249e9e5",
+          "note": "합성 B안 화면 검증",
+          "revision": 8
+        },
+        {
+          "id": "7b9e3acdca5f456392e06748f0fd7214",
+          "at": "2026-10-25T23:12:15.961606+00:00",
+          "kind": "disable",
+          "version_id": "099d0582f3eb411e95cfca7d0249e9e5",
+          "note": "합성 제출 검증 완료",
+          "revision": 7
+        },
+        {
+          "id": "d750bf8f96c7435d8634ce1838ab8400",
+          "at": "2026-10-25T23:12:12.960767+00:00",
+          "kind": "apply",
+          "version_id": "099d0582f3eb411e95cfca7d0249e9e5",
+          "note": "",
+          "revision": 6
+        },
+        {
+          "id": "b031c422e25c4d68b3c979cba6d60965",
+          "at": "2026-10-25T23:12:12.942128+00:00",
+          "kind": "draft",
+          "version_id": "099d0582f3eb411e95cfca7d0249e9e5",
+          "note": "합성 분류 변경",
+          "revision": 5
+        },
+        {
+          "id": "55ab8d735adc4765936dfeb592a0fe2c",
+          "at": "2026-10-25T23:12:12.540443+00:00",
+          "kind": "apply",
+          "version_id": "d10255e70d4d4bbbac5927875b863b4f",
+          "note": "",
+          "revision": 4
+        },
+        {
+          "id": "428177307d2f46bda2b86ec5678bddc3",
+          "at": "2026-10-25T23:12:12.132415+00:00",
+          "kind": "draft",
+          "version_id": "d10255e70d4d4bbbac5927875b863b4f",
+          "note": "합성 기한 3일 전 → 5일 전",
+          "revision": 3
+        },
+        {
+          "id": "04eb23ee37af4cdeb105897fe04f55b9",
+          "at": "2026-10-25T23:12:09.425590+00:00",
+          "kind": "apply",
+          "version_id": "c1bbe89d6d6e4bfdbe52c35903af6834",
+          "note": "",
+          "revision": 2
+        },
+        {
+          "id": "0370c448666d4dce9d05417c6c289253",
+          "at": "2026-10-25T23:12:09.285837+00:00",
+          "kind": "create",
+          "version_id": "c1bbe89d6d6e4bfdbe52c35903af6834",
+          "note": "",
+          "revision": 1
+        }
+      ]
+    },
+    {
+      "id": "84f92bc68f1347f38a9a2297cc978bc6",
+      "revision": 3,
+      "enabled": false,
+      "active_version_id": "d8bfe356cdc14c1481fadb5ca188e80f",
+      "deleted_at": null,
+      "created_at": "2026-10-25T23:12:12.985774+00:00",
+      "updated_at": "2026-10-25T23:12:15.980269+00:00",
+      "title": "[합성 예제] 부모 기관 교육 안내",
+      "kind": "기관 지침",
+      "category": "교육·행사",
+      "institution": "부산광역시",
+      "keywords": [
+        "연수 신청 접수"
+      ],
+      "effective_date": "2026-01-01",
+      "scope_notes": "실제 기관 업무에 적용하지 않는 합성 제출 검증 자료",
+      "source_id": "institution:84f92bc68f1347f38a9a2297cc978bc6",
+      "deleted": false,
+      "active_version_number": 1,
+      "pending_count": 0,
+      "version_count": 1,
+      "versions": [
+        {
+          "category": "교육·행사",
+          "id": "d8bfe356cdc14c1481fadb5ca188e80f",
+          "number": 1,
+          "created_at": "2026-10-25T23:12:12.986773+00:00",
+          "based_on": null,
+          "sha256": "0b1e7df26a6e17b091e13fe880a12511a26c62f473e2a7260ce00edcf51ceb79",
+          "origin": {
+            "filename": "연수_참가_접수_v1.txt",
+            "asset": "23fc9e2b35604e97bd09c6b75ef662f498db47669c44bf466528f1b258407f6e.txt",
+            "sha256": "23fc9e2b35604e97bd09c6b75ef662f498db47669c44bf466528f1b258407f6e",
+            "bytes": 120
+          },
+          "units": [
+            {
+              "loc": "1행",
+              "text": "교육 희망자 회신 마감은 교육 시작 3일 전입니다."
+            },
+            {
+              "loc": "2행",
+              "text": "필요한 서식은 교육참가 신청서입니다."
+            }
+          ],
+          "title": "[합성 예제] 부모 기관 교육 안내",
+          "institution": "부산광역시",
+          "kind": "기관 지침",
+          "keywords": [
+            "연수 신청 접수"
+          ],
+          "text": "교육 희망자 회신 마감은 교육 시작 3일 전입니다.\n필요한 서식은 교육참가 신청서입니다.",
+          "effective_date": "2026-01-01",
+          "scope_notes": "실제 기관 업무에 적용하지 않는 합성 제출 검증 자료",
+          "change_note": ""
+        }
+      ],
+      "events": [
+        {
+          "id": "852bd67291f1400a8197a29e9b2dc668",
+          "at": "2026-10-25T23:12:15.981269+00:00",
+          "kind": "disable",
+          "version_id": "d8bfe356cdc14c1481fadb5ca188e80f",
+          "note": "합성 제출 검증 완료",
+          "revision": 3
+        },
+        {
+          "id": "9a003811e769449aaea4cfc3015a99b9",
+          "at": "2026-10-25T23:12:13.007723+00:00",
+          "kind": "apply",
+          "version_id": "d8bfe356cdc14c1481fadb5ca188e80f",
+          "note": "",
+          "revision": 2
+        },
+        {
+          "id": "5e9a089daf524b2aa4b9e35512590ee6",
+          "at": "2026-10-25T23:12:12.986773+00:00",
+          "kind": "create",
+          "version_id": "d8bfe356cdc14c1481fadb5ca188e80f",
+          "note": "",
+          "revision": 1
+        }
+      ]
+    },
+    {
+      "id": "ee94f3ab753045b99d863361d214435f",
+      "revision": 3,
+      "enabled": false,
+      "active_version_id": "03761b598c4f455081721ef54002a45d",
+      "deleted_at": null,
+      "created_at": "2026-10-25T23:12:13.028271+00:00",
+      "updated_at": "2026-10-25T23:12:15.997011+00:00",
+      "title": "[합성 예제] 교육청 교육 안내",
+      "kind": "기관 지침",
+      "category": "교육·행사",
+      "institution": "부산광역시교육청",
+      "keywords": [
+        "연수 신청 접수"
+      ],
+      "effective_date": "2026-01-01",
+      "scope_notes": "실제 기관 업무에 적용하지 않는 합성 제출 검증 자료",
+      "source_id": "institution:ee94f3ab753045b99d863361d214435f",
+      "deleted": false,
+      "active_version_number": 1,
+      "pending_count": 0,
+      "version_count": 1,
+      "versions": [
+        {
+          "category": "교육·행사",
+          "id": "03761b598c4f455081721ef54002a45d",
+          "number": 1,
+          "created_at": "2026-10-25T23:12:13.029271+00:00",
+          "based_on": null,
+          "sha256": "e93264456bfd27e1fb04503b164c0750d1cfe856d6f7f03c97ff78714f48cbdb",
+          "origin": {
+            "filename": "연수_참가_접수_v2.txt",
+            "asset": "007698ab377b592d3dd2b2425ee0dcd84ddc509d2f6d111f4b8a982e67891b40.txt",
+            "sha256": "007698ab377b592d3dd2b2425ee0dcd84ddc509d2f6d111f4b8a982e67891b40",
+            "bytes": 120
+          },
+          "units": [
+            {
+              "loc": "1행",
+              "text": "교육 희망자 회신 마감은 교육 시작 5일 전입니다."
+            },
+            {
+              "loc": "2행",
+              "text": "필요한 서식은 교육참가 신청서입니다."
+            }
+          ],
+          "title": "[합성 예제] 교육청 교육 안내",
+          "institution": "부산광역시교육청",
+          "kind": "기관 지침",
+          "keywords": [
+            "연수 신청 접수"
+          ],
+          "text": "교육 희망자 회신 마감은 교육 시작 5일 전입니다.\n필요한 서식은 교육참가 신청서입니다.",
+          "effective_date": "2026-01-01",
+          "scope_notes": "실제 기관 업무에 적용하지 않는 합성 제출 검증 자료",
+          "change_note": ""
+        }
+      ],
+      "events": [
+        {
+          "id": "92f38e3e5b2c4965bcdd413445d05fbb",
+          "at": "2026-10-25T23:12:15.998011+00:00",
+          "kind": "disable",
+          "version_id": "03761b598c4f455081721ef54002a45d",
+          "note": "합성 제출 검증 완료",
+          "revision": 3
+        },
+        {
+          "id": "cf334f13391e479a8c09e87de8f7a02f",
+          "at": "2026-10-25T23:12:13.049380+00:00",
+          "kind": "apply",
+          "version_id": "03761b598c4f455081721ef54002a45d",
+          "note": "",
+          "revision": 2
+        },
+        {
+          "id": "e5265f54611b445fb9a2c6ac2ae101c2",
+          "at": "2026-10-25T23:12:13.029271+00:00",
+          "kind": "create",
+          "version_id": "03761b598c4f455081721ef54002a45d",
+          "note": "",
+          "revision": 1
+        }
+      ]
+    }
+  ],
+  "config_sha256": "00993905a5f3cb04352b699aec659704569a977014bb831ac315eca7523b8a85"
+}

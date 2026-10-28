@@ -1,0 +1,854 @@
+{
+  "passed": true,
+  "created_at": "2026-10-25T20:11:20.066168+00:00",
+  "checks": {
+    "default_offline": true,
+    "registered_sources_86_current": true,
+    "manuals_6_221_pages": true,
+    "draft_not_in_answer": true,
+    "applied_v1_offline": true,
+    "v2_draft_keeps_v1_answer": true,
+    "stale_revision_409": true,
+    "comparison_before_after": true,
+    "applied_v2_offline": true,
+    "wrong_institution_excluded": true,
+    "both_original_text_and_files_preserved": true,
+    "disabled_not_answered": true,
+    "deleted_hidden_but_recoverable": true,
+    "deleted_original_still_open": true,
+    "restore_disabled_versions_and_history": true,
+    "sample_files_unchanged": true
+  },
+  "actual_model_calls": 0,
+  "status": {
+    "status": "ok",
+    "service_version": "v77",
+    "desktop_connected": true,
+    "public_demo": false,
+    "private_data_isolated": false,
+    "requires_origin_pc": true,
+    "shared_demo": false
+  },
+  "document": {
+    "id": "84571f39db4e4820b822f5e054f2fdd3",
+    "revision": 7,
+    "enabled": false,
+    "active_version_id": "d8d4bf06cb0647d0baac32a60c004e9f",
+    "deleted_at": null,
+    "created_at": "2026-10-25T20:11:18.962423+00:00",
+    "updated_at": "2026-10-25T20:11:20.062159+00:00",
+    "title": "[합성 예제] 교육자료 제출 안내",
+    "kind": "기관 지침",
+    "institution": "합성 제출검증기관",
+    "keywords": [
+      "검증자료 제출"
+    ],
+    "effective_date": "2026-01-01",
+    "scope_notes": "실제 법령·지침이 아닌 제출 기능 검증용 합성 자료",
+    "source_id": "institution:84571f39db4e4820b822f5e054f2fdd3",
+    "deleted": false,
+    "active_version_number": 2,
+    "pending_count": 0,
+    "version_count": 2,
+    "versions": [
+      {
+        "id": "c5ad723299054305b93854e4686504e6",
+        "number": 1,
+        "created_at": "2026-10-25T20:11:18.963420+00:00",
+        "based_on": null,
+        "sha256": "c1b5011a7a878f1294debccbabc80f079f79fc2a2821515dcbda95684f3c21b3",
+        "origin": {
+          "filename": "제출기한_v1.txt",
+          "asset": "7d945fb128d250326a0fd559109e8f72291f8016a09d1c2841728d0bee9de72a.txt",
+          "sha256": "7d945fb128d250326a0fd559109e8f72291f8016a09d1c2841728d0bee9de72a",
+          "bytes": 174
+        },
+        "units": [
+          {
+            "loc": "1행",
+            "text": "제1조(제출기한)"
+          },
+          {
+            "loc": "2행",
+            "text": "검증자료 제출기한은 교육 시작 3일 전입니다."
+          },
+          {
+            "loc": "4행",
+            "text": "제2조(적용범위)"
+          },
+          {
+            "loc": "5행",
+            "text": "합성 제출검증기관 기능 확인용 모의 자료입니다."
+          }
+        ],
+        "title": "[합성 예제] 교육자료 제출 안내",
+        "institution": "합성 제출검증기관",
+        "kind": "기관 지침",
+        "keywords": [
+          "검증자료 제출"
+        ],
+        "text": "제1조(제출기한)\n검증자료 제출기한은 교육 시작 3일 전입니다.\n제2조(적용범위)\n합성 제출검증기관 기능 확인용 모의 자료입니다.",
+        "effective_date": "2026-01-01",
+        "scope_notes": "실제 법령·지침이 아닌 제출 기능 검증용 합성 자료",
+        "change_note": ""
+      },
+      {
+        "id": "d8d4bf06cb0647d0baac32a60c004e9f",
+        "number": 2,
+        "created_at": "2026-10-25T20:11:19.332437+00:00",
+        "based_on": null,
+        "sha256": "5c1f0b6b4f2c31d64f7086338ab74fa49629f2c5ad58fd9b7c5e82f8cf42656c",
+        "origin": {
+          "filename": "제출기한_v2.txt",
+          "asset": "196ea1a16b91b804e58bdc6787c882c825bac71bb7bcb30734c4bd1394c90325.txt",
+          "sha256": "196ea1a16b91b804e58bdc6787c882c825bac71bb7bcb30734c4bd1394c90325",
+          "bytes": 174
+        },
+        "units": [
+          {
+            "loc": "1행",
+            "text": "제1조(제출기한)"
+          },
+          {
+            "loc": "2행",
+            "text": "검증자료 제출기한은 교육 시작 5일 전입니다."
+          },
+          {
+            "loc": "4행",
+            "text": "제2조(적용범위)"
+          },
+          {
+            "loc": "5행",
+            "text": "합성 제출검증기관 기능 확인용 모의 자료입니다."
+          }
+        ],
+        "title": "[합성 예제] 교육자료 제출 안내",
+        "institution": "합성 제출검증기관",
+        "kind": "기관 지침",
+        "keywords": [
+          "검증자료 제출"
+        ],
+        "text": "제1조(제출기한)\n검증자료 제출기한은 교육 시작 5일 전입니다.\n제2조(적용범위)\n합성 제출검증기관 기능 확인용 모의 자료입니다.",
+        "effective_date": "2026-01-01",
+        "scope_notes": "실제 법령·지침이 아닌 제출 기능 검증용 합성 자료",
+        "change_note": "기한 3일 전에서 5일 전으로 변경"
+      }
+    ],
+    "events": [
+      {
+        "id": "94e6ca60e4ac482eb9325847b09d88d8",
+        "at": "2026-10-25T20:11:20.063159+00:00",
+        "kind": "restore",
+        "version_id": "d8d4bf06cb0647d0baac32a60c004e9f",
+        "note": "",
+        "revision": 7
+      },
+      {
+        "id": "27a3047d0e7f4cfcb900a16e2a8a9d5c",
+        "at": "2026-10-25T20:11:20.045883+00:00",
+        "kind": "delete",
+        "version_id": "d8d4bf06cb0647d0baac32a60c004e9f",
+        "note": "",
+        "revision": 6
+      },
+      {
+        "id": "17f077e802784fdb92def097f5983bbe",
+        "at": "2026-10-25T20:11:20.001687+00:00",
+        "kind": "disable",
+        "version_id": "d8d4bf06cb0647d0baac32a60c004e9f",
+        "note": "",
+        "revision": 5
+      },
+      {
+        "id": "907ab209e95b479a8f12234aba7a6625",
+        "at": "2026-10-25T20:11:19.560205+00:00",
+        "kind": "apply",
+        "version_id": "d8d4bf06cb0647d0baac32a60c004e9f",
+        "note": "",
+        "revision": 4
+      },
+      {
+        "id": "66765963b76d4861b1fce88ab971eb35",
+        "at": "2026-10-25T20:11:19.333450+00:00",
+        "kind": "draft",
+        "version_id": "d8d4bf06cb0647d0baac32a60c004e9f",
+        "note": "기한 3일 전에서 5일 전으로 변경",
+        "revision": 3
+      },
+      {
+        "id": "220736cfd93a4fb8a426471e6635a3d4",
+        "at": "2026-10-25T20:11:19.038108+00:00",
+        "kind": "apply",
+        "version_id": "c5ad723299054305b93854e4686504e6",
+        "note": "",
+        "revision": 2
+      },
+      {
+        "id": "4b74abf72e25465ba48d252371449a78",
+        "at": "2026-10-25T20:11:18.964419+00:00",
+        "kind": "create",
+        "version_id": "c5ad723299054305b93854e4686504e6",
+        "note": "",
+        "revision": 1
+      }
+    ]
+  },
+  "answer_v1": {
+    "query": "합성 제출검증기관 검증자료 제출 기한은?",
+    "mode": "structured_guidance",
+    "model": null,
+    "profile": null,
+    "summary": "등록 자료로 처리 방법을 함께 확인해요.",
+    "answer": "합성 제출검증기관 기능 확인용 모의 자료입니다. [근거 1]\n\n검증자료 제출기한은 교육 시작 3일 전입니다. [근거 2]",
+    "notice": "",
+    "plan": null,
+    "alternatives": [],
+    "cited": [],
+    "related": [],
+    "personal_notes": [],
+    "knowledge": {
+      "evidence": [
+        {
+          "id": "institution:84571f39db4e4820b822f5e054f2fdd3:c5ad723299054305b93854e4686504e6:3",
+          "source_id": "institution:84571f39db4e4820b822f5e054f2fdd3",
+          "title": "[합성 예제] 교육자료 제출 안내",
+          "text": "합성 제출검증기관 기능 확인용 모의 자료입니다.",
+          "loc": "5행 · v1",
+          "sha256": "c1b5011a7a878f1294debccbabc80f079f79fc2a2821515dcbda95684f3c21b3",
+          "official": null,
+          "limited": false,
+          "kind": "기관 지침",
+          "institution": "합성 제출검증기관",
+          "effective_date": "2026-01-01",
+          "library_id": "institution-rules",
+          "file_id": "84571f39db4e4820b822f5e054f2fdd3",
+          "reference_kind": "institution_rule",
+          "managed_rule_id": "84571f39db4e4820b822f5e054f2fdd3",
+          "managed_version_id": "c5ad723299054305b93854e4686504e6",
+          "managed_version_number": 1,
+          "scope_notes": "실제 법령·지침이 아닌 제출 기능 검증용 합성 자료",
+          "score": 7.453875976334364,
+          "quote": "합성 제출검증기관 기능 확인용 모의 자료입니다."
+        },
+        {
+          "id": "institution:84571f39db4e4820b822f5e054f2fdd3:c5ad723299054305b93854e4686504e6:1",
+          "source_id": "institution:84571f39db4e4820b822f5e054f2fdd3",
+          "title": "[합성 예제] 교육자료 제출 안내",
+          "text": "검증자료 제출기한은 교육 시작 3일 전입니다.",
+          "loc": "2행 · v1",
+          "sha256": "c1b5011a7a878f1294debccbabc80f079f79fc2a2821515dcbda95684f3c21b3",
+          "official": null,
+          "limited": false,
+          "kind": "기관 지침",
+          "institution": "합성 제출검증기관",
+          "effective_date": "2026-01-01",
+          "library_id": "institution-rules",
+          "file_id": "84571f39db4e4820b822f5e054f2fdd3",
+          "reference_kind": "institution_rule",
+          "managed_rule_id": "84571f39db4e4820b822f5e054f2fdd3",
+          "managed_version_id": "c5ad723299054305b93854e4686504e6",
+          "managed_version_number": 1,
+          "scope_notes": "실제 법령·지침이 아닌 제출 기능 검증용 합성 자료",
+          "score": 6.00347378164868,
+          "quote": "검증자료 제출기한은 교육 시작 3일 전입니다."
+        }
+      ],
+      "experiences": [],
+      "excluded": [],
+      "mode": "source_search",
+      "model": null,
+      "notice": "",
+      "answer": "합성 제출검증기관 기능 확인용 모의 자료입니다. [근거 1]\n\n검증자료 제출기한은 교육 시작 3일 전입니다. [근거 2]",
+      "intent": null,
+      "scope": "등록·선택한 추출 본문을 검색합니다. 인용 확인은 적용 대상·현행성·법적 해석을 보증하지 않습니다. 처리 경험은 공식 근거와 구분합니다.",
+      "tree": {
+        "kind": "reference",
+        "title": "기관에서 적용한 자료를 확인하세요",
+        "branches": [
+          {
+            "label": "기관에서 적용한 자료 · 원문 발췌",
+            "items": [
+              {
+                "text": "합성 제출검증기관 기능 확인용 모의 자료입니다.",
+                "ref": 1,
+                "support_quotes": [
+                  "합성 제출검증기관 기능 확인용 모의 자료입니다."
+                ]
+              },
+              {
+                "text": "검증자료 제출기한은 교육 시작 3일 전입니다.",
+                "ref": 2,
+                "support_quotes": [
+                  "검증자료 제출기한은 교육 시작 3일 전입니다."
+                ]
+              }
+            ]
+          }
+        ],
+        "note": "기관 담당자가 적용한 버전의 원문입니다. 공통 법령을 대체하거나 법적 적합성을 자동 승인한 답변은 아닙니다."
+      }
+    },
+    "guidance": {
+      "topic": "institution",
+      "title": "기관 자료 처리 방법",
+      "context": "합성 제출검증기관 검증자료 제출 기한은?",
+      "questions": [],
+      "steps": [
+        {
+          "id": "scope",
+          "title": "상황과 적용 기준 확인",
+          "detail": "기관·업무 종류와 현재 처리 단계를 알려주세요.",
+          "kind": "preparation"
+        },
+        {
+          "id": "materials",
+          "title": "근거·서식 확인",
+          "detail": "질문에 직접 답하는 규정·지침·매뉴얼을 등록하면 원문을 확인할 수 있어요.",
+          "kind": "preparation"
+        }
+      ],
+      "deadlines": [],
+      "forms": [],
+      "service_guide": {
+        "evidence": [],
+        "coverage": {
+          "guide_pages": 10,
+          "faq_questions": 26
+        },
+        "notice": "국가공무원 제도 설명·FAQ의 보관본입니다. 확인일은 수집일이며 답변의 개정일을 뜻하지 않아요. 실제 적용·일수·예외는 현행 법령과 기관 기준을 확인하세요.",
+        "problems": []
+      },
+      "manual": {
+        "evidence": [],
+        "scope": "",
+        "notice": "이 업무에 맞는 시스템 매뉴얼을 등록하면 사용법을 연결할 수 있어요."
+      },
+      "ai_requested": false,
+      "ai_used": false,
+      "notice": "진행 순서는 실무 준비 제안입니다. 법정 기한·필수 서류·적용 조건은 아래 등록 근거에서 확인하세요.",
+      "map": {
+        "nodes": [
+          {
+            "id": "topic:institution",
+            "label": "institution",
+            "kind": "topic"
+          },
+          {
+            "id": "step:institution:scope",
+            "label": "상황과 적용 기준 확인",
+            "kind": "preparation"
+          },
+          {
+            "id": "step:institution:materials",
+            "label": "근거·서식 확인",
+            "kind": "preparation"
+          },
+          {
+            "id": "source:institution:84571f39db4e4820b822f5e054f2fdd3",
+            "label": "[합성 예제] 교육자료 제출 안내",
+            "kind": "institution_rule",
+            "sha256": "c1b5011a7a878f1294debccbabc80f079f79fc2a2821515dcbda95684f3c21b3",
+            "loc": "5행 · v1",
+            "page": null
+          }
+        ],
+        "edges": [
+          {
+            "source": "topic:institution",
+            "target": "step:institution:scope",
+            "relation": "준비 순서"
+          },
+          {
+            "source": "topic:institution",
+            "target": "step:institution:materials",
+            "relation": "준비 순서"
+          },
+          {
+            "source": "topic:institution",
+            "target": "source:institution:84571f39db4e4820b822f5e054f2fdd3",
+            "relation": "검색된 자료"
+          }
+        ],
+        "note": "자료의 관련을 보여줍니다. 법적 적용 관계를 자동 판정한 결과는 아닙니다."
+      }
+    }
+  },
+  "answer_v2_draft": {
+    "query": "합성 제출검증기관 검증자료 제출 기한은?",
+    "mode": "structured_guidance",
+    "model": null,
+    "profile": null,
+    "summary": "등록 자료로 처리 방법을 함께 확인해요.",
+    "answer": "합성 제출검증기관 기능 확인용 모의 자료입니다. [근거 1]\n\n검증자료 제출기한은 교육 시작 3일 전입니다. [근거 2]",
+    "notice": "",
+    "plan": null,
+    "alternatives": [],
+    "cited": [],
+    "related": [],
+    "personal_notes": [],
+    "knowledge": {
+      "evidence": [
+        {
+          "id": "institution:84571f39db4e4820b822f5e054f2fdd3:c5ad723299054305b93854e4686504e6:3",
+          "source_id": "institution:84571f39db4e4820b822f5e054f2fdd3",
+          "title": "[합성 예제] 교육자료 제출 안내",
+          "text": "합성 제출검증기관 기능 확인용 모의 자료입니다.",
+          "loc": "5행 · v1",
+          "sha256": "c1b5011a7a878f1294debccbabc80f079f79fc2a2821515dcbda95684f3c21b3",
+          "official": null,
+          "limited": false,
+          "kind": "기관 지침",
+          "institution": "합성 제출검증기관",
+          "effective_date": "2026-01-01",
+          "library_id": "institution-rules",
+          "file_id": "84571f39db4e4820b822f5e054f2fdd3",
+          "reference_kind": "institution_rule",
+          "managed_rule_id": "84571f39db4e4820b822f5e054f2fdd3",
+          "managed_version_id": "c5ad723299054305b93854e4686504e6",
+          "managed_version_number": 1,
+          "scope_notes": "실제 법령·지침이 아닌 제출 기능 검증용 합성 자료",
+          "score": 7.453875976334364,
+          "quote": "합성 제출검증기관 기능 확인용 모의 자료입니다."
+        },
+        {
+          "id": "institution:84571f39db4e4820b822f5e054f2fdd3:c5ad723299054305b93854e4686504e6:1",
+          "source_id": "institution:84571f39db4e4820b822f5e054f2fdd3",
+          "title": "[합성 예제] 교육자료 제출 안내",
+          "text": "검증자료 제출기한은 교육 시작 3일 전입니다.",
+          "loc": "2행 · v1",
+          "sha256": "c1b5011a7a878f1294debccbabc80f079f79fc2a2821515dcbda95684f3c21b3",
+          "official": null,
+          "limited": false,
+          "kind": "기관 지침",
+          "institution": "합성 제출검증기관",
+          "effective_date": "2026-01-01",
+          "library_id": "institution-rules",
+          "file_id": "84571f39db4e4820b822f5e054f2fdd3",
+          "reference_kind": "institution_rule",
+          "managed_rule_id": "84571f39db4e4820b822f5e054f2fdd3",
+          "managed_version_id": "c5ad723299054305b93854e4686504e6",
+          "managed_version_number": 1,
+          "scope_notes": "실제 법령·지침이 아닌 제출 기능 검증용 합성 자료",
+          "score": 6.00347378164868,
+          "quote": "검증자료 제출기한은 교육 시작 3일 전입니다."
+        }
+      ],
+      "experiences": [],
+      "excluded": [],
+      "mode": "source_search",
+      "model": null,
+      "notice": "",
+      "answer": "합성 제출검증기관 기능 확인용 모의 자료입니다. [근거 1]\n\n검증자료 제출기한은 교육 시작 3일 전입니다. [근거 2]",
+      "intent": null,
+      "scope": "등록·선택한 추출 본문을 검색합니다. 인용 확인은 적용 대상·현행성·법적 해석을 보증하지 않습니다. 처리 경험은 공식 근거와 구분합니다.",
+      "tree": {
+        "kind": "reference",
+        "title": "기관에서 적용한 자료를 확인하세요",
+        "branches": [
+          {
+            "label": "기관에서 적용한 자료 · 원문 발췌",
+            "items": [
+              {
+                "text": "합성 제출검증기관 기능 확인용 모의 자료입니다.",
+                "ref": 1,
+                "support_quotes": [
+                  "합성 제출검증기관 기능 확인용 모의 자료입니다."
+                ]
+              },
+              {
+                "text": "검증자료 제출기한은 교육 시작 3일 전입니다.",
+                "ref": 2,
+                "support_quotes": [
+                  "검증자료 제출기한은 교육 시작 3일 전입니다."
+                ]
+              }
+            ]
+          }
+        ],
+        "note": "기관 담당자가 적용한 버전의 원문입니다. 공통 법령을 대체하거나 법적 적합성을 자동 승인한 답변은 아닙니다."
+      }
+    },
+    "guidance": {
+      "topic": "institution",
+      "title": "기관 자료 처리 방법",
+      "context": "합성 제출검증기관 검증자료 제출 기한은?",
+      "questions": [],
+      "steps": [
+        {
+          "id": "scope",
+          "title": "상황과 적용 기준 확인",
+          "detail": "기관·업무 종류와 현재 처리 단계를 알려주세요.",
+          "kind": "preparation"
+        },
+        {
+          "id": "materials",
+          "title": "근거·서식 확인",
+          "detail": "질문에 직접 답하는 규정·지침·매뉴얼을 등록하면 원문을 확인할 수 있어요.",
+          "kind": "preparation"
+        }
+      ],
+      "deadlines": [],
+      "forms": [],
+      "service_guide": {
+        "evidence": [],
+        "coverage": {
+          "guide_pages": 10,
+          "faq_questions": 26
+        },
+        "notice": "국가공무원 제도 설명·FAQ의 보관본입니다. 확인일은 수집일이며 답변의 개정일을 뜻하지 않아요. 실제 적용·일수·예외는 현행 법령과 기관 기준을 확인하세요.",
+        "problems": []
+      },
+      "manual": {
+        "evidence": [],
+        "scope": "",
+        "notice": "이 업무에 맞는 시스템 매뉴얼을 등록하면 사용법을 연결할 수 있어요."
+      },
+      "ai_requested": false,
+      "ai_used": false,
+      "notice": "진행 순서는 실무 준비 제안입니다. 법정 기한·필수 서류·적용 조건은 아래 등록 근거에서 확인하세요.",
+      "map": {
+        "nodes": [
+          {
+            "id": "topic:institution",
+            "label": "institution",
+            "kind": "topic"
+          },
+          {
+            "id": "step:institution:scope",
+            "label": "상황과 적용 기준 확인",
+            "kind": "preparation"
+          },
+          {
+            "id": "step:institution:materials",
+            "label": "근거·서식 확인",
+            "kind": "preparation"
+          },
+          {
+            "id": "source:institution:84571f39db4e4820b822f5e054f2fdd3",
+            "label": "[합성 예제] 교육자료 제출 안내",
+            "kind": "institution_rule",
+            "sha256": "c1b5011a7a878f1294debccbabc80f079f79fc2a2821515dcbda95684f3c21b3",
+            "loc": "5행 · v1",
+            "page": null
+          }
+        ],
+        "edges": [
+          {
+            "source": "topic:institution",
+            "target": "step:institution:scope",
+            "relation": "준비 순서"
+          },
+          {
+            "source": "topic:institution",
+            "target": "step:institution:materials",
+            "relation": "준비 순서"
+          },
+          {
+            "source": "topic:institution",
+            "target": "source:institution:84571f39db4e4820b822f5e054f2fdd3",
+            "relation": "검색된 자료"
+          }
+        ],
+        "note": "자료의 관련을 보여줍니다. 법적 적용 관계를 자동 판정한 결과는 아닙니다."
+      }
+    }
+  },
+  "answer_v2": {
+    "query": "합성 제출검증기관 검증자료 제출 기한은?",
+    "mode": "structured_guidance",
+    "model": null,
+    "profile": null,
+    "summary": "등록 자료로 처리 방법을 함께 확인해요.",
+    "answer": "합성 제출검증기관 기능 확인용 모의 자료입니다. [근거 1]\n\n검증자료 제출기한은 교육 시작 5일 전입니다. [근거 2]",
+    "notice": "",
+    "plan": null,
+    "alternatives": [],
+    "cited": [],
+    "related": [],
+    "personal_notes": [],
+    "knowledge": {
+      "evidence": [
+        {
+          "id": "institution:84571f39db4e4820b822f5e054f2fdd3:d8d4bf06cb0647d0baac32a60c004e9f:3",
+          "source_id": "institution:84571f39db4e4820b822f5e054f2fdd3",
+          "title": "[합성 예제] 교육자료 제출 안내",
+          "text": "합성 제출검증기관 기능 확인용 모의 자료입니다.",
+          "loc": "5행 · v2",
+          "sha256": "5c1f0b6b4f2c31d64f7086338ab74fa49629f2c5ad58fd9b7c5e82f8cf42656c",
+          "official": null,
+          "limited": false,
+          "kind": "기관 지침",
+          "institution": "합성 제출검증기관",
+          "effective_date": "2026-01-01",
+          "library_id": "institution-rules",
+          "file_id": "84571f39db4e4820b822f5e054f2fdd3",
+          "reference_kind": "institution_rule",
+          "managed_rule_id": "84571f39db4e4820b822f5e054f2fdd3",
+          "managed_version_id": "d8d4bf06cb0647d0baac32a60c004e9f",
+          "managed_version_number": 2,
+          "scope_notes": "실제 법령·지침이 아닌 제출 기능 검증용 합성 자료",
+          "score": 7.453875976334364,
+          "quote": "합성 제출검증기관 기능 확인용 모의 자료입니다."
+        },
+        {
+          "id": "institution:84571f39db4e4820b822f5e054f2fdd3:d8d4bf06cb0647d0baac32a60c004e9f:1",
+          "source_id": "institution:84571f39db4e4820b822f5e054f2fdd3",
+          "title": "[합성 예제] 교육자료 제출 안내",
+          "text": "검증자료 제출기한은 교육 시작 5일 전입니다.",
+          "loc": "2행 · v2",
+          "sha256": "5c1f0b6b4f2c31d64f7086338ab74fa49629f2c5ad58fd9b7c5e82f8cf42656c",
+          "official": null,
+          "limited": false,
+          "kind": "기관 지침",
+          "institution": "합성 제출검증기관",
+          "effective_date": "2026-01-01",
+          "library_id": "institution-rules",
+          "file_id": "84571f39db4e4820b822f5e054f2fdd3",
+          "reference_kind": "institution_rule",
+          "managed_rule_id": "84571f39db4e4820b822f5e054f2fdd3",
+          "managed_version_id": "d8d4bf06cb0647d0baac32a60c004e9f",
+          "managed_version_number": 2,
+          "scope_notes": "실제 법령·지침이 아닌 제출 기능 검증용 합성 자료",
+          "score": 6.00347378164868,
+          "quote": "검증자료 제출기한은 교육 시작 5일 전입니다."
+        }
+      ],
+      "experiences": [],
+      "excluded": [],
+      "mode": "source_search",
+      "model": null,
+      "notice": "",
+      "answer": "합성 제출검증기관 기능 확인용 모의 자료입니다. [근거 1]\n\n검증자료 제출기한은 교육 시작 5일 전입니다. [근거 2]",
+      "intent": null,
+      "scope": "등록·선택한 추출 본문을 검색합니다. 인용 확인은 적용 대상·현행성·법적 해석을 보증하지 않습니다. 처리 경험은 공식 근거와 구분합니다.",
+      "tree": {
+        "kind": "reference",
+        "title": "기관에서 적용한 자료를 확인하세요",
+        "branches": [
+          {
+            "label": "기관에서 적용한 자료 · 원문 발췌",
+            "items": [
+              {
+                "text": "합성 제출검증기관 기능 확인용 모의 자료입니다.",
+                "ref": 1,
+                "support_quotes": [
+                  "합성 제출검증기관 기능 확인용 모의 자료입니다."
+                ]
+              },
+              {
+                "text": "검증자료 제출기한은 교육 시작 5일 전입니다.",
+                "ref": 2,
+                "support_quotes": [
+                  "검증자료 제출기한은 교육 시작 5일 전입니다."
+                ]
+              }
+            ]
+          }
+        ],
+        "note": "기관 담당자가 적용한 버전의 원문입니다. 공통 법령을 대체하거나 법적 적합성을 자동 승인한 답변은 아닙니다."
+      }
+    },
+    "guidance": {
+      "topic": "institution",
+      "title": "기관 자료 처리 방법",
+      "context": "합성 제출검증기관 검증자료 제출 기한은?",
+      "questions": [],
+      "steps": [
+        {
+          "id": "scope",
+          "title": "상황과 적용 기준 확인",
+          "detail": "기관·업무 종류와 현재 처리 단계를 알려주세요.",
+          "kind": "preparation"
+        },
+        {
+          "id": "materials",
+          "title": "근거·서식 확인",
+          "detail": "질문에 직접 답하는 규정·지침·매뉴얼을 등록하면 원문을 확인할 수 있어요.",
+          "kind": "preparation"
+        }
+      ],
+      "deadlines": [],
+      "forms": [],
+      "service_guide": {
+        "evidence": [],
+        "coverage": {
+          "guide_pages": 10,
+          "faq_questions": 26
+        },
+        "notice": "국가공무원 제도 설명·FAQ의 보관본입니다. 확인일은 수집일이며 답변의 개정일을 뜻하지 않아요. 실제 적용·일수·예외는 현행 법령과 기관 기준을 확인하세요.",
+        "problems": []
+      },
+      "manual": {
+        "evidence": [],
+        "scope": "",
+        "notice": "이 업무에 맞는 시스템 매뉴얼을 등록하면 사용법을 연결할 수 있어요."
+      },
+      "ai_requested": false,
+      "ai_used": false,
+      "notice": "진행 순서는 실무 준비 제안입니다. 법정 기한·필수 서류·적용 조건은 아래 등록 근거에서 확인하세요.",
+      "map": {
+        "nodes": [
+          {
+            "id": "topic:institution",
+            "label": "institution",
+            "kind": "topic"
+          },
+          {
+            "id": "step:institution:scope",
+            "label": "상황과 적용 기준 확인",
+            "kind": "preparation"
+          },
+          {
+            "id": "step:institution:materials",
+            "label": "근거·서식 확인",
+            "kind": "preparation"
+          },
+          {
+            "id": "source:institution:84571f39db4e4820b822f5e054f2fdd3",
+            "label": "[합성 예제] 교육자료 제출 안내",
+            "kind": "institution_rule",
+            "sha256": "5c1f0b6b4f2c31d64f7086338ab74fa49629f2c5ad58fd9b7c5e82f8cf42656c",
+            "loc": "5행 · v2",
+            "page": null
+          }
+        ],
+        "edges": [
+          {
+            "source": "topic:institution",
+            "target": "step:institution:scope",
+            "relation": "준비 순서"
+          },
+          {
+            "source": "topic:institution",
+            "target": "step:institution:materials",
+            "relation": "준비 순서"
+          },
+          {
+            "source": "topic:institution",
+            "target": "source:institution:84571f39db4e4820b822f5e054f2fdd3",
+            "relation": "검색된 자료"
+          }
+        ],
+        "note": "자료의 관련을 보여줍니다. 법적 적용 관계를 자동 판정한 결과는 아닙니다."
+      }
+    }
+  },
+  "comparison": {
+    "document_id": "84571f39db4e4820b822f5e054f2fdd3",
+    "revision": 3,
+    "before": {
+      "id": "c5ad723299054305b93854e4686504e6",
+      "number": 1,
+      "created_at": "2026-10-25T20:11:18.963420+00:00",
+      "based_on": null,
+      "sha256": "c1b5011a7a878f1294debccbabc80f079f79fc2a2821515dcbda95684f3c21b3",
+      "origin": {
+        "filename": "제출기한_v1.txt",
+        "asset": "7d945fb128d250326a0fd559109e8f72291f8016a09d1c2841728d0bee9de72a.txt",
+        "sha256": "7d945fb128d250326a0fd559109e8f72291f8016a09d1c2841728d0bee9de72a",
+        "bytes": 174
+      },
+      "units": [
+        {
+          "loc": "1행",
+          "text": "제1조(제출기한)"
+        },
+        {
+          "loc": "2행",
+          "text": "검증자료 제출기한은 교육 시작 3일 전입니다."
+        },
+        {
+          "loc": "4행",
+          "text": "제2조(적용범위)"
+        },
+        {
+          "loc": "5행",
+          "text": "합성 제출검증기관 기능 확인용 모의 자료입니다."
+        }
+      ],
+      "title": "[합성 예제] 교육자료 제출 안내",
+      "institution": "합성 제출검증기관",
+      "kind": "기관 지침",
+      "keywords": [
+        "검증자료 제출"
+      ],
+      "text": "제1조(제출기한)\n검증자료 제출기한은 교육 시작 3일 전입니다.\n제2조(적용범위)\n합성 제출검증기관 기능 확인용 모의 자료입니다.",
+      "effective_date": "2026-01-01",
+      "scope_notes": "실제 법령·지침이 아닌 제출 기능 검증용 합성 자료",
+      "change_note": ""
+    },
+    "after": {
+      "id": "d8d4bf06cb0647d0baac32a60c004e9f",
+      "number": 2,
+      "created_at": "2026-10-25T20:11:19.332437+00:00",
+      "based_on": null,
+      "sha256": "5c1f0b6b4f2c31d64f7086338ab74fa49629f2c5ad58fd9b7c5e82f8cf42656c",
+      "origin": {
+        "filename": "제출기한_v2.txt",
+        "asset": "196ea1a16b91b804e58bdc6787c882c825bac71bb7bcb30734c4bd1394c90325.txt",
+        "sha256": "196ea1a16b91b804e58bdc6787c882c825bac71bb7bcb30734c4bd1394c90325",
+        "bytes": 174
+      },
+      "units": [
+        {
+          "loc": "1행",
+          "text": "제1조(제출기한)"
+        },
+        {
+          "loc": "2행",
+          "text": "검증자료 제출기한은 교육 시작 5일 전입니다."
+        },
+        {
+          "loc": "4행",
+          "text": "제2조(적용범위)"
+        },
+        {
+          "loc": "5행",
+          "text": "합성 제출검증기관 기능 확인용 모의 자료입니다."
+        }
+      ],
+      "title": "[합성 예제] 교육자료 제출 안내",
+      "institution": "합성 제출검증기관",
+      "kind": "기관 지침",
+      "keywords": [
+        "검증자료 제출"
+      ],
+      "text": "제1조(제출기한)\n검증자료 제출기한은 교육 시작 5일 전입니다.\n제2조(적용범위)\n합성 제출검증기관 기능 확인용 모의 자료입니다.",
+      "effective_date": "2026-01-01",
+      "scope_notes": "실제 법령·지침이 아닌 제출 기능 검증용 합성 자료",
+      "change_note": "기한 3일 전에서 5일 전으로 변경"
+    },
+    "changes": [
+      {
+        "tag": "equal",
+        "before_lines": [
+          "제1조(제출기한)"
+        ],
+        "after_lines": [
+          "제1조(제출기한)"
+        ]
+      },
+      {
+        "tag": "replace",
+        "before_lines": [
+          "검증자료 제출기한은 교육 시작 3일 전입니다."
+        ],
+        "after_lines": [
+          "검증자료 제출기한은 교육 시작 5일 전입니다."
+        ]
+      },
+      {
+        "tag": "equal",
+        "before_lines": [
+          "제2조(적용범위)",
+          "합성 제출검증기관 기능 확인용 모의 자료입니다."
+        ],
+        "after_lines": [
+          "제2조(적용범위)",
+          "합성 제출검증기관 기능 확인용 모의 자료입니다."
+        ]
+      }
+    ],
+    "metadata_changes": []
+  }
+}

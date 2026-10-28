@@ -1,0 +1,13 @@
+{
+  "version": "v81",
+  "sha256": "6429d4e3b9ea97cd54ba6c67fa3449efaca6424bff34fa7984fa26f89f41ba4c",
+  "bytes": 128443497,
+  "files_verified": 955,
+  "registered_sources": 123,
+  "crc_verified": true,
+  "manifest_hashes_verified": true,
+  "api_key_excluded": true,
+  "private_runtime_excluded": true,
+  "fresh_install": "same Windows PC, isolated venv and DB",
+  "local_model_inference_retested": false
+}

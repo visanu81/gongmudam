@@ -1,0 +1,37 @@
+건강검진 복무 안내: 결론을 먼저 표시
+검증일: 2026-10-26
+
+재현 질문: 근무일에 건강검진 다녀와야하는데 복무처리는 어떤걸로 상신해야할까
+원인: 공가 근거는 검색했으나 요약이 '사유예요/검토해요'에 머물러 신청 종류가 불명확했다.
+변경: 국가직·지방직 건강검진 요약을 '법정 건강검진이라면 공가로 상신'으로 시작한다.
+신청할 복무, 직접 필요한 기간·시간, 개인 선택 검진 등의 확인 조건을 구분한다.
+소속 미설정 시 기존 지방공무원 조문 선택은 유지하며 적용 범위를 요약 하단에 명시한다.
+검색 순위, 지급 계산, 원문·출처 해시는 변경하지 않았다.
+
+현행 원문 확인:
+국가공무원 복무규정 제19조 제7호 (2026-10-02 시행)
+https://www.law.go.kr/LSW/lsSideInfoP.do?docCls=jo&joBrNo=00&joNo=0019&lsiSeq=290349&urlMode=lsScJoRltInfoR
+지방공무원 복무규정 제7조의6 제5호 (2026-10-02 시행)
+https://www.law.go.kr/LSW/lsSideInfoP.do?docCls=jo&joBrNo=06&joNo=0007&lsiSeq=290493&urlMode=lsScJoRltInfoR
+
+검증: unittest 32개 통과
+test_health_answer_action, test_family_care_sources, test_answer_tree, test_knowledge_intent, test_guidance
+AI 호출 차단 상태에서 동일 질문/국가직/지방직, 개인 종합검진 조건, 자녀 동행 구분, 근거 소실·변경 보호를 확인했다.
+로컬 8787 서버 반영 후 실제 B안 화면에서 동일 문장 입력, AI 미사용 표시 및 근거 버튼의 제7조의6 원문 표시를 확인했다.
+증거: docs/evidence/health-answer-20261026/live-answer.json 및 answer.png
+Graphify: 210개 파일, 3574개 노드, 10508개 연결로 지도 갱신 완료.
+최초 수정은 로컬 앱에만 적용했다. 아래 후속 작업으로 공개 사이트에도 반영했다.
+
+공유 사이트 후속 반영 (2026-10-26 20:13 KST)
+공유 Workers /api/ask에서 같은 질문이 이전 health-leave 제목을 반환하는 것을 재현했다.
+원인: 로컬 개발본과 별도의 공개 v74 런타임이 실행 중이었다.
+공개 실행본의 건강검진 JSON 규칙 하나와 service_legal_summary.py만 갱신했다.
+변경 관리 파일의 해시 및 실행본 확인 값도 함께 갱신했다. 기반 버전 v74는 그대로 두고 hotfix=health-answer-20261026을 기록했다.
+기존 등록 자료·업무 DB의 파일 해시는 수정 전후 동일했다. 개인 DB나 다른 개발 변경은 복사하지 않았다.
+백업: .local-runtime/backups/health-answer-20261026T111211Z
+적용 도구: .local-verification/apply_health_hotfix.py (서버 종료 검사·백업·업데이트 잠금·실패 복원)
+기존 실행기로 공개 서버 8892를 재시작했고 기존 터널을 재사용했다.
+공유 /api/ask에서 소속 미지정·국가직·지방직 세 질문 모두 새 제목·각 조문·AI 미사용을 확인했다.
+공유 B안 실제 화면에서도 동일 질문의 새 답변과 국가공무원 복무규정 제19조 원문 열기를 확인했다.
+증거: docs/evidence/health-answer-20261026/public-answers.json, public-answer.png
+제출용 패키지와 공개 사이트의 다른 최신 기능은 이번 건강검진 수정과 별도다.

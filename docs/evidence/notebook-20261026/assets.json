@@ -1,0 +1,10 @@
+{
+  "http://127.0.0.1:8787": {
+    "folder-projects.js": true,
+    "folder-projects.css": true
+  },
+  "https://gongmudam.visanu81.workers.dev": {
+    "folder-projects.js": true,
+    "folder-projects.css": true
+  }
+}

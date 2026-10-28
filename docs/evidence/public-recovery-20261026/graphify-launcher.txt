@@ -1,0 +1,45 @@
+{
+  "fresh": true,
+  "workspace": "C:\\AI작업\\프로그램 제작\\work\\graphify-gongmudam-launcher",
+  "graph": "C:\\AI작업\\프로그램 제작\\work\\graphify-gongmudam-launcher\\graphify-out\\graph.html",
+  "source_files": 18,
+  "added": [],
+  "changed": [],
+  "removed": [],
+  "artifacts_match": true,
+  "copy_matches": true,
+  "refresh_incomplete": false,
+  "runtime_available": true,
+  "updated_at": "2026-10-26T10:48:46.768935+00:00",
+  "rebuilt": true,
+  "build_output": "{\"files\": 18, \"nodes\": 206, \"edges\": 451, \"model_tokens\": 0}"
+}
+Graph: graphify-out/graph.json (206 nodes) | Traversal: BFS depth=2 | Start: ['prepare_public_runtime.py', 'prepare()', 'test_prepare_public_runtime.py', 'Launcher', 'ensure_demo_library()', 'PublicModelBudget', 'RuntimeUpgradeTests', 'test_integration.py', '.ensure_server()', '.test_selection_counter_allowed_but_other_changes_still_checked()', 'permit_bundled_public_sources()', '.test_release_uses_its_own_first_run_guide_and_validation()'] | 164 nodes found
+
+[!] TRUNCATED: showing 23 of 164 nodes (~800-token budget). The answer may be among the 141 cut nodes — raise the token budget to 5851 to get all 164 (CLI: --budget 5851, MCP: token_budget=5851) or narrow the query (e.g. context_filter=['call'], or get_node for a specific symbol).
+
+NODE prepare_public_runtime.py [src=tools/prepare_public_runtime.py loc=L1 community= / build_submission_bundle]
+NODE prepare() [src=tools/prepare_public_runtime.py loc=L15 community= / build_submission_bundle]
+NODE test_prepare_public_runtime.py [src=tests/test_prepare_public_runtime.py loc=L1 community=upgrade_public_runtime / ]
+NODE Launcher [src=tools/launch_gongmudam.py loc=L120 community=launch_gongmudam / test_launcher]
+NODE ensure_demo_library() [src=integration/application.py loc=L162 community=application / test_integration]
+NODE PublicModelBudget [src=integration/application.py loc=L93 community=application / test_integration]
+NODE RuntimeUpgradeTests [src=tests/test_runtime_upgrade.py loc=L22 community=test_runtime_upgrade]
+NODE test_integration.py [src=tests/test_integration.py loc=L1 community=application / test_integration]
+NODE .ensure_server() [src=tools/launch_gongmudam.py loc=L151 community=launch_gongmudam / test_launcher]
+NODE .test_selection_counter_allowed_but_other_changes_still_checked() [src=tests/test_integration.py loc=L138 community=application / test_integration]
+NODE permit_bundled_public_sources() [src=integration/application.py loc=L125 community=application / test_integration]
+NODE .test_release_uses_its_own_first_run_guide_and_validation() [src=tests/test_submission_bundle.py loc=L79 community=test_submission_bundle]
+NODE launch_gongmudam.py [src=tools/launch_gongmudam.py loc=L1 community=launch_gongmudam / test_launcher]
+NODE json [src= loc= community=upgrade_public_runtime / ]
+NODE application.py [src=integration/application.py loc=L1 community=application / test_integration]
+NODE hashlib [src= loc= community= / build_submission_bundle]
+NODE pathlib [src= loc= community=upgrade_public_runtime / ]
+NODE create_app() [src=integration/application.py loc=L184 community=application / test_integration]
+NODE shutil [src= loc= community= / build_submission_bundle]
+NODE PreservePublicRuntimeTests [src=tests/test_prepare_public_runtime.py loc=L10 community=test_prepare_public_runtime]
+NODE test_runtime_upgrade.py [src=tests/test_runtime_upgrade.py loc=L1 community=upgrade_public_runtime / ]
+NODE EmbeddedPages [src=integration/application.py loc=L45 community=test_integration / application]
+NODE EmbedTests [src=tests/test_integration.py loc=L43 community=test_integration / application]
+... (truncated — 141 more nodes cut by ~800-token budget. Narrow with context_filter=['call'] or use get_node for a specific symbol)
+

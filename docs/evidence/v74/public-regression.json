@@ -1,0 +1,8 @@
+{
+  "/api/gongmudam/status": 200,
+  "/api/workspace/recent": 200,
+  "/api/travel/cases": 200,
+  "/api/adhoc/jobs": 200,
+  "/api/calendar/agenda": 200,
+  "/api/folders/libraries": 200
+}

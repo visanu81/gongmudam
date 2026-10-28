@@ -1,0 +1,22 @@
+{
+  "version": "v75",
+  "archive": "공무담_다른PC_제출패키지_v75.zip",
+  "sha256": "a018bc0c064eb24a888851e7f5ed9678a580c7190d1379cc59e197fe9e9e4523",
+  "bytes": 124163326,
+  "files": 656,
+  "sources": 36,
+  "manuals": 6,
+  "manual_pages": 221,
+  "zip_crc_and_all_hashes": true,
+  "tested_runtime_matches_final_package": true,
+  "private_runtime_excluded": true,
+  "same_pc_fresh_install": true,
+  "physical_other_pc_test": false,
+  "tests": {
+    "service": 818,
+    "root_python": 19,
+    "root_node": 31,
+    "service_node": 25
+  },
+  "previous_v74_preserved": true
+}

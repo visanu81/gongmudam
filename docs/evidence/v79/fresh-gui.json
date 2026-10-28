@@ -1,0 +1,10 @@
+{
+  "release": "v79",
+  "base": "http://127.0.0.1:8899",
+  "b_design": true,
+  "ai_checkbox_off": true,
+  "receipt_summary": true,
+  "receipt_article18_source_effective_date_and_hash": true,
+  "drafting_summary": true,
+  "no_institution_setup_required": true
+}

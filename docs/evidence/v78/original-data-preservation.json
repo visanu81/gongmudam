@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "checks": {
+    "adhoc.db": true,
+    "calendar.db": true,
+    "folders.db": true,
+    "regulation-monitor.db": true,
+    "seomu.db": true,
+    "travel.db": true,
+    "config_unchanged": true
+  }
+}

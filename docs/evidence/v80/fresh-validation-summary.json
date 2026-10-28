@@ -1,0 +1,22 @@
+{
+  "release": "v80",
+  "date": "2026-10-27",
+  "fresh_install_passed": true,
+  "sources": 123,
+  "manuals": 6,
+  "manual_pages": 221,
+  "tests_passed": 108,
+  "notebook_questions": 6,
+  "office_questions": 23,
+  "original_articles": 10,
+  "actual_model_calls": 0,
+  "physical_second_pc_test": false,
+  "server_restart_test": "not_performed_approval_review_blocked",
+  "runtime_changes_since_fresh_test": false,
+  "graphify": {
+    "fresh": true,
+    "source_files": 212,
+    "rebuilt": false,
+    "packaging_tools_outside_map": true
+  }
+}

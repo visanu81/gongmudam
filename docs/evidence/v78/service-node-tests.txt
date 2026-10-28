@@ -1,0 +1,45 @@
+✔ one-day event displays inclusive last day and saves original interval (2.7563ms)
+✔ multi-day event displays inclusive last day and saves original interval (0.4649ms)
+✔ month boundary displays inclusive last day and saves original interval (0.4677ms)
+✔ leap-day boundary displays inclusive last day and saves original interval (0.249ms)
+✔ year boundary displays inclusive last day and saves original interval (0.2565ms)
+✔ new one-day inclusive input has one-day API duration (0.2861ms)
+✔ last day before first day fails validation (0.3169ms)
+✔ empty end remains missing rather than becoming an invalid generated date (0.3939ms)
+✔ timed UTC input remains KST timed and does not get an extra day (47.332ms)
+✔ recurring series retains interval, anchor and inclusive repeat-until (0.7424ms)
+✔ editing one recurring occurrence keeps its original one-day interval (0.7709ms)
+✔ repeated midnight timed/all-day toggles preserve the original timed interval (1.4846ms)
+✔ home calendar links focus the intended month/day/week across date boundaries (4.9769ms)
+✔ structured guidance can be saved with separate legal and e-Saram evidence (133.2134ms)
+✔ public_read_only false stays editable while true disables mutations (43.3929ms)
+✔ selecting a rule opens the newest version even when an older version is active (4.0828ms)
+✔ URL rule and cited version select the matching version, falling back to newest when missing (5.4819ms)
+✔ chat is disabled with an explanation when the rule has no active version (3.218ms)
+✔ inactive rule labels its retained active version as the last applied version (1.9712ms)
+✔ list refresh preserves the current version and balances an overlapping stale request (1.592ms)
+✔ category filters count visible records and retain the active editor and dirty edits (4.6131ms)
+✔ legacy category defaults to 미분류 and selected category seeds a new form (2.5402ms)
+✔ managed manual can open its registered references from start (6.1376ms)
+✔ ordinary recent work links retained and untrusted links rejected (2.2145ms)
+✔ registered manual card offers original PDF without empty preview detour (12.721ms)
+✔ service guide quotes are escaped and only approved URLs become links (196.0005ms)
+✔ service guide section is omitted when evidence is absent (3.2505ms)
+✔ institution scope labels validated organization names and escapes supplied text (6.8372ms)
+✔ missing or malformed institution scope leaves the guidance heading unchanged (48.8666ms)
+✔ institution rule evidence replaces generic preparation and empty-deadline copy only for institution guidance (16.0828ms)
+✔ managed institution forms link only to the local original and derive a fixed manager link (5.9046ms)
+✔ shipped empty toolbox root bootstraps admin tiles; a placeholder child suppresses the initial render (8.4374ms)
+✔ follow-up travels through deterministic guidance with user context (71.2629ms)
+✔ clear drops prior facts and AI is opt-in per request (14.6226ms)
+✔ explicit procedure selection retains legacy request flow (3.9244ms)
+✔ task helper does not synthesize answers or bypass registered sources (3.3848ms)
+✔ trip extraction prefills explicit vehicle and lodging without guessing dates (51.7236ms)
+ℹ tests 37
+ℹ suites 0
+ℹ pass 37
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1956.5959

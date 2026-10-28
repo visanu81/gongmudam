@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "checks": {
+    "folder-projects.css": {
+      "local": true,
+      "shared": true,
+      "fresh": true
+    },
+    "folder-projects.js": {
+      "local": true,
+      "shared": true,
+      "fresh": true
+    },
+    "html_local_matches_fresh": true
+  },
+  "shared_tunnel_reconnected": true,
+  "note": "HTML is transformed by integration server; static CSS and JS compared byte-for-byte"
+}

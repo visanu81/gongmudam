@@ -1,0 +1,39 @@
+{
+  "scope": "isolated upgraded runtime using real PC Ollama; public settings untouched",
+  "results": [
+    {
+      "profile": "local_gemma",
+      "connection_check": true,
+      "request_model": "gemma3:4b",
+      "response_model": "gemma3:4b",
+      "real_local_model_calls": 1,
+      "elapsed_seconds": 23.09,
+      "ai_used": true,
+      "fallback_notice": "",
+      "query": "국가공무원 출장 일비는 얼마야?",
+      "evidence_titles": [
+        "공무원 여비 규정 제16조(일비ㆍ숙박비ㆍ식비의 지급)",
+        "공무원 여비 규정 별표 2 국내 여비 지급표"
+      ],
+      "passed": true
+    },
+    {
+      "profile": "local_llama",
+      "connection_check": true,
+      "request_model": "llama3.2:3b",
+      "response_model": "llama3.2:3b",
+      "real_local_model_calls": 1,
+      "elapsed_seconds": 20.29,
+      "ai_used": false,
+      "fallback_notice": "로컬 AI 응답을 확인하지 못해 검색 원문을 표시합니다.",
+      "query": "국가공무원 출장 일비는 얼마야?",
+      "evidence_titles": [
+        "공무원 여비 규정 제16조(일비ㆍ숙박비ㆍ식비의 지급)",
+        "공무원 여비 규정 별표 2 국내 여비 지급표"
+      ],
+      "passed": true
+    }
+  ],
+  "config_restored": true,
+  "long_child_question_initial_attempt": "Gemma 30s timeout; deterministic original-source fallback worked; see two-model.log"
+}

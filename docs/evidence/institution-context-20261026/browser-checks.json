@@ -1,0 +1,16 @@
+{
+  "actual_browser": "공무담 B안 · http://127.0.0.1:8787",
+  "affiliation_without_org_keyword": true,
+  "ai_checkbox_off": true,
+  "followup_form_link": true,
+  "followup_required_fields": true,
+  "original_version_and_sha": true,
+  "category_filter": true,
+  "category_change_draft_keeps_applied_category": true,
+  "category_change_apply_updates_counts": true,
+  "old_version_preserved": true,
+  "keyboard_enter_filter": true,
+  "empty_category_message": true,
+  "affiliation_restored_to_unset": true,
+  "synthetic_materials_disabled": true
+}

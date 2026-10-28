@@ -1,0 +1,30 @@
+Windows 기본 인코딩 실행 로그를 UTF-8로 변환했습니다.
+Looking in links: wheels
+Processing c:\ai占쌜억옙\占쏙옙占싸그뤄옙 占쏙옙占쏙옙\gongmudam\.local-verification\v77 占쏙옙 pc 占쏙옙치 占쏙옙占쏙옙\占쏙옙占쏙옙占쏙옙\service\wheels\annotated_doc-0.0.5-py3-none-any.whl (from -r requirements-travel.lock.txt (line 1))
+Processing c:\ai占쌜억옙\占쏙옙占싸그뤄옙 占쏙옙占쏙옙\gongmudam\.local-verification\v77 占쏙옙 pc 占쏙옙치 占쏙옙占쏙옙\占쏙옙占쏙옙占쏙옙\service\wheels\annotated_types-0.8.0-py3-none-any.whl (from -r requirements-travel.lock.txt (line 2))
+Processing c:\ai占쌜억옙\占쏙옙占싸그뤄옙 占쏙옙占쏙옙\gongmudam\.local-verification\v77 占쏙옙 pc 占쏙옙치 占쏙옙占쏙옙\占쏙옙占쏙옙占쏙옙\service\wheels\anyio-4.15.1-py3-none-any.whl (from -r requirements-travel.lock.txt (line 3))
+Processing c:\ai占쌜억옙\占쏙옙占싸그뤄옙 占쏙옙占쏙옙\gongmudam\.local-verification\v77 占쏙옙 pc 占쏙옙치 占쏙옙占쏙옙\占쏙옙占쏙옙占쏙옙\service\wheels\certifi-2026.7.22-py3-none-any.whl (from -r requirements-travel.lock.txt (line 4))
+Processing c:\ai占쌜억옙\占쏙옙占싸그뤄옙 占쏙옙占쏙옙\gongmudam\.local-verification\v77 占쏙옙 pc 占쏙옙치 占쏙옙占쏙옙\占쏙옙占쏙옙占쏙옙\service\wheels\click-8.5.0-py3-none-any.whl (from -r requirements-travel.lock.txt (line 5))
+Processing c:\ai占쌜억옙\占쏙옙占싸그뤄옙 占쏙옙占쏙옙\gongmudam\.local-verification\v77 占쏙옙 pc 占쏙옙치 占쏙옙占쏙옙\占쏙옙占쏙옙占쏙옙\service\wheels\et_xmlfile-2.0.0-py3-none-any.whl (from -r requirements-travel.lock.txt (line 6))
+Processing c:\ai占쌜억옙\占쏙옙占싸그뤄옙 占쏙옙占쏙옙\gongmudam\.local-verification\v77 占쏙옙 pc 占쏙옙치 占쏙옙占쏙옙\占쏙옙占쏙옙占쏙옙\service\wheels\fastapi-0.143.5-py3-none-any.whl (from -r requirements-travel.lock.txt (line 7))
+Processing c:\ai占쌜억옙\占쏙옙占싸그뤄옙 占쏙옙占쏙옙\gongmudam\.local-verification\v77 占쏙옙 pc 占쏙옙치 占쏙옙占쏙옙\占쏙옙占쏙옙占쏙옙\service\wheels\h11-0.16.0-py3-none-any.whl (from -r requirements-travel.lock.txt (line 8))
+Processing c:\ai占쌜억옙\占쏙옙占싸그뤄옙 占쏙옙占쏙옙\gongmudam\.local-verification\v77 占쏙옙 pc 占쏙옙치 占쏙옙占쏙옙\占쏙옙占쏙옙占쏙옙\service\wheels\httpcore-1.0.9-py3-none-any.whl (from -r requirements-travel.lock.txt (line 9))
+Processing c:\ai占쌜억옙\占쏙옙占싸그뤄옙 占쏙옙占쏙옙\gongmudam\.local-verification\v77 占쏙옙 pc 占쏙옙치 占쏙옙占쏙옙\占쏙옙占쏙옙占쏙옙\service\wheels\httpx-0.28.1-py3-none-any.whl (from -r requirements-travel.lock.txt (line 10))
+Processing c:\ai占쌜억옙\占쏙옙占싸그뤄옙 占쏙옙占쏙옙\gongmudam\.local-verification\v77 占쏙옙 pc 占쏙옙치 占쏙옙占쏙옙\占쏙옙占쏙옙占쏙옙\service\wheels\idna-3.20-py3-none-any.whl (from -r requirements-travel.lock.txt (line 11))
+Processing c:\ai占쌜억옙\占쏙옙占싸그뤄옙 占쏙옙占쏙옙\gongmudam\.local-verification\v77 占쏙옙 pc 占쏙옙치 占쏙옙占쏙옙\占쏙옙占쏙옙占쏙옙\service\wheels\lxml-6.1.3-cp312-cp312-win_amd64.whl (from -r requirements-travel.lock.txt (line 12))
+Processing c:\ai占쌜억옙\占쏙옙占싸그뤄옙 占쏙옙占쏙옙\gongmudam\.local-verification\v77 占쏙옙 pc 占쏙옙치 占쏙옙占쏙옙\占쏙옙占쏙옙占쏙옙\service\wheels\olefile-0.47-py2.py3-none-any.whl (from -r requirements-travel.lock.txt (line 13))
+Processing c:\ai占쌜억옙\占쏙옙占싸그뤄옙 占쏙옙占쏙옙\gongmudam\.local-verification\v77 占쏙옙 pc 占쏙옙치 占쏙옙占쏙옙\占쏙옙占쏙옙占쏙옙\service\wheels\openpyxl-3.1.5-py2.py3-none-any.whl (from -r requirements-travel.lock.txt (line 14))
+Processing c:\ai占쌜억옙\占쏙옙占싸그뤄옙 占쏙옙占쏙옙\gongmudam\.local-verification\v77 占쏙옙 pc 占쏙옙치 占쏙옙占쏙옙\占쏙옙占쏙옙占쏙옙\service\wheels\opentelemetry_api-1.45.1-py3-none-any.whl (from -r requirements-travel.lock.txt (line 15))
+Processing c:\ai占쌜억옙\占쏙옙占싸그뤄옙 占쏙옙占쏙옙\gongmudam\.local-verification\v77 占쏙옙 pc 占쏙옙치 占쏙옙占쏙옙\占쏙옙占쏙옙占쏙옙\service\wheels\pydantic-2.14.1-py3-none-any.whl (from -r requirements-travel.lock.txt (line 16))
+Processing c:\ai占쌜억옙\占쏙옙占싸그뤄옙 占쏙옙占쏙옙\gongmudam\.local-verification\v77 占쏙옙 pc 占쏙옙치 占쏙옙占쏙옙\占쏙옙占쏙옙占쏙옙\service\wheels\pydantic_core-2.50.1-cp312-cp312-win_amd64.whl (from -r requirements-travel.lock.txt (line 17))
+Processing c:\ai占쌜억옙\占쏙옙占싸그뤄옙 占쏙옙占쏙옙\gongmudam\.local-verification\v77 占쏙옙 pc 占쏙옙치 占쏙옙占쏙옙\占쏙옙占쏙옙占쏙옙\service\wheels\pypdf-6.21.1-py3-none-any.whl (from -r requirements-travel.lock.txt (line 18))
+Processing c:\ai占쌜억옙\占쏙옙占싸그뤄옙 占쏙옙占쏙옙\gongmudam\.local-verification\v77 占쏙옙 pc 占쏙옙치 占쏙옙占쏙옙\占쏙옙占쏙옙占쏙옙\service\wheels\python_docx-1.2.0-py3-none-any.whl (from -r requirements-travel.lock.txt (line 19))
+Processing c:\ai占쌜억옙\占쏙옙占싸그뤄옙 占쏙옙占쏙옙\gongmudam\.local-verification\v77 占쏙옙 pc 占쏙옙치 占쏙옙占쏙옙\占쏙옙占쏙옙占쏙옙\service\wheels\python_multipart-0.0.32-py3-none-any.whl (from -r requirements-travel.lock.txt (line 20))
+Processing c:\ai占쌜억옙\占쏙옙占싸그뤄옙 占쏙옙占쏙옙\gongmudam\.local-verification\v77 占쏙옙 pc 占쏙옙치 占쏙옙占쏙옙\占쏙옙占쏙옙占쏙옙\service\wheels\starlette-1.8.0-py3-none-any.whl (from -r requirements-travel.lock.txt (line 21))
+Processing c:\ai占쌜억옙\占쏙옙占싸그뤄옙 占쏙옙占쏙옙\gongmudam\.local-verification\v77 占쏙옙 pc 占쏙옙치 占쏙옙占쏙옙\占쏙옙占쏙옙占쏙옙\service\wheels\typing_inspection-0.4.4-py3-none-any.whl (from -r requirements-travel.lock.txt (line 22))
+Processing c:\ai占쌜억옙\占쏙옙占싸그뤄옙 占쏙옙占쏙옙\gongmudam\.local-verification\v77 占쏙옙 pc 占쏙옙치 占쏙옙占쏙옙\占쏙옙占쏙옙占쏙옙\service\wheels\typing_extensions-4.16.0-py3-none-any.whl (from -r requirements-travel.lock.txt (line 23))
+Processing c:\ai占쌜억옙\占쏙옙占싸그뤄옙 占쏙옙占쏙옙\gongmudam\.local-verification\v77 占쏙옙 pc 占쏙옙치 占쏙옙占쏙옙\占쏙옙占쏙옙占쏙옙\service\wheels\uvicorn-0.54.0-py3-none-any.whl (from -r requirements-travel.lock.txt (line 24))
+Installing collected packages: typing_extensions, python-multipart, pypdf, olefile, lxml, idna, h11, et_xmlfile, click, certifi, annotated-types, annotated-doc, uvicorn, typing-inspection, python-docx, pydantic_core, opentelemetry-api, openpyxl, httpcore, anyio, starlette, pydantic, httpx, fastapi
+Successfully installed annotated-doc-0.0.5 annotated-types-0.8.0 anyio-4.15.1 certifi-2026.7.22 click-8.5.0 et_xmlfile-2.0.0 fastapi-0.143.5 h11-0.16.0 httpcore-1.0.9 httpx-0.28.1 idna-3.20 lxml-6.1.3 olefile-0.47 openpyxl-3.1.5 opentelemetry-api-1.45.1 pydantic-2.14.1 pydantic_core-2.50.1 pypdf-6.21.1 python-docx-1.2.0 python-multipart-0.0.32 starlette-1.8.0 typing-inspection-0.4.4 typing_extensions-4.16.0 uvicorn-0.54.0
+No broken requirements found.
+{"status": "restored", "sources": 86, "bundle_sha256": "abbaf4fa87bc048f9c8ea44918f2e86c818cba6e6f614a40c9ac6d82aa4e70f1"}

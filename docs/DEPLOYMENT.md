@@ -2,7 +2,7 @@
 
 공개 주소: **https://gongmudam.visanu81.workers.dev**
 
-2026-10-24 Workers 배포와 B안의 기존 v69 기능 연결을 완료했습니다. Python 서버 자체를 Workers로 이식한 배포는 아닙니다.
+2026-10-24 Workers 배포와 B안의 v70 기능·자료 연결을 완료했습니다. Python 서버 자체를 Workers로 이식한 배포는 아닙니다.
 
 ```text
 방문자 → Workers 정적 B안
@@ -48,3 +48,5 @@
 Workers도 Python/FastAPI를 지원합니다. 현재 앱의 SQLite·파일·폴더 감시·AI를 옮기려면 영속 DB·첨부 저장소·실행 환경을 이식해야 합니다. 실제 기관 업무 운영에는 사용자별 데이터와 인증 분리도 필요합니다.
 
 공식 문서: [Workers의 FastAPI](https://developers.cloudflare.com/workers/languages/python/packages/fastapi/), [VPC 서비스](https://developers.cloudflare.com/workers-vpc/configuration/vpc-services/), [Tunnel](https://developers.cloudflare.com/workers-vpc/configuration/tunnel/).
+
+최신 통합 검증과 기존 실행본 갱신 절차는 [v70 기록](INTEGRATION-v70-20261024.txt)을 참고하세요.

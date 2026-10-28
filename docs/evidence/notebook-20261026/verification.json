@@ -1,0 +1,49 @@
+{
+  "checks": [
+    {
+      "base": "http://127.0.0.1:8787",
+      "project_id": "daa517e9bdca41929d20756bf55f3490",
+      "file_count": 3,
+      "content": "프로젝트 원문에서 확인한 내용\n\n\n\n[1] 회신 현황.txt · 3행\n미회신 부서: 회계과",
+      "mode": "offline",
+      "evidence": [
+        {
+          "name": "회신 현황.txt",
+          "loc": "3행",
+          "text": "미회신 부서: 회계과",
+          "sha256": "a574450721a10e3017086bd1a5279345cce620076322e45e2ddf8118ab42097e"
+        }
+      ],
+      "original_hash_matches": true,
+      "unit_status": 200,
+      "assets_match": {
+        "folder-projects.css": true,
+        "folder-projects.js": true
+      }
+    },
+    {
+      "base": "https://gongmudam.visanu81.workers.dev",
+      "project_id": "83e035fb45a840969c90f9d11b987292",
+      "file_count": 3,
+      "content": "프로젝트 원문에서 확인한 내용\n\n\n\n[1] 회신 현황.txt · 3행\n미회신 부서: 회계과",
+      "mode": "local_ai",
+      "evidence": [
+        {
+          "name": "회신 현황.txt",
+          "loc": "3행",
+          "text": "미회신 부서: 회계과",
+          "sha256": "a574450721a10e3017086bd1a5279345cce620076322e45e2ddf8118ab42097e"
+        }
+      ],
+      "original_hash_matches": true,
+      "unit_status": 200,
+      "assets_match": {
+        "folder-projects.css": true,
+        "folder-projects.js": true
+      }
+    }
+  ],
+  "same_answer_and_evidence": true,
+  "focused_tests_passed": 52,
+  "final_asset_check": "2026-10-26T21:42:00+09:00"
+}

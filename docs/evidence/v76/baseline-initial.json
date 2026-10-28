@@ -1,0 +1,636 @@
+{
+  "project_id": "e82482f0f73146fa9d2ff27e97321af5",
+  "results": [
+    {
+      "kind": "summary",
+      "question": "이 자료들 핵심만 간단히 정리해줘",
+      "answer": {
+        "id": "3bcbf3ead3a64dfca0851d627e1604cc",
+        "project_id": "e82482f0f73146fa9d2ff27e97321af5",
+        "role": "assistant",
+        "content": "프로젝트 자료에서 질문에 답할 직접 근거를 찾지 못했습니다. 관련 파일을 추가하거나 자료를 다시 읽은 뒤 질문해 주세요.",
+        "status": "completed",
+        "created_at": "2026-10-25T10:22:50.654812+00:00",
+        "question": "이 자료들 핵심만 간단히 정리해줘",
+        "user_id": "1d855a6cc2c34aaaadafbd52c6b5d8e5",
+        "file_ids": [],
+        "draft": false,
+        "evidence": [],
+        "coverage": {
+          "total": 4,
+          "ready": 4,
+          "partial": 0,
+          "unread": 0
+        },
+        "mode": "offline",
+        "model": null,
+        "model_metadata": {},
+        "notice": "AI 없이 프로젝트 원문을 찾아 구성했습니다.",
+        "finished_at": "2026-10-25T10:22:50.896181+00:00"
+      }
+    },
+    {
+      "kind": "topic-summary",
+      "question": "교육 자료를 요약해줘",
+      "answer": {
+        "id": "72c5c65acf494d89851309323abb55da",
+        "project_id": "e82482f0f73146fa9d2ff27e97321af5",
+        "role": "assistant",
+        "content": "프로젝트 원문에서 확인한 내용\n\n\n\n[1] 교육 변경 안내.txt · 2행\n문서: 교육 변경 안내\n\n[2] 교육 최초 안내.txt · 2행\n문서: 교육 최초 안내\n\n[3] 교육 회신 현황.txt · 2행\n문서: 교육 회신 현황\n\n[4] 물품 납품.txt · 1행\n[합성 자료]\n\n[5] 교육 변경 안내.txt · 3행\n배경: 교육장 사용 일정 조정\n\n[6] 교육 최초 안내.txt · 5행\n교육명: 공공 AI 업무 활용 교육\n\n[7] 교육 회신 현황.txt · 1행\n[합성 자료]\n\n[8] 물품 납품.txt · 2행\n업무명: 프린터 구매\n\n[9] 교육 변경 안내.txt · 5행\n교육명: 공공 AI 업무 활용 교육\n\n[10] 교육 최초 안내.txt · 6행\n교육일: 2026-11-13 14:00~16:00\n\n[11] 교육 회신 현황.txt · 3행\n대상 부서: 총무과, 회계과\n\n[12] 물품 납품.txt · 3행\n납품 기한: 2026-11-02",
+        "status": "completed",
+        "created_at": "2026-10-25T10:22:51.083412+00:00",
+        "question": "교육 자료를 요약해줘",
+        "user_id": "3c6764b5755446e38cc50b074282f216",
+        "file_ids": [],
+        "draft": false,
+        "evidence": [
+          {
+            "ref": 1,
+            "file_id": "7c247507fbd15ba7aaa5ad1a61449253",
+            "name": "교육 변경 안내.txt",
+            "unit": 2,
+            "loc": "2행",
+            "text": "문서: 교육 변경 안내",
+            "sha256": "ed71e66411f450a2ba10da8c6e071c29cd9eadc3f1b7bf3dce0d30e78d6c3fd2",
+            "stale": false
+          },
+          {
+            "ref": 2,
+            "file_id": "827f068207c255008756e88aefaab851",
+            "name": "교육 최초 안내.txt",
+            "unit": 2,
+            "loc": "2행",
+            "text": "문서: 교육 최초 안내",
+            "sha256": "6335e8e1476238270d94795604c3737247d688e5284a35b6b21f166884e719d2",
+            "stale": false
+          },
+          {
+            "ref": 3,
+            "file_id": "a803884b698855bfa13bf4aa8bf004a2",
+            "name": "교육 회신 현황.txt",
+            "unit": 2,
+            "loc": "2행",
+            "text": "문서: 교육 회신 현황",
+            "sha256": "d8d97d4f83db3fa153c137534a831a2c277832649e9d9176b5cfe17f115a3753",
+            "stale": false
+          },
+          {
+            "ref": 4,
+            "file_id": "940ef30ef0d45464a06d20a2c31a271e",
+            "name": "물품 납품.txt",
+            "unit": 1,
+            "loc": "1행",
+            "text": "[합성 자료]",
+            "sha256": "d40923c2e93cb3571b8a36fd5cde6edf8f1be20dc03ff4e8bf200413437792f8",
+            "stale": false
+          },
+          {
+            "ref": 5,
+            "file_id": "7c247507fbd15ba7aaa5ad1a61449253",
+            "name": "교육 변경 안내.txt",
+            "unit": 3,
+            "loc": "3행",
+            "text": "배경: 교육장 사용 일정 조정",
+            "sha256": "ed71e66411f450a2ba10da8c6e071c29cd9eadc3f1b7bf3dce0d30e78d6c3fd2",
+            "stale": false
+          },
+          {
+            "ref": 6,
+            "file_id": "827f068207c255008756e88aefaab851",
+            "name": "교육 최초 안내.txt",
+            "unit": 5,
+            "loc": "5행",
+            "text": "교육명: 공공 AI 업무 활용 교육",
+            "sha256": "6335e8e1476238270d94795604c3737247d688e5284a35b6b21f166884e719d2",
+            "stale": false
+          },
+          {
+            "ref": 7,
+            "file_id": "a803884b698855bfa13bf4aa8bf004a2",
+            "name": "교육 회신 현황.txt",
+            "unit": 1,
+            "loc": "1행",
+            "text": "[합성 자료]",
+            "sha256": "d8d97d4f83db3fa153c137534a831a2c277832649e9d9176b5cfe17f115a3753",
+            "stale": false
+          },
+          {
+            "ref": 8,
+            "file_id": "940ef30ef0d45464a06d20a2c31a271e",
+            "name": "물품 납품.txt",
+            "unit": 2,
+            "loc": "2행",
+            "text": "업무명: 프린터 구매",
+            "sha256": "d40923c2e93cb3571b8a36fd5cde6edf8f1be20dc03ff4e8bf200413437792f8",
+            "stale": false
+          },
+          {
+            "ref": 9,
+            "file_id": "7c247507fbd15ba7aaa5ad1a61449253",
+            "name": "교육 변경 안내.txt",
+            "unit": 5,
+            "loc": "5행",
+            "text": "교육명: 공공 AI 업무 활용 교육",
+            "sha256": "ed71e66411f450a2ba10da8c6e071c29cd9eadc3f1b7bf3dce0d30e78d6c3fd2",
+            "stale": false
+          },
+          {
+            "ref": 10,
+            "file_id": "827f068207c255008756e88aefaab851",
+            "name": "교육 최초 안내.txt",
+            "unit": 6,
+            "loc": "6행",
+            "text": "교육일: 2026-11-13 14:00~16:00",
+            "sha256": "6335e8e1476238270d94795604c3737247d688e5284a35b6b21f166884e719d2",
+            "stale": false
+          },
+          {
+            "ref": 11,
+            "file_id": "a803884b698855bfa13bf4aa8bf004a2",
+            "name": "교육 회신 현황.txt",
+            "unit": 3,
+            "loc": "3행",
+            "text": "대상 부서: 총무과, 회계과",
+            "sha256": "d8d97d4f83db3fa153c137534a831a2c277832649e9d9176b5cfe17f115a3753",
+            "stale": false
+          },
+          {
+            "ref": 12,
+            "file_id": "940ef30ef0d45464a06d20a2c31a271e",
+            "name": "물품 납품.txt",
+            "unit": 3,
+            "loc": "3행",
+            "text": "납품 기한: 2026-11-02",
+            "sha256": "d40923c2e93cb3571b8a36fd5cde6edf8f1be20dc03ff4e8bf200413437792f8",
+            "stale": false
+          }
+        ],
+        "coverage": {
+          "total": 4,
+          "ready": 4,
+          "partial": 0,
+          "unread": 0
+        },
+        "mode": "offline",
+        "model": null,
+        "model_metadata": {},
+        "notice": "AI 없이 프로젝트 원문을 찾아 구성했습니다.",
+        "finished_at": "2026-10-25T10:22:51.162336+00:00"
+      }
+    },
+    {
+      "kind": "schedule",
+      "question": "교육 날짜와 회신 마감, 내가 해야 할 일을 정리해줘",
+      "answer": {
+        "id": "37466efabb8949eb98fdcb9de76099e8",
+        "project_id": "e82482f0f73146fa9d2ff27e97321af5",
+        "role": "assistant",
+        "content": "자료에 적힌 일정·할 일\n\n명시된 날짜와 행동을 확인하세요. 담당자의 실제 완료 여부는 별도 확인이 필요합니다.\n\n\n\n[1] 교육 변경 안내.txt · 8행\n회신 마감: 2026-11-09 17:00\n\n[2] 교육 최초 안내.txt · 8행\n회신 마감: 2026-11-06 18:00\n\n[3] 교육 회신 현황.txt · 2행\n문서: 교육 회신 현황",
+        "status": "completed",
+        "created_at": "2026-10-25T10:22:51.311581+00:00",
+        "question": "교육 날짜와 회신 마감, 내가 해야 할 일을 정리해줘",
+        "user_id": "3a1e81dd864841ce957fa5d029d7defc",
+        "file_ids": [],
+        "draft": false,
+        "evidence": [
+          {
+            "ref": 1,
+            "file_id": "7c247507fbd15ba7aaa5ad1a61449253",
+            "name": "교육 변경 안내.txt",
+            "unit": 8,
+            "loc": "8행",
+            "text": "회신 마감: 2026-11-09 17:00",
+            "sha256": "ed71e66411f450a2ba10da8c6e071c29cd9eadc3f1b7bf3dce0d30e78d6c3fd2",
+            "stale": false
+          },
+          {
+            "ref": 2,
+            "file_id": "827f068207c255008756e88aefaab851",
+            "name": "교육 최초 안내.txt",
+            "unit": 8,
+            "loc": "8행",
+            "text": "회신 마감: 2026-11-06 18:00",
+            "sha256": "6335e8e1476238270d94795604c3737247d688e5284a35b6b21f166884e719d2",
+            "stale": false
+          },
+          {
+            "ref": 3,
+            "file_id": "a803884b698855bfa13bf4aa8bf004a2",
+            "name": "교육 회신 현황.txt",
+            "unit": 2,
+            "loc": "2행",
+            "text": "문서: 교육 회신 현황",
+            "sha256": "d8d97d4f83db3fa153c137534a831a2c277832649e9d9176b5cfe17f115a3753",
+            "stale": false
+          }
+        ],
+        "coverage": {
+          "total": 4,
+          "ready": 4,
+          "partial": 0,
+          "unread": 0
+        },
+        "mode": "offline",
+        "model": null,
+        "model_metadata": {},
+        "notice": "AI 없이 프로젝트 원문을 찾아 구성했습니다. 이번 답변은 검색된 3개 파일의 발췌이며, 읽은 모든 파일을 인용한 결과는 아닙니다. 필요하면 자료를 선택해 나눠 질문하세요.",
+        "finished_at": "2026-10-25T10:22:51.431909+00:00"
+      }
+    },
+    {
+      "kind": "schedule-natural",
+      "question": "날짜랑 해야 할 일만 뽑아줘",
+      "answer": {
+        "id": "b39651d8b22d4e92b1c71f7f045f8cb0",
+        "project_id": "e82482f0f73146fa9d2ff27e97321af5",
+        "role": "assistant",
+        "content": "프로젝트 자료에서 질문에 답할 직접 근거를 찾지 못했습니다. 관련 파일을 추가하거나 자료를 다시 읽은 뒤 질문해 주세요.",
+        "status": "completed",
+        "created_at": "2026-10-25T10:22:51.547060+00:00",
+        "question": "날짜랑 해야 할 일만 뽑아줘",
+        "user_id": "8041c2c135c14e6d96a7ce75b31da326",
+        "file_ids": [
+          "7c247507fbd15ba7aaa5ad1a61449253",
+          "827f068207c255008756e88aefaab851"
+        ],
+        "draft": false,
+        "evidence": [],
+        "coverage": {
+          "total": 2,
+          "ready": 2,
+          "partial": 0,
+          "unread": 0
+        },
+        "mode": "offline",
+        "model": null,
+        "model_metadata": {},
+        "notice": "AI 없이 프로젝트 원문을 찾아 구성했습니다.",
+        "finished_at": "2026-10-25T10:22:51.696275+00:00"
+      }
+    },
+    {
+      "kind": "compare-natural",
+      "question": "두 자료가 뭐가 다른지 알려줘",
+      "answer": {
+        "id": "1d68864b916b4afea696cbe472c57f8f",
+        "project_id": "e82482f0f73146fa9d2ff27e97321af5",
+        "role": "assistant",
+        "content": "프로젝트 자료에서 질문에 답할 직접 근거를 찾지 못했습니다. 관련 파일을 추가하거나 자료를 다시 읽은 뒤 질문해 주세요.",
+        "status": "completed",
+        "created_at": "2026-10-25T10:22:51.791546+00:00",
+        "question": "두 자료가 뭐가 다른지 알려줘",
+        "user_id": "4e4955b0cc7645d2bcf206257d2efd4f",
+        "file_ids": [
+          "7c247507fbd15ba7aaa5ad1a61449253",
+          "827f068207c255008756e88aefaab851"
+        ],
+        "draft": false,
+        "evidence": [],
+        "coverage": {
+          "total": 2,
+          "ready": 2,
+          "partial": 0,
+          "unread": 0
+        },
+        "mode": "offline",
+        "model": null,
+        "model_metadata": {},
+        "notice": "AI 없이 프로젝트 원문을 찾아 구성했습니다.",
+        "finished_at": "2026-10-25T10:22:51.966528+00:00"
+      }
+    },
+    {
+      "kind": "compare-fields",
+      "question": "두 자료의 마감과 장소 차이를 비교해줘",
+      "answer": {
+        "id": "656d6e956b30450dbb547082421c2e52",
+        "project_id": "e82482f0f73146fa9d2ff27e97321af5",
+        "role": "assistant",
+        "content": "자료별 확인 내용\n\n각 자료의 원문을 나란히 확인하세요. 누락된 사실은 추정하지 않았습니다.\n\n\n\n[1] 교육 변경 안내.txt · 7행\n장소: 가상 시청 5층 회의실\n\n[2] 교육 최초 안내.txt · 7행\n장소: 가상 시청 3층 교육실\n\n[3] 교육 변경 안내.txt · 8행\n회신 마감: 2026-11-09 17:00\n\n[4] 교육 최초 안내.txt · 8행\n회신 마감: 2026-11-06 18:00\n\n[5] 교육 변경 안내.txt · 3행\n배경: 교육장 사용 일정 조정\n\n[6] 교육 최초 안내.txt · 3행\n배경: 부서 공통 업무 역량 강화",
+        "status": "completed",
+        "created_at": "2026-10-25T10:22:52.028054+00:00",
+        "question": "두 자료의 마감과 장소 차이를 비교해줘",
+        "user_id": "41127cf261914ba897f1f999b0af00fc",
+        "file_ids": [
+          "7c247507fbd15ba7aaa5ad1a61449253",
+          "827f068207c255008756e88aefaab851"
+        ],
+        "draft": false,
+        "evidence": [
+          {
+            "ref": 1,
+            "file_id": "7c247507fbd15ba7aaa5ad1a61449253",
+            "name": "교육 변경 안내.txt",
+            "unit": 7,
+            "loc": "7행",
+            "text": "장소: 가상 시청 5층 회의실",
+            "sha256": "ed71e66411f450a2ba10da8c6e071c29cd9eadc3f1b7bf3dce0d30e78d6c3fd2",
+            "stale": false
+          },
+          {
+            "ref": 2,
+            "file_id": "827f068207c255008756e88aefaab851",
+            "name": "교육 최초 안내.txt",
+            "unit": 7,
+            "loc": "7행",
+            "text": "장소: 가상 시청 3층 교육실",
+            "sha256": "6335e8e1476238270d94795604c3737247d688e5284a35b6b21f166884e719d2",
+            "stale": false
+          },
+          {
+            "ref": 3,
+            "file_id": "7c247507fbd15ba7aaa5ad1a61449253",
+            "name": "교육 변경 안내.txt",
+            "unit": 8,
+            "loc": "8행",
+            "text": "회신 마감: 2026-11-09 17:00",
+            "sha256": "ed71e66411f450a2ba10da8c6e071c29cd9eadc3f1b7bf3dce0d30e78d6c3fd2",
+            "stale": false
+          },
+          {
+            "ref": 4,
+            "file_id": "827f068207c255008756e88aefaab851",
+            "name": "교육 최초 안내.txt",
+            "unit": 8,
+            "loc": "8행",
+            "text": "회신 마감: 2026-11-06 18:00",
+            "sha256": "6335e8e1476238270d94795604c3737247d688e5284a35b6b21f166884e719d2",
+            "stale": false
+          },
+          {
+            "ref": 5,
+            "file_id": "7c247507fbd15ba7aaa5ad1a61449253",
+            "name": "교육 변경 안내.txt",
+            "unit": 3,
+            "loc": "3행",
+            "text": "배경: 교육장 사용 일정 조정",
+            "sha256": "ed71e66411f450a2ba10da8c6e071c29cd9eadc3f1b7bf3dce0d30e78d6c3fd2",
+            "stale": false
+          },
+          {
+            "ref": 6,
+            "file_id": "827f068207c255008756e88aefaab851",
+            "name": "교육 최초 안내.txt",
+            "unit": 3,
+            "loc": "3행",
+            "text": "배경: 부서 공통 업무 역량 강화",
+            "sha256": "6335e8e1476238270d94795604c3737247d688e5284a35b6b21f166884e719d2",
+            "stale": false
+          }
+        ],
+        "coverage": {
+          "total": 2,
+          "ready": 2,
+          "partial": 0,
+          "unread": 0
+        },
+        "mode": "offline",
+        "model": null,
+        "model_metadata": {},
+        "notice": "AI 없이 프로젝트 원문을 찾아 구성했습니다.",
+        "finished_at": "2026-10-25T10:22:52.246357+00:00"
+      }
+    },
+    {
+      "kind": "draft",
+      "question": "교육 준비 상황을 보고서 초안으로 써줘",
+      "answer": {
+        "id": "09f03f777cf544b6952180ce1e6102c9",
+        "project_id": "e82482f0f73146fa9d2ff27e97321af5",
+        "role": "assistant",
+        "content": "교육 준비 · 요약과 비교 점검 · 보고서 초안\n\n\n\n목적: [보고·안내 목적을 입력하세요]\n\n\n\n자료에서 확인한 내용\n\n[1] 교육 변경 안내.txt · 2행\n문서: 교육 변경 안내\n\n[2] 교육 최초 안내.txt · 2행\n문서: 교육 최초 안내\n\n[3] 교육 변경 안내.txt · 3행\n배경: 교육장 사용 일정 조정\n\n[4] 교육 최초 안내.txt · 5행\n교육명: 공공 AI 업무 활용 교육\n\n[5] 교육 변경 안내.txt · 5행\n교육명: 공공 AI 업무 활용 교육\n\n[6] 교육 최초 안내.txt · 6행\n교육일: 2026-11-13 14:00~16:00\n\n\n\n추가 확인: 담당자·최종 일정·기관 내부 승인 여부 [작성 필요]\n\n다음 조치: 위 근거와 수신 대상을 확인한 뒤 문안을 확정하세요.",
+        "status": "completed",
+        "created_at": "2026-10-25T10:22:52.269201+00:00",
+        "question": "교육 준비 상황을 보고서 초안으로 써줘",
+        "user_id": "aa381d5b1e4340439a59cbffa9c9d3d8",
+        "file_ids": [
+          "7c247507fbd15ba7aaa5ad1a61449253",
+          "827f068207c255008756e88aefaab851"
+        ],
+        "draft": true,
+        "evidence": [
+          {
+            "ref": 1,
+            "file_id": "7c247507fbd15ba7aaa5ad1a61449253",
+            "name": "교육 변경 안내.txt",
+            "unit": 2,
+            "loc": "2행",
+            "text": "문서: 교육 변경 안내",
+            "sha256": "ed71e66411f450a2ba10da8c6e071c29cd9eadc3f1b7bf3dce0d30e78d6c3fd2",
+            "stale": false
+          },
+          {
+            "ref": 2,
+            "file_id": "827f068207c255008756e88aefaab851",
+            "name": "교육 최초 안내.txt",
+            "unit": 2,
+            "loc": "2행",
+            "text": "문서: 교육 최초 안내",
+            "sha256": "6335e8e1476238270d94795604c3737247d688e5284a35b6b21f166884e719d2",
+            "stale": false
+          },
+          {
+            "ref": 3,
+            "file_id": "7c247507fbd15ba7aaa5ad1a61449253",
+            "name": "교육 변경 안내.txt",
+            "unit": 3,
+            "loc": "3행",
+            "text": "배경: 교육장 사용 일정 조정",
+            "sha256": "ed71e66411f450a2ba10da8c6e071c29cd9eadc3f1b7bf3dce0d30e78d6c3fd2",
+            "stale": false
+          },
+          {
+            "ref": 4,
+            "file_id": "827f068207c255008756e88aefaab851",
+            "name": "교육 최초 안내.txt",
+            "unit": 5,
+            "loc": "5행",
+            "text": "교육명: 공공 AI 업무 활용 교육",
+            "sha256": "6335e8e1476238270d94795604c3737247d688e5284a35b6b21f166884e719d2",
+            "stale": false
+          },
+          {
+            "ref": 5,
+            "file_id": "7c247507fbd15ba7aaa5ad1a61449253",
+            "name": "교육 변경 안내.txt",
+            "unit": 5,
+            "loc": "5행",
+            "text": "교육명: 공공 AI 업무 활용 교육",
+            "sha256": "ed71e66411f450a2ba10da8c6e071c29cd9eadc3f1b7bf3dce0d30e78d6c3fd2",
+            "stale": false
+          },
+          {
+            "ref": 6,
+            "file_id": "827f068207c255008756e88aefaab851",
+            "name": "교육 최초 안내.txt",
+            "unit": 6,
+            "loc": "6행",
+            "text": "교육일: 2026-11-13 14:00~16:00",
+            "sha256": "6335e8e1476238270d94795604c3737247d688e5284a35b6b21f166884e719d2",
+            "stale": false
+          }
+        ],
+        "coverage": {
+          "total": 2,
+          "ready": 2,
+          "partial": 0,
+          "unread": 0
+        },
+        "mode": "offline",
+        "model": null,
+        "model_metadata": {},
+        "notice": "AI 없이 프로젝트 원문을 찾아 구성했습니다.",
+        "finished_at": "2026-10-25T10:22:52.513984+00:00"
+      }
+    },
+    {
+      "kind": "no-topic",
+      "question": "항공권 환불 규정을 요약해줘",
+      "answer": {
+        "id": "25e2f70322684de1918dc18b8e7f5d26",
+        "project_id": "e82482f0f73146fa9d2ff27e97321af5",
+        "role": "assistant",
+        "content": "프로젝트 원문에서 확인한 내용\n\n\n\n[1] 교육 변경 안내.txt · 1행\n[합성 자료]\n\n[2] 교육 최초 안내.txt · 1행\n[합성 자료]\n\n[3] 교육 회신 현황.txt · 1행\n[합성 자료]\n\n[4] 물품 납품.txt · 1행\n[합성 자료]\n\n[5] 교육 변경 안내.txt · 2행\n문서: 교육 변경 안내\n\n[6] 교육 최초 안내.txt · 2행\n문서: 교육 최초 안내\n\n[7] 교육 회신 현황.txt · 2행\n문서: 교육 회신 현황\n\n[8] 물품 납품.txt · 2행\n업무명: 프린터 구매\n\n[9] 교육 변경 안내.txt · 3행\n배경: 교육장 사용 일정 조정\n\n[10] 교육 최초 안내.txt · 3행\n배경: 부서 공통 업무 역량 강화\n\n[11] 교육 회신 현황.txt · 3행\n대상 부서: 총무과, 회계과\n\n[12] 물품 납품.txt · 3행\n납품 기한: 2026-11-02",
+        "status": "completed",
+        "created_at": "2026-10-25T10:22:52.721422+00:00",
+        "question": "항공권 환불 규정을 요약해줘",
+        "user_id": "0c859602d1b64e91b90e7abf1e85889a",
+        "file_ids": [],
+        "draft": false,
+        "evidence": [
+          {
+            "ref": 1,
+            "file_id": "7c247507fbd15ba7aaa5ad1a61449253",
+            "name": "교육 변경 안내.txt",
+            "unit": 1,
+            "loc": "1행",
+            "text": "[합성 자료]",
+            "sha256": "ed71e66411f450a2ba10da8c6e071c29cd9eadc3f1b7bf3dce0d30e78d6c3fd2",
+            "stale": false
+          },
+          {
+            "ref": 2,
+            "file_id": "827f068207c255008756e88aefaab851",
+            "name": "교육 최초 안내.txt",
+            "unit": 1,
+            "loc": "1행",
+            "text": "[합성 자료]",
+            "sha256": "6335e8e1476238270d94795604c3737247d688e5284a35b6b21f166884e719d2",
+            "stale": false
+          },
+          {
+            "ref": 3,
+            "file_id": "a803884b698855bfa13bf4aa8bf004a2",
+            "name": "교육 회신 현황.txt",
+            "unit": 1,
+            "loc": "1행",
+            "text": "[합성 자료]",
+            "sha256": "d8d97d4f83db3fa153c137534a831a2c277832649e9d9176b5cfe17f115a3753",
+            "stale": false
+          },
+          {
+            "ref": 4,
+            "file_id": "940ef30ef0d45464a06d20a2c31a271e",
+            "name": "물품 납품.txt",
+            "unit": 1,
+            "loc": "1행",
+            "text": "[합성 자료]",
+            "sha256": "d40923c2e93cb3571b8a36fd5cde6edf8f1be20dc03ff4e8bf200413437792f8",
+            "stale": false
+          },
+          {
+            "ref": 5,
+            "file_id": "7c247507fbd15ba7aaa5ad1a61449253",
+            "name": "교육 변경 안내.txt",
+            "unit": 2,
+            "loc": "2행",
+            "text": "문서: 교육 변경 안내",
+            "sha256": "ed71e66411f450a2ba10da8c6e071c29cd9eadc3f1b7bf3dce0d30e78d6c3fd2",
+            "stale": false
+          },
+          {
+            "ref": 6,
+            "file_id": "827f068207c255008756e88aefaab851",
+            "name": "교육 최초 안내.txt",
+            "unit": 2,
+            "loc": "2행",
+            "text": "문서: 교육 최초 안내",
+            "sha256": "6335e8e1476238270d94795604c3737247d688e5284a35b6b21f166884e719d2",
+            "stale": false
+          },
+          {
+            "ref": 7,
+            "file_id": "a803884b698855bfa13bf4aa8bf004a2",
+            "name": "교육 회신 현황.txt",
+            "unit": 2,
+            "loc": "2행",
+            "text": "문서: 교육 회신 현황",
+            "sha256": "d8d97d4f83db3fa153c137534a831a2c277832649e9d9176b5cfe17f115a3753",
+            "stale": false
+          },
+          {
+            "ref": 8,
+            "file_id": "940ef30ef0d45464a06d20a2c31a271e",
+            "name": "물품 납품.txt",
+            "unit": 2,
+            "loc": "2행",
+            "text": "업무명: 프린터 구매",
+            "sha256": "d40923c2e93cb3571b8a36fd5cde6edf8f1be20dc03ff4e8bf200413437792f8",
+            "stale": false
+          },
+          {
+            "ref": 9,
+            "file_id": "7c247507fbd15ba7aaa5ad1a61449253",
+            "name": "교육 변경 안내.txt",
+            "unit": 3,
+            "loc": "3행",
+            "text": "배경: 교육장 사용 일정 조정",
+            "sha256": "ed71e66411f450a2ba10da8c6e071c29cd9eadc3f1b7bf3dce0d30e78d6c3fd2",
+            "stale": false
+          },
+          {
+            "ref": 10,
+            "file_id": "827f068207c255008756e88aefaab851",
+            "name": "교육 최초 안내.txt",
+            "unit": 3,
+            "loc": "3행",
+            "text": "배경: 부서 공통 업무 역량 강화",
+            "sha256": "6335e8e1476238270d94795604c3737247d688e5284a35b6b21f166884e719d2",
+            "stale": false
+          },
+          {
+            "ref": 11,
+            "file_id": "a803884b698855bfa13bf4aa8bf004a2",
+            "name": "교육 회신 현황.txt",
+            "unit": 3,
+            "loc": "3행",
+            "text": "대상 부서: 총무과, 회계과",
+            "sha256": "d8d97d4f83db3fa153c137534a831a2c277832649e9d9176b5cfe17f115a3753",
+            "stale": false
+          },
+          {
+            "ref": 12,
+            "file_id": "940ef30ef0d45464a06d20a2c31a271e",
+            "name": "물품 납품.txt",
+            "unit": 3,
+            "loc": "3행",
+            "text": "납품 기한: 2026-11-02",
+            "sha256": "d40923c2e93cb3571b8a36fd5cde6edf8f1be20dc03ff4e8bf200413437792f8",
+            "stale": false
+          }
+        ],
+        "coverage": {
+          "total": 4,
+          "ready": 4,
+          "partial": 0,
+          "unread": 0
+        },
+        "mode": "offline",
+        "model": null,
+        "model_metadata": {},
+        "notice": "AI 없이 프로젝트 원문을 찾아 구성했습니다.",
+        "finished_at": "2026-10-25T10:22:52.781368+00:00"
+      }
+    }
+  ]
+}

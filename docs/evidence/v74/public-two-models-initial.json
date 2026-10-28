@@ -1,0 +1,128 @@
+{
+  "status": {
+    "status": "ok",
+    "service_version": "v74",
+    "desktop_connected": true,
+    "public_demo": true,
+    "private_data_isolated": true,
+    "requires_origin_pc": true,
+    "shared_demo": true
+  },
+  "project_id": "d06be73afa2e434e8457c32403345cf5",
+  "restored_profile": "local_gemma",
+  "results": [
+    {
+      "profile": "local_gemma",
+      "seconds": 10.625,
+      "checks": {
+        "actual_model": true,
+        "local_ai": true,
+        "deadline": true,
+        "missing_department": true,
+        "two_files": true
+      },
+      "answer": {
+        "id": "ca4c19b3183d4aa289575220981eb6be",
+        "project_id": "d06be73afa2e434e8457c32403345cf5",
+        "role": "assistant",
+        "content": "프로젝트 원문에서 확인한 내용\n\n\n\n[1] 교육 안내.txt · 4행\n회신 마감: 2026-11-06\n\n[2] 회신 현황.txt · 3행\n미회신 부서: 회계과",
+        "status": "completed",
+        "created_at": "2026-10-25T02:08:10.942586+00:00",
+        "question": "교육 회신 마감은 언제이고 미회신 부서는 어디야?",
+        "user_id": "4298a06241004761bb9a674491f21a42",
+        "file_ids": [],
+        "draft": false,
+        "evidence": [
+          {
+            "ref": 3,
+            "file_id": "c22dde0e97f058f0b21fc4ae2aca836b",
+            "name": "교육 안내.txt",
+            "unit": 4,
+            "loc": "4행",
+            "text": "회신 마감: 2026-11-06",
+            "sha256": "15bf172bffd4910525b250a1a24de30a98b64c0d9d2f93d51c0c948efc8e086a",
+            "stale": false
+          },
+          {
+            "ref": 1,
+            "file_id": "d5461f900c395a9cbc3fd2f3bafe6e42",
+            "name": "회신 현황.txt",
+            "unit": 3,
+            "loc": "3행",
+            "text": "미회신 부서: 회계과",
+            "sha256": "a574450721a10e3017086bd1a5279345cce620076322e45e2ddf8118ab42097e",
+            "stale": false
+          }
+        ],
+        "coverage": {
+          "total": 3,
+          "ready": 3,
+          "partial": 0,
+          "unread": 0
+        },
+        "mode": "local_ai",
+        "model": "gemma3:4b",
+        "model_metadata": {
+          "actual_response": true,
+          "response_model": "gemma3:4b",
+          "backend": "ollama-native-schema",
+          "usage": {
+            "prompt_eval_count": 576,
+            "eval_count": 8,
+            "done_reason": "stop"
+          },
+          "coverage_added_refs": [
+            1
+          ]
+        },
+        "notice": "선택한 로컬 AI의 근거 선택과 원문 대조로 답변을 구성했습니다. 이번 답변은 검색된 2개 파일의 발췌이며, 읽은 모든 파일을 인용한 결과는 아닙니다. 필요하면 자료를 선택해 나눠 질문하세요.",
+        "finished_at": "2026-10-25T02:08:21.282737+00:00"
+      }
+    },
+    {
+      "profile": "local_llama",
+      "seconds": 15.844,
+      "checks": {
+        "actual_model": true,
+        "local_ai": true,
+        "deadline": false,
+        "missing_department": false,
+        "two_files": false
+      },
+      "answer": {
+        "id": "5203153d8ae848acbce5bf594ef4c9a1",
+        "project_id": "d06be73afa2e434e8457c32403345cf5",
+        "role": "assistant",
+        "content": "프로젝트 자료에서 질문에 답할 직접 근거를 찾지 못했습니다. 관련 파일을 추가하거나 자료를 다시 읽은 뒤 질문해 주세요.",
+        "status": "completed",
+        "created_at": "2026-10-25T02:08:22.139545+00:00",
+        "question": "교육 회신 마감은 언제이고 미회신 부서는 어디야?",
+        "user_id": "fe16d177eff34906acf2dbf3d61373a3",
+        "file_ids": [],
+        "draft": false,
+        "evidence": [],
+        "coverage": {
+          "total": 3,
+          "ready": 3,
+          "partial": 0,
+          "unread": 0
+        },
+        "mode": "local_ai",
+        "model": "llama3.2:3b",
+        "model_metadata": {
+          "actual_response": true,
+          "response_model": "llama3.2:3b",
+          "backend": "ollama-native-schema",
+          "usage": {
+            "prompt_eval_count": 482,
+            "eval_count": 7,
+            "done_reason": "stop"
+          }
+        },
+        "notice": "선택한 로컬 AI의 근거 선택과 원문 대조로 답변을 구성했습니다.",
+        "finished_at": "2026-10-25T02:08:37.783043+00:00"
+      }
+    }
+  ],
+  "passed": false
+}

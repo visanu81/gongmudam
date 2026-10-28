@@ -1,0 +1,192 @@
+[
+  {
+    "id": "goods-1",
+    "category": "물품관리",
+    "question": "국가기관 재물조사는 언제 하고 보고는 언제까지 하나요?",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "office-goods-national-"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "연 1회"
+      ],
+      [
+        "12월 31일"
+      ],
+      [
+        "2월 말일"
+      ]
+    ]
+  },
+  {
+    "id": "goods-2",
+    "category": "물품관리",
+    "question": "시청 재물조사는 2년마다 하나요?",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "office-goods-local-"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "1년마다"
+      ],
+      [
+        "행정안전부"
+      ]
+    ]
+  },
+  {
+    "id": "goods-3",
+    "category": "물품관리",
+    "question": "지자체 물품 실사 결과는 어디로 보내나요?",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "office-goods-local-"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "거쳐 제출"
+      ]
+    ]
+  },
+  {
+    "id": "goods-4",
+    "category": "물품관리",
+    "question": "국가기관 물품대장을 엑셀로 관리해도 되나요?",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "office-goods-national-"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "매월 말일"
+      ],
+      [
+        "조달청장과 협의"
+      ]
+    ]
+  },
+  {
+    "id": "goods-5",
+    "category": "물품관리",
+    "question": "중앙부처 비품이 오래됐어요. 그냥 버려도 되나요?",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "office-goods-national-"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "불용결정"
+      ],
+      [
+        "500만원 이상"
+      ],
+      [
+        "제17호의3"
+      ]
+    ]
+  },
+  {
+    "id": "goods-6",
+    "category": "물품관리",
+    "question": "지자체 불용품을 폐기하려면 어떤 절차가 필요한가요?",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "office-goods-local-"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "지자체장이"
+      ],
+      [
+        "500만원 미만"
+      ],
+      [
+        "다른 목적"
+      ]
+    ]
+  },
+  {
+    "id": "goods-7",
+    "category": "물품관리",
+    "question": "구청 불용품 매각을 수의계약으로 해도 되나요?",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "office-goods-local-"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "10만원 이하"
+      ],
+      [
+        "500만원 이하"
+      ],
+      [
+        "2회 이상"
+      ]
+    ]
+  },
+  {
+    "id": "goods-8",
+    "category": "적용대상·미등록 자료",
+    "question": "공공기관 재물조사는 몇 년마다 해야 하나요?",
+    "expected": "institution",
+    "require_source_groups": [],
+    "answer_terms_groups": []
+  },
+  {
+    "id": "goods-9",
+    "category": "적용대상·미등록 자료",
+    "question": "국가직 소방공무원 재물조사 언제 해요?",
+    "expected": "institution",
+    "require_source_groups": [],
+    "answer_terms_groups": []
+  },
+  {
+    "id": "goods-10",
+    "category": "적용대상·미등록 자료",
+    "question": "지자체 물품대장 필수항목은?",
+    "expected": "institution",
+    "require_source_groups": [],
+    "answer_terms_groups": []
+  },
+  {
+    "id": "goods-11",
+    "category": "적용대상·미등록 자료",
+    "question": "국가기관 비품대장에는 어떤 항목을 적나요?",
+    "expected": "institution",
+    "require_source_groups": [],
+    "answer_terms_groups": []
+  },
+  {
+    "id": "goods-12",
+    "category": "적용대상·미등록 자료",
+    "question": "국가기관 물품대장 엑셀파일 주세요",
+    "expected": "institution",
+    "require_source_groups": [],
+    "answer_terms_groups": []
+  },
+  {
+    "id": "goods-13",
+    "category": "적용대상·미등록 자료",
+    "question": "시청 박물관 물품 재물조사 면제?",
+    "expected": "institution",
+    "require_source_groups": [],
+    "answer_terms_groups": []
+  }
+]

@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "batch_launcher_pid": 9656,
+  "port": 8894,
+  "public_demo": false,
+  "version": "v72",
+  "port_conflict_safely_rejected": true
+}

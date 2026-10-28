@@ -1,0 +1,416 @@
+{
+  "passed": true,
+  "active_policy_answer": {
+    "query": "공무담 화면시연기관 시연자료 제출 기한은?",
+    "mode": "structured_guidance",
+    "model": null,
+    "profile": null,
+    "summary": "등록 자료로 처리 방법을 함께 확인해요.",
+    "answer": "시연자료 제출기한은 교육 시작 5일 전입니다. [근거 1]\n\n필요 서식은 시연자료 제출서입니다. [근거 1]",
+    "notice": "",
+    "plan": null,
+    "alternatives": [],
+    "cited": [],
+    "related": [],
+    "personal_notes": [],
+    "knowledge": {
+      "evidence": [
+        {
+          "id": "institution:56ccbd2dcac5495cb6b2f109be046487:5267dff0292545fcb477ea074c975018:0",
+          "source_id": "institution:56ccbd2dcac5495cb6b2f109be046487",
+          "title": "[화면시연·합성] 시연자료 제출 지침",
+          "text": "시연자료 제출기한은 교육 시작 5일 전입니다.\n필요 서식은 시연자료 제출서입니다.",
+          "loc": "편집 본문 · v2",
+          "sha256": "a393b1f98cbbc084febab270afc7bfe04b42b31b30b17f90c5e79725c21f5f6b",
+          "official": null,
+          "limited": false,
+          "kind": "기관 지침",
+          "institution": "공무담 화면시연기관",
+          "effective_date": "2026-10-01",
+          "library_id": "institution-rules",
+          "file_id": "56ccbd2dcac5495cb6b2f109be046487",
+          "reference_kind": "institution_rule",
+          "managed_rule_id": "56ccbd2dcac5495cb6b2f109be046487",
+          "managed_version_id": "5267dff0292545fcb477ea074c975018",
+          "managed_version_number": 2,
+          "scope_notes": "실제 업무에 적용하지 않는 합성 화면 시연 자료",
+          "score": 3.012200523318646,
+          "quote": "시연자료 제출기한은 교육 시작 5일 전입니다.\n필요 서식은 시연자료 제출서입니다."
+        }
+      ],
+      "experiences": [],
+      "excluded": [],
+      "mode": "source_search",
+      "model": null,
+      "notice": "",
+      "answer": "시연자료 제출기한은 교육 시작 5일 전입니다. [근거 1]\n\n필요 서식은 시연자료 제출서입니다. [근거 1]",
+      "intent": null,
+      "scope": "등록·선택한 추출 본문을 검색합니다. 인용 확인은 적용 대상·현행성·법적 해석을 보증하지 않습니다. 처리 경험은 공식 근거와 구분합니다.",
+      "tree": {
+        "kind": "reference",
+        "title": "기관에서 적용한 자료를 확인하세요",
+        "branches": [
+          {
+            "label": "기관에서 적용한 자료 · 원문 발췌",
+            "items": [
+              {
+                "text": "시연자료 제출기한은 교육 시작 5일 전입니다.",
+                "ref": 1,
+                "support_quotes": [
+                  "시연자료 제출기한은 교육 시작 5일 전입니다."
+                ]
+              },
+              {
+                "text": "필요 서식은 시연자료 제출서입니다.",
+                "ref": 1,
+                "support_quotes": [
+                  "필요 서식은 시연자료 제출서입니다."
+                ]
+              }
+            ]
+          }
+        ],
+        "note": "기관 담당자가 적용한 버전의 원문입니다. 공통 법령을 대체하거나 법적 적합성을 자동 승인한 답변은 아닙니다."
+      }
+    },
+    "guidance": {
+      "topic": "institution",
+      "title": "기관 자료 처리 방법",
+      "context": "공무담 화면시연기관 시연자료 제출 기한은?",
+      "questions": [],
+      "steps": [
+        {
+          "id": "scope",
+          "title": "상황과 적용 기준 확인",
+          "detail": "기관·업무 종류와 현재 처리 단계를 알려주세요.",
+          "kind": "preparation"
+        },
+        {
+          "id": "materials",
+          "title": "근거·서식 확인",
+          "detail": "질문에 직접 답하는 규정·지침·매뉴얼을 등록하면 원문을 확인할 수 있어요.",
+          "kind": "preparation"
+        }
+      ],
+      "deadlines": [],
+      "forms": [
+        {
+          "id": "aa0f332e4ef8496ca080e2b5293e4b3b",
+          "name": "[화면시연·합성] 시연자료 제출서",
+          "kind": "서식",
+          "reference_kind": "institution_rule",
+          "version_number": 2,
+          "source_id": "institution:aa0f332e4ef8496ca080e2b5293e4b3b",
+          "sha256": "d871dfc2b48a7cd3bd1c57fbc60b9197ab3434463339f61a4170fe3a78c1e33b",
+          "href": "/api/institution-rules/aa0f332e4ef8496ca080e2b5293e4b3b/versions/6f0f6a0a5f65452b991bf324fd9bd685/original",
+          "manager_href": "index.html?rule=aa0f332e4ef8496ca080e2b5293e4b3b&rule_version=6f0f6a0a5f65452b991bf324fd9bd685#docs",
+          "synthetic": true
+        }
+      ],
+      "service_guide": {
+        "evidence": [],
+        "coverage": {
+          "guide_pages": 10,
+          "faq_questions": 26
+        },
+        "notice": "국가공무원 제도 설명·FAQ의 보관본입니다. 확인일은 수집일이며 답변의 개정일을 뜻하지 않아요. 실제 적용·일수·예외는 현행 법령과 기관 기준을 확인하세요.",
+        "problems": []
+      },
+      "manual": {
+        "evidence": [],
+        "scope": "",
+        "notice": "이 업무에 맞는 시스템 매뉴얼을 등록하면 사용법을 연결할 수 있어요."
+      },
+      "ai_requested": false,
+      "ai_used": false,
+      "notice": "진행 순서는 실무 준비 제안입니다. 법정 기한·필수 서류·적용 조건은 아래 등록 근거에서 확인하세요.",
+      "map": {
+        "nodes": [
+          {
+            "id": "topic:institution",
+            "label": "institution",
+            "kind": "topic"
+          },
+          {
+            "id": "step:institution:scope",
+            "label": "상황과 적용 기준 확인",
+            "kind": "preparation"
+          },
+          {
+            "id": "step:institution:materials",
+            "label": "근거·서식 확인",
+            "kind": "preparation"
+          },
+          {
+            "id": "source:institution:56ccbd2dcac5495cb6b2f109be046487",
+            "label": "[화면시연·합성] 시연자료 제출 지침",
+            "kind": "institution_rule",
+            "sha256": "a393b1f98cbbc084febab270afc7bfe04b42b31b30b17f90c5e79725c21f5f6b",
+            "loc": "편집 본문 · v2",
+            "page": null
+          },
+          {
+            "id": "form:aa0f332e4ef8496ca080e2b5293e4b3b",
+            "label": "[화면시연·합성] 시연자료 제출서",
+            "kind": "form",
+            "sha256": "d871dfc2b48a7cd3bd1c57fbc60b9197ab3434463339f61a4170fe3a78c1e33b"
+          }
+        ],
+        "edges": [
+          {
+            "source": "topic:institution",
+            "target": "step:institution:scope",
+            "relation": "준비 순서"
+          },
+          {
+            "source": "topic:institution",
+            "target": "step:institution:materials",
+            "relation": "준비 순서"
+          },
+          {
+            "source": "topic:institution",
+            "target": "source:institution:56ccbd2dcac5495cb6b2f109be046487",
+            "relation": "검색된 자료"
+          },
+          {
+            "source": "topic:institution",
+            "target": "form:aa0f332e4ef8496ca080e2b5293e4b3b",
+            "relation": "등록 서식 후보"
+          }
+        ],
+        "note": "자료의 관련을 보여줍니다. 법적 적용 관계를 자동 판정한 결과는 아닙니다."
+      }
+    }
+  },
+  "active_form_answer": {
+    "query": "공무담 화면시연기관 시연자료 제출서의 필수 항목은?",
+    "mode": "structured_guidance",
+    "model": null,
+    "profile": null,
+    "summary": "등록 자료로 처리 방법을 함께 확인해요.",
+    "answer": "시연자료 제출서의 필수 항목은 제출부서, 작성자, 제출일, 연락처입니다. [근거 1]\n\n[시연자료 제출서] [근거 1]",
+    "notice": "",
+    "plan": null,
+    "alternatives": [],
+    "cited": [],
+    "related": [],
+    "personal_notes": [],
+    "knowledge": {
+      "evidence": [
+        {
+          "id": "institution:aa0f332e4ef8496ca080e2b5293e4b3b:6f0f6a0a5f65452b991bf324fd9bd685:0",
+          "source_id": "institution:aa0f332e4ef8496ca080e2b5293e4b3b",
+          "title": "[화면시연·합성] 시연자료 제출서",
+          "text": "시연자료 제출서의 필수 항목은 제출부서, 작성자, 제출일, 연락처입니다.\n[시연자료 제출서]\n제출부서:\n작성자:\n제출일:\n연락처:",
+          "loc": "편집 본문 · v2",
+          "sha256": "d871dfc2b48a7cd3bd1c57fbc60b9197ab3434463339f61a4170fe3a78c1e33b",
+          "official": null,
+          "limited": false,
+          "kind": "서식",
+          "institution": "공무담 화면시연기관",
+          "effective_date": "2026-10-01",
+          "library_id": "institution-rules",
+          "file_id": "aa0f332e4ef8496ca080e2b5293e4b3b",
+          "reference_kind": "institution_rule",
+          "managed_rule_id": "aa0f332e4ef8496ca080e2b5293e4b3b",
+          "managed_version_id": "6f0f6a0a5f65452b991bf324fd9bd685",
+          "managed_version_number": 2,
+          "scope_notes": "실제 제출용이 아닌 합성 서식 화면 시연 자료",
+          "score": 4.722742575734641,
+          "quote": "시연자료 제출서의 필수 항목은 제출부서, 작성자, 제출일, 연락처입니다.\n[시연자료 제출서]\n제출부서:\n작성자:\n제출일:\n연락처:"
+        }
+      ],
+      "experiences": [],
+      "excluded": [],
+      "mode": "source_search",
+      "model": null,
+      "notice": "",
+      "answer": "시연자료 제출서의 필수 항목은 제출부서, 작성자, 제출일, 연락처입니다. [근거 1]\n\n[시연자료 제출서] [근거 1]",
+      "intent": null,
+      "scope": "등록·선택한 추출 본문을 검색합니다. 인용 확인은 적용 대상·현행성·법적 해석을 보증하지 않습니다. 처리 경험은 공식 근거와 구분합니다.",
+      "tree": {
+        "kind": "reference",
+        "title": "기관에서 적용한 자료를 확인하세요",
+        "branches": [
+          {
+            "label": "기관에서 적용한 자료 · 원문 발췌",
+            "items": [
+              {
+                "text": "시연자료 제출서의 필수 항목은 제출부서, 작성자, 제출일, 연락처입니다.",
+                "ref": 1,
+                "support_quotes": [
+                  "시연자료 제출서의 필수 항목은 제출부서, 작성자, 제출일, 연락처입니다."
+                ]
+              },
+              {
+                "text": "[시연자료 제출서]",
+                "ref": 1,
+                "support_quotes": [
+                  "[시연자료 제출서]"
+                ]
+              }
+            ]
+          }
+        ],
+        "note": "기관 담당자가 적용한 버전의 원문입니다. 공통 법령을 대체하거나 법적 적합성을 자동 승인한 답변은 아닙니다."
+      }
+    },
+    "guidance": {
+      "topic": "institution",
+      "title": "기관 자료 처리 방법",
+      "context": "공무담 화면시연기관 시연자료 제출서의 필수 항목은?",
+      "questions": [],
+      "steps": [
+        {
+          "id": "scope",
+          "title": "상황과 적용 기준 확인",
+          "detail": "기관·업무 종류와 현재 처리 단계를 알려주세요.",
+          "kind": "preparation"
+        },
+        {
+          "id": "materials",
+          "title": "근거·서식 확인",
+          "detail": "질문에 직접 답하는 규정·지침·매뉴얼을 등록하면 원문을 확인할 수 있어요.",
+          "kind": "preparation"
+        }
+      ],
+      "deadlines": [],
+      "forms": [
+        {
+          "id": "aa0f332e4ef8496ca080e2b5293e4b3b",
+          "name": "[화면시연·합성] 시연자료 제출서",
+          "kind": "서식",
+          "reference_kind": "institution_rule",
+          "version_number": 2,
+          "source_id": "institution:aa0f332e4ef8496ca080e2b5293e4b3b",
+          "sha256": "d871dfc2b48a7cd3bd1c57fbc60b9197ab3434463339f61a4170fe3a78c1e33b",
+          "href": "/api/institution-rules/aa0f332e4ef8496ca080e2b5293e4b3b/versions/6f0f6a0a5f65452b991bf324fd9bd685/original",
+          "manager_href": "index.html?rule=aa0f332e4ef8496ca080e2b5293e4b3b&rule_version=6f0f6a0a5f65452b991bf324fd9bd685#docs",
+          "synthetic": true
+        }
+      ],
+      "service_guide": {
+        "evidence": [],
+        "coverage": {
+          "guide_pages": 10,
+          "faq_questions": 26
+        },
+        "notice": "국가공무원 제도 설명·FAQ의 보관본입니다. 확인일은 수집일이며 답변의 개정일을 뜻하지 않아요. 실제 적용·일수·예외는 현행 법령과 기관 기준을 확인하세요.",
+        "problems": []
+      },
+      "manual": {
+        "evidence": [],
+        "scope": "",
+        "notice": "이 업무에 맞는 시스템 매뉴얼을 등록하면 사용법을 연결할 수 있어요."
+      },
+      "ai_requested": false,
+      "ai_used": false,
+      "notice": "진행 순서는 실무 준비 제안입니다. 법정 기한·필수 서류·적용 조건은 아래 등록 근거에서 확인하세요.",
+      "map": {
+        "nodes": [
+          {
+            "id": "topic:institution",
+            "label": "institution",
+            "kind": "topic"
+          },
+          {
+            "id": "step:institution:scope",
+            "label": "상황과 적용 기준 확인",
+            "kind": "preparation"
+          },
+          {
+            "id": "step:institution:materials",
+            "label": "근거·서식 확인",
+            "kind": "preparation"
+          },
+          {
+            "id": "source:institution:aa0f332e4ef8496ca080e2b5293e4b3b",
+            "label": "[화면시연·합성] 시연자료 제출서",
+            "kind": "institution_rule",
+            "sha256": "d871dfc2b48a7cd3bd1c57fbc60b9197ab3434463339f61a4170fe3a78c1e33b",
+            "loc": "편집 본문 · v2",
+            "page": null
+          },
+          {
+            "id": "form:aa0f332e4ef8496ca080e2b5293e4b3b",
+            "label": "[화면시연·합성] 시연자료 제출서",
+            "kind": "form",
+            "sha256": "d871dfc2b48a7cd3bd1c57fbc60b9197ab3434463339f61a4170fe3a78c1e33b"
+          }
+        ],
+        "edges": [
+          {
+            "source": "topic:institution",
+            "target": "step:institution:scope",
+            "relation": "준비 순서"
+          },
+          {
+            "source": "topic:institution",
+            "target": "step:institution:materials",
+            "relation": "준비 순서"
+          },
+          {
+            "source": "topic:institution",
+            "target": "source:institution:aa0f332e4ef8496ca080e2b5293e4b3b",
+            "relation": "검색된 자료"
+          },
+          {
+            "source": "topic:institution",
+            "target": "form:aa0f332e4ef8496ca080e2b5293e4b3b",
+            "relation": "등록 서식 후보"
+          }
+        ],
+        "note": "자료의 관련을 보여줍니다. 법적 적용 관계를 자동 판정한 결과는 아닙니다."
+      }
+    }
+  },
+  "linked_original": "시연자료 제출서의 필수 항목은 제출부서, 작성자, 제출일, 연락처입니다.\n[시연자료 제출서]\n제출부서:\n작성자:\n제출일:\n연락처:",
+  "browser_checks": {
+    "related_form_link_opened": true,
+    "kind_display_form": true,
+    "same_management_link_reentry_count": 2
+  },
+  "actual_model_calls": 0,
+  "final_documents": {
+    "guideline": {
+      "id": "56ccbd2dcac5495cb6b2f109be046487",
+      "enabled": false,
+      "versions": 2,
+      "revision": 7,
+      "events": 7
+    },
+    "form": {
+      "id": "aa0f332e4ef8496ca080e2b5293e4b3b",
+      "enabled": false,
+      "versions": 2,
+      "revision": 7,
+      "events": 7
+    }
+  },
+  "preservation": {
+    "folder_projects_unchanged": true,
+    "project_files_unchanged": true,
+    "project_messages_unchanged": true,
+    "libraries_unchanged": true,
+    "project_sources_unchanged": true,
+    "project_units_unchanged": true,
+    "all_immutable_rule_versions_unchanged": true,
+    "model_config_unchanged": true
+  },
+  "disabled_form_link_removed_in_ui": true,
+  "tests": {
+    "service_python": 897,
+    "root_python": 33,
+    "root_node": 39,
+    "service_node": 33,
+    "total": 1002,
+    "all_passed": true
+  },
+  "graphify": {
+    "files": 197,
+    "nodes": 3350,
+    "edges": 9837,
+    "model_tokens": 0,
+    "fresh": true
+  }
+}

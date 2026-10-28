@@ -1,0 +1,17 @@
+{"status": "already_restored", "sources": 86, "bundle_sha256": "abbaf4fa87bc048f9c8ea44918f2e86c818cba6e6f614a40c9ac6d82aa4e70f1"}
+Gongmudam v78: http://127.0.0.1:8898/desktop/?variant=B
+Keep this window open. Press Ctrl+C to stop. Local AI is optional.
+INFO:     127.0.0.1:54520 - "GET /api/institution-rules/b0c91b1f92c64e499d8e9fb798b08326 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54529 - "GET /api/institution-rules/d65eb16eb5ad4151a06f24f9a9a5ffcd HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54530 - "GET /api/institution-rules/84f92bc68f1347f38a9a2297cc978bc6 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54531 - "GET /api/institution-rules/ee94f3ab753045b99d863361d214435f HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58474 - "GET /api/workspace/model-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52700 - "GET /api/calendar/agenda HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59424 - "GET /api/workspace/model-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55880 - "GET /api/workspace/model-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65481 - "GET /api/calendar/agenda HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54626 - "GET /api/workspace/model-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61591 - "POST /api/ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61602 - "POST /api/ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61650 - "POST /api/ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61523 - "GET /api/knowledge/sources/manual-d297a014798bc804ba99e51cd62ee2c1/original HTTP/1.1" 200 OK

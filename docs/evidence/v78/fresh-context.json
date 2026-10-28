@@ -1,0 +1,4171 @@
+{
+  "passed": true,
+  "release_version": "v78",
+  "created_at": "2026-10-25T23:12:16.030665+00:00",
+  "environment": "Same Windows PC; separate extracted ZIP, new venv and runtime DB; not a second physical PC",
+  "actual_model_calls": 0,
+  "checks": {
+    "default_offline": true,
+    "common_86_current": true,
+    "manuals_6_pages_221": true,
+    "all_originals_inside_installation": true,
+    "draft_excluded": true,
+    "natural_question_own_affiliation": true,
+    "affiliation_label": true,
+    "applied_form_link": true,
+    "alternate_words": true,
+    "followup_form": true,
+    "followup_fields_without_prior_deadline": true,
+    "missing_affiliation_not_guessed": true,
+    "unconfirmed_affiliation_not_guessed": true,
+    "wrong_agency_not_substituted": true,
+    "unknown_subject_not_substituted": true,
+    "explicit_name_does_not_bypass_relevance": true,
+    "unapplied_v2_keeps_v1": true,
+    "v2_apply_changes_answer": true,
+    "comparison_before_after": true,
+    "historical_original_preserved": true,
+    "category_draft_keeps_applied_category": true,
+    "category_change_versioned": true,
+    "category_catalog_9": true,
+    "child_agency_not_parent": true,
+    "unregistered_council_not_parent": true,
+    "no_personnel_inference_from_other_agency": true,
+    "common_child-care": true,
+    "common_health-check": true,
+    "common_travel": true,
+    "common_budget": true,
+    "quotes_versions_and_sha_match": true,
+    "config_unchanged": true,
+    "sample_files_unchanged": true,
+    "all_synthetic_inactive": true
+  },
+  "answers": {
+    "draft": {
+      "query": "교육에 참여하려는데 언제까지 내야 해요?\n업무환경: 국가공무원",
+      "mode": "structured_guidance",
+      "model": null,
+      "profile": null,
+      "summary": "등록 자료로 처리 방법을 함께 확인해요.",
+      "answer": "",
+      "notice": "이 질문에 직접 답하는 등록 근거를 확인하지 못했어요. 업무 종류와 관련 규정·지침을 알려주세요.",
+      "plan": null,
+      "alternatives": [],
+      "cited": [],
+      "related": [],
+      "personal_notes": [],
+      "knowledge": {
+        "evidence": [],
+        "experiences": [],
+        "excluded": [],
+        "mode": "source_unavailable",
+        "model": null,
+        "notice": "이 질문에 직접 답하는 등록 근거를 확인하지 못했어요. 업무 종류와 관련 규정·지침을 알려주세요.",
+        "answer": "",
+        "intent": null,
+        "scope": "등록한 자료의 범위에서 확인되지 않았습니다. 해당 기관·신분의 규정과 누락된 별표를 추가해 주세요.",
+        "tree": {
+          "kind": "unavailable",
+          "title": "자료를 더 확인해야 답할 수 있어요",
+          "branches": [
+            {
+              "label": "어떤 자료가 필요한가요?",
+              "items": [
+                {
+                  "text": "이 질문에 직접 답하는 등록 근거를 확인하지 못했어요. 업무 종류와 관련 규정·지침을 알려주세요.",
+                  "ref": null
+                }
+              ]
+            },
+            {
+              "label": "지금 할 일",
+              "items": [
+                {
+                  "text": "국가·지방 등 적용 대상과 등록 자료를 확인해 주세요.",
+                  "ref": null
+                },
+                {
+                  "text": "자료를 등록한 뒤 같은 질문을 다시 해보세요.",
+                  "ref": null
+                }
+              ]
+            }
+          ],
+          "note": "질문에 직접 답하는 원문을 확인한 뒤 안내할게요."
+        }
+      },
+      "guidance": {
+        "topic": "general",
+        "title": "서무 업무 처리 방법",
+        "context": "교육에 참여하려는데 언제까지 내야 해요?",
+        "questions": [
+          "어떤 서무업무인지, 지금 무엇을 처리하려는지 알려주세요."
+        ],
+        "steps": [
+          {
+            "id": "scope",
+            "title": "상황과 적용 기준 확인",
+            "detail": "기관·업무 종류와 현재 처리 단계를 알려주세요.",
+            "kind": "preparation"
+          },
+          {
+            "id": "materials",
+            "title": "근거·서식 확인",
+            "detail": "질문에 직접 답하는 규정·지침·매뉴얼을 등록하면 원문을 확인할 수 있어요.",
+            "kind": "preparation"
+          }
+        ],
+        "deadlines": [],
+        "forms": [],
+        "service_guide": {
+          "evidence": [],
+          "coverage": {
+            "guide_pages": 10,
+            "faq_questions": 26
+          },
+          "notice": "국가공무원 제도 설명·FAQ의 보관본입니다. 확인일은 수집일이며 답변의 개정일을 뜻하지 않아요. 실제 적용·일수·예외는 현행 법령과 기관 기준을 확인하세요.",
+          "problems": []
+        },
+        "institution_scope": null,
+        "manual": {
+          "evidence": [],
+          "scope": "",
+          "notice": "이 업무에 맞는 시스템 매뉴얼을 등록하면 사용법을 연결할 수 있어요."
+        },
+        "ai_requested": false,
+        "ai_used": false,
+        "notice": "진행 순서는 실무 준비 제안입니다. 법정 기한·필수 서류·적용 조건은 아래 등록 근거에서 확인하세요.",
+        "map": {
+          "nodes": [
+            {
+              "id": "topic:general",
+              "label": "general",
+              "kind": "topic"
+            },
+            {
+              "id": "step:general:scope",
+              "label": "상황과 적용 기준 확인",
+              "kind": "preparation"
+            },
+            {
+              "id": "step:general:materials",
+              "label": "근거·서식 확인",
+              "kind": "preparation"
+            }
+          ],
+          "edges": [
+            {
+              "source": "topic:general",
+              "target": "step:general:scope",
+              "relation": "준비 순서"
+            },
+            {
+              "source": "topic:general",
+              "target": "step:general:materials",
+              "relation": "준비 순서"
+            }
+          ],
+          "note": "자료의 관련을 보여줍니다. 법적 적용 관계를 자동 판정한 결과는 아닙니다."
+        }
+      }
+    },
+    "v1": {
+      "query": "교육에 참여하려는데 언제까지 내야 해요?\n업무환경: 국가공무원",
+      "mode": "structured_guidance",
+      "model": null,
+      "profile": null,
+      "summary": "등록 자료로 처리 방법을 함께 확인해요.",
+      "answer": "교육 희망자 회신 마감은 교육 시작 3일 전입니다. [근거 1]",
+      "notice": "내 소속 설정 기준: 합성 제출검증기관 · 현재 적용된 원문을 찾아 안내해요.",
+      "plan": null,
+      "alternatives": [],
+      "cited": [],
+      "related": [],
+      "personal_notes": [],
+      "knowledge": {
+        "evidence": [
+          {
+            "id": "institution:d65eb16eb5ad4151a06f24f9a9a5ffcd:c1bbe89d6d6e4bfdbe52c35903af6834:0",
+            "source_id": "institution:d65eb16eb5ad4151a06f24f9a9a5ffcd",
+            "title": "[합성 예제] 연수 참가 접수 안내",
+            "text": "교육 희망자 회신 마감은 교육 시작 3일 전입니다.",
+            "loc": "1행 · v1",
+            "sha256": "0b1e7df26a6e17b091e13fe880a12511a26c62f473e2a7260ce00edcf51ceb79",
+            "official": null,
+            "limited": false,
+            "kind": "기관 지침",
+            "category": "교육·행사",
+            "institution": "합성 제출검증기관",
+            "effective_date": "2026-01-01",
+            "library_id": "institution-rules",
+            "file_id": "d65eb16eb5ad4151a06f24f9a9a5ffcd",
+            "reference_kind": "institution_rule",
+            "managed_rule_id": "d65eb16eb5ad4151a06f24f9a9a5ffcd",
+            "managed_version_id": "c1bbe89d6d6e4bfdbe52c35903af6834",
+            "managed_version_number": 1,
+            "scope_notes": "실제 기관 업무에 적용하지 않는 합성 제출 검증 자료",
+            "score": 3.2873790002462413,
+            "quote": "교육 희망자 회신 마감은 교육 시작 3일 전입니다."
+          }
+        ],
+        "experiences": [],
+        "excluded": [],
+        "mode": "source_search",
+        "model": null,
+        "notice": "내 소속 설정 기준: 합성 제출검증기관 · 현재 적용된 원문을 찾아 안내해요.",
+        "answer": "교육 희망자 회신 마감은 교육 시작 3일 전입니다. [근거 1]",
+        "intent": null,
+        "scope": "등록·선택한 추출 본문을 검색합니다. 인용 확인은 적용 대상·현행성·법적 해석을 보증하지 않습니다. 처리 경험은 공식 근거와 구분합니다.",
+        "tree": {
+          "kind": "reference",
+          "title": "기관에서 적용한 자료를 확인하세요",
+          "branches": [
+            {
+              "label": "기관에서 적용한 자료 · 원문 발췌",
+              "items": [
+                {
+                  "text": "교육 희망자 회신 마감은 교육 시작 3일 전입니다.",
+                  "ref": 1,
+                  "support_quotes": [
+                    "교육 희망자 회신 마감은 교육 시작 3일 전입니다."
+                  ]
+                }
+              ]
+            }
+          ],
+          "note": "기관 담당자가 적용한 버전의 원문입니다. 공통 법령을 대체하거나 법적 적합성을 자동 승인한 답변은 아닙니다."
+        }
+      },
+      "guidance": {
+        "topic": "institution",
+        "title": "기관 자료 처리 방법",
+        "context": "교육에 참여하려는데 언제까지 내야 해요?",
+        "questions": [],
+        "steps": [
+          {
+            "id": "scope",
+            "title": "상황과 적용 기준 확인",
+            "detail": "기관·업무 종류와 현재 처리 단계를 알려주세요.",
+            "kind": "preparation"
+          },
+          {
+            "id": "materials",
+            "title": "근거·서식 확인",
+            "detail": "질문에 직접 답하는 규정·지침·매뉴얼을 등록하면 원문을 확인할 수 있어요.",
+            "kind": "preparation"
+          }
+        ],
+        "deadlines": [],
+        "forms": [
+          {
+            "id": "b0c91b1f92c64e499d8e9fb798b08326",
+            "name": "[합성 예제] 교육참가 신청서",
+            "kind": "서식",
+            "reference_kind": "institution_rule",
+            "version_number": 1,
+            "source_id": "institution:b0c91b1f92c64e499d8e9fb798b08326",
+            "sha256": "bb7a3b4c8dea1e97c19d289a876e38e9f940006d01e7ccb6fcda0d4c9d7dbc2e",
+            "href": "/api/institution-rules/b0c91b1f92c64e499d8e9fb798b08326/versions/d834500d87b0451fa93772554e089a87/original",
+            "manager_href": "index.html?rule=b0c91b1f92c64e499d8e9fb798b08326&rule_version=d834500d87b0451fa93772554e089a87#docs",
+            "synthetic": true
+          }
+        ],
+        "service_guide": {
+          "evidence": [],
+          "coverage": {
+            "guide_pages": 10,
+            "faq_questions": 26
+          },
+          "notice": "국가공무원 제도 설명·FAQ의 보관본입니다. 확인일은 수집일이며 답변의 개정일을 뜻하지 않아요. 실제 적용·일수·예외는 현행 법령과 기관 기준을 확인하세요.",
+          "problems": []
+        },
+        "institution_scope": {
+          "organizations": [
+            "합성 제출검증기관"
+          ],
+          "basis": "affiliation"
+        },
+        "manual": {
+          "evidence": [],
+          "scope": "",
+          "notice": "이 업무에 맞는 시스템 매뉴얼을 등록하면 사용법을 연결할 수 있어요."
+        },
+        "ai_requested": false,
+        "ai_used": false,
+        "notice": "진행 순서는 실무 준비 제안입니다. 법정 기한·필수 서류·적용 조건은 아래 등록 근거에서 확인하세요.",
+        "map": {
+          "nodes": [
+            {
+              "id": "topic:institution",
+              "label": "institution",
+              "kind": "topic"
+            },
+            {
+              "id": "step:institution:scope",
+              "label": "상황과 적용 기준 확인",
+              "kind": "preparation"
+            },
+            {
+              "id": "step:institution:materials",
+              "label": "근거·서식 확인",
+              "kind": "preparation"
+            },
+            {
+              "id": "source:institution:d65eb16eb5ad4151a06f24f9a9a5ffcd",
+              "label": "[합성 예제] 연수 참가 접수 안내",
+              "kind": "institution_rule",
+              "sha256": "0b1e7df26a6e17b091e13fe880a12511a26c62f473e2a7260ce00edcf51ceb79",
+              "loc": "1행 · v1",
+              "page": null
+            },
+            {
+              "id": "form:b0c91b1f92c64e499d8e9fb798b08326",
+              "label": "[합성 예제] 교육참가 신청서",
+              "kind": "form",
+              "sha256": "bb7a3b4c8dea1e97c19d289a876e38e9f940006d01e7ccb6fcda0d4c9d7dbc2e"
+            }
+          ],
+          "edges": [
+            {
+              "source": "topic:institution",
+              "target": "step:institution:scope",
+              "relation": "준비 순서"
+            },
+            {
+              "source": "topic:institution",
+              "target": "step:institution:materials",
+              "relation": "준비 순서"
+            },
+            {
+              "source": "topic:institution",
+              "target": "source:institution:d65eb16eb5ad4151a06f24f9a9a5ffcd",
+              "relation": "검색된 자료"
+            },
+            {
+              "source": "topic:institution",
+              "target": "form:b0c91b1f92c64e499d8e9fb798b08326",
+              "relation": "등록 서식 후보"
+            }
+          ],
+          "note": "자료의 관련을 보여줍니다. 법적 적용 관계를 자동 판정한 결과는 아닙니다."
+        }
+      }
+    },
+    "paraphrase": {
+      "query": "연수 참석자 마감이 언제인가요?\n업무환경: 국가공무원",
+      "mode": "structured_guidance",
+      "model": null,
+      "profile": null,
+      "summary": "등록 자료로 처리 방법을 함께 확인해요.",
+      "answer": "교육 희망자 회신 마감은 교육 시작 3일 전입니다. [근거 1]",
+      "notice": "내 소속 설정 기준: 합성 제출검증기관 · 현재 적용된 원문을 찾아 안내해요.",
+      "plan": null,
+      "alternatives": [],
+      "cited": [],
+      "related": [],
+      "personal_notes": [],
+      "knowledge": {
+        "evidence": [
+          {
+            "id": "institution:d65eb16eb5ad4151a06f24f9a9a5ffcd:c1bbe89d6d6e4bfdbe52c35903af6834:0",
+            "source_id": "institution:d65eb16eb5ad4151a06f24f9a9a5ffcd",
+            "title": "[합성 예제] 연수 참가 접수 안내",
+            "text": "교육 희망자 회신 마감은 교육 시작 3일 전입니다.",
+            "loc": "1행 · v1",
+            "sha256": "0b1e7df26a6e17b091e13fe880a12511a26c62f473e2a7260ce00edcf51ceb79",
+            "official": null,
+            "limited": false,
+            "kind": "기관 지침",
+            "category": "교육·행사",
+            "institution": "합성 제출검증기관",
+            "effective_date": "2026-01-01",
+            "library_id": "institution-rules",
+            "file_id": "d65eb16eb5ad4151a06f24f9a9a5ffcd",
+            "reference_kind": "institution_rule",
+            "managed_rule_id": "d65eb16eb5ad4151a06f24f9a9a5ffcd",
+            "managed_version_id": "c1bbe89d6d6e4bfdbe52c35903af6834",
+            "managed_version_number": 1,
+            "scope_notes": "실제 기관 업무에 적용하지 않는 합성 제출 검증 자료",
+            "score": 3.7231310418029566,
+            "quote": "교육 희망자 회신 마감은 교육 시작 3일 전입니다."
+          }
+        ],
+        "experiences": [],
+        "excluded": [],
+        "mode": "source_search",
+        "model": null,
+        "notice": "내 소속 설정 기준: 합성 제출검증기관 · 현재 적용된 원문을 찾아 안내해요.",
+        "answer": "교육 희망자 회신 마감은 교육 시작 3일 전입니다. [근거 1]",
+        "intent": null,
+        "scope": "등록·선택한 추출 본문을 검색합니다. 인용 확인은 적용 대상·현행성·법적 해석을 보증하지 않습니다. 처리 경험은 공식 근거와 구분합니다.",
+        "tree": {
+          "kind": "reference",
+          "title": "기관에서 적용한 자료를 확인하세요",
+          "branches": [
+            {
+              "label": "기관에서 적용한 자료 · 원문 발췌",
+              "items": [
+                {
+                  "text": "교육 희망자 회신 마감은 교육 시작 3일 전입니다.",
+                  "ref": 1,
+                  "support_quotes": [
+                    "교육 희망자 회신 마감은 교육 시작 3일 전입니다."
+                  ]
+                }
+              ]
+            }
+          ],
+          "note": "기관 담당자가 적용한 버전의 원문입니다. 공통 법령을 대체하거나 법적 적합성을 자동 승인한 답변은 아닙니다."
+        }
+      },
+      "guidance": {
+        "topic": "institution",
+        "title": "기관 자료 처리 방법",
+        "context": "연수 참석자 마감이 언제인가요?",
+        "questions": [],
+        "steps": [
+          {
+            "id": "scope",
+            "title": "상황과 적용 기준 확인",
+            "detail": "기관·업무 종류와 현재 처리 단계를 알려주세요.",
+            "kind": "preparation"
+          },
+          {
+            "id": "materials",
+            "title": "근거·서식 확인",
+            "detail": "질문에 직접 답하는 규정·지침·매뉴얼을 등록하면 원문을 확인할 수 있어요.",
+            "kind": "preparation"
+          }
+        ],
+        "deadlines": [],
+        "forms": [
+          {
+            "id": "b0c91b1f92c64e499d8e9fb798b08326",
+            "name": "[합성 예제] 교육참가 신청서",
+            "kind": "서식",
+            "reference_kind": "institution_rule",
+            "version_number": 1,
+            "source_id": "institution:b0c91b1f92c64e499d8e9fb798b08326",
+            "sha256": "bb7a3b4c8dea1e97c19d289a876e38e9f940006d01e7ccb6fcda0d4c9d7dbc2e",
+            "href": "/api/institution-rules/b0c91b1f92c64e499d8e9fb798b08326/versions/d834500d87b0451fa93772554e089a87/original",
+            "manager_href": "index.html?rule=b0c91b1f92c64e499d8e9fb798b08326&rule_version=d834500d87b0451fa93772554e089a87#docs",
+            "synthetic": true
+          }
+        ],
+        "service_guide": {
+          "evidence": [],
+          "coverage": {
+            "guide_pages": 10,
+            "faq_questions": 26
+          },
+          "notice": "국가공무원 제도 설명·FAQ의 보관본입니다. 확인일은 수집일이며 답변의 개정일을 뜻하지 않아요. 실제 적용·일수·예외는 현행 법령과 기관 기준을 확인하세요.",
+          "problems": []
+        },
+        "institution_scope": {
+          "organizations": [
+            "합성 제출검증기관"
+          ],
+          "basis": "affiliation"
+        },
+        "manual": {
+          "evidence": [],
+          "scope": "",
+          "notice": "이 업무에 맞는 시스템 매뉴얼을 등록하면 사용법을 연결할 수 있어요."
+        },
+        "ai_requested": false,
+        "ai_used": false,
+        "notice": "진행 순서는 실무 준비 제안입니다. 법정 기한·필수 서류·적용 조건은 아래 등록 근거에서 확인하세요.",
+        "map": {
+          "nodes": [
+            {
+              "id": "topic:institution",
+              "label": "institution",
+              "kind": "topic"
+            },
+            {
+              "id": "step:institution:scope",
+              "label": "상황과 적용 기준 확인",
+              "kind": "preparation"
+            },
+            {
+              "id": "step:institution:materials",
+              "label": "근거·서식 확인",
+              "kind": "preparation"
+            },
+            {
+              "id": "source:institution:d65eb16eb5ad4151a06f24f9a9a5ffcd",
+              "label": "[합성 예제] 연수 참가 접수 안내",
+              "kind": "institution_rule",
+              "sha256": "0b1e7df26a6e17b091e13fe880a12511a26c62f473e2a7260ce00edcf51ceb79",
+              "loc": "1행 · v1",
+              "page": null
+            },
+            {
+              "id": "form:b0c91b1f92c64e499d8e9fb798b08326",
+              "label": "[합성 예제] 교육참가 신청서",
+              "kind": "form",
+              "sha256": "bb7a3b4c8dea1e97c19d289a876e38e9f940006d01e7ccb6fcda0d4c9d7dbc2e"
+            }
+          ],
+          "edges": [
+            {
+              "source": "topic:institution",
+              "target": "step:institution:scope",
+              "relation": "준비 순서"
+            },
+            {
+              "source": "topic:institution",
+              "target": "step:institution:materials",
+              "relation": "준비 순서"
+            },
+            {
+              "source": "topic:institution",
+              "target": "source:institution:d65eb16eb5ad4151a06f24f9a9a5ffcd",
+              "relation": "검색된 자료"
+            },
+            {
+              "source": "topic:institution",
+              "target": "form:b0c91b1f92c64e499d8e9fb798b08326",
+              "relation": "등록 서식 후보"
+            }
+          ],
+          "note": "자료의 관련을 보여줍니다. 법적 적용 관계를 자동 판정한 결과는 아닙니다."
+        }
+      }
+    },
+    "form-followup": {
+      "query": "교육에 참여하려는데   내야 해요?\n그럼 어떤 양식을 쓰면 돼요?\n업무환경: 국가공무원",
+      "mode": "structured_guidance",
+      "model": null,
+      "profile": null,
+      "summary": "등록 자료로 처리 방법을 함께 확인해요.",
+      "answer": "필요한 서식은 교육참가 신청서입니다. [근거 1]\n\n교육참가 신청서의 필수 항목은 부서, 성명, 연락처입니다. [근거 2]",
+      "notice": "내 소속 설정 기준: 합성 제출검증기관 · 현재 적용된 원문을 찾아 안내해요.",
+      "plan": null,
+      "alternatives": [],
+      "cited": [],
+      "related": [],
+      "personal_notes": [],
+      "knowledge": {
+        "evidence": [
+          {
+            "id": "institution:d65eb16eb5ad4151a06f24f9a9a5ffcd:c1bbe89d6d6e4bfdbe52c35903af6834:1",
+            "source_id": "institution:d65eb16eb5ad4151a06f24f9a9a5ffcd",
+            "title": "[합성 예제] 연수 참가 접수 안내",
+            "text": "필요한 서식은 교육참가 신청서입니다.",
+            "loc": "2행 · v1",
+            "sha256": "0b1e7df26a6e17b091e13fe880a12511a26c62f473e2a7260ce00edcf51ceb79",
+            "official": null,
+            "limited": false,
+            "kind": "기관 지침",
+            "category": "교육·행사",
+            "institution": "합성 제출검증기관",
+            "effective_date": "2026-01-01",
+            "library_id": "institution-rules",
+            "file_id": "d65eb16eb5ad4151a06f24f9a9a5ffcd",
+            "reference_kind": "institution_rule",
+            "managed_rule_id": "d65eb16eb5ad4151a06f24f9a9a5ffcd",
+            "managed_version_id": "c1bbe89d6d6e4bfdbe52c35903af6834",
+            "managed_version_number": 1,
+            "scope_notes": "실제 기관 업무에 적용하지 않는 합성 제출 검증 자료",
+            "score": 3.830379016387636,
+            "quote": "필요한 서식은 교육참가 신청서입니다."
+          },
+          {
+            "id": "institution:b0c91b1f92c64e499d8e9fb798b08326:d834500d87b0451fa93772554e089a87:0",
+            "source_id": "institution:b0c91b1f92c64e499d8e9fb798b08326",
+            "title": "[합성 예제] 교육참가 신청서",
+            "text": "교육참가 신청서의 필수 항목은 부서, 성명, 연락처입니다.",
+            "loc": "1행 · v1",
+            "sha256": "bb7a3b4c8dea1e97c19d289a876e38e9f940006d01e7ccb6fcda0d4c9d7dbc2e",
+            "official": null,
+            "limited": false,
+            "kind": "서식",
+            "category": "교육·행사",
+            "institution": "합성 제출검증기관",
+            "effective_date": "2026-01-01",
+            "library_id": "institution-rules",
+            "file_id": "b0c91b1f92c64e499d8e9fb798b08326",
+            "reference_kind": "institution_rule",
+            "managed_rule_id": "b0c91b1f92c64e499d8e9fb798b08326",
+            "managed_version_id": "d834500d87b0451fa93772554e089a87",
+            "managed_version_number": 1,
+            "scope_notes": "실제 기관 업무에 적용하지 않는 합성 제출 검증 자료",
+            "score": 1.726092434710685,
+            "quote": "교육참가 신청서의 필수 항목은 부서, 성명, 연락처입니다."
+          }
+        ],
+        "experiences": [],
+        "excluded": [],
+        "mode": "source_search",
+        "model": null,
+        "notice": "내 소속 설정 기준: 합성 제출검증기관 · 현재 적용된 원문을 찾아 안내해요.",
+        "answer": "필요한 서식은 교육참가 신청서입니다. [근거 1]\n\n교육참가 신청서의 필수 항목은 부서, 성명, 연락처입니다. [근거 2]",
+        "intent": null,
+        "scope": "등록·선택한 추출 본문을 검색합니다. 인용 확인은 적용 대상·현행성·법적 해석을 보증하지 않습니다. 처리 경험은 공식 근거와 구분합니다.",
+        "tree": {
+          "kind": "reference",
+          "title": "기관에서 적용한 자료를 확인하세요",
+          "branches": [
+            {
+              "label": "기관에서 적용한 자료 · 원문 발췌",
+              "items": [
+                {
+                  "text": "필요한 서식은 교육참가 신청서입니다.",
+                  "ref": 1,
+                  "support_quotes": [
+                    "필요한 서식은 교육참가 신청서입니다."
+                  ]
+                },
+                {
+                  "text": "교육참가 신청서의 필수 항목은 부서, 성명, 연락처입니다.",
+                  "ref": 2,
+                  "support_quotes": [
+                    "교육참가 신청서의 필수 항목은 부서, 성명, 연락처입니다."
+                  ]
+                }
+              ]
+            }
+          ],
+          "note": "기관 담당자가 적용한 버전의 원문입니다. 공통 법령을 대체하거나 법적 적합성을 자동 승인한 답변은 아닙니다."
+        }
+      },
+      "guidance": {
+        "topic": "institution",
+        "title": "기관 자료 처리 방법",
+        "context": "그럼 어떤 양식을 쓰면 돼요?",
+        "questions": [],
+        "steps": [
+          {
+            "id": "scope",
+            "title": "상황과 적용 기준 확인",
+            "detail": "기관·업무 종류와 현재 처리 단계를 알려주세요.",
+            "kind": "preparation"
+          },
+          {
+            "id": "materials",
+            "title": "근거·서식 확인",
+            "detail": "질문에 직접 답하는 규정·지침·매뉴얼을 등록하면 원문을 확인할 수 있어요.",
+            "kind": "preparation"
+          }
+        ],
+        "deadlines": [],
+        "forms": [
+          {
+            "id": "b0c91b1f92c64e499d8e9fb798b08326",
+            "name": "[합성 예제] 교육참가 신청서",
+            "kind": "서식",
+            "reference_kind": "institution_rule",
+            "version_number": 1,
+            "source_id": "institution:b0c91b1f92c64e499d8e9fb798b08326",
+            "sha256": "bb7a3b4c8dea1e97c19d289a876e38e9f940006d01e7ccb6fcda0d4c9d7dbc2e",
+            "href": "/api/institution-rules/b0c91b1f92c64e499d8e9fb798b08326/versions/d834500d87b0451fa93772554e089a87/original",
+            "manager_href": "index.html?rule=b0c91b1f92c64e499d8e9fb798b08326&rule_version=d834500d87b0451fa93772554e089a87#docs",
+            "synthetic": true
+          }
+        ],
+        "service_guide": {
+          "evidence": [],
+          "coverage": {
+            "guide_pages": 10,
+            "faq_questions": 26
+          },
+          "notice": "국가공무원 제도 설명·FAQ의 보관본입니다. 확인일은 수집일이며 답변의 개정일을 뜻하지 않아요. 실제 적용·일수·예외는 현행 법령과 기관 기준을 확인하세요.",
+          "problems": []
+        },
+        "institution_scope": {
+          "organizations": [
+            "합성 제출검증기관"
+          ],
+          "basis": "affiliation"
+        },
+        "manual": {
+          "evidence": [],
+          "scope": "",
+          "notice": "이 업무에 맞는 시스템 매뉴얼을 등록하면 사용법을 연결할 수 있어요."
+        },
+        "ai_requested": false,
+        "ai_used": false,
+        "notice": "진행 순서는 실무 준비 제안입니다. 법정 기한·필수 서류·적용 조건은 아래 등록 근거에서 확인하세요.",
+        "map": {
+          "nodes": [
+            {
+              "id": "topic:institution",
+              "label": "institution",
+              "kind": "topic"
+            },
+            {
+              "id": "step:institution:scope",
+              "label": "상황과 적용 기준 확인",
+              "kind": "preparation"
+            },
+            {
+              "id": "step:institution:materials",
+              "label": "근거·서식 확인",
+              "kind": "preparation"
+            },
+            {
+              "id": "source:institution:d65eb16eb5ad4151a06f24f9a9a5ffcd",
+              "label": "[합성 예제] 연수 참가 접수 안내",
+              "kind": "institution_rule",
+              "sha256": "0b1e7df26a6e17b091e13fe880a12511a26c62f473e2a7260ce00edcf51ceb79",
+              "loc": "2행 · v1",
+              "page": null
+            },
+            {
+              "id": "source:institution:b0c91b1f92c64e499d8e9fb798b08326",
+              "label": "[합성 예제] 교육참가 신청서",
+              "kind": "institution_rule",
+              "sha256": "bb7a3b4c8dea1e97c19d289a876e38e9f940006d01e7ccb6fcda0d4c9d7dbc2e",
+              "loc": "1행 · v1",
+              "page": null
+            },
+            {
+              "id": "form:b0c91b1f92c64e499d8e9fb798b08326",
+              "label": "[합성 예제] 교육참가 신청서",
+              "kind": "form",
+              "sha256": "bb7a3b4c8dea1e97c19d289a876e38e9f940006d01e7ccb6fcda0d4c9d7dbc2e"
+            }
+          ],
+          "edges": [
+            {
+              "source": "topic:institution",
+              "target": "step:institution:scope",
+              "relation": "준비 순서"
+            },
+            {
+              "source": "topic:institution",
+              "target": "step:institution:materials",
+              "relation": "준비 순서"
+            },
+            {
+              "source": "topic:institution",
+              "target": "source:institution:d65eb16eb5ad4151a06f24f9a9a5ffcd",
+              "relation": "검색된 자료"
+            },
+            {
+              "source": "topic:institution",
+              "target": "source:institution:b0c91b1f92c64e499d8e9fb798b08326",
+              "relation": "검색된 자료"
+            },
+            {
+              "source": "topic:institution",
+              "target": "form:b0c91b1f92c64e499d8e9fb798b08326",
+              "relation": "등록 서식 후보"
+            }
+          ],
+          "note": "자료의 관련을 보여줍니다. 법적 적용 관계를 자동 판정한 결과는 아닙니다."
+        }
+      }
+    },
+    "fields-followup": {
+      "query": "교육에 참여하려는데   내야 해요?\n그럼 어떤 항목을 적어야 하나요?\n업무환경: 국가공무원",
+      "mode": "structured_guidance",
+      "model": null,
+      "profile": null,
+      "summary": "등록 자료로 처리 방법을 함께 확인해요.",
+      "answer": "교육참가 신청서의 필수 항목은 부서, 성명, 연락처입니다. [근거 1]",
+      "notice": "내 소속 설정 기준: 합성 제출검증기관 · 현재 적용된 원문을 찾아 안내해요.",
+      "plan": null,
+      "alternatives": [],
+      "cited": [],
+      "related": [],
+      "personal_notes": [],
+      "knowledge": {
+        "evidence": [
+          {
+            "id": "institution:b0c91b1f92c64e499d8e9fb798b08326:d834500d87b0451fa93772554e089a87:0",
+            "source_id": "institution:b0c91b1f92c64e499d8e9fb798b08326",
+            "title": "[합성 예제] 교육참가 신청서",
+            "text": "교육참가 신청서의 필수 항목은 부서, 성명, 연락처입니다.",
+            "loc": "1행 · v1",
+            "sha256": "bb7a3b4c8dea1e97c19d289a876e38e9f940006d01e7ccb6fcda0d4c9d7dbc2e",
+            "official": null,
+            "limited": false,
+            "kind": "서식",
+            "category": "교육·행사",
+            "institution": "합성 제출검증기관",
+            "effective_date": "2026-01-01",
+            "library_id": "institution-rules",
+            "file_id": "b0c91b1f92c64e499d8e9fb798b08326",
+            "reference_kind": "institution_rule",
+            "managed_rule_id": "b0c91b1f92c64e499d8e9fb798b08326",
+            "managed_version_id": "d834500d87b0451fa93772554e089a87",
+            "managed_version_number": 1,
+            "scope_notes": "실제 기관 업무에 적용하지 않는 합성 제출 검증 자료",
+            "score": 2.3014565796142468,
+            "quote": "교육참가 신청서의 필수 항목은 부서, 성명, 연락처입니다."
+          }
+        ],
+        "experiences": [],
+        "excluded": [],
+        "mode": "source_search",
+        "model": null,
+        "notice": "내 소속 설정 기준: 합성 제출검증기관 · 현재 적용된 원문을 찾아 안내해요.",
+        "answer": "교육참가 신청서의 필수 항목은 부서, 성명, 연락처입니다. [근거 1]",
+        "intent": null,
+        "scope": "등록·선택한 추출 본문을 검색합니다. 인용 확인은 적용 대상·현행성·법적 해석을 보증하지 않습니다. 처리 경험은 공식 근거와 구분합니다.",
+        "tree": {
+          "kind": "reference",
+          "title": "기관에서 적용한 자료를 확인하세요",
+          "branches": [
+            {
+              "label": "기관에서 적용한 자료 · 원문 발췌",
+              "items": [
+                {
+                  "text": "교육참가 신청서의 필수 항목은 부서, 성명, 연락처입니다.",
+                  "ref": 1,
+                  "support_quotes": [
+                    "교육참가 신청서의 필수 항목은 부서, 성명, 연락처입니다."
+                  ]
+                }
+              ]
+            }
+          ],
+          "note": "기관 담당자가 적용한 버전의 원문입니다. 공통 법령을 대체하거나 법적 적합성을 자동 승인한 답변은 아닙니다."
+        }
+      },
+      "guidance": {
+        "topic": "institution",
+        "title": "기관 자료 처리 방법",
+        "context": "그럼 어떤 항목을 적어야 하나요?",
+        "questions": [],
+        "steps": [
+          {
+            "id": "scope",
+            "title": "상황과 적용 기준 확인",
+            "detail": "기관·업무 종류와 현재 처리 단계를 알려주세요.",
+            "kind": "preparation"
+          },
+          {
+            "id": "materials",
+            "title": "근거·서식 확인",
+            "detail": "질문에 직접 답하는 규정·지침·매뉴얼을 등록하면 원문을 확인할 수 있어요.",
+            "kind": "preparation"
+          }
+        ],
+        "deadlines": [],
+        "forms": [
+          {
+            "id": "b0c91b1f92c64e499d8e9fb798b08326",
+            "name": "[합성 예제] 교육참가 신청서",
+            "kind": "서식",
+            "reference_kind": "institution_rule",
+            "version_number": 1,
+            "source_id": "institution:b0c91b1f92c64e499d8e9fb798b08326",
+            "sha256": "bb7a3b4c8dea1e97c19d289a876e38e9f940006d01e7ccb6fcda0d4c9d7dbc2e",
+            "href": "/api/institution-rules/b0c91b1f92c64e499d8e9fb798b08326/versions/d834500d87b0451fa93772554e089a87/original",
+            "manager_href": "index.html?rule=b0c91b1f92c64e499d8e9fb798b08326&rule_version=d834500d87b0451fa93772554e089a87#docs",
+            "synthetic": true
+          }
+        ],
+        "service_guide": {
+          "evidence": [],
+          "coverage": {
+            "guide_pages": 10,
+            "faq_questions": 26
+          },
+          "notice": "국가공무원 제도 설명·FAQ의 보관본입니다. 확인일은 수집일이며 답변의 개정일을 뜻하지 않아요. 실제 적용·일수·예외는 현행 법령과 기관 기준을 확인하세요.",
+          "problems": []
+        },
+        "institution_scope": {
+          "organizations": [
+            "합성 제출검증기관"
+          ],
+          "basis": "affiliation"
+        },
+        "manual": {
+          "evidence": [],
+          "scope": "",
+          "notice": "이 업무에 맞는 시스템 매뉴얼을 등록하면 사용법을 연결할 수 있어요."
+        },
+        "ai_requested": false,
+        "ai_used": false,
+        "notice": "진행 순서는 실무 준비 제안입니다. 법정 기한·필수 서류·적용 조건은 아래 등록 근거에서 확인하세요.",
+        "map": {
+          "nodes": [
+            {
+              "id": "topic:institution",
+              "label": "institution",
+              "kind": "topic"
+            },
+            {
+              "id": "step:institution:scope",
+              "label": "상황과 적용 기준 확인",
+              "kind": "preparation"
+            },
+            {
+              "id": "step:institution:materials",
+              "label": "근거·서식 확인",
+              "kind": "preparation"
+            },
+            {
+              "id": "source:institution:b0c91b1f92c64e499d8e9fb798b08326",
+              "label": "[합성 예제] 교육참가 신청서",
+              "kind": "institution_rule",
+              "sha256": "bb7a3b4c8dea1e97c19d289a876e38e9f940006d01e7ccb6fcda0d4c9d7dbc2e",
+              "loc": "1행 · v1",
+              "page": null
+            },
+            {
+              "id": "form:b0c91b1f92c64e499d8e9fb798b08326",
+              "label": "[합성 예제] 교육참가 신청서",
+              "kind": "form",
+              "sha256": "bb7a3b4c8dea1e97c19d289a876e38e9f940006d01e7ccb6fcda0d4c9d7dbc2e"
+            }
+          ],
+          "edges": [
+            {
+              "source": "topic:institution",
+              "target": "step:institution:scope",
+              "relation": "준비 순서"
+            },
+            {
+              "source": "topic:institution",
+              "target": "step:institution:materials",
+              "relation": "준비 순서"
+            },
+            {
+              "source": "topic:institution",
+              "target": "source:institution:b0c91b1f92c64e499d8e9fb798b08326",
+              "relation": "검색된 자료"
+            },
+            {
+              "source": "topic:institution",
+              "target": "form:b0c91b1f92c64e499d8e9fb798b08326",
+              "relation": "등록 서식 후보"
+            }
+          ],
+          "note": "자료의 관련을 보여줍니다. 법적 적용 관계를 자동 판정한 결과는 아닙니다."
+        }
+      }
+    },
+    "no-affiliation": {
+      "query": "교육에 참여하려는데 언제까지 내야 해요?",
+      "mode": "structured_guidance",
+      "model": null,
+      "profile": null,
+      "summary": "등록 자료로 처리 방법을 함께 확인해요.",
+      "answer": "",
+      "notice": "관련 기관 자료를 찾았어요. 내 소속 설정에서 기관을 확인하거나 질문에 기관명을 알려주세요.",
+      "plan": null,
+      "alternatives": [],
+      "cited": [],
+      "related": [],
+      "personal_notes": [],
+      "knowledge": {
+        "evidence": [],
+        "experiences": [],
+        "excluded": [],
+        "mode": "source_unavailable",
+        "model": null,
+        "notice": "관련 기관 자료를 찾았어요. 내 소속 설정에서 기관을 확인하거나 질문에 기관명을 알려주세요.",
+        "answer": "",
+        "intent": null,
+        "scope": "등록한 자료의 범위에서 확인되지 않았습니다. 해당 기관·신분의 규정과 누락된 별표를 추가해 주세요.",
+        "tree": {
+          "kind": "unavailable",
+          "title": "자료를 더 확인해야 답할 수 있어요",
+          "branches": [
+            {
+              "label": "어떤 자료가 필요한가요?",
+              "items": [
+                {
+                  "text": "관련 기관 자료를 찾았어요. 내 소속 설정에서 기관을 확인하거나 질문에 기관명을 알려주세요.",
+                  "ref": null
+                }
+              ]
+            },
+            {
+              "label": "지금 할 일",
+              "items": [
+                {
+                  "text": "국가·지방 등 적용 대상과 등록 자료를 확인해 주세요.",
+                  "ref": null
+                },
+                {
+                  "text": "자료를 등록한 뒤 같은 질문을 다시 해보세요.",
+                  "ref": null
+                }
+              ]
+            }
+          ],
+          "note": "질문에 직접 답하는 원문을 확인한 뒤 안내할게요."
+        }
+      },
+      "guidance": {
+        "topic": "institution",
+        "title": "기관 자료 처리 방법",
+        "context": "교육에 참여하려는데 언제까지 내야 해요?",
+        "questions": [],
+        "steps": [
+          {
+            "id": "scope",
+            "title": "상황과 적용 기준 확인",
+            "detail": "기관·업무 종류와 현재 처리 단계를 알려주세요.",
+            "kind": "preparation"
+          },
+          {
+            "id": "materials",
+            "title": "근거·서식 확인",
+            "detail": "질문에 직접 답하는 규정·지침·매뉴얼을 등록하면 원문을 확인할 수 있어요.",
+            "kind": "preparation"
+          }
+        ],
+        "deadlines": [],
+        "forms": [],
+        "service_guide": {
+          "evidence": [],
+          "coverage": {
+            "guide_pages": 10,
+            "faq_questions": 26
+          },
+          "notice": "국가공무원 제도 설명·FAQ의 보관본입니다. 확인일은 수집일이며 답변의 개정일을 뜻하지 않아요. 실제 적용·일수·예외는 현행 법령과 기관 기준을 확인하세요.",
+          "problems": []
+        },
+        "institution_scope": null,
+        "manual": {
+          "evidence": [],
+          "scope": "",
+          "notice": "이 업무에 맞는 시스템 매뉴얼을 등록하면 사용법을 연결할 수 있어요."
+        },
+        "ai_requested": false,
+        "ai_used": false,
+        "notice": "진행 순서는 실무 준비 제안입니다. 법정 기한·필수 서류·적용 조건은 아래 등록 근거에서 확인하세요.",
+        "map": {
+          "nodes": [
+            {
+              "id": "topic:institution",
+              "label": "institution",
+              "kind": "topic"
+            },
+            {
+              "id": "step:institution:scope",
+              "label": "상황과 적용 기준 확인",
+              "kind": "preparation"
+            },
+            {
+              "id": "step:institution:materials",
+              "label": "근거·서식 확인",
+              "kind": "preparation"
+            }
+          ],
+          "edges": [
+            {
+              "source": "topic:institution",
+              "target": "step:institution:scope",
+              "relation": "준비 순서"
+            },
+            {
+              "source": "topic:institution",
+              "target": "step:institution:materials",
+              "relation": "준비 순서"
+            }
+          ],
+          "note": "자료의 관련을 보여줍니다. 법적 적용 관계를 자동 판정한 결과는 아닙니다."
+        }
+      }
+    },
+    "unconfirmed": {
+      "query": "교육에 참여하려는데 언제까지 내야 해요?",
+      "mode": "structured_guidance",
+      "model": null,
+      "profile": null,
+      "summary": "등록 자료로 처리 방법을 함께 확인해요.",
+      "answer": "",
+      "notice": "관련 기관 자료를 찾았어요. 내 소속 설정에서 기관을 확인하거나 질문에 기관명을 알려주세요.",
+      "plan": null,
+      "alternatives": [],
+      "cited": [],
+      "related": [],
+      "personal_notes": [],
+      "knowledge": {
+        "evidence": [],
+        "experiences": [],
+        "excluded": [],
+        "mode": "source_unavailable",
+        "model": null,
+        "notice": "관련 기관 자료를 찾았어요. 내 소속 설정에서 기관을 확인하거나 질문에 기관명을 알려주세요.",
+        "answer": "",
+        "intent": null,
+        "scope": "등록한 자료의 범위에서 확인되지 않았습니다. 해당 기관·신분의 규정과 누락된 별표를 추가해 주세요.",
+        "tree": {
+          "kind": "unavailable",
+          "title": "자료를 더 확인해야 답할 수 있어요",
+          "branches": [
+            {
+              "label": "어떤 자료가 필요한가요?",
+              "items": [
+                {
+                  "text": "관련 기관 자료를 찾았어요. 내 소속 설정에서 기관을 확인하거나 질문에 기관명을 알려주세요.",
+                  "ref": null
+                }
+              ]
+            },
+            {
+              "label": "지금 할 일",
+              "items": [
+                {
+                  "text": "국가·지방 등 적용 대상과 등록 자료를 확인해 주세요.",
+                  "ref": null
+                },
+                {
+                  "text": "자료를 등록한 뒤 같은 질문을 다시 해보세요.",
+                  "ref": null
+                }
+              ]
+            }
+          ],
+          "note": "질문에 직접 답하는 원문을 확인한 뒤 안내할게요."
+        }
+      },
+      "guidance": {
+        "topic": "institution",
+        "title": "기관 자료 처리 방법",
+        "context": "교육에 참여하려는데 언제까지 내야 해요?",
+        "questions": [],
+        "steps": [
+          {
+            "id": "scope",
+            "title": "상황과 적용 기준 확인",
+            "detail": "기관·업무 종류와 현재 처리 단계를 알려주세요.",
+            "kind": "preparation"
+          },
+          {
+            "id": "materials",
+            "title": "근거·서식 확인",
+            "detail": "질문에 직접 답하는 규정·지침·매뉴얼을 등록하면 원문을 확인할 수 있어요.",
+            "kind": "preparation"
+          }
+        ],
+        "deadlines": [],
+        "forms": [],
+        "service_guide": {
+          "evidence": [],
+          "coverage": {
+            "guide_pages": 10,
+            "faq_questions": 26
+          },
+          "notice": "국가공무원 제도 설명·FAQ의 보관본입니다. 확인일은 수집일이며 답변의 개정일을 뜻하지 않아요. 실제 적용·일수·예외는 현행 법령과 기관 기준을 확인하세요.",
+          "problems": []
+        },
+        "institution_scope": null,
+        "manual": {
+          "evidence": [],
+          "scope": "",
+          "notice": "이 업무에 맞는 시스템 매뉴얼을 등록하면 사용법을 연결할 수 있어요."
+        },
+        "ai_requested": false,
+        "ai_used": false,
+        "notice": "진행 순서는 실무 준비 제안입니다. 법정 기한·필수 서류·적용 조건은 아래 등록 근거에서 확인하세요.",
+        "map": {
+          "nodes": [
+            {
+              "id": "topic:institution",
+              "label": "institution",
+              "kind": "topic"
+            },
+            {
+              "id": "step:institution:scope",
+              "label": "상황과 적용 기준 확인",
+              "kind": "preparation"
+            },
+            {
+              "id": "step:institution:materials",
+              "label": "근거·서식 확인",
+              "kind": "preparation"
+            }
+          ],
+          "edges": [
+            {
+              "source": "topic:institution",
+              "target": "step:institution:scope",
+              "relation": "준비 순서"
+            },
+            {
+              "source": "topic:institution",
+              "target": "step:institution:materials",
+              "relation": "준비 순서"
+            }
+          ],
+          "note": "자료의 관련을 보여줍니다. 법적 적용 관계를 자동 판정한 결과는 아닙니다."
+        }
+      }
+    },
+    "wrong-agency": {
+      "query": "없는시청 교육 마감은?",
+      "mode": "structured_guidance",
+      "model": null,
+      "profile": null,
+      "summary": "등록 자료로 처리 방법을 함께 확인해요.",
+      "answer": "",
+      "notice": "이 질문에 직접 답하는 등록 근거를 확인하지 못했어요. 업무 종류와 관련 규정·지침을 알려주세요.",
+      "plan": null,
+      "alternatives": [],
+      "cited": [],
+      "related": [],
+      "personal_notes": [],
+      "knowledge": {
+        "evidence": [],
+        "experiences": [],
+        "excluded": [],
+        "mode": "source_unavailable",
+        "model": null,
+        "notice": "이 질문에 직접 답하는 등록 근거를 확인하지 못했어요. 업무 종류와 관련 규정·지침을 알려주세요.",
+        "answer": "",
+        "intent": null,
+        "scope": "등록한 자료의 범위에서 확인되지 않았습니다. 해당 기관·신분의 규정과 누락된 별표를 추가해 주세요.",
+        "tree": {
+          "kind": "unavailable",
+          "title": "자료를 더 확인해야 답할 수 있어요",
+          "branches": [
+            {
+              "label": "어떤 자료가 필요한가요?",
+              "items": [
+                {
+                  "text": "이 질문에 직접 답하는 등록 근거를 확인하지 못했어요. 업무 종류와 관련 규정·지침을 알려주세요.",
+                  "ref": null
+                }
+              ]
+            },
+            {
+              "label": "지금 할 일",
+              "items": [
+                {
+                  "text": "국가·지방 등 적용 대상과 등록 자료를 확인해 주세요.",
+                  "ref": null
+                },
+                {
+                  "text": "자료를 등록한 뒤 같은 질문을 다시 해보세요.",
+                  "ref": null
+                }
+              ]
+            }
+          ],
+          "note": "질문에 직접 답하는 원문을 확인한 뒤 안내할게요."
+        }
+      },
+      "guidance": {
+        "topic": "general",
+        "title": "서무 업무 처리 방법",
+        "context": "없는시청 교육 마감은?",
+        "questions": [
+          "어떤 서무업무인지, 지금 무엇을 처리하려는지 알려주세요."
+        ],
+        "steps": [
+          {
+            "id": "scope",
+            "title": "상황과 적용 기준 확인",
+            "detail": "기관·업무 종류와 현재 처리 단계를 알려주세요.",
+            "kind": "preparation"
+          },
+          {
+            "id": "materials",
+            "title": "근거·서식 확인",
+            "detail": "질문에 직접 답하는 규정·지침·매뉴얼을 등록하면 원문을 확인할 수 있어요.",
+            "kind": "preparation"
+          }
+        ],
+        "deadlines": [],
+        "forms": [],
+        "service_guide": {
+          "evidence": [],
+          "coverage": {
+            "guide_pages": 10,
+            "faq_questions": 26
+          },
+          "notice": "국가공무원 제도 설명·FAQ의 보관본입니다. 확인일은 수집일이며 답변의 개정일을 뜻하지 않아요. 실제 적용·일수·예외는 현행 법령과 기관 기준을 확인하세요.",
+          "problems": []
+        },
+        "institution_scope": null,
+        "manual": {
+          "evidence": [],
+          "scope": "",
+          "notice": "이 업무에 맞는 시스템 매뉴얼을 등록하면 사용법을 연결할 수 있어요."
+        },
+        "ai_requested": false,
+        "ai_used": false,
+        "notice": "진행 순서는 실무 준비 제안입니다. 법정 기한·필수 서류·적용 조건은 아래 등록 근거에서 확인하세요.",
+        "map": {
+          "nodes": [
+            {
+              "id": "topic:general",
+              "label": "general",
+              "kind": "topic"
+            },
+            {
+              "id": "step:general:scope",
+              "label": "상황과 적용 기준 확인",
+              "kind": "preparation"
+            },
+            {
+              "id": "step:general:materials",
+              "label": "근거·서식 확인",
+              "kind": "preparation"
+            }
+          ],
+          "edges": [
+            {
+              "source": "topic:general",
+              "target": "step:general:scope",
+              "relation": "준비 순서"
+            },
+            {
+              "source": "topic:general",
+              "target": "step:general:materials",
+              "relation": "준비 순서"
+            }
+          ],
+          "note": "자료의 관련을 보여줍니다. 법적 적용 관계를 자동 판정한 결과는 아닙니다."
+        }
+      }
+    },
+    "copyright": {
+      "query": "교육 저작권은?\n업무환경: 국가공무원",
+      "mode": "structured_guidance",
+      "model": null,
+      "profile": null,
+      "summary": "등록 자료로 처리 방법을 함께 확인해요.",
+      "answer": "",
+      "notice": "이 질문에 직접 답하는 등록 근거를 확인하지 못했어요. 업무 종류와 관련 규정·지침을 알려주세요.",
+      "plan": null,
+      "alternatives": [],
+      "cited": [],
+      "related": [],
+      "personal_notes": [],
+      "knowledge": {
+        "evidence": [],
+        "experiences": [],
+        "excluded": [],
+        "mode": "source_unavailable",
+        "model": null,
+        "notice": "이 질문에 직접 답하는 등록 근거를 확인하지 못했어요. 업무 종류와 관련 규정·지침을 알려주세요.",
+        "answer": "",
+        "intent": null,
+        "scope": "등록한 자료의 범위에서 확인되지 않았습니다. 해당 기관·신분의 규정과 누락된 별표를 추가해 주세요.",
+        "tree": {
+          "kind": "unavailable",
+          "title": "자료를 더 확인해야 답할 수 있어요",
+          "branches": [
+            {
+              "label": "어떤 자료가 필요한가요?",
+              "items": [
+                {
+                  "text": "이 질문에 직접 답하는 등록 근거를 확인하지 못했어요. 업무 종류와 관련 규정·지침을 알려주세요.",
+                  "ref": null
+                }
+              ]
+            },
+            {
+              "label": "지금 할 일",
+              "items": [
+                {
+                  "text": "국가·지방 등 적용 대상과 등록 자료를 확인해 주세요.",
+                  "ref": null
+                },
+                {
+                  "text": "자료를 등록한 뒤 같은 질문을 다시 해보세요.",
+                  "ref": null
+                }
+              ]
+            }
+          ],
+          "note": "질문에 직접 답하는 원문을 확인한 뒤 안내할게요."
+        }
+      },
+      "guidance": {
+        "topic": "general",
+        "title": "서무 업무 처리 방법",
+        "context": "교육 저작권은?",
+        "questions": [
+          "어떤 서무업무인지, 지금 무엇을 처리하려는지 알려주세요."
+        ],
+        "steps": [
+          {
+            "id": "scope",
+            "title": "상황과 적용 기준 확인",
+            "detail": "기관·업무 종류와 현재 처리 단계를 알려주세요.",
+            "kind": "preparation"
+          },
+          {
+            "id": "materials",
+            "title": "근거·서식 확인",
+            "detail": "질문에 직접 답하는 규정·지침·매뉴얼을 등록하면 원문을 확인할 수 있어요.",
+            "kind": "preparation"
+          }
+        ],
+        "deadlines": [],
+        "forms": [],
+        "service_guide": {
+          "evidence": [],
+          "coverage": {
+            "guide_pages": 10,
+            "faq_questions": 26
+          },
+          "notice": "국가공무원 제도 설명·FAQ의 보관본입니다. 확인일은 수집일이며 답변의 개정일을 뜻하지 않아요. 실제 적용·일수·예외는 현행 법령과 기관 기준을 확인하세요.",
+          "problems": []
+        },
+        "institution_scope": null,
+        "manual": {
+          "evidence": [],
+          "scope": "",
+          "notice": "이 업무에 맞는 시스템 매뉴얼을 등록하면 사용법을 연결할 수 있어요."
+        },
+        "ai_requested": false,
+        "ai_used": false,
+        "notice": "진행 순서는 실무 준비 제안입니다. 법정 기한·필수 서류·적용 조건은 아래 등록 근거에서 확인하세요.",
+        "map": {
+          "nodes": [
+            {
+              "id": "topic:general",
+              "label": "general",
+              "kind": "topic"
+            },
+            {
+              "id": "step:general:scope",
+              "label": "상황과 적용 기준 확인",
+              "kind": "preparation"
+            },
+            {
+              "id": "step:general:materials",
+              "label": "근거·서식 확인",
+              "kind": "preparation"
+            }
+          ],
+          "edges": [
+            {
+              "source": "topic:general",
+              "target": "step:general:scope",
+              "relation": "준비 순서"
+            },
+            {
+              "source": "topic:general",
+              "target": "step:general:materials",
+              "relation": "준비 순서"
+            }
+          ],
+          "note": "자료의 관련을 보여줍니다. 법적 적용 관계를 자동 판정한 결과는 아닙니다."
+        }
+      }
+    },
+    "explicit-copyright": {
+      "query": "합성 제출검증기관 교육 저작권은?\n업무환경: 국가공무원",
+      "mode": "structured_guidance",
+      "model": null,
+      "profile": null,
+      "summary": "등록 자료로 처리 방법을 함께 확인해요.",
+      "answer": "",
+      "notice": "이 질문에 직접 답하는 등록 근거를 확인하지 못했어요. 업무 종류와 관련 규정·지침을 알려주세요.",
+      "plan": null,
+      "alternatives": [],
+      "cited": [],
+      "related": [],
+      "personal_notes": [],
+      "knowledge": {
+        "evidence": [],
+        "experiences": [],
+        "excluded": [],
+        "mode": "source_unavailable",
+        "model": null,
+        "notice": "이 질문에 직접 답하는 등록 근거를 확인하지 못했어요. 업무 종류와 관련 규정·지침을 알려주세요.",
+        "answer": "",
+        "intent": null,
+        "scope": "등록한 자료의 범위에서 확인되지 않았습니다. 해당 기관·신분의 규정과 누락된 별표를 추가해 주세요.",
+        "tree": {
+          "kind": "unavailable",
+          "title": "자료를 더 확인해야 답할 수 있어요",
+          "branches": [
+            {
+              "label": "어떤 자료가 필요한가요?",
+              "items": [
+                {
+                  "text": "이 질문에 직접 답하는 등록 근거를 확인하지 못했어요. 업무 종류와 관련 규정·지침을 알려주세요.",
+                  "ref": null
+                }
+              ]
+            },
+            {
+              "label": "지금 할 일",
+              "items": [
+                {
+                  "text": "국가·지방 등 적용 대상과 등록 자료를 확인해 주세요.",
+                  "ref": null
+                },
+                {
+                  "text": "자료를 등록한 뒤 같은 질문을 다시 해보세요.",
+                  "ref": null
+                }
+              ]
+            }
+          ],
+          "note": "질문에 직접 답하는 원문을 확인한 뒤 안내할게요."
+        }
+      },
+      "guidance": {
+        "topic": "general",
+        "title": "서무 업무 처리 방법",
+        "context": "합성 제출검증기관 교육 저작권은?",
+        "questions": [
+          "어떤 서무업무인지, 지금 무엇을 처리하려는지 알려주세요."
+        ],
+        "steps": [
+          {
+            "id": "scope",
+            "title": "상황과 적용 기준 확인",
+            "detail": "기관·업무 종류와 현재 처리 단계를 알려주세요.",
+            "kind": "preparation"
+          },
+          {
+            "id": "materials",
+            "title": "근거·서식 확인",
+            "detail": "질문에 직접 답하는 규정·지침·매뉴얼을 등록하면 원문을 확인할 수 있어요.",
+            "kind": "preparation"
+          }
+        ],
+        "deadlines": [],
+        "forms": [],
+        "service_guide": {
+          "evidence": [],
+          "coverage": {
+            "guide_pages": 10,
+            "faq_questions": 26
+          },
+          "notice": "국가공무원 제도 설명·FAQ의 보관본입니다. 확인일은 수집일이며 답변의 개정일을 뜻하지 않아요. 실제 적용·일수·예외는 현행 법령과 기관 기준을 확인하세요.",
+          "problems": []
+        },
+        "institution_scope": null,
+        "manual": {
+          "evidence": [],
+          "scope": "",
+          "notice": "이 업무에 맞는 시스템 매뉴얼을 등록하면 사용법을 연결할 수 있어요."
+        },
+        "ai_requested": false,
+        "ai_used": false,
+        "notice": "진행 순서는 실무 준비 제안입니다. 법정 기한·필수 서류·적용 조건은 아래 등록 근거에서 확인하세요.",
+        "map": {
+          "nodes": [
+            {
+              "id": "topic:general",
+              "label": "general",
+              "kind": "topic"
+            },
+            {
+              "id": "step:general:scope",
+              "label": "상황과 적용 기준 확인",
+              "kind": "preparation"
+            },
+            {
+              "id": "step:general:materials",
+              "label": "근거·서식 확인",
+              "kind": "preparation"
+            }
+          ],
+          "edges": [
+            {
+              "source": "topic:general",
+              "target": "step:general:scope",
+              "relation": "준비 순서"
+            },
+            {
+              "source": "topic:general",
+              "target": "step:general:materials",
+              "relation": "준비 순서"
+            }
+          ],
+          "note": "자료의 관련을 보여줍니다. 법적 적용 관계를 자동 판정한 결과는 아닙니다."
+        }
+      }
+    },
+    "v2-draft": {
+      "query": "교육에 참여하려는데 언제까지 내야 해요?\n업무환경: 국가공무원",
+      "mode": "structured_guidance",
+      "model": null,
+      "profile": null,
+      "summary": "등록 자료로 처리 방법을 함께 확인해요.",
+      "answer": "교육 희망자 회신 마감은 교육 시작 3일 전입니다. [근거 1]",
+      "notice": "내 소속 설정 기준: 합성 제출검증기관 · 현재 적용된 원문을 찾아 안내해요.",
+      "plan": null,
+      "alternatives": [],
+      "cited": [],
+      "related": [],
+      "personal_notes": [],
+      "knowledge": {
+        "evidence": [
+          {
+            "id": "institution:d65eb16eb5ad4151a06f24f9a9a5ffcd:c1bbe89d6d6e4bfdbe52c35903af6834:0",
+            "source_id": "institution:d65eb16eb5ad4151a06f24f9a9a5ffcd",
+            "title": "[합성 예제] 연수 참가 접수 안내",
+            "text": "교육 희망자 회신 마감은 교육 시작 3일 전입니다.",
+            "loc": "1행 · v1",
+            "sha256": "0b1e7df26a6e17b091e13fe880a12511a26c62f473e2a7260ce00edcf51ceb79",
+            "official": null,
+            "limited": false,
+            "kind": "기관 지침",
+            "category": "교육·행사",
+            "institution": "합성 제출검증기관",
+            "effective_date": "2026-01-01",
+            "library_id": "institution-rules",
+            "file_id": "d65eb16eb5ad4151a06f24f9a9a5ffcd",
+            "reference_kind": "institution_rule",
+            "managed_rule_id": "d65eb16eb5ad4151a06f24f9a9a5ffcd",
+            "managed_version_id": "c1bbe89d6d6e4bfdbe52c35903af6834",
+            "managed_version_number": 1,
+            "scope_notes": "실제 기관 업무에 적용하지 않는 합성 제출 검증 자료",
+            "score": 3.2873790002462413,
+            "quote": "교육 희망자 회신 마감은 교육 시작 3일 전입니다."
+          }
+        ],
+        "experiences": [],
+        "excluded": [],
+        "mode": "source_search",
+        "model": null,
+        "notice": "내 소속 설정 기준: 합성 제출검증기관 · 현재 적용된 원문을 찾아 안내해요.",
+        "answer": "교육 희망자 회신 마감은 교육 시작 3일 전입니다. [근거 1]",
+        "intent": null,
+        "scope": "등록·선택한 추출 본문을 검색합니다. 인용 확인은 적용 대상·현행성·법적 해석을 보증하지 않습니다. 처리 경험은 공식 근거와 구분합니다.",
+        "tree": {
+          "kind": "reference",
+          "title": "기관에서 적용한 자료를 확인하세요",
+          "branches": [
+            {
+              "label": "기관에서 적용한 자료 · 원문 발췌",
+              "items": [
+                {
+                  "text": "교육 희망자 회신 마감은 교육 시작 3일 전입니다.",
+                  "ref": 1,
+                  "support_quotes": [
+                    "교육 희망자 회신 마감은 교육 시작 3일 전입니다."
+                  ]
+                }
+              ]
+            }
+          ],
+          "note": "기관 담당자가 적용한 버전의 원문입니다. 공통 법령을 대체하거나 법적 적합성을 자동 승인한 답변은 아닙니다."
+        }
+      },
+      "guidance": {
+        "topic": "institution",
+        "title": "기관 자료 처리 방법",
+        "context": "교육에 참여하려는데 언제까지 내야 해요?",
+        "questions": [],
+        "steps": [
+          {
+            "id": "scope",
+            "title": "상황과 적용 기준 확인",
+            "detail": "기관·업무 종류와 현재 처리 단계를 알려주세요.",
+            "kind": "preparation"
+          },
+          {
+            "id": "materials",
+            "title": "근거·서식 확인",
+            "detail": "질문에 직접 답하는 규정·지침·매뉴얼을 등록하면 원문을 확인할 수 있어요.",
+            "kind": "preparation"
+          }
+        ],
+        "deadlines": [],
+        "forms": [
+          {
+            "id": "b0c91b1f92c64e499d8e9fb798b08326",
+            "name": "[합성 예제] 교육참가 신청서",
+            "kind": "서식",
+            "reference_kind": "institution_rule",
+            "version_number": 1,
+            "source_id": "institution:b0c91b1f92c64e499d8e9fb798b08326",
+            "sha256": "bb7a3b4c8dea1e97c19d289a876e38e9f940006d01e7ccb6fcda0d4c9d7dbc2e",
+            "href": "/api/institution-rules/b0c91b1f92c64e499d8e9fb798b08326/versions/d834500d87b0451fa93772554e089a87/original",
+            "manager_href": "index.html?rule=b0c91b1f92c64e499d8e9fb798b08326&rule_version=d834500d87b0451fa93772554e089a87#docs",
+            "synthetic": true
+          }
+        ],
+        "service_guide": {
+          "evidence": [],
+          "coverage": {
+            "guide_pages": 10,
+            "faq_questions": 26
+          },
+          "notice": "국가공무원 제도 설명·FAQ의 보관본입니다. 확인일은 수집일이며 답변의 개정일을 뜻하지 않아요. 실제 적용·일수·예외는 현행 법령과 기관 기준을 확인하세요.",
+          "problems": []
+        },
+        "institution_scope": {
+          "organizations": [
+            "합성 제출검증기관"
+          ],
+          "basis": "affiliation"
+        },
+        "manual": {
+          "evidence": [],
+          "scope": "",
+          "notice": "이 업무에 맞는 시스템 매뉴얼을 등록하면 사용법을 연결할 수 있어요."
+        },
+        "ai_requested": false,
+        "ai_used": false,
+        "notice": "진행 순서는 실무 준비 제안입니다. 법정 기한·필수 서류·적용 조건은 아래 등록 근거에서 확인하세요.",
+        "map": {
+          "nodes": [
+            {
+              "id": "topic:institution",
+              "label": "institution",
+              "kind": "topic"
+            },
+            {
+              "id": "step:institution:scope",
+              "label": "상황과 적용 기준 확인",
+              "kind": "preparation"
+            },
+            {
+              "id": "step:institution:materials",
+              "label": "근거·서식 확인",
+              "kind": "preparation"
+            },
+            {
+              "id": "source:institution:d65eb16eb5ad4151a06f24f9a9a5ffcd",
+              "label": "[합성 예제] 연수 참가 접수 안내",
+              "kind": "institution_rule",
+              "sha256": "0b1e7df26a6e17b091e13fe880a12511a26c62f473e2a7260ce00edcf51ceb79",
+              "loc": "1행 · v1",
+              "page": null
+            },
+            {
+              "id": "form:b0c91b1f92c64e499d8e9fb798b08326",
+              "label": "[합성 예제] 교육참가 신청서",
+              "kind": "form",
+              "sha256": "bb7a3b4c8dea1e97c19d289a876e38e9f940006d01e7ccb6fcda0d4c9d7dbc2e"
+            }
+          ],
+          "edges": [
+            {
+              "source": "topic:institution",
+              "target": "step:institution:scope",
+              "relation": "준비 순서"
+            },
+            {
+              "source": "topic:institution",
+              "target": "step:institution:materials",
+              "relation": "준비 순서"
+            },
+            {
+              "source": "topic:institution",
+              "target": "source:institution:d65eb16eb5ad4151a06f24f9a9a5ffcd",
+              "relation": "검색된 자료"
+            },
+            {
+              "source": "topic:institution",
+              "target": "form:b0c91b1f92c64e499d8e9fb798b08326",
+              "relation": "등록 서식 후보"
+            }
+          ],
+          "note": "자료의 관련을 보여줍니다. 법적 적용 관계를 자동 판정한 결과는 아닙니다."
+        }
+      }
+    },
+    "v2": {
+      "query": "교육에 참여하려는데 언제까지 내야 해요?\n업무환경: 국가공무원",
+      "mode": "structured_guidance",
+      "model": null,
+      "profile": null,
+      "summary": "등록 자료로 처리 방법을 함께 확인해요.",
+      "answer": "교육 희망자 회신 마감은 교육 시작 5일 전입니다. [근거 1]",
+      "notice": "내 소속 설정 기준: 합성 제출검증기관 · 현재 적용된 원문을 찾아 안내해요.",
+      "plan": null,
+      "alternatives": [],
+      "cited": [],
+      "related": [],
+      "personal_notes": [],
+      "knowledge": {
+        "evidence": [
+          {
+            "id": "institution:d65eb16eb5ad4151a06f24f9a9a5ffcd:d10255e70d4d4bbbac5927875b863b4f:0",
+            "source_id": "institution:d65eb16eb5ad4151a06f24f9a9a5ffcd",
+            "title": "[합성 예제] 연수 참가 접수 안내",
+            "text": "교육 희망자 회신 마감은 교육 시작 5일 전입니다.",
+            "loc": "1행 · v2",
+            "sha256": "e93264456bfd27e1fb04503b164c0750d1cfe856d6f7f03c97ff78714f48cbdb",
+            "official": null,
+            "limited": false,
+            "kind": "기관 지침",
+            "category": "교육·행사",
+            "institution": "합성 제출검증기관",
+            "effective_date": "2026-01-01",
+            "library_id": "institution-rules",
+            "file_id": "d65eb16eb5ad4151a06f24f9a9a5ffcd",
+            "reference_kind": "institution_rule",
+            "managed_rule_id": "d65eb16eb5ad4151a06f24f9a9a5ffcd",
+            "managed_version_id": "d10255e70d4d4bbbac5927875b863b4f",
+            "managed_version_number": 2,
+            "scope_notes": "실제 기관 업무에 적용하지 않는 합성 제출 검증 자료",
+            "score": 3.2873790002462413,
+            "quote": "교육 희망자 회신 마감은 교육 시작 5일 전입니다."
+          }
+        ],
+        "experiences": [],
+        "excluded": [],
+        "mode": "source_search",
+        "model": null,
+        "notice": "내 소속 설정 기준: 합성 제출검증기관 · 현재 적용된 원문을 찾아 안내해요.",
+        "answer": "교육 희망자 회신 마감은 교육 시작 5일 전입니다. [근거 1]",
+        "intent": null,
+        "scope": "등록·선택한 추출 본문을 검색합니다. 인용 확인은 적용 대상·현행성·법적 해석을 보증하지 않습니다. 처리 경험은 공식 근거와 구분합니다.",
+        "tree": {
+          "kind": "reference",
+          "title": "기관에서 적용한 자료를 확인하세요",
+          "branches": [
+            {
+              "label": "기관에서 적용한 자료 · 원문 발췌",
+              "items": [
+                {
+                  "text": "교육 희망자 회신 마감은 교육 시작 5일 전입니다.",
+                  "ref": 1,
+                  "support_quotes": [
+                    "교육 희망자 회신 마감은 교육 시작 5일 전입니다."
+                  ]
+                }
+              ]
+            }
+          ],
+          "note": "기관 담당자가 적용한 버전의 원문입니다. 공통 법령을 대체하거나 법적 적합성을 자동 승인한 답변은 아닙니다."
+        }
+      },
+      "guidance": {
+        "topic": "institution",
+        "title": "기관 자료 처리 방법",
+        "context": "교육에 참여하려는데 언제까지 내야 해요?",
+        "questions": [],
+        "steps": [
+          {
+            "id": "scope",
+            "title": "상황과 적용 기준 확인",
+            "detail": "기관·업무 종류와 현재 처리 단계를 알려주세요.",
+            "kind": "preparation"
+          },
+          {
+            "id": "materials",
+            "title": "근거·서식 확인",
+            "detail": "질문에 직접 답하는 규정·지침·매뉴얼을 등록하면 원문을 확인할 수 있어요.",
+            "kind": "preparation"
+          }
+        ],
+        "deadlines": [],
+        "forms": [
+          {
+            "id": "b0c91b1f92c64e499d8e9fb798b08326",
+            "name": "[합성 예제] 교육참가 신청서",
+            "kind": "서식",
+            "reference_kind": "institution_rule",
+            "version_number": 1,
+            "source_id": "institution:b0c91b1f92c64e499d8e9fb798b08326",
+            "sha256": "bb7a3b4c8dea1e97c19d289a876e38e9f940006d01e7ccb6fcda0d4c9d7dbc2e",
+            "href": "/api/institution-rules/b0c91b1f92c64e499d8e9fb798b08326/versions/d834500d87b0451fa93772554e089a87/original",
+            "manager_href": "index.html?rule=b0c91b1f92c64e499d8e9fb798b08326&rule_version=d834500d87b0451fa93772554e089a87#docs",
+            "synthetic": true
+          }
+        ],
+        "service_guide": {
+          "evidence": [],
+          "coverage": {
+            "guide_pages": 10,
+            "faq_questions": 26
+          },
+          "notice": "국가공무원 제도 설명·FAQ의 보관본입니다. 확인일은 수집일이며 답변의 개정일을 뜻하지 않아요. 실제 적용·일수·예외는 현행 법령과 기관 기준을 확인하세요.",
+          "problems": []
+        },
+        "institution_scope": {
+          "organizations": [
+            "합성 제출검증기관"
+          ],
+          "basis": "affiliation"
+        },
+        "manual": {
+          "evidence": [],
+          "scope": "",
+          "notice": "이 업무에 맞는 시스템 매뉴얼을 등록하면 사용법을 연결할 수 있어요."
+        },
+        "ai_requested": false,
+        "ai_used": false,
+        "notice": "진행 순서는 실무 준비 제안입니다. 법정 기한·필수 서류·적용 조건은 아래 등록 근거에서 확인하세요.",
+        "map": {
+          "nodes": [
+            {
+              "id": "topic:institution",
+              "label": "institution",
+              "kind": "topic"
+            },
+            {
+              "id": "step:institution:scope",
+              "label": "상황과 적용 기준 확인",
+              "kind": "preparation"
+            },
+            {
+              "id": "step:institution:materials",
+              "label": "근거·서식 확인",
+              "kind": "preparation"
+            },
+            {
+              "id": "source:institution:d65eb16eb5ad4151a06f24f9a9a5ffcd",
+              "label": "[합성 예제] 연수 참가 접수 안내",
+              "kind": "institution_rule",
+              "sha256": "e93264456bfd27e1fb04503b164c0750d1cfe856d6f7f03c97ff78714f48cbdb",
+              "loc": "1행 · v2",
+              "page": null
+            },
+            {
+              "id": "form:b0c91b1f92c64e499d8e9fb798b08326",
+              "label": "[합성 예제] 교육참가 신청서",
+              "kind": "form",
+              "sha256": "bb7a3b4c8dea1e97c19d289a876e38e9f940006d01e7ccb6fcda0d4c9d7dbc2e"
+            }
+          ],
+          "edges": [
+            {
+              "source": "topic:institution",
+              "target": "step:institution:scope",
+              "relation": "준비 순서"
+            },
+            {
+              "source": "topic:institution",
+              "target": "step:institution:materials",
+              "relation": "준비 순서"
+            },
+            {
+              "source": "topic:institution",
+              "target": "source:institution:d65eb16eb5ad4151a06f24f9a9a5ffcd",
+              "relation": "검색된 자료"
+            },
+            {
+              "source": "topic:institution",
+              "target": "form:b0c91b1f92c64e499d8e9fb798b08326",
+              "relation": "등록 서식 후보"
+            }
+          ],
+          "note": "자료의 관련을 보여줍니다. 법적 적용 관계를 자동 판정한 결과는 아닙니다."
+        }
+      }
+    },
+    "child-agency": {
+      "query": "부산광역시교육청 교육 마감은?",
+      "mode": "structured_guidance",
+      "model": null,
+      "profile": null,
+      "summary": "등록 자료로 처리 방법을 함께 확인해요.",
+      "answer": "교육 희망자 회신 마감은 교육 시작 5일 전입니다. [근거 1]",
+      "notice": "질문에 지정한 기관 기준: 부산광역시교육청 · 현재 적용된 원문을 찾아 안내해요.",
+      "plan": null,
+      "alternatives": [],
+      "cited": [],
+      "related": [],
+      "personal_notes": [],
+      "knowledge": {
+        "evidence": [
+          {
+            "id": "institution:ee94f3ab753045b99d863361d214435f:03761b598c4f455081721ef54002a45d:0",
+            "source_id": "institution:ee94f3ab753045b99d863361d214435f",
+            "title": "[합성 예제] 교육청 교육 안내",
+            "text": "교육 희망자 회신 마감은 교육 시작 5일 전입니다.",
+            "loc": "1행 · v1",
+            "sha256": "e93264456bfd27e1fb04503b164c0750d1cfe856d6f7f03c97ff78714f48cbdb",
+            "official": null,
+            "limited": false,
+            "kind": "기관 지침",
+            "category": "교육·행사",
+            "institution": "부산광역시교육청",
+            "effective_date": "2026-01-01",
+            "library_id": "institution-rules",
+            "file_id": "ee94f3ab753045b99d863361d214435f",
+            "reference_kind": "institution_rule",
+            "managed_rule_id": "ee94f3ab753045b99d863361d214435f",
+            "managed_version_id": "03761b598c4f455081721ef54002a45d",
+            "managed_version_number": 1,
+            "scope_notes": "실제 기관 업무에 적용하지 않는 합성 제출 검증 자료",
+            "score": 3.5447741392494714,
+            "quote": "교육 희망자 회신 마감은 교육 시작 5일 전입니다."
+          }
+        ],
+        "experiences": [],
+        "excluded": [],
+        "mode": "source_search",
+        "model": null,
+        "notice": "질문에 지정한 기관 기준: 부산광역시교육청 · 현재 적용된 원문을 찾아 안내해요.",
+        "answer": "교육 희망자 회신 마감은 교육 시작 5일 전입니다. [근거 1]",
+        "intent": null,
+        "scope": "등록·선택한 추출 본문을 검색합니다. 인용 확인은 적용 대상·현행성·법적 해석을 보증하지 않습니다. 처리 경험은 공식 근거와 구분합니다.",
+        "tree": {
+          "kind": "reference",
+          "title": "기관에서 적용한 자료를 확인하세요",
+          "branches": [
+            {
+              "label": "기관에서 적용한 자료 · 원문 발췌",
+              "items": [
+                {
+                  "text": "교육 희망자 회신 마감은 교육 시작 5일 전입니다.",
+                  "ref": 1,
+                  "support_quotes": [
+                    "교육 희망자 회신 마감은 교육 시작 5일 전입니다."
+                  ]
+                }
+              ]
+            }
+          ],
+          "note": "기관 담당자가 적용한 버전의 원문입니다. 공통 법령을 대체하거나 법적 적합성을 자동 승인한 답변은 아닙니다."
+        }
+      },
+      "guidance": {
+        "topic": "institution",
+        "title": "기관 자료 처리 방법",
+        "context": "부산광역시교육청 교육 마감은?",
+        "questions": [],
+        "steps": [
+          {
+            "id": "scope",
+            "title": "상황과 적용 기준 확인",
+            "detail": "기관·업무 종류와 현재 처리 단계를 알려주세요.",
+            "kind": "preparation"
+          },
+          {
+            "id": "materials",
+            "title": "근거·서식 확인",
+            "detail": "질문에 직접 답하는 규정·지침·매뉴얼을 등록하면 원문을 확인할 수 있어요.",
+            "kind": "preparation"
+          }
+        ],
+        "deadlines": [],
+        "forms": [],
+        "service_guide": {
+          "evidence": [],
+          "coverage": {
+            "guide_pages": 10,
+            "faq_questions": 26
+          },
+          "notice": "국가공무원 제도 설명·FAQ의 보관본입니다. 확인일은 수집일이며 답변의 개정일을 뜻하지 않아요. 실제 적용·일수·예외는 현행 법령과 기관 기준을 확인하세요.",
+          "problems": []
+        },
+        "institution_scope": {
+          "organizations": [
+            "부산광역시교육청"
+          ],
+          "basis": "question"
+        },
+        "manual": {
+          "evidence": [],
+          "scope": "",
+          "notice": "이 업무에 맞는 시스템 매뉴얼을 등록하면 사용법을 연결할 수 있어요."
+        },
+        "ai_requested": false,
+        "ai_used": false,
+        "notice": "진행 순서는 실무 준비 제안입니다. 법정 기한·필수 서류·적용 조건은 아래 등록 근거에서 확인하세요.",
+        "map": {
+          "nodes": [
+            {
+              "id": "topic:institution",
+              "label": "institution",
+              "kind": "topic"
+            },
+            {
+              "id": "step:institution:scope",
+              "label": "상황과 적용 기준 확인",
+              "kind": "preparation"
+            },
+            {
+              "id": "step:institution:materials",
+              "label": "근거·서식 확인",
+              "kind": "preparation"
+            },
+            {
+              "id": "source:institution:ee94f3ab753045b99d863361d214435f",
+              "label": "[합성 예제] 교육청 교육 안내",
+              "kind": "institution_rule",
+              "sha256": "e93264456bfd27e1fb04503b164c0750d1cfe856d6f7f03c97ff78714f48cbdb",
+              "loc": "1행 · v1",
+              "page": null
+            }
+          ],
+          "edges": [
+            {
+              "source": "topic:institution",
+              "target": "step:institution:scope",
+              "relation": "준비 순서"
+            },
+            {
+              "source": "topic:institution",
+              "target": "step:institution:materials",
+              "relation": "준비 순서"
+            },
+            {
+              "source": "topic:institution",
+              "target": "source:institution:ee94f3ab753045b99d863361d214435f",
+              "relation": "검색된 자료"
+            }
+          ],
+          "note": "자료의 관련을 보여줍니다. 법적 적용 관계를 자동 판정한 결과는 아닙니다."
+        }
+      }
+    },
+    "council": {
+      "query": "부산광역시의회 교육 마감은?",
+      "mode": "structured_guidance",
+      "model": null,
+      "profile": null,
+      "summary": "등록 자료로 처리 방법을 함께 확인해요.",
+      "answer": "",
+      "notice": "이 질문에 직접 답하는 등록 근거를 확인하지 못했어요. 업무 종류와 관련 규정·지침을 알려주세요.",
+      "plan": null,
+      "alternatives": [],
+      "cited": [],
+      "related": [],
+      "personal_notes": [],
+      "knowledge": {
+        "evidence": [],
+        "experiences": [],
+        "excluded": [],
+        "mode": "source_unavailable",
+        "model": null,
+        "notice": "이 질문에 직접 답하는 등록 근거를 확인하지 못했어요. 업무 종류와 관련 규정·지침을 알려주세요.",
+        "answer": "",
+        "intent": null,
+        "scope": "등록한 자료의 범위에서 확인되지 않았습니다. 해당 기관·신분의 규정과 누락된 별표를 추가해 주세요.",
+        "tree": {
+          "kind": "unavailable",
+          "title": "자료를 더 확인해야 답할 수 있어요",
+          "branches": [
+            {
+              "label": "어떤 자료가 필요한가요?",
+              "items": [
+                {
+                  "text": "이 질문에 직접 답하는 등록 근거를 확인하지 못했어요. 업무 종류와 관련 규정·지침을 알려주세요.",
+                  "ref": null
+                }
+              ]
+            },
+            {
+              "label": "지금 할 일",
+              "items": [
+                {
+                  "text": "국가·지방 등 적용 대상과 등록 자료를 확인해 주세요.",
+                  "ref": null
+                },
+                {
+                  "text": "자료를 등록한 뒤 같은 질문을 다시 해보세요.",
+                  "ref": null
+                }
+              ]
+            }
+          ],
+          "note": "질문에 직접 답하는 원문을 확인한 뒤 안내할게요."
+        }
+      },
+      "guidance": {
+        "topic": "general",
+        "title": "서무 업무 처리 방법",
+        "context": "부산광역시의회 교육 마감은?",
+        "questions": [
+          "어떤 서무업무인지, 지금 무엇을 처리하려는지 알려주세요."
+        ],
+        "steps": [
+          {
+            "id": "scope",
+            "title": "상황과 적용 기준 확인",
+            "detail": "기관·업무 종류와 현재 처리 단계를 알려주세요.",
+            "kind": "preparation"
+          },
+          {
+            "id": "materials",
+            "title": "근거·서식 확인",
+            "detail": "질문에 직접 답하는 규정·지침·매뉴얼을 등록하면 원문을 확인할 수 있어요.",
+            "kind": "preparation"
+          }
+        ],
+        "deadlines": [],
+        "forms": [],
+        "service_guide": {
+          "evidence": [],
+          "coverage": {
+            "guide_pages": 10,
+            "faq_questions": 26
+          },
+          "notice": "국가공무원 제도 설명·FAQ의 보관본입니다. 확인일은 수집일이며 답변의 개정일을 뜻하지 않아요. 실제 적용·일수·예외는 현행 법령과 기관 기준을 확인하세요.",
+          "problems": []
+        },
+        "institution_scope": null,
+        "manual": {
+          "evidence": [],
+          "scope": "",
+          "notice": "이 업무에 맞는 시스템 매뉴얼을 등록하면 사용법을 연결할 수 있어요."
+        },
+        "ai_requested": false,
+        "ai_used": false,
+        "notice": "진행 순서는 실무 준비 제안입니다. 법정 기한·필수 서류·적용 조건은 아래 등록 근거에서 확인하세요.",
+        "map": {
+          "nodes": [
+            {
+              "id": "topic:general",
+              "label": "general",
+              "kind": "topic"
+            },
+            {
+              "id": "step:general:scope",
+              "label": "상황과 적용 기준 확인",
+              "kind": "preparation"
+            },
+            {
+              "id": "step:general:materials",
+              "label": "근거·서식 확인",
+              "kind": "preparation"
+            }
+          ],
+          "edges": [
+            {
+              "source": "topic:general",
+              "target": "step:general:scope",
+              "relation": "준비 순서"
+            },
+            {
+              "source": "topic:general",
+              "target": "step:general:materials",
+              "relation": "준비 순서"
+            }
+          ],
+          "note": "자료의 관련을 보여줍니다. 법적 적용 관계를 자동 판정한 결과는 아닙니다."
+        }
+      }
+    },
+    "child-care": {
+      "query": "아이가 아파서 돌봐야 하는데 어떤 휴가를 써요?\n업무환경: 국가공무원",
+      "mode": "structured_guidance",
+      "model": null,
+      "profile": null,
+      "summary": "등록 자료로 처리 방법을 함께 확인해요.",
+      "answer": "[1] ⑫ 인공수정 또는 체외수정 등 난임치료 시술을 받는 공무원은 다음 각 호의 구분에 따라 난임치료시술휴가를 사용할 수 있다. <개정 2011. 7. 4., 2018. 7. 2., 2018. 12. 18., 2019. 12. 31., 2021. 12. 31., 2024. 7. 2.>\n1. 여성공무원: 다음 각 목의 어느 하나에 해당하는 경우 해당 목에서 정한 기간\n가. 인공수정 등 시술을 받는 경우: 총 2일(시술 당일에 1일과 시술일 전날, 시술일 후 2일 이내이거나 시술 관련 진료일 중에 1일)\n나. 동결 보존된 배아를 이식하는 체외수정 시술을 받는 경우: 총 3일(시술 당일에 1일과 시술일 전날, 시술일 후 2일 이내이거나 시술 관련 진료일 중에 2일)\n다. 난자 채취를 하여 체외수정 시술을 받는 경우: 총 4일(난자 채취일에 1일, 시술 당일에 1일과 시술일 전날, 난자 채취일 전날, 시술일 후 2일 이내, 난자 채취일 후 2일 이내이거나 시술 관련 진료일 중에 2일)\n2. 남성공무원: 정자 채취일에 1일\n⑬ 행정기관의 장은 소속 공무원이 국가 또는 해당 기관의 주요 업무를 성공적으로 수행하여 탁월한 성과와 공로가 인정되는 경우에는 10일 이내의 포상휴가를 줄 수 있다. 이 경우 탁월한 성과와 공로에 대한 판단의 기준은 인사혁신처장이 정한다. <신설 2015. 10. 6., 2019. 12. 31.>\n⑭ 공무원은 다음 각 호의 어느 하나에 해당하는 경우 연간 10일의 범위에서 가족돌봄휴가를 사용할 수 있다. <개정 2020. 10. 20., 2024. 7. 2., 2026. 6. 23.>\n1. 「영유아보육법」에 따른 어린이집, 「유아교육법」에 따른 유치원 및 「초ㆍ중등교육법」 제2조 각 호의 학교(이하 이 항에서 “어린이집등”이라 한다)의 휴업ㆍ휴원ㆍ휴교, 그 밖에 이에 준하는 사유로 자녀 또는 손자녀를 돌봐야 하는 경우\n2. 자녀 또는 손자녀가 다니는 어린이집등의 공식 행사 또는 교사와의 상담에 참여하는 경우\n3. 자녀 또는 손자녀가 어린이집등을 졸업한 후 「유아교육법」에 따른 유치원 또는 「초ㆍ중등교육법」 제2조 각 호의 학교에 입학하기 전까지 자녀 또는 손자녀를 돌봐야 하는 경우\n4. 미성년자 또는 「장애인복지법」 제2조제2항에 따른 장애인(이하 이 조에서 “장애인”이라 한다)인 자녀ㆍ손자녀의 병원 진료(「국민건강보험법」 제52조에 따른 건강검진 또는 「감염병의 예방 및 관리에 관한 법률」 제24조 및 제25조에 따른 예방접종을 포함한다)에 동행하는 경우\n5. 질병, 사고, 노령 등의 사유로 조부모, 외조부모, 부모(배우자의 부모를 포함한다), 배우자, 자녀 또는 손자녀를 돌봐야 하는 경우\n⑮ 제14항에 따른 가족돌봄휴가는 무급으로 하되, 자녀(같은 항 제5호의 경우에는 미성년자 또는 장애인인 자녀로 한정한다)를 돌보기 위한 가족돌봄휴가는 해당 공무원의 자녀(제14항제1호에 따른 어린이집등에 재학 중이거나 미성년인 자녀 또는 장애인인 자녀를 말한다) 수에 1을 더한 일수까지를 연간 유급휴가 일수로 한다. 다만, 장애인인 자녀가 있는 공무원 또는 「한부모가족지원법」 제4조제1호의 모 또는 부에 해당하는 공무원의 경우에는 본문에 따른 연간 유급휴가 일수에 1일을 더한 일수까지 연간 유급휴가 일수로 한다. <신설 2020. 10. 20., 2024. 7. 2., 2026. 6. 23.>\n⑯ 여성공무원은 임신기간 중 검진을 위해 10일의 범위에서 임신검진휴가를 사용할 수 있다. <신설 2019. 12. 31., 2020. 10. 20., 2024. 7. 2.>",
+      "notice": "",
+      "plan": null,
+      "alternatives": [],
+      "cited": [],
+      "related": [],
+      "personal_notes": [],
+      "knowledge": {
+        "evidence": [
+          {
+            "id": "public-v70-156f83e9646084245c69e35e:11:0",
+            "text": "⑫ 인공수정 또는 체외수정 등 난임치료 시술을 받는 공무원은 다음 각 호의 구분에 따라 난임치료시술휴가를 사용할 수 있다. <개정 2011. 7. 4., 2018. 7. 2., 2018. 12. 18., 2019. 12. 31., 2021. 12. 31., 2024. 7. 2.>\n1. 여성공무원: 다음 각 목의 어느 하나에 해당하는 경우 해당 목에서 정한 기간\n가. 인공수정 등 시술을 받는 경우: 총 2일(시술 당일에 1일과 시술일 전날, 시술일 후 2일 이내이거나 시술 관련 진료일 중에 1일)\n나. 동결 보존된 배아를 이식하는 체외수정 시술을 받는 경우: 총 3일(시술 당일에 1일과 시술일 전날, 시술일 후 2일 이내이거나 시술 관련 진료일 중에 2일)\n다. 난자 채취를 하여 체외수정 시술을 받는 경우: 총 4일(난자 채취일에 1일, 시술 당일에 1일과 시술일 전날, 난자 채취일 전날, 시술일 후 2일 이내, 난자 채취일 후 2일 이내이거나 시술 관련 진료일 중에 2일)\n2. 남성공무원: 정자 채취일에 1일\n⑬ 행정기관의 장은 소속 공무원이 국가 또는 해당 기관의 주요 업무를 성공적으로 수행하여 탁월한 성과와 공로가 인정되는 경우에는 10일 이내의 포상휴가를 줄 수 있다. 이 경우 탁월한 성과와 공로에 대한 판단의 기준은 인사혁신처장이 정한다. <신설 2015. 10. 6., 2019. 12. 31.>\n⑭ 공무원은 다음 각 호의 어느 하나에 해당하는 경우 연간 10일의 범위에서 가족돌봄휴가를 사용할 수 있다. <개정 2020. 10. 20., 2024. 7. 2., 2026. 6. 23.>\n1. 「영유아보육법」에 따른 어린이집, 「유아교육법」에 따른 유치원 및 「초ㆍ중등교육법」 제2조 각 호의 학교(이하 이 항에서 “어린이집등”이라 한다)의 휴업ㆍ휴원ㆍ휴교, 그 밖에 이에 준하는 사유로 자녀 또는 손자녀를 돌봐야 하는 경우\n2. 자녀 또는 손자녀가 다니는 어린이집등의 공식 행사 또는 교사와의 상담에 참여하는 경우\n3. 자녀 또는 손자녀가 어린이집등을 졸업한 후 「유아교육법」에 따른 유치원 또는 「초ㆍ중등교육법」 제2조 각 호의 학교에 입학하기 전까지 자녀 또는 손자녀를 돌봐야 하는 경우\n4. 미성년자 또는 「장애인복지법」 제2조제2항에 따른 장애인(이하 이 조에서 “장애인”이라 한다)인 자녀ㆍ손자녀의 병원 진료(「국민건강보험법」 제52조에 따른 건강검진 또는 「감염병의 예방 및 관리에 관한 법률」 제24조 및 제25조에 따른 예방접종을 포함한다)에 동행하는 경우\n5. 질병, 사고, 노령 등의 사유로 조부모, 외조부모, 부모(배우자의 부모를 포함한다), 배우자, 자녀 또는 손자녀를 돌봐야 하는 경우\n⑮ 제14항에 따른 가족돌봄휴가는 무급으로 하되, 자녀(같은 항 제5호의 경우에는 미성년자 또는 장애인인 자녀로 한정한다)를 돌보기 위한 가족돌봄휴가는 해당 공무원의 자녀(제14항제1호에 따른 어린이집등에 재학 중이거나 미성년인 자녀 또는 장애인인 자녀를 말한다) 수에 1을 더한 일수까지를 연간 유급휴가 일수로 한다. 다만, 장애인인 자녀가 있는 공무원 또는 「한부모가족지원법」 제4조제1호의 모 또는 부에 해당하는 공무원의 경우에는 본문에 따른 연간 유급휴가 일수에 1일을 더한 일수까지 연간 유급휴가 일수로 한다. <신설 2020. 10. 20., 2024. 7. 2., 2026. 6. 23.>\n⑯ 여성공무원은 임신기간 중 검진을 위해 10일의 범위에서 임신검진휴가를 사용할 수 있다. <신설 2019. 12. 31., 2020. 10. 20., 2024. 7. 2.>",
+            "loc": "제20조(특별휴가) · 19~34행",
+            "source_id": "public-v70-156f83e9646084245c69e35e",
+            "title": "국가공무원 복무규정 제20조(특별휴가)",
+            "kind": "법령·규정",
+            "institution": "국가공무원",
+            "effective_date": "2026-10-02",
+            "sha256": "156f83e9646084245c69e35ee1186cdbe52101ebe6489c0f7d134e90acca7f62",
+            "limited": false,
+            "library_id": "national-service-v70",
+            "file_id": "156f83e9646084245c69e35ee1186cdb",
+            "official": {
+              "title": "국가공무원 복무규정",
+              "article": "제20조(특별휴가)",
+              "effective_date": "2026-10-02",
+              "publication": "대통령령 제36728호",
+              "issuer": "인사혁신처",
+              "institution": "국가공무원",
+              "kind": "법령·규정",
+              "source_url": "https://law.go.kr/LSW/lsLinkCommonInfo.do?lsJoLnkSeq=1033978333",
+              "download_url": "https://law.go.kr/LSW/lsLinkCommonInfo.do?lsJoLnkSeq=1033978333",
+              "retrieved_at": "2026-10-24T12:56:31.543728+00:00",
+              "raw_file": "national_special_full_20261024.html",
+              "raw_sha256": "4206ac13391c9df08469db407e49852217994a8e924791e67aacb9b885739860",
+              "filename": "국가공무원 복무규정_제20조_전체_v70.txt",
+              "sha256": "156f83e9646084245c69e35ee1186cdbe52101ebe6489c0f7d134e90acca7f62",
+              "scope": "제20조 제1항~제20항 전체 · 별표·기관 지침은 별도 확인",
+              "paragraphs": 42,
+              "collection": "v70"
+            },
+            "score": 25.11,
+            "quote": "⑫ 인공수정 또는 체외수정 등 난임치료 시술을 받는 공무원은 다음 각 호의 구분에 따라 난임치료시술휴가를 사용할 수 있다. <개정 2011. 7. 4., 2018. 7. 2., 2018. 12. 18., 2019. 12. 31., 2021. 12. 31., 2024. 7. 2.>\n1. 여성공무원: 다음 각 목의 어느 하나에 해당하는 경우 해당 목에서 정한 기간\n가. 인공수정 등 시술을 받는 경우: 총 2일(시술 당일에 1일과 시술일 전날, 시술일 후 2일 이내이거나 시술 관련 진료일 중에 1일)\n나. 동결 보존된 배아를 이식하는 체외수정 시술을 받는 경우: 총 3일(시술 당일에 1일과 시술일 전날, 시술일 후 2일 이내이거나 시술 관련 진료일 중에 2일)\n다. 난자 채취를 하여 체외수정 시술을 받는 경우: 총 4일(난자 채취일에 1일, 시술 당일에 1일과 시술일 전날, 난자 채취일 전날, 시술일 후 2일 이내, 난자 채취일 후 2일 이내이거나 시술 관련 진료일 중에 2일)\n2. 남성공무원: 정자 채취일에 1일\n⑬ 행정기관의 장은 소속 공무원이 국가 또는 해당 기관의 주요 업무를 성공적으로 수행하여 탁월한 성과와 공로가 인정되는 경우에는 10일 이내의 포상휴가를 줄 수 있다. 이 경우 탁월한 성과와 공로에 대한 판단의 기준은 인사혁신처장이 정한다. <신설 2015. 10. 6., 2019. 12. 31.>\n⑭ 공무원은 다음 각 호의 어느 하나에 해당하는 경우 연간 10일의 범위에서 가족돌봄휴가를 사용할 수 있다. <개정 2020. 10. 20., 2024. 7. 2., 2026. 6. 23.>\n1. 「영유아보육법」에 따른 어린이집, 「유아교육법」에 따른 유치원 및 「초ㆍ중등교육법」 제2조 각 호의 학교(이하 이 항에서 “어린이집등”이라 한다)의 휴업ㆍ휴원ㆍ휴교, 그 밖에 이에 준하는 사유로 자녀 또는 손자녀를 돌봐야 하는 경우\n2. 자녀 또는 손자녀가 다니는 어린이집등의 공식 행사 또는 교사와의 상담에 참여하는 경우\n3. 자녀 또는 손자녀가 어린이집등을 졸업한 후 「유아교육법」에 따른 유치원 또는 「초ㆍ중등교육법」 제2조 각 호의 학교에 입학하기 전까지 자녀 또는 손자녀를 돌봐야 하는 경우\n4. 미성년자 또는 「장애인복지법」 제2조제2항에 따른 장애인(이하 이 조에서 “장애인”이라 한다)인 자녀ㆍ손자녀의 병원 진료(「국민건강보험법」 제52조에 따른 건강검진 또는 「감염병의 예방 및 관리에 관한 법률」 제24조 및 제25조에 따른 예방접종을 포함한다)에 동행하는 경우\n5. 질병, 사고, 노령 등의 사유로 조부모, 외조부모, 부모(배우자의 부모를 포함한다), 배우자, 자녀 또는 손자녀를 돌봐야 하는 경우\n⑮ 제14항에 따른 가족돌봄휴가는 무급으로 하되, 자녀(같은 항 제5호의 경우에는 미성년자 또는 장애인인 자녀로 한정한다)를 돌보기 위한 가족돌봄휴가는 해당 공무원의 자녀(제14항제1호에 따른 어린이집등에 재학 중이거나 미성년인 자녀 또는 장애인인 자녀를 말한다) 수에 1을 더한 일수까지를 연간 유급휴가 일수로 한다. 다만, 장애인인 자녀가 있는 공무원 또는 「한부모가족지원법」 제4조제1호의 모 또는 부에 해당하는 공무원의 경우에는 본문에 따른 연간 유급휴가 일수에 1일을 더한 일수까지 연간 유급휴가 일수로 한다. <신설 2020. 10. 20., 2024. 7. 2., 2026. 6. 23.>\n⑯ 여성공무원은 임신기간 중 검진을 위해 10일의 범위에서 임신검진휴가를 사용할 수 있다. <신설 2019. 12. 31., 2020. 10. 20., 2024. 7. 2.>",
+            "quote_basis": "original_context"
+          }
+        ],
+        "experiences": [],
+        "excluded": [
+          {
+            "title": "지방자치단체 회계관리에 관한 훈령 제115조(채권관리상황의 기록)",
+            "reason": "국가기관·국가공무원에 적용할 근거가 필요합니다."
+          },
+          {
+            "title": "지방자치단체 회계관리에 관한 훈령 제120조(인센티브의 처리)",
+            "reason": "국가기관·국가공무원에 적용할 근거가 필요합니다."
+          },
+          {
+            "title": "지방공무원 복무규정 제7조의6(공가)",
+            "reason": "국가기관·국가공무원에 적용할 근거가 필요합니다."
+          },
+          {
+            "title": "지방자치단체를 당사자로 하는 계약에 관한 법률 시행령 제65조(검사조서의 작성 생략)",
+            "reason": "국가기관·국가공무원에 적용할 근거가 필요합니다."
+          },
+          {
+            "title": "지방자치단체를 당사자로 하는 계약에 관한 법률 시행령 제30조(수의계약대상자의 선정절차 등)",
+            "reason": "국가기관·국가공무원에 적용할 근거가 필요합니다."
+          },
+          {
+            "title": "지방자치단체를 당사자로 하는 계약에 관한 법률 제17조(검사)",
+            "reason": "국가기관·국가공무원에 적용할 근거가 필요합니다."
+          },
+          {
+            "title": "지방자치단체 예산편성 운영기준 01.자산및물품취득비",
+            "reason": "국가기관·국가공무원에 적용할 근거가 필요합니다."
+          },
+          {
+            "title": "지방자치단체 회계관리에 관한 훈령 제121조(집행현황의 공개)",
+            "reason": "국가기관·국가공무원에 적용할 근거가 필요합니다."
+          },
+          {
+            "title": "지방자치단체를 당사자로 하는 계약에 관한 법률 시행령 제67조(대가의 지급)",
+            "reason": "국가기관·국가공무원에 적용할 근거가 필요합니다."
+          },
+          {
+            "title": "지방공무원 복무규정 제7조의7(특별휴가)",
+            "reason": "국가기관·국가공무원에 적용할 근거가 필요합니다."
+          },
+          {
+            "title": "지방자치단체를 당사자로 하는 계약에 관한 법률 시행령 제64조(검사)",
+            "reason": "국가기관·국가공무원에 적용할 근거가 필요합니다."
+          },
+          {
+            "title": "지방자치단체 예산편성 운영기준 01.사무관리비",
+            "reason": "국가기관·국가공무원에 적용할 근거가 필요합니다."
+          },
+          {
+            "title": "지방자치단체를 당사자로 하는 계약에 관한 법률 시행령 제68조(대가 지급 지연에 대한 이자)",
+            "reason": "국가기관·국가공무원에 적용할 근거가 필요합니다."
+          },
+          {
+            "title": "지방공무원 복무규정 별표 1 경조사 휴가일수표",
+            "reason": "국가기관·국가공무원에 적용할 근거가 필요합니다."
+          },
+          {
+            "title": "지방공무원 복무규정 제7조의5(병가)",
+            "reason": "국가기관·국가공무원에 적용할 근거가 필요합니다."
+          },
+          {
+            "title": "지방공무원 복무규정 제7조(연가일수 및 연가보상비의 지급)",
+            "reason": "국가기관·국가공무원에 적용할 근거가 필요합니다."
+          },
+          {
+            "title": "지방자치단체를 당사자로 하는 계약에 관한 법률 제18조(대가의 지급)",
+            "reason": "국가기관·국가공무원에 적용할 근거가 필요합니다."
+          }
+        ],
+        "mode": "source_search",
+        "model": null,
+        "notice": "",
+        "answer": "[1] ⑫ 인공수정 또는 체외수정 등 난임치료 시술을 받는 공무원은 다음 각 호의 구분에 따라 난임치료시술휴가를 사용할 수 있다. <개정 2011. 7. 4., 2018. 7. 2., 2018. 12. 18., 2019. 12. 31., 2021. 12. 31., 2024. 7. 2.>\n1. 여성공무원: 다음 각 목의 어느 하나에 해당하는 경우 해당 목에서 정한 기간\n가. 인공수정 등 시술을 받는 경우: 총 2일(시술 당일에 1일과 시술일 전날, 시술일 후 2일 이내이거나 시술 관련 진료일 중에 1일)\n나. 동결 보존된 배아를 이식하는 체외수정 시술을 받는 경우: 총 3일(시술 당일에 1일과 시술일 전날, 시술일 후 2일 이내이거나 시술 관련 진료일 중에 2일)\n다. 난자 채취를 하여 체외수정 시술을 받는 경우: 총 4일(난자 채취일에 1일, 시술 당일에 1일과 시술일 전날, 난자 채취일 전날, 시술일 후 2일 이내, 난자 채취일 후 2일 이내이거나 시술 관련 진료일 중에 2일)\n2. 남성공무원: 정자 채취일에 1일\n⑬ 행정기관의 장은 소속 공무원이 국가 또는 해당 기관의 주요 업무를 성공적으로 수행하여 탁월한 성과와 공로가 인정되는 경우에는 10일 이내의 포상휴가를 줄 수 있다. 이 경우 탁월한 성과와 공로에 대한 판단의 기준은 인사혁신처장이 정한다. <신설 2015. 10. 6., 2019. 12. 31.>\n⑭ 공무원은 다음 각 호의 어느 하나에 해당하는 경우 연간 10일의 범위에서 가족돌봄휴가를 사용할 수 있다. <개정 2020. 10. 20., 2024. 7. 2., 2026. 6. 23.>\n1. 「영유아보육법」에 따른 어린이집, 「유아교육법」에 따른 유치원 및 「초ㆍ중등교육법」 제2조 각 호의 학교(이하 이 항에서 “어린이집등”이라 한다)의 휴업ㆍ휴원ㆍ휴교, 그 밖에 이에 준하는 사유로 자녀 또는 손자녀를 돌봐야 하는 경우\n2. 자녀 또는 손자녀가 다니는 어린이집등의 공식 행사 또는 교사와의 상담에 참여하는 경우\n3. 자녀 또는 손자녀가 어린이집등을 졸업한 후 「유아교육법」에 따른 유치원 또는 「초ㆍ중등교육법」 제2조 각 호의 학교에 입학하기 전까지 자녀 또는 손자녀를 돌봐야 하는 경우\n4. 미성년자 또는 「장애인복지법」 제2조제2항에 따른 장애인(이하 이 조에서 “장애인”이라 한다)인 자녀ㆍ손자녀의 병원 진료(「국민건강보험법」 제52조에 따른 건강검진 또는 「감염병의 예방 및 관리에 관한 법률」 제24조 및 제25조에 따른 예방접종을 포함한다)에 동행하는 경우\n5. 질병, 사고, 노령 등의 사유로 조부모, 외조부모, 부모(배우자의 부모를 포함한다), 배우자, 자녀 또는 손자녀를 돌봐야 하는 경우\n⑮ 제14항에 따른 가족돌봄휴가는 무급으로 하되, 자녀(같은 항 제5호의 경우에는 미성년자 또는 장애인인 자녀로 한정한다)를 돌보기 위한 가족돌봄휴가는 해당 공무원의 자녀(제14항제1호에 따른 어린이집등에 재학 중이거나 미성년인 자녀 또는 장애인인 자녀를 말한다) 수에 1을 더한 일수까지를 연간 유급휴가 일수로 한다. 다만, 장애인인 자녀가 있는 공무원 또는 「한부모가족지원법」 제4조제1호의 모 또는 부에 해당하는 공무원의 경우에는 본문에 따른 연간 유급휴가 일수에 1일을 더한 일수까지 연간 유급휴가 일수로 한다. <신설 2020. 10. 20., 2024. 7. 2., 2026. 6. 23.>\n⑯ 여성공무원은 임신기간 중 검진을 위해 10일의 범위에서 임신검진휴가를 사용할 수 있다. <신설 2019. 12. 31., 2020. 10. 20., 2024. 7. 2.>",
+        "intent": {
+          "topics": [
+            "family_care"
+          ],
+          "status": "ready",
+          "question": "",
+          "recognized": true,
+          "labels": [
+            "가족돌봄휴가"
+          ]
+        },
+        "scope": "등록·선택한 추출 본문을 검색합니다. 인용 확인은 적용 대상·현행성·법적 해석을 보증하지 않습니다. 처리 경험은 공식 근거와 구분합니다.",
+        "tree": {
+          "kind": "summary",
+          "title": "가족돌봄휴가를 먼저 확인해요",
+          "rule_id": "family-care-situation",
+          "reviewed_source_sha256": "156f83e9646084245c69e35ee1186cdbe52101ebe6489c0f7d134e90acca7f62",
+          "branches": [
+            {
+              "label": "상황에 맞는 휴가 후보 · 국가공무원 기준",
+              "items": [
+                {
+                  "text": "질병 등으로 규정에서 정한 가족을 돌봐야 한다면, 특별휴가인 가족돌봄휴가부터 확인해요. 적용 여부는 돌봄 사유와 소속 기준을 확인해야 해요.",
+                  "ref": 1,
+                  "support_quotes": [
+                    "가족돌봄휴가",
+                    "질병, 사고, 노령",
+                    "자녀 또는 손자녀를 돌봐야"
+                  ]
+                },
+                {
+                  "text": "병원 진료 동행은 미성년 또는 장애가 있는 자녀·손자녀인지 확인해요. 집에서 아픈 가족을 돌보는 사유와 구분해요.",
+                  "ref": 1,
+                  "support_quotes": [
+                    "미성년자",
+                    "장애인",
+                    "병원 진료",
+                    "동행하는 경우"
+                  ]
+                }
+              ]
+            },
+            {
+              "label": "일수·유급 여부는 별도 확인",
+              "items": [
+                {
+                  "text": "가족돌봄휴가는 연간 10일 범위이며 원칙은 무급이에요. 자녀 돌봄의 유급 인정분은 별도 조건이 있어요.",
+                  "ref": 1,
+                  "support_quotes": [
+                    "연간 10일",
+                    "가족돌봄휴가는 무급으로 하되"
+                  ]
+                },
+                {
+                  "text": "자녀 돌봄 유급분은 대상 자녀 수·나이·재학 여부, 장애 자녀·한부모 조건과 올해 사용한 일수를 함께 확인해야 해요. 10일 전부를 유급으로 보지 않아요.",
+                  "ref": 1,
+                  "support_quotes": [
+                    "수에 1을 더한 일수",
+                    "장애인인 자녀",
+                    "한부모가족지원법"
+                  ]
+                }
+              ]
+            }
+          ],
+          "note": "소속·신분이 확인되기 전에는 위 기준을 본인에게 적용한다고 확정하지 않아요. 기관 조례·지침과 승인 절차를 함께 확인하세요."
+        }
+      },
+      "guidance": {
+        "topic": "leave",
+        "title": "휴가·복무 처리 방법",
+        "context": "아이가 아파서 돌봐야 하는데 어떤 휴가를 써요?",
+        "questions": [
+          "자녀의 나이와 재학 여부를 알려주세요. 성인 자녀라면 적용 조건을 별도로 확인해요.",
+          "자녀 병원 진료에 동행하는지, 집에서 돌봄이 필요한지 알려주세요.",
+          "올해 가족돌봄휴가와 그중 유급으로 사용한 일수, 이번에 필요한 날짜·시간을 확인해 주세요.",
+          "유급 여부는 자녀 수·나이·재학 여부와 장애 자녀·한부모 조건에 따라 확인해요. 해당하는 조건만 알려주세요."
+        ],
+        "steps": [
+          {
+            "id": "scope",
+            "title": "사유에 맞는 휴가 확인",
+            "detail": "위 안내의 휴가 후보와 실제 사유, 소속 기관에 맞는 기준을 함께 확인해요.",
+            "kind": "preparation"
+          },
+          {
+            "id": "materials",
+            "title": "기간·서류 확인",
+            "detail": "아래 규정에서 기간과 필요한 증빙을 확인하고 기관 양식을 준비해요.",
+            "kind": "preparation"
+          },
+          {
+            "id": "system",
+            "title": "e-사람에서 신청",
+            "detail": "해당 종류의 신청 화면을 아래 매뉴얼에서 확인하고 기관 시스템에서 처리해요.",
+            "kind": "preparation"
+          },
+          {
+            "id": "check",
+            "title": "승인·반영 확인",
+            "detail": "승인 여부와 근무상황 반영을 확인해요.",
+            "kind": "preparation"
+          }
+        ],
+        "deadlines": [],
+        "forms": [],
+        "service_guide": {
+          "evidence": [
+            {
+              "id": "BizService01",
+              "title": "공무원휴가",
+              "reference_kind": "official_service_guide",
+              "quote": "가족돌봄휴가 | ▪ (손)자녀의 「영유아보육법」에 따른 어린이집, 「유아교육법」에 따른 유치원 및 「초·중등교육법」 제2조 학교의 휴교, 공식행사, 교사와의 상담 등 ▪ 질병, 사고, 노령 등의 사유로 (외)조부모, 부모, (손)자녀를 돌봐야 할 때 ※ 자녀 수 + 1일까지는 유급으로 사용 가능",
+              "loc": "특별휴가",
+              "sha256": "304ad409372a7d22ebc017e88d69b435f18316752ac164366a033a500686109e",
+              "source_url": "https://www.mpm.go.kr/mpm/info/infoService/BizService01/",
+              "snapshot_url": "/api/service-guides/BizService01/original",
+              "retrieved_at": "2026-10-24T13:00:58.899363+00:00",
+              "scope": "국가공무원 제도 설명; 현행 법령 및 기관별 적용조건 별도 확인"
+            },
+            {
+              "id": "faq-06",
+              "title": "[질문](가족돌봄휴가) 자녀수 등에 따라 사용가능한 일수가 다른가요?",
+              "reference_kind": "official_faq",
+              "quote": "질문: [질문](가족돌봄휴가) 자녀수 등에 따라 사용가능한 일수가 다른가요?\n답변: [답변] 가족돌봄휴가는 연간 10일의 범위에서 사용 가능합니다.\n유급 가족돌봄휴가는 연간 자녀수 + 1일만큼 사용할 수 있으며, 장애인인 자녀가 있거나 한부모 가정에 해당하는 경우에는 연 1일(8시간)의 유급 일수를 가산합니다. 이때, 부부공무원 각각 사용이 가능합니다.\n",
+              "loc": "질문/답변",
+              "sha256": "e4561b7251059e964d44a35a325b92e6aa65f92dd372ac035dfbc9b410ff2efe",
+              "source_url": "https://www.mpm.go.kr/mpm/info/hrFAQ/?boardId=bbs_0000000000000125&category=cat5&mode=list&pageIdx=1#g21",
+              "snapshot_url": "/api/service-guides/faq-06/original",
+              "retrieved_at": "2026-10-24T13:05:01.373156+00:00",
+              "scope": "국가공무원 FAQ 설명; 게시/개정일 미표시, 현행법령과 적용조건 별도확인"
+            },
+            {
+              "id": "faq-05",
+              "title": "[질문](가족돌봄휴가) 증빙서류를 제출해야 하나요?",
+              "reference_kind": "official_faq",
+              "quote": "질문: [질문](가족돌봄휴가) 증빙서류를 제출해야 하나요?\n답변: [답변] 유급 가족돌봄휴가 승인 시 가정통신문, 알림장, 학교공문, 병원 진료 여부를 입증하는 서류 등을 첨부하여 승인을 받아야 합니다.\n단, 무급 가족돌봄휴가 승인 시 가족관계를 입증할 수 있는 가족관계증명서 등을 확인할 수 있도록 하여야 합니다.\n",
+              "loc": "질문/답변",
+              "sha256": "88c3841355e89775c6b747d66c3626f7de60fa1d5d5179da4ca1b9ebec7d13b5",
+              "source_url": "https://www.mpm.go.kr/mpm/info/hrFAQ/?boardId=bbs_0000000000000125&category=cat5&mode=list&pageIdx=1#g22",
+              "snapshot_url": "/api/service-guides/faq-05/original",
+              "retrieved_at": "2026-10-24T13:05:01.373156+00:00",
+              "scope": "국가공무원 FAQ 설명; 게시/개정일 미표시, 현행법령과 적용조건 별도확인"
+            }
+          ],
+          "coverage": {
+            "guide_pages": 10,
+            "faq_questions": 26
+          },
+          "notice": "국가공무원 제도 설명·FAQ의 보관본입니다. 확인일은 수집일이며 답변의 개정일을 뜻하지 않아요. 실제 적용·일수·예외는 현행 법령과 기관 기준을 확인하세요.",
+          "problems": []
+        },
+        "institution_scope": null,
+        "manual": {
+          "evidence": [
+            {
+              "id": "manual-cd73f589624e73114cb497f8b4bb095d:page:11",
+              "source_id": "manual-cd73f589624e73114cb497f8b4bb095d",
+              "library_id": "esaram-manuals-v68",
+              "file_id": "cd73f589624e73114cb497f8b4bb095d",
+              "title": "[개인용]3세대 e-사람_사용자매뉴얼_02.복무_02.근무상황_v1.1.pdf",
+              "kind": "업무편람",
+              "institution": "e-사람 사용자매뉴얼 · 제공 파일",
+              "effective_date": "",
+              "sha256": "cd73f589624e73114cb497f8b4bb095de5ac3223571d4ec7a07b09db73b19bb6",
+              "limited": false,
+              "reference_kind": "system_manual",
+              "page": 11,
+              "page_count": 17,
+              "indexed_pages": 17,
+              "loc": "PDF 11쪽",
+              "text": "Copyrightⓒ Ministry of Personnel Management. All Rights reserved 11\n2. 근무상황처리 방법을 선택한다.\n3. 통보대상자를 선택해야 해당 외부강의 신고 담당자에게 신고 내역이 전송된다. \n4. 강의기간을 입력하려면 [추가] 버튼을 클릭해 행을 추가한다.\n5. 결재를 상신할 결재자 정보를 확인한 후 최종적으로 [결재신청]한다.\n2/4\n연가 또는 출장으로 근무상황을 처리할 경우, 연가 또는 출장 신청이 선행되\n어야 한다.\nTIP\n2 3\n4\n5",
+              "quote": "Copyrightⓒ Ministry of Personnel Management. All Rights reserved 11\n2. 근무상황처리 방법을 선택한다.\n3. 통보대상자를 선택해야 해당 외부강의 신고 담당자에게 신고 내역이 전송된다. \n4. 강의기간을 입력하려면 [추가] 버튼을 클릭해 행을 추가한다.\n5. 결재를 상신할 결재자 정보를 확인한 후 최종적으로 [결재신청]한다.\n2/4\n연가 또는 출장으로 근무상황을 처리할 경우, 연가 또는 출장 신청이 선행되\n어야 한다.\nTIP\n2 3\n4\n5",
+              "score": 15.82,
+              "official": null
+            },
+            {
+              "id": "manual-cd73f589624e73114cb497f8b4bb095d:page:6",
+              "source_id": "manual-cd73f589624e73114cb497f8b4bb095d",
+              "library_id": "esaram-manuals-v68",
+              "file_id": "cd73f589624e73114cb497f8b4bb095d",
+              "title": "[개인용]3세대 e-사람_사용자매뉴얼_02.복무_02.근무상황_v1.1.pdf",
+              "kind": "업무편람",
+              "institution": "e-사람 사용자매뉴얼 · 제공 파일",
+              "effective_date": "",
+              "sha256": "cd73f589624e73114cb497f8b4bb095de5ac3223571d4ec7a07b09db73b19bb6",
+              "limited": false,
+              "reference_kind": "system_manual",
+              "page": 6,
+              "page_count": 17,
+              "indexed_pages": 17,
+              "loc": "PDF 6쪽",
+              "text": "Copyrightⓒ Ministry of Personnel Management. All Rights reserved 6\n5. 근무상황 종별을 선택한 후 사용기간, 사용시간을 설정한다.\n6. [사용일(시간) 확인] 버튼을 클릭해 해당 근무상황의 사용일수(시간)을 계산한다.\n7. 첨부파일이 필요한 근무상황은 첨부파일을 [추가]한다.\n8. 근무상황 신청 내역 입력을 마쳤다면 [추가] 버튼을 클릭해 신청대상 목록에 추가한\n다.\n9. 결재를 상신할 결재자 정보를 확인한 후 최종적으로 [결재신청]한다.\n6\n7\n4/6\n5\n8\n9\n초과근무 저축일수, 연가저축일수는 연가, 반일연가, 장기휴가, 지각/조퇴/외출\n을 ‘연가처리’할 경우에 사용 가능하다. 누계 8시간을 연가 1일로 처리하여 공제한다.\nTIP\n5-2\n 연가, 반일연가, 장기휴가인 경우, 사유를 입력하지 않는다.\n반일연가(오전/오후)는 일반근무(09:00-18:00)인 경우에 사용 가능하다.\n5-1 지각, 조퇴, 외출을 ‘연가처리’할 경우, \n초과근무 저축일수나 연가저축일수를 사용할 수 있다.  ",
+              "quote": "Copyrightⓒ Ministry of Personnel Management. All Rights reserved 6\n5. 근무상황 종별을 선택한 후 사용기간, 사용시간을 설정한다.\n6. [사용일(시간) 확인] 버튼을 클릭해 해당 근무상황의 사용일수(시간)을 계산한다.\n7. 첨부파일이 필요한 근무상황은 첨부파일을 [추가]한다.\n8. 근무상황 신청 내역 입력을 마쳤다면 [추가] 버튼을 클릭해 신청대상 목록에 추가한\n다.\n9. 결재를 상신할 결재자 정보를 확인한 후 최종적으로 [결재신청]한다.\n6\n7\n4/6\n5\n8\n9\n초과근무 저축일수, 연가저축일수는 연가, 반일연가, 장기휴가, 지각/조퇴/외출\n을 ‘연가처리’할 경우에 사용 가능하다. 누계 8시간을 연가 1일로 처리하여 공제한다.\nTIP\n5-2\n 연가, 반일연가, 장기휴가인 경우, 사유를 입력하지 않는다.\n반일연가(오전/오후)는 일반근무(09:00-18:00)인 경우에 사용 가능하다.\n5-1 지각, 조퇴, 외출을 ‘연가처리’할 경우, \n초과근무 저축일수나 연가저축일수를 사용할 수 있다.  ",
+              "score": 14.71,
+              "official": null
+            },
+            {
+              "id": "manual-cd73f589624e73114cb497f8b4bb095d:page:14",
+              "source_id": "manual-cd73f589624e73114cb497f8b4bb095d",
+              "library_id": "esaram-manuals-v68",
+              "file_id": "cd73f589624e73114cb497f8b4bb095d",
+              "title": "[개인용]3세대 e-사람_사용자매뉴얼_02.복무_02.근무상황_v1.1.pdf",
+              "kind": "업무편람",
+              "institution": "e-사람 사용자매뉴얼 · 제공 파일",
+              "effective_date": "",
+              "sha256": "cd73f589624e73114cb497f8b4bb095de5ac3223571d4ec7a07b09db73b19bb6",
+              "limited": false,
+              "reference_kind": "system_manual",
+              "page": 14,
+              "page_count": 17,
+              "indexed_pages": 17,
+              "loc": "PDF 14쪽",
+              "text": "Copyrightⓒ Ministry of Personnel Management. All Rights reserved \n 14\n연가저축예정일수\n 등록\n복무 > 근무상황 > 연가저축예정일수 등록\n당해 연도에 저축하고자 희망하는 연가일수를 등록한다. \n?\n1. 저축하고자 희망하는 연가저축일수를 입력한 후 [저장]한다.\n연가저축 예정일수는 당해 연도 8월부터 등록할 수 있으며, 기관 복무담당자가 하반기 연가보상작업 시에 이를 참고하여 최종 확정한다. \n연가저축일수는 근무상황 신청 시, 연가, 반일연가, 장기휴가, 지각/조퇴/외출을 ‘연가처리’할 경우에 사용 가능하다. \nTIP\n1",
+              "quote": "Copyrightⓒ Ministry of Personnel Management. All Rights reserved \n 14\n연가저축예정일수\n 등록\n복무 > 근무상황 > 연가저축예정일수 등록\n당해 연도에 저축하고자 희망하는 연가일수를 등록한다. \n?\n1. 저축하고자 희망하는 연가저축일수를 입력한 후 [저장]한다.\n연가저축 예정일수는 당해 연도 8월부터 등록할 수 있으며, 기관 복무담당자가 하반기 연가보상작업 시에 이를 참고하여 최종 확정한다. \n연가저축일수는 근무상황 신청 시, 연가, 반일연가, 장기휴가, 지각/조퇴/외출을 ‘연가처리’할 경우에 사용 가능하다. \nTIP\n1",
+              "score": 14.31,
+              "official": null
+            }
+          ],
+          "scope": "제공된 e-사람 매뉴얼의 화면 조작 안내입니다. PDF 쪽수 기준이며 현재 기관 화면과 다를 수 있어요. 법정 지급액·휴가일수는 규정 근거로 별도 확인하세요.",
+          "notice": ""
+        },
+        "ai_requested": false,
+        "ai_used": false,
+        "notice": "진행 순서는 실무 준비 제안입니다. 법정 기한·필수 서류·적용 조건은 아래 등록 근거에서 확인하세요.",
+        "map": {
+          "nodes": [
+            {
+              "id": "topic:leave",
+              "label": "leave",
+              "kind": "topic"
+            },
+            {
+              "id": "step:leave:scope",
+              "label": "사유에 맞는 휴가 확인",
+              "kind": "preparation"
+            },
+            {
+              "id": "step:leave:materials",
+              "label": "기간·서류 확인",
+              "kind": "preparation"
+            },
+            {
+              "id": "step:leave:system",
+              "label": "e-사람에서 신청",
+              "kind": "preparation"
+            },
+            {
+              "id": "step:leave:check",
+              "label": "승인·반영 확인",
+              "kind": "preparation"
+            },
+            {
+              "id": "source:public-v70-156f83e9646084245c69e35e",
+              "label": "국가공무원 복무규정 제20조(특별휴가)",
+              "kind": "legal",
+              "sha256": "156f83e9646084245c69e35ee1186cdbe52101ebe6489c0f7d134e90acca7f62",
+              "loc": "제20조(특별휴가) · 19~34행",
+              "page": null
+            },
+            {
+              "id": "source:BizService01",
+              "label": "공무원휴가",
+              "kind": "official_service_guide",
+              "sha256": "304ad409372a7d22ebc017e88d69b435f18316752ac164366a033a500686109e",
+              "loc": "특별휴가",
+              "page": null
+            },
+            {
+              "id": "source:faq-06",
+              "label": "[질문](가족돌봄휴가) 자녀수 등에 따라 사용가능한 일수가 다른가요?",
+              "kind": "official_faq",
+              "sha256": "e4561b7251059e964d44a35a325b92e6aa65f92dd372ac035dfbc9b410ff2efe",
+              "loc": "질문/답변",
+              "page": null
+            },
+            {
+              "id": "source:faq-05",
+              "label": "[질문](가족돌봄휴가) 증빙서류를 제출해야 하나요?",
+              "kind": "official_faq",
+              "sha256": "88c3841355e89775c6b747d66c3626f7de60fa1d5d5179da4ca1b9ebec7d13b5",
+              "loc": "질문/답변",
+              "page": null
+            },
+            {
+              "id": "source:manual-cd73f589624e73114cb497f8b4bb095d:11",
+              "label": "[개인용]3세대 e-사람_사용자매뉴얼_02.복무_02.근무상황_v1.1.pdf",
+              "kind": "system_manual",
+              "sha256": "cd73f589624e73114cb497f8b4bb095de5ac3223571d4ec7a07b09db73b19bb6",
+              "loc": "PDF 11쪽",
+              "page": 11
+            },
+            {
+              "id": "source:manual-cd73f589624e73114cb497f8b4bb095d:6",
+              "label": "[개인용]3세대 e-사람_사용자매뉴얼_02.복무_02.근무상황_v1.1.pdf",
+              "kind": "system_manual",
+              "sha256": "cd73f589624e73114cb497f8b4bb095de5ac3223571d4ec7a07b09db73b19bb6",
+              "loc": "PDF 6쪽",
+              "page": 6
+            },
+            {
+              "id": "source:manual-cd73f589624e73114cb497f8b4bb095d:14",
+              "label": "[개인용]3세대 e-사람_사용자매뉴얼_02.복무_02.근무상황_v1.1.pdf",
+              "kind": "system_manual",
+              "sha256": "cd73f589624e73114cb497f8b4bb095de5ac3223571d4ec7a07b09db73b19bb6",
+              "loc": "PDF 14쪽",
+              "page": 14
+            }
+          ],
+          "edges": [
+            {
+              "source": "topic:leave",
+              "target": "step:leave:scope",
+              "relation": "준비 순서"
+            },
+            {
+              "source": "topic:leave",
+              "target": "step:leave:materials",
+              "relation": "준비 순서"
+            },
+            {
+              "source": "topic:leave",
+              "target": "step:leave:system",
+              "relation": "준비 순서"
+            },
+            {
+              "source": "topic:leave",
+              "target": "step:leave:check",
+              "relation": "준비 순서"
+            },
+            {
+              "source": "topic:leave",
+              "target": "source:public-v70-156f83e9646084245c69e35e",
+              "relation": "검색된 자료"
+            },
+            {
+              "source": "topic:leave",
+              "target": "source:BizService01",
+              "relation": "검색된 자료"
+            },
+            {
+              "source": "topic:leave",
+              "target": "source:faq-06",
+              "relation": "검색된 자료"
+            },
+            {
+              "source": "topic:leave",
+              "target": "source:faq-05",
+              "relation": "검색된 자료"
+            },
+            {
+              "source": "topic:leave",
+              "target": "source:manual-cd73f589624e73114cb497f8b4bb095d:11",
+              "relation": "검색된 자료"
+            },
+            {
+              "source": "topic:leave",
+              "target": "source:manual-cd73f589624e73114cb497f8b4bb095d:6",
+              "relation": "검색된 자료"
+            },
+            {
+              "source": "topic:leave",
+              "target": "source:manual-cd73f589624e73114cb497f8b4bb095d:14",
+              "relation": "검색된 자료"
+            }
+          ],
+          "note": "자료의 관련을 보여줍니다. 법적 적용 관계를 자동 판정한 결과는 아닙니다."
+        }
+      }
+    },
+    "health-check": {
+      "query": "건강검진을 받으려는데 공가를 쓸 수 있나요?\n업무환경: 국가공무원",
+      "mode": "structured_guidance",
+      "model": null,
+      "profile": null,
+      "summary": "등록 자료로 처리 방법을 함께 확인해요.",
+      "answer": "[1] 제19조(공가) 행정기관의 장은 소속 공무원(제12호의 경우 「공무원의 노동조합 설립 및 운영 등에 관한 법률 시행령」 제3조의3제2항에 따른 근무시간 면제자는 제외한다)이 다음 각 호의 어느 하나에 해당하는 경우에는 이에 직접 필요한 기간 또는 시간을 공가로 승인해야 한다. <개정 2012. 8. 31., 2015. 10. 6., 2016. 2. 3., 2016. 11. 29., 2018. 7. 2., 2018. 12. 18., 2019. 12. 24., 2020. 10. 20., 2021. 12. 31., 2023. 12. 5., 2025. 12. 4., 2026. 6. 23., 2026. 9. 29.>\n1. 「병역법」이나 그 밖의 다른 법령에 따른 병역판정검사ㆍ소집ㆍ검열점호 등에 응하거나 동원 또는 훈련에 참가할 때\n2. 공무와 관련하여 국회, 법원, 공소청, 경찰 또는 그 밖의 국가기관에 소환되었을 때\n3. 법률에 따라 투표에 참가할 때\n4. 승진시험ㆍ전직시험에 응시할 때\n5. 원격지(遠隔地)로 전보(轉補) 발령을 받고 부임할 때\n6. 소속 기관의 소재지가 이전되어 거주지를 변경할 때\n7. 「산업안전보건법」 제129조부터 제131조까지의 규정에 따른 건강진단, 「국민건강보험법」 제52조에 따른 건강검진 또는 「결핵예방법」 제11조제1항에 따른 결핵검진등을 받을 때\n8. 「혈액관리법」에 따라 헌혈에 참가할 때\n9. 「공무원 인재개발법 시행령」 제32조제5호에 따른 외국어능력에 관한 시험에 응시할 때\n10. 올림픽, 전국체전 등 국가적인 행사에 참가할 때\n11. 천재지변, 교통 차단 또는 그 밖의 사유로 출근이 불가능할 때\n12. 다음 각 목의 어느 하나에 해당하는 경우\n가. 「공무원의 노동조합 설립 및 운영 등에 관한 법률」 제9조에 따른 교섭위원으로 선임(選任)되어 단체교섭 및 단체협약 체결에 참석할 때\n나. 「공무원의 노동조합 설립 및 운영 등에 관한 법률」 제17조 및 「노동조합 및 노동관계조정법」 제17조에 따른 대의원회(「공무원의 노동조합 설립 및 운영 등에 관한 법률」에 따라 설립된 공무원 노동조합의 대의원회를 말하며, 연 1회로 한정한다)에 참석할 때\n다. 「공무원의 노동조합 설립 및 운영 등에 관한 법률」 제17조 및 「노동조합 및 노동관계조정법」 제25조에 따라 회계감사원으로서 노동조합의 회계감사(연 2회로 한정한다)를 실시할 때\n13. 공무국외출장등을 위하여 「검역법」 제5조제1항에 따른 검역관리지역 또는 중점검역관리지역으로 가기 전에 같은 법에 따른 검역감염병의 예방접종을 할 때\n14. 「감염병의 예방 및 관리에 관한 법률」에 따른 제1급감염병에 대하여 같은 법 제24조 또는 제25조에 따라 필수예방접종 또는 임시예방접종을 받거나 같은 법 제42조제2항제3호에 따라 감염 여부 검사를 받을 때\n[전문개정 2011. 7. 4.]",
+      "notice": "",
+      "plan": null,
+      "alternatives": [],
+      "cited": [],
+      "related": [],
+      "personal_notes": [],
+      "knowledge": {
+        "evidence": [
+          {
+            "id": "public-v70-f459b93473b181b1dc933390:0:0",
+            "text": "제19조(공가) 행정기관의 장은 소속 공무원(제12호의 경우 「공무원의 노동조합 설립 및 운영 등에 관한 법률 시행령」 제3조의3제2항에 따른 근무시간 면제자는 제외한다)이 다음 각 호의 어느 하나에 해당하는 경우에는 이에 직접 필요한 기간 또는 시간을 공가로 승인해야 한다. <개정 2012. 8. 31., 2015. 10. 6., 2016. 2. 3., 2016. 11. 29., 2018. 7. 2., 2018. 12. 18., 2019. 12. 24., 2020. 10. 20., 2021. 12. 31., 2023. 12. 5., 2025. 12. 4., 2026. 6. 23., 2026. 9. 29.>\n1. 「병역법」이나 그 밖의 다른 법령에 따른 병역판정검사ㆍ소집ㆍ검열점호 등에 응하거나 동원 또는 훈련에 참가할 때\n2. 공무와 관련하여 국회, 법원, 공소청, 경찰 또는 그 밖의 국가기관에 소환되었을 때\n3. 법률에 따라 투표에 참가할 때\n4. 승진시험ㆍ전직시험에 응시할 때\n5. 원격지(遠隔地)로 전보(轉補) 발령을 받고 부임할 때\n6. 소속 기관의 소재지가 이전되어 거주지를 변경할 때\n7. 「산업안전보건법」 제129조부터 제131조까지의 규정에 따른 건강진단, 「국민건강보험법」 제52조에 따른 건강검진 또는 「결핵예방법」 제11조제1항에 따른 결핵검진등을 받을 때\n8. 「혈액관리법」에 따라 헌혈에 참가할 때\n9. 「공무원 인재개발법 시행령」 제32조제5호에 따른 외국어능력에 관한 시험에 응시할 때\n10. 올림픽, 전국체전 등 국가적인 행사에 참가할 때\n11. 천재지변, 교통 차단 또는 그 밖의 사유로 출근이 불가능할 때\n12. 다음 각 목의 어느 하나에 해당하는 경우\n가. 「공무원의 노동조합 설립 및 운영 등에 관한 법률」 제9조에 따른 교섭위원으로 선임(選任)되어 단체교섭 및 단체협약 체결에 참석할 때\n나. 「공무원의 노동조합 설립 및 운영 등에 관한 법률」 제17조 및 「노동조합 및 노동관계조정법」 제17조에 따른 대의원회(「공무원의 노동조합 설립 및 운영 등에 관한 법률」에 따라 설립된 공무원 노동조합의 대의원회를 말하며, 연 1회로 한정한다)에 참석할 때\n다. 「공무원의 노동조합 설립 및 운영 등에 관한 법률」 제17조 및 「노동조합 및 노동관계조정법」 제25조에 따라 회계감사원으로서 노동조합의 회계감사(연 2회로 한정한다)를 실시할 때\n13. 공무국외출장등을 위하여 「검역법」 제5조제1항에 따른 검역관리지역 또는 중점검역관리지역으로 가기 전에 같은 법에 따른 검역감염병의 예방접종을 할 때\n14. 「감염병의 예방 및 관리에 관한 법률」에 따른 제1급감염병에 대하여 같은 법 제24조 또는 제25조에 따라 필수예방접종 또는 임시예방접종을 받거나 같은 법 제42조제2항제3호에 따라 감염 여부 검사를 받을 때\n[전문개정 2011. 7. 4.]",
+            "loc": "제19조(공가) · 1~19행",
+            "source_id": "public-v70-f459b93473b181b1dc933390",
+            "title": "국가공무원 복무규정 제19조(공가)",
+            "kind": "법령·규정",
+            "institution": "국가공무원",
+            "effective_date": "2026-10-02",
+            "sha256": "f459b93473b181b1dc9333903d8ccc97f66930fc7954fabe074a2ff8628d3533",
+            "limited": false,
+            "library_id": "national-service-v70",
+            "file_id": "f459b93473b181b1dc9333903d8ccc97",
+            "official": {
+              "title": "국가공무원 복무규정",
+              "article": "제19조(공가)",
+              "effective_date": "2026-10-02",
+              "publication": "대통령령 제36728호",
+              "issuer": "인사혁신처",
+              "institution": "국가공무원",
+              "kind": "법령·규정",
+              "source_url": "https://www.law.go.kr/LSW/lsSideInfoP.do?joNo=0019&joBrNo=00&lsiSeq=290349&urlMode=lsScJoRltInfoR&docCls=jo",
+              "download_url": "https://www.law.go.kr/LSW/lsSideInfoP.do?joNo=0019&joBrNo=00&lsiSeq=290349&urlMode=lsScJoRltInfoR&docCls=jo",
+              "retrieved_at": "2026-10-24T13:13:15.681723+00:00",
+              "raw_file": "national_19_full_20261024.html",
+              "raw_sha256": "9e17357263498bd8f0d60be6cc062dbc82bfb1bdf6a948152dd4e1494859d4a4",
+              "filename": "국가공무원 복무규정_제19조_전체_v70.txt",
+              "sha256": "f459b93473b181b1dc9333903d8ccc97f66930fc7954fabe074a2ff8628d3533",
+              "scope": "해당 조문 전체 · 관련 예규·기관 지침과 개별 적용조건 별도 확인",
+              "paragraphs": 19,
+              "collection": "v70"
+            },
+            "score": 36.33,
+            "quote": "제19조(공가) 행정기관의 장은 소속 공무원(제12호의 경우 「공무원의 노동조합 설립 및 운영 등에 관한 법률 시행령」 제3조의3제2항에 따른 근무시간 면제자는 제외한다)이 다음 각 호의 어느 하나에 해당하는 경우에는 이에 직접 필요한 기간 또는 시간을 공가로 승인해야 한다. <개정 2012. 8. 31., 2015. 10. 6., 2016. 2. 3., 2016. 11. 29., 2018. 7. 2., 2018. 12. 18., 2019. 12. 24., 2020. 10. 20., 2021. 12. 31., 2023. 12. 5., 2025. 12. 4., 2026. 6. 23., 2026. 9. 29.>\n1. 「병역법」이나 그 밖의 다른 법령에 따른 병역판정검사ㆍ소집ㆍ검열점호 등에 응하거나 동원 또는 훈련에 참가할 때\n2. 공무와 관련하여 국회, 법원, 공소청, 경찰 또는 그 밖의 국가기관에 소환되었을 때\n3. 법률에 따라 투표에 참가할 때\n4. 승진시험ㆍ전직시험에 응시할 때\n5. 원격지(遠隔地)로 전보(轉補) 발령을 받고 부임할 때\n6. 소속 기관의 소재지가 이전되어 거주지를 변경할 때\n7. 「산업안전보건법」 제129조부터 제131조까지의 규정에 따른 건강진단, 「국민건강보험법」 제52조에 따른 건강검진 또는 「결핵예방법」 제11조제1항에 따른 결핵검진등을 받을 때\n8. 「혈액관리법」에 따라 헌혈에 참가할 때\n9. 「공무원 인재개발법 시행령」 제32조제5호에 따른 외국어능력에 관한 시험에 응시할 때\n10. 올림픽, 전국체전 등 국가적인 행사에 참가할 때\n11. 천재지변, 교통 차단 또는 그 밖의 사유로 출근이 불가능할 때\n12. 다음 각 목의 어느 하나에 해당하는 경우\n가. 「공무원의 노동조합 설립 및 운영 등에 관한 법률」 제9조에 따른 교섭위원으로 선임(選任)되어 단체교섭 및 단체협약 체결에 참석할 때\n나. 「공무원의 노동조합 설립 및 운영 등에 관한 법률」 제17조 및 「노동조합 및 노동관계조정법」 제17조에 따른 대의원회(「공무원의 노동조합 설립 및 운영 등에 관한 법률」에 따라 설립된 공무원 노동조합의 대의원회를 말하며, 연 1회로 한정한다)에 참석할 때\n다. 「공무원의 노동조합 설립 및 운영 등에 관한 법률」 제17조 및 「노동조합 및 노동관계조정법」 제25조에 따라 회계감사원으로서 노동조합의 회계감사(연 2회로 한정한다)를 실시할 때\n13. 공무국외출장등을 위하여 「검역법」 제5조제1항에 따른 검역관리지역 또는 중점검역관리지역으로 가기 전에 같은 법에 따른 검역감염병의 예방접종을 할 때\n14. 「감염병의 예방 및 관리에 관한 법률」에 따른 제1급감염병에 대하여 같은 법 제24조 또는 제25조에 따라 필수예방접종 또는 임시예방접종을 받거나 같은 법 제42조제2항제3호에 따라 감염 여부 검사를 받을 때\n[전문개정 2011. 7. 4.]",
+            "quote_basis": "original_context"
+          }
+        ],
+        "experiences": [],
+        "excluded": [
+          {
+            "title": "지방자치단체 회계관리에 관한 훈령 제115조(채권관리상황의 기록)",
+            "reason": "국가기관·국가공무원에 적용할 근거가 필요합니다."
+          },
+          {
+            "title": "지방자치단체 회계관리에 관한 훈령 제120조(인센티브의 처리)",
+            "reason": "국가기관·국가공무원에 적용할 근거가 필요합니다."
+          },
+          {
+            "title": "지방공무원 복무규정 제7조의6(공가)",
+            "reason": "국가기관·국가공무원에 적용할 근거가 필요합니다."
+          },
+          {
+            "title": "지방자치단체를 당사자로 하는 계약에 관한 법률 시행령 제65조(검사조서의 작성 생략)",
+            "reason": "국가기관·국가공무원에 적용할 근거가 필요합니다."
+          },
+          {
+            "title": "지방자치단체를 당사자로 하는 계약에 관한 법률 시행령 제30조(수의계약대상자의 선정절차 등)",
+            "reason": "국가기관·국가공무원에 적용할 근거가 필요합니다."
+          },
+          {
+            "title": "지방자치단체를 당사자로 하는 계약에 관한 법률 제17조(검사)",
+            "reason": "국가기관·국가공무원에 적용할 근거가 필요합니다."
+          },
+          {
+            "title": "지방자치단체 예산편성 운영기준 01.자산및물품취득비",
+            "reason": "국가기관·국가공무원에 적용할 근거가 필요합니다."
+          },
+          {
+            "title": "지방자치단체 회계관리에 관한 훈령 제121조(집행현황의 공개)",
+            "reason": "국가기관·국가공무원에 적용할 근거가 필요합니다."
+          },
+          {
+            "title": "지방자치단체를 당사자로 하는 계약에 관한 법률 시행령 제67조(대가의 지급)",
+            "reason": "국가기관·국가공무원에 적용할 근거가 필요합니다."
+          },
+          {
+            "title": "지방공무원 복무규정 제7조의7(특별휴가)",
+            "reason": "국가기관·국가공무원에 적용할 근거가 필요합니다."
+          },
+          {
+            "title": "지방자치단체를 당사자로 하는 계약에 관한 법률 시행령 제64조(검사)",
+            "reason": "국가기관·국가공무원에 적용할 근거가 필요합니다."
+          },
+          {
+            "title": "지방자치단체 예산편성 운영기준 01.사무관리비",
+            "reason": "국가기관·국가공무원에 적용할 근거가 필요합니다."
+          },
+          {
+            "title": "지방자치단체를 당사자로 하는 계약에 관한 법률 시행령 제68조(대가 지급 지연에 대한 이자)",
+            "reason": "국가기관·국가공무원에 적용할 근거가 필요합니다."
+          },
+          {
+            "title": "지방공무원 복무규정 별표 1 경조사 휴가일수표",
+            "reason": "국가기관·국가공무원에 적용할 근거가 필요합니다."
+          },
+          {
+            "title": "지방공무원 복무규정 제7조의5(병가)",
+            "reason": "국가기관·국가공무원에 적용할 근거가 필요합니다."
+          },
+          {
+            "title": "지방공무원 복무규정 제7조(연가일수 및 연가보상비의 지급)",
+            "reason": "국가기관·국가공무원에 적용할 근거가 필요합니다."
+          },
+          {
+            "title": "지방자치단체를 당사자로 하는 계약에 관한 법률 제18조(대가의 지급)",
+            "reason": "국가기관·국가공무원에 적용할 근거가 필요합니다."
+          }
+        ],
+        "mode": "source_search",
+        "model": null,
+        "notice": "",
+        "answer": "[1] 제19조(공가) 행정기관의 장은 소속 공무원(제12호의 경우 「공무원의 노동조합 설립 및 운영 등에 관한 법률 시행령」 제3조의3제2항에 따른 근무시간 면제자는 제외한다)이 다음 각 호의 어느 하나에 해당하는 경우에는 이에 직접 필요한 기간 또는 시간을 공가로 승인해야 한다. <개정 2012. 8. 31., 2015. 10. 6., 2016. 2. 3., 2016. 11. 29., 2018. 7. 2., 2018. 12. 18., 2019. 12. 24., 2020. 10. 20., 2021. 12. 31., 2023. 12. 5., 2025. 12. 4., 2026. 6. 23., 2026. 9. 29.>\n1. 「병역법」이나 그 밖의 다른 법령에 따른 병역판정검사ㆍ소집ㆍ검열점호 등에 응하거나 동원 또는 훈련에 참가할 때\n2. 공무와 관련하여 국회, 법원, 공소청, 경찰 또는 그 밖의 국가기관에 소환되었을 때\n3. 법률에 따라 투표에 참가할 때\n4. 승진시험ㆍ전직시험에 응시할 때\n5. 원격지(遠隔地)로 전보(轉補) 발령을 받고 부임할 때\n6. 소속 기관의 소재지가 이전되어 거주지를 변경할 때\n7. 「산업안전보건법」 제129조부터 제131조까지의 규정에 따른 건강진단, 「국민건강보험법」 제52조에 따른 건강검진 또는 「결핵예방법」 제11조제1항에 따른 결핵검진등을 받을 때\n8. 「혈액관리법」에 따라 헌혈에 참가할 때\n9. 「공무원 인재개발법 시행령」 제32조제5호에 따른 외국어능력에 관한 시험에 응시할 때\n10. 올림픽, 전국체전 등 국가적인 행사에 참가할 때\n11. 천재지변, 교통 차단 또는 그 밖의 사유로 출근이 불가능할 때\n12. 다음 각 목의 어느 하나에 해당하는 경우\n가. 「공무원의 노동조합 설립 및 운영 등에 관한 법률」 제9조에 따른 교섭위원으로 선임(選任)되어 단체교섭 및 단체협약 체결에 참석할 때\n나. 「공무원의 노동조합 설립 및 운영 등에 관한 법률」 제17조 및 「노동조합 및 노동관계조정법」 제17조에 따른 대의원회(「공무원의 노동조합 설립 및 운영 등에 관한 법률」에 따라 설립된 공무원 노동조합의 대의원회를 말하며, 연 1회로 한정한다)에 참석할 때\n다. 「공무원의 노동조합 설립 및 운영 등에 관한 법률」 제17조 및 「노동조합 및 노동관계조정법」 제25조에 따라 회계감사원으로서 노동조합의 회계감사(연 2회로 한정한다)를 실시할 때\n13. 공무국외출장등을 위하여 「검역법」 제5조제1항에 따른 검역관리지역 또는 중점검역관리지역으로 가기 전에 같은 법에 따른 검역감염병의 예방접종을 할 때\n14. 「감염병의 예방 및 관리에 관한 법률」에 따른 제1급감염병에 대하여 같은 법 제24조 또는 제25조에 따라 필수예방접종 또는 임시예방접종을 받거나 같은 법 제42조제2항제3호에 따라 감염 여부 검사를 받을 때\n[전문개정 2011. 7. 4.]",
+        "intent": {
+          "topics": [
+            "public_health"
+          ],
+          "status": "ready",
+          "question": "",
+          "recognized": true,
+          "labels": [
+            "법정 건강검진 공가"
+          ]
+        },
+        "scope": "등록·선택한 추출 본문을 검색합니다. 인용 확인은 적용 대상·현행성·법적 해석을 보증하지 않습니다. 처리 경험은 공식 근거와 구분합니다.",
+        "tree": {
+          "kind": "summary",
+          "title": "건강검진은 어떤 검진인지 확인한 뒤 공가를 검토해요",
+          "rule_id": "service-v70-public_health",
+          "reviewed_source_sha256s": [
+            "f459b93473b181b1dc9333903d8ccc97f66930fc7954fabe074a2ff8628d3533"
+          ],
+          "branches": [
+            {
+              "label": "국가공무원 기준 · 확인할 내용",
+              "items": [
+                {
+                  "text": "법령에서 정한 건강진단·건강검진·결핵검진 등에 해당하면 공가 조항을 확인해요. 검진 이름과 법적 근거부터 확인해 주세요.",
+                  "ref": 1,
+                  "support_quotes": [
+                    "산업안전보건법",
+                    "국민건강보험법",
+                    "건강검진",
+                    "결핵예방법"
+                  ]
+                },
+                {
+                  "text": "해당 사유에 직접 필요한 기간 또는 시간이 기준이에요. 개인 선택 검진이나 일반 진료도 모두 공가가 된다고 미리 단정하지 않아요.",
+                  "ref": 1,
+                  "support_quotes": [
+                    "직접 필요한 기간 또는 시간"
+                  ]
+                }
+              ]
+            }
+          ],
+          "note": "국가공무원 복무규정에서 확인한 요약이에요. 실제 소속·신분과 기관 절차를 확인한 뒤 적용하세요."
+        }
+      },
+      "guidance": {
+        "topic": "leave",
+        "title": "휴가·복무 처리 방법",
+        "context": "건강검진을 받으려는데 공가를 쓸 수 있나요?",
+        "questions": [
+          "검진 안내에 적힌 법적 근거와 검진일·직접 필요한 시간, 기관에서 확인할 증빙을 확인해 주세요."
+        ],
+        "steps": [
+          {
+            "id": "scope",
+            "title": "사유에 맞는 휴가 확인",
+            "detail": "위 안내의 휴가 후보와 실제 사유, 소속 기관에 맞는 기준을 함께 확인해요.",
+            "kind": "preparation"
+          },
+          {
+            "id": "materials",
+            "title": "기간·서류 확인",
+            "detail": "아래 규정에서 기간과 필요한 증빙을 확인하고 기관 양식을 준비해요.",
+            "kind": "preparation"
+          },
+          {
+            "id": "system",
+            "title": "e-사람에서 신청",
+            "detail": "해당 종류의 신청 화면을 아래 매뉴얼에서 확인하고 기관 시스템에서 처리해요.",
+            "kind": "preparation"
+          },
+          {
+            "id": "check",
+            "title": "승인·반영 확인",
+            "detail": "승인 여부와 근무상황 반영을 확인해요.",
+            "kind": "preparation"
+          }
+        ],
+        "deadlines": [],
+        "forms": [],
+        "service_guide": {
+          "evidence": [
+            {
+              "id": "faq-10",
+              "title": "[질문](공가제도) 시간단위로도 사용할 수 있나요?",
+              "reference_kind": "official_faq",
+              "quote": "질문: [질문](공가제도) 시간단위로도 사용할 수 있나요?\n답변: [답변] (YES) 시간단위, 일단위 모두 사용 가능하되, 필요한 시간 만큼 부여 받아 사용할 수 있습니다.\n",
+              "loc": "질문/답변",
+              "sha256": "227e6f3ce2baaa8c29df5359ee8e44c96c02665578b9049ba400a70a6ce0ef68",
+              "source_url": "https://www.mpm.go.kr/mpm/info/hrFAQ/?boardId=bbs_0000000000000125&category=cat5&mode=list&pageIdx=1#g17",
+              "snapshot_url": "/api/service-guides/faq-10/original",
+              "retrieved_at": "2026-10-24T13:05:01.373156+00:00",
+              "scope": "국가공무원 FAQ 설명; 게시/개정일 미표시, 현행법령과 적용조건 별도확인"
+            },
+            {
+              "id": "BizService01",
+              "title": "공무원휴가",
+              "reference_kind": "official_service_guide",
+              "quote": "공가의 종류(국가공무원 복무규정 제19조) 「병역법」이나 그 밖의 다른 법령에 따른 병역판정검사ㆍ소집ㆍ검열점호 등에 응하거나 동원 또는 훈련에 참가할 때 공무와 관련하여 국회, 법원, 공소청 또는 그 밖의 국가기관에 소환되었을 때 법률에 따라 투표에 참가할 때 승진시험ㆍ전직시험에 응시할 때 원격지(遠隔地)로 전보(轉補) 발령을 받고 부임할 때 소속 기관의 소재지가 이전하여 거주지를 변경할 때 「산업안전보건법」 제43조에 따른 건강진단, 「국민건강보험법」 제52조에 따른 건강검진 또는 「결핵예방법」 제11조제1항에 따른 결핵검진등을 받을 때 「혈액관리법」에 따라 헌혈에 참가할 때 「공무원 인재개발법 시행령」 제32조제5호에 따른 외국어능력에 관한 시험에 응시할 때 올림픽, 전국체전 등 국가적인 행사에 참가할 때 천재지변, 교통 차단 또는 그 밖의 사유로 출근이 불가능할 때 다음 각 목의 어느 하나에 해당하는 경우 「공무원의 노동조합 설립 및 운영 등에 관한 법률」 제9조에 따른 교섭위원으로 선임(選任)되어 단체교섭 및 단체협약 체결에 참석할 때 「공무원의 노동조합 설립 및 운영 등에 관한 법률」 제17조 및 「노동조합 및 노동관계조정법」 제17조에 따른 대의원회(「공무원의 노동조합 설립 및 운영 등에 관한 법률」에 따라 설립된 공무원 노동조합의 대의원회를 말하며, 연 1회로 한정한다)에 참석할 때 「공무원의 노동조합 설립 및 운영 등에 관한 법률」 제17조 및 「노동조합 및 노동관계조정법」 제25조에 따라 회계감사원으로서 노동조합의 회계감사(연 2회로 한정한다)를 실시할 때 공무국외출장, 파견 또는 교육훈련을 위하여「검역법」제5조 제1항의 ‘검역관리지역’ 및 ‘중점검역관리지역’으로 가기 전에 같은 법 제2조제1호에 따른 검역감염병 예방 접종을 할 때 「감염병의 예방 및 관리에 관한 법률」에 따른 제1급감염병에 대하여 같은 법 제24조 또는 제25조에 따라 필수예방접종 또는 임시예방접종을 받거나 같은 법 제42조제2항제3호에 따라 감염 여부 검사를 받을 때",
+              "loc": "공가",
+              "sha256": "304ad409372a7d22ebc017e88d69b435f18316752ac164366a033a500686109e",
+              "source_url": "https://www.mpm.go.kr/mpm/info/infoService/BizService01/",
+              "snapshot_url": "/api/service-guides/BizService01/original",
+              "retrieved_at": "2026-10-24T13:00:58.899363+00:00",
+              "scope": "국가공무원 제도 설명; 현행 법령 및 기관별 적용조건 별도 확인"
+            },
+            {
+              "id": "BizService01",
+              "title": "공무원휴가",
+              "reference_kind": "official_service_guide",
+              "quote": "공무원이 일반국민의 자격으로 국가기관의 업무수행에 협조하거나 법령상 의무의 이행이 필요한 경우에 부여받는 휴가",
+              "loc": "공가",
+              "sha256": "304ad409372a7d22ebc017e88d69b435f18316752ac164366a033a500686109e",
+              "source_url": "https://www.mpm.go.kr/mpm/info/infoService/BizService01/",
+              "snapshot_url": "/api/service-guides/BizService01/original",
+              "retrieved_at": "2026-10-24T13:00:58.899363+00:00",
+              "scope": "국가공무원 제도 설명; 현행 법령 및 기관별 적용조건 별도 확인"
+            }
+          ],
+          "coverage": {
+            "guide_pages": 10,
+            "faq_questions": 26
+          },
+          "notice": "국가공무원 제도 설명·FAQ의 보관본입니다. 확인일은 수집일이며 답변의 개정일을 뜻하지 않아요. 실제 적용·일수·예외는 현행 법령과 기관 기준을 확인하세요.",
+          "problems": []
+        },
+        "institution_scope": null,
+        "manual": {
+          "evidence": [],
+          "scope": "제공된 e-사람 매뉴얼의 화면 조작 안내입니다. PDF 쪽수 기준이며 현재 기관 화면과 다를 수 있어요. 법정 지급액·휴가일수는 규정 근거로 별도 확인하세요.",
+          "notice": "등록 매뉴얼에서 질문에 직접 답하는 화면·절차를 확인하지 못했어요. 사용 중인 메뉴명과 오류 문구를 알려주세요."
+        },
+        "ai_requested": false,
+        "ai_used": false,
+        "notice": "진행 순서는 실무 준비 제안입니다. 법정 기한·필수 서류·적용 조건은 아래 등록 근거에서 확인하세요.",
+        "map": {
+          "nodes": [
+            {
+              "id": "topic:leave",
+              "label": "leave",
+              "kind": "topic"
+            },
+            {
+              "id": "step:leave:scope",
+              "label": "사유에 맞는 휴가 확인",
+              "kind": "preparation"
+            },
+            {
+              "id": "step:leave:materials",
+              "label": "기간·서류 확인",
+              "kind": "preparation"
+            },
+            {
+              "id": "step:leave:system",
+              "label": "e-사람에서 신청",
+              "kind": "preparation"
+            },
+            {
+              "id": "step:leave:check",
+              "label": "승인·반영 확인",
+              "kind": "preparation"
+            },
+            {
+              "id": "source:public-v70-f459b93473b181b1dc933390",
+              "label": "국가공무원 복무규정 제19조(공가)",
+              "kind": "legal",
+              "sha256": "f459b93473b181b1dc9333903d8ccc97f66930fc7954fabe074a2ff8628d3533",
+              "loc": "제19조(공가) · 1~19행",
+              "page": null
+            },
+            {
+              "id": "source:faq-10",
+              "label": "[질문](공가제도) 시간단위로도 사용할 수 있나요?",
+              "kind": "official_faq",
+              "sha256": "227e6f3ce2baaa8c29df5359ee8e44c96c02665578b9049ba400a70a6ce0ef68",
+              "loc": "질문/답변",
+              "page": null
+            },
+            {
+              "id": "source:BizService01",
+              "label": "공무원휴가",
+              "kind": "official_service_guide",
+              "sha256": "304ad409372a7d22ebc017e88d69b435f18316752ac164366a033a500686109e",
+              "loc": "공가",
+              "page": null
+            }
+          ],
+          "edges": [
+            {
+              "source": "topic:leave",
+              "target": "step:leave:scope",
+              "relation": "준비 순서"
+            },
+            {
+              "source": "topic:leave",
+              "target": "step:leave:materials",
+              "relation": "준비 순서"
+            },
+            {
+              "source": "topic:leave",
+              "target": "step:leave:system",
+              "relation": "준비 순서"
+            },
+            {
+              "source": "topic:leave",
+              "target": "step:leave:check",
+              "relation": "준비 순서"
+            },
+            {
+              "source": "topic:leave",
+              "target": "source:public-v70-f459b93473b181b1dc933390",
+              "relation": "검색된 자료"
+            },
+            {
+              "source": "topic:leave",
+              "target": "source:faq-10",
+              "relation": "검색된 자료"
+            },
+            {
+              "source": "topic:leave",
+              "target": "source:BizService01",
+              "relation": "검색된 자료"
+            }
+          ],
+          "note": "자료의 관련을 보여줍니다. 법적 적용 관계를 자동 판정한 결과는 아닙니다."
+        }
+      }
+    },
+    "travel": {
+      "query": "출장 때 공용차량을 타면 일비는 어떻게 되나요?\n업무환경: 국가공무원",
+      "mode": "structured_guidance",
+      "model": null,
+      "profile": null,
+      "summary": "등록 자료로 처리 방법을 함께 확인해요.",
+      "answer": "[1] 제16조(일비ㆍ숙박비ㆍ식비의 지급) ① 국내 여행자의 일비(日費)ㆍ숙박비 및 식비는 별표 2에 따라 지급하고, 국외 여행자의 경우는 별표 4에 따라 지급한다. 다만, 공무의 형편이나 그 밖의 부득이한 사유로 숙박비의 상한액 및 지급받은 식비(국내 여행의 경우 식비는 제외한다)를 초과하여 여비를 지출하였을 때에는 국내 여행의 경우에는 숙박비 상한액의 10분의 3을, 국외 여행의 경우에는 숙박비 및 식비의 2분의 1을 넘지 아니하는 범위에서 여비를 추가로 지급할 수 있다. <개정 2011. 2. 9.>\n② 제1항 단서에 따라 여비를 추가로 지급받으려는 공무원은 여행을 마친 날의 다음 날부터 기산하여 1주일 이내(국외 여행의 경우에는 2주일 이내를 말한다)에 정부구매카드 또는 신용카드를 사용하고 받은 매출전표에 세부 사용내용이 명시된 증거자료를 갖추어 회계 관계 공무원에게 정산을 신청하여야 한다. <개정 2011. 2. 9.>\n③ 일비는 여행일수에 따라 지급하되, 공무용 차량을 이용하는 경우 등 인사혁신처장이 정하는 바에 따라 여행을 하는 경우에는 일비의 2분의 1을 지급한다. <개정 2013. 3. 23., 2014. 11. 19., 2024. 7. 2.>\n④ 숙박비는 숙박하는 밤의 수에 따라 지급한다. 다만, 수로여행과 항공여행에는 숙박비를 지급하지 아니하되, 천재지변이나 그 밖의 부득이한 사유로 육지에서 숙박할 필요가 있는 경우에는 숙박비를 지급한다.\n⑤ 식비는 여행일수에 따라 지급한다. 다만, 수로여행과 항공여행에는 따로 식비가 필요한 경우에만 식비를 지급한다.\n⑥ 삭제 <2012. 1. 6.>\n[전문개정 2010. 11. 10.]",
+      "notice": "",
+      "plan": null,
+      "alternatives": [],
+      "cited": [],
+      "related": [],
+      "personal_notes": [],
+      "knowledge": {
+        "evidence": [
+          {
+            "id": "243ca624713948529fd3d16292770ffb:0:0",
+            "text": "제16조(일비ㆍ숙박비ㆍ식비의 지급) ① 국내 여행자의 일비(日費)ㆍ숙박비 및 식비는 별표 2에 따라 지급하고, 국외 여행자의 경우는 별표 4에 따라 지급한다. 다만, 공무의 형편이나 그 밖의 부득이한 사유로 숙박비의 상한액 및 지급받은 식비(국내 여행의 경우 식비는 제외한다)를 초과하여 여비를 지출하였을 때에는 국내 여행의 경우에는 숙박비 상한액의 10분의 3을, 국외 여행의 경우에는 숙박비 및 식비의 2분의 1을 넘지 아니하는 범위에서 여비를 추가로 지급할 수 있다. <개정 2011. 2. 9.>\n② 제1항 단서에 따라 여비를 추가로 지급받으려는 공무원은 여행을 마친 날의 다음 날부터 기산하여 1주일 이내(국외 여행의 경우에는 2주일 이내를 말한다)에 정부구매카드 또는 신용카드를 사용하고 받은 매출전표에 세부 사용내용이 명시된 증거자료를 갖추어 회계 관계 공무원에게 정산을 신청하여야 한다. <개정 2011. 2. 9.>\n③ 일비는 여행일수에 따라 지급하되, 공무용 차량을 이용하는 경우 등 인사혁신처장이 정하는 바에 따라 여행을 하는 경우에는 일비의 2분의 1을 지급한다. <개정 2013. 3. 23., 2014. 11. 19., 2024. 7. 2.>\n④ 숙박비는 숙박하는 밤의 수에 따라 지급한다. 다만, 수로여행과 항공여행에는 숙박비를 지급하지 아니하되, 천재지변이나 그 밖의 부득이한 사유로 육지에서 숙박할 필요가 있는 경우에는 숙박비를 지급한다.\n⑤ 식비는 여행일수에 따라 지급한다. 다만, 수로여행과 항공여행에는 따로 식비가 필요한 경우에만 식비를 지급한다.\n⑥ 삭제 <2012. 1. 6.>\n[전문개정 2010. 11. 10.]",
+            "loc": "제16조(일비ㆍ숙박비ㆍ식비의 지급) · 1~7행",
+            "source_id": "243ca624713948529fd3d16292770ffb",
+            "title": "공무원 여비 규정 제16조(일비ㆍ숙박비ㆍ식비의 지급)",
+            "kind": "법령·규정",
+            "institution": "국가공무원 · 지방공무원 적용은 해당 여비 조례 확인",
+            "effective_date": "2026-10-02",
+            "sha256": "0b22c01ecffbd69f3c7ceecb499322d0f3d05a21ac9928188fc97d101bb29983",
+            "limited": false,
+            "library_id": "2d452f42d15242f7b3506c111148aff6",
+            "file_id": "d419421d5f88524eba9ffce257780e9f",
+            "official": {
+              "title": "공무원 여비 규정",
+              "article": "제16조(일비ㆍ숙박비ㆍ식비의 지급)",
+              "effective_date": "2026-10-02",
+              "publication": "대통령령 제36728호",
+              "issuer": "인사혁신처",
+              "institution": "국가공무원 · 지방공무원 적용은 해당 여비 조례 확인",
+              "kind": "법령·규정",
+              "source_url": "https://www.law.go.kr/lsLinkCommonInfo.do?lspttninfSeq=57051",
+              "download_url": "https://www.law.go.kr/lsLinkCommonInfo.do?lspttninfSeq=57051",
+              "retrieved_at": "2026-10-20T10:08:58.555646+00:00",
+              "raw_file": "travel.html",
+              "raw_sha256": "53ca5e0ddb3fa144330c61520070391f54c1b90e9d3b28a9d410464a40b79840",
+              "filename": "공무원 여비 규정_제16조.txt",
+              "sha256": "0b22c01ecffbd69f3c7ceecb499322d0f3d05a21ac9928188fc97d101bb29983",
+              "scope": "해당 조항 본문 발췌 · 별표·부칙·기관 조례 미포함",
+              "paragraphs": 7
+            },
+            "score": 32.84,
+            "quote": "제16조(일비ㆍ숙박비ㆍ식비의 지급) ① 국내 여행자의 일비(日費)ㆍ숙박비 및 식비는 별표 2에 따라 지급하고, 국외 여행자의 경우는 별표 4에 따라 지급한다. 다만, 공무의 형편이나 그 밖의 부득이한 사유로 숙박비의 상한액 및 지급받은 식비(국내 여행의 경우 식비는 제외한다)를 초과하여 여비를 지출하였을 때에는 국내 여행의 경우에는 숙박비 상한액의 10분의 3을, 국외 여행의 경우에는 숙박비 및 식비의 2분의 1을 넘지 아니하는 범위에서 여비를 추가로 지급할 수 있다. <개정 2011. 2. 9.>\n② 제1항 단서에 따라 여비를 추가로 지급받으려는 공무원은 여행을 마친 날의 다음 날부터 기산하여 1주일 이내(국외 여행의 경우에는 2주일 이내를 말한다)에 정부구매카드 또는 신용카드를 사용하고 받은 매출전표에 세부 사용내용이 명시된 증거자료를 갖추어 회계 관계 공무원에게 정산을 신청하여야 한다. <개정 2011. 2. 9.>\n③ 일비는 여행일수에 따라 지급하되, 공무용 차량을 이용하는 경우 등 인사혁신처장이 정하는 바에 따라 여행을 하는 경우에는 일비의 2분의 1을 지급한다. <개정 2013. 3. 23., 2014. 11. 19., 2024. 7. 2.>\n④ 숙박비는 숙박하는 밤의 수에 따라 지급한다. 다만, 수로여행과 항공여행에는 숙박비를 지급하지 아니하되, 천재지변이나 그 밖의 부득이한 사유로 육지에서 숙박할 필요가 있는 경우에는 숙박비를 지급한다.\n⑤ 식비는 여행일수에 따라 지급한다. 다만, 수로여행과 항공여행에는 따로 식비가 필요한 경우에만 식비를 지급한다.\n⑥ 삭제 <2012. 1. 6.>\n[전문개정 2010. 11. 10.]",
+            "quote_basis": "original_context"
+          }
+        ],
+        "experiences": [],
+        "excluded": [
+          {
+            "title": "지방자치단체 회계관리에 관한 훈령 제115조(채권관리상황의 기록)",
+            "reason": "국가기관·국가공무원에 적용할 근거가 필요합니다."
+          },
+          {
+            "title": "지방자치단체 회계관리에 관한 훈령 제120조(인센티브의 처리)",
+            "reason": "국가기관·국가공무원에 적용할 근거가 필요합니다."
+          },
+          {
+            "title": "지방공무원 복무규정 제7조의6(공가)",
+            "reason": "국가기관·국가공무원에 적용할 근거가 필요합니다."
+          },
+          {
+            "title": "지방자치단체를 당사자로 하는 계약에 관한 법률 시행령 제65조(검사조서의 작성 생략)",
+            "reason": "국가기관·국가공무원에 적용할 근거가 필요합니다."
+          },
+          {
+            "title": "지방자치단체를 당사자로 하는 계약에 관한 법률 시행령 제30조(수의계약대상자의 선정절차 등)",
+            "reason": "국가기관·국가공무원에 적용할 근거가 필요합니다."
+          },
+          {
+            "title": "지방자치단체를 당사자로 하는 계약에 관한 법률 제17조(검사)",
+            "reason": "국가기관·국가공무원에 적용할 근거가 필요합니다."
+          },
+          {
+            "title": "지방자치단체 예산편성 운영기준 01.자산및물품취득비",
+            "reason": "국가기관·국가공무원에 적용할 근거가 필요합니다."
+          },
+          {
+            "title": "지방자치단체 회계관리에 관한 훈령 제121조(집행현황의 공개)",
+            "reason": "국가기관·국가공무원에 적용할 근거가 필요합니다."
+          },
+          {
+            "title": "지방자치단체를 당사자로 하는 계약에 관한 법률 시행령 제67조(대가의 지급)",
+            "reason": "국가기관·국가공무원에 적용할 근거가 필요합니다."
+          },
+          {
+            "title": "지방공무원 복무규정 제7조의7(특별휴가)",
+            "reason": "국가기관·국가공무원에 적용할 근거가 필요합니다."
+          },
+          {
+            "title": "지방자치단체를 당사자로 하는 계약에 관한 법률 시행령 제64조(검사)",
+            "reason": "국가기관·국가공무원에 적용할 근거가 필요합니다."
+          },
+          {
+            "title": "지방자치단체 예산편성 운영기준 01.사무관리비",
+            "reason": "국가기관·국가공무원에 적용할 근거가 필요합니다."
+          },
+          {
+            "title": "지방자치단체를 당사자로 하는 계약에 관한 법률 시행령 제68조(대가 지급 지연에 대한 이자)",
+            "reason": "국가기관·국가공무원에 적용할 근거가 필요합니다."
+          },
+          {
+            "title": "지방공무원 복무규정 별표 1 경조사 휴가일수표",
+            "reason": "국가기관·국가공무원에 적용할 근거가 필요합니다."
+          },
+          {
+            "title": "지방공무원 복무규정 제7조의5(병가)",
+            "reason": "국가기관·국가공무원에 적용할 근거가 필요합니다."
+          },
+          {
+            "title": "지방공무원 복무규정 제7조(연가일수 및 연가보상비의 지급)",
+            "reason": "국가기관·국가공무원에 적용할 근거가 필요합니다."
+          },
+          {
+            "title": "지방자치단체를 당사자로 하는 계약에 관한 법률 제18조(대가의 지급)",
+            "reason": "국가기관·국가공무원에 적용할 근거가 필요합니다."
+          }
+        ],
+        "mode": "source_search",
+        "model": null,
+        "notice": "",
+        "answer": "[1] 제16조(일비ㆍ숙박비ㆍ식비의 지급) ① 국내 여행자의 일비(日費)ㆍ숙박비 및 식비는 별표 2에 따라 지급하고, 국외 여행자의 경우는 별표 4에 따라 지급한다. 다만, 공무의 형편이나 그 밖의 부득이한 사유로 숙박비의 상한액 및 지급받은 식비(국내 여행의 경우 식비는 제외한다)를 초과하여 여비를 지출하였을 때에는 국내 여행의 경우에는 숙박비 상한액의 10분의 3을, 국외 여행의 경우에는 숙박비 및 식비의 2분의 1을 넘지 아니하는 범위에서 여비를 추가로 지급할 수 있다. <개정 2011. 2. 9.>\n② 제1항 단서에 따라 여비를 추가로 지급받으려는 공무원은 여행을 마친 날의 다음 날부터 기산하여 1주일 이내(국외 여행의 경우에는 2주일 이내를 말한다)에 정부구매카드 또는 신용카드를 사용하고 받은 매출전표에 세부 사용내용이 명시된 증거자료를 갖추어 회계 관계 공무원에게 정산을 신청하여야 한다. <개정 2011. 2. 9.>\n③ 일비는 여행일수에 따라 지급하되, 공무용 차량을 이용하는 경우 등 인사혁신처장이 정하는 바에 따라 여행을 하는 경우에는 일비의 2분의 1을 지급한다. <개정 2013. 3. 23., 2014. 11. 19., 2024. 7. 2.>\n④ 숙박비는 숙박하는 밤의 수에 따라 지급한다. 다만, 수로여행과 항공여행에는 숙박비를 지급하지 아니하되, 천재지변이나 그 밖의 부득이한 사유로 육지에서 숙박할 필요가 있는 경우에는 숙박비를 지급한다.\n⑤ 식비는 여행일수에 따라 지급한다. 다만, 수로여행과 항공여행에는 따로 식비가 필요한 경우에만 식비를 지급한다.\n⑥ 삭제 <2012. 1. 6.>\n[전문개정 2010. 11. 10.]",
+        "intent": {
+          "topics": [
+            "travel_daily"
+          ],
+          "status": "ready",
+          "question": "",
+          "recognized": true,
+          "labels": [
+            "일비 지급"
+          ]
+        },
+        "scope": "등록·선택한 추출 본문을 검색합니다. 인용 확인은 적용 대상·현행성·법적 해석을 보증하지 않습니다. 처리 경험은 공식 근거와 구분합니다.",
+        "tree": {
+          "kind": "summary",
+          "title": "공무용 차량을 이용하면 일비 감액을 확인해요",
+          "branches": [
+            {
+              "label": "기본 기준",
+              "items": [
+                {
+                  "text": "일비는 출장 일수에 따라 지급해요.",
+                  "ref": 1,
+                  "support_quotes": [
+                    "일비는 여행일수에 따라 지급하되"
+                  ]
+                }
+              ]
+            },
+            {
+              "label": "차량 이용 조건",
+              "items": [
+                {
+                  "text": "공무용 차량 이용 등 정해진 조건이면 일비의 절반을 지급해요.",
+                  "ref": 1,
+                  "support_quotes": [
+                    "공무용 차량을 이용하는 경우",
+                    "일비의 2분의 1을 지급한다."
+                  ]
+                }
+              ]
+            },
+            {
+              "label": "지금 확인할 것",
+              "items": [
+                {
+                  "text": "차량 이용 여부를 확인하고, 실제 금액은 여비 금액표와 함께 확인해요.",
+                  "ref": 1,
+                  "support_quotes": [
+                    "일비의 2분의 1을 지급한다.",
+                    "국내 여행자의 일비(日費)ㆍ숙박비 및 식비는 별표 2에 따라 지급"
+                  ]
+                }
+              ]
+            }
+          ],
+          "note": "이해를 돕는 요약이에요. 내 기관에 적용되는 조건은 근거에서 확인하세요.",
+          "rule_id": "daily-car",
+          "reviewed_source_sha256": "0b22c01ecffbd69f3c7ceecb499322d0f3d05a21ac9928188fc97d101bb29983"
+        }
+      },
+      "guidance": {
+        "topic": "travel",
+        "title": "출장·여비 처리 방법",
+        "context": "출장 때 공용차량을 타면 일비는 어떻게 되나요?",
+        "questions": [
+          "실제 출장 시작일과 종료일을 알려주세요. 2박 3일만으로 날짜를 정하지 않아요."
+        ],
+        "steps": [
+          {
+            "id": "scope",
+            "title": "적용 조건 확인",
+            "detail": "소속 기관과 실제 출장 일정, 이동수단·숙박·제공받은 항목을 확인해요.",
+            "kind": "preparation"
+          },
+          {
+            "id": "materials",
+            "title": "증빙·서식 준비",
+            "detail": "아래 등록 근거에서 필요한 증빙과 기한을 확인하고, 기관에서 쓰는 서식을 준비해요.",
+            "kind": "preparation"
+          },
+          {
+            "id": "system",
+            "title": "e-사람에서 신청·정산",
+            "detail": "아래 매뉴얼의 원문과 쪽수를 참고해 기관 시스템에서 처리해요. 화면·권한 차이는 담당자에게 확인해요.",
+            "kind": "preparation"
+          },
+          {
+            "id": "check",
+            "title": "처리 결과 확인",
+            "detail": "신청·결재 상태와 보완 요청을 확인해요. 필요하면 아래 보조 도구에서 계산·증빙을 검토할 수 있어요.",
+            "kind": "preparation"
+          }
+        ],
+        "deadlines": [],
+        "forms": [
+          {
+            "id": "form-travel",
+            "name": "국내출장 여비 정산서",
+            "href": "/api/documents/form-travel-doc/download",
+            "synthetic": true,
+            "source_id": "form-travel-doc",
+            "sha256": "42d22f055904595ce30f55f899a6d378f3f1e989e1330370f9d3985861b54eb5"
+          }
+        ],
+        "service_guide": {
+          "evidence": [
+            {
+              "id": "BizService07",
+              "title": "국내출장",
+              "reference_kind": "official_service_guide",
+              "quote": "출장공무원은 명령받은 출장기간에 그 업무를 완수하여야 하며, 출장기간을 변경할 사유가 발생한 때에는 지체없이 전화, 전보 또는 그 밖의 방법으로 소속 기관의 장에게 보고하고 그 지시를 받아야 함. 다만, 신속히 업무를 수행할 긴급한 사정이 있는 경우에는 사후에 보고할 수 있음",
+              "loc": "출장공무원의 의무",
+              "sha256": "2d156cb701e91beae7ba9fb1c79651c871514db29235505becd47d53c0b4ef29",
+              "source_url": "https://www.mpm.go.kr/mpm/info/infoService/BizService07/",
+              "snapshot_url": "/api/service-guides/BizService07/original",
+              "retrieved_at": "2026-10-24T13:00:58.899363+00:00",
+              "scope": "국가공무원 제도 설명; 현행 법령 및 기관별 적용조건 별도 확인"
+            },
+            {
+              "id": "BizService07",
+              "title": "국내출장",
+              "reference_kind": "official_service_guide",
+              "quote": "소속 기관의 장은 임신 중인 공무원의 장거리 또는 장기간 출장을 제한할 수 있음",
+              "loc": "출장공무원의 의무",
+              "sha256": "2d156cb701e91beae7ba9fb1c79651c871514db29235505becd47d53c0b4ef29",
+              "source_url": "https://www.mpm.go.kr/mpm/info/infoService/BizService07/",
+              "snapshot_url": "/api/service-guides/BizService07/original",
+              "retrieved_at": "2026-10-24T13:00:58.899363+00:00",
+              "scope": "국가공무원 제도 설명; 현행 법령 및 기관별 적용조건 별도 확인"
+            }
+          ],
+          "coverage": {
+            "guide_pages": 10,
+            "faq_questions": 26
+          },
+          "notice": "국가공무원 제도 설명·FAQ의 보관본입니다. 확인일은 수집일이며 답변의 개정일을 뜻하지 않아요. 실제 적용·일수·예외는 현행 법령과 기관 기준을 확인하세요.",
+          "problems": []
+        },
+        "institution_scope": null,
+        "manual": {
+          "evidence": [
+            {
+              "id": "manual-d297a014798bc804ba99e51cd62ee2c1:page:14",
+              "source_id": "manual-d297a014798bc804ba99e51cd62ee2c1",
+              "library_id": "esaram-manuals-v68",
+              "file_id": "d297a014798bc804ba99e51cd62ee2c1",
+              "title": "[개인용]3세대 e-사람_사용자매뉴얼_02.복무_04.출장관리_v1.0.pdf",
+              "kind": "업무편람",
+              "institution": "e-사람 사용자매뉴얼 · 제공 파일",
+              "effective_date": "",
+              "sha256": "d297a014798bc804ba99e51cd62ee2c154725b7daa54b097ba6b809a958b8d24",
+              "limited": false,
+              "reference_kind": "system_manual",
+              "page": 14,
+              "page_count": 57,
+              "indexed_pages": 57,
+              "loc": "PDF 14쪽",
+              "text": "Copyrightⓒ Ministry of Personnel Management. All Rights reserved 14\n5-1\n5. 여비 정산을 위해 출장 시 사용한 결제수단을 선택한다.\n6. 결재를 상신할 결재자 정보를 확인한 후 [결재신청]을 클릭해 상신한다.\n7. 정산 결재가 완료된 출장 건을 체크한 후 [정산신청서]를 출력할 수 있다.\n‘숙박비실비’의 경우, 숙박비 내역을 작성한다.\nTIP\n5\n스마트출장예약앱을 통해 결제한 경우, 스마트출장정산내역에서 사용한 건을 클릭해\n[정산적용]한다. \n6\n3/5\n",
+              "quote": "Copyrightⓒ Ministry of Personnel Management. All Rights reserved 14\n5-1\n5. 여비 정산을 위해 출장 시 사용한 결제수단을 선택한다.\n6. 결재를 상신할 결재자 정보를 확인한 후 [결재신청]을 클릭해 상신한다.\n7. 정산 결재가 완료된 출장 건을 체크한 후 [정산신청서]를 출력할 수 있다.\n‘숙박비실비’의 경우, 숙박비 내역을 작성한다.\nTIP\n5\n스마트출장예약앱을 통해 결제한 경우, 스마트출장정산내역에서 사용한 건을 클릭해\n[정산적용]한다. \n6\n3/5\n",
+              "score": 34.61,
+              "official": null
+            },
+            {
+              "id": "manual-618f2550225650b009cb68dd0f8597cb:page:60",
+              "source_id": "manual-618f2550225650b009cb68dd0f8597cb",
+              "library_id": "esaram-manuals-v68",
+              "file_id": "618f2550225650b009cb68dd0f8597cb",
+              "title": "[서무_출장] 3세대 e-사람_스마트출장앱 교육.pdf",
+              "kind": "업무편람",
+              "institution": "e-사람 사용자매뉴얼 · 제공 파일",
+              "effective_date": "",
+              "sha256": "618f2550225650b009cb68dd0f8597cbb6ef68d32c38641129743357a9daf815",
+              "limited": false,
+              "reference_kind": "system_manual",
+              "page": 60,
+              "page_count": 111,
+              "indexed_pages": 111,
+              "loc": "PDF 60쪽",
+              "text": "PART\n7\n60\n출장정산\n1 사용내역일자조회\n스마트출장예약정산앱을 통해 예약한\n사용일자를검색합니다.\n7.4 e-사람 출장정산\n7.4.1  출장정산 기능\n1\n2\n3\n4\ntab\n2 정산내역선택\n해당 출장건에 등록할 정산내역을\n선택합니다.\n정산적용\n정산건 선택후 정산적용및 저장버튼을\n클릭합니다.\n3 4",
+              "quote": "PART\n7\n60\n출장정산\n1 사용내역일자조회\n스마트출장예약정산앱을 통해 예약한\n사용일자를검색합니다.\n7.4 e-사람 출장정산\n7.4.1  출장정산 기능\n1\n2\n3\n4\ntab\n2 정산내역선택\n해당 출장건에 등록할 정산내역을\n선택합니다.\n정산적용\n정산건 선택후 정산적용및 저장버튼을\n클릭합니다.\n3 4",
+              "score": 32.42,
+              "official": null
+            },
+            {
+              "id": "manual-618f2550225650b009cb68dd0f8597cb:page:81",
+              "source_id": "manual-618f2550225650b009cb68dd0f8597cb",
+              "library_id": "esaram-manuals-v68",
+              "file_id": "618f2550225650b009cb68dd0f8597cb",
+              "title": "[서무_출장] 3세대 e-사람_스마트출장앱 교육.pdf",
+              "kind": "업무편람",
+              "institution": "e-사람 사용자매뉴얼 · 제공 파일",
+              "effective_date": "",
+              "sha256": "618f2550225650b009cb68dd0f8597cbb6ef68d32c38641129743357a9daf815",
+              "limited": false,
+              "reference_kind": "system_manual",
+              "page": 81,
+              "page_count": 111,
+              "indexed_pages": 111,
+              "loc": "PDF 81쪽",
+              "text": "Copyrightⓒ Ministry of Personnel Management. All Rights reserved \n‘숙박비실비’의 경우, 숙박비 내역을 작성한다.\n5. 여비 정산을 위해 출장 시 사용한 결제수단을 선택한다.\n6. 결재를 상신할 결재자 정보를 확인한 후 [결재신청]을 클릭해 상신한다.\n81\n스마트출장정산\n5\n5-1\n3/5\n스마트출장예약정산 앱을 통해 결제한 경우, 스마트출장정산내역에서 사용한 건을 클\n릭해 [정산적용]한다. \n6\nTIP",
+              "quote": "Copyrightⓒ Ministry of Personnel Management. All Rights reserved \n‘숙박비실비’의 경우, 숙박비 내역을 작성한다.\n5. 여비 정산을 위해 출장 시 사용한 결제수단을 선택한다.\n6. 결재를 상신할 결재자 정보를 확인한 후 [결재신청]을 클릭해 상신한다.\n81\n스마트출장정산\n5\n5-1\n3/5\n스마트출장예약정산 앱을 통해 결제한 경우, 스마트출장정산내역에서 사용한 건을 클\n릭해 [정산적용]한다. \n6\nTIP",
+              "score": 29.67,
+              "official": null
+            }
+          ],
+          "scope": "제공된 e-사람 매뉴얼의 화면 조작 안내입니다. PDF 쪽수 기준이며 현재 기관 화면과 다를 수 있어요. 법정 지급액·휴가일수는 규정 근거로 별도 확인하세요.",
+          "notice": ""
+        },
+        "ai_requested": false,
+        "ai_used": false,
+        "notice": "진행 순서는 실무 준비 제안입니다. 법정 기한·필수 서류·적용 조건은 아래 등록 근거에서 확인하세요.",
+        "map": {
+          "nodes": [
+            {
+              "id": "topic:travel",
+              "label": "travel",
+              "kind": "topic"
+            },
+            {
+              "id": "step:travel:scope",
+              "label": "적용 조건 확인",
+              "kind": "preparation"
+            },
+            {
+              "id": "step:travel:materials",
+              "label": "증빙·서식 준비",
+              "kind": "preparation"
+            },
+            {
+              "id": "step:travel:system",
+              "label": "e-사람에서 신청·정산",
+              "kind": "preparation"
+            },
+            {
+              "id": "step:travel:check",
+              "label": "처리 결과 확인",
+              "kind": "preparation"
+            },
+            {
+              "id": "source:243ca624713948529fd3d16292770ffb",
+              "label": "공무원 여비 규정 제16조(일비ㆍ숙박비ㆍ식비의 지급)",
+              "kind": "legal",
+              "sha256": "0b22c01ecffbd69f3c7ceecb499322d0f3d05a21ac9928188fc97d101bb29983",
+              "loc": "제16조(일비ㆍ숙박비ㆍ식비의 지급) · 1~7행",
+              "page": null
+            },
+            {
+              "id": "source:BizService07",
+              "label": "국내출장",
+              "kind": "official_service_guide",
+              "sha256": "2d156cb701e91beae7ba9fb1c79651c871514db29235505becd47d53c0b4ef29",
+              "loc": "출장공무원의 의무",
+              "page": null
+            },
+            {
+              "id": "source:manual-d297a014798bc804ba99e51cd62ee2c1:14",
+              "label": "[개인용]3세대 e-사람_사용자매뉴얼_02.복무_04.출장관리_v1.0.pdf",
+              "kind": "system_manual",
+              "sha256": "d297a014798bc804ba99e51cd62ee2c154725b7daa54b097ba6b809a958b8d24",
+              "loc": "PDF 14쪽",
+              "page": 14
+            },
+            {
+              "id": "source:manual-618f2550225650b009cb68dd0f8597cb:60",
+              "label": "[서무_출장] 3세대 e-사람_스마트출장앱 교육.pdf",
+              "kind": "system_manual",
+              "sha256": "618f2550225650b009cb68dd0f8597cbb6ef68d32c38641129743357a9daf815",
+              "loc": "PDF 60쪽",
+              "page": 60
+            },
+            {
+              "id": "source:manual-618f2550225650b009cb68dd0f8597cb:81",
+              "label": "[서무_출장] 3세대 e-사람_스마트출장앱 교육.pdf",
+              "kind": "system_manual",
+              "sha256": "618f2550225650b009cb68dd0f8597cbb6ef68d32c38641129743357a9daf815",
+              "loc": "PDF 81쪽",
+              "page": 81
+            },
+            {
+              "id": "form:form-travel",
+              "label": "국내출장 여비 정산서",
+              "kind": "form",
+              "sha256": "42d22f055904595ce30f55f899a6d378f3f1e989e1330370f9d3985861b54eb5"
+            }
+          ],
+          "edges": [
+            {
+              "source": "topic:travel",
+              "target": "step:travel:scope",
+              "relation": "준비 순서"
+            },
+            {
+              "source": "topic:travel",
+              "target": "step:travel:materials",
+              "relation": "준비 순서"
+            },
+            {
+              "source": "topic:travel",
+              "target": "step:travel:system",
+              "relation": "준비 순서"
+            },
+            {
+              "source": "topic:travel",
+              "target": "step:travel:check",
+              "relation": "준비 순서"
+            },
+            {
+              "source": "topic:travel",
+              "target": "source:243ca624713948529fd3d16292770ffb",
+              "relation": "검색된 자료"
+            },
+            {
+              "source": "topic:travel",
+              "target": "source:BizService07",
+              "relation": "검색된 자료"
+            },
+            {
+              "source": "topic:travel",
+              "target": "source:manual-d297a014798bc804ba99e51cd62ee2c1:14",
+              "relation": "검색된 자료"
+            },
+            {
+              "source": "topic:travel",
+              "target": "source:manual-618f2550225650b009cb68dd0f8597cb:60",
+              "relation": "검색된 자료"
+            },
+            {
+              "source": "topic:travel",
+              "target": "source:manual-618f2550225650b009cb68dd0f8597cb:81",
+              "relation": "검색된 자료"
+            },
+            {
+              "source": "topic:travel",
+              "target": "form:form-travel",
+              "relation": "등록 서식 후보"
+            }
+          ],
+          "note": "자료의 관련을 보여줍니다. 법적 적용 관계를 자동 판정한 결과는 아닙니다."
+        }
+      }
+    },
+    "budget": {
+      "query": "사무용품을 사려는데 무슨 목으로 구입해야 하나요?\n업무환경: 국가공무원",
+      "mode": "structured_guidance",
+      "model": null,
+      "profile": null,
+      "summary": "등록 자료로 처리 방법을 함께 확인해요.",
+      "answer": "[1]  사. 공무원이 직접 자기가 담당하는 업무, 자기가 소속된 중앙관서의 사무와 관련하여 원고를 작성하거나 조력하는 경우 원고료 또는 사례금을 지급할 수 없다.\n\n[1]      - 다만, 공무원인 경우 자기소관 사무 이외의 위원으로 위촉되었을 경우에 한하여 지급한다. 이 경우 자기소관 사무는 직접 자기가 담당하는 업무뿐만 아니라 자기가 소속된 중앙관서의 사무까지 포함한다.",
+      "notice": "",
+      "plan": null,
+      "alternatives": [],
+      "cited": [],
+      "related": [],
+      "personal_notes": [],
+      "knowledge": {
+        "evidence": [
+          {
+            "id": "finance-national-2026-supplies:0:0",
+            "text": "1-1. 일반수용비(210-01목)\n 가. 인쇄비, 소모성 물품구입비, 간행물구입비 등 경상적 성격의 수용비는 최대한 절감하여 집행토록 한다.\n     ※ 보고서 등 인쇄물의 컬러인쇄는 불가피한 경우에 한한다.\n  ㅇ 법상 일반경쟁입찰에 의하여야 할 인쇄물을 분할수의계약을 통해 계약단가를 낮춰 수의계약방식으로 집행하지 않도록 주의한다.\n  ㅇ 인쇄를 발주함에 있어 조판 작업 여부․난이도, CTP*(Computer to Plate) 방식 도입 등 인쇄기술의 향상 부분을 확인하고 인쇄비의 예정가격 등을 산정하여야 한다.\n      * 인쇄용 필름 작업을 생략하고 직접 인쇄판을 만드는 방식\n 나. 팸플릿, 안내책자 등 홍보물 및 공개 가능한 인쇄물은 필요 최소한의 물량만큼 제작하고, 전자우편‧인터넷 홈페이지 등을 최대한 활용하여야 한다.\n 다. 기념품은 목적에 맞게 최소한으로 제작․활용하여 낭비요인이 발생하지 않도록 하여야 한다.\n 라. 특별한 사유없이 기관장 교체 등으로 인한 청사 현판, 현수막 교체용 예산집행은 금지한다. \n 마. 공신력 있는 단가기준이 있는 경우에는 이를 참고하여 집행한다.\n    ※ 감정평가수수료 등에 대한 단가, 변호사 보수규정(법무부), 정부구매 물가가격정보(조달청) 등\n 바. 자산취득비, 공사비(대규모 수선비 포함), 연구용역비 등 다른 비목에 해당하는 성격의 경비를 일반수용비에서 집행하여서는 아니된다.\n(상세한 내용은 ｢2026년도 예산안 편성 및 기금운용계획안 작성 세부지침｣ 참고)\n 사. 공무원이 직접 자기가 담당하는 업무, 자기가 소속된 중앙관서의 사무와 관련하여 원고를 작성하거나 조력하는 경우 원고료 또는 사례금을 지급할 수 없다.\n 아. 소송‧법률 및 정책자문을 위한 비용은 사안의 중요성 및 파급효과, 난이도 등을 고려하여 적정금액을 산정하여 집행한다.\n  ㅇ 다만, 정책자문 비용은 각 중앙관서의 장이 대상‧금액 등에 관한 구체적인 기준을 마련하여 집행하여야 한다.\n 자. 정책·사업의 홍보목적으로 유명인 등을 홍보대사로 선정·활용하는 경우 무보수 또는 여비·부대비 등 실비보상적 성격의 사례금만을 지급하는 것을 원칙으로 한다(타 비목으로 지출하는 경우에도 동 규정을 적용한다).\n 차. 위원회 참석비\n   ㅇ  법령 등에 의하여 설치된 위원회에 참석한 위원에 대하여 1일당 200,000원내(서면심사 150,000원내)에서 지급하되, 참석시간이 2시간 이상일 경우에는 1일 1회에 한하여 100,000원내에서 추가 지급할 수 있으며, 원격지에서 참석하는 경우에는 교통비․식비․숙박비를 예산의 범위 내에서 여비(220목) 또는 일반수용비(210-01목)로 추가 지급할 수 있다.\n     - 다만, 공무원인 경우 자기소관 사무 이외의 위원으로 위촉되었을 경우에 한하여 지급한다. 이 경우 자기소관 사무는 직접 자기가 담당하는 업무뿐만 아니라 자기가 소속된 중앙관서의 사무까지 포함한다.\n     - 또한,  법령 등에 의하여 설치된 위원회의 위원이 단순한 회의참석 이외에 사전 자료수집․현지조사·기술검토 등 별도의 용역을 제공할 경우 계상된 예산액 범위 내에서 전문가 자문료 또는 국가업무 조력자 사례금 등을 일반수용비(210-01목)로 지급할 수 있다.\n     - 필요시 온라인 또는 영상 등 비대면 방식으로 전환하여 위원회를 개최할 수 있으며 이 경우 ‘온나라 인터넷 PC영상회의’를 이용하고 보안유지 필요성이 낮은 경우 민간 플랫폼(Platform)도 이용 할 수 있다. (위원회 영상회의 등의 참석비는 일반적인 위원회 회의 참석에 준하는 수준으로 지급할 수 있다) \n 카. 업무용택시 이용요금은 일반수용비(210-01목)로 집행한다.\n 타. 특수목적 대학의 초과･야간 강의료는 일반수용비(210-01목)로\n집행할 수 있다.",
+            "loc": "Ⅲ 1-1. 일반수용비(210-01목) · HWPX 3구역 2572~2614문단",
+            "source_id": "finance-national-2026-supplies",
+            "title": "2026년도 예산 및 기금운용계획 집행지침 Ⅲ 1-1. 일반수용비(210-01목)",
+            "kind": "기관 지침",
+            "institution": "국가기관 · 2026년도 예산·기금",
+            "effective_date": "",
+            "sha256": "7b6e81fe0b660fc4199ac35da16691b5f9eb25e194e3d64160fe721368aa4d5a",
+            "limited": false,
+            "library_id": "finance-20261025",
+            "file_id": "finance-national-2026-supplies",
+            "official": {
+              "id": "finance-national-2026-supplies",
+              "title": "2026년도 예산 및 기금운용계획 집행지침",
+              "article": "Ⅲ 1-1. 일반수용비(210-01목)",
+              "filename": "national-2026-supplies.txt",
+              "sha256": "7b6e81fe0b660fc4199ac35da16691b5f9eb25e194e3d64160fe721368aa4d5a",
+              "kind": "기관 지침",
+              "issuer": "기획예산처",
+              "institution": "국가기관 · 2026년도 예산·기금",
+              "effective_date": "",
+              "fiscal_years": [
+                2026
+              ],
+              "finance_scope": "national_government",
+              "finance_topics": [
+                "office_supplies"
+              ],
+              "source_url": "https://mpb.go.kr/web/main/bbs/b_0009/1157",
+              "download_url": "https://mpb.go.kr/web/main/file/download/uu/a0cfe2b242d047759bd51c958eabc9bb",
+              "raw_file": "national-budget-2026.hwpx",
+              "raw_sha256": "7ae70437d4aee67c74df4acf619643f2a10a80bc0d7b088523bd382a003b034f",
+              "publication": "2026년도 집행지침 · 공식 지침 게시 2026-01-12",
+              "retrieved_at": "2026-10-25",
+              "collection": "finance-20261025",
+              "scope": "2026년도 국가 회계 기준. 관련 조례·기관 지급기준·준용 별표와 개별 적용조건은 함께 확인. 원문 HWPX 3구역 2572~2614문단",
+              "units": [
+                {
+                  "loc": "HWPX 3구역 2572~2614문단",
+                  "text": "1-1. 일반수용비(210-01목)\n 가. 인쇄비, 소모성 물품구입비, 간행물구입비 등 경상적 성격의 수용비는 최대한 절감하여 집행토록 한다.\n     ※ 보고서 등 인쇄물의 컬러인쇄는 불가피한 경우에 한한다.\n  ㅇ 법상 일반경쟁입찰에 의하여야 할 인쇄물을 분할수의계약을 통해 계약단가를 낮춰 수의계약방식으로 집행하지 않도록 주의한다.\n  ㅇ 인쇄를 발주함에 있어 조판 작업 여부․난이도, CTP*(Computer to Plate) 방식 도입 등 인쇄기술의 향상 부분을 확인하고 인쇄비의 예정가격 등을 산정하여야 한다.\n      * 인쇄용 필름 작업을 생략하고 직접 인쇄판을 만드는 방식\n 나. 팸플릿, 안내책자 등 홍보물 및 공개 가능한 인쇄물은 필요 최소한의 물량만큼 제작하고, 전자우편‧인터넷 홈페이지 등을 최대한 활용하여야 한다.\n 다. 기념품은 목적에 맞게 최소한으로 제작․활용하여 낭비요인이 발생하지 않도록 하여야 한다.\n 라. 특별한 사유없이 기관장 교체 등으로 인한 청사 현판, 현수막 교체용 예산집행은 금지한다. \n 마. 공신력 있는 단가기준이 있는 경우에는 이를 참고하여 집행한다.\n    ※ 감정평가수수료 등에 대한 단가, 변호사 보수규정(법무부), 정부구매 물가가격정보(조달청) 등\n 바. 자산취득비, 공사비(대규모 수선비 포함), 연구용역비 등 다른 비목에 해당하는 성격의 경비를 일반수용비에서 집행하여서는 아니된다.\n(상세한 내용은 ｢2026년도 예산안 편성 및 기금운용계획안 작성 세부지침｣ 참고)\n 사. 공무원이 직접 자기가 담당하는 업무, 자기가 소속된 중앙관서의 사무와 관련하여 원고를 작성하거나 조력하는 경우 원고료 또는 사례금을 지급할 수 없다.\n 아. 소송‧법률 및 정책자문을 위한 비용은 사안의 중요성 및 파급효과, 난이도 등을 고려하여 적정금액을 산정하여 집행한다.\n  ㅇ 다만, 정책자문 비용은 각 중앙관서의 장이 대상‧금액 등에 관한 구체적인 기준을 마련하여 집행하여야 한다.\n 자. 정책·사업의 홍보목적으로 유명인 등을 홍보대사로 선정·활용하는 경우 무보수 또는 여비·부대비 등 실비보상적 성격의 사례금만을 지급하는 것을 원칙으로 한다(타 비목으로 지출하는 경우에도 동 규정을 적용한다).\n 차. 위원회 참석비\n   ㅇ  법령 등에 의하여 설치된 위원회에 참석한 위원에 대하여 1일당 200,000원내(서면심사 150,000원내)에서 지급하되, 참석시간이 2시간 이상일 경우에는 1일 1회에 한하여 100,000원내에서 추가 지급할 수 있으며, 원격지에서 참석하는 경우에는 교통비․식비․숙박비를 예산의 범위 내에서 여비(220목) 또는 일반수용비(210-01목)로 추가 지급할 수 있다.\n     - 다만, 공무원인 경우 자기소관 사무 이외의 위원으로 위촉되었을 경우에 한하여 지급한다. 이 경우 자기소관 사무는 직접 자기가 담당하는 업무뿐만 아니라 자기가 소속된 중앙관서의 사무까지 포함한다.\n     - 또한,  법령 등에 의하여 설치된 위원회의 위원이 단순한 회의참석 이외에 사전 자료수집․현지조사·기술검토 등 별도의 용역을 제공할 경우 계상된 예산액 범위 내에서 전문가 자문료 또는 국가업무 조력자 사례금 등을 일반수용비(210-01목)로 지급할 수 있다.\n     - 필요시 온라인 또는 영상 등 비대면 방식으로 전환하여 위원회를 개최할 수 있으며 이 경우 ‘온나라 인터넷 PC영상회의’를 이용하고 보안유지 필요성이 낮은 경우 민간 플랫폼(Platform)도 이용 할 수 있다. (위원회 영상회의 등의 참석비는 일반적인 위원회 회의 참석에 준하는 수준으로 지급할 수 있다) \n 카. 업무용택시 이용요금은 일반수용비(210-01목)로 집행한다.\n 타. 특수목적 대학의 초과･야간 강의료는 일반수용비(210-01목)로\n집행할 수 있다."
+                }
+              ]
+            },
+            "score": 5.33,
+            "quote": "1-1. 일반수용비(210-01목)\n 가. 인쇄비, 소모성 물품구입비, 간행물구입비 등 경상적 성격의 수용비는 최대한 절감하여 집행토록 한다.\n     ※ 보고서 등 인쇄물의 컬러인쇄는 불가피한 경우에 한한다.\n  ㅇ 법상 일반경쟁입찰에 의하여야 할 인쇄물을 분할수의계약을 통해 계약단가를 낮춰 수의계약방식으로 집행하지 않도록 주의한다.\n  ㅇ 인쇄를 발주함에 있어 조판 작업 여부․난이도, CTP*(Computer to Plate) 방식 도입 등 인쇄기술의 향상 부분을 확인하고 인쇄비의 예정가격 등을 산정하여야 한다.\n      * 인쇄용 필름 작업을 생략하고 직접 인쇄판을 만드는 방식\n 나. 팸플릿, 안내책자 등 홍보물 및 공개 가능한 인쇄물은 필요 최소한의 물량만큼 제작하고, 전자우편‧인터넷 홈페이지 등을 최대한 활용하여야 한다.\n 다. 기념품은 목적에 맞게 최소한으로 제작․활용하여 낭비요인이 발생하지 않도록 하여야 한다.\n 라. 특별한 사유없이 기관장 교체 등으로 인한 청사 현판, 현수막 교체용 예산집행은 금지한다. \n 마. 공신력 있는 단가기준이 있는 경우에는 이를 참고하여 집행한다.\n    ※ 감정평가수수료 등에 대한 단가, 변호사 보수규정(법무부), 정부구매 물가가격정보(조달청) 등\n 바. 자산취득비, 공사비(대규모 수선비 포함), 연구용역비 등 다른 비목에 해당하는 성격의 경비를 일반수용비에서 집행하여서는 아니된다.\n(상세한 내용은 ｢2026년도 예산안 편성 및 기금운용계획안 작성 세부지침｣ 참고)\n 사. 공무원이 직접 자기가 담당하는 업무, 자기가 소속된 중앙관서의 사무와 관련하여 원고를 작성하거나 조력하는 경우 원고료 또는 사례금을 지급할 수 없다.\n 아. 소송‧법률 및 정책자문을 위한 비용은 사안의 중요성 및 파급효과, 난이도 등을 고려하여 적정금액을 산정하여 집행한다.\n  ㅇ 다만, 정책자문 비용은 각 중앙관서의 장이 대상‧금액 등에 관한 구체적인 기준을 마련하여 집행하여야 한다.\n 자. 정책·사업의 홍보목적으로 유명인 등을 홍보대사로 선정·활용하는 경우 무보수 또는 여비·부대비 등 실비보상적 성격의 사례금만을 지급하는 것을 원칙으로 한다(타 비목으로 지출하는 경우에도 동 규정을 적용한다).\n 차. 위원회 참석비\n   ㅇ  법령 등에 의하여 설치된 위원회에 참석한 위원에 대하여 1일당 200,000원내(서면심사 150,000원내)에서 지급하되, 참석시간이 2시간 이상일 경우에는 1일 1회에 한하여 100,000원내에서 추가 지급할 수 있으며, 원격지에서 참석하는 경우에는 교통비․식비․숙박비를 예산의 범위 내에서 여비(220목) 또는 일반수용비(210-01목)로 추가 지급할 수 있다.\n     - 다만, 공무원인 경우 자기소관 사무 이외의 위원으로 위촉되었을 경우에 한하여 지급한다. 이 경우 자기소관 사무는 직접 자기가 담당하는 업무뿐만 아니라 자기가 소속된 중앙관서의 사무까지 포함한다.\n     - 또한,  법령 등에 의하여 설치된 위원회의 위원이 단순한 회의참석 이외에 사전 자료수집․현지조사·기술검토 등 별도의 용역을 제공할 경우 계상된 예산액 범위 내에서 전문가 자문료 또는 국가업무 조력자 사례금 등을 일반수용비(210-01목)로 지급할 수 있다.\n     - 필요시 온라인 또는 영상 등 비대면 방식으로 전환하여 위원회를 개최할 수 있으며 이 경우 ‘온나라 인터넷 PC영상회의’를 이용하고 보안유지 필요성이 낮은 경우 민간 플랫폼(Platform)도 이용 할 수 있다. (위원회 영상회의 등의 참석비는 일반적인 위원회 회의 참석에 준하는 수준으로 지급할 수 있다) \n 카. 업무용택시 이용요금은 일반수용비(210-01목)로 집행한다.\n 타. 특수목적 대학의 초과･야간 강의료는 일반수용비(210-01목)로\n집행할 수 있다.",
+            "quote_basis": "original_context"
+          }
+        ],
+        "experiences": [],
+        "excluded": [],
+        "mode": "source_search",
+        "model": null,
+        "notice": "",
+        "answer": "[1]  사. 공무원이 직접 자기가 담당하는 업무, 자기가 소속된 중앙관서의 사무와 관련하여 원고를 작성하거나 조력하는 경우 원고료 또는 사례금을 지급할 수 없다.\n\n[1]      - 다만, 공무원인 경우 자기소관 사무 이외의 위원으로 위촉되었을 경우에 한하여 지급한다. 이 경우 자기소관 사무는 직접 자기가 담당하는 업무뿐만 아니라 자기가 소속된 중앙관서의 사무까지 포함한다.",
+        "intent": null,
+        "scope": "등록·선택한 추출 본문을 검색합니다. 인용 확인은 적용 대상·현행성·법적 해석을 보증하지 않습니다. 처리 경험은 공식 근거와 구분합니다.",
+        "tree": {
+          "kind": "extract",
+          "title": "찾은 자료를 차례로 확인해요",
+          "branches": [
+            {
+              "label": "관련 자료",
+              "items": [
+                {
+                  "text": "2026년도 예산 및 기금운용계획 집행지침 Ⅲ 1-1. 일반수용비(210-01목)",
+                  "ref": 1
+                }
+              ]
+            },
+            {
+              "label": "지금 할 일",
+              "items": [
+                {
+                  "text": "근거 버튼을 눌러 질문에 맞는 조항과 적용 조건을 확인해 보세요.",
+                  "ref": null
+                }
+              ]
+            }
+          ],
+          "note": "이 자료는 아직 쉬운 설명이 준비되지 않았어요. 원문을 펼쳐 확인할 수 있어요."
+        }
+      },
+      "guidance": {
+        "topic": "finance",
+        "title": "예산·회계 처리 방법",
+        "context": "사무용품을 사려는데 무슨 목으로 구입해야 하나요?",
+        "questions": [],
+        "steps": [
+          {
+            "id": "scope",
+            "title": "상황과 적용 기준 확인",
+            "detail": "기관·업무 종류와 현재 처리 단계를 알려주세요.",
+            "kind": "preparation"
+          },
+          {
+            "id": "materials",
+            "title": "근거·서식 확인",
+            "detail": "질문에 직접 답하는 규정·지침·매뉴얼을 등록하면 원문을 확인할 수 있어요.",
+            "kind": "preparation"
+          }
+        ],
+        "deadlines": [],
+        "forms": [],
+        "service_guide": {
+          "evidence": [],
+          "coverage": {
+            "guide_pages": 10,
+            "faq_questions": 26
+          },
+          "notice": "국가공무원 제도 설명·FAQ의 보관본입니다. 확인일은 수집일이며 답변의 개정일을 뜻하지 않아요. 실제 적용·일수·예외는 현행 법령과 기관 기준을 확인하세요.",
+          "problems": []
+        },
+        "institution_scope": null,
+        "manual": {
+          "evidence": [],
+          "scope": "",
+          "notice": "이 업무에 맞는 시스템 매뉴얼을 등록하면 사용법을 연결할 수 있어요."
+        },
+        "ai_requested": false,
+        "ai_used": false,
+        "notice": "진행 순서는 실무 준비 제안입니다. 법정 기한·필수 서류·적용 조건은 아래 등록 근거에서 확인하세요.",
+        "map": {
+          "nodes": [
+            {
+              "id": "topic:finance",
+              "label": "finance",
+              "kind": "topic"
+            },
+            {
+              "id": "step:finance:scope",
+              "label": "상황과 적용 기준 확인",
+              "kind": "preparation"
+            },
+            {
+              "id": "step:finance:materials",
+              "label": "근거·서식 확인",
+              "kind": "preparation"
+            },
+            {
+              "id": "source:finance-national-2026-supplies",
+              "label": "2026년도 예산 및 기금운용계획 집행지침 Ⅲ 1-1. 일반수용비(210-01목)",
+              "kind": "legal",
+              "sha256": "7b6e81fe0b660fc4199ac35da16691b5f9eb25e194e3d64160fe721368aa4d5a",
+              "loc": "Ⅲ 1-1. 일반수용비(210-01목) · HWPX 3구역 2572~2614문단",
+              "page": null
+            }
+          ],
+          "edges": [
+            {
+              "source": "topic:finance",
+              "target": "step:finance:scope",
+              "relation": "준비 순서"
+            },
+            {
+              "source": "topic:finance",
+              "target": "step:finance:materials",
+              "relation": "준비 순서"
+            },
+            {
+              "source": "topic:finance",
+              "target": "source:finance-national-2026-supplies",
+              "relation": "검색된 자료"
+            }
+          ],
+          "note": "자료의 관련을 보여줍니다. 법적 적용 관계를 자동 판정한 결과는 아닙니다."
+        }
+      }
+    }
+  },
+  "verified_originals": {
+    "/api/institution-rules/d65eb16eb5ad4151a06f24f9a9a5ffcd/versions/c1bbe89d6d6e4bfdbe52c35903af6834/original": "0b1e7df26a6e17b091e13fe880a12511a26c62f473e2a7260ce00edcf51ceb79",
+    "/api/institution-rules/b0c91b1f92c64e499d8e9fb798b08326/versions/d834500d87b0451fa93772554e089a87/original": "bb7a3b4c8dea1e97c19d289a876e38e9f940006d01e7ccb6fcda0d4c9d7dbc2e",
+    "/api/institution-rules/d65eb16eb5ad4151a06f24f9a9a5ffcd/versions/d10255e70d4d4bbbac5927875b863b4f/original": "e93264456bfd27e1fb04503b164c0750d1cfe856d6f7f03c97ff78714f48cbdb",
+    "/api/institution-rules/ee94f3ab753045b99d863361d214435f/versions/03761b598c4f455081721ef54002a45d/original": "e93264456bfd27e1fb04503b164c0750d1cfe856d6f7f03c97ff78714f48cbdb"
+  },
+  "documents": [
+    {
+      "id": "b0c91b1f92c64e499d8e9fb798b08326",
+      "revision": 3,
+      "enabled": false,
+      "active_version_id": "d834500d87b0451fa93772554e089a87",
+      "deleted_at": null,
+      "created_at": "2026-10-25T23:12:09.245429+00:00",
+      "updated_at": "2026-10-25T23:12:15.936804+00:00",
+      "title": "[합성 예제] 교육참가 신청서",
+      "kind": "서식",
+      "category": "교육·행사",
+      "institution": "합성 제출검증기관",
+      "keywords": [
+        "교육참가 신청서"
+      ],
+      "effective_date": "2026-01-01",
+      "scope_notes": "실제 기관 업무에 적용하지 않는 합성 제출 검증 자료",
+      "source_id": "institution:b0c91b1f92c64e499d8e9fb798b08326",
+      "deleted": false,
+      "active_version_number": 1,
+      "pending_count": 0,
+      "version_count": 1,
+      "versions": [
+        {
+          "category": "교육·행사",
+          "id": "d834500d87b0451fa93772554e089a87",
+          "number": 1,
+          "created_at": "2026-10-25T23:12:09.246428+00:00",
+          "based_on": null,
+          "sha256": "bb7a3b4c8dea1e97c19d289a876e38e9f940006d01e7ccb6fcda0d4c9d7dbc2e",
+          "origin": {
+            "filename": "교육참가_신청서.txt",
+            "asset": "28b1e3714dbf7868bcf33125182e89a3340315ab191fdc32768ae63da450a101.txt",
+            "sha256": "28b1e3714dbf7868bcf33125182e89a3340315ab191fdc32768ae63da450a101",
+            "bytes": 79
+          },
+          "units": [
+            {
+              "loc": "1행",
+              "text": "교육참가 신청서의 필수 항목은 부서, 성명, 연락처입니다."
+            }
+          ],
+          "title": "[합성 예제] 교육참가 신청서",
+          "institution": "합성 제출검증기관",
+          "kind": "서식",
+          "keywords": [
+            "교육참가 신청서"
+          ],
+          "text": "교육참가 신청서의 필수 항목은 부서, 성명, 연락처입니다.",
+          "effective_date": "2026-01-01",
+          "scope_notes": "실제 기관 업무에 적용하지 않는 합성 제출 검증 자료",
+          "change_note": ""
+        }
+      ],
+      "events": [
+        {
+          "id": "b6a449919d52434cab245deba85c0bc5",
+          "at": "2026-10-25T23:12:15.938802+00:00",
+          "kind": "disable",
+          "version_id": "d834500d87b0451fa93772554e089a87",
+          "note": "합성 제출 검증 완료",
+          "revision": 3
+        },
+        {
+          "id": "a2325203cf6f492aa11adb67db74f0ad",
+          "at": "2026-10-25T23:12:09.267128+00:00",
+          "kind": "apply",
+          "version_id": "d834500d87b0451fa93772554e089a87",
+          "note": "",
+          "revision": 2
+        },
+        {
+          "id": "7635138355014b54900bba00e8519a5f",
+          "at": "2026-10-25T23:12:09.246428+00:00",
+          "kind": "create",
+          "version_id": "d834500d87b0451fa93772554e089a87",
+          "note": "",
+          "revision": 1
+        }
+      ]
+    },
+    {
+      "id": "d65eb16eb5ad4151a06f24f9a9a5ffcd",
+      "revision": 7,
+      "enabled": false,
+      "active_version_id": "099d0582f3eb411e95cfca7d0249e9e5",
+      "deleted_at": null,
+      "created_at": "2026-10-25T23:12:09.284829+00:00",
+      "updated_at": "2026-10-25T23:12:15.960596+00:00",
+      "title": "[합성 예제] 연수 참가 접수 안내",
+      "kind": "기관 지침",
+      "category": "기타",
+      "institution": "합성 제출검증기관",
+      "keywords": [
+        "연수 신청 접수"
+      ],
+      "effective_date": "2026-01-01",
+      "scope_notes": "실제 기관 업무에 적용하지 않는 합성 제출 검증 자료",
+      "source_id": "institution:d65eb16eb5ad4151a06f24f9a9a5ffcd",
+      "deleted": false,
+      "active_version_number": 3,
+      "pending_count": 0,
+      "version_count": 3,
+      "versions": [
+        {
+          "category": "교육·행사",
+          "id": "c1bbe89d6d6e4bfdbe52c35903af6834",
+          "number": 1,
+          "created_at": "2026-10-25T23:12:09.285837+00:00",
+          "based_on": null,
+          "sha256": "0b1e7df26a6e17b091e13fe880a12511a26c62f473e2a7260ce00edcf51ceb79",
+          "origin": {
+            "filename": "연수_참가_접수_v1.txt",
+            "asset": "23fc9e2b35604e97bd09c6b75ef662f498db47669c44bf466528f1b258407f6e.txt",
+            "sha256": "23fc9e2b35604e97bd09c6b75ef662f498db47669c44bf466528f1b258407f6e",
+            "bytes": 120
+          },
+          "units": [
+            {
+              "loc": "1행",
+              "text": "교육 희망자 회신 마감은 교육 시작 3일 전입니다."
+            },
+            {
+              "loc": "2행",
+              "text": "필요한 서식은 교육참가 신청서입니다."
+            }
+          ],
+          "title": "[합성 예제] 연수 참가 접수 안내",
+          "institution": "합성 제출검증기관",
+          "kind": "기관 지침",
+          "keywords": [
+            "연수 신청 접수"
+          ],
+          "text": "교육 희망자 회신 마감은 교육 시작 3일 전입니다.\n필요한 서식은 교육참가 신청서입니다.",
+          "effective_date": "2026-01-01",
+          "scope_notes": "실제 기관 업무에 적용하지 않는 합성 제출 검증 자료",
+          "change_note": ""
+        },
+        {
+          "category": "교육·행사",
+          "id": "d10255e70d4d4bbbac5927875b863b4f",
+          "number": 2,
+          "created_at": "2026-10-25T23:12:12.131412+00:00",
+          "based_on": null,
+          "sha256": "e93264456bfd27e1fb04503b164c0750d1cfe856d6f7f03c97ff78714f48cbdb",
+          "origin": {
+            "filename": "연수_참가_접수_v2.txt",
+            "asset": "007698ab377b592d3dd2b2425ee0dcd84ddc509d2f6d111f4b8a982e67891b40.txt",
+            "sha256": "007698ab377b592d3dd2b2425ee0dcd84ddc509d2f6d111f4b8a982e67891b40",
+            "bytes": 120
+          },
+          "units": [
+            {
+              "loc": "1행",
+              "text": "교육 희망자 회신 마감은 교육 시작 5일 전입니다."
+            },
+            {
+              "loc": "2행",
+              "text": "필요한 서식은 교육참가 신청서입니다."
+            }
+          ],
+          "title": "[합성 예제] 연수 참가 접수 안내",
+          "institution": "합성 제출검증기관",
+          "kind": "기관 지침",
+          "keywords": [
+            "연수 신청 접수"
+          ],
+          "text": "교육 희망자 회신 마감은 교육 시작 5일 전입니다.\n필요한 서식은 교육참가 신청서입니다.",
+          "effective_date": "2026-01-01",
+          "scope_notes": "실제 기관 업무에 적용하지 않는 합성 제출 검증 자료",
+          "change_note": "합성 기한 3일 전 → 5일 전"
+        },
+        {
+          "category": "기타",
+          "id": "099d0582f3eb411e95cfca7d0249e9e5",
+          "number": 3,
+          "created_at": "2026-10-25T23:12:12.940130+00:00",
+          "based_on": null,
+          "sha256": "e93264456bfd27e1fb04503b164c0750d1cfe856d6f7f03c97ff78714f48cbdb",
+          "origin": {},
+          "units": [
+            {
+              "loc": "편집 본문",
+              "text": "교육 희망자 회신 마감은 교육 시작 5일 전입니다.\n필요한 서식은 교육참가 신청서입니다."
+            }
+          ],
+          "title": "[합성 예제] 연수 참가 접수 안내",
+          "institution": "합성 제출검증기관",
+          "kind": "기관 지침",
+          "keywords": [
+            "연수 신청 접수"
+          ],
+          "text": "교육 희망자 회신 마감은 교육 시작 5일 전입니다.\n필요한 서식은 교육참가 신청서입니다.",
+          "effective_date": "2026-01-01",
+          "scope_notes": "실제 기관 업무에 적용하지 않는 합성 제출 검증 자료",
+          "change_note": "합성 분류 변경"
+        }
+      ],
+      "events": [
+        {
+          "id": "7b9e3acdca5f456392e06748f0fd7214",
+          "at": "2026-10-25T23:12:15.961606+00:00",
+          "kind": "disable",
+          "version_id": "099d0582f3eb411e95cfca7d0249e9e5",
+          "note": "합성 제출 검증 완료",
+          "revision": 7
+        },
+        {
+          "id": "d750bf8f96c7435d8634ce1838ab8400",
+          "at": "2026-10-25T23:12:12.960767+00:00",
+          "kind": "apply",
+          "version_id": "099d0582f3eb411e95cfca7d0249e9e5",
+          "note": "",
+          "revision": 6
+        },
+        {
+          "id": "b031c422e25c4d68b3c979cba6d60965",
+          "at": "2026-10-25T23:12:12.942128+00:00",
+          "kind": "draft",
+          "version_id": "099d0582f3eb411e95cfca7d0249e9e5",
+          "note": "합성 분류 변경",
+          "revision": 5
+        },
+        {
+          "id": "55ab8d735adc4765936dfeb592a0fe2c",
+          "at": "2026-10-25T23:12:12.540443+00:00",
+          "kind": "apply",
+          "version_id": "d10255e70d4d4bbbac5927875b863b4f",
+          "note": "",
+          "revision": 4
+        },
+        {
+          "id": "428177307d2f46bda2b86ec5678bddc3",
+          "at": "2026-10-25T23:12:12.132415+00:00",
+          "kind": "draft",
+          "version_id": "d10255e70d4d4bbbac5927875b863b4f",
+          "note": "합성 기한 3일 전 → 5일 전",
+          "revision": 3
+        },
+        {
+          "id": "04eb23ee37af4cdeb105897fe04f55b9",
+          "at": "2026-10-25T23:12:09.425590+00:00",
+          "kind": "apply",
+          "version_id": "c1bbe89d6d6e4bfdbe52c35903af6834",
+          "note": "",
+          "revision": 2
+        },
+        {
+          "id": "0370c448666d4dce9d05417c6c289253",
+          "at": "2026-10-25T23:12:09.285837+00:00",
+          "kind": "create",
+          "version_id": "c1bbe89d6d6e4bfdbe52c35903af6834",
+          "note": "",
+          "revision": 1
+        }
+      ]
+    },
+    {
+      "id": "84f92bc68f1347f38a9a2297cc978bc6",
+      "revision": 3,
+      "enabled": false,
+      "active_version_id": "d8bfe356cdc14c1481fadb5ca188e80f",
+      "deleted_at": null,
+      "created_at": "2026-10-25T23:12:12.985774+00:00",
+      "updated_at": "2026-10-25T23:12:15.980269+00:00",
+      "title": "[합성 예제] 부모 기관 교육 안내",
+      "kind": "기관 지침",
+      "category": "교육·행사",
+      "institution": "부산광역시",
+      "keywords": [
+        "연수 신청 접수"
+      ],
+      "effective_date": "2026-01-01",
+      "scope_notes": "실제 기관 업무에 적용하지 않는 합성 제출 검증 자료",
+      "source_id": "institution:84f92bc68f1347f38a9a2297cc978bc6",
+      "deleted": false,
+      "active_version_number": 1,
+      "pending_count": 0,
+      "version_count": 1,
+      "versions": [
+        {
+          "category": "교육·행사",
+          "id": "d8bfe356cdc14c1481fadb5ca188e80f",
+          "number": 1,
+          "created_at": "2026-10-25T23:12:12.986773+00:00",
+          "based_on": null,
+          "sha256": "0b1e7df26a6e17b091e13fe880a12511a26c62f473e2a7260ce00edcf51ceb79",
+          "origin": {
+            "filename": "연수_참가_접수_v1.txt",
+            "asset": "23fc9e2b35604e97bd09c6b75ef662f498db47669c44bf466528f1b258407f6e.txt",
+            "sha256": "23fc9e2b35604e97bd09c6b75ef662f498db47669c44bf466528f1b258407f6e",
+            "bytes": 120
+          },
+          "units": [
+            {
+              "loc": "1행",
+              "text": "교육 희망자 회신 마감은 교육 시작 3일 전입니다."
+            },
+            {
+              "loc": "2행",
+              "text": "필요한 서식은 교육참가 신청서입니다."
+            }
+          ],
+          "title": "[합성 예제] 부모 기관 교육 안내",
+          "institution": "부산광역시",
+          "kind": "기관 지침",
+          "keywords": [
+            "연수 신청 접수"
+          ],
+          "text": "교육 희망자 회신 마감은 교육 시작 3일 전입니다.\n필요한 서식은 교육참가 신청서입니다.",
+          "effective_date": "2026-01-01",
+          "scope_notes": "실제 기관 업무에 적용하지 않는 합성 제출 검증 자료",
+          "change_note": ""
+        }
+      ],
+      "events": [
+        {
+          "id": "852bd67291f1400a8197a29e9b2dc668",
+          "at": "2026-10-25T23:12:15.981269+00:00",
+          "kind": "disable",
+          "version_id": "d8bfe356cdc14c1481fadb5ca188e80f",
+          "note": "합성 제출 검증 완료",
+          "revision": 3
+        },
+        {
+          "id": "9a003811e769449aaea4cfc3015a99b9",
+          "at": "2026-10-25T23:12:13.007723+00:00",
+          "kind": "apply",
+          "version_id": "d8bfe356cdc14c1481fadb5ca188e80f",
+          "note": "",
+          "revision": 2
+        },
+        {
+          "id": "5e9a089daf524b2aa4b9e35512590ee6",
+          "at": "2026-10-25T23:12:12.986773+00:00",
+          "kind": "create",
+          "version_id": "d8bfe356cdc14c1481fadb5ca188e80f",
+          "note": "",
+          "revision": 1
+        }
+      ]
+    },
+    {
+      "id": "ee94f3ab753045b99d863361d214435f",
+      "revision": 3,
+      "enabled": false,
+      "active_version_id": "03761b598c4f455081721ef54002a45d",
+      "deleted_at": null,
+      "created_at": "2026-10-25T23:12:13.028271+00:00",
+      "updated_at": "2026-10-25T23:12:15.997011+00:00",
+      "title": "[합성 예제] 교육청 교육 안내",
+      "kind": "기관 지침",
+      "category": "교육·행사",
+      "institution": "부산광역시교육청",
+      "keywords": [
+        "연수 신청 접수"
+      ],
+      "effective_date": "2026-01-01",
+      "scope_notes": "실제 기관 업무에 적용하지 않는 합성 제출 검증 자료",
+      "source_id": "institution:ee94f3ab753045b99d863361d214435f",
+      "deleted": false,
+      "active_version_number": 1,
+      "pending_count": 0,
+      "version_count": 1,
+      "versions": [
+        {
+          "category": "교육·행사",
+          "id": "03761b598c4f455081721ef54002a45d",
+          "number": 1,
+          "created_at": "2026-10-25T23:12:13.029271+00:00",
+          "based_on": null,
+          "sha256": "e93264456bfd27e1fb04503b164c0750d1cfe856d6f7f03c97ff78714f48cbdb",
+          "origin": {
+            "filename": "연수_참가_접수_v2.txt",
+            "asset": "007698ab377b592d3dd2b2425ee0dcd84ddc509d2f6d111f4b8a982e67891b40.txt",
+            "sha256": "007698ab377b592d3dd2b2425ee0dcd84ddc509d2f6d111f4b8a982e67891b40",
+            "bytes": 120
+          },
+          "units": [
+            {
+              "loc": "1행",
+              "text": "교육 희망자 회신 마감은 교육 시작 5일 전입니다."
+            },
+            {
+              "loc": "2행",
+              "text": "필요한 서식은 교육참가 신청서입니다."
+            }
+          ],
+          "title": "[합성 예제] 교육청 교육 안내",
+          "institution": "부산광역시교육청",
+          "kind": "기관 지침",
+          "keywords": [
+            "연수 신청 접수"
+          ],
+          "text": "교육 희망자 회신 마감은 교육 시작 5일 전입니다.\n필요한 서식은 교육참가 신청서입니다.",
+          "effective_date": "2026-01-01",
+          "scope_notes": "실제 기관 업무에 적용하지 않는 합성 제출 검증 자료",
+          "change_note": ""
+        }
+      ],
+      "events": [
+        {
+          "id": "92f38e3e5b2c4965bcdd413445d05fbb",
+          "at": "2026-10-25T23:12:15.998011+00:00",
+          "kind": "disable",
+          "version_id": "03761b598c4f455081721ef54002a45d",
+          "note": "합성 제출 검증 완료",
+          "revision": 3
+        },
+        {
+          "id": "cf334f13391e479a8c09e87de8f7a02f",
+          "at": "2026-10-25T23:12:13.049380+00:00",
+          "kind": "apply",
+          "version_id": "03761b598c4f455081721ef54002a45d",
+          "note": "",
+          "revision": 2
+        },
+        {
+          "id": "e5265f54611b445fb9a2c6ac2ae101c2",
+          "at": "2026-10-25T23:12:13.029271+00:00",
+          "kind": "create",
+          "version_id": "03761b598c4f455081721ef54002a45d",
+          "note": "",
+          "revision": 1
+        }
+      ]
+    }
+  ],
+  "config_sha256": "00993905a5f3cb04352b699aec659704569a977014bb831ac315eca7523b8a85"
+}

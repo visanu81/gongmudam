@@ -1,0 +1,9 @@
+LLM 오류(모델 응답에서 JSON을 찾지 못함): not JSON
+LLM 오류(모델 응답에서 JSON을 찾지 못함): not JSON
+...LLM 오류(모델 서버 연결 실패): ConnectError: unit-only
+.LLM 오류(모델 서버 연결 실패): ConnectError: unit-only
+....
+----------------------------------------------------------------------
+Ran 8 tests in 0.447s
+
+OK

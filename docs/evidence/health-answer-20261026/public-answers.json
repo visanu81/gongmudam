@@ -1,0 +1,32 @@
+[
+  {
+    "title": "법정 건강검진이라면 ‘공가’로 상신하세요.",
+    "query": "",
+    "articles": [
+      "제7조의6(공가)"
+    ],
+    "pass": true,
+    "rule": "health-leave",
+    "ai": false
+  },
+  {
+    "title": "법정 건강검진이라면 ‘공가’로 상신하세요.",
+    "query": "국가공무원인데 ",
+    "articles": [
+      "제19조(공가)"
+    ],
+    "pass": true,
+    "rule": "service-v70-public_health",
+    "ai": false
+  },
+  {
+    "title": "법정 건강검진이라면 ‘공가’로 상신하세요.",
+    "query": "지방공무원인데 ",
+    "articles": [
+      "제7조의6(공가)"
+    ],
+    "pass": true,
+    "rule": "health-leave",
+    "ai": false
+  }
+]

@@ -1,0 +1,8 @@
+{
+  "server": "http://127.0.0.1:8787",
+  "final_context_is_original": true,
+  "ai_used": false,
+  "official_evidence_count": 1,
+  "all_synthetic_inactive": true,
+  "category_count": 9
+}

@@ -1,0 +1,182 @@
+{"status": "restored", "sources": 86, "bundle_sha256": "abbaf4fa87bc048f9c8ea44918f2e86c818cba6e6f614a40c9ac6d82aa4e70f1"}
+Gongmudam v78: http://127.0.0.1:8898/desktop/?variant=B
+Keep this window open. Press Ctrl+C to stop. Local AI is optional.
+INFO:     127.0.0.1:63623 - "GET /api/gongmudam/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63623 - "GET /api/institution-rules?include_deleted=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63623 - "GET /api/settings HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63623 - "GET /api/knowledge/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64460 - "GET /api/calendar/agenda HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63623 - "POST /api/institution-rules/upload HTTP/1.1" 201 Created
+INFO:     127.0.0.1:63623 - "GET /api/institution-rules/b0c91b1f92c64e499d8e9fb798b08326/compare?from_version=&to_version=d834500d87b0451fa93772554e089a87 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63623 - "PATCH /api/institution-rules/b0c91b1f92c64e499d8e9fb798b08326 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63623 - "POST /api/institution-rules/upload HTTP/1.1" 201 Created
+INFO:     127.0.0.1:63623 - "POST /api/ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63623 - "GET /api/institution-rules/d65eb16eb5ad4151a06f24f9a9a5ffcd/compare?from_version=&to_version=c1bbe89d6d6e4bfdbe52c35903af6834 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63623 - "PATCH /api/institution-rules/d65eb16eb5ad4151a06f24f9a9a5ffcd HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63623 - "POST /api/ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63623 - "POST /api/ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63623 - "POST /api/ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63623 - "POST /api/ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63623 - "POST /api/ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63623 - "POST /api/ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63623 - "POST /api/ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63623 - "POST /api/ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63623 - "POST /api/ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63623 - "POST /api/institution-rules/upload HTTP/1.1" 201 Created
+INFO:     127.0.0.1:63623 - "POST /api/ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63623 - "GET /api/institution-rules/d65eb16eb5ad4151a06f24f9a9a5ffcd/compare?from_version=c1bbe89d6d6e4bfdbe52c35903af6834&to_version=d10255e70d4d4bbbac5927875b863b4f HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63623 - "PATCH /api/institution-rules/d65eb16eb5ad4151a06f24f9a9a5ffcd HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63623 - "POST /api/ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63623 - "GET /api/institution-rules/d65eb16eb5ad4151a06f24f9a9a5ffcd/versions/c1bbe89d6d6e4bfdbe52c35903af6834/original HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63623 - "POST /api/institution-rules/d65eb16eb5ad4151a06f24f9a9a5ffcd/versions HTTP/1.1" 201 Created
+INFO:     127.0.0.1:63623 - "GET /api/institution-rules/d65eb16eb5ad4151a06f24f9a9a5ffcd/compare?from_version=d10255e70d4d4bbbac5927875b863b4f&to_version=099d0582f3eb411e95cfca7d0249e9e5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63623 - "PATCH /api/institution-rules/d65eb16eb5ad4151a06f24f9a9a5ffcd HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63623 - "GET /api/institution-rules HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63623 - "POST /api/institution-rules/upload HTTP/1.1" 201 Created
+INFO:     127.0.0.1:63623 - "GET /api/institution-rules/84f92bc68f1347f38a9a2297cc978bc6/compare?from_version=&to_version=d8bfe356cdc14c1481fadb5ca188e80f HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63623 - "PATCH /api/institution-rules/84f92bc68f1347f38a9a2297cc978bc6 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63623 - "POST /api/institution-rules/upload HTTP/1.1" 201 Created
+INFO:     127.0.0.1:63623 - "GET /api/institution-rules/ee94f3ab753045b99d863361d214435f/compare?from_version=&to_version=03761b598c4f455081721ef54002a45d HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63623 - "PATCH /api/institution-rules/ee94f3ab753045b99d863361d214435f HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63623 - "POST /api/ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63623 - "POST /api/ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63623 - "POST /api/ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63623 - "POST /api/ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63623 - "POST /api/ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63623 - "POST /api/ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63623 - "GET /api/institution-rules/d65eb16eb5ad4151a06f24f9a9a5ffcd/versions/c1bbe89d6d6e4bfdbe52c35903af6834/original HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63623 - "GET /api/institution-rules/d65eb16eb5ad4151a06f24f9a9a5ffcd/versions/c1bbe89d6d6e4bfdbe52c35903af6834/original HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63623 - "GET /api/institution-rules/d65eb16eb5ad4151a06f24f9a9a5ffcd/versions/c1bbe89d6d6e4bfdbe52c35903af6834/original HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63623 - "GET /api/institution-rules/b0c91b1f92c64e499d8e9fb798b08326/versions/d834500d87b0451fa93772554e089a87/original HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63623 - "GET /api/institution-rules/b0c91b1f92c64e499d8e9fb798b08326/versions/d834500d87b0451fa93772554e089a87/original HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63623 - "GET /api/institution-rules/d65eb16eb5ad4151a06f24f9a9a5ffcd/versions/c1bbe89d6d6e4bfdbe52c35903af6834/original HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63623 - "GET /api/institution-rules/d65eb16eb5ad4151a06f24f9a9a5ffcd/versions/d10255e70d4d4bbbac5927875b863b4f/original HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63623 - "GET /api/institution-rules/ee94f3ab753045b99d863361d214435f/versions/03761b598c4f455081721ef54002a45d/original HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63623 - "GET /api/institution-rules/b0c91b1f92c64e499d8e9fb798b08326 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63623 - "PATCH /api/institution-rules/b0c91b1f92c64e499d8e9fb798b08326 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63623 - "GET /api/institution-rules/d65eb16eb5ad4151a06f24f9a9a5ffcd HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63623 - "PATCH /api/institution-rules/d65eb16eb5ad4151a06f24f9a9a5ffcd HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63623 - "GET /api/institution-rules/84f92bc68f1347f38a9a2297cc978bc6 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63623 - "PATCH /api/institution-rules/84f92bc68f1347f38a9a2297cc978bc6 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63623 - "GET /api/institution-rules/ee94f3ab753045b99d863361d214435f HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63623 - "PATCH /api/institution-rules/ee94f3ab753045b99d863361d214435f HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63623 - "GET /api/institution-rules/b0c91b1f92c64e499d8e9fb798b08326 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63623 - "GET /api/institution-rules/d65eb16eb5ad4151a06f24f9a9a5ffcd HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63623 - "GET /api/institution-rules/84f92bc68f1347f38a9a2297cc978bc6 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63623 - "GET /api/institution-rules/ee94f3ab753045b99d863361d214435f HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63623 - "GET /api/institution-rules/b0c91b1f92c64e499d8e9fb798b08326 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63623 - "GET /api/institution-rules/d65eb16eb5ad4151a06f24f9a9a5ffcd HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63623 - "GET /api/institution-rules/84f92bc68f1347f38a9a2297cc978bc6 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63623 - "GET /api/institution-rules/ee94f3ab753045b99d863361d214435f HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56107 - "GET /api/institution-rules/b0c91b1f92c64e499d8e9fb798b08326 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56108 - "PATCH /api/institution-rules/b0c91b1f92c64e499d8e9fb798b08326 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56111 - "GET /api/institution-rules/d65eb16eb5ad4151a06f24f9a9a5ffcd HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56112 - "PATCH /api/institution-rules/d65eb16eb5ad4151a06f24f9a9a5ffcd HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54225 - "GET /api/calendar/agenda HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60691 - "GET /api/agencies?q=%ED%95%A9%EC%84%B1+%EC%A0%9C%EC%B6%9C%EA%B2%80%EC%A6%9D%EA%B8%B0%EA%B4%80&page=1&limit=8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60691 - "GET /index.html HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60691 - "GET /style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51191 - "GET /model-status.css?v=48 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61537 - "GET /design.css?v=46 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64365 - "GET /workflow-chat.css?v=37 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61155 - "GET /answer-record.css?v=46 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54437 - "GET /answer-tree.css?v=37 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51191 - "GET /knowledge-catalog.css?v=47 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60691 - "GET /chat-request.css?v=47 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54437 - "GET /page-purpose.css?v=49 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61155 - "GET /studio.css?v=61 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64365 - "GET /chat-focus.css?v=51 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51191 - "GET /guidance-ui.css?v=69 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61537 - "GET /institution-rules.css?v=77-category HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60691 - "GET /fonts/PretendardVariable.woff2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64365 - "GET /desktop/embedded.css?v=74-entry HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61537 - "GET /workspace-flow.js?v=69 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51191 - "GET /knowledge-chat.js?v=69 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54437 - "GET /desktop/service-entry.js?v=74-entry HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64365 - "GET /answer-tree.js?v=37 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61537 - "GET /workflow-chat.js?v=51 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54437 - "GET /task-links.js?v=69 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64365 - "GET /answer-record.js?v=70 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64365 - "GET /model-status.js?v=48 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51191 - "GET /guidance-ui.js?v=77-affiliation HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54437 - "GET /chat-options.js?v=51 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51191 - "GET /change-inbox-badge.js?v=27 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64365 - "GET /app.js?v=69 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61537 - "GET /institution-rules.js?v=77-category HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61155 - "GET /desktop/embedded.js?v=77-affiliation HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60691 - "GET /desktop/deployment-context.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61537 - "GET /api/settings HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64365 - "GET /api/adhoc/jobs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64365 - "GET /api/gongmudam/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64365 - "GET /api/workspace/model-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51191 - "GET /api/knowledge/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64632 - "GET /api/workspace/model-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64632 - "POST /api/ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58089 - "GET /api/workspace/model-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57913 - "GET /api/calendar/agenda HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51451 - "GET /api/workspace/model-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59875 - "GET /api/calendar/agenda HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59875 - "GET /api/workspace/model-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59875 - "GET /api/workspace/model-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59875 - "POST /api/ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64114 - "GET /api/calendar/agenda HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52018 - "GET /api/workspace/model-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63654 - "GET /api/workspace/model-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56464 - "GET /index.html?rule=b0c91b1f92c64e499d8e9fb798b08326&rule_version=d834500d87b0451fa93772554e089a87 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52060 - "GET /api/calendar/agenda HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52060 - "GET /style.css HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:52060 - "GET /model-status.css?v=48 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:56464 - "GET /design.css?v=46 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:53836 - "GET /answer-record.css?v=46 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:57706 - "GET /answer-tree.css?v=37 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:52885 - "GET /workflow-chat.css?v=37 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:55579 - "GET /knowledge-catalog.css?v=47 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:52060 - "GET /chat-request.css?v=47 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:56464 - "GET /page-purpose.css?v=49 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:53836 - "GET /chat-focus.css?v=51 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:57706 - "GET /studio.css?v=61 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:55579 - "GET /institution-rules.css?v=77-category HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:52885 - "GET /guidance-ui.css?v=69 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:56464 - "GET /fonts/PretendardVariable.woff2 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:57706 - "GET /workspace-flow.js?v=69 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:55579 - "GET /knowledge-chat.js?v=69 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:52885 - "GET /answer-tree.js?v=37 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:52060 - "GET /desktop/embedded.css?v=74-entry HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56464 - "GET /workflow-chat.js?v=51 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:53836 - "GET /desktop/service-entry.js?v=74-entry HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57706 - "GET /task-links.js?v=69 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:55579 - "GET /answer-record.js?v=70 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:56464 - "GET /chat-options.js?v=51 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:52885 - "GET /model-status.js?v=48 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:52060 - "GET /guidance-ui.js?v=77-affiliation HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:53836 - "GET /institution-rules.js?v=77-category HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:57706 - "GET /app.js?v=69 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:55579 - "GET /change-inbox-badge.js?v=27 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:57706 - "GET /desktop/embedded.js?v=77-affiliation HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55579 - "GET /desktop/deployment-context.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55579 - "GET /api/settings HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52060 - "GET /api/gongmudam/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53836 - "GET /api/adhoc/jobs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52885 - "GET /api/workspace/model-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53836 - "GET /api/documents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52885 - "GET /api/institution-rules HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52885 - "GET /api/institution-rules/b0c91b1f92c64e499d8e9fb798b08326 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57706 - "GET /api/knowledge/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61480 - "GET /api/calendar/agenda HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55916 - "GET /api/workspace/model-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64441 - "GET /api/workspace/model-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60134 - "GET /api/calendar/agenda HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65495 - "GET /api/workspace/model-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49892 - "GET /api/calendar/agenda HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65397 - "GET /api/workspace/model-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62262 - "GET /api/workspace/model-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64075 - "GET /api/calendar/agenda HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52570 - "GET /api/workspace/model-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60007 - "GET /api/institution-rules/b0c91b1f92c64e499d8e9fb798b08326 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60008 - "PATCH /api/institution-rules/b0c91b1f92c64e499d8e9fb798b08326 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60009 - "GET /api/institution-rules/d65eb16eb5ad4151a06f24f9a9a5ffcd HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60010 - "PATCH /api/institution-rules/d65eb16eb5ad4151a06f24f9a9a5ffcd HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60011 - "GET /api/institution-rules/84f92bc68f1347f38a9a2297cc978bc6 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60013 - "GET /api/institution-rules/ee94f3ab753045b99d863361d214435f HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50677 - "GET /api/workspace/model-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50107 - "GET /api/calendar/agenda HTTP/1.1" 200 OK

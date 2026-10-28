@@ -1,0 +1,35 @@
+새 설치본에서 실행한 검사 로그입니다. 오류/EOF 문구 중 일부는 실패 처리 검증의 모의 응답이며, 마지막 OK/exit_code와 실패 건수를 판정 기준으로 사용합니다.
+
+✔ one-day event displays inclusive last day and saves original interval (2.5442ms)
+✔ multi-day event displays inclusive last day and saves original interval (0.3065ms)
+✔ month boundary displays inclusive last day and saves original interval (0.2497ms)
+✔ leap-day boundary displays inclusive last day and saves original interval (0.2153ms)
+✔ year boundary displays inclusive last day and saves original interval (0.2955ms)
+✔ new one-day inclusive input has one-day API duration (0.2199ms)
+✔ last day before first day fails validation (0.5377ms)
+✔ empty end remains missing rather than becoming an invalid generated date (0.2787ms)
+✔ timed UTC input remains KST timed and does not get an extra day (28.0953ms)
+✔ recurring series retains interval, anchor and inclusive repeat-until (0.4959ms)
+✔ editing one recurring occurrence keeps its original one-day interval (0.3238ms)
+✔ repeated midnight timed/all-day toggles preserve the original timed interval (0.9071ms)
+✔ home calendar links focus the intended month/day/week across date boundaries (2.9667ms)
+✔ structured guidance can be saved with separate legal and e-Saram evidence (65.9638ms)
+✔ managed manual can open its registered references from start (5.2949ms)
+✔ ordinary recent work links retained and untrusted links rejected (1.6368ms)
+✔ registered manual card offers original PDF without empty preview detour (6.9919ms)
+✔ service guide quotes are escaped and only approved URLs become links (38.5095ms)
+✔ service guide section is omitted when evidence is absent (2.084ms)
+✔ shipped empty toolbox root bootstraps admin tiles; a placeholder child suppresses the initial render (8.8927ms)
+✔ follow-up travels through deterministic guidance with user context (59.4335ms)
+✔ clear drops prior facts and AI is opt-in per request (5.9124ms)
+✔ explicit procedure selection retains legacy request flow (2.9246ms)
+✔ task helper does not synthesize answers or bypass registered sources (2.2407ms)
+✔ trip extraction prefills explicit vehicle and lodging without guessing dates (45.4259ms)
+ℹ tests 25
+ℹ suites 0
+ℹ pass 25
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1252.436

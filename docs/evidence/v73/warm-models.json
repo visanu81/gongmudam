@@ -1,0 +1,12 @@
+[
+  {
+    "model": "gemma3:4b",
+    "seconds": 7.745,
+    "actual_model_response": true
+  },
+  {
+    "model": "llama3.2:3b",
+    "seconds": 5.593,
+    "actual_model_response": true
+  }
+]

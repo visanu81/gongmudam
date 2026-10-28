@@ -1,0 +1,24 @@
+{
+  "release": "v77",
+  "passed": true,
+  "physical_other_pc_test": false,
+  "fresh_venv": true,
+  "offline_wheel_install": true,
+  "pip_check": true,
+  "registered_sources": 86,
+  "law_guidance_excerpts": 80,
+  "manual_pdfs": 6,
+  "manual_pages": 221,
+  "installed_tests": {
+    "service_python": 892,
+    "root_python": 19,
+    "root_node": 31,
+    "service_node": 32,
+    "total": 974
+  },
+  "institution_scenarios": 16,
+  "actual_models_retested": false,
+  "runtime_fix": "consistent project detail SQLite read snapshot",
+  "restart_passed": true,
+  "private_runtime_excluded": true
+}

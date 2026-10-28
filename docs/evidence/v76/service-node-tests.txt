@@ -1,0 +1,33 @@
+✔ one-day event displays inclusive last day and saves original interval (1.9348ms)
+✔ multi-day event displays inclusive last day and saves original interval (0.2442ms)
+✔ month boundary displays inclusive last day and saves original interval (0.1817ms)
+✔ leap-day boundary displays inclusive last day and saves original interval (0.1431ms)
+✔ year boundary displays inclusive last day and saves original interval (0.1739ms)
+✔ new one-day inclusive input has one-day API duration (0.1573ms)
+✔ last day before first day fails validation (0.1565ms)
+✔ empty end remains missing rather than becoming an invalid generated date (0.1395ms)
+✔ timed UTC input remains KST timed and does not get an extra day (18.4884ms)
+✔ recurring series retains interval, anchor and inclusive repeat-until (0.3083ms)
+✔ editing one recurring occurrence keeps its original one-day interval (0.2023ms)
+✔ repeated midnight timed/all-day toggles preserve the original timed interval (0.5127ms)
+✔ home calendar links focus the intended month/day/week across date boundaries (1.5982ms)
+✔ structured guidance can be saved with separate legal and e-Saram evidence (51.163ms)
+✔ managed manual can open its registered references from start (3.9832ms)
+✔ ordinary recent work links retained and untrusted links rejected (1.3618ms)
+✔ registered manual card offers original PDF without empty preview detour (4.3335ms)
+✔ service guide quotes are escaped and only approved URLs become links (35.0528ms)
+✔ service guide section is omitted when evidence is absent (1.2717ms)
+✔ shipped empty toolbox root bootstraps admin tiles; a placeholder child suppresses the initial render (6.5752ms)
+✔ follow-up travels through deterministic guidance with user context (51.2096ms)
+✔ clear drops prior facts and AI is opt-in per request (3.6206ms)
+✔ explicit procedure selection retains legacy request flow (1.9743ms)
+✔ task helper does not synthesize answers or bypass registered sources (1.4938ms)
+✔ trip extraction prefills explicit vehicle and lodging without guessing dates (40.2552ms)
+ℹ tests 25
+ℹ suites 0
+ℹ pass 25
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1186.0756

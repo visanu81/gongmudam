@@ -1,0 +1,73 @@
+{
+  "checked_at": "2026-10-25T12:07:09.844580+00:00",
+  "base": "http://127.0.0.1:8787",
+  "registered_before": 31,
+  "registered_after": 36,
+  "missing_registration_ids_added": [
+    "public-v70-156f83e9646084245c69e35e",
+    "public-v70-66d99077842d39bb41c3c362",
+    "public-v70-a454f317a1a87afbfb26d58c",
+    "public-v70-c4edc04864da363cc056b9ed",
+    "public-v70-f459b93473b181b1dc933390"
+  ],
+  "backup_created": true,
+  "business_tables_preserved": {
+    "work_experiences": true,
+    "folder_scan_jobs": true,
+    "folder_projects": true,
+    "project_sources": true,
+    "project_files": true,
+    "project_messages": true,
+    "project_jobs": true,
+    "project_units": true,
+    "folder_ai_runs": true,
+    "folder_watches": true
+  },
+  "project_count": 5,
+  "project_files": 12,
+  "project_message_count": 46,
+  "actual_offline_questions": 28,
+  "citations_checked": 9,
+  "live_checks": {
+    "36_registered_current": true,
+    "no_overtime_wrong_law": true,
+    "no_privacy_wrong_law": true,
+    "family_care_restored": true,
+    "sick_leave_restored": true,
+    "health_and_sidejob_restored": true,
+    "valid_travel_contract_budget_preserved": true,
+    "all_ai_off": true,
+    "quoted_text_in_registered_units": true,
+    "source_hash_matches": true
+  },
+  "service_tests": {
+    "count": 845,
+    "runner_seconds": 175.538,
+    "exit_code": 0,
+    "seconds": 177.656
+  },
+  "root_python_tests": {
+    "count": 33,
+    "passed": true
+  },
+  "review_regressions_fixed": [
+    "direct overtime meal heading variations remain searchable",
+    "incidental privacy job role does not hide sick-leave sources"
+  ],
+  "code_sha256": {
+    "app/knowledge_relevance.py": "a84a6a3478184d81567dd5b8827dceb0eb0bd1ab93ebd52a3b6e2994380e4eff",
+    "app/knowledge.py": "f5deee180689a941fa04809c9b160f566a4ba0e6872ea5c13ce94cad9ec387ba",
+    "app/guidance.py": "c732f459230d32dbdcc3950f6dcf332652a5070fa432263380d5b93d0ae2a2d3",
+    "tools/repair_registered_sources.py": "4bafbe8603c61a9325cf4da3c002b0b6a90e0d07360d1ec8712ffb90f82c3711",
+    "tests/test_evidence_domain_guard.py": "7230b00b6ca197ef3aefbca605bf5c989ce577968485d54f61132f8db754d4e1",
+    "tests/test_repair_registered_sources.py": "6126a115b6824fac7f3b45eccae01dd961d656f0e75b0ee603c6b41d9ed42db5"
+  },
+  "gui_checks": [
+    "overtime unsupported-basis notice",
+    "privacy unsupported-basis notice",
+    "national family-care summary and exact article20 source with official URL"
+  ],
+  "actual_models_retested": false,
+  "previous_submission_zip_updated": false,
+  "passed": true
+}

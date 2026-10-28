@@ -1,0 +1,116 @@
+{
+  "originals": [
+    {
+      "file": "local-accounting-446.pdf",
+      "download_url": "https://www.law.go.kr/LSW/flDownload.do?flSeq=166472455",
+      "sha256": "b80bb9653ddf79cdab93148510884f35e5e6a402ac6af8d0e6e2fe4f764ba7ca",
+      "bytes": 2401363
+    },
+    {
+      "file": "national-budget-2026.hwpx",
+      "download_url": "https://mpb.go.kr/web/main/file/download/uu/a0cfe2b242d047759bd51c958eabc9bb",
+      "sha256": "7ae70437d4aee67c74df4acf619643f2a10a80bc0d7b088523bd382a003b034f",
+      "bytes": 875747
+    }
+  ],
+  "sections": [
+    {
+      "id": "finance-national-2026-supplies",
+      "title": "Ⅲ 1-1. 일반수용비(210-01목)",
+      "scope": "national_government",
+      "sha256": "7b6e81fe0b660fc4199ac35da16691b5f9eb25e194e3d64160fe721368aa4d5a",
+      "loc": "HWPX 3구역 2572~2614문단"
+    },
+    {
+      "id": "finance-national-2026-overtime-meals",
+      "title": "Ⅲ 1-5. 특근매식비(210-05목)",
+      "scope": "national_government",
+      "sha256": "329c55533ccf8ce1b4711057317a189e276a4f516c4a97b1cf5a159d00fee776",
+      "loc": "HWPX 3구역 2660~2682문단"
+    },
+    {
+      "id": "finance-national-2026-meetings",
+      "title": "Ⅲ 4. 업무추진비 공통지침 및 4-1·4-2. 사업추진비·관서업무추진비",
+      "scope": "national_government",
+      "sha256": "80fe0521388b7be853d9d075e441220ecc535642bf30d6b7b30810bd4d3af441",
+      "loc": "HWPX 3구역 3071~3191문단"
+    },
+    {
+      "id": "finance-national-2026-lecturers",
+      "title": "Ⅱ 6. 공무원교육훈련기관 및 교육훈련비 예산",
+      "scope": "national_government",
+      "sha256": "64128ddb5f37da23c8e3d39facb2e64f3c259c8c34b97eb867e68762092a4cb2",
+      "loc": "HWPX 3구역 1057~1095문단"
+    },
+    {
+      "id": "finance-national-2026-manuscripts",
+      "title": "별첨 질의응답 (16)·(17) 원고료 지급",
+      "scope": "national_government",
+      "sha256": "0dbacac1ba1ed415cc8622a586fb034d03b20b6be2ed8d37a810afb281ef9883",
+      "loc": "HWPX 7구역 1239~1253문단"
+    },
+    {
+      "id": "finance-national-2026-fee-faq",
+      "title": "별첨 질의응답 (18)·(19) 강사료·원고료",
+      "scope": "national_government",
+      "sha256": "995c6a6659ae5a8c0ae41af822d34b2dda2f7180ea0ade697b1f1bdd322517b2",
+      "loc": "HWPX 7구역 1254~1285문단"
+    },
+    {
+      "id": "finance-national-2026-cards",
+      "title": "Ⅰ 2-4·2-5. 지출내용 기록·정부구매카드 사용원칙",
+      "scope": "national_government",
+      "sha256": "11d62e4fa151ea74c221f76efa5f17a9712e1e3e6f45a0d07fbd7a84ceb87d3e",
+      "loc": "HWPX 3구역 358~366문단"
+    },
+    {
+      "id": "finance-national-2026-assets",
+      "title": "Ⅲ 17. 자산취득비(430-01목)",
+      "scope": "national_government",
+      "sha256": "62ef215825875c46ba6982b7bd0597a4634d93a61ad6baba94e5e70e1308bb44",
+      "loc": "HWPX 3구역 3957~3985문단"
+    },
+    {
+      "id": "finance-local-446-supplies",
+      "title": "별표 2의2 2-1. 사무관리비·일반수용비",
+      "scope": "local_government",
+      "sha256": "ed28a6692222f7bc8a4d7e97845d6f9df2cf9e501b279382531bc98f361212e5",
+      "loc": "PDF 66쪽"
+    },
+    {
+      "id": "finance-local-446-overtime-meals",
+      "title": "별표 2의2 2-1 마. 급식비",
+      "scope": "local_government",
+      "sha256": "3eaa27c06e2e177b844d72b2808869472151a2f10474d866b7e49a5bfc4b7097",
+      "loc": "PDF 68쪽 / PDF 69쪽"
+    },
+    {
+      "id": "finance-local-446-lecturers",
+      "title": "별표 2의2 2-1 다 5) 공무원교육 외래강사료",
+      "scope": "local_government",
+      "sha256": "5ddb21a66557ab2b53abf5270a079f3d9e220e23ed3462a052f0443cc1839452",
+      "loc": "PDF 68쪽"
+    },
+    {
+      "id": "finance-local-446-meetings",
+      "title": "별표 2의2 4. 업무추진비 공통사항",
+      "scope": "local_government",
+      "sha256": "b1fae3bb4354e90c148b1d733c8b8cc09ac81fcfa27ff65d61193f9ac5673259",
+      "loc": "PDF 76쪽"
+    },
+    {
+      "id": "finance-local-446-cards",
+      "title": "별표 4. 지방자치단체구매카드 발급 및 사용기준",
+      "scope": "local_government",
+      "sha256": "be94384ede7ed0e7a1a163d14c11a5b4ca158bc263cb46ab5c7d44d0e3eaed0e",
+      "loc": "PDF 99쪽 / PDF 100쪽 / PDF 101쪽 / PDF 102쪽 / PDF 103쪽 / PDF 104쪽 / PDF 105쪽 / PDF 106쪽 / PDF 107쪽 / PDF 108쪽 / PDF 109쪽"
+    },
+    {
+      "id": "finance-local-446-assets",
+      "title": "별표 2의2 16-1. 자산 및 물품취득비",
+      "scope": "local_government",
+      "sha256": "95ce18372753e94891151bd9833d9be71a0d4496f010f71e87cc0dc344cb0412",
+      "loc": "PDF 94쪽"
+    }
+  ]
+}

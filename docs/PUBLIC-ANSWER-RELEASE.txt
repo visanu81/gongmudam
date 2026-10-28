@@ -1,0 +1,20 @@
+답변 개선의 로컬·공유 반영 절차
+
+1. 대표 질문은 service/reference_data/conclusion_checks.json에 둔다. AI 없이 결론과 조건, 원문 인용을 검증한다.
+2. 로컬 8787과 공개 8892는 다른 실행본이다. Workers 주소는 공개 8892로 연결된다.
+3. 새 후보 폴더에 tools/prepare_answer_release.py --dest <새 경로>를 실행한다.
+   개인 DB를 읽지 않고 기존 검토된 배포 자료와 공식 물품관리 팩, 앱 코드를 준비한다.
+   기존 공식 자료 변경이나 여비 계산 규정팩 변경은 중단하므로 변경 사유를 별도 검토한다.
+   이 도구의 추가 자료 목록은 2026-10-26 기준이다. 새로운 자료팩은 출처·공개 범위를 확인한 뒤 명시적으로 추가한다.
+4. tools/upgrade_public_runtime.py --source <후보>로 변경 계획을 먼저 확인한다.
+   후보에서 테스트 후 실제 공개 8892만 종료하고 --source <후보> --apply를 실행한다.
+   기존 DB·설정·첨부는 백업하고 보존한다. 관리 파일 해시 검사나 공개 접근 제한을 우회하지 않는다.
+5. tools/launch_gongmudam.py --headless --no-browser로 기존 터널과 공유 주소를 유지해 시작한다.
+6. 아래 비교를 실행하고 제목·설명·인용 해시·조문이 같음을 확인한다.
+   service/.venv/Scripts/python.exe tools/check_answer_parity.py --local http://127.0.0.1:8787 --public https://gongmudam.visanu81.workers.dev --cases service/reference_data/conclusion_checks.json --output <검증결과.json>
+   질문 조건·날짜·사용 자료 범위를 맞춘다. 기관별 비공개 자료가 있는 질문은 공개 합성 자료와 별도 검증한다.
+   429는 불일치로 숨기지 말고 요청 제한으로 기록한다. 공개 AI 한도는 현 상태에서 AI 미사용 /api/ask도 집계하므로 시간당 30건 이내 비교를 계획한다. 제한을 낮추거나 끄지 않는다.
+7. 공유 B안 화면에서도 새 질문을 보내 결론·근거 버튼을 확인하고 증거 화면을 저장한다.
+8. 최종 보고는 로컬/공유 각각의 실제 확인 결과와 남은 차이를 구분한다. 이전 대화는 자동 재계산되지 않는다.
+
+공유 런타임 갱신은 제출용 ZIP 갱신과 별개다. 제출 패키지가 요청되면 별도로 생성·검증한다.

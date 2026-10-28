@@ -1,0 +1,1003 @@
+{
+  "today": "2026-10-26",
+  "cases": [
+    {
+      "id": "health",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "법정 건강검진이라면 ‘공가’로 상신하세요.",
+        "kind": "summary",
+        "rule_id": "health-leave",
+        "evidence": [
+          [
+            "88a565bed1145e6cfb5db10f8185ea7c9b5ee9b6c363db8123ac022c7861cbac",
+            "지방공무원 복무규정",
+            "제7조의6(공가)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "법정 건강검진이라면 ‘공가’로 상신하세요.",
+        "kind": "summary",
+        "rule_id": "health-leave",
+        "evidence": [
+          [
+            "88a565bed1145e6cfb5db10f8185ea7c9b5ee9b6c363db8123ac022c7861cbac",
+            "지방공무원 복무규정",
+            "제7조의6(공가)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "sick-national",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "본인의 질병·부상으로 직무를 수행하기 어렵거나, 감염병으로 다른 공무원의 건강에 영향을 미칠 우려가 있다면 병가로 신청하세요.",
+        "kind": "summary",
+        "rule_id": "service-v70-sick",
+        "evidence": [
+          [
+            "c4edc04864da363cc056b9ed5ccfd1086ac5364b3fcd356e9e8492a3c2489aae",
+            "국가공무원 복무규정",
+            "제18조(병가)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "본인의 질병·부상으로 직무를 수행하기 어렵거나, 감염병으로 다른 공무원의 건강에 영향을 미칠 우려가 있다면 병가로 신청하세요.",
+        "kind": "summary",
+        "rule_id": "service-v70-sick",
+        "evidence": [
+          [
+            "c4edc04864da363cc056b9ed5ccfd1086ac5364b3fcd356e9e8492a3c2489aae",
+            "국가공무원 복무규정",
+            "제18조(병가)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "sick-local",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "본인의 질병이나 부상으로 직무를 수행할 수 없다면 병가로 신청하세요.",
+        "kind": "summary",
+        "rule_id": "sick-leave",
+        "evidence": [
+          [
+            "5157d7899f3b59df4ff3aee140a143dc7d901ce9b8d4ef1aceefa9ff5f50a015",
+            "지방공무원 복무규정",
+            "제7조의5(병가)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "본인의 질병이나 부상으로 직무를 수행할 수 없다면 병가로 신청하세요.",
+        "kind": "summary",
+        "rule_id": "sick-leave",
+        "evidence": [
+          [
+            "5157d7899f3b59df4ff3aee140a143dc7d901ce9b8d4ef1aceefa9ff5f50a015",
+            "지방공무원 복무규정",
+            "제7조의5(병가)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "child-care",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "가족돌봄휴가를 신청할 수 있는 상황이에요. 돌봄 대상·사유와 유급 조건을 확인하세요.",
+        "kind": "summary",
+        "rule_id": "family-care-situation",
+        "evidence": [
+          [
+            "156f83e9646084245c69e35ee1186cdbe52101ebe6489c0f7d134e90acca7f62",
+            "국가공무원 복무규정",
+            "제20조(특별휴가)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "가족돌봄휴가를 신청할 수 있는 상황이에요. 돌봄 대상·사유와 유급 조건을 확인하세요.",
+        "kind": "summary",
+        "rule_id": "family-care-situation",
+        "evidence": [
+          [
+            "156f83e9646084245c69e35ee1186cdbe52101ebe6489c0f7d134e90acca7f62",
+            "국가공무원 복무규정",
+            "제20조(특별휴가)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "blood",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "혈액관리법에 따른 헌혈에 참가할 때는 공가로 신청하세요.",
+        "kind": "summary",
+        "rule_id": "blood-leave",
+        "evidence": [
+          [
+            "88a565bed1145e6cfb5db10f8185ea7c9b5ee9b6c363db8123ac022c7861cbac",
+            "지방공무원 복무규정",
+            "제7조의6(공가)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "혈액관리법에 따른 헌혈에 참가할 때는 공가로 신청하세요.",
+        "kind": "summary",
+        "rule_id": "blood-leave",
+        "evidence": [
+          [
+            "88a565bed1145e6cfb5db10f8185ea7c9b5ee9b6c363db8123ac022c7861cbac",
+            "지방공무원 복무규정",
+            "제7조의6(공가)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "marriage",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "본인 결혼은 5일이에요.",
+        "kind": "summary",
+        "rule_id": "extended-occasion",
+        "evidence": [
+          [
+            "156f83e9646084245c69e35ee1186cdbe52101ebe6489c0f7d134e90acca7f62",
+            "국가공무원 복무규정",
+            "제20조(특별휴가)"
+          ],
+          [
+            "d0729ac9f46986b5f2c1d0c3b58fe4913449276030f9240026935d686c4135d4",
+            "국가공무원 복무규정",
+            "별표 2 경조사별 휴가 일수표"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "본인 결혼은 5일이에요.",
+        "kind": "summary",
+        "rule_id": "extended-occasion",
+        "evidence": [
+          [
+            "156f83e9646084245c69e35ee1186cdbe52101ebe6489c0f7d134e90acca7f62",
+            "국가공무원 복무규정",
+            "제20조(특별휴가)"
+          ],
+          [
+            "d0729ac9f46986b5f2c1d0c3b58fe4913449276030f9240026935d686c4135d4",
+            "국가공무원 복무규정",
+            "별표 2 경조사별 휴가 일수표"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "side-job",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "금지되는 영리 업무에 해당하지 않는 다른 직무도 겸하려면 소속 기관장의 사전 허가를 받아야 해요. 허가는 담당 직무 수행에 지장이 없는 경우로 한정돼요.",
+        "kind": "summary",
+        "rule_id": "service-v70-side_job",
+        "evidence": [
+          [
+            "66d99077842d39bb41c3c36211f1977f55ed2e31c2ffdbf18e6185a21c777230",
+            "국가공무원 복무규정",
+            "제26조(겸직 허가)"
+          ],
+          [
+            "a454f317a1a87afbfb26d58cd040a6d3ac05aa4b1dbb75633deca3f37d02dc44",
+            "국가공무원 복무규정",
+            "제25조(영리 업무의 금지)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "금지되는 영리 업무에 해당하지 않는 다른 직무도 겸하려면 소속 기관장의 사전 허가를 받아야 해요. 허가는 담당 직무 수행에 지장이 없는 경우로 한정돼요.",
+        "kind": "summary",
+        "rule_id": "service-v70-side_job",
+        "evidence": [
+          [
+            "66d99077842d39bb41c3c36211f1977f55ed2e31c2ffdbf18e6185a21c777230",
+            "국가공무원 복무규정",
+            "제26조(겸직 허가)"
+          ],
+          [
+            "a454f317a1a87afbfb26d58cd040a6d3ac05aa4b1dbb75633deca3f37d02dc44",
+            "국가공무원 복무규정",
+            "제25조(영리 업무의 금지)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "settlement",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "출장을 마친 다음 날부터 세어 2주 안에 신청해요.",
+        "kind": "summary",
+        "rule_id": "settlement",
+        "evidence": [
+          [
+            "df2441b6245eff78480a96d9f60ea8d94c1abb19add82ddae2258dd83ca4c567",
+            "공무원 여비 규정",
+            "제8조의2(여비의 결제와 정산 등)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "출장을 마친 다음 날부터 세어 2주 안에 신청해요.",
+        "kind": "summary",
+        "rule_id": "settlement",
+        "evidence": [
+          [
+            "df2441b6245eff78480a96d9f60ea8d94c1abb19add82ddae2258dd83ca4c567",
+            "공무원 여비 규정",
+            "제8조의2(여비의 결제와 정산 등)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "daily-car",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "공무용 차량 이용 등 정해진 조건이면 일비의 절반을 지급해요.",
+        "kind": "summary",
+        "rule_id": "daily-car",
+        "evidence": [
+          [
+            "0b22c01ecffbd69f3c7ceecb499322d0f3d05a21ac9928188fc97d101bb29983",
+            "공무원 여비 규정",
+            "제16조(일비ㆍ숙박비ㆍ식비의 지급)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "공무용 차량 이용 등 정해진 조건이면 일비의 절반을 지급해요.",
+        "kind": "summary",
+        "rule_id": "daily-car",
+        "evidence": [
+          [
+            "0b22c01ecffbd69f3c7ceecb499322d0f3d05a21ac9928188fc97d101bb29983",
+            "공무원 여비 규정",
+            "제16조(일비ㆍ숙박비ㆍ식비의 지급)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "local-trip",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "4시간 이상이면 2만 원, 4시간 미만이면 1만 원이에요.",
+        "kind": "summary",
+        "rule_id": "local-trip",
+        "evidence": [
+          [
+            "d314a501ef76929e78473c3e1c4a4c3e1754504c6a70b06fd46a5790a509b7e1",
+            "공무원 여비 규정",
+            "제18조(근무지 내 국내 출장 시의 여비)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "4시간 이상이면 2만 원, 4시간 미만이면 1만 원이에요.",
+        "kind": "summary",
+        "rule_id": "local-trip",
+        "evidence": [
+          [
+            "d314a501ef76929e78473c3e1c4a4c3e1754504c6a70b06fd46a5790a509b7e1",
+            "공무원 여비 규정",
+            "제18조(근무지 내 국내 출장 시의 여비)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "additional",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "제16조제1항 단서의 추가 지급을 신청하는 경우, 국내는 출장 다음 날부터 1주 안에 신청해요.",
+        "kind": "summary",
+        "rule_id": "additional-settlement",
+        "evidence": [
+          [
+            "0b22c01ecffbd69f3c7ceecb499322d0f3d05a21ac9928188fc97d101bb29983",
+            "공무원 여비 규정",
+            "제16조(일비ㆍ숙박비ㆍ식비의 지급)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "제16조제1항 단서의 추가 지급을 신청하는 경우, 국내는 출장 다음 날부터 1주 안에 신청해요.",
+        "kind": "summary",
+        "rule_id": "additional-settlement",
+        "evidence": [
+          [
+            "0b22c01ecffbd69f3c7ceecb499322d0f3d05a21ac9928188fc97d101bb29983",
+            "공무원 여비 규정",
+            "제16조(일비ㆍ숙박비ㆍ식비의 지급)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "goods-payment",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "원칙은 검사 뒤에 대금을 지급하는 거예요",
+        "kind": "summary",
+        "rule_id": "goods-payment",
+        "evidence": [
+          [
+            "9ef32ba59708e61398cba96229485881cc8b4a50ec1562cf0862ec34814e5021",
+            "지방자치단체를 당사자로 하는 계약에 관한 법률",
+            "제18조(대가의 지급)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "원칙은 검사 뒤에 대금을 지급하는 거예요",
+        "kind": "summary",
+        "rule_id": "goods-payment",
+        "evidence": [
+          [
+            "9ef32ba59708e61398cba96229485881cc8b4a50ec1562cf0862ec34814e5021",
+            "지방자치단체를 당사자로 하는 계약에 관한 법률",
+            "제18조(대가의 지급)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "goods-inspection-deadline",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "원칙은 이행 완료 통지를 받은 날부터 14일 이내예요. 고시한 특례기간에는 7일 기준이 있어요.",
+        "kind": "summary",
+        "rule_id": "extended-goods_inspection_deadline",
+        "evidence": [
+          [
+            "327e6cf235be7813eaaa77dd61d34c07bae0700d95c4af50eb3fdb0932e36cda",
+            "지방자치단체를 당사자로 하는 계약에 관한 법률 시행령",
+            "제64조(검사)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "원칙은 이행 완료 통지를 받은 날부터 14일 이내예요. 고시한 특례기간에는 7일 기준이 있어요.",
+        "kind": "summary",
+        "rule_id": "extended-goods_inspection_deadline",
+        "evidence": [
+          [
+            "327e6cf235be7813eaaa77dd61d34c07bae0700d95c4af50eb3fdb0932e36cda",
+            "지방자치단체를 당사자로 하는 계약에 관한 법률 시행령",
+            "제64조(검사)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "goods-payment-deadline",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "원칙은 검사 완료 후 청구받은 날부터 5일 이내예요. 토요일과 공휴일은 제외해요.",
+        "kind": "summary",
+        "rule_id": "extended-goods_payment_deadline",
+        "evidence": [
+          [
+            "54c66cb1200baea79cc94dc70bef3585e58589cc82dbc95bde5537c5918a7a1a",
+            "지방자치단체를 당사자로 하는 계약에 관한 법률 시행령",
+            "제67조(대가의 지급)"
+          ],
+          [
+            "9ef32ba59708e61398cba96229485881cc8b4a50ec1562cf0862ec34814e5021",
+            "지방자치단체를 당사자로 하는 계약에 관한 법률",
+            "제18조(대가의 지급)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "원칙은 검사 완료 후 청구받은 날부터 5일 이내예요. 토요일과 공휴일은 제외해요.",
+        "kind": "summary",
+        "rule_id": "extended-goods_payment_deadline",
+        "evidence": [
+          [
+            "54c66cb1200baea79cc94dc70bef3585e58589cc82dbc95bde5537c5918a7a1a",
+            "지방자치단체를 당사자로 하는 계약에 관한 법률 시행령",
+            "제67조(대가의 지급)"
+          ],
+          [
+            "9ef32ba59708e61398cba96229485881cc8b4a50ec1562cf0862ec34814e5021",
+            "지방자치단체를 당사자로 하는 계약에 관한 법률",
+            "제18조(대가의 지급)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "goods-quote",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "수의계약은 2인 이상 견적이 원칙이에요. 추정가격 2천만원 이하 물품 제조·구매 등에는 1인 견적 예외가 있어요.",
+        "kind": "summary",
+        "rule_id": "extended-goods_quote",
+        "evidence": [
+          [
+            "2295149b4f876d96b8378e1683281ef7780ad9671b752ae28145be3fdd22e0bb",
+            "지방자치단체를 당사자로 하는 계약에 관한 법률 시행령",
+            "제30조(수의계약대상자의 선정절차 등)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "수의계약은 2인 이상 견적이 원칙이에요. 추정가격 2천만원 이하 물품 제조·구매 등에는 1인 견적 예외가 있어요.",
+        "kind": "summary",
+        "rule_id": "extended-goods_quote",
+        "evidence": [
+          [
+            "2295149b4f876d96b8378e1683281ef7780ad9671b752ae28145be3fdd22e0bb",
+            "지방자치단체를 당사자로 하는 계약에 관한 법률 시행령",
+            "제30조(수의계약대상자의 선정절차 등)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "goods-inventory",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "정기재물조사는 연 1회예요. 필요하면 수시조사도 할 수 있어요.",
+        "kind": "summary",
+        "rule_id": "office:goods-national-inventory",
+        "evidence": [
+          [
+            "3c6e1a82673ca8568488709b015f9244e091bcd802da1f60049b17b9b36beb24",
+            "물품관리법 시행령",
+            "제22조(재물조사)"
+          ],
+          [
+            "c48f68327fc791be68267bb30cad00fb856babebfa2579cb6a174696655179a9",
+            "물품관리법",
+            "제2조(정의)"
+          ],
+          [
+            "dc5cd97ecab1cc64ac5bcf72faa2b60575d3495df8b427ad6b08492395e730c4",
+            "물품관리법 시행규칙",
+            "제27조(재물조사)"
+          ],
+          [
+            "e3e92819cbe43835a633af451228f2528c5934d2eb4ad0fc6bfd63d9125c5613",
+            "물품관리법",
+            "제19조(재물조사)"
+          ],
+          [
+            "f8a471b3b952f7095642214bf92812b7af06e3f3474c108a39220247c5ee38a7",
+            "물품관리법",
+            "제4조(다른 법률과의 관계)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "정기재물조사는 연 1회예요. 필요하면 수시조사도 할 수 있어요.",
+        "kind": "summary",
+        "rule_id": "office:goods-national-inventory",
+        "evidence": [
+          [
+            "3c6e1a82673ca8568488709b015f9244e091bcd802da1f60049b17b9b36beb24",
+            "물품관리법 시행령",
+            "제22조(재물조사)"
+          ],
+          [
+            "c48f68327fc791be68267bb30cad00fb856babebfa2579cb6a174696655179a9",
+            "물품관리법",
+            "제2조(정의)"
+          ],
+          [
+            "dc5cd97ecab1cc64ac5bcf72faa2b60575d3495df8b427ad6b08492395e730c4",
+            "물품관리법 시행규칙",
+            "제27조(재물조사)"
+          ],
+          [
+            "e3e92819cbe43835a633af451228f2528c5934d2eb4ad0fc6bfd63d9125c5613",
+            "물품관리법",
+            "제19조(재물조사)"
+          ],
+          [
+            "f8a471b3b952f7095642214bf92812b7af06e3f3474c108a39220247c5ee38a7",
+            "물품관리법",
+            "제4조(다른 법률과의 관계)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "goods-disposal",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "사용할 필요가 없거나 쓸 수 없는 물품은 지자체장이 불용결정해요. 대통령령에서 정한 물품은 물품관리관이 결정할 수 있어요.",
+        "kind": "summary",
+        "rule_id": "office:goods-local-disposal",
+        "evidence": [
+          [
+            "345a093995ffa6c30e629e772a82cb425e24fc851b736f13a0e0ca0b78eb8b21",
+            "공유재산 및 물품 관리법",
+            "제2조(정의)"
+          ],
+          [
+            "3bfeb8d4bc8db6b52d74605c4d78981676817ae821b3d7042692cff170de6527",
+            "공유재산 및 물품 관리법 시행령",
+            "제76조(불용 결정)"
+          ],
+          [
+            "407ece049eec1340482193a26375780216098c976fdeb96b61ed64d9845ccf6d",
+            "공유재산 및 물품 관리법",
+            "제75조(불용의 결정 등)"
+          ],
+          [
+            "703980f178ba1f88098aa0fcec496473699f806aae8ddb8e270af7cdba616d05",
+            "공유재산 및 물품 관리법 시행령",
+            "제77조(물품관리관이 불용 결정을 할 수 있는 물품)"
+          ],
+          [
+            "a0ff45cffeff52425fad05695add351a5f32c83419ee598c3a40598670dc1f22",
+            "공유재산 및 물품 관리법 시행령",
+            "제91조(적용 배제)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "사용할 필요가 없거나 쓸 수 없는 물품은 지자체장이 불용결정해요. 대통령령에서 정한 물품은 물품관리관이 결정할 수 있어요.",
+        "kind": "summary",
+        "rule_id": "office:goods-local-disposal",
+        "evidence": [
+          [
+            "345a093995ffa6c30e629e772a82cb425e24fc851b736f13a0e0ca0b78eb8b21",
+            "공유재산 및 물품 관리법",
+            "제2조(정의)"
+          ],
+          [
+            "3bfeb8d4bc8db6b52d74605c4d78981676817ae821b3d7042692cff170de6527",
+            "공유재산 및 물품 관리법 시행령",
+            "제76조(불용 결정)"
+          ],
+          [
+            "407ece049eec1340482193a26375780216098c976fdeb96b61ed64d9845ccf6d",
+            "공유재산 및 물품 관리법",
+            "제75조(불용의 결정 등)"
+          ],
+          [
+            "703980f178ba1f88098aa0fcec496473699f806aae8ddb8e270af7cdba616d05",
+            "공유재산 및 물품 관리법 시행령",
+            "제77조(물품관리관이 불용 결정을 할 수 있는 물품)"
+          ],
+          [
+            "a0ff45cffeff52425fad05695add351a5f32c83419ee598c3a40598670dc1f22",
+            "공유재산 및 물품 관리법 시행령",
+            "제91조(적용 배제)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "documents-receipt",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "문서과가 받았다면 접수일시를 남기고 지체 없이 처리과에 배부해요. 처리과는 배부받은 문서에 접수등록번호를 표시하고, 수신 업무 담당자는 처리담당자에게 인계해요.",
+        "kind": "summary",
+        "rule_id": "office:documents-receipt",
+        "evidence": [
+          [
+            "0cb82062deedfd535308952112435684d9127ec9a8a4438e70402878c90051de",
+            "행정업무의 운영 및 혁신에 관한 규정",
+            "제2조(적용범위)"
+          ],
+          [
+            "47b4fad4aab848a529052bf7302e7b8bd2aabf3a996b7e902f96e43899a4ea40",
+            "행정업무의 운영 및 혁신에 관한 규정",
+            "제3조(정의)"
+          ],
+          [
+            "9d23e1c3102a44d888257c71a97b75c38534be3cb981ec36a498773098964120",
+            "행정업무의 운영 및 혁신에 관한 규정",
+            "제18조(문서의 접수ㆍ처리)"
+          ],
+          [
+            "f755671c42dbf7cf652fe7806c6dab1ca3f3e48cefc2ac0db4ab490129274825",
+            "행정업무의 운영 및 혁신에 관한 규정 시행규칙",
+            "제15조(문서의 접수ㆍ처리)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "문서과가 받았다면 접수일시를 남기고 지체 없이 처리과에 배부해요. 처리과는 배부받은 문서에 접수등록번호를 표시하고, 수신 업무 담당자는 처리담당자에게 인계해요.",
+        "kind": "summary",
+        "rule_id": "office:documents-receipt",
+        "evidence": [
+          [
+            "0cb82062deedfd535308952112435684d9127ec9a8a4438e70402878c90051de",
+            "행정업무의 운영 및 혁신에 관한 규정",
+            "제2조(적용범위)"
+          ],
+          [
+            "47b4fad4aab848a529052bf7302e7b8bd2aabf3a996b7e902f96e43899a4ea40",
+            "행정업무의 운영 및 혁신에 관한 규정",
+            "제3조(정의)"
+          ],
+          [
+            "9d23e1c3102a44d888257c71a97b75c38534be3cb981ec36a498773098964120",
+            "행정업무의 운영 및 혁신에 관한 규정",
+            "제18조(문서의 접수ㆍ처리)"
+          ],
+          [
+            "f755671c42dbf7cf652fe7806c6dab1ca3f3e48cefc2ac0db4ab490129274825",
+            "행정업무의 운영 및 혁신에 관한 규정 시행규칙",
+            "제15조(문서의 접수ㆍ처리)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "documents-draft",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "결재를 받기 전에 보조·보좌기관의 검토를 받아요. 다른 부서 업무와 관련될 때는 협조도 받아야 해요. 모든 건에 같은 협조 결재선을 넣는다는 뜻은 아니에요.",
+        "kind": "summary",
+        "rule_id": "office:documents-drafting",
+        "evidence": [
+          [
+            "0cb82062deedfd535308952112435684d9127ec9a8a4438e70402878c90051de",
+            "행정업무의 운영 및 혁신에 관한 규정",
+            "제2조(적용범위)"
+          ],
+          [
+            "146254004bd0149ba5c9559a7eee3b6d9b183d0888f891701ac7d8bf1f3728a5",
+            "행정업무의 운영 및 혁신에 관한 규정",
+            "제9조(문서의 검토 및 협조)"
+          ],
+          [
+            "351e56ba273c95f3a8b7833134cdb74099e1844e4f9862fdeb5acbc7ce97ba27",
+            "행정업무의 운영 및 혁신에 관한 규정",
+            "제10조(문서의 결재)"
+          ],
+          [
+            "3bd7b36c5bf9396bcae024b49edf346a405a45d2226d761b44fb26fd293a15e7",
+            "행정업무의 운영 및 혁신에 관한 규정",
+            "제11조(문서의 등록 등)"
+          ],
+          [
+            "9a98fdad8ad11876eaf9120e7993fbe253a9fb89d8d63e00dd38f7e30c643f2e",
+            "행정업무의 운영 및 혁신에 관한 규정",
+            "제6조(문서의 성립 및 효력 발생)"
+          ],
+          [
+            "b45c6a5f9fddc45be4d05930ba33beac3f13186b12772b91924a0a841608e847",
+            "행정업무의 운영 및 혁신에 관한 규정",
+            "제8조(문서의 기안)"
+          ],
+          [
+            "bc54d5004f4d06c59944e8ec92b2cff9db136940358d2a21188da4f54d35ee35",
+            "행정업무의 운영 및 혁신에 관한 규정",
+            "제12조(시행문의 작성)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "결재를 받기 전에 보조·보좌기관의 검토를 받아요. 다른 부서 업무와 관련될 때는 협조도 받아야 해요. 모든 건에 같은 협조 결재선을 넣는다는 뜻은 아니에요.",
+        "kind": "summary",
+        "rule_id": "office:documents-drafting",
+        "evidence": [
+          [
+            "0cb82062deedfd535308952112435684d9127ec9a8a4438e70402878c90051de",
+            "행정업무의 운영 및 혁신에 관한 규정",
+            "제2조(적용범위)"
+          ],
+          [
+            "146254004bd0149ba5c9559a7eee3b6d9b183d0888f891701ac7d8bf1f3728a5",
+            "행정업무의 운영 및 혁신에 관한 규정",
+            "제9조(문서의 검토 및 협조)"
+          ],
+          [
+            "351e56ba273c95f3a8b7833134cdb74099e1844e4f9862fdeb5acbc7ce97ba27",
+            "행정업무의 운영 및 혁신에 관한 규정",
+            "제10조(문서의 결재)"
+          ],
+          [
+            "3bd7b36c5bf9396bcae024b49edf346a405a45d2226d761b44fb26fd293a15e7",
+            "행정업무의 운영 및 혁신에 관한 규정",
+            "제11조(문서의 등록 등)"
+          ],
+          [
+            "9a98fdad8ad11876eaf9120e7993fbe253a9fb89d8d63e00dd38f7e30c643f2e",
+            "행정업무의 운영 및 혁신에 관한 규정",
+            "제6조(문서의 성립 및 효력 발생)"
+          ],
+          [
+            "b45c6a5f9fddc45be4d05930ba33beac3f13186b12772b91924a0a841608e847",
+            "행정업무의 운영 및 혁신에 관한 규정",
+            "제8조(문서의 기안)"
+          ],
+          [
+            "bc54d5004f4d06c59944e8ec92b2cff9db136940358d2a21188da4f54d35ee35",
+            "행정업무의 운영 및 혁신에 관한 규정",
+            "제12조(시행문의 작성)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "documents-absence",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "결재권자가 휴가·출장 등으로 결재할 수 없으면 직무를 대리하는 사람이 대결해요. 중요한 내용은 사후에 보고해야 해요.",
+        "kind": "summary",
+        "rule_id": "office:documents-drafting",
+        "evidence": [
+          [
+            "0cb82062deedfd535308952112435684d9127ec9a8a4438e70402878c90051de",
+            "행정업무의 운영 및 혁신에 관한 규정",
+            "제2조(적용범위)"
+          ],
+          [
+            "146254004bd0149ba5c9559a7eee3b6d9b183d0888f891701ac7d8bf1f3728a5",
+            "행정업무의 운영 및 혁신에 관한 규정",
+            "제9조(문서의 검토 및 협조)"
+          ],
+          [
+            "351e56ba273c95f3a8b7833134cdb74099e1844e4f9862fdeb5acbc7ce97ba27",
+            "행정업무의 운영 및 혁신에 관한 규정",
+            "제10조(문서의 결재)"
+          ],
+          [
+            "3bd7b36c5bf9396bcae024b49edf346a405a45d2226d761b44fb26fd293a15e7",
+            "행정업무의 운영 및 혁신에 관한 규정",
+            "제11조(문서의 등록 등)"
+          ],
+          [
+            "9a98fdad8ad11876eaf9120e7993fbe253a9fb89d8d63e00dd38f7e30c643f2e",
+            "행정업무의 운영 및 혁신에 관한 규정",
+            "제6조(문서의 성립 및 효력 발생)"
+          ],
+          [
+            "b45c6a5f9fddc45be4d05930ba33beac3f13186b12772b91924a0a841608e847",
+            "행정업무의 운영 및 혁신에 관한 규정",
+            "제8조(문서의 기안)"
+          ],
+          [
+            "bc54d5004f4d06c59944e8ec92b2cff9db136940358d2a21188da4f54d35ee35",
+            "행정업무의 운영 및 혁신에 관한 규정",
+            "제12조(시행문의 작성)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "결재권자가 휴가·출장 등으로 결재할 수 없으면 직무를 대리하는 사람이 대결해요. 중요한 내용은 사후에 보고해야 해요.",
+        "kind": "summary",
+        "rule_id": "office:documents-drafting",
+        "evidence": [
+          [
+            "0cb82062deedfd535308952112435684d9127ec9a8a4438e70402878c90051de",
+            "행정업무의 운영 및 혁신에 관한 규정",
+            "제2조(적용범위)"
+          ],
+          [
+            "146254004bd0149ba5c9559a7eee3b6d9b183d0888f891701ac7d8bf1f3728a5",
+            "행정업무의 운영 및 혁신에 관한 규정",
+            "제9조(문서의 검토 및 협조)"
+          ],
+          [
+            "351e56ba273c95f3a8b7833134cdb74099e1844e4f9862fdeb5acbc7ce97ba27",
+            "행정업무의 운영 및 혁신에 관한 규정",
+            "제10조(문서의 결재)"
+          ],
+          [
+            "3bd7b36c5bf9396bcae024b49edf346a405a45d2226d761b44fb26fd293a15e7",
+            "행정업무의 운영 및 혁신에 관한 규정",
+            "제11조(문서의 등록 등)"
+          ],
+          [
+            "9a98fdad8ad11876eaf9120e7993fbe253a9fb89d8d63e00dd38f7e30c643f2e",
+            "행정업무의 운영 및 혁신에 관한 규정",
+            "제6조(문서의 성립 및 효력 발생)"
+          ],
+          [
+            "b45c6a5f9fddc45be4d05930ba33beac3f13186b12772b91924a0a841608e847",
+            "행정업무의 운영 및 혁신에 관한 규정",
+            "제8조(문서의 기안)"
+          ],
+          [
+            "bc54d5004f4d06c59944e8ec92b2cff9db136940358d2a21188da4f54d35ee35",
+            "행정업무의 운영 및 혁신에 관한 규정",
+            "제12조(시행문의 작성)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "private-check",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "법정 건강검진이라면 ‘공가’로 상신하세요.",
+        "kind": "summary",
+        "rule_id": "service-v70-public_health",
+        "evidence": [
+          [
+            "f459b93473b181b1dc9333903d8ccc97f66930fc7954fabe074a2ff8628d3533",
+            "국가공무원 복무규정",
+            "제19조(공가)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "법정 건강검진이라면 ‘공가’로 상신하세요.",
+        "kind": "summary",
+        "rule_id": "service-v70-public_health",
+        "evidence": [
+          [
+            "f459b93473b181b1dc9333903d8ccc97f66930fc7954fabe074a2ff8628d3533",
+            "국가공무원 복무규정",
+            "제19조(공가)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "goods-owner-missing",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "자료를 더 확인해야 답할 수 있어요",
+        "kind": "unavailable",
+        "rule_id": null,
+        "evidence": [],
+        "ai_used": false
+      },
+      "public": {
+        "title": "자료를 더 확인해야 답할 수 있어요",
+        "kind": "unavailable",
+        "rule_id": null,
+        "evidence": [],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "institution-deadline",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "기관 교육 안내·회신 자료가 필요해요",
+        "kind": "unavailable",
+        "rule_id": null,
+        "evidence": [],
+        "ai_used": false
+      },
+      "public": {
+        "title": "기관 교육 안내·회신 자료가 필요해요",
+        "kind": "unavailable",
+        "rule_id": null,
+        "evidence": [],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "leave-ambiguous",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "상황을 조금만 더 알려주세요",
+        "kind": "clarification",
+        "rule_id": null,
+        "evidence": [],
+        "ai_used": false
+      },
+      "public": {
+        "title": "상황을 조금만 더 알려주세요",
+        "kind": "clarification",
+        "rule_id": null,
+        "evidence": [],
+        "ai_used": false
+      }
+    }
+  ],
+  "summary": {
+    "all_pass": true,
+    "passed": 24,
+    "failed": 0,
+    "total": 24
+  }
+}

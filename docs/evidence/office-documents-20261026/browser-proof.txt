@@ -1,0 +1,6 @@
+Browser tab: 1, Title: "공무담 · 나의 업무 공간", URL: "http://127.0.0.1:8787/desktop/?variant=B&open=%2Findex.html%23chat".
+The following is a diff from the previous accessibility tree with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
+Removed element IDs: 313
+~				353 text 2026년 10월 26일 월 15:15:44
++					354 text 기한이 있는 미완료 업무를 표시합니다.
+The focused UI element is 116 AXWebArea 서무비서, URL: 127.0.0.1:8787/index.html#chat

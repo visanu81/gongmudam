@@ -1,0 +1,102 @@
+C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+..................................................................................................................................................LLM 오류(모델 응답에서 JSON을 찾지 못함): not JSON
+.................................LLM 오류(모델 응답에서 JSON을 찾지 못함): 죄송합니다. 잘 모르겠습니다.
+.................LLM 오류(모델 서버 HTTP 500 오류): 정산서는 오늘 10월 19일까지 제출하세요
+.LLM 오류(모델 서버 연결 실패): ConnectError: 정산서는 오늘 10월 19일까지 제출하세요
+.LLM 오류(모델 서버 HTTP 500 오류): Internal Server Error: 정산서는 오늘 10월 19일까지 제출하세요
+LLM 오류(모델 서버 HTTP 500 오류): {"error": {"message": "정산서는 오늘 10월 19일까지 제출하세요"}}
+LLM 오류(모델 응답 형식 오류): <html>정산서는 오늘 10월 19일까지 제출하세요</html>
+LLM 오류(모델 응답 형식 오류): {"choices": "정산서는 오늘 10월 19일까지 제출하세요"}
+LLM 오류(모델 응답 형식 오류): ["정산서는 오늘 10월 19일까지 제출하세요"]
+LLM 오류(모델 응답 형식 오류): {"choices": [{"message": {"content": {"x": "정산서는 오늘 10월 19일까지 제출하세요"}}}]}
+LLM 오류(모델 응답에서 JSON을 찾지 못함): 정산서는 오늘 10월 19일까지 제출하세요
+LLM 오류(모델 응답에서 JSON을 찾지 못함): {"card_id": "card-travel", "answer": "정산서는 오늘 10월 19일까지 제출하세요
+.LLM 오류(모델 서버 HTTP 500 오류): Internal Server Error: 정산서는 오늘 10월 19일까지 제출하세요
+LLM 오류(모델 서버 HTTP 500 오류): {"error": {"message": "정산서는 오늘 10월 19일까지 제출하세요"}}
+LLM 오류(모델 응답 형식 오류): <html>정산서는 오늘 10월 19일까지 제출하세요</html>
+LLM 오류(모델 응답 형식 오류): {"choices": "정산서는 오늘 10월 19일까지 제출하세요"}
+LLM 오류(모델 응답 형식 오류): ["정산서는 오늘 10월 19일까지 제출하세요"]
+........................LLM 오류(모델 서버 HTTP 400 오류): unsupported format
+..............................................................LLM 오류(모델 서버 연결 실패): ConnectError: unit-only
+................................................................................................................................EOF marker not found
+........................................................LLM 오류(모델 응답에서 JSON을 찾지 못함): not JSON
+LLM 오류(모델 응답에서 JSON을 찾지 못함): not JSON
+...LLM 오류(모델 서버 연결 실패): ConnectError: unit-only
+.LLM 오류(모델 서버 연결 실패): ConnectError: unit-only
+.......................................LLM 오류(모델 서버 HTTP 404 오류): {"choices":[{"message":{"content":"{\"ok\":true}"}}],"model":"demo-a"}
+LLM 오류(모델 서버 연결 실패): ConnectError: PRIVATE-FAILURE
+..........................................................................................................................................FF....................................................................................................................................................EOF marker not found
+.....................................................................................................................................................................
+======================================================================
+FAIL: test_every_reviewed_case_passes (test_question_relevance_matrix.QuestionRelevanceMatrixTest.test_every_reviewed_case_passes) (fixture='question_checks_v39.json')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\AI작업\프로그램 제작\gongmudam\service\tests\test_question_relevance_matrix.py", line 30, in test_every_reviewed_case_passes
+    self.assertEqual(failed, [], f"{fixture_name}: {json.dumps(failed, ensure_ascii=False, indent=2)}")
+AssertionError: Lists differ: [{'id': 'inspection-02', 'category': '물품',[297 chars]r']}] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+{'id': 'inspection-02', 'category': '물품', 'mode': 'source_unavailable', 'articles': [], 'rules': [], 'failures': ['answer outcome requires nonempty evidence', "answer outcome requires source_search or source_llm mode; got 'source_unavailable'", "required article not represented: '제17조'", 'answer outcome requires nonblank displayed answer']}
+
++ []
+- [{'articles': [],
+-   'category': '물품',
+-   'failures': ['answer outcome requires nonempty evidence',
+-                'answer outcome requires source_search or source_llm mode; got '
+-                "'source_unavailable'",
+-                "required article not represented: '제17조'",
+-                'answer outcome requires nonblank displayed answer'],
+-   'id': 'inspection-02',
+-   'mode': 'source_unavailable',
+-   'rules': []}] : question_checks_v39.json: [
+  {
+    "id": "inspection-02",
+    "category": "물품",
+    "mode": "source_unavailable",
+    "articles": [],
+    "rules": [],
+    "failures": [
+      "answer outcome requires nonempty evidence",
+      "answer outcome requires source_search or source_llm mode; got 'source_unavailable'",
+      "required article not represented: '제17조'",
+      "answer outcome requires nonblank displayed answer"
+    ]
+  }
+]
+
+======================================================================
+FAIL: test_every_reviewed_case_passes (test_question_relevance_matrix.QuestionRelevanceMatrixTest.test_every_reviewed_case_passes) (fixture='question_checks_v39_holdout.json')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\AI작업\프로그램 제작\gongmudam\service\tests\test_question_relevance_matrix.py", line 30, in test_every_reviewed_case_passes
+    self.assertEqual(failed, [], f"{fixture_name}: {json.dumps(failed, ensure_ascii=False, indent=2)}")
+AssertionError: Lists differ: [{'id': 'independent-pay-delay', 'category[454 chars]r']}] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+{'id': 'independent-pay-delay', 'category': '추가 검토', 'mode': 'source_unavailable', 'articles': [], 'rules': [], 'failures': ['answer outcome requires nonempty evidence', "answer outcome requires source_search or source_llm mode; got 'source_unavailable'", "required article not represented: '제18조('", "required source facts missing from combined evidence: ['지체일수에 따른 이자']", "required answer facts missing from displayed answer: ['지체일수에 따른 이자']", 'answer outcome requires nonblank displayed answer']}
+
+Diff is 674 characters long. Set self.maxDiff to None to see it. : question_checks_v39_holdout.json: [
+  {
+    "id": "independent-pay-delay",
+    "category": "추가 검토",
+    "mode": "source_unavailable",
+    "articles": [],
+    "rules": [],
+    "failures": [
+      "answer outcome requires nonempty evidence",
+      "answer outcome requires source_search or source_llm mode; got 'source_unavailable'",
+      "required article not represented: '제18조('",
+      "required source facts missing from combined evidence: ['지체일수에 따른 이자']",
+      "required answer facts missing from displayed answer: ['지체일수에 따른 이자']",
+      "answer outcome requires nonblank displayed answer"
+    ]
+  }
+]
+
+----------------------------------------------------------------------
+Ran 964 tests in 186.138s
+
+FAILED (failures=2)

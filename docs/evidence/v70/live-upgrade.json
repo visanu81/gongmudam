@@ -1,0 +1,12 @@
+{
+  "status": "upgraded",
+  "from": "v69",
+  "to": "v70",
+  "files_updated": 98,
+  "sources_added": 5,
+  "backup": "C:\\AI작업\\프로그램 제작\\gongmudam\\.local-runtime\\upgrades\\20261024T142133717103Z",
+  "all_existing_rows_preserved": true,
+  "model_config_unchanged": true,
+  "attachments_and_synthetic_files_unchanged": true,
+  "databases_checked": 6
+}

@@ -1,0 +1,44 @@
+[
+  {
+    "database": "adhoc.db",
+    "tables": 13,
+    "changed_tables": [],
+    "new_tables": []
+  },
+  {
+    "database": "answer-reviews.db",
+    "tables": 4,
+    "changed_tables": [],
+    "new_tables": []
+  },
+  {
+    "database": "calendar.db",
+    "tables": 5,
+    "changed_tables": [],
+    "new_tables": []
+  },
+  {
+    "database": "folders.db",
+    "tables": 15,
+    "changed_tables": [],
+    "new_tables": []
+  },
+  {
+    "database": "regulation-monitor.db",
+    "tables": 4,
+    "changed_tables": [],
+    "new_tables": []
+  },
+  {
+    "database": "seomu.db",
+    "tables": 5,
+    "changed_tables": [],
+    "new_tables": []
+  },
+  {
+    "database": "travel.db",
+    "tables": 21,
+    "changed_tables": [],
+    "new_tables": []
+  }
+]

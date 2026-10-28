@@ -1,0 +1,1297 @@
+{
+  "passed": true,
+  "checked_at": "2026-10-28T08:11:47.834687+00:00",
+  "version": "v81",
+  "checks": {
+    "private_offline": true,
+    "registered_sources": 123,
+    "folder_and_file": true,
+    "draft_edit_saved": true,
+    "original_files_unchanged": true,
+    "reopen_preserved": true
+  },
+  "project_id": "0308e5b2738a4fb8990f41c5fe32982b",
+  "answers": [
+    {
+      "question": "미회신 부서는 어디인가요?",
+      "answer": {
+        "id": "60688c4da9a742c6b88e50d018e9d8ea",
+        "project_id": "0308e5b2738a4fb8990f41c5fe32982b",
+        "role": "assistant",
+        "content": "프로젝트 원문에서 확인한 내용\n\n\n\n[1] 회신 현황.txt · 3행\n미회신 부서: 회계과",
+        "status": "completed",
+        "created_at": "2026-10-28T08:11:45.438719+00:00",
+        "question": "미회신 부서는 어디인가요?",
+        "user_id": "b32028fbbd0c493aac3b81384c966403",
+        "file_ids": [],
+        "draft": false,
+        "evidence": [
+          {
+            "ref": 1,
+            "file_id": "f5207cd003cf506ab624103296bf4c26",
+            "name": "회신 현황.txt",
+            "unit": 3,
+            "loc": "3행",
+            "text": "미회신 부서: 회계과",
+            "sha256": "a574450721a10e3017086bd1a5279345cce620076322e45e2ddf8118ab42097e",
+            "stale": false
+          }
+        ],
+        "coverage": {
+          "total": 3,
+          "ready": 3,
+          "partial": 0,
+          "unread": 0
+        },
+        "mode": "offline",
+        "model": null,
+        "model_metadata": {},
+        "notice": "AI 없이 프로젝트 원문을 찾아 구성했습니다. 이번 답변은 검색된 1개 파일의 발췌이며, 읽은 모든 파일을 인용한 결과는 아닙니다. 필요하면 자료를 선택해 나눠 질문하세요.",
+        "finished_at": "2026-10-28T08:11:45.600612+00:00"
+      }
+    },
+    {
+      "question": "핵심 내용을 요약해줘",
+      "answer": {
+        "id": "c2acc923dac2464eb8c824c43f7c3ef8",
+        "project_id": "0308e5b2738a4fb8990f41c5fe32982b",
+        "role": "assistant",
+        "content": "핵심 요약 · 원문 발췌\n교육·업무\n- 교육명: 공공 AI 실무교육 [1]\n일정·마감·장소\n- 회신 마감: 2026-11-06 [4]\n- 교육 일정: 2026-11-13 [7]\n대상·진행 상황\n- 총무과: 참석 희망자 2명 회신 완료 [3]\n- 대상 부서: 총무과, 회계과 [9]\n- 미회신 부서: 회계과 [10]\n다음 할 일\n- 다음 할 일: 회계과 회신 여부를 확인하고 중복 신청을 점검합니다. [6]\n- 희망자 명단을 취합하고 담당자가 최종 확인합니다. [11]",
+        "status": "completed",
+        "created_at": "2026-10-28T08:11:45.727056+00:00",
+        "question": "핵심 내용을 요약해줘",
+        "user_id": "e43d351427f94aea92216f000c0ff784",
+        "file_ids": [],
+        "draft": false,
+        "evidence": [
+          {
+            "file_id": "663deb700410531d8979da7927f2a9a2",
+            "unit": 2,
+            "loc": "2행",
+            "text": "교육명: 공공 AI 실무교육",
+            "name": "교육 안내.txt",
+            "sha256": "15bf172bffd4910525b250a1a24de30a98b64c0d9d2f93d51c0c948efc8e086a",
+            "stale": false,
+            "ref": 1
+          },
+          {
+            "file_id": "9cb655409e4251a0bb6cd833407a2164",
+            "unit": 1,
+            "loc": "1행",
+            "text": "합성 업무 메모 · 법령 또는 기관 지침이 아닙니다.",
+            "name": "취합 확인사항.md",
+            "sha256": "58dfae8bb3db3e7b2c1bceb1022da658e80eb7b8bab0b31590e2976c335a648c",
+            "stale": false,
+            "ref": 2
+          },
+          {
+            "file_id": "f5207cd003cf506ab624103296bf4c26",
+            "unit": 2,
+            "loc": "2행",
+            "text": "총무과: 참석 희망자 2명 회신 완료",
+            "name": "회신 현황.txt",
+            "sha256": "a574450721a10e3017086bd1a5279345cce620076322e45e2ddf8118ab42097e",
+            "stale": false,
+            "ref": 3
+          },
+          {
+            "file_id": "663deb700410531d8979da7927f2a9a2",
+            "unit": 4,
+            "loc": "4행",
+            "text": "회신 마감: 2026-11-06",
+            "name": "교육 안내.txt",
+            "sha256": "15bf172bffd4910525b250a1a24de30a98b64c0d9d2f93d51c0c948efc8e086a",
+            "stale": false,
+            "ref": 4
+          },
+          {
+            "file_id": "9cb655409e4251a0bb6cd833407a2164",
+            "unit": 2,
+            "loc": "2행",
+            "text": "회신 누락과 중복 신청을 확인합니다.",
+            "name": "취합 확인사항.md",
+            "sha256": "58dfae8bb3db3e7b2c1bceb1022da658e80eb7b8bab0b31590e2976c335a648c",
+            "stale": false,
+            "ref": 5
+          },
+          {
+            "file_id": "f5207cd003cf506ab624103296bf4c26",
+            "unit": 4,
+            "loc": "4행",
+            "text": "다음 할 일: 회계과 회신 여부를 확인하고 중복 신청을 점검합니다.",
+            "name": "회신 현황.txt",
+            "sha256": "a574450721a10e3017086bd1a5279345cce620076322e45e2ddf8118ab42097e",
+            "stale": false,
+            "ref": 6
+          },
+          {
+            "file_id": "663deb700410531d8979da7927f2a9a2",
+            "unit": 3,
+            "loc": "3행",
+            "text": "교육 일정: 2026-11-13",
+            "name": "교육 안내.txt",
+            "sha256": "15bf172bffd4910525b250a1a24de30a98b64c0d9d2f93d51c0c948efc8e086a",
+            "stale": false,
+            "ref": 7
+          },
+          {
+            "file_id": "f5207cd003cf506ab624103296bf4c26",
+            "unit": 1,
+            "loc": "1행",
+            "text": "합성 시연자료",
+            "name": "회신 현황.txt",
+            "sha256": "a574450721a10e3017086bd1a5279345cce620076322e45e2ddf8118ab42097e",
+            "stale": false,
+            "ref": 8
+          },
+          {
+            "file_id": "663deb700410531d8979da7927f2a9a2",
+            "unit": 5,
+            "loc": "5행",
+            "text": "대상 부서: 총무과, 회계과",
+            "name": "교육 안내.txt",
+            "sha256": "15bf172bffd4910525b250a1a24de30a98b64c0d9d2f93d51c0c948efc8e086a",
+            "stale": false,
+            "ref": 9
+          },
+          {
+            "file_id": "f5207cd003cf506ab624103296bf4c26",
+            "unit": 3,
+            "loc": "3행",
+            "text": "미회신 부서: 회계과",
+            "name": "회신 현황.txt",
+            "sha256": "a574450721a10e3017086bd1a5279345cce620076322e45e2ddf8118ab42097e",
+            "stale": false,
+            "ref": 10
+          },
+          {
+            "file_id": "663deb700410531d8979da7927f2a9a2",
+            "unit": 6,
+            "loc": "6행",
+            "text": "희망자 명단을 취합하고 담당자가 최종 확인합니다.",
+            "name": "교육 안내.txt",
+            "sha256": "15bf172bffd4910525b250a1a24de30a98b64c0d9d2f93d51c0c948efc8e086a",
+            "stale": false,
+            "ref": 11
+          },
+          {
+            "file_id": "663deb700410531d8979da7927f2a9a2",
+            "unit": 1,
+            "loc": "1행",
+            "text": "합성 시연자료 · 실제 업무자료가 아닙니다.",
+            "name": "교육 안내.txt",
+            "sha256": "15bf172bffd4910525b250a1a24de30a98b64c0d9d2f93d51c0c948efc8e086a",
+            "stale": false,
+            "ref": 12
+          }
+        ],
+        "coverage": {
+          "total": 3,
+          "ready": 3,
+          "partial": 0,
+          "unread": 0
+        },
+        "mode": "offline",
+        "model": null,
+        "model_metadata": {},
+        "notice": "AI 없이 프로젝트 원문을 찾아 구성했습니다. 원문 발췌를 항목별로 정리한 결과이며 모든 문장·항목을 담은 것은 아닙니다.",
+        "finished_at": "2026-10-28T08:11:45.884619+00:00"
+      }
+    },
+    {
+      "question": "일정과 할 일을 알려줘",
+      "answer": {
+        "id": "0ec18b70a91c488e9e8c3eff0af0326b",
+        "project_id": "0308e5b2738a4fb8990f41c5fe32982b",
+        "role": "assistant",
+        "content": "일정과 할 일 · 원문 발췌\n날짜나 완료 여부를 추정하지 않았습니다.\n일정·기한\n- 회신 마감: 2026-11-06 [1]\n- 교육 일정: 2026-11-13 [3]\n할 일\n- 다음 할 일: 회계과 회신 여부를 확인하고 중복 신청을 점검합니다. [2]\n- 희망자 명단을 취합하고 담당자가 최종 확인합니다. [4]",
+        "status": "completed",
+        "created_at": "2026-10-28T08:11:46.080568+00:00",
+        "question": "일정과 할 일을 알려줘",
+        "user_id": "2375f89652854c2c83b9cad9f156cfeb",
+        "file_ids": [],
+        "draft": false,
+        "evidence": [
+          {
+            "file_id": "663deb700410531d8979da7927f2a9a2",
+            "unit": 4,
+            "loc": "4행",
+            "text": "회신 마감: 2026-11-06",
+            "name": "교육 안내.txt",
+            "sha256": "15bf172bffd4910525b250a1a24de30a98b64c0d9d2f93d51c0c948efc8e086a",
+            "stale": false,
+            "ref": 1
+          },
+          {
+            "file_id": "f5207cd003cf506ab624103296bf4c26",
+            "unit": 4,
+            "loc": "4행",
+            "text": "다음 할 일: 회계과 회신 여부를 확인하고 중복 신청을 점검합니다.",
+            "name": "회신 현황.txt",
+            "sha256": "a574450721a10e3017086bd1a5279345cce620076322e45e2ddf8118ab42097e",
+            "stale": false,
+            "ref": 2
+          },
+          {
+            "file_id": "663deb700410531d8979da7927f2a9a2",
+            "unit": 3,
+            "loc": "3행",
+            "text": "교육 일정: 2026-11-13",
+            "name": "교육 안내.txt",
+            "sha256": "15bf172bffd4910525b250a1a24de30a98b64c0d9d2f93d51c0c948efc8e086a",
+            "stale": false,
+            "ref": 3
+          },
+          {
+            "file_id": "663deb700410531d8979da7927f2a9a2",
+            "unit": 6,
+            "loc": "6행",
+            "text": "희망자 명단을 취합하고 담당자가 최종 확인합니다.",
+            "name": "교육 안내.txt",
+            "sha256": "15bf172bffd4910525b250a1a24de30a98b64c0d9d2f93d51c0c948efc8e086a",
+            "stale": false,
+            "ref": 4
+          }
+        ],
+        "coverage": {
+          "total": 3,
+          "ready": 3,
+          "partial": 0,
+          "unread": 0
+        },
+        "mode": "offline",
+        "model": null,
+        "model_metadata": {},
+        "notice": "AI 없이 프로젝트 원문을 찾아 구성했습니다. 원문 발췌를 항목별로 정리한 결과이며 모든 문장·항목을 담은 것은 아닙니다. 이번 답변은 검색된 2개 파일의 발췌이며, 읽은 모든 파일을 인용한 결과는 아닙니다. 필요하면 자료를 선택해 나눠 질문하세요.",
+        "finished_at": "2026-10-28T08:11:46.151463+00:00"
+      }
+    },
+    {
+      "question": "자료를 비교해줘",
+      "answer": {
+        "id": "df684fadd2354fed88907baaf9000e15",
+        "project_id": "0308e5b2738a4fb8990f41c5fe32982b",
+        "role": "assistant",
+        "content": "자료 비교 · 원문에 적힌 값 기준\n차이는 문서별 값의 차이입니다. 어느 문서를 적용할지는 담당자가 확인하세요.\n교육·업무명 · 확인 필요\n- 교육 안내.txt: 교육명: 공공 AI 실무교육 [1]\n- 취합 확인사항.md: 이번 발췌에서 확인되지 않음 [2] [5]\n- 회신 현황.txt: 이번 발췌에서 확인되지 않음 [3] [6] [8] [10]\n마감·기한 · 확인 필요\n- 교육 안내.txt: 회신 마감: 2026-11-06 [4]\n- 취합 확인사항.md: 이번 발췌에서 확인되지 않음 [2] [5]\n- 회신 현황.txt: 이번 발췌에서 확인되지 않음 [3] [6] [8] [10]\n일정 · 확인 필요\n- 교육 안내.txt: 교육 일정: 2026-11-13 [7]\n- 취합 확인사항.md: 이번 발췌에서 확인되지 않음 [2] [5]\n- 회신 현황.txt: 이번 발췌에서 확인되지 않음 [3] [6] [8] [10]\n대상 · 확인 필요\n- 교육 안내.txt: 대상 부서: 총무과, 회계과 [9]\n- 취합 확인사항.md: 이번 발췌에서 확인되지 않음 [2] [5]\n- 회신 현황.txt: 이번 발췌에서 확인되지 않음 [3] [6] [8] [10]\n진행 상황 · 확인 필요\n- 교육 안내.txt: 이번 발췌에서 확인되지 않음 [1] [4] [7] [9] [11] [12]\n- 취합 확인사항.md: 이번 발췌에서 확인되지 않음 [2] [5]\n- 회신 현황.txt: 미회신 부서: 회계과 [10]\n- 회신 현황.txt: 총무과: 참석 희망자 2명 회신 완료 [3]\n다음 할 일 · 확인 필요\n- 교육 안내.txt: 희망자 명단을 취합하고 담당자가 최종 확인합니다. [11]\n- 취합 확인사항.md: 이번 발췌에서 확인되지 않음 [2] [5]\n- 회신 현황.txt: 다음 할 일: 회계과 회신 여부를 확인하고 중복 신청을 점검합니다. [6]\n원문 발췌 · 차이\n- 교육 안내.txt: 합성 시연자료 · 실제 업무자료가 아닙니다. [12]\n- 취합 확인사항.md: 합성 업무 메모 · 법령 또는 기관 지침이 아닙니다. [2]\n- 취합 확인사항.md: 회신 누락과 중복 신청을 확인합니다. [5]\n- 회신 현황.txt: 합성 시연자료 [8]",
+        "status": "completed",
+        "created_at": "2026-10-28T08:11:46.392150+00:00",
+        "question": "자료를 비교해줘",
+        "user_id": "a342adce4fff4d9b8258e92c1e924cde",
+        "file_ids": [],
+        "draft": false,
+        "evidence": [
+          {
+            "file_id": "663deb700410531d8979da7927f2a9a2",
+            "unit": 2,
+            "loc": "2행",
+            "text": "교육명: 공공 AI 실무교육",
+            "name": "교육 안내.txt",
+            "sha256": "15bf172bffd4910525b250a1a24de30a98b64c0d9d2f93d51c0c948efc8e086a",
+            "stale": false,
+            "ref": 1
+          },
+          {
+            "file_id": "9cb655409e4251a0bb6cd833407a2164",
+            "unit": 1,
+            "loc": "1행",
+            "text": "합성 업무 메모 · 법령 또는 기관 지침이 아닙니다.",
+            "name": "취합 확인사항.md",
+            "sha256": "58dfae8bb3db3e7b2c1bceb1022da658e80eb7b8bab0b31590e2976c335a648c",
+            "stale": false,
+            "ref": 2
+          },
+          {
+            "file_id": "f5207cd003cf506ab624103296bf4c26",
+            "unit": 2,
+            "loc": "2행",
+            "text": "총무과: 참석 희망자 2명 회신 완료",
+            "name": "회신 현황.txt",
+            "sha256": "a574450721a10e3017086bd1a5279345cce620076322e45e2ddf8118ab42097e",
+            "stale": false,
+            "ref": 3
+          },
+          {
+            "file_id": "663deb700410531d8979da7927f2a9a2",
+            "unit": 4,
+            "loc": "4행",
+            "text": "회신 마감: 2026-11-06",
+            "name": "교육 안내.txt",
+            "sha256": "15bf172bffd4910525b250a1a24de30a98b64c0d9d2f93d51c0c948efc8e086a",
+            "stale": false,
+            "ref": 4
+          },
+          {
+            "file_id": "9cb655409e4251a0bb6cd833407a2164",
+            "unit": 2,
+            "loc": "2행",
+            "text": "회신 누락과 중복 신청을 확인합니다.",
+            "name": "취합 확인사항.md",
+            "sha256": "58dfae8bb3db3e7b2c1bceb1022da658e80eb7b8bab0b31590e2976c335a648c",
+            "stale": false,
+            "ref": 5
+          },
+          {
+            "file_id": "f5207cd003cf506ab624103296bf4c26",
+            "unit": 4,
+            "loc": "4행",
+            "text": "다음 할 일: 회계과 회신 여부를 확인하고 중복 신청을 점검합니다.",
+            "name": "회신 현황.txt",
+            "sha256": "a574450721a10e3017086bd1a5279345cce620076322e45e2ddf8118ab42097e",
+            "stale": false,
+            "ref": 6
+          },
+          {
+            "file_id": "663deb700410531d8979da7927f2a9a2",
+            "unit": 3,
+            "loc": "3행",
+            "text": "교육 일정: 2026-11-13",
+            "name": "교육 안내.txt",
+            "sha256": "15bf172bffd4910525b250a1a24de30a98b64c0d9d2f93d51c0c948efc8e086a",
+            "stale": false,
+            "ref": 7
+          },
+          {
+            "file_id": "f5207cd003cf506ab624103296bf4c26",
+            "unit": 1,
+            "loc": "1행",
+            "text": "합성 시연자료",
+            "name": "회신 현황.txt",
+            "sha256": "a574450721a10e3017086bd1a5279345cce620076322e45e2ddf8118ab42097e",
+            "stale": false,
+            "ref": 8
+          },
+          {
+            "file_id": "663deb700410531d8979da7927f2a9a2",
+            "unit": 5,
+            "loc": "5행",
+            "text": "대상 부서: 총무과, 회계과",
+            "name": "교육 안내.txt",
+            "sha256": "15bf172bffd4910525b250a1a24de30a98b64c0d9d2f93d51c0c948efc8e086a",
+            "stale": false,
+            "ref": 9
+          },
+          {
+            "file_id": "f5207cd003cf506ab624103296bf4c26",
+            "unit": 3,
+            "loc": "3행",
+            "text": "미회신 부서: 회계과",
+            "name": "회신 현황.txt",
+            "sha256": "a574450721a10e3017086bd1a5279345cce620076322e45e2ddf8118ab42097e",
+            "stale": false,
+            "ref": 10
+          },
+          {
+            "file_id": "663deb700410531d8979da7927f2a9a2",
+            "unit": 6,
+            "loc": "6행",
+            "text": "희망자 명단을 취합하고 담당자가 최종 확인합니다.",
+            "name": "교육 안내.txt",
+            "sha256": "15bf172bffd4910525b250a1a24de30a98b64c0d9d2f93d51c0c948efc8e086a",
+            "stale": false,
+            "ref": 11
+          },
+          {
+            "file_id": "663deb700410531d8979da7927f2a9a2",
+            "unit": 1,
+            "loc": "1행",
+            "text": "합성 시연자료 · 실제 업무자료가 아닙니다.",
+            "name": "교육 안내.txt",
+            "sha256": "15bf172bffd4910525b250a1a24de30a98b64c0d9d2f93d51c0c948efc8e086a",
+            "stale": false,
+            "ref": 12
+          }
+        ],
+        "coverage": {
+          "total": 3,
+          "ready": 3,
+          "partial": 0,
+          "unread": 0
+        },
+        "mode": "offline",
+        "model": null,
+        "model_metadata": {},
+        "notice": "AI 없이 프로젝트 원문을 찾아 구성했습니다. 원문 발췌를 항목별로 정리한 결과이며 모든 문장·항목을 담은 것은 아닙니다.",
+        "finished_at": "2026-10-28T08:11:46.421044+00:00"
+      }
+    },
+    {
+      "question": "보고서 초안을 작성해줘",
+      "answer": {
+        "id": "5c11cf1cd04b4a0c94c2089ed4aaab3d",
+        "project_id": "0308e5b2738a4fb8990f41c5fe32982b",
+        "role": "assistant",
+        "content": "[합성 검증] v80 교육 노트 · 보고서 초안\n원문 발췌형 초안 · 담당자 검토 전\n1. 업무 개요\n- 교육명: 공공 AI 실무교육 [1]\n- 회신 마감: 2026-11-06 [4]\n- 교육 일정: 2026-11-13 [7]\n- 대상 부서: 총무과, 회계과 [9]\n2. 확인된 진행 상황\n- 총무과: 참석 희망자 2명 회신 완료 [3]\n- 미회신 부서: 회계과 [10]\n3. 다음 조치\n- 다음 할 일: 회계과 회신 여부를 확인하고 중복 신청을 점검합니다. [6]\n- 희망자 명단을 취합하고 담당자가 최종 확인합니다. [11]\n4. 담당자 확인사항\n목적: [작성 필요]\n최종 적용 일정·문서: [작성 필요]\n내부 승인·실제 발송 여부: [작성 필요]",
+        "status": "completed",
+        "created_at": "2026-10-28T08:11:46.758403+00:00",
+        "question": "보고서 초안을 작성해줘",
+        "user_id": "80d0e8ac656e4cb79a1bf33505faefc4",
+        "file_ids": [],
+        "draft": true,
+        "evidence": [
+          {
+            "file_id": "663deb700410531d8979da7927f2a9a2",
+            "unit": 2,
+            "loc": "2행",
+            "text": "교육명: 공공 AI 실무교육",
+            "name": "교육 안내.txt",
+            "sha256": "15bf172bffd4910525b250a1a24de30a98b64c0d9d2f93d51c0c948efc8e086a",
+            "stale": false,
+            "ref": 1
+          },
+          {
+            "file_id": "9cb655409e4251a0bb6cd833407a2164",
+            "unit": 1,
+            "loc": "1행",
+            "text": "합성 업무 메모 · 법령 또는 기관 지침이 아닙니다.",
+            "name": "취합 확인사항.md",
+            "sha256": "58dfae8bb3db3e7b2c1bceb1022da658e80eb7b8bab0b31590e2976c335a648c",
+            "stale": false,
+            "ref": 2
+          },
+          {
+            "file_id": "f5207cd003cf506ab624103296bf4c26",
+            "unit": 2,
+            "loc": "2행",
+            "text": "총무과: 참석 희망자 2명 회신 완료",
+            "name": "회신 현황.txt",
+            "sha256": "a574450721a10e3017086bd1a5279345cce620076322e45e2ddf8118ab42097e",
+            "stale": false,
+            "ref": 3
+          },
+          {
+            "file_id": "663deb700410531d8979da7927f2a9a2",
+            "unit": 4,
+            "loc": "4행",
+            "text": "회신 마감: 2026-11-06",
+            "name": "교육 안내.txt",
+            "sha256": "15bf172bffd4910525b250a1a24de30a98b64c0d9d2f93d51c0c948efc8e086a",
+            "stale": false,
+            "ref": 4
+          },
+          {
+            "file_id": "9cb655409e4251a0bb6cd833407a2164",
+            "unit": 2,
+            "loc": "2행",
+            "text": "회신 누락과 중복 신청을 확인합니다.",
+            "name": "취합 확인사항.md",
+            "sha256": "58dfae8bb3db3e7b2c1bceb1022da658e80eb7b8bab0b31590e2976c335a648c",
+            "stale": false,
+            "ref": 5
+          },
+          {
+            "file_id": "f5207cd003cf506ab624103296bf4c26",
+            "unit": 4,
+            "loc": "4행",
+            "text": "다음 할 일: 회계과 회신 여부를 확인하고 중복 신청을 점검합니다.",
+            "name": "회신 현황.txt",
+            "sha256": "a574450721a10e3017086bd1a5279345cce620076322e45e2ddf8118ab42097e",
+            "stale": false,
+            "ref": 6
+          },
+          {
+            "file_id": "663deb700410531d8979da7927f2a9a2",
+            "unit": 3,
+            "loc": "3행",
+            "text": "교육 일정: 2026-11-13",
+            "name": "교육 안내.txt",
+            "sha256": "15bf172bffd4910525b250a1a24de30a98b64c0d9d2f93d51c0c948efc8e086a",
+            "stale": false,
+            "ref": 7
+          },
+          {
+            "file_id": "f5207cd003cf506ab624103296bf4c26",
+            "unit": 1,
+            "loc": "1행",
+            "text": "합성 시연자료",
+            "name": "회신 현황.txt",
+            "sha256": "a574450721a10e3017086bd1a5279345cce620076322e45e2ddf8118ab42097e",
+            "stale": false,
+            "ref": 8
+          },
+          {
+            "file_id": "663deb700410531d8979da7927f2a9a2",
+            "unit": 5,
+            "loc": "5행",
+            "text": "대상 부서: 총무과, 회계과",
+            "name": "교육 안내.txt",
+            "sha256": "15bf172bffd4910525b250a1a24de30a98b64c0d9d2f93d51c0c948efc8e086a",
+            "stale": false,
+            "ref": 9
+          },
+          {
+            "file_id": "f5207cd003cf506ab624103296bf4c26",
+            "unit": 3,
+            "loc": "3행",
+            "text": "미회신 부서: 회계과",
+            "name": "회신 현황.txt",
+            "sha256": "a574450721a10e3017086bd1a5279345cce620076322e45e2ddf8118ab42097e",
+            "stale": false,
+            "ref": 10
+          },
+          {
+            "file_id": "663deb700410531d8979da7927f2a9a2",
+            "unit": 6,
+            "loc": "6행",
+            "text": "희망자 명단을 취합하고 담당자가 최종 확인합니다.",
+            "name": "교육 안내.txt",
+            "sha256": "15bf172bffd4910525b250a1a24de30a98b64c0d9d2f93d51c0c948efc8e086a",
+            "stale": false,
+            "ref": 11
+          },
+          {
+            "file_id": "663deb700410531d8979da7927f2a9a2",
+            "unit": 1,
+            "loc": "1행",
+            "text": "합성 시연자료 · 실제 업무자료가 아닙니다.",
+            "name": "교육 안내.txt",
+            "sha256": "15bf172bffd4910525b250a1a24de30a98b64c0d9d2f93d51c0c948efc8e086a",
+            "stale": false,
+            "ref": 12
+          }
+        ],
+        "coverage": {
+          "total": 3,
+          "ready": 3,
+          "partial": 0,
+          "unread": 0
+        },
+        "mode": "offline",
+        "model": null,
+        "model_metadata": {},
+        "notice": "AI 없이 프로젝트 원문을 찾아 구성했습니다. 원문 발췌를 항목별로 정리한 결과이며 모든 문장·항목을 담은 것은 아닙니다.",
+        "finished_at": "2026-10-28T08:11:46.959093+00:00"
+      }
+    },
+    {
+      "question": "항공권 취소 수수료는 얼마인가요?",
+      "answer": {
+        "id": "0c590dcfc4a9404897cb875b358ae3bf",
+        "project_id": "0308e5b2738a4fb8990f41c5fe32982b",
+        "role": "assistant",
+        "content": "프로젝트 자료에서 질문에 답할 직접 근거를 찾지 못했습니다. 관련 파일을 추가하거나 자료를 다시 읽은 뒤 질문해 주세요.",
+        "status": "completed",
+        "created_at": "2026-10-28T08:11:47.219172+00:00",
+        "question": "항공권 취소 수수료는 얼마인가요?",
+        "user_id": "b32009b84b224e5d8a47543959e86634",
+        "file_ids": [],
+        "draft": false,
+        "evidence": [],
+        "coverage": {
+          "total": 3,
+          "ready": 3,
+          "partial": 0,
+          "unread": 0
+        },
+        "mode": "offline",
+        "model": null,
+        "model_metadata": {},
+        "notice": "AI 없이 프로젝트 원문을 찾아 구성했습니다.",
+        "finished_at": "2026-10-28T08:11:47.511962+00:00"
+      }
+    }
+  ],
+  "snapshot": {
+    "id": "0308e5b2738a4fb8990f41c5fe32982b",
+    "name": "[합성 검증] v80 교육 노트",
+    "created_at": "2026-10-28T08:11:44.372502+00:00",
+    "updated_at": "2026-10-28T08:11:47.219172+00:00",
+    "library_ids": [],
+    "sources": [
+      {
+        "id": "2760830d5cdc4e49a651b15c5b7cb48d",
+        "project_id": "0308e5b2738a4fb8990f41c5fe32982b",
+        "kind": "folder",
+        "path": "C:\\AI작업\\프로그램 제작\\gongmudam\\.local-verification\\공무담_v81_새설치\\service\\sample_data\\notebook-v80\\교육 자료",
+        "label": "교육 자료",
+        "status": "ready",
+        "detail": "읽기 완료 · 파일별 읽기 범위를 확인하세요.",
+        "created_at": "2026-10-28T08:11:44.382373+00:00"
+      },
+      {
+        "id": "867b366448d84ebdaa49e7f2be88352e",
+        "project_id": "0308e5b2738a4fb8990f41c5fe32982b",
+        "kind": "file",
+        "path": "C:\\AI작업\\프로그램 제작\\gongmudam\\.local-verification\\공무담_v81_새설치\\service\\sample_data\\notebook-v80\\취합 확인사항.md",
+        "label": "취합 확인사항.md",
+        "status": "ready",
+        "detail": "읽기 완료 · 파일별 읽기 범위를 확인하세요.",
+        "created_at": "2026-10-28T08:11:44.391923+00:00"
+      }
+    ],
+    "files": [
+      {
+        "id": "663deb700410531d8979da7927f2a9a2",
+        "project_id": "0308e5b2738a4fb8990f41c5fe32982b",
+        "source_id": "2760830d5cdc4e49a651b15c5b7cb48d",
+        "name": "교육 안내.txt",
+        "size": 258,
+        "mtime_ns": 1793174971089892500,
+        "sha256": "15bf172bffd4910525b250a1a24de30a98b64c0d9d2f93d51c0c948efc8e086a",
+        "status": "ready",
+        "detail": "본문 추출 완료",
+        "unit_count": 6,
+        "stale": false
+      },
+      {
+        "id": "f5207cd003cf506ab624103296bf4c26",
+        "project_id": "0308e5b2738a4fb8990f41c5fe32982b",
+        "source_id": "2760830d5cdc4e49a651b15c5b7cb48d",
+        "name": "회신 현황.txt",
+        "size": 189,
+        "mtime_ns": 1793174971091893100,
+        "sha256": "a574450721a10e3017086bd1a5279345cce620076322e45e2ddf8118ab42097e",
+        "status": "ready",
+        "detail": "본문 추출 완료",
+        "unit_count": 4,
+        "stale": false
+      },
+      {
+        "id": "9cb655409e4251a0bb6cd833407a2164",
+        "project_id": "0308e5b2738a4fb8990f41c5fe32982b",
+        "source_id": "867b366448d84ebdaa49e7f2be88352e",
+        "name": "취합 확인사항.md",
+        "size": 248,
+        "mtime_ns": 1793174971093895100,
+        "sha256": "58dfae8bb3db3e7b2c1bceb1022da658e80eb7b8bab0b31590e2976c335a648c",
+        "status": "ready",
+        "detail": "본문 추출 완료",
+        "unit_count": 4,
+        "stale": false
+      }
+    ],
+    "messages": [
+      {
+        "id": "b32028fbbd0c493aac3b81384c966403",
+        "project_id": "0308e5b2738a4fb8990f41c5fe32982b",
+        "role": "user",
+        "content": "미회신 부서는 어디인가요?",
+        "status": "completed",
+        "created_at": "2026-10-28T08:11:45.438719+00:00"
+      },
+      {
+        "id": "60688c4da9a742c6b88e50d018e9d8ea",
+        "project_id": "0308e5b2738a4fb8990f41c5fe32982b",
+        "role": "assistant",
+        "content": "프로젝트 원문에서 확인한 내용\n\n\n\n[1] 회신 현황.txt · 3행\n미회신 부서: 회계과",
+        "status": "completed",
+        "created_at": "2026-10-28T08:11:45.438719+00:00",
+        "question": "미회신 부서는 어디인가요?",
+        "user_id": "b32028fbbd0c493aac3b81384c966403",
+        "file_ids": [],
+        "draft": false,
+        "evidence": [
+          {
+            "ref": 1,
+            "file_id": "f5207cd003cf506ab624103296bf4c26",
+            "name": "회신 현황.txt",
+            "unit": 3,
+            "loc": "3행",
+            "text": "미회신 부서: 회계과",
+            "sha256": "a574450721a10e3017086bd1a5279345cce620076322e45e2ddf8118ab42097e",
+            "stale": false
+          }
+        ],
+        "coverage": {
+          "total": 3,
+          "ready": 3,
+          "partial": 0,
+          "unread": 0
+        },
+        "mode": "offline",
+        "model": null,
+        "model_metadata": {},
+        "notice": "AI 없이 프로젝트 원문을 찾아 구성했습니다. 이번 답변은 검색된 1개 파일의 발췌이며, 읽은 모든 파일을 인용한 결과는 아닙니다. 필요하면 자료를 선택해 나눠 질문하세요.",
+        "finished_at": "2026-10-28T08:11:45.600612+00:00"
+      },
+      {
+        "id": "e43d351427f94aea92216f000c0ff784",
+        "project_id": "0308e5b2738a4fb8990f41c5fe32982b",
+        "role": "user",
+        "content": "핵심 내용을 요약해줘",
+        "status": "completed",
+        "created_at": "2026-10-28T08:11:45.727056+00:00"
+      },
+      {
+        "id": "c2acc923dac2464eb8c824c43f7c3ef8",
+        "project_id": "0308e5b2738a4fb8990f41c5fe32982b",
+        "role": "assistant",
+        "content": "핵심 요약 · 원문 발췌\n교육·업무\n- 교육명: 공공 AI 실무교육 [1]\n일정·마감·장소\n- 회신 마감: 2026-11-06 [4]\n- 교육 일정: 2026-11-13 [7]\n대상·진행 상황\n- 총무과: 참석 희망자 2명 회신 완료 [3]\n- 대상 부서: 총무과, 회계과 [9]\n- 미회신 부서: 회계과 [10]\n다음 할 일\n- 다음 할 일: 회계과 회신 여부를 확인하고 중복 신청을 점검합니다. [6]\n- 희망자 명단을 취합하고 담당자가 최종 확인합니다. [11]",
+        "status": "completed",
+        "created_at": "2026-10-28T08:11:45.727056+00:00",
+        "question": "핵심 내용을 요약해줘",
+        "user_id": "e43d351427f94aea92216f000c0ff784",
+        "file_ids": [],
+        "draft": false,
+        "evidence": [
+          {
+            "file_id": "663deb700410531d8979da7927f2a9a2",
+            "unit": 2,
+            "loc": "2행",
+            "text": "교육명: 공공 AI 실무교육",
+            "name": "교육 안내.txt",
+            "sha256": "15bf172bffd4910525b250a1a24de30a98b64c0d9d2f93d51c0c948efc8e086a",
+            "stale": false,
+            "ref": 1
+          },
+          {
+            "file_id": "9cb655409e4251a0bb6cd833407a2164",
+            "unit": 1,
+            "loc": "1행",
+            "text": "합성 업무 메모 · 법령 또는 기관 지침이 아닙니다.",
+            "name": "취합 확인사항.md",
+            "sha256": "58dfae8bb3db3e7b2c1bceb1022da658e80eb7b8bab0b31590e2976c335a648c",
+            "stale": false,
+            "ref": 2
+          },
+          {
+            "file_id": "f5207cd003cf506ab624103296bf4c26",
+            "unit": 2,
+            "loc": "2행",
+            "text": "총무과: 참석 희망자 2명 회신 완료",
+            "name": "회신 현황.txt",
+            "sha256": "a574450721a10e3017086bd1a5279345cce620076322e45e2ddf8118ab42097e",
+            "stale": false,
+            "ref": 3
+          },
+          {
+            "file_id": "663deb700410531d8979da7927f2a9a2",
+            "unit": 4,
+            "loc": "4행",
+            "text": "회신 마감: 2026-11-06",
+            "name": "교육 안내.txt",
+            "sha256": "15bf172bffd4910525b250a1a24de30a98b64c0d9d2f93d51c0c948efc8e086a",
+            "stale": false,
+            "ref": 4
+          },
+          {
+            "file_id": "9cb655409e4251a0bb6cd833407a2164",
+            "unit": 2,
+            "loc": "2행",
+            "text": "회신 누락과 중복 신청을 확인합니다.",
+            "name": "취합 확인사항.md",
+            "sha256": "58dfae8bb3db3e7b2c1bceb1022da658e80eb7b8bab0b31590e2976c335a648c",
+            "stale": false,
+            "ref": 5
+          },
+          {
+            "file_id": "f5207cd003cf506ab624103296bf4c26",
+            "unit": 4,
+            "loc": "4행",
+            "text": "다음 할 일: 회계과 회신 여부를 확인하고 중복 신청을 점검합니다.",
+            "name": "회신 현황.txt",
+            "sha256": "a574450721a10e3017086bd1a5279345cce620076322e45e2ddf8118ab42097e",
+            "stale": false,
+            "ref": 6
+          },
+          {
+            "file_id": "663deb700410531d8979da7927f2a9a2",
+            "unit": 3,
+            "loc": "3행",
+            "text": "교육 일정: 2026-11-13",
+            "name": "교육 안내.txt",
+            "sha256": "15bf172bffd4910525b250a1a24de30a98b64c0d9d2f93d51c0c948efc8e086a",
+            "stale": false,
+            "ref": 7
+          },
+          {
+            "file_id": "f5207cd003cf506ab624103296bf4c26",
+            "unit": 1,
+            "loc": "1행",
+            "text": "합성 시연자료",
+            "name": "회신 현황.txt",
+            "sha256": "a574450721a10e3017086bd1a5279345cce620076322e45e2ddf8118ab42097e",
+            "stale": false,
+            "ref": 8
+          },
+          {
+            "file_id": "663deb700410531d8979da7927f2a9a2",
+            "unit": 5,
+            "loc": "5행",
+            "text": "대상 부서: 총무과, 회계과",
+            "name": "교육 안내.txt",
+            "sha256": "15bf172bffd4910525b250a1a24de30a98b64c0d9d2f93d51c0c948efc8e086a",
+            "stale": false,
+            "ref": 9
+          },
+          {
+            "file_id": "f5207cd003cf506ab624103296bf4c26",
+            "unit": 3,
+            "loc": "3행",
+            "text": "미회신 부서: 회계과",
+            "name": "회신 현황.txt",
+            "sha256": "a574450721a10e3017086bd1a5279345cce620076322e45e2ddf8118ab42097e",
+            "stale": false,
+            "ref": 10
+          },
+          {
+            "file_id": "663deb700410531d8979da7927f2a9a2",
+            "unit": 6,
+            "loc": "6행",
+            "text": "희망자 명단을 취합하고 담당자가 최종 확인합니다.",
+            "name": "교육 안내.txt",
+            "sha256": "15bf172bffd4910525b250a1a24de30a98b64c0d9d2f93d51c0c948efc8e086a",
+            "stale": false,
+            "ref": 11
+          },
+          {
+            "file_id": "663deb700410531d8979da7927f2a9a2",
+            "unit": 1,
+            "loc": "1행",
+            "text": "합성 시연자료 · 실제 업무자료가 아닙니다.",
+            "name": "교육 안내.txt",
+            "sha256": "15bf172bffd4910525b250a1a24de30a98b64c0d9d2f93d51c0c948efc8e086a",
+            "stale": false,
+            "ref": 12
+          }
+        ],
+        "coverage": {
+          "total": 3,
+          "ready": 3,
+          "partial": 0,
+          "unread": 0
+        },
+        "mode": "offline",
+        "model": null,
+        "model_metadata": {},
+        "notice": "AI 없이 프로젝트 원문을 찾아 구성했습니다. 원문 발췌를 항목별로 정리한 결과이며 모든 문장·항목을 담은 것은 아닙니다.",
+        "finished_at": "2026-10-28T08:11:45.884619+00:00"
+      },
+      {
+        "id": "2375f89652854c2c83b9cad9f156cfeb",
+        "project_id": "0308e5b2738a4fb8990f41c5fe32982b",
+        "role": "user",
+        "content": "일정과 할 일을 알려줘",
+        "status": "completed",
+        "created_at": "2026-10-28T08:11:46.080568+00:00"
+      },
+      {
+        "id": "0ec18b70a91c488e9e8c3eff0af0326b",
+        "project_id": "0308e5b2738a4fb8990f41c5fe32982b",
+        "role": "assistant",
+        "content": "일정과 할 일 · 원문 발췌\n날짜나 완료 여부를 추정하지 않았습니다.\n일정·기한\n- 회신 마감: 2026-11-06 [1]\n- 교육 일정: 2026-11-13 [3]\n할 일\n- 다음 할 일: 회계과 회신 여부를 확인하고 중복 신청을 점검합니다. [2]\n- 희망자 명단을 취합하고 담당자가 최종 확인합니다. [4]",
+        "status": "completed",
+        "created_at": "2026-10-28T08:11:46.080568+00:00",
+        "question": "일정과 할 일을 알려줘",
+        "user_id": "2375f89652854c2c83b9cad9f156cfeb",
+        "file_ids": [],
+        "draft": false,
+        "evidence": [
+          {
+            "file_id": "663deb700410531d8979da7927f2a9a2",
+            "unit": 4,
+            "loc": "4행",
+            "text": "회신 마감: 2026-11-06",
+            "name": "교육 안내.txt",
+            "sha256": "15bf172bffd4910525b250a1a24de30a98b64c0d9d2f93d51c0c948efc8e086a",
+            "stale": false,
+            "ref": 1
+          },
+          {
+            "file_id": "f5207cd003cf506ab624103296bf4c26",
+            "unit": 4,
+            "loc": "4행",
+            "text": "다음 할 일: 회계과 회신 여부를 확인하고 중복 신청을 점검합니다.",
+            "name": "회신 현황.txt",
+            "sha256": "a574450721a10e3017086bd1a5279345cce620076322e45e2ddf8118ab42097e",
+            "stale": false,
+            "ref": 2
+          },
+          {
+            "file_id": "663deb700410531d8979da7927f2a9a2",
+            "unit": 3,
+            "loc": "3행",
+            "text": "교육 일정: 2026-11-13",
+            "name": "교육 안내.txt",
+            "sha256": "15bf172bffd4910525b250a1a24de30a98b64c0d9d2f93d51c0c948efc8e086a",
+            "stale": false,
+            "ref": 3
+          },
+          {
+            "file_id": "663deb700410531d8979da7927f2a9a2",
+            "unit": 6,
+            "loc": "6행",
+            "text": "희망자 명단을 취합하고 담당자가 최종 확인합니다.",
+            "name": "교육 안내.txt",
+            "sha256": "15bf172bffd4910525b250a1a24de30a98b64c0d9d2f93d51c0c948efc8e086a",
+            "stale": false,
+            "ref": 4
+          }
+        ],
+        "coverage": {
+          "total": 3,
+          "ready": 3,
+          "partial": 0,
+          "unread": 0
+        },
+        "mode": "offline",
+        "model": null,
+        "model_metadata": {},
+        "notice": "AI 없이 프로젝트 원문을 찾아 구성했습니다. 원문 발췌를 항목별로 정리한 결과이며 모든 문장·항목을 담은 것은 아닙니다. 이번 답변은 검색된 2개 파일의 발췌이며, 읽은 모든 파일을 인용한 결과는 아닙니다. 필요하면 자료를 선택해 나눠 질문하세요.",
+        "finished_at": "2026-10-28T08:11:46.151463+00:00"
+      },
+      {
+        "id": "a342adce4fff4d9b8258e92c1e924cde",
+        "project_id": "0308e5b2738a4fb8990f41c5fe32982b",
+        "role": "user",
+        "content": "자료를 비교해줘",
+        "status": "completed",
+        "created_at": "2026-10-28T08:11:46.392150+00:00"
+      },
+      {
+        "id": "df684fadd2354fed88907baaf9000e15",
+        "project_id": "0308e5b2738a4fb8990f41c5fe32982b",
+        "role": "assistant",
+        "content": "자료 비교 · 원문에 적힌 값 기준\n차이는 문서별 값의 차이입니다. 어느 문서를 적용할지는 담당자가 확인하세요.\n교육·업무명 · 확인 필요\n- 교육 안내.txt: 교육명: 공공 AI 실무교육 [1]\n- 취합 확인사항.md: 이번 발췌에서 확인되지 않음 [2] [5]\n- 회신 현황.txt: 이번 발췌에서 확인되지 않음 [3] [6] [8] [10]\n마감·기한 · 확인 필요\n- 교육 안내.txt: 회신 마감: 2026-11-06 [4]\n- 취합 확인사항.md: 이번 발췌에서 확인되지 않음 [2] [5]\n- 회신 현황.txt: 이번 발췌에서 확인되지 않음 [3] [6] [8] [10]\n일정 · 확인 필요\n- 교육 안내.txt: 교육 일정: 2026-11-13 [7]\n- 취합 확인사항.md: 이번 발췌에서 확인되지 않음 [2] [5]\n- 회신 현황.txt: 이번 발췌에서 확인되지 않음 [3] [6] [8] [10]\n대상 · 확인 필요\n- 교육 안내.txt: 대상 부서: 총무과, 회계과 [9]\n- 취합 확인사항.md: 이번 발췌에서 확인되지 않음 [2] [5]\n- 회신 현황.txt: 이번 발췌에서 확인되지 않음 [3] [6] [8] [10]\n진행 상황 · 확인 필요\n- 교육 안내.txt: 이번 발췌에서 확인되지 않음 [1] [4] [7] [9] [11] [12]\n- 취합 확인사항.md: 이번 발췌에서 확인되지 않음 [2] [5]\n- 회신 현황.txt: 미회신 부서: 회계과 [10]\n- 회신 현황.txt: 총무과: 참석 희망자 2명 회신 완료 [3]\n다음 할 일 · 확인 필요\n- 교육 안내.txt: 희망자 명단을 취합하고 담당자가 최종 확인합니다. [11]\n- 취합 확인사항.md: 이번 발췌에서 확인되지 않음 [2] [5]\n- 회신 현황.txt: 다음 할 일: 회계과 회신 여부를 확인하고 중복 신청을 점검합니다. [6]\n원문 발췌 · 차이\n- 교육 안내.txt: 합성 시연자료 · 실제 업무자료가 아닙니다. [12]\n- 취합 확인사항.md: 합성 업무 메모 · 법령 또는 기관 지침이 아닙니다. [2]\n- 취합 확인사항.md: 회신 누락과 중복 신청을 확인합니다. [5]\n- 회신 현황.txt: 합성 시연자료 [8]",
+        "status": "completed",
+        "created_at": "2026-10-28T08:11:46.392150+00:00",
+        "question": "자료를 비교해줘",
+        "user_id": "a342adce4fff4d9b8258e92c1e924cde",
+        "file_ids": [],
+        "draft": false,
+        "evidence": [
+          {
+            "file_id": "663deb700410531d8979da7927f2a9a2",
+            "unit": 2,
+            "loc": "2행",
+            "text": "교육명: 공공 AI 실무교육",
+            "name": "교육 안내.txt",
+            "sha256": "15bf172bffd4910525b250a1a24de30a98b64c0d9d2f93d51c0c948efc8e086a",
+            "stale": false,
+            "ref": 1
+          },
+          {
+            "file_id": "9cb655409e4251a0bb6cd833407a2164",
+            "unit": 1,
+            "loc": "1행",
+            "text": "합성 업무 메모 · 법령 또는 기관 지침이 아닙니다.",
+            "name": "취합 확인사항.md",
+            "sha256": "58dfae8bb3db3e7b2c1bceb1022da658e80eb7b8bab0b31590e2976c335a648c",
+            "stale": false,
+            "ref": 2
+          },
+          {
+            "file_id": "f5207cd003cf506ab624103296bf4c26",
+            "unit": 2,
+            "loc": "2행",
+            "text": "총무과: 참석 희망자 2명 회신 완료",
+            "name": "회신 현황.txt",
+            "sha256": "a574450721a10e3017086bd1a5279345cce620076322e45e2ddf8118ab42097e",
+            "stale": false,
+            "ref": 3
+          },
+          {
+            "file_id": "663deb700410531d8979da7927f2a9a2",
+            "unit": 4,
+            "loc": "4행",
+            "text": "회신 마감: 2026-11-06",
+            "name": "교육 안내.txt",
+            "sha256": "15bf172bffd4910525b250a1a24de30a98b64c0d9d2f93d51c0c948efc8e086a",
+            "stale": false,
+            "ref": 4
+          },
+          {
+            "file_id": "9cb655409e4251a0bb6cd833407a2164",
+            "unit": 2,
+            "loc": "2행",
+            "text": "회신 누락과 중복 신청을 확인합니다.",
+            "name": "취합 확인사항.md",
+            "sha256": "58dfae8bb3db3e7b2c1bceb1022da658e80eb7b8bab0b31590e2976c335a648c",
+            "stale": false,
+            "ref": 5
+          },
+          {
+            "file_id": "f5207cd003cf506ab624103296bf4c26",
+            "unit": 4,
+            "loc": "4행",
+            "text": "다음 할 일: 회계과 회신 여부를 확인하고 중복 신청을 점검합니다.",
+            "name": "회신 현황.txt",
+            "sha256": "a574450721a10e3017086bd1a5279345cce620076322e45e2ddf8118ab42097e",
+            "stale": false,
+            "ref": 6
+          },
+          {
+            "file_id": "663deb700410531d8979da7927f2a9a2",
+            "unit": 3,
+            "loc": "3행",
+            "text": "교육 일정: 2026-11-13",
+            "name": "교육 안내.txt",
+            "sha256": "15bf172bffd4910525b250a1a24de30a98b64c0d9d2f93d51c0c948efc8e086a",
+            "stale": false,
+            "ref": 7
+          },
+          {
+            "file_id": "f5207cd003cf506ab624103296bf4c26",
+            "unit": 1,
+            "loc": "1행",
+            "text": "합성 시연자료",
+            "name": "회신 현황.txt",
+            "sha256": "a574450721a10e3017086bd1a5279345cce620076322e45e2ddf8118ab42097e",
+            "stale": false,
+            "ref": 8
+          },
+          {
+            "file_id": "663deb700410531d8979da7927f2a9a2",
+            "unit": 5,
+            "loc": "5행",
+            "text": "대상 부서: 총무과, 회계과",
+            "name": "교육 안내.txt",
+            "sha256": "15bf172bffd4910525b250a1a24de30a98b64c0d9d2f93d51c0c948efc8e086a",
+            "stale": false,
+            "ref": 9
+          },
+          {
+            "file_id": "f5207cd003cf506ab624103296bf4c26",
+            "unit": 3,
+            "loc": "3행",
+            "text": "미회신 부서: 회계과",
+            "name": "회신 현황.txt",
+            "sha256": "a574450721a10e3017086bd1a5279345cce620076322e45e2ddf8118ab42097e",
+            "stale": false,
+            "ref": 10
+          },
+          {
+            "file_id": "663deb700410531d8979da7927f2a9a2",
+            "unit": 6,
+            "loc": "6행",
+            "text": "희망자 명단을 취합하고 담당자가 최종 확인합니다.",
+            "name": "교육 안내.txt",
+            "sha256": "15bf172bffd4910525b250a1a24de30a98b64c0d9d2f93d51c0c948efc8e086a",
+            "stale": false,
+            "ref": 11
+          },
+          {
+            "file_id": "663deb700410531d8979da7927f2a9a2",
+            "unit": 1,
+            "loc": "1행",
+            "text": "합성 시연자료 · 실제 업무자료가 아닙니다.",
+            "name": "교육 안내.txt",
+            "sha256": "15bf172bffd4910525b250a1a24de30a98b64c0d9d2f93d51c0c948efc8e086a",
+            "stale": false,
+            "ref": 12
+          }
+        ],
+        "coverage": {
+          "total": 3,
+          "ready": 3,
+          "partial": 0,
+          "unread": 0
+        },
+        "mode": "offline",
+        "model": null,
+        "model_metadata": {},
+        "notice": "AI 없이 프로젝트 원문을 찾아 구성했습니다. 원문 발췌를 항목별로 정리한 결과이며 모든 문장·항목을 담은 것은 아닙니다.",
+        "finished_at": "2026-10-28T08:11:46.421044+00:00"
+      },
+      {
+        "id": "80d0e8ac656e4cb79a1bf33505faefc4",
+        "project_id": "0308e5b2738a4fb8990f41c5fe32982b",
+        "role": "user",
+        "content": "보고서 초안을 작성해줘",
+        "status": "completed",
+        "created_at": "2026-10-28T08:11:46.758403+00:00"
+      },
+      {
+        "id": "5c11cf1cd04b4a0c94c2089ed4aaab3d",
+        "project_id": "0308e5b2738a4fb8990f41c5fe32982b",
+        "role": "assistant",
+        "content": "[합성 검증] v80 교육 노트 · 보고서 초안\n원문 발췌형 초안 · 담당자 검토 전\n1. 업무 개요\n- 교육명: 공공 AI 실무교육 [1]\n- 회신 마감: 2026-11-06 [4]\n- 교육 일정: 2026-11-13 [7]\n- 대상 부서: 총무과, 회계과 [9]\n2. 확인된 진행 상황\n- 총무과: 참석 희망자 2명 회신 완료 [3]\n- 미회신 부서: 회계과 [10]\n3. 다음 조치\n- 다음 할 일: 회계과 회신 여부를 확인하고 중복 신청을 점검합니다. [6]\n- 희망자 명단을 취합하고 담당자가 최종 확인합니다. [11]\n4. 담당자 확인사항\n목적: [작성 필요]\n최종 적용 일정·문서: [작성 필요]\n내부 승인·실제 발송 여부: [작성 필요]\n담당자 검토: 합성 예제 확인",
+        "status": "completed",
+        "created_at": "2026-10-28T08:11:46.758403+00:00",
+        "question": "보고서 초안을 작성해줘",
+        "user_id": "80d0e8ac656e4cb79a1bf33505faefc4",
+        "file_ids": [],
+        "draft": true,
+        "evidence": [
+          {
+            "file_id": "663deb700410531d8979da7927f2a9a2",
+            "unit": 2,
+            "loc": "2행",
+            "text": "교육명: 공공 AI 실무교육",
+            "name": "교육 안내.txt",
+            "sha256": "15bf172bffd4910525b250a1a24de30a98b64c0d9d2f93d51c0c948efc8e086a",
+            "stale": false,
+            "ref": 1
+          },
+          {
+            "file_id": "9cb655409e4251a0bb6cd833407a2164",
+            "unit": 1,
+            "loc": "1행",
+            "text": "합성 업무 메모 · 법령 또는 기관 지침이 아닙니다.",
+            "name": "취합 확인사항.md",
+            "sha256": "58dfae8bb3db3e7b2c1bceb1022da658e80eb7b8bab0b31590e2976c335a648c",
+            "stale": false,
+            "ref": 2
+          },
+          {
+            "file_id": "f5207cd003cf506ab624103296bf4c26",
+            "unit": 2,
+            "loc": "2행",
+            "text": "총무과: 참석 희망자 2명 회신 완료",
+            "name": "회신 현황.txt",
+            "sha256": "a574450721a10e3017086bd1a5279345cce620076322e45e2ddf8118ab42097e",
+            "stale": false,
+            "ref": 3
+          },
+          {
+            "file_id": "663deb700410531d8979da7927f2a9a2",
+            "unit": 4,
+            "loc": "4행",
+            "text": "회신 마감: 2026-11-06",
+            "name": "교육 안내.txt",
+            "sha256": "15bf172bffd4910525b250a1a24de30a98b64c0d9d2f93d51c0c948efc8e086a",
+            "stale": false,
+            "ref": 4
+          },
+          {
+            "file_id": "9cb655409e4251a0bb6cd833407a2164",
+            "unit": 2,
+            "loc": "2행",
+            "text": "회신 누락과 중복 신청을 확인합니다.",
+            "name": "취합 확인사항.md",
+            "sha256": "58dfae8bb3db3e7b2c1bceb1022da658e80eb7b8bab0b31590e2976c335a648c",
+            "stale": false,
+            "ref": 5
+          },
+          {
+            "file_id": "f5207cd003cf506ab624103296bf4c26",
+            "unit": 4,
+            "loc": "4행",
+            "text": "다음 할 일: 회계과 회신 여부를 확인하고 중복 신청을 점검합니다.",
+            "name": "회신 현황.txt",
+            "sha256": "a574450721a10e3017086bd1a5279345cce620076322e45e2ddf8118ab42097e",
+            "stale": false,
+            "ref": 6
+          },
+          {
+            "file_id": "663deb700410531d8979da7927f2a9a2",
+            "unit": 3,
+            "loc": "3행",
+            "text": "교육 일정: 2026-11-13",
+            "name": "교육 안내.txt",
+            "sha256": "15bf172bffd4910525b250a1a24de30a98b64c0d9d2f93d51c0c948efc8e086a",
+            "stale": false,
+            "ref": 7
+          },
+          {
+            "file_id": "f5207cd003cf506ab624103296bf4c26",
+            "unit": 1,
+            "loc": "1행",
+            "text": "합성 시연자료",
+            "name": "회신 현황.txt",
+            "sha256": "a574450721a10e3017086bd1a5279345cce620076322e45e2ddf8118ab42097e",
+            "stale": false,
+            "ref": 8
+          },
+          {
+            "file_id": "663deb700410531d8979da7927f2a9a2",
+            "unit": 5,
+            "loc": "5행",
+            "text": "대상 부서: 총무과, 회계과",
+            "name": "교육 안내.txt",
+            "sha256": "15bf172bffd4910525b250a1a24de30a98b64c0d9d2f93d51c0c948efc8e086a",
+            "stale": false,
+            "ref": 9
+          },
+          {
+            "file_id": "f5207cd003cf506ab624103296bf4c26",
+            "unit": 3,
+            "loc": "3행",
+            "text": "미회신 부서: 회계과",
+            "name": "회신 현황.txt",
+            "sha256": "a574450721a10e3017086bd1a5279345cce620076322e45e2ddf8118ab42097e",
+            "stale": false,
+            "ref": 10
+          },
+          {
+            "file_id": "663deb700410531d8979da7927f2a9a2",
+            "unit": 6,
+            "loc": "6행",
+            "text": "희망자 명단을 취합하고 담당자가 최종 확인합니다.",
+            "name": "교육 안내.txt",
+            "sha256": "15bf172bffd4910525b250a1a24de30a98b64c0d9d2f93d51c0c948efc8e086a",
+            "stale": false,
+            "ref": 11
+          },
+          {
+            "file_id": "663deb700410531d8979da7927f2a9a2",
+            "unit": 1,
+            "loc": "1행",
+            "text": "합성 시연자료 · 실제 업무자료가 아닙니다.",
+            "name": "교육 안내.txt",
+            "sha256": "15bf172bffd4910525b250a1a24de30a98b64c0d9d2f93d51c0c948efc8e086a",
+            "stale": false,
+            "ref": 12
+          }
+        ],
+        "coverage": {
+          "total": 3,
+          "ready": 3,
+          "partial": 0,
+          "unread": 0
+        },
+        "mode": "offline",
+        "model": null,
+        "model_metadata": {},
+        "notice": "AI 없이 프로젝트 원문을 찾아 구성했습니다. 원문 발췌를 항목별로 정리한 결과이며 모든 문장·항목을 담은 것은 아닙니다.",
+        "finished_at": "2026-10-28T08:11:46.959093+00:00",
+        "revisions": [
+          {
+            "content": "[합성 검증] v80 교육 노트 · 보고서 초안\n원문 발췌형 초안 · 담당자 검토 전\n1. 업무 개요\n- 교육명: 공공 AI 실무교육 [1]\n- 회신 마감: 2026-11-06 [4]\n- 교육 일정: 2026-11-13 [7]\n- 대상 부서: 총무과, 회계과 [9]\n2. 확인된 진행 상황\n- 총무과: 참석 희망자 2명 회신 완료 [3]\n- 미회신 부서: 회계과 [10]\n3. 다음 조치\n- 다음 할 일: 회계과 회신 여부를 확인하고 중복 신청을 점검합니다. [6]\n- 희망자 명단을 취합하고 담당자가 최종 확인합니다. [11]\n4. 담당자 확인사항\n목적: [작성 필요]\n최종 적용 일정·문서: [작성 필요]\n내부 승인·실제 발송 여부: [작성 필요]",
+            "at": "2026-10-28T08:11:47.158323+00:00"
+          }
+        ],
+        "edited_at": "2026-10-28T08:11:47.158323+00:00"
+      },
+      {
+        "id": "b32009b84b224e5d8a47543959e86634",
+        "project_id": "0308e5b2738a4fb8990f41c5fe32982b",
+        "role": "user",
+        "content": "항공권 취소 수수료는 얼마인가요?",
+        "status": "completed",
+        "created_at": "2026-10-28T08:11:47.219172+00:00"
+      },
+      {
+        "id": "0c590dcfc4a9404897cb875b358ae3bf",
+        "project_id": "0308e5b2738a4fb8990f41c5fe32982b",
+        "role": "assistant",
+        "content": "프로젝트 자료에서 질문에 답할 직접 근거를 찾지 못했습니다. 관련 파일을 추가하거나 자료를 다시 읽은 뒤 질문해 주세요.",
+        "status": "completed",
+        "created_at": "2026-10-28T08:11:47.219172+00:00",
+        "question": "항공권 취소 수수료는 얼마인가요?",
+        "user_id": "b32009b84b224e5d8a47543959e86634",
+        "file_ids": [],
+        "draft": false,
+        "evidence": [],
+        "coverage": {
+          "total": 3,
+          "ready": 3,
+          "partial": 0,
+          "unread": 0
+        },
+        "mode": "offline",
+        "model": null,
+        "model_metadata": {},
+        "notice": "AI 없이 프로젝트 원문을 찾아 구성했습니다.",
+        "finished_at": "2026-10-28T08:11:47.511962+00:00"
+      }
+    ],
+    "jobs": [
+      {
+        "id": "89427aa951fa463d8d3960ffc961025a",
+        "project_id": "0308e5b2738a4fb8990f41c5fe32982b",
+        "kind": "read",
+        "status": "completed",
+        "processed": 3,
+        "total": 3,
+        "current_file": "",
+        "error": "",
+        "warnings": [],
+        "created_at": "2026-10-28T08:11:44.383889+00:00",
+        "cancel_requested": false,
+        "started_at": "2026-10-28T08:11:44.608268+00:00",
+        "finished_at": "2026-10-28T08:11:45.312110+00:00"
+      }
+    ]
+  },
+  "scope": "Same PC, fresh extracted installation; synthetic data; no actual AI model calls"
+}

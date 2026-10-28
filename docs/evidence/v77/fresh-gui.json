@@ -1,0 +1,199 @@
+{
+  "passed": true,
+  "base": "http://127.0.0.1:8897",
+  "actual_model_calls": 0,
+  "final_document": {
+    "id": "84571f39db4e4820b822f5e054f2fdd3",
+    "revision": 9,
+    "enabled": false,
+    "active_version_id": "d8d4bf06cb0647d0baac32a60c004e9f",
+    "deleted_at": null,
+    "created_at": "2026-10-25T20:11:18.962423+00:00",
+    "updated_at": "2026-10-25T20:17:12.022290+00:00",
+    "title": "[합성 예제] 교육자료 제출 안내",
+    "kind": "기관 지침",
+    "institution": "합성 제출검증기관",
+    "keywords": [
+      "검증자료 제출"
+    ],
+    "effective_date": "2026-01-01",
+    "scope_notes": "실제 법령·지침이 아닌 제출 기능 검증용 합성 자료",
+    "source_id": "institution:84571f39db4e4820b822f5e054f2fdd3",
+    "deleted": false,
+    "active_version_number": 2,
+    "pending_count": 0,
+    "version_count": 2,
+    "versions": [
+      {
+        "id": "c5ad723299054305b93854e4686504e6",
+        "number": 1,
+        "created_at": "2026-10-25T20:11:18.963420+00:00",
+        "based_on": null,
+        "sha256": "c1b5011a7a878f1294debccbabc80f079f79fc2a2821515dcbda95684f3c21b3",
+        "origin": {
+          "filename": "제출기한_v1.txt",
+          "asset": "7d945fb128d250326a0fd559109e8f72291f8016a09d1c2841728d0bee9de72a.txt",
+          "sha256": "7d945fb128d250326a0fd559109e8f72291f8016a09d1c2841728d0bee9de72a",
+          "bytes": 174
+        },
+        "units": [
+          {
+            "loc": "1행",
+            "text": "제1조(제출기한)"
+          },
+          {
+            "loc": "2행",
+            "text": "검증자료 제출기한은 교육 시작 3일 전입니다."
+          },
+          {
+            "loc": "4행",
+            "text": "제2조(적용범위)"
+          },
+          {
+            "loc": "5행",
+            "text": "합성 제출검증기관 기능 확인용 모의 자료입니다."
+          }
+        ],
+        "title": "[합성 예제] 교육자료 제출 안내",
+        "institution": "합성 제출검증기관",
+        "kind": "기관 지침",
+        "keywords": [
+          "검증자료 제출"
+        ],
+        "text": "제1조(제출기한)\n검증자료 제출기한은 교육 시작 3일 전입니다.\n제2조(적용범위)\n합성 제출검증기관 기능 확인용 모의 자료입니다.",
+        "effective_date": "2026-01-01",
+        "scope_notes": "실제 법령·지침이 아닌 제출 기능 검증용 합성 자료",
+        "change_note": ""
+      },
+      {
+        "id": "d8d4bf06cb0647d0baac32a60c004e9f",
+        "number": 2,
+        "created_at": "2026-10-25T20:11:19.332437+00:00",
+        "based_on": null,
+        "sha256": "5c1f0b6b4f2c31d64f7086338ab74fa49629f2c5ad58fd9b7c5e82f8cf42656c",
+        "origin": {
+          "filename": "제출기한_v2.txt",
+          "asset": "196ea1a16b91b804e58bdc6787c882c825bac71bb7bcb30734c4bd1394c90325.txt",
+          "sha256": "196ea1a16b91b804e58bdc6787c882c825bac71bb7bcb30734c4bd1394c90325",
+          "bytes": 174
+        },
+        "units": [
+          {
+            "loc": "1행",
+            "text": "제1조(제출기한)"
+          },
+          {
+            "loc": "2행",
+            "text": "검증자료 제출기한은 교육 시작 5일 전입니다."
+          },
+          {
+            "loc": "4행",
+            "text": "제2조(적용범위)"
+          },
+          {
+            "loc": "5행",
+            "text": "합성 제출검증기관 기능 확인용 모의 자료입니다."
+          }
+        ],
+        "title": "[합성 예제] 교육자료 제출 안내",
+        "institution": "합성 제출검증기관",
+        "kind": "기관 지침",
+        "keywords": [
+          "검증자료 제출"
+        ],
+        "text": "제1조(제출기한)\n검증자료 제출기한은 교육 시작 5일 전입니다.\n제2조(적용범위)\n합성 제출검증기관 기능 확인용 모의 자료입니다.",
+        "effective_date": "2026-01-01",
+        "scope_notes": "실제 법령·지침이 아닌 제출 기능 검증용 합성 자료",
+        "change_note": "기한 3일 전에서 5일 전으로 변경"
+      }
+    ],
+    "events": [
+      {
+        "id": "6634ac09871f4382897818d16d680651",
+        "at": "2026-10-25T20:17:12.023291+00:00",
+        "kind": "disable",
+        "version_id": "d8d4bf06cb0647d0baac32a60c004e9f",
+        "note": "",
+        "revision": 9
+      },
+      {
+        "id": "1453909130c9482c82e92849f6d4735e",
+        "at": "2026-10-25T20:16:34.810812+00:00",
+        "kind": "enable",
+        "version_id": "d8d4bf06cb0647d0baac32a60c004e9f",
+        "note": "",
+        "revision": 8
+      },
+      {
+        "id": "94e6ca60e4ac482eb9325847b09d88d8",
+        "at": "2026-10-25T20:11:20.063159+00:00",
+        "kind": "restore",
+        "version_id": "d8d4bf06cb0647d0baac32a60c004e9f",
+        "note": "",
+        "revision": 7
+      },
+      {
+        "id": "27a3047d0e7f4cfcb900a16e2a8a9d5c",
+        "at": "2026-10-25T20:11:20.045883+00:00",
+        "kind": "delete",
+        "version_id": "d8d4bf06cb0647d0baac32a60c004e9f",
+        "note": "",
+        "revision": 6
+      },
+      {
+        "id": "17f077e802784fdb92def097f5983bbe",
+        "at": "2026-10-25T20:11:20.001687+00:00",
+        "kind": "disable",
+        "version_id": "d8d4bf06cb0647d0baac32a60c004e9f",
+        "note": "",
+        "revision": 5
+      },
+      {
+        "id": "907ab209e95b479a8f12234aba7a6625",
+        "at": "2026-10-25T20:11:19.560205+00:00",
+        "kind": "apply",
+        "version_id": "d8d4bf06cb0647d0baac32a60c004e9f",
+        "note": "",
+        "revision": 4
+      },
+      {
+        "id": "66765963b76d4861b1fce88ab971eb35",
+        "at": "2026-10-25T20:11:19.333450+00:00",
+        "kind": "draft",
+        "version_id": "d8d4bf06cb0647d0baac32a60c004e9f",
+        "note": "기한 3일 전에서 5일 전으로 변경",
+        "revision": 3
+      },
+      {
+        "id": "220736cfd93a4fb8a426471e6635a3d4",
+        "at": "2026-10-25T20:11:19.038108+00:00",
+        "kind": "apply",
+        "version_id": "c5ad723299054305b93854e4686504e6",
+        "note": "",
+        "revision": 2
+      },
+      {
+        "id": "4b74abf72e25465ba48d252371449a78",
+        "at": "2026-10-25T20:11:18.964419+00:00",
+        "kind": "create",
+        "version_id": "c5ad723299054305b93854e4686504e6",
+        "note": "",
+        "revision": 1
+      }
+    ]
+  },
+  "checks": {
+    "ai_off_label_seen": true,
+    "answer_5_days_seen": true,
+    "version_2_line_2_original_seen": true,
+    "version_management_link_opened": true,
+    "disabled_after_gui_test": true,
+    "original_versions_retained": true
+  },
+  "delete_restore_method": "API",
+  "screenshots": [
+    "fresh-ai-off-answer.png",
+    "fresh-version-original.png",
+    "fresh-final-history.png"
+  ]
+}

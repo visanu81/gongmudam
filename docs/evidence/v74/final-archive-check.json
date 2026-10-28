@@ -1,0 +1,18 @@
+{
+  "version": "v74",
+  "archive": "공무담_다른PC_제출패키지_v74.zip",
+  "bytes": 124242826,
+  "sha256": "58bf429404a8f0f560cec8b4d596f23756d5f61042b6d43b0a2ee2cb6ee8d0e8",
+  "managed_files": 651,
+  "zip_crc_passed": true,
+  "all_managed_hashes_passed": true,
+  "tested_installation_matches_final_code": true,
+  "registered_sources": 36,
+  "service_python_tests": 807,
+  "root_python_tests": 18,
+  "root_node_tests": 31,
+  "service_node_tests": 25,
+  "new_virtualenv": true,
+  "physical_other_pc_tested": false,
+  "previous_v73_preserved": true
+}

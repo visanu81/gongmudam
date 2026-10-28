@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "checks": {
+    "document_unchanged": true,
+    "config_unchanged": true,
+    "sources_current": true
+  },
+  "revision": 7,
+  "versions": 2,
+  "events": 7,
+  "enabled": false
+}

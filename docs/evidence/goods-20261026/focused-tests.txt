@@ -1,0 +1,24 @@
+C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+test_ambiguous_scope_does_not_apply_national_rules (test_goods_management.GoodsManagementTest.test_ambiguous_scope_does_not_apply_national_rules) ... ok
+test_audit_accepts_explicit_scope_request_but_not_an_invented_answer (test_goods_management.GoodsManagementTest.test_audit_accepts_explicit_scope_request_but_not_an_invented_answer) ... ok
+test_date_scope_does_not_present_current_pack_as_historical_or_future (test_goods_management.GoodsManagementTest.test_date_scope_does_not_present_current_pack_as_historical_or_future) ... ok
+test_missing_pack_never_falls_back_to_unrelated_goods_inspection (test_goods_management.GoodsManagementTest.test_missing_pack_never_falls_back_to_unrelated_goods_inspection) ... ok
+test_natural_questions_use_scope_specific_exact_originals_without_ai (test_goods_management.GoodsManagementTest.test_natural_questions_use_scope_specific_exact_originals_without_ai) ... ok
+test_neighbor_questions_keep_their_existing_routes (test_goods_management.GoodsManagementTest.test_neighbor_questions_keep_their_existing_routes) ... ok
+test_offline_rebuild_and_tampered_original_fail (test_goods_management.GoodsManagementTest.test_offline_rebuild_and_tampered_original_fail) ... ok
+test_original_routes_match_saved_text_and_are_plain_text (test_goods_management.GoodsManagementTest.test_original_routes_match_saved_text_and_are_plain_text) ... ok
+test_personnel_profile_is_not_goods_owner (test_goods_management.GoodsManagementTest.test_personnel_profile_is_not_goods_owner) ... ok
+test_registration_is_additive_and_repeat_safe (test_goods_management.GoodsManagementTest.test_registration_is_additive_and_repeat_safe) ... ok
+test_required_source_missing_disabled_stale_or_changed_blocks_summary (test_goods_management.GoodsManagementTest.test_required_source_missing_disabled_stale_or_changed_blocks_summary) ... ok
+test_unsupported_details_require_materials_not_fabrication (test_goods_management.GoodsManagementTest.test_unsupported_details_require_materials_not_fabrication) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 6.416s
+
+OK
+...................
+----------------------------------------------------------------------
+Ran 19 tests in 1.675s
+
+OK

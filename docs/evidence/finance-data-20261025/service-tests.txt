@@ -1,0 +1,85 @@
+C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+LLM 오류(모델 응답에서 JSON을 찾지 못함): not JSON
+LLM 오류(모델 응답에서 JSON을 찾지 못함): 죄송합니다. 잘 모르겠습니다.
+LLM 오류(모델 서버 HTTP 500 오류): 정산서는 오늘 10월 19일까지 제출하세요
+LLM 오류(모델 서버 연결 실패): ConnectError: 정산서는 오늘 10월 19일까지 제출하세요
+LLM 오류(모델 서버 HTTP 500 오류): Internal Server Error: 정산서는 오늘 10월 19일까지 제출하세요
+LLM 오류(모델 서버 HTTP 500 오류): {"error": {"message": "정산서는 오늘 10월 19일까지 제출하세요"}}
+LLM 오류(모델 응답 형식 오류): <html>정산서는 오늘 10월 19일까지 제출하세요</html>
+LLM 오류(모델 응답 형식 오류): {"choices": "정산서는 오늘 10월 19일까지 제출하세요"}
+LLM 오류(모델 응답 형식 오류): ["정산서는 오늘 10월 19일까지 제출하세요"]
+LLM 오류(모델 응답 형식 오류): {"choices": [{"message": {"content": {"x": "정산서는 오늘 10월 19일까지 제출하세요"}}}]}
+LLM 오류(모델 응답에서 JSON을 찾지 못함): 정산서는 오늘 10월 19일까지 제출하세요
+LLM 오류(모델 응답에서 JSON을 찾지 못함): {"card_id": "card-travel", "answer": "정산서는 오늘 10월 19일까지 제출하세요
+LLM 오류(모델 서버 HTTP 500 오류): Internal Server Error: 정산서는 오늘 10월 19일까지 제출하세요
+LLM 오류(모델 서버 HTTP 500 오류): {"error": {"message": "정산서는 오늘 10월 19일까지 제출하세요"}}
+LLM 오류(모델 응답 형식 오류): <html>정산서는 오늘 10월 19일까지 제출하세요</html>
+LLM 오류(모델 응답 형식 오류): {"choices": "정산서는 오늘 10월 19일까지 제출하세요"}
+LLM 오류(모델 응답 형식 오류): ["정산서는 오늘 10월 19일까지 제출하세요"]
+LLM 오류(모델 서버 HTTP 400 오류): unsupported format
+LLM 오류(모델 서버 연결 실패): ConnectError: unit-only
+LLM 오류(모델 응답에서 JSON을 찾지 못함): not JSON
+LLM 오류(모델 응답에서 JSON을 찾지 못함): not JSON
+LLM 오류(모델 서버 연결 실패): ConnectError: unit-only
+LLM 오류(모델 서버 연결 실패): ConnectError: unit-only
+LLM 오류(모델 서버 HTTP 404 오류): {"choices":[{"message":{"content":"{\"ok\":true}"}}],"model":"demo-a"}
+LLM 오류(모델 서버 연결 실패): ConnectError: PRIVATE-FAILURE
+EOF marker not found
+======================================================================
+ERROR: test_local_overtime_excerpt_retains_exclusions_cash_ban_and_page_69 (test_finance_knowledge.FinanceKnowledgeTest.test_local_overtime_excerpt_retains_exclusions_cash_ban_and_page_69)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\AI작업\프로그램 제작\gongmudam\service\tests\test_finance_knowledge.py", line 65, in test_local_overtime_excerpt_retains_exclusions_cash_ban_and_page_69
+    evidence = self.ask(query)['knowledge']['evidence']
+               ^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\tests\test_finance_knowledge.py", line 35, in ask
+    return main.api_ask(dict(query=query, guidance=True, use_ai=False, today='2026-10-25'))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\app\main.py", line 108, in api_ask
+    return guidance.respond(query,body,_today(body.get('today')))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\app\guidance.py", line 119, in respond
+    reply=knowledge.answer(effective,found,use_ai=body.get('use_ai') is True)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\app\knowledge.py", line 241, in answer
+    profile=dict(config.active_profile());profile['timeout']=min(float(profile.get('timeout',30)),30)
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\app\config.py", line 38, in active_profile
+    cfg = cfg or load()
+                 ^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\app\config.py", line 19, in load
+    shutil.copyfile(EXAMPLE_PATH, CONFIG_PATH)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\shutil.py", line 262, in copyfile
+    with open(dst, 'wb') as fdst:
+         ^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\USER\\AppData\\Local\\Temp\\tmp5qmuoa4g\\config.json'
+
+======================================================================
+ERROR: test_privacy_question_does_not_get_finance_evidence (test_finance_knowledge.FinanceKnowledgeTest.test_privacy_question_does_not_get_finance_evidence)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\AI작업\프로그램 제작\gongmudam\service\tests\test_finance_knowledge.py", line 87, in test_privacy_question_does_not_get_finance_evidence
+    result = self.ask('교육 취합 명단을 외부에 보낼 때 개인정보를 어떻게 가려야 하나요?')['knowledge']
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\tests\test_finance_knowledge.py", line 35, in ask
+    return main.api_ask(dict(query=query, guidance=True, use_ai=False, today='2026-10-25'))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\app\main.py", line 108, in api_ask
+    return guidance.respond(query,body,_today(body.get('today')))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\app\guidance.py", line 118, in respond
+    else:found=knowledge.retrieve(effective,library,today)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\app\knowledge.py", line 164, in retrieve
+    notes=_experience_hits(query,library_id)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\app\knowledge.py", line 141, in _experience_hits
+    rows=c.execute('SELECT payload FROM work_experiences'+(' WHERE library_id=?' if library_id else ''),(library_id,) if library_id else ()).fetchall()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: work_experiences
+
+----------------------------------------------------------------------
+Ran 852 tests in 297.406s
+
+FAILED (errors=2)

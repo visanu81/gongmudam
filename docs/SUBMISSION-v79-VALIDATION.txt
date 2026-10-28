@@ -1,0 +1,77 @@
+공무담 v79 · 다른 PC를 위한 새 설치 검증 결과
+확인일: 2026-10-26
+
+반영 내용
+공문 접수·배부 및 기안·검토·협조·결재의 AI 없는 답변과 정확한 근거 연결을 포함했다.
+공식 원문 10개: 행정업무의 운영 및 혁신에 관한 규정 제2·3·6·8·9·10·11·12·18조,
+같은 규정 시행규칙 제15조. 규정은 시행 2026-10-02, 시행규칙은 시행 2023-06-28 보관본이다.
+원본 HTML·전체 조문 추출문·SHA-256·출처·시행일·수집일과 문장별 인용 조건을 동봉한다.
+공문 결재선 질문을 e-사람 사용법으로 잘못 처리하는 분기도 보완했다.
+기존 소속·상황 기반 기관 자료 검색, 분류·버전 관리, 서식 자동 연결과 다른 업무 기능을 보존한다.
+
+배포 자료와 실행
+공개 등록 자료 96건: 법령·지침 발췌 90건, e-사람 매뉴얼 PDF 6개·총 221쪽.
+복무제도 안내·FAQ와 기존 정형 답변 자료도 동봉한다. 96종의 서로 다른 법령을 뜻하지 않는다.
+기본 AI 설정은 offline이며 모델·Graphify·Node.js 설치 없이 자료를 검색하고 답변을 확인한다.
+Windows Python 3.12 x64·Launcher·Tcl/Tk는 별도로 필요하고 의존성 wheel 24개를 동봉한다.
+ZIP 전체를 새 폴더에 풀고 1_설치.bat → 2_공무담_실행.bat 순서로 사용한다.
+상세 실행 안내는 처음읽기.txt 및 docs/SUBMISSION-v79-START.txt에 있다.
+외부 공식 사이트는 인터넷이 필요하지만 보관한 본문과 근거는 AI·인터넷 없이 확인할 수 있다.
+개인 업무 DB·프로젝트·대화·소속·기관 자료/개정 이력·설정·모델 가중치는 포함하지 않는다.
+실사용 DB 전체를 내보내지 않고 기존 검토된 86개 배포 자료에 새 공통 조문 10개만 추가했다.
+
+검증 환경과 한계
+같은 Windows PC의 한글·공백이 있는 새 폴더에 후보 ZIP을 풀어 새 venv와 DB를 생성했다.
+install.bat에서 --no-index와 동봉 wheel로 설치하고 pip check가 통과했으며 자료 96개를 복원했다.
+run.bat과 같은 tools/run_local_app.py를 --port 8899 --no-browser로 실행했다.
+실제 다른 물리 PC에서 실행한 결과는 아니다. 후보 설치본의 실행 파일과 최종 ZIP을 해시로 대조한다.
+이번 작업은 보관 자료의 설치·검색·인용 검증이다. 법령 현행성이나 여비 계산 가능 기간을 새로 승인하지 않았다.
+실제 Gemma·Llama 재시험은 수행하지 않았다. 과거 모델 결과는 별도 v71 자료로 구분한다.
+
+새 설치본 자동검사
+서비스 Python 917개, 통합 Python 19개, 데스크톱 Node 36개, 서비스 Node 37개,
+기관 디렉터리 Python 8개: 총 1,017개 통과.
+모형 모델 오류·손상 PDF 처리 등의 로그는 실패 대응 테스트의 예상 출력이다.
+공개 터널/공개 배포 전용 도구와 모델 실구동 검사는 위 수치에 포함하지 않는다.
+
+실제 새 설치 API 검증
+공문·기존 업무 질문 23개와 새 조문 원문 조회 10개를 AI 사용 없이 확인했다.
+- 공문 표현 변형 9개: 접수·배부, 문서과, 당직, 다부서, 고정 배부시간 확인,
+  기안·검토 순서, 검토자의 출장, 결재권자 부재·대결.
+- 자료/적용 범위/시점 부족과 소속 없는 예산 질문 7개는 직접 근거로 대신 답하지 않는다.
+- 가족돌봄, 건강검진 공가, 공용차량 일비, 지자체 사무용품 예산,
+  개인정보, 기록물, e-사람 출장 결재선 사용법의 기존 근거 연결도 확인했다.
+- 답변 문장별 원문 인용·출처 메타데이터·추출문/HTML 해시와 실제 설치 안의 경로를 확인했다.
+기관 규정·서식 기능은 18개 질문을 포함한 34개 항목을 별도로 재검증했다.
+- 기관명 없는 상황 질문, 양식·필수 항목 후속 질문, 인접 문단의 명시된 서식 연결.
+- 업로드 → 초안 → 비교·적용, 3일 전에서 5일 전 개정, 적용 전 기존 답 유지.
+- 분류 개정·이력, 다른 기관·부모기관·교육청·의회 구분, 무관한 주제 제외.
+- 보관 원문·버전·SHA 일치, 예제와 모델 설정 불변, 검증용 문서 최종 비활성.
+위 API 검증에서 실제 모델 호출은 0회다.
+
+화면·재시작
+새 설치 B안에서 소속을 설정하거나 기관 자료를 등록하지 않고도 두 공문 질문이 작동했다.
+로컬 AI 보조 사용 체크 해제, 요약 트리, 제18조 근거 버튼과 출처·시행일·해시 표시를 확인했다.
+검증 서버를 재시작한 뒤 모든 DB 테이블 행 지문, 설정·배포 자료 해시가 같았다.
+재시작 후 공문 두 질문과 e-사람 질문 및 매뉴얼 PDF 원본 해시도 다시 확인했다.
+검증용 DB·venv·브라우저 대화는 ZIP에 포함하지 않는다.
+
+자료 보존
+실사용 앱의 DB 6개 전체 테이블 행 수/지문, 모델 설정 해시와 기존 v78 ZIP을 보존했다.
+실제 쓰는 서버를 종료하거나 공개 시연/터널을 배포하지 않았다. 검증 서버는 별도 포트를 사용했다.
+Graphify 사전 영향 확인과 최신 코드 지도 상태를 확인했다.
+
+재현하기
+처음 설치한 별도 시험 폴더에서 서버를 켜고, 기관 자료를 추가하기 전에 실행한다.
+service\.venv\Scripts\python.exe service\tools\verify_office_document_submission.py --base http://127.0.0.1:8781 --output office-verification.json
+이 검사는 읽기 전용이며 동봉 자료 96개가 그대로 있는 새 설치를 대상으로 한다.
+기관 자료 개정 검사는 별도의 새 시험 설치에서 실행한다. 합성 문서를 생성하고 마지막에 비활성화한다.
+service\.venv\Scripts\python.exe service\tools\verify_institution_context_submission.py --base http://127.0.0.1:8781 --output context-verification.json
+
+동봉 증거
+docs/evidence/v79/fresh-validation-summary.json / fresh-office.json / fresh-context.json
+docs/evidence/v79/fresh-gui.json / fresh-receipt.png / fresh-original.png / fresh-drafting.png
+docs/evidence/v79/fresh-restart.json / original-data-preservation.json / graphify-final.json
+docs/evidence/v79/install.txt / service-python-tests.txt / root-python-tests.txt
+docs/evidence/v79/root-node-tests.txt / service-node-tests.txt / agency-directory-tests.txt
+ZIP 옆 공무담_v79_패키지정보.json 및 SHA256.txt에서 최종 ZIP 해시·CRC·전체 관리 파일 대조 결과를 확인한다.

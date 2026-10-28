@@ -1,0 +1,9 @@
+{
+  "profile": "local_gemma",
+  "case": "travel",
+  "question": "국가공무원 출장 일비는 얼마야?",
+  "elapsed_seconds": 31.5,
+  "ai_used": false,
+  "notice": "로컬 AI 응답을 확인하지 못해 검색 원문을 표시합니다.",
+  "exception": "ReadTimeout"
+}

@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "same_physical_pc": true,
+  "new_korean_path_with_spaces": true,
+  "config_preserved": true,
+  "business_databases_unchanged": [
+    "adhoc.db",
+    "calendar.db",
+    "regulation-monitor.db",
+    "seomu.db",
+    "travel.db"
+  ],
+  "sources_rebased": 36,
+  "attachments_preserved": 2,
+  "actual_batch_restarted": true,
+  "private_mode": true,
+  "version": "v72"
+}

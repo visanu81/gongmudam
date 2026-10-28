@@ -1,0 +1,42 @@
+[
+  {
+    "antipattern": "low-contrast",
+    "name": "Low contrast text",
+    "description": "Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast between text and background.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "C:\\AI작업\\프로그램 제작\\gongmudam\\service\\static\\index.html",
+    "line": 0,
+    "snippet": "4.0:1 (need 4.5:1) — text #728188 on #ffffff"
+  },
+  {
+    "antipattern": "tiny-text",
+    "name": "Tiny body text",
+    "description": "Body text below 12px is hard to read, especially on high-DPI screens. Use at least 14px for body content, 16px is ideal.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "C:\\AI작업\\프로그램 제작\\gongmudam\\service\\static\\index.html",
+    "line": 0,
+    "snippet": "11px body text"
+  },
+  {
+    "antipattern": "skipped-heading",
+    "name": "Skipped heading level",
+    "description": "Heading levels should not skip (e.g. h1 then h3 with no h2). Screen readers use heading hierarchy for navigation. Skipping levels breaks the document outline.",
+    "severity": "warning",
+    "category": "quality",
+    "file": "C:\\AI작업\\프로그램 제작\\gongmudam\\service\\static\\index.html",
+    "line": 0,
+    "snippet": "<h1> \"로컬 AI 설정\" followed by <h3> \"모델 연결\" (missing h2)"
+  },
+  {
+    "antipattern": "dark-glow",
+    "name": "Glowing shadow accents",
+    "description": "Colored glow shadows — a zero-offset chromatic halo (box- or text-shadow) on any background, or any colored blurred shadow on a dark background — are the default \"cool\" look of AI-generated UIs. Use neutral elevation shadows and subtle, purposeful lighting instead.",
+    "severity": "warning",
+    "category": "slop",
+    "file": "C:\\AI작업\\프로그램 제작\\gongmudam\\service\\static\\index.html",
+    "line": 0,
+    "snippet": "Colored box-shadow glow (#132c36) on dark page"
+  }
+]

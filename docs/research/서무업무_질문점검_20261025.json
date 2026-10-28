@@ -1,0 +1,417 @@
+{
+  "checked_at": "2026-10-25T11:41:15.185907+00:00",
+  "base": "http://127.0.0.1:8787",
+  "test_method": "26 read-only POST /api/ask guidance=true use_ai=false; missing-topic exploratory sample, not accuracy benchmark",
+  "registered_sources": 31,
+  "registered_legal_and_guidance": 25,
+  "registered_manuals": 6,
+  "submission_snapshot_sources": 36,
+  "service_guide_coverage": {
+    "guide_pages": 10,
+    "faq_questions": 26
+  },
+  "missing_bundled_sources": [
+    {
+      "id": "public-v70-156f83e9646084245c69e35e",
+      "title": "국가공무원 복무규정 제20조(특별휴가)"
+    },
+    {
+      "id": "public-v70-66d99077842d39bb41c3c362",
+      "title": "국가공무원 복무규정 제26조(겸직 허가)"
+    },
+    {
+      "id": "public-v70-a454f317a1a87afbfb26d58c",
+      "title": "국가공무원 복무규정 제25조(영리 업무의 금지)"
+    },
+    {
+      "id": "public-v70-c4edc04864da363cc056b9ed",
+      "title": "국가공무원 복무규정 제18조(병가)"
+    },
+    {
+      "id": "public-v70-f459b93473b181b1dc933390",
+      "title": "국가공무원 복무규정 제19조(공가)"
+    }
+  ],
+  "results": [
+    {
+      "case": 1,
+      "area": "travel",
+      "question": "공용차로 관내출장을 3시간 다녀왔는데 여비를 받을 수 있나요?",
+      "topic": "travel",
+      "mode": "source_search",
+      "legal_sources": [
+        "공무원 여비 규정 제18조(근무지 내 국내 출장 시의 여비)"
+      ],
+      "official_explanations": [
+        "국내출장",
+        "국내출장"
+      ],
+      "forms": [
+        "국내출장 여비 정산서"
+      ],
+      "tree_title": "근무지 안의 출장은 시간과 차량을 함께 봐요",
+      "ai_used": false
+    },
+    {
+      "case": 2,
+      "area": "travel",
+      "question": "출장 교육에서 식사를 제공받았는데 식비를 전액 청구해도 되나요?",
+      "topic": "travel",
+      "mode": "source_unavailable",
+      "legal_sources": [],
+      "official_explanations": [
+        "국내출장",
+        "국내출장"
+      ],
+      "forms": [
+        "국내출장 여비 정산서"
+      ],
+      "tree_title": "인사혁신처 제도 안내·FAQ에서 관련 설명을 찾았어요",
+      "ai_used": false
+    },
+    {
+      "case": 3,
+      "area": "travel",
+      "question": "국가공무원이 자가용으로 출장 가면 유류비와 통행료는 어떻게 청구하나요?",
+      "topic": "travel",
+      "mode": "source_search",
+      "legal_sources": [
+        "공무원 여비 규정 별표 2 국내 여비 지급표"
+      ],
+      "official_explanations": [
+        "국내출장",
+        "국내출장"
+      ],
+      "forms": [
+        "국내출장 여비 정산서"
+      ],
+      "tree_title": "찾은 자료를 차례로 확인해요",
+      "ai_used": false
+    },
+    {
+      "case": 4,
+      "area": "travel",
+      "question": "출장을 취소해서 발생한 기차 취소수수료를 받을 수 있나요?",
+      "topic": "travel",
+      "mode": "source_clarification",
+      "legal_sources": [],
+      "official_explanations": [
+        "국내출장",
+        "국내출장"
+      ],
+      "forms": [
+        "국내출장 여비 정산서"
+      ],
+      "tree_title": "인사혁신처 제도 안내·FAQ에서 관련 설명을 찾았어요",
+      "ai_used": false
+    },
+    {
+      "case": 5,
+      "area": "leave",
+      "question": "국가공무원인데 아이가 아파 병원에 데려가야 해요. 어떤 휴가를 써야 하나요?",
+      "topic": "leave",
+      "mode": "source_unavailable",
+      "legal_sources": [],
+      "official_explanations": [
+        "[질문](가족돌봄휴가) 증빙서류를 제출해야 하나요?",
+        "공무원휴가",
+        "[질문](가족돌봄휴가) 자녀수 등에 따라 사용가능한 일수가 다른가요?"
+      ],
+      "forms": [],
+      "tree_title": "인사혁신처 제도 안내·FAQ에서 관련 설명을 찾았어요",
+      "ai_used": false
+    },
+    {
+      "case": 6,
+      "area": "leave",
+      "question": "국가공무원 본인이 아파서 병가를 쓰려는데 진단서는 언제 필요한가요?",
+      "topic": "leave",
+      "mode": "source_unavailable",
+      "legal_sources": [],
+      "official_explanations": [
+        "공무원휴가",
+        "공무원휴가"
+      ],
+      "forms": [],
+      "tree_title": "인사혁신처 제도 안내·FAQ에서 관련 설명을 찾았어요",
+      "ai_used": false
+    },
+    {
+      "case": 7,
+      "area": "leave",
+      "question": "지방공무원이 토요일 행사 지원을 하면 대체휴무를 쓸 수 있나요?",
+      "topic": "leave",
+      "mode": "source_unavailable",
+      "legal_sources": [],
+      "official_explanations": [],
+      "forms": [],
+      "tree_title": "자료를 더 확인해야 답할 수 있어요",
+      "ai_used": false
+    },
+    {
+      "case": 8,
+      "area": "leave",
+      "question": "국가공무원 육아시간과 가족돌봄휴가는 무엇이 다른가요?",
+      "topic": "leave",
+      "mode": "source_unavailable",
+      "legal_sources": [],
+      "official_explanations": [
+        "[질문](가족돌봄휴가) 자녀수 등에 따라 사용가능한 일수가 다른가요?",
+        "공무원휴가",
+        "[질문](가족돌봄휴가) 증빙서류를 제출해야 하나요?"
+      ],
+      "forms": [],
+      "tree_title": "인사혁신처 제도 안내·FAQ에서 관련 설명을 찾았어요",
+      "ai_used": false
+    },
+    {
+      "case": 9,
+      "area": "contract",
+      "question": "국가기관에서 300만원짜리 노트북을 구매하려는데 견적서 한 장으로 가능한가요?",
+      "topic": "goods",
+      "mode": "source_unavailable",
+      "legal_sources": [],
+      "official_explanations": [],
+      "forms": [
+        "물품 검사조서"
+      ],
+      "tree_title": "자료를 더 확인해야 답할 수 있어요",
+      "ai_used": false
+    },
+    {
+      "case": 10,
+      "area": "contract",
+      "question": "지방자치단체에서 300만원짜리 노트북을 구매하려는데 견적서 한 장으로 가능한가요?",
+      "topic": "goods",
+      "mode": "source_search",
+      "legal_sources": [
+        "지방자치단체를 당사자로 하는 계약에 관한 법률 시행령 제30조(수의계약대상자의 선정절차 등)"
+      ],
+      "official_explanations": [],
+      "forms": [
+        "물품 검사조서"
+      ],
+      "tree_title": "견적서는 2인 이상 원칙과 1인 예외를 함께 봐요",
+      "ai_used": false
+    },
+    {
+      "case": 11,
+      "area": "goods",
+      "question": "오래된 PC를 불용 처리하고 폐기하려면 어떤 절차가 필요한가요?",
+      "topic": "general",
+      "mode": "source_unavailable",
+      "legal_sources": [],
+      "official_explanations": [],
+      "forms": [],
+      "tree_title": "자료를 더 확인해야 답할 수 있어요",
+      "ai_used": false
+    },
+    {
+      "case": 12,
+      "area": "goods",
+      "question": "부서 물품 관리대장과 재물조사는 언제 어떻게 하나요?",
+      "topic": "goods",
+      "mode": "source_clarification",
+      "legal_sources": [],
+      "official_explanations": [],
+      "forms": [
+        "물품 검사조서"
+      ],
+      "tree_title": "상황을 조금만 더 알려주세요",
+      "ai_used": false
+    },
+    {
+      "case": 13,
+      "area": "budget",
+      "question": "국가기관에서 사무용품을 사려는데 예산 과목은 무엇인가요?",
+      "topic": "goods",
+      "mode": "source_unavailable",
+      "legal_sources": [],
+      "official_explanations": [],
+      "forms": [],
+      "tree_title": "자료를 더 확인해야 답할 수 있어요",
+      "ai_used": false
+    },
+    {
+      "case": 14,
+      "area": "budget",
+      "question": "지방자치단체에서 사무용품을 사려는데 예산 과목은 무엇인가요?",
+      "topic": "goods",
+      "mode": "source_search",
+      "legal_sources": [
+        "지방자치단체 예산편성 운영기준 01.사무관리비"
+      ],
+      "official_explanations": [],
+      "forms": [],
+      "tree_title": "일반 사무용품은 사무관리비의 일반수용비를 확인해요",
+      "ai_used": false
+    },
+    {
+      "case": 15,
+      "area": "budget",
+      "question": "부서 회의 식비를 업무추진비로 집행할 수 있나요?",
+      "topic": "general",
+      "mode": "source_unavailable",
+      "legal_sources": [],
+      "official_explanations": [],
+      "forms": [],
+      "tree_title": "자료를 더 확인해야 답할 수 있어요",
+      "ai_used": false
+    },
+    {
+      "case": 16,
+      "area": "budget",
+      "question": "외부강사 교육 수당과 원고료 지급 기준과 서식은 무엇인가요?",
+      "topic": "general",
+      "mode": "source_unavailable",
+      "legal_sources": [],
+      "official_explanations": [],
+      "forms": [],
+      "tree_title": "자료를 더 확인해야 답할 수 있어요",
+      "ai_used": false
+    },
+    {
+      "case": 17,
+      "area": "budget",
+      "question": "초과근무 식비를 지급하려면 어떤 증빙이 필요한가요?",
+      "topic": "overtime",
+      "mode": "source_search",
+      "legal_sources": [
+        "공무원 여비 규정 제16조(일비ㆍ숙박비ㆍ식비의 지급)"
+      ],
+      "official_explanations": [],
+      "forms": [],
+      "tree_title": "기준을 넘겨 쓴 여비는 추가 정산 기준을 확인해요",
+      "ai_used": false
+    },
+    {
+      "case": 18,
+      "area": "documents",
+      "question": "공문서를 작성할 때 붙임과 끝 표시는 어떻게 하나요?",
+      "topic": "general",
+      "mode": "source_unavailable",
+      "legal_sources": [],
+      "official_explanations": [],
+      "forms": [],
+      "tree_title": "자료를 더 확인해야 답할 수 있어요",
+      "ai_used": false
+    },
+    {
+      "case": 19,
+      "area": "documents",
+      "question": "부서장 전결로 처리해도 되는 공문인지 어떻게 확인하나요?",
+      "topic": "general",
+      "mode": "source_unavailable",
+      "legal_sources": [],
+      "official_explanations": [],
+      "forms": [],
+      "tree_title": "자료를 더 확인해야 답할 수 있어요",
+      "ai_used": false
+    },
+    {
+      "case": 20,
+      "area": "records",
+      "question": "보존기간이 지난 업무자료를 담당자가 그냥 삭제해도 되나요?",
+      "topic": "general",
+      "mode": "source_unavailable",
+      "legal_sources": [],
+      "official_explanations": [],
+      "forms": [],
+      "tree_title": "자료를 더 확인해야 답할 수 있어요",
+      "ai_used": false
+    },
+    {
+      "case": 21,
+      "area": "handover",
+      "question": "인사발령으로 담당자가 바뀌는데 업무 인계인수 서식과 절차를 알려주세요.",
+      "topic": "general",
+      "mode": "source_unavailable",
+      "legal_sources": [],
+      "official_explanations": [],
+      "forms": [],
+      "tree_title": "자료를 더 확인해야 답할 수 있어요",
+      "ai_used": false
+    },
+    {
+      "case": 22,
+      "area": "disclosure",
+      "question": "정보공개 청구를 받았는데 처리기한과 비공개 판단 절차를 알려주세요.",
+      "topic": "general",
+      "mode": "source_unavailable",
+      "legal_sources": [],
+      "official_explanations": [],
+      "forms": [],
+      "tree_title": "자료를 더 확인해야 답할 수 있어요",
+      "ai_used": false
+    },
+    {
+      "case": 23,
+      "area": "privacy",
+      "question": "교육 참석자 명단을 취합할 때 주민등록번호를 받아도 되나요?",
+      "topic": "education",
+      "mode": "source_unavailable",
+      "legal_sources": [],
+      "official_explanations": [],
+      "forms": [],
+      "tree_title": "자료를 더 확인해야 답할 수 있어요",
+      "ai_used": false
+    },
+    {
+      "case": 24,
+      "area": "privacy",
+      "question": "교육 취합 명단을 외부에 보낼 때 개인정보를 어떻게 가려야 하나요?",
+      "topic": "education",
+      "mode": "source_search",
+      "legal_sources": [
+        "지방자치단체 회계관리에 관한 훈령 제121조(집행현황의 공개)",
+        "지방공무원 복무규정 제7조의6(공가)",
+        "지방공무원 복무규정 제7조의7(특별휴가)"
+      ],
+      "official_explanations": [],
+      "forms": [],
+      "tree_title": "찾은 자료를 차례로 확인해요",
+      "ai_used": false
+    },
+    {
+      "case": 25,
+      "area": "ethics",
+      "question": "행사 외부강사에게 선물과 식사를 제공할 때 청탁금지법을 확인해야 하나요?",
+      "topic": "general",
+      "mode": "source_unavailable",
+      "legal_sources": [],
+      "official_explanations": [],
+      "forms": [],
+      "tree_title": "자료를 더 확인해야 답할 수 있어요",
+      "ai_used": false
+    },
+    {
+      "case": 26,
+      "area": "security",
+      "question": "당직 후 대체휴무와 보안점검 처리 근거를 알려주세요.",
+      "topic": "leave",
+      "mode": "source_unavailable",
+      "legal_sources": [],
+      "official_explanations": [
+        "당직및비상",
+        "당직및비상"
+      ],
+      "forms": [],
+      "tree_title": "인사혁신처 제도 안내·FAQ에서 관련 설명을 찾았어요",
+      "ai_used": false
+    }
+  ],
+  "review": {
+    "clear_wrong_domain_cases": [
+      17,
+      24
+    ],
+    "partial_legal_basis_cases": [
+      3
+    ],
+    "source_search_count": 6,
+    "source_unavailable_count": 18,
+    "source_clarification_count": 2
+  },
+  "production_mutations": false,
+  "new_sources_registered": false
+}

@@ -1,0 +1,49 @@
+{
+  "checks": {
+    "private_v74": true,
+    "messages_preserved": true,
+    "draft_preserved": true,
+    "settings_preserved": true,
+    "sources_36": true,
+    "owned_source_paths_rebased": true,
+    "question_after_restart": true,
+    "adapter_cache_fix": true
+  },
+  "root": "C:\\AI작업\\프로그램 제작\\gongmudam\\.local-verification\\v74_경로 이동 검증\\공무담",
+  "answer": {
+    "id": "1b39402757b34344a935011081fc4a19",
+    "project_id": "d077e4c895344854b1aeffea893dea29",
+    "role": "assistant",
+    "content": "프로젝트 원문에서 확인한 내용\n\n\n\n[1] 25쪽 교육자료.pdf · PDF 25쪽\nLATEDEADLINE 2026-11-06",
+    "status": "completed",
+    "created_at": "2026-10-25T05:43:35.099983+00:00",
+    "question": "LATEDEADLINE",
+    "user_id": "fdb1a5b84be9481fb36cb02520a94174",
+    "file_ids": [],
+    "draft": false,
+    "evidence": [
+      {
+        "ref": 1,
+        "file_id": "95af4f4016b95e65a1ad0244dec4d4e6",
+        "name": "25쪽 교육자료.pdf",
+        "unit": 25,
+        "loc": "PDF 25쪽",
+        "text": "LATEDEADLINE 2026-11-06",
+        "sha256": "9fdea9b6dcb5feba8fe3c53c398854debfa516d3118e812b30f3eefeae51caff",
+        "stale": false
+      }
+    ],
+    "coverage": {
+      "total": 3,
+      "ready": 3,
+      "partial": 0,
+      "unread": 0
+    },
+    "mode": "offline",
+    "model": null,
+    "model_metadata": {},
+    "notice": "AI 없이 프로젝트 원문을 찾아 구성했습니다. 이번 답변은 검색된 1개 파일의 발췌이며, 읽은 모든 파일을 인용한 결과는 아닙니다. 필요하면 자료를 선택해 나눠 질문하세요.",
+    "finished_at": "2026-10-25T05:43:35.193652+00:00"
+  },
+  "passed": true
+}

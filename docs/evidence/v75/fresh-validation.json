@@ -1,0 +1,52 @@
+{
+  "release": "v75",
+  "date": "2026-10-25",
+  "verification_environment": "same Windows PC, fresh ZIP extraction, Korean and space path, fresh virtual environment",
+  "physical_other_pc_test": false,
+  "install": {
+    "exit_code": 0,
+    "seconds": 47.797,
+    "new_venv": true,
+    "root": "C:\\AI작업\\프로그램 제작\\gongmudam\\.local-verification\\v75_새 설치 검증\\공무담"
+  },
+  "tests": {
+    "service": {
+      "count": 818,
+      "test_seconds": 300.958,
+      "exit_code": 0,
+      "seconds": 307.015
+    },
+    "root_python": {
+      "count": 19,
+      "exit_code": 0
+    },
+    "root_node": {
+      "count": 31,
+      "exit_code": 0
+    },
+    "service_node": {
+      "count": 25,
+      "exit_code": 0
+    }
+  },
+  "service_manifest_sha256": "35d7553db2f88fd9867f11f56f381263cf490e375872be15111585579d4ac9f3",
+  "offline_default": true,
+  "native_folder_and_file_GUI": true,
+  "natural_question_GUI": true,
+  "original_source_unit": "담당자 확인 메모.txt 4행: 회계과: 미회신",
+  "knowledge_snapshot_unchanged_vs_v74": true,
+  "registered_sources": 36,
+  "manuals": 6,
+  "manual_pages": 221,
+  "models_retested": false,
+  "historical_model_evidence": "docs/evidence/v74/fresh-projects.json",
+  "evidence": [
+    "fresh-project.json",
+    "fresh-long-documents.json",
+    "fresh-knowledge.json",
+    "fresh-restart.json",
+    "native-picker.png",
+    "question-evidence.jpg",
+    "service-tests.txt"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "status": {
+    "status": "ok",
+    "service_version": "v73",
+    "desktop_connected": true,
+    "public_demo": true,
+    "private_data_isolated": true,
+    "requires_origin_pc": true,
+    "shared_demo": true
+  },
+  "databases_preserved": 6,
+  "model_settings_preserved": true,
+  "sources": 36,
+  "frontend_assets_match": true
+}

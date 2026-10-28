@@ -1,0 +1,92 @@
+[
+  {
+    "id": "L12",
+    "category": "복무",
+    "question": "지방공무원 부모님이 돌아가셨을 때 경조사휴가는 어떻게 되나요?",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "지방공무원 복무규정.*별표 1"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "사망",
+        "부모"
+      ]
+    ],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "T08",
+    "category": "출장·여비",
+    "question": "국가공무원 관내출장에 공용차량을 이용하면 여비가 달라지나요?",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "공무원 여비 규정.*제18조"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "공용차량"
+      ]
+    ],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "T09",
+    "category": "출장·여비",
+    "question": "국가공무원이 관외출장에서 공용차량을 사용하면 일비를 줄이나요?",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "공무원 여비 규정.*제16조"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "공용차량"
+      ]
+    ],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "E06",
+    "category": "교육·자료 취합",
+    "question": "교육 신청 명단에 이름과 연락처를 받으려면 어떤 기준을 확인하나요?",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "office-privacy-art15"
+      ],
+      [
+        "office-privacy-art16"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "개인정보"
+      ]
+    ],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "T11",
+    "category": "출장·여비",
+    "question": "e-사람에서 출장 신청을 취소하는 방법을 알려주세요.",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "출장관리"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "취소"
+      ]
+    ],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님.",
+    "evidence_channel": "manual"
+  }
+]

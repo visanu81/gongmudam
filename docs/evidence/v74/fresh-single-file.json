@@ -1,0 +1,52 @@
+{
+  "project_id": "21cc50850c3147c6a73af397874bd777",
+  "checks": {
+    "individual_file": true,
+    "evidence": true,
+    "unchanged": true
+  },
+  "answer": {
+    "id": "1aaa386ebc1d443ebb56aa67b5e26f77",
+    "project_id": "21cc50850c3147c6a73af397874bd777",
+    "role": "assistant",
+    "content": "프로젝트 원문에서 확인한 내용\n\n\n\n[1] 개별 파일.md · 2행\n행사 담당자: 운영지원과",
+    "status": "completed",
+    "created_at": "2026-10-25T05:33:36.841807+00:00",
+    "question": "행사 담당자는?",
+    "user_id": "3c6f8358b6a44e179c4465ac868038d0",
+    "file_ids": [],
+    "draft": false,
+    "evidence": [
+      {
+        "ref": 1,
+        "file_id": "88cc0aa4ca7159878446edca09ade126",
+        "name": "개별 파일.md",
+        "unit": 2,
+        "loc": "2행",
+        "text": "행사 담당자: 운영지원과",
+        "sha256": "6a8cc9098e568c3deb41ceec4fbb7eca75522c7331d047885969b4a2a11327ca",
+        "stale": false
+      }
+    ],
+    "coverage": {
+      "total": 1,
+      "ready": 1,
+      "partial": 0,
+      "unread": 0
+    },
+    "mode": "local_ai",
+    "model": "llama3.2:3b",
+    "model_metadata": {
+      "actual_response": true,
+      "response_model": "llama3.2:3b",
+      "backend": "ollama-native-schema",
+      "usage": {
+        "prompt_eval_count": 255,
+        "eval_count": 6,
+        "done_reason": "stop"
+      }
+    },
+    "notice": "선택한 로컬 AI의 근거 선택과 원문 대조로 답변을 구성했습니다.",
+    "finished_at": "2026-10-25T05:34:04.858590+00:00"
+  }
+}

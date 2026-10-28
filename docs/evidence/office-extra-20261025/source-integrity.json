@@ -1,0 +1,116 @@
+{
+  "checked_at": "2026-10-25",
+  "articles": 12,
+  "raw_text_containment": true,
+  "hashes_match": true,
+  "sources": [
+    {
+      "id": "office-extra-privacy-art22-2",
+      "title": "개인정보 보호법",
+      "article": "제22조의2(아동의 개인정보 보호)",
+      "effective_date": "2026-09-11",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=283839&efYd=20260911",
+      "sha256": "13c2fd6b5cf9ad2f1f9246d1a0fec0ae90e43fd6d7230492b7611fb4e2df52b7",
+      "raw_sha256": "5eff996f84ee1310eb5c3cfd974b69cb7f0b5328156e7da5899fb2457d6ef0c4"
+    },
+    {
+      "id": "office-extra-privacy-art26",
+      "title": "개인정보 보호법",
+      "article": "제26조(업무위탁에 따른 개인정보의 처리 제한)",
+      "effective_date": "2026-09-11",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=283839&efYd=20260911",
+      "sha256": "9bc406f7728ed26f4615199e91924981861932353e27f991d362974b1c1f3acb",
+      "raw_sha256": "5eff996f84ee1310eb5c3cfd974b69cb7f0b5328156e7da5899fb2457d6ef0c4"
+    },
+    {
+      "id": "office-extra-privacy-art35",
+      "title": "개인정보 보호법",
+      "article": "제35조(개인정보의 열람)",
+      "effective_date": "2026-09-11",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=283839&efYd=20260911",
+      "sha256": "d6378caa6e6e0ac5cd6e2752836881857ab80d8feb8d5639ba6deb0b56a29587",
+      "raw_sha256": "5eff996f84ee1310eb5c3cfd974b69cb7f0b5328156e7da5899fb2457d6ef0c4"
+    },
+    {
+      "id": "office-extra-privacy-art36",
+      "title": "개인정보 보호법",
+      "article": "제36조(개인정보의 정정ㆍ삭제)",
+      "effective_date": "2026-09-11",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=283839&efYd=20260911",
+      "sha256": "72850474170e9cc55edf090c5abe72b56ae9d77b1d803f01579420913139acec",
+      "raw_sha256": "5eff996f84ee1310eb5c3cfd974b69cb7f0b5328156e7da5899fb2457d6ef0c4"
+    },
+    {
+      "id": "office-extra-privacy-art37",
+      "title": "개인정보 보호법",
+      "article": "제37조(개인정보의 처리정지 등)",
+      "effective_date": "2026-09-11",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=283839&efYd=20260911",
+      "sha256": "9b2b70b7a02f97c7727ed0db548f4ab36c6967ab6082e560053db966aafc3838",
+      "raw_sha256": "5eff996f84ee1310eb5c3cfd974b69cb7f0b5328156e7da5899fb2457d6ef0c4"
+    },
+    {
+      "id": "office-extra-records-decree-20",
+      "title": "공공기록물 관리에 관한 법률 시행령",
+      "article": "제20조(기록물의 등록)",
+      "effective_date": "2026-10-02",
+      "source_url": "https://www.law.go.kr/LSW/lsLawLinkInfo.do?chrClsCd=010202&lsJoLnkSeq=900123404",
+      "sha256": "c7babf410ea1826dd78c41c52fa0ea9b5dd991b241f6759794d4365cdbfaa668",
+      "raw_sha256": "d0f4cad99d680699fe020b6566d277ab0b21caa455cef3935d8772c05f66e00e"
+    },
+    {
+      "id": "office-extra-records-decree-18",
+      "title": "공공기록물 관리에 관한 법률 시행령",
+      "article": "제18조(회의록의 작성ㆍ관리)",
+      "effective_date": "2026-10-02",
+      "source_url": "https://www.law.go.kr/LSW/lsLinkCommonInfo.do?lspttninfSeq=67911",
+      "sha256": "244f059e6c2ee955ff9bbeb0beae187d3967a9d4a4519c67a24454d9c5c9a1af",
+      "raw_sha256": "5cc2f22f3259b4cfa1fa20d265ebbf66d0fd7627e3220343ed7b5186e356d45e"
+    },
+    {
+      "id": "office-extra-records-decree-26",
+      "title": "공공기록물 관리에 관한 법률 시행령",
+      "article": "제26조(보존기간)",
+      "effective_date": "2026-10-02",
+      "source_url": "https://www.law.go.kr/LSW/lsLinkCommonInfo.do?lsJoLnkSeq=1015622545",
+      "sha256": "dc5c6c190300dd2718412565b317c0f057d87f8cb15482bff5b15248408f02b4",
+      "raw_sha256": "f4fff595018506d9fbf53c71b461b5440b31c4eee06660bdafaff411cb5cd1bc"
+    },
+    {
+      "id": "office-extra-records-decree-43",
+      "title": "공공기록물 관리에 관한 법률 시행령",
+      "article": "제43조(기록관 및 특수기록관의 소관 기록물 평가 및 폐기)",
+      "effective_date": "2026-10-02",
+      "source_url": "https://www.law.go.kr/LSW/lsLinkCommonInfo.do?chrClsCd=010202&lsJoLnkSeq=1028015957",
+      "sha256": "5c6c5f400b7442a7ba91b4cd366b2562692c9260fc5eb0daf3e4f894b044f1ea",
+      "raw_sha256": "c5f933c38e3f634b2bed0793fa82396f8f712d5801a12ae7eb3da77ffa8bc5c4"
+    },
+    {
+      "id": "office-extra-disclosure-11-2",
+      "title": "공공기관의 정보공개에 관한 법률",
+      "article": "제11조의2(반복 청구 등의 처리)",
+      "effective_date": "2023-11-17",
+      "source_url": "https://www.law.go.kr/LSW/lsLinkCommonInfo.do?chrClsCd=010202&lsJoLnkSeq=1026232319",
+      "sha256": "3330d83a3689b0e16e02ce951822232c3664b13b37414d50565fe98a04c9b915",
+      "raw_sha256": "39a1a22e70e76579bd5ed735a34c13a38fe076e6758579c77ee8160479e90b5b"
+    },
+    {
+      "id": "office-extra-disclosure-17",
+      "title": "공공기관의 정보공개에 관한 법률",
+      "article": "제17조(비용 부담)",
+      "effective_date": "2023-11-17",
+      "source_url": "https://www.law.go.kr/LSW/lsLinkCommonInfo.do?lsJoLnkSeq=1031228155",
+      "sha256": "70fe012d4f43feb64262dc063a15057f8bcfa78c8cb915e43d9666d3998e2885",
+      "raw_sha256": "4e1a1117330a9b2ac78e5dc23bb2501bf5e6f5365f697d36e1485fe2f96ef07d"
+    },
+    {
+      "id": "office-extra-disclosure-decree-17",
+      "title": "공공기관의 정보공개에 관한 법률 시행령",
+      "article": "제17조(비용 부담)",
+      "effective_date": "2026-01-02",
+      "source_url": "https://www.law.go.kr/LSW/lsLinkCommonInfo.do?chrClsCd=010202&lsJoLnkSeq=1029103109",
+      "sha256": "0aa8d952bf7399152756890aa145c10856d97e1a0bb9707a73e11a933a848287",
+      "raw_sha256": "d58401ccfa8faa85322249e61194b61920cdebe366893bb0815f28f7b372b828"
+    }
+  ]
+}

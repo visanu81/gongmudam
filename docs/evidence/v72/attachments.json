@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "scope": "fresh private package live API; synthetic text output; reference attachment only",
+  "results": [
+    {
+      "kind": "travel",
+      "id": "8ea3c08da1694493a515ea3fdbe6b824",
+      "sha256": "70e2e9449bc83f7d3b57039eebc38efcef6e39b6187e899c80f5fcb63313172c",
+      "original_readback": true,
+      "version_unchanged": true,
+      "repeat_is_one_record": true,
+      "passed": true
+    },
+    {
+      "kind": "adhoc",
+      "id": "13159d7800d5433490574d436e156154",
+      "sha256": "70e2e9449bc83f7d3b57039eebc38efcef6e39b6187e899c80f5fcb63313172c",
+      "original_readback": true,
+      "version_unchanged": true,
+      "repeat_is_one_record": true,
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+[
+  {
+    "path": "/",
+    "status": 200,
+    "content_type": "text/html",
+    "ok": true,
+    "bytes": 20617,
+    "error_excerpt": null
+  },
+  {
+    "path": "/api/gongmudam/status",
+    "status": 200,
+    "content_type": "application/json",
+    "ok": true,
+    "bytes": 157,
+    "error_excerpt": null
+  },
+  {
+    "path": "/api/ask",
+    "status": 200,
+    "content_type": "application/json",
+    "ok": true,
+    "bytes": 15362,
+    "error_excerpt": null
+  },
+  {
+    "path": "/calendar.html",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "ok": true,
+    "bytes": 14490,
+    "error_excerpt": null
+  },
+  {
+    "path": "/folders.html",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "ok": true,
+    "bytes": 5350,
+    "error_excerpt": null
+  },
+  {
+    "path": "/api/calendar/agenda",
+    "status": 200,
+    "content_type": "application/json",
+    "ok": true,
+    "bytes": 5749,
+    "error_excerpt": null
+  },
+  {
+    "path": "/api/adhoc/jobs",
+    "status": 200,
+    "content_type": "application/json",
+    "ok": true,
+    "bytes": 408,
+    "error_excerpt": null
+  },
+  {
+    "path": "/api/travel/cases",
+    "status": 200,
+    "content_type": "application/json",
+    "ok": true,
+    "bytes": 1252,
+    "error_excerpt": null
+  },
+  {
+    "path": "/api/toolbox/targets",
+    "status": 200,
+    "content_type": "application/json",
+    "ok": true,
+    "bytes": 655,
+    "error_excerpt": null
+  },
+  {
+    "path": "/toolbox.html",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "ok": true,
+    "bytes": 2537,
+    "error_excerpt": null
+  }
+]

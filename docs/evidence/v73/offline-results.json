@@ -1,0 +1,71 @@
+{
+  "same_physical_pc": true,
+  "separate_physical_pc": false,
+  "model_provider_forbidden": true,
+  "external_network_connections_forbidden": true,
+  "background_monitors_paused_for_isolation": true,
+  "explicit_topic_switch": true,
+  "fact_followup": true,
+  "passed": true,
+  "sources": 36,
+  "law_guidance_sources": 30,
+  "manuals": 6,
+  "manual_pages": 221,
+  "service_guides": 10,
+  "faq_questions": 26,
+  "snapshot_links": 36,
+  "original_pdfs": 6,
+  "external_connections": 0,
+  "configuration_unchanged": true,
+  "private_work_records": 0,
+  "queries": [
+    {
+      "id": "child",
+      "passed": true
+    },
+    {
+      "id": "national-child",
+      "passed": true
+    },
+    {
+      "id": "sick",
+      "passed": true
+    },
+    {
+      "id": "health",
+      "passed": true
+    },
+    {
+      "id": "sidejob",
+      "passed": true
+    },
+    {
+      "id": "negation",
+      "passed": true
+    },
+    {
+      "id": "travel",
+      "passed": true
+    },
+    {
+      "id": "birth",
+      "passed": true
+    },
+    {
+      "id": "budget",
+      "passed": true
+    },
+    {
+      "id": "manual",
+      "passed": true
+    },
+    {
+      "id": "unknown",
+      "passed": true
+    },
+    {
+      "id": "travel-manual",
+      "passed": true
+    }
+  ]
+}

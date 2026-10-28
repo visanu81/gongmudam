@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "service_python_final": 784,
+  "service_node": 25,
+  "source_python": 31,
+  "source_node": 30,
+  "installed_python": 17,
+  "installed_node": 24,
+  "first_service_run": {
+    "total": 781,
+    "timed_out": 2
+  },
+  "bounded_scan_wait_tests": 3,
+  "quote_tests": 5,
+  "real_business_model_calls": 2,
+  "first_model_timeout": 1,
+  "separate_physical_pc": false
+}

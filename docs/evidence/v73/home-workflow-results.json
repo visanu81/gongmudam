@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "job_id": "f269e6e65a5f4123957f23bc7640edaa",
+  "before": {
+    "today": 1,
+    "week": 2
+  },
+  "after": {
+    "today": 0,
+    "week": 1
+  },
+  "exact_step": "collect",
+  "scope": "fresh ZIP-installed private runtime; synthetic only"
+}

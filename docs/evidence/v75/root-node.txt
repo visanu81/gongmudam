@@ -1,0 +1,41 @@
+새 설치본에서 실행한 검사 로그입니다. 오류/EOF 문구 중 일부는 실패 처리 검증의 모의 응답이며, 마지막 OK/exit_code와 실패 건수를 판정 기준으로 사용합니다.
+
+✔ public status retains the public notice and badge; status fetch is cached (3.3133ms)
+✔ private status labels the local workspace (2.4665ms)
+✔ unavailable or malformed status stays unknown and never claims private or shared mode (3.865ms)
+✔ today and Monday–Sunday deadlines use server KST dates across the year boundary (20.6636ms)
+✔ education links retain the exact stage; arbitrary destinations fall back to the dated calendar (2.1835ms)
+✔ rendered task and more buttons open the stage and current week; focus survives a refresh (11.2459ms)
+✔ older responses never replace the latest result, including when fetch ignores abort (2.7224ms)
+✔ failure is distinct from zero tasks; stale results are labelled and completion removes a task (2.365ms)
+✔ a quiet week still offers the next actual deadline and midnight visibility refresh uses the new date (2.1915ms)
+✔ focus refresh keeps unchanged task buttons alive so the first click is not cancelled (1.8026ms)
+✔ home agenda forces its destination while ordinary app activation keeps the current service page (40.2276ms)
+✔ icon clamp reserves the agenda shelf on desktop, not on narrow screens (2.7842ms)
+✔ rotates after 45 seconds and manual next restarts the full interval (6.5439ms)
+✔ pause persists, updates its accessible state, and resume starts a full interval (1.5305ms)
+✔ a new instance restores a saved paused preference (1.3547ms)
+✔ hidden documents suspend rotation and visibility resumes a full 45-second interval (1.2293ms)
+✔ blocked storage is harmless and rotation makes no network requests (1.7625ms)
+✔ home messages retain the frame and delegate only from the trusted ready child (5.309ms)
+✔ frame stays hidden through initial load, navigation, and retry until valid ready (1.6936ms)
+✔ only a same-origin message from this frame reveals it and flushes queued question (2.0023ms)
+✔ timeout leaves the frame hidden with retry available and clears busy; retry resumes busy state (1.3153ms)
+✔ late load after timeout preserves failure controls until trusted ready or retry (2.1243ms)
+✔ direct chat home and start route to the desktop home (7.1017ms)
+✔ folder project and hash survive routing through desktop open query (1.9844ms)
+✔ chat and travel queries are encoded and preserved (3.1603ms)
+✔ all approved services resolve canonically (1.9373ms)
+✔ iframes and desktop paths never auto redirect (3.5886ms)
+✔ unknown paths, foreign origins, and unsafe or malformed URLs are rejected (1.8679ms)
+✔ each edge and corner follows the pointer direction and preserves its opposite edge (6.4423ms)
+✔ minimum dimensions and workspace edges clamp safely (0.6772ms)
+✔ invalid directions and non-finite geometry are rejected (0.3707ms)
+ℹ tests 31
+ℹ suites 0
+ℹ pass 31
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 318.6596

@@ -1,18 +1,23 @@
 {
   "created_at": "2026-10-24T12:02:39.557578+00:00",
   "service": {
-    "version": "v69",
-    "archive_sha256": "94f3cba75e97d4cfa9465d0f7a4c59374f6c941dc84002d645d8fe384b00b7b8",
-    "runtime_files": 483,
-    "sealed_source_preserved": true,
-    "public_sources": 25,
-    "manuals": 6
+    "version": "v73",
+    "runtime_files": 563,
+    "sealed_source_preserved": false,
+    "public_sources": 30,
+    "manuals": 6,
+    "manual_pages": 221,
+    "mpm_service_guides": 10,
+    "mpm_faq_questions": 26,
+    "derived_from_verified_v70": true,
+    "change_scope": "home/calendar bundle and original rotating header text; test waits respect parser/progress budgets; regulatory corpus and LLM engine unchanged",
+    "base_archive_sha256": "5e6dc4d85fa0026fc63315898d2ff0540cfe05c623eaa75aedb59b8e9836bbf5"
   },
   "desktop": {
     "brand": "gongmudam",
     "mascot": "무무",
     "files": {
-      "DESIGN.md": "ab9257da663978ede83a351b20195574ce2e17fd3477c80ca1f848d6ca974996",
+      "DESIGN.md": "a825dd9177c588655835be52aad6df11739eabdc1347120c21ad5a49405a1499",
       "LEX_FLOW_REUSE.txt": "6a4062b18b15b25fac9909855ad1ebe4e5af43385325337377db5358c9d4079a",
       "README.txt": "7d0a62fab19f6c6bdca3e75103e181dc0db07b792a6f42caa937f6c3d444298f",
       "VERIFICATION.txt": "4337b05b0ce253098a1583983d566f715e778f77fe163ea572e69d1b89cfb7ed",
@@ -27,20 +32,25 @@
       "data/agencies-v1.json": "f72796765b5f40a3cac53d4bd526e350a1887b9c60f0c9c8b3b88139a7c00fca",
       "data/agencies-v1.sqlite": "dd646a9cfe6d69ee9176a6bba78ef0c3dca9a6aba3dd3053105ef0db17f04c0e",
       "desktop.css": "8af0139aef7e0d052fcdb6bda8a6b74a328bd5a70f884d482f6d043879ce5a33",
-      "desktop.js": "cb02667925ff70fe17a2a00e4089468bcc21bd28ffb821b02b6ea64161e042ad",
+      "desktop.js": "eb4095f6f9afa4bd3ffd212ef2a4be038e43ae1ea1745e7c21a9662629c5ba70",
       "embedded.css": "ab2e1b49ed5d07afdcd7f634a42c5da71e32c92018254e9b397f2e2bf4332cbd",
-      "embedded.js": "ae7e4d0632d1bf963d7ee06864cdda2a493a2afe7eefc73f71b51fcc99e3d82a",
-      "index.html": "80d114b275fdbcf7750468df14ee324d8aa2bbe766b8158dc5a8dd71ff7aa4fc",
+      "embedded.js": "8175a9d8d4455255848f53c3cfdeb70e145a26c04cae01dd8cef8658b9807750",
+      "index.html": "2efd3ebed406a4bf4c1b0e95ae085a66cbfaae53976d5eeb16d6e6143f3754a1",
       "notepad.js": "56e48e502bf99e299328dc2570bc82edd0ccdd0848792d65911264e069ebf776",
       "server.py": "9db9c5bf59134237ac1bb54c40fb85be7b8cf740909003e16740bde88b3b7dc7",
-      "service-bridge.css": "d38f8dccebc532a0d6567f7f4ba10df8d18e8657fdb18f089c53d86c57ee0c06",
-      "service-bridge.js": "fe0b6251f5b1100c2054947ca2f7ba978c9b15a014846f59c847ec8b02aa3f18",
+      "service-bridge.css": "22bf51739fb36a3278a34c35e5972f65cb3d903dc3f591e3385aef7ec3a30641",
+      "service-bridge.js": "2250d92a3db720353bb6b4650d6ba50b5bd02b27ab5ad04304ecb5fd7c39e739",
       "tests/test_agency_directory.py": "5a8f0a6403748d5baa318227130c06716e724415220096d9b33efcdf575b3f9b",
       "tools/export_agencies.py": "429cd19178948b025630a81c79623bd6a61b23368be3dd8b497c914cf54e1069",
       "window-resize.css": "220f8a298c4082aee93137112acf3acd574b9915ba7d66b631841517a70bc296",
-      "window-resize.js": "be8a1c266d9afd7c3528ac8d033704364481e542ade22c16183d9da20d2d6c8e"
+      "window-resize.js": "be8a1c266d9afd7c3528ac8d033704364481e542ade22c16183d9da20d2d6c8e",
+      "deployment-context.js": "159c43d7cf93ff7215cba12f00fefb50534222cd3167f866f8b250600de5122a",
+      "home-agenda.js": "a6ebfd9f3eed93a2e858858c1a6c39f03c60bcafca2392b63fde4f0acca4eb39",
+      "home-agenda.css": "914f5d65ba8da49d9e6dc2c51ea808d4cc2f81d87d9f0444abfb78dc94ec47cd",
+      "quote-strip.js": "e0c3958d7fa5e4ee88dceb2cd05680b731264600fa4c7a03c7adcce1367badf5",
+      "quote-strip.css": "8c0d3e1c95a4c1a12d5def6ebfe95c66cbff649e0e8888f349d29ae886bc82a3"
     },
-    "integration_status": "connected to existing v69 service APIs through same-origin desktop windows",
+    "integration_status": "connected to verified v70 service APIs through same-origin B desktop windows",
     "approved_preview_files": {
       "index.html": "9ac2c9626592d4cff196906c62cad0ccafaa307f14e4bd94eaf2ce0af9da01f1",
       "desktop.css": "73a313e713e74ade55f2bb11b80ca2050fcd42fbe79c8e89aabdb8db48c00d33",
@@ -64,7 +74,9 @@
       "tools/export_agencies.py": "429cd19178948b025630a81c79623bd6a61b23368be3dd8b497c914cf54e1069",
       "tests/test_agency_directory.py": "5a8f0a6403748d5baa318227130c06716e724415220096d9b33efcdf575b3f9b"
     },
-    "window_resize": "eight edge/corner grips; keyboard; constrained workspace; fixed-PC backend retained"
+    "window_resize": "eight edge/corner grips; keyboard; constrained workspace; fixed-PC backend retained",
+    "calendar_entry": "업무 달력 desktop icon and existing clock route; existing calendar APIs preserved",
+    "home_agenda": "existing server KST task snapshot, dated calendar and exact workflow navigation; current app enhancement after v72 submission archive"
   },
   "excluded": [
     "live business databases",
@@ -81,6 +93,38 @@
     "status": "deployed",
     "mode": "Workers static desktop + private VPC service to isolated Windows demo runtime",
     "requires_origin_pc": true,
-    "worker_version": "8c644b46-3325-4e01-918b-1bc10f58aede"
+    "worker_version": "78b3c140-4826-429d-91dd-57421ab2af08",
+    "service_version": "v71"
+  },
+  "previous_service": {
+    "version": "v69",
+    "archive_sha256": "94f3cba75e97d4cfa9465d0f7a4c59374f6c941dc84002d645d8fe384b00b7b8",
+    "runtime_files": 483,
+    "sealed_source_preserved": true,
+    "public_sources": 25,
+    "manuals": 6
+  },
+  "updated_at": "2026-10-25T01:09:47.808777+00:00",
+  "v70_verified_base": {
+    "version": "v70",
+    "archive_sha256": "5e6dc4d85fa0026fc63315898d2ff0540cfe05c623eaa75aedb59b8e9836bbf5",
+    "runtime_files": 561,
+    "sealed_source_preserved": true,
+    "public_sources": 30,
+    "manuals": 6,
+    "manual_pages": 221,
+    "mpm_service_guides": 10,
+    "mpm_faq_questions": 26
+  },
+  "submission_v72": {
+    "guide": "docs/SUBMISSION-v72-START.txt",
+    "validation": "docs/SUBMISSION-v72-VALIDATION.txt",
+    "default_mode": "private offline",
+    "sources": 36
+  },
+  "submission_v73": {
+    "guide": "docs/SUBMISSION-v73-START.txt",
+    "validation": "docs/SUBMISSION-v73-VALIDATION.txt",
+    "default_mode": "private offline"
   }
 }

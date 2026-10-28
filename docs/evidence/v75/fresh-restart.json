@@ -1,0 +1,10 @@
+{
+  "checks": {
+    "messages_preserved": true,
+    "file_ids_preserved": true,
+    "config_preserved": true,
+    "ready_after_restart": true,
+    "v75": true
+  },
+  "message_count": 10
+}

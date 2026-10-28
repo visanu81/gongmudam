@@ -1,0 +1,20 @@
+{
+  "results": [
+    {
+      "kind": "overtime",
+      "question": "초과근무 식비를 지급하려면 어떤 증빙이 필요한가요?",
+      "no_unrelated_evidence": true,
+      "mode": "source_unavailable",
+      "titles": []
+    },
+    {
+      "kind": "privacy",
+      "question": "교육 취합 명단을 외부에 보낼 때 개인정보를 어떻게 가려야 하나요?",
+      "no_unrelated_evidence": true,
+      "mode": "source_unavailable",
+      "titles": []
+    }
+  ],
+  "missing": [],
+  "passed": true
+}

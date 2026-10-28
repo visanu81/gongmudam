@@ -1,0 +1,49 @@
+{
+  "project_id": "576866e1562e4eae90bc1ecf760b14c6",
+  "checks": {
+    "two_sources": true,
+    "both_ready": true,
+    "question_exact": true,
+    "offline": true,
+    "correct_answer": true,
+    "correct_location": true,
+    "source_match": true
+  },
+  "answer": {
+    "id": "d00d57f0e54548b7ae05e7df43c5e6f1",
+    "project_id": "576866e1562e4eae90bc1ecf760b14c6",
+    "role": "assistant",
+    "content": "프로젝트 원문에서 확인한 내용\n\n\n\n[1] 담당자 확인 메모.txt · 4행\n회계과: 미회신",
+    "status": "completed",
+    "created_at": "2026-10-25T09:57:18.287382+00:00",
+    "question": "미회신 부서는 어디인가요?",
+    "user_id": "8df6eea858374fe5a3ac7a1885083c1d",
+    "file_ids": [],
+    "draft": false,
+    "evidence": [
+      {
+        "ref": 1,
+        "file_id": "5aaab2a4c4715aaf818fb88edabbe91f",
+        "name": "담당자 확인 메모.txt",
+        "unit": 4,
+        "loc": "4행",
+        "text": "회계과: 미회신",
+        "sha256": "c335fa5d3661ad8556c8da62dc5df5a21966df887ac7a12d339ab9a8265ef50b",
+        "stale": false
+      }
+    ],
+    "coverage": {
+      "total": 2,
+      "ready": 2,
+      "partial": 0,
+      "unread": 0
+    },
+    "mode": "offline",
+    "model": null,
+    "model_metadata": {},
+    "notice": "AI 없이 프로젝트 원문을 찾아 구성했습니다. 이번 답변은 검색된 1개 파일의 발췌이며, 읽은 모든 파일을 인용한 결과는 아닙니다. 필요하면 자료를 선택해 나눠 질문하세요.",
+    "finished_at": "2026-10-25T09:57:18.565663+00:00"
+  },
+  "automated_tests": 110,
+  "physical_other_pc_test": false
+}

@@ -1,0 +1,39 @@
+✔ public status retains the public notice and badge; status fetch is cached (1.7686ms)
+✔ private status labels the local workspace (1.3927ms)
+✔ unavailable or malformed status stays unknown and never claims private or shared mode (1.6765ms)
+✔ today and Monday–Sunday deadlines use server KST dates across the year boundary (13.8092ms)
+✔ education links retain the exact stage; arbitrary destinations fall back to the dated calendar (1.2569ms)
+✔ rendered task and more buttons open the stage and current week; focus survives a refresh (6.3672ms)
+✔ older responses never replace the latest result, including when fetch ignores abort (1.8534ms)
+✔ failure is distinct from zero tasks; stale results are labelled and completion removes a task (1.6274ms)
+✔ a quiet week still offers the next actual deadline and midnight visibility refresh uses the new date (1.555ms)
+✔ focus refresh keeps unchanged task buttons alive so the first click is not cancelled (1.3402ms)
+✔ home agenda forces its destination while ordinary app activation keeps the current service page (37.6529ms)
+✔ icon clamp reserves the agenda shelf on desktop, not on narrow screens (2.9393ms)
+✔ rotates after 45 seconds and manual next restarts the full interval (3.5682ms)
+✔ pause persists, updates its accessible state, and resume starts a full interval (1.0558ms)
+✔ a new instance restores a saved paused preference (0.8309ms)
+✔ hidden documents suspend rotation and visibility resumes a full 45-second interval (0.7217ms)
+✔ blocked storage is harmless and rotation makes no network requests (0.9405ms)
+✔ home messages retain the frame and delegate only from the trusted ready child (3.2988ms)
+✔ frame stays hidden through initial load, navigation, and retry until valid ready (1.0658ms)
+✔ only a same-origin message from this frame reveals it and flushes queued question (1.3055ms)
+✔ timeout leaves the frame hidden with retry available and clears busy; retry resumes busy state (1.1553ms)
+✔ late load after timeout preserves failure controls until trusted ready or retry (1.5563ms)
+✔ direct chat home and start route to the desktop home (3.8672ms)
+✔ folder project and hash survive routing through desktop open query (0.9759ms)
+✔ chat and travel queries are encoded and preserved (1.3924ms)
+✔ all approved services resolve canonically (1.0453ms)
+✔ iframes and desktop paths never auto redirect (1.2222ms)
+✔ unknown paths, foreign origins, and unsafe or malformed URLs are rejected (0.8818ms)
+✔ each edge and corner follows the pointer direction and preserves its opposite edge (2.8182ms)
+✔ minimum dimensions and workspace edges clamp safely (0.2843ms)
+✔ invalid directions and non-finite geometry are rejected (0.1782ms)
+ℹ tests 31
+ℹ suites 0
+ℹ pass 31
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 225.6047

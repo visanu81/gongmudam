@@ -1,0 +1,335 @@
+{
+  "adhoc.db": {
+    "jobs": {
+      "original_rows_preserved": true,
+      "previous_count": 0,
+      "current_count": 0
+    },
+    "replies": {
+      "original_rows_preserved": true,
+      "previous_count": 0,
+      "current_count": 0
+    },
+    "rows": {
+      "original_rows_preserved": true,
+      "previous_count": 0,
+      "current_count": 0
+    },
+    "row_merge_provenance": {
+      "original_rows_preserved": true,
+      "previous_count": 0,
+      "current_count": 0
+    },
+    "row_group_provenance": {
+      "original_rows_preserved": true,
+      "previous_count": 0,
+      "current_count": 0
+    },
+    "empty_replies": {
+      "original_rows_preserved": true,
+      "previous_count": 0,
+      "current_count": 0
+    },
+    "history": {
+      "original_rows_preserved": true,
+      "previous_count": 0,
+      "current_count": 0
+    },
+    "exports": {
+      "original_rows_preserved": true,
+      "previous_count": 0,
+      "current_count": 0
+    },
+    "collection_templates": {
+      "original_rows_preserved": true,
+      "previous_count": 0,
+      "current_count": 0
+    },
+    "job_workflows": {
+      "original_rows_preserved": true,
+      "previous_count": 0,
+      "current_count": 0
+    },
+    "job_workflow_history": {
+      "original_rows_preserved": true,
+      "previous_count": 0,
+      "current_count": 0
+    },
+    "workflow_chat_requests": {
+      "original_rows_preserved": true,
+      "previous_count": 0,
+      "current_count": 0
+    },
+    "toolbox_attachments": {
+      "original_rows_preserved": true,
+      "previous_count": 0,
+      "current_count": 0
+    }
+  },
+  "calendar.db": {
+    "calendar_events": {
+      "original_rows_preserved": true,
+      "previous_count": 0,
+      "current_count": 0
+    },
+    "calendar_exceptions": {
+      "original_rows_preserved": true,
+      "previous_count": 0,
+      "current_count": 0
+    },
+    "calendar_history": {
+      "original_rows_preserved": true,
+      "previous_count": 0,
+      "current_count": 0
+    },
+    "calendar_agenda_settings": {
+      "original_rows_preserved": true,
+      "previous_count": 0,
+      "current_count": 0
+    },
+    "calendar_alert_states": {
+      "original_rows_preserved": true,
+      "previous_count": 0,
+      "current_count": 0
+    }
+  },
+  "folders.db": {
+    "libraries": {
+      "original_rows_preserved": true,
+      "previous_count": 6,
+      "current_count": 7
+    },
+    "knowledge_sources": {
+      "original_rows_preserved": true,
+      "previous_count": 93,
+      "current_count": 103
+    },
+    "work_experiences": {
+      "original_rows_preserved": true,
+      "previous_count": 0,
+      "current_count": 0
+    },
+    "folder_scan_jobs": {
+      "original_rows_preserved": true,
+      "previous_count": 0,
+      "current_count": 0
+    },
+    "folder_projects": {
+      "original_rows_preserved": true,
+      "previous_count": 5,
+      "current_count": 5
+    },
+    "project_sources": {
+      "original_rows_preserved": true,
+      "previous_count": 6,
+      "current_count": 6
+    },
+    "project_files": {
+      "original_rows_preserved": true,
+      "previous_count": 12,
+      "current_count": 12
+    },
+    "project_messages": {
+      "original_rows_preserved": true,
+      "previous_count": 46,
+      "current_count": 46
+    },
+    "project_jobs": {
+      "original_rows_preserved": true,
+      "previous_count": 6,
+      "current_count": 6
+    },
+    "project_units": {
+      "original_rows_preserved": true,
+      "previous_count": 86,
+      "current_count": 86
+    },
+    "folder_ai_runs": {
+      "original_rows_preserved": true,
+      "previous_count": 0,
+      "current_count": 0
+    },
+    "folder_watches": {
+      "original_rows_preserved": true,
+      "previous_count": 0,
+      "current_count": 0
+    },
+    "institution_rule_docs": {
+      "original_rows_preserved": true,
+      "previous_count": 7,
+      "current_count": 7
+    },
+    "institution_rule_versions": {
+      "original_rows_preserved": true,
+      "previous_count": 11,
+      "current_count": 11
+    },
+    "institution_rule_events": {
+      "original_rows_preserved": true,
+      "previous_count": 35,
+      "current_count": 35
+    }
+  },
+  "regulation-monitor.db": {
+    "settings": {
+      "original_rows_preserved": true,
+      "previous_count": 1,
+      "current_count": 1
+    },
+    "runs": {
+      "original_rows_preserved": true,
+      "previous_count": 5,
+      "current_count": 5
+    },
+    "active": {
+      "original_rows_preserved": true,
+      "previous_count": 1,
+      "current_count": 1
+    },
+    "changes": {
+      "original_rows_preserved": true,
+      "previous_count": 0,
+      "current_count": 0
+    }
+  },
+  "seomu.db": {
+    "documents": {
+      "original_rows_preserved": true,
+      "previous_count": 8,
+      "current_count": 8
+    },
+    "chunks": {
+      "original_rows_preserved": true,
+      "previous_count": 61,
+      "current_count": 61
+    },
+    "cards": {
+      "original_rows_preserved": true,
+      "previous_count": 4,
+      "current_count": 4
+    },
+    "forms": {
+      "original_rows_preserved": true,
+      "previous_count": 2,
+      "current_count": 2
+    },
+    "settings": {
+      "original_rows_preserved": true,
+      "previous_count": 1,
+      "current_count": 1
+    }
+  },
+  "travel.db": {
+    "organizations": {
+      "original_rows_preserved": true,
+      "previous_count": 6,
+      "current_count": 6
+    },
+    "rule_packs": {
+      "original_rows_preserved": true,
+      "previous_count": 9,
+      "current_count": 9
+    },
+    "travel_rules": {
+      "original_rows_preserved": true,
+      "previous_count": 7,
+      "current_count": 7
+    },
+    "travel_cases": {
+      "original_rows_preserved": true,
+      "previous_count": 0,
+      "current_count": 0
+    },
+    "travel_transactions": {
+      "original_rows_preserved": true,
+      "previous_count": 0,
+      "current_count": 0
+    },
+    "travel_events": {
+      "original_rows_preserved": true,
+      "previous_count": 0,
+      "current_count": 0
+    },
+    "sqlite_sequence": {
+      "original_rows_preserved": true,
+      "previous_count": 0,
+      "current_count": 0
+    },
+    "travel_drafts": {
+      "original_rows_preserved": true,
+      "previous_count": 0,
+      "current_count": 0
+    },
+    "travel_case_legalpacks": {
+      "original_rows_preserved": true,
+      "previous_count": 0,
+      "current_count": 0
+    },
+    "travel_calculations": {
+      "original_rows_preserved": true,
+      "previous_count": 0,
+      "current_count": 0
+    },
+    "travel_documents": {
+      "original_rows_preserved": true,
+      "previous_count": 0,
+      "current_count": 0
+    },
+    "travel_document_transactions": {
+      "original_rows_preserved": true,
+      "previous_count": 0,
+      "current_count": 0
+    },
+    "travel_case_workflow": {
+      "original_rows_preserved": true,
+      "previous_count": 0,
+      "current_count": 0
+    },
+    "travel_tasks": {
+      "original_rows_preserved": true,
+      "previous_count": 0,
+      "current_count": 0
+    },
+    "travel_case_origins": {
+      "original_rows_preserved": true,
+      "previous_count": 0,
+      "current_count": 0
+    },
+    "travel_organization_settings": {
+      "original_rows_preserved": true,
+      "previous_count": 0,
+      "current_count": 0
+    },
+    "travel_rule_sources": {
+      "original_rows_preserved": true,
+      "previous_count": 0,
+      "current_count": 0
+    },
+    "travel_rule_reviews": {
+      "original_rows_preserved": true,
+      "previous_count": 0,
+      "current_count": 0
+    },
+    "travel_form_templates": {
+      "original_rows_preserved": true,
+      "previous_count": 0,
+      "current_count": 0
+    },
+    "travel_stage_notes": {
+      "original_rows_preserved": true,
+      "previous_count": 0,
+      "current_count": 0
+    },
+    "travel_stage_note_tasks": {
+      "original_rows_preserved": true,
+      "previous_count": 0,
+      "current_count": 0
+    },
+    "toolbox_attachments": {
+      "original_rows_preserved": true,
+      "previous_count": 0,
+      "current_count": 0
+    }
+  },
+  "config_unchanged": true
+}

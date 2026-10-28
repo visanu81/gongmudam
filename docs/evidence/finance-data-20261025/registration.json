@@ -1,0 +1,36 @@
+{
+  "would_add": [
+    "finance-national-2026-supplies",
+    "finance-national-2026-overtime-meals",
+    "finance-national-2026-meetings",
+    "finance-national-2026-lecturers",
+    "finance-national-2026-manuscripts",
+    "finance-national-2026-fee-faq",
+    "finance-national-2026-cards",
+    "finance-national-2026-assets",
+    "finance-local-446-supplies",
+    "finance-local-446-overtime-meals",
+    "finance-local-446-lecturers",
+    "finance-local-446-meetings",
+    "finance-local-446-cards",
+    "finance-local-446-assets"
+  ],
+  "added": [
+    "finance-national-2026-supplies",
+    "finance-national-2026-overtime-meals",
+    "finance-national-2026-meetings",
+    "finance-national-2026-lecturers",
+    "finance-national-2026-manuscripts",
+    "finance-national-2026-fee-faq",
+    "finance-national-2026-cards",
+    "finance-national-2026-assets",
+    "finance-local-446-supplies",
+    "finance-local-446-overtime-meals",
+    "finance-local-446-lecturers",
+    "finance-local-446-meetings",
+    "finance-local-446-cards",
+    "finance-local-446-assets"
+  ],
+  "backup": "C:\\AI작업\\프로그램 제작\\gongmudam\\service\\data\\finance-registration-backups\\20261025T130233-4b54eefe.db",
+  "business_rows_preserved": true
+}

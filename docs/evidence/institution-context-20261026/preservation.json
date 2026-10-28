@@ -1,0 +1,85 @@
+{
+  "libraries": {
+    "before_count": 6,
+    "after_count": 6,
+    "original_rows_preserved": true
+  },
+  "folder_projects": {
+    "before_count": 5,
+    "after_count": 5,
+    "original_rows_preserved": true
+  },
+  "project_sources": {
+    "before_count": 6,
+    "after_count": 6,
+    "original_rows_preserved": true
+  },
+  "project_files": {
+    "before_count": 12,
+    "after_count": 12,
+    "original_rows_preserved": true
+  },
+  "project_messages": {
+    "before_count": 46,
+    "after_count": 46,
+    "original_rows_preserved": true
+  },
+  "project_jobs": {
+    "before_count": 6,
+    "after_count": 6,
+    "original_rows_preserved": true
+  },
+  "project_units": {
+    "before_count": 86,
+    "after_count": 86,
+    "original_rows_preserved": true
+  },
+  "institution_rule_docs": {
+    "before_count": 3,
+    "after_count": 7,
+    "original_rows_preserved": true
+  },
+  "institution_rule_versions": {
+    "before_count": 6,
+    "after_count": 11,
+    "original_rows_preserved": true
+  },
+  "institution_rule_events": {
+    "before_count": 21,
+    "after_count": 35,
+    "original_rows_preserved": true
+  },
+  "knowledge_sources": {
+    "before_count": 89,
+    "after_count": 93,
+    "original_rows_preserved": true
+  },
+  "common_registered_sources": 86,
+  "config_preserved": true,
+  "synthetic_disabled": [
+    {
+      "id": "c841b0704c6c4692a55b60d0dba98b4d",
+      "enabled": false,
+      "version_count": 1,
+      "category": "교육·행사"
+    },
+    {
+      "id": "40978fc47f01444085bb8c6e65b54e4d",
+      "enabled": false,
+      "version_count": 2,
+      "category": "기타"
+    },
+    {
+      "id": "7304c2bc819742c58aa4ad25db2a0f45",
+      "enabled": false,
+      "version_count": 1,
+      "category": "예산·회계"
+    },
+    {
+      "id": "34642547a982470eb0a803eb93d78bcd",
+      "enabled": false,
+      "version_count": 1,
+      "category": "물품·계약"
+    }
+  ]
+}

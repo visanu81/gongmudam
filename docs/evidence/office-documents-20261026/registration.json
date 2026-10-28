@@ -1,0 +1,28 @@
+{
+  "would_add": [
+    "office-documents-decree-2",
+    "office-documents-decree-3",
+    "office-documents-decree-6",
+    "office-documents-decree-8",
+    "office-documents-decree-9",
+    "office-documents-decree-10",
+    "office-documents-decree-11",
+    "office-documents-decree-12",
+    "office-documents-decree-18",
+    "office-documents-rule-15"
+  ],
+  "added": [
+    "office-documents-decree-2",
+    "office-documents-decree-3",
+    "office-documents-decree-6",
+    "office-documents-decree-8",
+    "office-documents-decree-9",
+    "office-documents-decree-10",
+    "office-documents-decree-11",
+    "office-documents-decree-12",
+    "office-documents-decree-18",
+    "office-documents-rule-15"
+  ],
+  "backup": "C:\\AI작업\\프로그램 제작\\gongmudam\\service\\data\\office-registration-backups\\20261026T060702-bb5616a7.db",
+  "business_rows_preserved": true
+}

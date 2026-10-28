@@ -1,0 +1,447 @@
+{
+  "checks": [
+    {
+      "database": "adhoc.db",
+      "table": "jobs",
+      "rows_before": 0,
+      "rows_after": 0,
+      "unchanged": true
+    },
+    {
+      "database": "adhoc.db",
+      "table": "replies",
+      "rows_before": 0,
+      "rows_after": 0,
+      "unchanged": true
+    },
+    {
+      "database": "adhoc.db",
+      "table": "rows",
+      "rows_before": 0,
+      "rows_after": 0,
+      "unchanged": true
+    },
+    {
+      "database": "adhoc.db",
+      "table": "row_merge_provenance",
+      "rows_before": 0,
+      "rows_after": 0,
+      "unchanged": true
+    },
+    {
+      "database": "adhoc.db",
+      "table": "row_group_provenance",
+      "rows_before": 0,
+      "rows_after": 0,
+      "unchanged": true
+    },
+    {
+      "database": "adhoc.db",
+      "table": "empty_replies",
+      "rows_before": 0,
+      "rows_after": 0,
+      "unchanged": true
+    },
+    {
+      "database": "adhoc.db",
+      "table": "history",
+      "rows_before": 0,
+      "rows_after": 0,
+      "unchanged": true
+    },
+    {
+      "database": "adhoc.db",
+      "table": "exports",
+      "rows_before": 0,
+      "rows_after": 0,
+      "unchanged": true
+    },
+    {
+      "database": "adhoc.db",
+      "table": "collection_templates",
+      "rows_before": 0,
+      "rows_after": 0,
+      "unchanged": true
+    },
+    {
+      "database": "adhoc.db",
+      "table": "job_workflows",
+      "rows_before": 0,
+      "rows_after": 0,
+      "unchanged": true
+    },
+    {
+      "database": "adhoc.db",
+      "table": "job_workflow_history",
+      "rows_before": 0,
+      "rows_after": 0,
+      "unchanged": true
+    },
+    {
+      "database": "adhoc.db",
+      "table": "workflow_chat_requests",
+      "rows_before": 0,
+      "rows_after": 0,
+      "unchanged": true
+    },
+    {
+      "database": "adhoc.db",
+      "table": "toolbox_attachments",
+      "rows_before": 0,
+      "rows_after": 0,
+      "unchanged": true
+    },
+    {
+      "database": "calendar.db",
+      "table": "calendar_events",
+      "rows_before": 0,
+      "rows_after": 0,
+      "unchanged": true
+    },
+    {
+      "database": "calendar.db",
+      "table": "calendar_exceptions",
+      "rows_before": 0,
+      "rows_after": 0,
+      "unchanged": true
+    },
+    {
+      "database": "calendar.db",
+      "table": "calendar_history",
+      "rows_before": 0,
+      "rows_after": 0,
+      "unchanged": true
+    },
+    {
+      "database": "calendar.db",
+      "table": "calendar_agenda_settings",
+      "rows_before": 0,
+      "rows_after": 0,
+      "unchanged": true
+    },
+    {
+      "database": "calendar.db",
+      "table": "calendar_alert_states",
+      "rows_before": 0,
+      "rows_after": 0,
+      "unchanged": true
+    },
+    {
+      "database": "folders.db",
+      "table": "libraries",
+      "rows_before": 7,
+      "rows_after": 7,
+      "unchanged": true
+    },
+    {
+      "database": "folders.db",
+      "table": "knowledge_sources",
+      "rows_before": 103,
+      "rows_after": 103,
+      "unchanged": true
+    },
+    {
+      "database": "folders.db",
+      "table": "work_experiences",
+      "rows_before": 0,
+      "rows_after": 0,
+      "unchanged": true
+    },
+    {
+      "database": "folders.db",
+      "table": "folder_scan_jobs",
+      "rows_before": 0,
+      "rows_after": 0,
+      "unchanged": true
+    },
+    {
+      "database": "folders.db",
+      "table": "folder_projects",
+      "rows_before": 5,
+      "rows_after": 5,
+      "unchanged": true
+    },
+    {
+      "database": "folders.db",
+      "table": "project_sources",
+      "rows_before": 6,
+      "rows_after": 6,
+      "unchanged": true
+    },
+    {
+      "database": "folders.db",
+      "table": "project_files",
+      "rows_before": 12,
+      "rows_after": 12,
+      "unchanged": true
+    },
+    {
+      "database": "folders.db",
+      "table": "project_messages",
+      "rows_before": 46,
+      "rows_after": 46,
+      "unchanged": true
+    },
+    {
+      "database": "folders.db",
+      "table": "project_jobs",
+      "rows_before": 6,
+      "rows_after": 6,
+      "unchanged": true
+    },
+    {
+      "database": "folders.db",
+      "table": "project_units",
+      "rows_before": 86,
+      "rows_after": 86,
+      "unchanged": true
+    },
+    {
+      "database": "folders.db",
+      "table": "folder_ai_runs",
+      "rows_before": 0,
+      "rows_after": 0,
+      "unchanged": true
+    },
+    {
+      "database": "folders.db",
+      "table": "folder_watches",
+      "rows_before": 0,
+      "rows_after": 0,
+      "unchanged": true
+    },
+    {
+      "database": "folders.db",
+      "table": "institution_rule_docs",
+      "rows_before": 7,
+      "rows_after": 7,
+      "unchanged": true
+    },
+    {
+      "database": "folders.db",
+      "table": "institution_rule_versions",
+      "rows_before": 11,
+      "rows_after": 11,
+      "unchanged": true
+    },
+    {
+      "database": "folders.db",
+      "table": "institution_rule_events",
+      "rows_before": 35,
+      "rows_after": 35,
+      "unchanged": true
+    },
+    {
+      "database": "regulation-monitor.db",
+      "table": "settings",
+      "rows_before": 1,
+      "rows_after": 1,
+      "unchanged": true
+    },
+    {
+      "database": "regulation-monitor.db",
+      "table": "runs",
+      "rows_before": 5,
+      "rows_after": 5,
+      "unchanged": true
+    },
+    {
+      "database": "regulation-monitor.db",
+      "table": "active",
+      "rows_before": 1,
+      "rows_after": 1,
+      "unchanged": true
+    },
+    {
+      "database": "regulation-monitor.db",
+      "table": "changes",
+      "rows_before": 0,
+      "rows_after": 0,
+      "unchanged": true
+    },
+    {
+      "database": "seomu.db",
+      "table": "documents",
+      "rows_before": 8,
+      "rows_after": 8,
+      "unchanged": true
+    },
+    {
+      "database": "seomu.db",
+      "table": "chunks",
+      "rows_before": 61,
+      "rows_after": 61,
+      "unchanged": true
+    },
+    {
+      "database": "seomu.db",
+      "table": "cards",
+      "rows_before": 4,
+      "rows_after": 4,
+      "unchanged": true
+    },
+    {
+      "database": "seomu.db",
+      "table": "forms",
+      "rows_before": 2,
+      "rows_after": 2,
+      "unchanged": true
+    },
+    {
+      "database": "seomu.db",
+      "table": "settings",
+      "rows_before": 1,
+      "rows_after": 1,
+      "unchanged": true
+    },
+    {
+      "database": "travel.db",
+      "table": "organizations",
+      "rows_before": 6,
+      "rows_after": 6,
+      "unchanged": true
+    },
+    {
+      "database": "travel.db",
+      "table": "rule_packs",
+      "rows_before": 9,
+      "rows_after": 9,
+      "unchanged": true
+    },
+    {
+      "database": "travel.db",
+      "table": "travel_rules",
+      "rows_before": 7,
+      "rows_after": 7,
+      "unchanged": true
+    },
+    {
+      "database": "travel.db",
+      "table": "travel_cases",
+      "rows_before": 0,
+      "rows_after": 0,
+      "unchanged": true
+    },
+    {
+      "database": "travel.db",
+      "table": "travel_transactions",
+      "rows_before": 0,
+      "rows_after": 0,
+      "unchanged": true
+    },
+    {
+      "database": "travel.db",
+      "table": "travel_events",
+      "rows_before": 0,
+      "rows_after": 0,
+      "unchanged": true
+    },
+    {
+      "database": "travel.db",
+      "table": "travel_drafts",
+      "rows_before": 0,
+      "rows_after": 0,
+      "unchanged": true
+    },
+    {
+      "database": "travel.db",
+      "table": "travel_case_legalpacks",
+      "rows_before": 0,
+      "rows_after": 0,
+      "unchanged": true
+    },
+    {
+      "database": "travel.db",
+      "table": "travel_calculations",
+      "rows_before": 0,
+      "rows_after": 0,
+      "unchanged": true
+    },
+    {
+      "database": "travel.db",
+      "table": "travel_documents",
+      "rows_before": 0,
+      "rows_after": 0,
+      "unchanged": true
+    },
+    {
+      "database": "travel.db",
+      "table": "travel_document_transactions",
+      "rows_before": 0,
+      "rows_after": 0,
+      "unchanged": true
+    },
+    {
+      "database": "travel.db",
+      "table": "travel_case_workflow",
+      "rows_before": 0,
+      "rows_after": 0,
+      "unchanged": true
+    },
+    {
+      "database": "travel.db",
+      "table": "travel_tasks",
+      "rows_before": 0,
+      "rows_after": 0,
+      "unchanged": true
+    },
+    {
+      "database": "travel.db",
+      "table": "travel_case_origins",
+      "rows_before": 0,
+      "rows_after": 0,
+      "unchanged": true
+    },
+    {
+      "database": "travel.db",
+      "table": "travel_organization_settings",
+      "rows_before": 0,
+      "rows_after": 0,
+      "unchanged": true
+    },
+    {
+      "database": "travel.db",
+      "table": "travel_rule_sources",
+      "rows_before": 0,
+      "rows_after": 0,
+      "unchanged": true
+    },
+    {
+      "database": "travel.db",
+      "table": "travel_rule_reviews",
+      "rows_before": 0,
+      "rows_after": 0,
+      "unchanged": true
+    },
+    {
+      "database": "travel.db",
+      "table": "travel_form_templates",
+      "rows_before": 0,
+      "rows_after": 0,
+      "unchanged": true
+    },
+    {
+      "database": "travel.db",
+      "table": "travel_stage_notes",
+      "rows_before": 0,
+      "rows_after": 0,
+      "unchanged": true
+    },
+    {
+      "database": "travel.db",
+      "table": "travel_stage_note_tasks",
+      "rows_before": 0,
+      "rows_after": 0,
+      "unchanged": true
+    },
+    {
+      "database": "travel.db",
+      "table": "toolbox_attachments",
+      "rows_before": 0,
+      "rows_after": 0,
+      "unchanged": true
+    }
+  ],
+  "all_original_tables_unchanged": true,
+  "config_unchanged": true
+}

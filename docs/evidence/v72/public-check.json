@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "status": {
+    "status": "ok",
+    "service_version": "v72",
+    "desktop_connected": true,
+    "public_demo": true,
+    "private_data_isolated": true,
+    "requires_origin_pc": true,
+    "shared_demo": true
+  },
+  "public_business_databases_preserved": 6,
+  "model_configuration_preserved": true,
+  "toolbox_sidebar_absent": true,
+  "new_desktop_assets_deployed": true,
+  "source_count": 36
+}

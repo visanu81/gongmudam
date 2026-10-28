@@ -1,0 +1,47 @@
+{
+  "passed": true,
+  "public_url": "https://gongmudam.visanu81.workers.dev",
+  "version": "v71",
+  "same_question_for_both": true,
+  "original_model_restored": "local_gemma",
+  "model_profiles_unchanged": true,
+  "selection_revision_before": 4,
+  "selection_revision_after": 6,
+  "registered_sources_current": 36,
+  "results": [
+    {
+      "profile": "local_llama",
+      "expected_model": "llama3.2:3b",
+      "returned_model": "llama3.2:3b",
+      "query": "국가공무원 출장 일비는 얼마야?",
+      "elapsed_seconds": 1.14,
+      "connection_checked_before_question": true,
+      "ai_used": true,
+      "evidence": [
+        {
+          "title": "공무원 여비 규정 제16조(일비ㆍ숙박비ㆍ식비의 지급)",
+          "source_sha256": "0b22c01ecffbd69f3c7ceecb499322d0f3d05a21ac9928188fc97d101bb29983",
+          "quote": "③ 일비는 여행일수에 따라 지급하되, 공무용 차량을 이용하는 경우 등 인사혁신처장이 정하는 바에 따라 여행을 하는 경우에는 일비의 2분의 1을 지급한다. <개정 2013. 3. 23., 2014. 11. 19., 2024. 7. 2.>"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "profile": "local_gemma",
+      "expected_model": "gemma3:4b",
+      "returned_model": "gemma3:4b",
+      "query": "국가공무원 출장 일비는 얼마야?",
+      "elapsed_seconds": 17.429,
+      "connection_checked_before_question": true,
+      "ai_used": true,
+      "evidence": [
+        {
+          "title": "공무원 여비 규정 제16조(일비ㆍ숙박비ㆍ식비의 지급)",
+          "source_sha256": "0b22c01ecffbd69f3c7ceecb499322d0f3d05a21ac9928188fc97d101bb29983",
+          "quote": "제16조(일비ㆍ숙박비ㆍ식비의 지급) ① 국내 여행자의 일비(日費)ㆍ숙박비 및 식비는 별표 2에 따라 지급하고, 국외 여행자의 경우는 별표 4에 따라 지급한다. 다만, 공무의 형편이나 그 밖의 부득이한 사유로 숙박비의 상한액 및 지급받은 식비(국내 여행의 경우 식비는 제외한다)를 초과하여 여비를 지출하였을 때에는 국내 여행"
+        }
+      ],
+      "passed": true
+    }
+  ]
+}

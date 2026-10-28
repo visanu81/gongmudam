@@ -1,0 +1,126 @@
+INFO:     127.0.0.1:58712 - "GET /desktop/?variant=B&open=%2Findex.html%23settings HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58712 - "GET /desktop/desktop.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51133 - "GET /desktop/home-agenda.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56727 - "GET /desktop/service-bridge.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56506 - "GET /desktop/window-resize.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52297 - "GET /desktop/quote-strip.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64115 - "GET /desktop/assets/seomu-otter-v1.png HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51133 - "GET /desktop/agency-picker.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58712 - "GET /desktop/notepad.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56727 - "GET /desktop/window-resize.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56506 - "GET /desktop/service-bridge.js?v=74-entry HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52297 - "GET /desktop/service-entry.js?v=74-entry HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64115 - "GET /desktop/deployment-context.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51133 - "GET /desktop/home-agenda.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56727 - "GET /desktop/desktop.js?v=74-entry HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58712 - "GET /desktop/quote-strip.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52297 - "GET /desktop/calculator.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51133 - "GET /api/gongmudam/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56727 - "GET /desktop/assets/PretendardVariable.woff2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58712 - "GET /index.html HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52297 - "GET /api/workspace/recent HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51133 - "GET /api/calendar/agenda HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56727 - "GET /style.css HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:51133 - "GET /model-status.css?v=48 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:58712 - "GET /design.css?v=46 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:52297 - "GET /answer-tree.css?v=37 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:52297 - "GET /guidance-ui.css?v=69 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:64115 - "GET /workflow-chat.css?v=37 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:51133 - "GET /answer-record.css?v=46 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:58712 - "GET /chat-request.css?v=47 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:56727 - "GET /app.js?v=upstage-20261028 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56506 - "GET /model-status.js?v=upstage-20261028 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58712 - "GET /studio.css?v=61 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:51133 - "GET /page-purpose.css?v=49 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:64115 - "GET /knowledge-catalog.css?v=47 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:52297 - "GET /desktop/embedded.css?v=74-entry HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58712 - "GET /chat-focus.css?v=51 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:51133 - "GET /institution-rules.css?v=77-category HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:56727 - "GET /answer-reviews.css?v=2 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:52297 - "GET /answer-tree.js?v=37 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:64115 - "GET /answer-record.js?v=70 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:56506 - "GET /workspace-flow.js?v=69 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:58712 - "GET /institution-rules.js?v=77-category HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:52297 - "GET /workflow-chat.js?v=51 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:64115 - "GET /change-inbox-badge.js?v=27 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:51133 - "GET /fonts/PretendardVariable.woff2 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:56506 - "GET /task-links.js?v=69 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:58712 - "GET /chat-options.js?v=51 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:56727 - "GET /knowledge-chat.js?v=69 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:64115 - "GET /answer-reviews.js?v=8 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:52297 - "GET /guidance-ui.js?v=77-affiliation HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:52297 - "GET /desktop/embedded.js?v=77-affiliation HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58712 - "GET /api/gongmudam/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56506 - "GET /api/adhoc/jobs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64115 - "GET /api/settings HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64115 - "GET /api/settings HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64115 - "GET /api/workspace/model-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56727 - "GET /api/knowledge/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63008 - "GET /api/workspace/model-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51813 - "GET /api/calendar/agenda HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51813 - "GET /api/workspace/model-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60335 - "GET /api/workspace/model-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62085 - "GET /api/calendar/agenda HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62085 - "GET /api/workspace/model-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55762 - "GET /api/workspace/model-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56115 - "GET /api/calendar/agenda HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56115 - "GET /api/workspace/model-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62357 - "GET /api/workspace/model-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52790 - "GET /api/workspace/model-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52790 - "GET /api/calendar/agenda HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52790 - "GET /api/workspace/model-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62002 - "PUT /api/settings/llm HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58040 - "GET /api/workspace/recent HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62002 - "GET /api/calendar/agenda HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62300 - "GET /api/workspace/model-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62300 - "PUT /api/settings/llm HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58040 - "GET /api/workspace/model-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62300 - "GET /api/calendar/agenda HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62002 - "GET /api/workspace/recent HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62002 - "GET /api/workspace/model-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62002 - "PUT /api/settings/llm HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58040 - "GET /api/workspace/model-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62300 - "GET /api/workspace/recent HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58040 - "GET /api/workspace/model-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62002 - "GET /api/calendar/agenda HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62002 - "POST /api/workspace/model-check HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62300 - "GET /api/workspace/model-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58040 - "GET /api/workspace/recent HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62002 - "GET /api/calendar/agenda HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57900 - "GET /api/workspace/model-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57924 - "GET /api/workspace/model-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57925 - "POST /api/workspace/model-check HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53187 - "GET /api/calendar/agenda HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53187 - "GET /api/workspace/model-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49681 - "POST /api/ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53903 - "POST /api/ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51255 - "GET /api/workspace/model-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53740 - "GET /api/calendar/agenda HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53740 - "GET /api/workspace/model-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54772 - "GET /api/workspace/model-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55855 - "GET /api/calendar/agenda HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55855 - "GET /index.html HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55855 - "GET /model-status.js?v=upstage-20261028 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:59413 - "GET /app.js?v=upstage-20261028 HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:59413 - "GET /api/settings HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58200 - "GET /api/gongmudam/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50623 - "GET /api/adhoc/jobs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56106 - "GET /api/workspace/model-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56106 - "GET /api/workspace/model-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55855 - "GET /api/knowledge/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55855 - "GET /api/calendar/agenda HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56106 - "POST /api/ask HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53048 - "GET /api/workspace/model-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53060 - "POST /api/folder-projects HTTP/1.1" 201 Created
+INFO:     127.0.0.1:53060 - "POST /api/folder-projects/b157fd28efc54791b0c2646933d321a9/sources HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:53060 - "POST /api/folder-projects/b157fd28efc54791b0c2646933d321a9/messages HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:53060 - "GET /api/folder-projects/b157fd28efc54791b0c2646933d321a9 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53060 - "GET /api/folder-projects/b157fd28efc54791b0c2646933d321a9 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53060 - "GET /api/folder-projects/b157fd28efc54791b0c2646933d321a9 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53060 - "GET /api/folder-projects/b157fd28efc54791b0c2646933d321a9/files/2c68922d35f95403ba6361ab830ccad8/units/3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53060 - "GET /api/folder-projects/b157fd28efc54791b0c2646933d321a9/files/2c68922d35f95403ba6361ab830ccad8/units/2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53941 - "GET /api/workspace/model-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53941 - "GET /api/calendar/agenda HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57627 - "GET /api/workspace/model-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50873 - "GET /api/workspace/model-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50873 - "GET /api/calendar/agenda HTTP/1.1" 200 OK

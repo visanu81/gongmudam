@@ -1,0 +1,25 @@
+{
+  "release": "v78",
+  "checked_at": "2026-10-25T23:29:53.941191+00:00",
+  "archive": "C:\\AI작업\\대회참여\\2026년 공공AI 대전환 챌린지 행사\\제출자료\\공무담_다른PC_제출패키지_v78.zip",
+  "sha256": "b94f799e322471f17c95c2d92095f95f4204073d0ad95df9f658372c778016e9",
+  "bytes": 127861172,
+  "managed_files": 829,
+  "zip_entries": 830,
+  "zip_crc_ok": true,
+  "all_managed_hashes_match": true,
+  "tested_runtime_assets_match": true,
+  "tested_runtime_asset_files": 782,
+  "post_test_documentation_changes": [
+    "처음읽기.txt"
+  ],
+  "registered_sources": 86,
+  "manuals": 6,
+  "manual_pdf_pages": 221,
+  "runtime_secrets_excluded": true,
+  "previous_v77_unchanged": true,
+  "installed_tests": 1010,
+  "institution_checks": 34,
+  "actual_models_retested": false,
+  "physical_other_pc_test": false
+}

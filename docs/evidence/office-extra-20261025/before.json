@@ -1,0 +1,16 @@
+{
+  "counts": {
+    "knowledge_sources": 74,
+    "folder_projects": 5,
+    "project_files": 12,
+    "project_messages": 46
+  },
+  "config": "00993905a5f3cb04352b699aec659704569a977014bb831ac315eca7523b8a85",
+  "other_db": {
+    "adhoc.db": "8c306708d6686e7663dbbc8ed871ff5bf299933e092a7e522707d05a709a47dc",
+    "calendar.db": "933a9024ecda1c90b14b66ba7980c5b9aebc5f069ddf4a1d121441cf72231062",
+    "regulation-monitor.db": "579d6a107089f04c4f9099519a0aa347af9ce7616625cd379a1e08dd8f5afdbd",
+    "seomu.db": "689a6052c8e1a405aa3cda23d8375971a204c56764ca9665693419f0d05de615",
+    "travel.db": "41f2e81580b89875620db28b8b822e2c84775a4228732634ebb94126ec873827"
+  }
+}

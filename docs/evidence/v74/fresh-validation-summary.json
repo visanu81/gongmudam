@@ -1,0 +1,55 @@
+{
+  "release": "v74",
+  "environment": "Windows x64 CPython 3.12, new virtualenv and Korean/space path on the same physical PC",
+  "installation": {
+    "exit_code": 0,
+    "fresh_virtualenv": true,
+    "elapsed_seconds": 42.568
+  },
+  "service_python": {
+    "passed": 807,
+    "exit_code": 0,
+    "seconds": 163.082
+  },
+  "installed_root_python": 18,
+  "installed_root_node": 31,
+  "installed_service_node": 25,
+  "project_checks": {
+    "pdf_page25": true,
+    "xlsx_sheet6_row501": true,
+    "no_unrelated_answer": true,
+    "draft_persisted": true,
+    "originals_unchanged": true,
+    "citations_match": true,
+    "two_actual_models": true
+  },
+  "models": [
+    {
+      "profile": "local_gemma",
+      "seconds": 16.672,
+      "actual_response": true
+    },
+    {
+      "profile": "local_llama",
+      "seconds": 16.297,
+      "actual_response": true
+    }
+  ],
+  "relocation": {
+    "private_v74": true,
+    "messages_preserved": true,
+    "draft_preserved": true,
+    "settings_preserved": true,
+    "sources_36": true,
+    "owned_source_paths_rebased": true,
+    "question_after_restart": true,
+    "adapter_cache_fix": true
+  },
+  "ui": {
+    "legacy_home_enters_B_after_refresh": true,
+    "project_query_and_hash_preserved": true,
+    "unsent_question_preserved_on_home_restore": true
+  },
+  "physical_other_pc_tested": false,
+  "passed": true
+}

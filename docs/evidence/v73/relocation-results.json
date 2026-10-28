@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "same_physical_pc": true,
+  "actual_batch_restarted": true,
+  "registered_sources_rebased": 36,
+  "business_databases_preserved": 5,
+  "configuration_preserved": true,
+  "synthetic_jobs_preserved": 2,
+  "public_demo": false
+}

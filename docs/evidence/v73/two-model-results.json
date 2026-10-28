@@ -1,0 +1,52 @@
+{
+  "passed": true,
+  "same_questions_for_both_models": true,
+  "distinct_questions": 1,
+  "repeated_travel_question_per_model": 1,
+  "real_model_calls": 2,
+  "model_settings_restored": true,
+  "scope": "fresh ZIP-installed private runtime and real local Ollama on the same physical PC; default offline configuration restored",
+  "results": [
+    {
+      "profile": "local_gemma",
+      "case": "travel",
+      "question": "국가공무원 출장 일비는 얼마야?",
+      "elapsed_seconds": 19.022,
+      "ai_used": true,
+      "notice": "",
+      "selected_quote_id": "q2",
+      "selected_quote": "제16조(일비ㆍ숙박비ㆍ식비의 지급) ① 국내 여행자의 일비(日費)ㆍ숙박비 및 식비는 별표 2에 따라 지급하고, 국외 여행자의 경우는 별표 4에 따라 지급한다. 다만, 공무의 형편이나 그 밖의 부득이한 사유로 숙박비의 상한액 및 지급받은 식비(국내 여행의 경우 식비는 제외한다)를 초과하여 여비를 지출하였을 때에는 국내 여행",
+      "passed": true,
+      "request_model": "gemma3:4b",
+      "response_model": "gemma3:4b",
+      "schema_valid": true,
+      "quote_matches_source": true
+    },
+    {
+      "profile": "local_llama",
+      "case": "travel",
+      "question": "국가공무원 출장 일비는 얼마야?",
+      "elapsed_seconds": 19.495,
+      "ai_used": true,
+      "notice": "",
+      "selected_quote_id": "q2",
+      "selected_quote": "제16조(일비ㆍ숙박비ㆍ식비의 지급) ① 국내 여행자의 일비(日費)ㆍ숙박비 및 식비는 별표 2에 따라 지급하고, 국외 여행자의 경우는 별표 4에 따라 지급한다. 다만, 공무의 형편이나 그 밖의 부득이한 사유로 숙박비의 상한액 및 지급받은 식비(국내 여행의 경우 식비는 제외한다)를 초과하여 여비를 지출하였을 때에는 국내 여행",
+      "passed": true,
+      "request_model": "llama3.2:3b",
+      "response_model": "llama3.2:3b",
+      "schema_valid": true,
+      "quote_matches_source": true
+    }
+  ],
+  "first_attempt": {
+    "model": "gemma3:4b",
+    "outcome": "ReadTimeout at 30-second search-assistance limit; structured original-source answer preserved",
+    "ai_used": false,
+    "record": "model-first-timeout.json"
+  },
+  "source_sha256": {
+    "app/llm.py": "d231db342a0f760de391ea4797bc74cec16b28eb472478852f8deb23e7400aaa",
+    "app/knowledge.py": "4b66dedc3786bf286b29506598bb5b43cea9f9e07e55880c5de3111c63699617",
+    "app/guidance.py": "3ced52acfd5ac610c6fbc1275c0a6f7d79f1fd477771f1d97127bf2c3a26771e"
+  }
+}

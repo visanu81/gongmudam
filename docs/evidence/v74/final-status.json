@@ -1,0 +1,22 @@
+{
+  "managed_hashes_match": true,
+  "mismatched": [],
+  "public": {
+    "status": "ok",
+    "service_version": "v74",
+    "desktop_connected": true,
+    "public_demo": true,
+    "private_data_isolated": true,
+    "requires_origin_pc": true,
+    "shared_demo": true
+  },
+  "private": {
+    "status": "ok",
+    "service_version": "v74",
+    "desktop_connected": true,
+    "public_demo": false,
+    "private_data_isolated": false,
+    "requires_origin_pc": true,
+    "shared_demo": false
+  }
+}

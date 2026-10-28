@@ -1,0 +1,20 @@
+{
+  "applied": true,
+  "would_add": [
+    "public-v70-156f83e9646084245c69e35e",
+    "public-v70-66d99077842d39bb41c3c362",
+    "public-v70-a454f317a1a87afbfb26d58c",
+    "public-v70-c4edc04864da363cc056b9ed",
+    "public-v70-f459b93473b181b1dc933390"
+  ],
+  "preserved_disabled": [],
+  "added": [
+    "public-v70-156f83e9646084245c69e35e",
+    "public-v70-66d99077842d39bb41c3c362",
+    "public-v70-a454f317a1a87afbfb26d58c",
+    "public-v70-c4edc04864da363cc056b9ed",
+    "public-v70-f459b93473b181b1dc933390"
+  ],
+  "backup": "C:\\AI작업\\프로그램 제작\\gongmudam\\service\\data\\knowledge-repair-backups\\20261025T115928-982ab95c.db",
+  "business_rows_preserved": true
+}

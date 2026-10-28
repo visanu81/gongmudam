@@ -1,0 +1,18 @@
+{
+  "status": {
+    "status": "ok",
+    "service_version": "v75",
+    "desktop_connected": true,
+    "public_demo": false,
+    "private_data_isolated": false,
+    "requires_origin_pc": true,
+    "shared_demo": false
+  },
+  "checks": {
+    "v75_private": true,
+    "offline_default": true,
+    "registered_sources": 36,
+    "assets_unchanged": true,
+    "manuals": 6
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "new_project_extraction_tests": 23,
+  "folder_regression_tests_passed": 136,
+  "handoff_tests": 4,
+  "core_and_start_journey_suite": 65,
+  "two_models": true,
+  "full_document_checks": {
+    "pdf_page25": true,
+    "xlsx_sheet6_row501": true,
+    "no_unrelated_answer": true,
+    "draft_persisted": true,
+    "originals_unchanged": true,
+    "citations_match": true,
+    "two_actual_models": true
+  },
+  "public_regression": {
+    "/api/gongmudam/status": 200,
+    "/api/workspace/recent": 200,
+    "/api/travel/cases": 200,
+    "/api/adhoc/jobs": 200,
+    "/api/calendar/agenda": 200,
+    "/api/folders/libraries": 200
+  },
+  "graphify_refreshed": true,
+  "legacy_8781_preserved": true,
+  "public_version": "v74",
+  "private_port": 8787,
+  "screenshot": "public-project.png"
+}

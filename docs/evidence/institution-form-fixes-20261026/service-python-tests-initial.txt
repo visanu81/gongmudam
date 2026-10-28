@@ -1,0 +1,635 @@
+C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+LLM 오류(모델 응답에서 JSON을 찾지 못함): not JSON
+LLM 오류(모델 응답에서 JSON을 찾지 못함): 죄송합니다. 잘 모르겠습니다.
+LLM 오류(모델 서버 HTTP 500 오류): 정산서는 오늘 10월 19일까지 제출하세요
+LLM 오류(모델 서버 연결 실패): ConnectError: 정산서는 오늘 10월 19일까지 제출하세요
+LLM 오류(모델 서버 HTTP 500 오류): Internal Server Error: 정산서는 오늘 10월 19일까지 제출하세요
+LLM 오류(모델 서버 HTTP 500 오류): {"error": {"message": "정산서는 오늘 10월 19일까지 제출하세요"}}
+LLM 오류(모델 응답 형식 오류): <html>정산서는 오늘 10월 19일까지 제출하세요</html>
+LLM 오류(모델 응답 형식 오류): {"choices": "정산서는 오늘 10월 19일까지 제출하세요"}
+LLM 오류(모델 응답 형식 오류): ["정산서는 오늘 10월 19일까지 제출하세요"]
+LLM 오류(모델 응답 형식 오류): {"choices": [{"message": {"content": {"x": "정산서는 오늘 10월 19일까지 제출하세요"}}}]}
+LLM 오류(모델 응답에서 JSON을 찾지 못함): 정산서는 오늘 10월 19일까지 제출하세요
+LLM 오류(모델 응답에서 JSON을 찾지 못함): {"card_id": "card-travel", "answer": "정산서는 오늘 10월 19일까지 제출하세요
+LLM 오류(모델 서버 HTTP 500 오류): Internal Server Error: 정산서는 오늘 10월 19일까지 제출하세요
+LLM 오류(모델 서버 HTTP 500 오류): {"error": {"message": "정산서는 오늘 10월 19일까지 제출하세요"}}
+LLM 오류(모델 응답 형식 오류): <html>정산서는 오늘 10월 19일까지 제출하세요</html>
+LLM 오류(모델 응답 형식 오류): {"choices": "정산서는 오늘 10월 19일까지 제출하세요"}
+LLM 오류(모델 응답 형식 오류): ["정산서는 오늘 10월 19일까지 제출하세요"]
+LLM 오류(모델 서버 HTTP 400 오류): unsupported format
+LLM 오류(모델 서버 연결 실패): ConnectError: unit-only
+EOF marker not found
+LLM 오류(모델 응답에서 JSON을 찾지 못함): not JSON
+LLM 오류(모델 응답에서 JSON을 찾지 못함): not JSON
+LLM 오류(모델 서버 연결 실패): ConnectError: unit-only
+LLM 오류(모델 서버 연결 실패): ConnectError: unit-only
+LLM 오류(모델 서버 HTTP 404 오류): {"choices":[{"message":{"content":"{\"ok\":true}"}}],"model":"demo-a"}
+LLM 오류(모델 서버 연결 실패): ConnectError: PRIVATE-FAILURE
+EOF marker not found
+======================================================================
+ERROR: test_form_kind_is_preserved_in_catalog_and_answer_for_legacy_source_payload (test_institution_rules.InstitutionRulesApiTest.test_form_kind_is_preserved_in_catalog_and_answer_for_legacy_source_payload)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\AI작업\프로그램 제작\gongmudam\service\tests\test_institution_rules.py", line 98, in test_form_kind_is_preserved_in_catalog_and_answer_for_legacy_source_payload
+    response=self.client.post('/api/ask',json={'query':'합성 검증기관 제출확인서 필수 항목은?',
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\httpx\_client.py", line 1144, in post
+    return self.request(
+           ^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\starlette\testclient.py", line 457, in request
+    return super().request(
+           ^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\httpx\_client.py", line 825, in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\httpx\_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\httpx\_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\httpx\_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\httpx\_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\starlette\testclient.py", line 354, in handle_request
+    raise exc
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\starlette\testclient.py", line 351, in handle_request
+    portal.call(self.app, scope, receive, send)
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\anyio\from_thread.py", line 340, in call
+    return cast(T_Retval, self.start_task_soon(func, *args).result())
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\anyio\from_thread.py", line 265, in _call_func
+    retval = await retval_or_awaitable
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\fastapi\applications.py", line 1216, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\starlette\applications.py", line 96, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\fastapi\telemetry\_asgi.py", line 151, in __call__
+    await self.app(scope, receive, send)
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\starlette\routing.py", line 676, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\fastapi\routing.py", line 2809, in app
+    await route.handle(scope, receive, send)
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\fastapi\routing.py", line 1328, in handle
+    await super().handle(scope, receive, send)
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\starlette\routing.py", line 282, in handle
+    await self.app(scope, receive, send)
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\fastapi\routing.py", line 166, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\fastapi\routing.py", line 152, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\fastapi\routing.py", line 745, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\fastapi\routing.py", line 374, in run_endpoint_function
+    return await run_in_threadpool(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\starlette\concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\anyio\to_thread.py", line 65, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2706, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 1100, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\fastapi\telemetry\_api.py", line 244, in _run_sync_endpoint
+    return function(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\app\main.py", line 112, in api_ask
+    return guidance.respond(query,body,_today(body.get('today')))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\app\guidance.py", line 126, in respond
+    reply=knowledge.answer(effective,found,use_ai=body.get('use_ai') is True)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\app\knowledge.py", line 261, in answer
+    profile=dict(config.active_profile());profile['timeout']=min(float(profile.get('timeout',30)),30)
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\app\config.py", line 38, in active_profile
+    cfg = cfg or load()
+                 ^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\app\config.py", line 19, in load
+    shutil.copyfile(EXAMPLE_PATH, CONFIG_PATH)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\shutil.py", line 262, in copyfile
+    with open(dst, 'wb') as fdst:
+         ^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\USER\\AppData\\Local\\Temp\\tmpbf3gs8ud\\config.json'
+
+======================================================================
+ERROR: test_referenced_applied_form_is_linked_even_when_question_targets_instruction (test_institution_rules.InstitutionRulesApiTest.test_referenced_applied_form_is_linked_even_when_question_targets_instruction)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\AI작업\프로그램 제작\gongmudam\service\tests\test_institution_rules.py", line 79, in test_referenced_applied_form_is_linked_even_when_question_targets_instruction
+    reply=self.ask_instruction(instruction)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\tests\test_institution_rules.py", line 72, in ask_instruction
+    response=self.client.post('/api/ask',json={'query':institution+' 교육자료 제출 기한은?',
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\httpx\_client.py", line 1144, in post
+    return self.request(
+           ^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\starlette\testclient.py", line 457, in request
+    return super().request(
+           ^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\httpx\_client.py", line 825, in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\httpx\_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\httpx\_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\httpx\_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\httpx\_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\starlette\testclient.py", line 354, in handle_request
+    raise exc
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\starlette\testclient.py", line 351, in handle_request
+    portal.call(self.app, scope, receive, send)
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\anyio\from_thread.py", line 340, in call
+    return cast(T_Retval, self.start_task_soon(func, *args).result())
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\anyio\from_thread.py", line 265, in _call_func
+    retval = await retval_or_awaitable
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\fastapi\applications.py", line 1216, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\starlette\applications.py", line 96, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\fastapi\telemetry\_asgi.py", line 151, in __call__
+    await self.app(scope, receive, send)
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\starlette\routing.py", line 676, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\fastapi\routing.py", line 2809, in app
+    await route.handle(scope, receive, send)
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\fastapi\routing.py", line 1328, in handle
+    await super().handle(scope, receive, send)
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\starlette\routing.py", line 282, in handle
+    await self.app(scope, receive, send)
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\fastapi\routing.py", line 166, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\fastapi\routing.py", line 152, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\fastapi\routing.py", line 745, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\fastapi\routing.py", line 374, in run_endpoint_function
+    return await run_in_threadpool(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\starlette\concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\anyio\to_thread.py", line 65, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2706, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 1100, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\fastapi\telemetry\_api.py", line 244, in _run_sync_endpoint
+    return function(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\app\main.py", line 112, in api_ask
+    return guidance.respond(query,body,_today(body.get('today')))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\app\guidance.py", line 126, in respond
+    reply=knowledge.answer(effective,found,use_ai=body.get('use_ai') is True)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\app\knowledge.py", line 261, in answer
+    profile=dict(config.active_profile());profile['timeout']=min(float(profile.get('timeout',30)),30)
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\app\config.py", line 38, in active_profile
+    cfg = cfg or load()
+                 ^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\app\config.py", line 19, in load
+    shutil.copyfile(EXAMPLE_PATH, CONFIG_PATH)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\shutil.py", line 262, in copyfile
+    with open(dst, 'wb') as fdst:
+         ^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\USER\\AppData\\Local\\Temp\\tmpbf3gs8ud\\config.json'
+
+======================================================================
+ERROR: test_related_form_keeps_applied_version_until_new_draft_is_applied (test_institution_rules.InstitutionRulesApiTest.test_related_form_keeps_applied_version_until_new_draft_is_applied)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\AI작업\프로그램 제작\gongmudam\service\tests\test_institution_rules.py", line 133, in test_related_form_keeps_applied_version_until_new_draft_is_applied
+    self.assertEqual(self.ask_instruction(instruction)['guidance']['forms'][0]['version_number'],1)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\tests\test_institution_rules.py", line 72, in ask_instruction
+    response=self.client.post('/api/ask',json={'query':institution+' 교육자료 제출 기한은?',
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\httpx\_client.py", line 1144, in post
+    return self.request(
+           ^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\starlette\testclient.py", line 457, in request
+    return super().request(
+           ^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\httpx\_client.py", line 825, in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\httpx\_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\httpx\_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\httpx\_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\httpx\_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\starlette\testclient.py", line 354, in handle_request
+    raise exc
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\starlette\testclient.py", line 351, in handle_request
+    portal.call(self.app, scope, receive, send)
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\anyio\from_thread.py", line 340, in call
+    return cast(T_Retval, self.start_task_soon(func, *args).result())
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\anyio\from_thread.py", line 265, in _call_func
+    retval = await retval_or_awaitable
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\fastapi\applications.py", line 1216, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\starlette\applications.py", line 96, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\fastapi\telemetry\_asgi.py", line 151, in __call__
+    await self.app(scope, receive, send)
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\starlette\routing.py", line 676, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\fastapi\routing.py", line 2809, in app
+    await route.handle(scope, receive, send)
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\fastapi\routing.py", line 1328, in handle
+    await super().handle(scope, receive, send)
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\starlette\routing.py", line 282, in handle
+    await self.app(scope, receive, send)
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\fastapi\routing.py", line 166, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\fastapi\routing.py", line 152, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\fastapi\routing.py", line 745, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\fastapi\routing.py", line 374, in run_endpoint_function
+    return await run_in_threadpool(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\starlette\concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\anyio\to_thread.py", line 65, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2706, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 1100, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\fastapi\telemetry\_api.py", line 244, in _run_sync_endpoint
+    return function(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\app\main.py", line 112, in api_ask
+    return guidance.respond(query,body,_today(body.get('today')))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\app\guidance.py", line 126, in respond
+    reply=knowledge.answer(effective,found,use_ai=body.get('use_ai') is True)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\app\knowledge.py", line 261, in answer
+    profile=dict(config.active_profile());profile['timeout']=min(float(profile.get('timeout',30)),30)
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\app\config.py", line 38, in active_profile
+    cfg = cfg or load()
+                 ^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\app\config.py", line 19, in load
+    shutil.copyfile(EXAMPLE_PATH, CONFIG_PATH)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\shutil.py", line 262, in copyfile
+    with open(dst, 'wb') as fdst:
+         ^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\USER\\AppData\\Local\\Temp\\tmpbf3gs8ud\\config.json'
+
+======================================================================
+ERROR: test_related_forms_exclude_other_institutions_disabled_and_wrong_date (test_institution_rules.InstitutionRulesApiTest.test_related_forms_exclude_other_institutions_disabled_and_wrong_date)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\AI작업\프로그램 제작\gongmudam\service\tests\test_institution_rules.py", line 111, in test_related_forms_exclude_other_institutions_disabled_and_wrong_date
+    related=self.ask_instruction(instruction)['guidance']['forms']
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\tests\test_institution_rules.py", line 72, in ask_instruction
+    response=self.client.post('/api/ask',json={'query':institution+' 교육자료 제출 기한은?',
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\httpx\_client.py", line 1144, in post
+    return self.request(
+           ^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\starlette\testclient.py", line 457, in request
+    return super().request(
+           ^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\httpx\_client.py", line 825, in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\httpx\_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\httpx\_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\httpx\_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\httpx\_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\starlette\testclient.py", line 354, in handle_request
+    raise exc
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\starlette\testclient.py", line 351, in handle_request
+    portal.call(self.app, scope, receive, send)
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\anyio\from_thread.py", line 340, in call
+    return cast(T_Retval, self.start_task_soon(func, *args).result())
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\anyio\from_thread.py", line 265, in _call_func
+    retval = await retval_or_awaitable
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\fastapi\applications.py", line 1216, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\starlette\applications.py", line 96, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\fastapi\telemetry\_asgi.py", line 151, in __call__
+    await self.app(scope, receive, send)
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\starlette\routing.py", line 676, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\fastapi\routing.py", line 2809, in app
+    await route.handle(scope, receive, send)
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\fastapi\routing.py", line 1328, in handle
+    await super().handle(scope, receive, send)
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\starlette\routing.py", line 282, in handle
+    await self.app(scope, receive, send)
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\fastapi\routing.py", line 166, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\fastapi\routing.py", line 152, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\fastapi\routing.py", line 745, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\fastapi\routing.py", line 374, in run_endpoint_function
+    return await run_in_threadpool(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\starlette\concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\anyio\to_thread.py", line 65, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2706, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 1100, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\fastapi\telemetry\_api.py", line 244, in _run_sync_endpoint
+    return function(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\app\main.py", line 112, in api_ask
+    return guidance.respond(query,body,_today(body.get('today')))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\app\guidance.py", line 126, in respond
+    reply=knowledge.answer(effective,found,use_ai=body.get('use_ai') is True)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\app\knowledge.py", line 261, in answer
+    profile=dict(config.active_profile());profile['timeout']=min(float(profile.get('timeout',30)),30)
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\app\config.py", line 38, in active_profile
+    cfg = cfg or load()
+                 ^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\app\config.py", line 19, in load
+    shutil.copyfile(EXAMPLE_PATH, CONFIG_PATH)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\shutil.py", line 262, in copyfile
+    with open(dst, 'wb') as fdst:
+         ^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\USER\\AppData\\Local\\Temp\\tmpbf3gs8ud\\config.json'
+
+======================================================================
+ERROR: test_unapplied_form_draft_is_not_linked (test_institution_rules.InstitutionRulesApiTest.test_unapplied_form_draft_is_not_linked)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\AI작업\프로그램 제작\gongmudam\service\tests\test_institution_rules.py", line 126, in test_unapplied_form_draft_is_not_linked
+    self.assertFalse(self.ask_instruction(instruction)['guidance']['forms'])
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\tests\test_institution_rules.py", line 72, in ask_instruction
+    response=self.client.post('/api/ask',json={'query':institution+' 교육자료 제출 기한은?',
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\httpx\_client.py", line 1144, in post
+    return self.request(
+           ^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\starlette\testclient.py", line 457, in request
+    return super().request(
+           ^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\httpx\_client.py", line 825, in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\httpx\_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\httpx\_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\httpx\_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\httpx\_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\starlette\testclient.py", line 354, in handle_request
+    raise exc
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\starlette\testclient.py", line 351, in handle_request
+    portal.call(self.app, scope, receive, send)
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\anyio\from_thread.py", line 340, in call
+    return cast(T_Retval, self.start_task_soon(func, *args).result())
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\anyio\from_thread.py", line 265, in _call_func
+    retval = await retval_or_awaitable
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\fastapi\applications.py", line 1216, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\starlette\applications.py", line 96, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\fastapi\telemetry\_asgi.py", line 151, in __call__
+    await self.app(scope, receive, send)
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\starlette\routing.py", line 676, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\fastapi\routing.py", line 2809, in app
+    await route.handle(scope, receive, send)
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\fastapi\routing.py", line 1328, in handle
+    await super().handle(scope, receive, send)
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\starlette\routing.py", line 282, in handle
+    await self.app(scope, receive, send)
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\fastapi\routing.py", line 166, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\fastapi\routing.py", line 152, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\fastapi\routing.py", line 745, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\fastapi\routing.py", line 374, in run_endpoint_function
+    return await run_in_threadpool(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\starlette\concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\anyio\to_thread.py", line 65, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2706, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 1100, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\.venv\Lib\site-packages\fastapi\telemetry\_api.py", line 244, in _run_sync_endpoint
+    return function(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\app\main.py", line 112, in api_ask
+    return guidance.respond(query,body,_today(body.get('today')))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\app\guidance.py", line 126, in respond
+    reply=knowledge.answer(effective,found,use_ai=body.get('use_ai') is True)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\app\knowledge.py", line 261, in answer
+    profile=dict(config.active_profile());profile['timeout']=min(float(profile.get('timeout',30)),30)
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\app\config.py", line 38, in active_profile
+    cfg = cfg or load()
+                 ^^^^^^
+  File "C:\AI작업\프로그램 제작\gongmudam\service\app\config.py", line 19, in load
+    shutil.copyfile(EXAMPLE_PATH, CONFIG_PATH)
+  File "C:\Users\USER\AppData\Local\Programs\Python\Python312\Lib\shutil.py", line 262, in copyfile
+    with open(dst, 'wb') as fdst:
+         ^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\USER\\AppData\\Local\\Temp\\tmpbf3gs8ud\\config.json'
+
+----------------------------------------------------------------------
+Ran 897 tests in 265.922s
+
+FAILED (errors=5)

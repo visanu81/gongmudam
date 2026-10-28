@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "version": "v73",
+  "private_mode": true,
+  "actual_batch_run": true,
+  "port": 8896,
+  "port_conflict_rejected": true,
+  "first_run_business_jobs": 0,
+  "batch_pid": 51144
+}

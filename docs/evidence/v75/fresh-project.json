@@ -1,0 +1,212 @@
+{
+  "project_id": "f0f7b769903041f6bffdb1b5c132f824",
+  "base": "http://127.0.0.1:8896",
+  "native_gui_folder_and_file_selection": true,
+  "checks": {
+    "gui_exact_answer": true,
+    "two_sources_read": true,
+    "variants_answer": true,
+    "compound_both_parts": true,
+    "unknown_abstains": true,
+    "source_units_exact": true,
+    "original_downloads_match": true
+  },
+  "results": [
+    {
+      "question": "미회신 부서는 어디인가요?",
+      "via": "GUI",
+      "answer": {
+        "id": "f99557d5e2574efe8e0b0e4af400a054",
+        "project_id": "f0f7b769903041f6bffdb1b5c132f824",
+        "role": "assistant",
+        "content": "프로젝트 원문에서 확인한 내용\n\n\n\n[1] 담당자 확인 메모.txt · 4행\n회계과: 미회신",
+        "status": "completed",
+        "created_at": "2026-10-25T10:10:00.886820+00:00",
+        "question": "미회신 부서는 어디인가요?",
+        "user_id": "30ae3aa4ae6b49bc93de34ddb1b69fc2",
+        "file_ids": [],
+        "draft": false,
+        "evidence": [
+          {
+            "ref": 1,
+            "file_id": "bb50f9a89f4e570c8ea255a999116c44",
+            "name": "담당자 확인 메모.txt",
+            "unit": 4,
+            "loc": "4행",
+            "text": "회계과: 미회신",
+            "sha256": "d2bae3291448c170495a87c2cae23b56b87d5ebfeb4ab9a7b5ccdf780b1e9f0b",
+            "stale": false
+          }
+        ],
+        "coverage": {
+          "total": 2,
+          "ready": 2,
+          "partial": 0,
+          "unread": 0
+        },
+        "mode": "offline",
+        "model": null,
+        "model_metadata": {},
+        "notice": "AI 없이 프로젝트 원문을 찾아 구성했습니다. 이번 답변은 검색된 1개 파일의 발췌이며, 읽은 모든 파일을 인용한 결과는 아닙니다. 필요하면 자료를 선택해 나눠 질문하세요.",
+        "finished_at": "2026-10-25T10:10:01.122172+00:00"
+      }
+    },
+    {
+      "question": "어느 부서가 아직 회신하지 않았나요?",
+      "via": "API",
+      "answer": {
+        "id": "2ea9756052bc472d86d6ded81807faca",
+        "project_id": "f0f7b769903041f6bffdb1b5c132f824",
+        "role": "assistant",
+        "content": "프로젝트 원문에서 확인한 내용\n\n\n\n[1] 담당자 확인 메모.txt · 4행\n회계과: 미회신",
+        "status": "completed",
+        "created_at": "2026-10-25T10:11:37.956518+00:00",
+        "question": "어느 부서가 아직 회신하지 않았나요?",
+        "user_id": "35419052f3b8457997d4ffafdc27fdf1",
+        "file_ids": [],
+        "draft": false,
+        "evidence": [
+          {
+            "ref": 1,
+            "file_id": "bb50f9a89f4e570c8ea255a999116c44",
+            "name": "담당자 확인 메모.txt",
+            "unit": 4,
+            "loc": "4행",
+            "text": "회계과: 미회신",
+            "sha256": "d2bae3291448c170495a87c2cae23b56b87d5ebfeb4ab9a7b5ccdf780b1e9f0b",
+            "stale": false
+          }
+        ],
+        "coverage": {
+          "total": 2,
+          "ready": 2,
+          "partial": 0,
+          "unread": 0
+        },
+        "mode": "offline",
+        "model": null,
+        "model_metadata": {},
+        "notice": "AI 없이 프로젝트 원문을 찾아 구성했습니다. 이번 답변은 검색된 1개 파일의 발췌이며, 읽은 모든 파일을 인용한 결과는 아닙니다. 필요하면 자료를 선택해 나눠 질문하세요.",
+        "finished_at": "2026-10-25T10:11:38.228064+00:00"
+      }
+    },
+    {
+      "question": "회신 안 한 부서를 알려주세요",
+      "via": "API",
+      "answer": {
+        "id": "a098a769dba24f909d30c16414bec83c",
+        "project_id": "f0f7b769903041f6bffdb1b5c132f824",
+        "role": "assistant",
+        "content": "프로젝트 원문에서 확인한 내용\n\n\n\n[1] 담당자 확인 메모.txt · 4행\n회계과: 미회신",
+        "status": "completed",
+        "created_at": "2026-10-25T10:11:38.414470+00:00",
+        "question": "회신 안 한 부서를 알려주세요",
+        "user_id": "06f7d1b4226643d78d22d9607631b3e3",
+        "file_ids": [],
+        "draft": false,
+        "evidence": [
+          {
+            "ref": 1,
+            "file_id": "bb50f9a89f4e570c8ea255a999116c44",
+            "name": "담당자 확인 메모.txt",
+            "unit": 4,
+            "loc": "4행",
+            "text": "회계과: 미회신",
+            "sha256": "d2bae3291448c170495a87c2cae23b56b87d5ebfeb4ab9a7b5ccdf780b1e9f0b",
+            "stale": false
+          }
+        ],
+        "coverage": {
+          "total": 2,
+          "ready": 2,
+          "partial": 0,
+          "unread": 0
+        },
+        "mode": "offline",
+        "model": null,
+        "model_metadata": {},
+        "notice": "AI 없이 프로젝트 원문을 찾아 구성했습니다. 이번 답변은 검색된 1개 파일의 발췌이며, 읽은 모든 파일을 인용한 결과는 아닙니다. 필요하면 자료를 선택해 나눠 질문하세요.",
+        "finished_at": "2026-10-25T10:11:38.504860+00:00"
+      }
+    },
+    {
+      "question": "교육 회신 마감과 미회신 부서는?",
+      "via": "API",
+      "answer": {
+        "id": "e23d251458d244d3956f6d1ba4db45c6",
+        "project_id": "f0f7b769903041f6bffdb1b5c132f824",
+        "role": "assistant",
+        "content": "프로젝트 원문에서 확인한 내용\n\n\n\n[1] 담당자 확인 메모.txt · 4행\n회계과: 미회신\n\n[2] 교육 계획.txt · 5행\n회신 마감: 2026-11-06 18:00",
+        "status": "completed",
+        "created_at": "2026-10-25T10:11:38.668579+00:00",
+        "question": "교육 회신 마감과 미회신 부서는?",
+        "user_id": "d088f45c7e444062aef30faba332dc42",
+        "file_ids": [],
+        "draft": false,
+        "evidence": [
+          {
+            "ref": 1,
+            "file_id": "bb50f9a89f4e570c8ea255a999116c44",
+            "name": "담당자 확인 메모.txt",
+            "unit": 4,
+            "loc": "4행",
+            "text": "회계과: 미회신",
+            "sha256": "d2bae3291448c170495a87c2cae23b56b87d5ebfeb4ab9a7b5ccdf780b1e9f0b",
+            "stale": false
+          },
+          {
+            "ref": 2,
+            "file_id": "be56afd3f3dc511abe9c7f23639a2006",
+            "name": "교육 계획.txt",
+            "unit": 5,
+            "loc": "5행",
+            "text": "회신 마감: 2026-11-06 18:00",
+            "sha256": "057db0c596ac16f35257c942ccd91ac9bdbb1d7458a48dbaa27e241f2e58428f",
+            "stale": false
+          }
+        ],
+        "coverage": {
+          "total": 2,
+          "ready": 2,
+          "partial": 0,
+          "unread": 0
+        },
+        "mode": "offline",
+        "model": null,
+        "model_metadata": {},
+        "notice": "AI 없이 프로젝트 원문을 찾아 구성했습니다.",
+        "finished_at": "2026-10-25T10:11:38.786170+00:00"
+      }
+    },
+    {
+      "question": "항공권 취소 수수료는 얼마인가요?",
+      "via": "API",
+      "answer": {
+        "id": "fe4eac5082d047e5a76f014ac24989c0",
+        "project_id": "f0f7b769903041f6bffdb1b5c132f824",
+        "role": "assistant",
+        "content": "프로젝트 자료에서 질문에 답할 직접 근거를 찾지 못했습니다. 관련 파일을 추가하거나 자료를 다시 읽은 뒤 질문해 주세요.",
+        "status": "completed",
+        "created_at": "2026-10-25T10:11:38.924252+00:00",
+        "question": "항공권 취소 수수료는 얼마인가요?",
+        "user_id": "65ac1454e5854c6c807d9dc20cb07146",
+        "file_ids": [],
+        "draft": false,
+        "evidence": [],
+        "coverage": {
+          "total": 2,
+          "ready": 2,
+          "partial": 0,
+          "unread": 0
+        },
+        "mode": "offline",
+        "model": null,
+        "model_metadata": {},
+        "notice": "AI 없이 프로젝트 원문을 찾아 구성했습니다.",
+        "finished_at": "2026-10-25T10:11:39.072990+00:00"
+      }
+    }
+  ],
+  "passed": true,
+  "physical_other_pc_test": false
+}

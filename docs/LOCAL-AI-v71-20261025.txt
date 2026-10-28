@@ -1,0 +1,66 @@
+공무담 v71 · 두 로컬 AI의 근거 선택 형식 개선 및 동일 질문 검증
+기록일: 2026-10-25
+
+적용 위치: C:\AI작업\프로그램 제작\gongmudam
+공개 앱: https://gongmudam.visanu81.workers.dev
+운영 PC 앱: http://127.0.0.1:8892/
+실제 공개 상태 API의 service_version은 v71이다.
+
+문제와 확인
+이전 v70 시험에서 Llama는 JSON 객체 대신 literal null을 반환해 JSON 추출 오류가 발생했고 원문 검색 답변으로 전환됐다. 이번 재실행의 첫 기존 코드 호출은 정상 q4를 반환했다. 따라서 항상 실패하는 문제로 표현하지 않는다.
+기존 실제 요청에는 응답 형식을 서버에 지정하는 response_format이 없었다. 동일한 요청에 JSON 스키마만 추가한 시험에서 Llama가 {"selected_quote_id":"q4"}를 반환하고 해당 후보가 검증됐다.
+근거: Ollama 공식 Structured Outputs 문서 https://docs.ollama.com/capabilities/structured-outputs 및 OpenAI 호환 API 문서 https://docs.ollama.com/api/openai-compatibility
+검증한 로컬 Ollama 버전: 0.40.10
+
+수정
+- 지식 검색의 AI 근거 선택 요청에만 response_schema를 지정한다. 일반 대화·다른 기능의 호출은 기존 요청 방식을 유지한다.
+- 서버 요청은 response_format.type=json_schema, strict=true이다. 객체에 selected_quote_id 한 필드만 허용하고 그 값은 이번에 제공한 후보 ID 또는 null로 제한한다.
+- 선택 요청의 모델·메시지·최대 토큰·temperature·stream=false·스키마가 공통 extra_body 설정에 의해 바뀌지 않도록 한다. 프로필 자체는 수정하지 않는다.
+- 선택된 ID는 여전히 현재 후보에 있어야 하며, 해당 구절이 실제 원문에 있는지 클라이언트에서 재검사한다. 형식 지정만으로 모델의 법적 판단을 신뢰하지 않는다.
+- 후보 없음은 모델을 호출하지 않는다. null은 선택 보류이며 AI 성공으로 바꾸지 않는다. 모르는 ID·잘못된 인용·미지원 서버·시간 초과는 기존 원문 안내로 안전하게 전환한다. 임의의 첫 후보를 대신 선택하거나 반복 호출하지 않는다.
+- 법령의 조건·예외가 누락되지 않도록 답변에는 기존 조문 문맥 전체를 유지하고 모델이 고른 구절은 별도로 보관한다.
+- 검색 순위·원문·여비 금액표·계산 로직·업무 UI는 변경하지 않았다. 기존 30개 법령·지침과 매뉴얼 6개를 포함한 등록 자료 36건이 그대로 현재 원문과 일치한다.
+
+실제 모델 시험
+질문·근거 자료를 두 모델에 동일하게 제공했다. 모의 LLM 응답을 실제 실행 결과로 집계하지 않았다.
+모델: Gemma gemma3:4b / Llama llama3.2:3b
+
+질문                                             Gemma        Llama
+국가공무원 출장 일비는 얼마야?                    성공         성공
+아픈 자녀의 병원 진료 동행에 사용할 휴가           성공         성공
+본인 병가 신청에 진단서가 필요한지                 성공         성공
+동일한 출장 일비 질문 반복                         성공         성공
+
+별도 실행 사본에서 근거 선택 8회 모두 JSON 객체·허용 ID·원문 포함 관계·관련 조문·ai_used=true를 확인했다. 두 모델이 반드시 동일한 ID를 고르는 것은 아니다. 기존과 동일하게 전체 법령 문맥은 유지한다.
+최종 stream=false 수정까지 반영하고 공개 실행본을 재시작한 뒤, 실제 공개 URL에서 출장 일비 질문을 Llama와 Gemma로 각각 다시 호출했다. 최종 공개 검증 2회도 모두 성공했다.
+본 검증의 실제 근거 선택 호출은 총 10회이며 연결 확인·초기 진단 호출은 이 수치에 포함하지 않는다. 모든 종류의 질문이나 모든 환경에서의 무오류를 보장하는 수치는 아니다.
+
+최종 공개 검증
+- Llama: 실제 응답 llama3.2:3b, ai_used=true, 선택 구절이 공무원 여비 규정 제16조 원문에 포함됨. 약 1.140초.
+- Gemma: 실제 응답 gemma3:4b, ai_used=true, 선택 구절이 같은 제16조 원문에 포함됨. 약 17.429초.
+각 모델 연결 확인 후 질문했으며 모델 적재·프롬프트 캐시 상태가 달라 속도 비교나 콜드 스타트 성능 개선으로 해석하지 않는다.
+운영 선택 모델은 원래 local_gemma로 복원했다. 프로필·서버 설정은 유지했고 정상 모델 전환 기록 리비전은 4에서 6으로 갱신됐다. 별도 검증 사본의 설정은 원래 바이트로 복원했다.
+
+회귀 검증과 검토
+- 서비스 Python 전체 781개 통과(141.984초).
+- 공무담 연결·실행기·업그레이드 검사 24개 통과.
+- 스키마 실제 전송, 공통 설정 충돌, 프로필 불변, 일반 호출 호환, 후보 없음, null, 모르는 ID, HTTP 400을 관련 검사에서 확인했다.
+- 독립 고노력 검토의 관련 검사 69개도 통과했다. 이는 전체 781개와 겹치므로 합산하지 않는다. 검토에서 차단 문제가 발견되지 않았다.
+- Graphify 서비스 지도 177개 코드 파일, 최종 fresh=true. 실제 로컬 모델 응답과 공개 HTTP 경로는 지도 밖이므로 별도 실행으로 확인했다.
+- 변경 파일은 app/llm.py, app/knowledge.py, tests/test_knowledge.py 및 새 tests/test_evidence_format.py이다. manifest는 이 파생 v71의 해시를 기록한다. 검증된 v70 ZIP 자체는 그대로 보존했다.
+
+실행본 갱신·자료 보존
+8892 공무담 프로세스의 소유권을 확인하고 해당 서버만 중지했다. 기존 터널과 개인용 8781 서버는 중지하지 않았다.
+기존 업그레이드 도구로 관리 파일 4개를 갱신했다. 출처 추가·교체는 없다. 갱신 직전·직후 DB 6개의 모든 행·모델 설정·첨부·합성 파일 해시가 동일한 것을 확인했다.
+백업: .local-runtime/upgrades/20261024T224856759884Z/
+기존 실행기 경로로 다시 켰으며 공개/로컬 연결과 재실행 preserved를 확인했다. 서버 재시작에 필요한 원문 재등록이나 AI 재학습은 없다.
+
+증거
+배포·검증 요약: docs/evidence/v71/
+상세 진단·실행: .local-verification/llama-format-v71/
+baseline.json, schema-probe.json, schema-probe.log,
+verify_models.py, two-model-results.json, model-runs-progress.json, models.log,
+public-two-model-results.json, public-models.log,
+service-tests.log, integration-tests.log, graph-status.json, live-upgrade.json,
+before-update.json, runtime-plan.json, repository-audit.json
+자료·모델 응답은 등록 공개 원문과 합성 상황을 사용했다. 동일한 PC에서 실제 로컬 모델과 공개 URL로 시험했으며 다른 물리 PC에서 실행한 시험은 아니다.

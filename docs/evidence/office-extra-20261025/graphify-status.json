@@ -1,0 +1,16 @@
+{
+  "fresh": true,
+  "workspace": "C:\\AI작업\\프로그램 제작\\gongmudam\\work\\graphify-seomu-maintenance",
+  "graph": "C:\\AI작업\\프로그램 제작\\gongmudam\\work\\graphify-seomu-maintenance\\graphify-out\\graph.html",
+  "source_files": 194,
+  "added": [],
+  "changed": [],
+  "removed": [],
+  "artifacts_match": true,
+  "copy_matches": true,
+  "refresh_incomplete": false,
+  "runtime_available": true,
+  "updated_at": "2026-10-25T14:09:37.907350+00:00",
+  "rebuilt": true,
+  "build_output": "AST extraction: 55/55 uncached files (100%)\n{\"files\": 194, \"nodes\": 3239, \"edges\": 9460, \"model_tokens\": 0}"
+}

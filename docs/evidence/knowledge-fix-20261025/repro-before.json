@@ -1,0 +1,32 @@
+{
+  "results": [
+    {
+      "kind": "overtime",
+      "question": "초과근무 식비를 지급하려면 어떤 증빙이 필요한가요?",
+      "no_unrelated_evidence": false,
+      "mode": "source_search",
+      "titles": [
+        "공무원 여비 규정 제16조(일비ㆍ숙박비ㆍ식비의 지급)"
+      ]
+    },
+    {
+      "kind": "privacy",
+      "question": "교육 취합 명단을 외부에 보낼 때 개인정보를 어떻게 가려야 하나요?",
+      "no_unrelated_evidence": false,
+      "mode": "source_search",
+      "titles": [
+        "지방자치단체 회계관리에 관한 훈령 제121조(집행현황의 공개)",
+        "지방공무원 복무규정 제7조의6(공가)",
+        "지방공무원 복무규정 제7조의7(특별휴가)"
+      ]
+    }
+  ],
+  "missing": [
+    "public-v70-156f83e9646084245c69e35e",
+    "public-v70-66d99077842d39bb41c3c362",
+    "public-v70-a454f317a1a87afbfb26d58c",
+    "public-v70-c4edc04864da363cc056b9ed",
+    "public-v70-f459b93473b181b1dc933390"
+  ],
+  "passed": false
+}

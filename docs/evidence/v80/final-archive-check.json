@@ -1,0 +1,16 @@
+{
+  "release": "v80",
+  "archive": "공무담_다른PC_제출패키지_v80.zip",
+  "sha256": "bc31a471afb709eda58b9f365b9f58ab666aa10a2fd787b90e99cd5fd3d9bfa0",
+  "bytes": 128537604,
+  "managed_files": 961,
+  "crc_ok": true,
+  "all_managed_hashes_match": true,
+  "tested_runtime_files_match": 795,
+  "registered_sources": 123,
+  "tests_passed": 108,
+  "personal_data_excluded": true,
+  "physical_second_pc_test": false,
+  "actual_model_calls": 0,
+  "server_restart_test": "not_performed_approval_review_blocked"
+}

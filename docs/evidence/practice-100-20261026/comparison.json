@@ -1,0 +1,76 @@
+{
+  "before": {
+    "근거 연결 확인": 61,
+    "추가 질문 필요": 1,
+    "기관 자료 필요": 4,
+    "자료 보강 필요": 4,
+    "답변 점검 필요": 30
+  },
+  "after": {
+    "근거 연결 확인": 72,
+    "추가 질문 필요": 2,
+    "기관 자료 필요": 20,
+    "자료 보강 필요": 6,
+    "답변 점검 필요": 0
+  },
+  "offline": {
+    "근거 연결 확인": 72,
+    "추가 질문 필요": 2,
+    "기관 자료 필요": 20,
+    "자료 보강 필요": 6,
+    "답변 점검 필요": 0
+  },
+  "question_count": 100,
+  "expected_answer": 72,
+  "service_guide_unchecked": 59,
+  "preservation": [
+    {
+      "database": "adhoc.db",
+      "tables": 13,
+      "changed_tables": [],
+      "new_tables": []
+    },
+    {
+      "database": "answer-reviews.db",
+      "tables": 4,
+      "changed_tables": [],
+      "new_tables": []
+    },
+    {
+      "database": "calendar.db",
+      "tables": 5,
+      "changed_tables": [],
+      "new_tables": []
+    },
+    {
+      "database": "folders.db",
+      "tables": 15,
+      "changed_tables": [],
+      "new_tables": []
+    },
+    {
+      "database": "regulation-monitor.db",
+      "tables": 4,
+      "changed_tables": [],
+      "new_tables": []
+    },
+    {
+      "database": "seomu.db",
+      "tables": 5,
+      "changed_tables": [],
+      "new_tables": []
+    },
+    {
+      "database": "travel.db",
+      "tables": 21,
+      "changed_tables": [],
+      "new_tables": []
+    }
+  ],
+  "limitations": [
+    "합성 질문이며 실제 서무 담당자의 정답 판정 아님",
+    "원문·출처 및 사전 지정한 핵심 표현 점검이며 답변 전체 법률 정확도 보증 아님",
+    "5개 초기 기대 오류는 expectation-corrections.json에 보존. 동일 수정 기준으로 전후 비교",
+    "제도 안내·FAQ 부가 인용은 별도 원문 검사 대상에 포함하지 않음"
+  ]
+}

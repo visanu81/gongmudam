@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "scope": "isolated copy of upgraded public runtime; synthetic data only",
+  "checks": [
+    "three_travel_scenarios",
+    "education_upload_review_no_applicants_chat_step_completion_export",
+    "education_calendar_deadline_and_recheck",
+    "toolbox_direct_attach_both_workflows",
+    "related_folder_panel"
+  ],
+  "education_id": "fa3bbbe3acb5401ca2ac3a6fc0bbab93",
+  "trip_ids": [
+    "bc3e1450e3b0495ba7e4e8745d5d5238",
+    "95a15907f30f4684a65543eb55b43161",
+    "0804331bd8ff466aae7a3b02dcf620ea"
+  ],
+  "new_synthetic_work_not_added_to_public_runtime": true
+}

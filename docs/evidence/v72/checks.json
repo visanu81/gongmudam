@@ -1,0 +1,13 @@
+{
+  "service_python": 781,
+  "service_node": 24,
+  "repository_python": 29,
+  "repository_node": 16,
+  "installed_package_python": 16,
+  "installed_package_node": 10,
+  "all_passed": true,
+  "separate_physical_pc_tested": false,
+  "review": "timeout late-load finding resolved; final targeted review no remaining findings",
+  "graphify_integration_files": 24,
+  "graphify_service_files": 177
+}

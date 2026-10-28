@@ -1,0 +1,52 @@
+{
+  "project_id": "b157fd28efc54791b0c2646933d321a9",
+  "answer": {
+    "id": "e0711b344a6b406eaf709c61c8805f70",
+    "project_id": "b157fd28efc54791b0c2646933d321a9",
+    "role": "assistant",
+    "content": "프로젝트 원문에서 확인한 내용\n\n\n\n[1] synthetic-training.txt · 3행\n미회신 부서: 회계과\n\n[2] synthetic-training.txt · 2행\n회신 마감: 2026-11-06",
+    "status": "completed",
+    "created_at": "2026-10-28T06:08:43.749383+00:00",
+    "question": "미회신 부서와 회신 마감은 언제인가요?",
+    "user_id": "6526166fab5149d5bf3fbfdd6ceff32c",
+    "file_ids": [],
+    "draft": false,
+    "evidence": [
+      {
+        "ref": 1,
+        "file_id": "2c68922d35f95403ba6361ab830ccad8",
+        "name": "synthetic-training.txt",
+        "unit": 3,
+        "loc": "3행",
+        "text": "미회신 부서: 회계과",
+        "sha256": "71ead4aa71328b66112185f7a1035882bcd0463731065caaeff9357ce1426deb",
+        "stale": false
+      },
+      {
+        "ref": 2,
+        "file_id": "2c68922d35f95403ba6361ab830ccad8",
+        "name": "synthetic-training.txt",
+        "unit": 2,
+        "loc": "2행",
+        "text": "회신 마감: 2026-11-06",
+        "sha256": "71ead4aa71328b66112185f7a1035882bcd0463731065caaeff9357ce1426deb",
+        "stale": false
+      }
+    ],
+    "coverage": {
+      "total": 1,
+      "ready": 1,
+      "partial": 0,
+      "unread": 0
+    },
+    "mode": "upstage_ai",
+    "model": "solar-pro4",
+    "model_metadata": {
+      "actual_response": true,
+      "response_model": "solar-pro4-260806",
+      "backend": "openai-compatible"
+    },
+    "notice": "선택한 AI의 근거 선택과 원문 대조로 답변을 구성했습니다.",
+    "finished_at": "2026-10-28T06:08:44.808324+00:00"
+  }
+}

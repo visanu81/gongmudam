@@ -1,0 +1,31 @@
+{
+  "checks": {
+    "work_experiences": true,
+    "folder_scan_jobs": true,
+    "folder_projects": true,
+    "project_sources": true,
+    "project_files": true,
+    "project_messages": true,
+    "project_jobs": true,
+    "project_units": true,
+    "folder_ai_runs": true,
+    "folder_watches": true,
+    "config": true,
+    "other_databases": true
+  },
+  "counts_after": {
+    "libraries": 3,
+    "knowledge_sources": 36,
+    "work_experiences": 0,
+    "folder_scan_jobs": 0,
+    "folder_projects": 5,
+    "project_sources": 6,
+    "project_files": 12,
+    "project_messages": 46,
+    "project_jobs": 6,
+    "project_units": 86,
+    "folder_ai_runs": 0,
+    "folder_watches": 0
+  },
+  "passed": true
+}

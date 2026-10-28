@@ -1,0 +1,725 @@
+{
+  "today": "2026-10-26",
+  "cases": [
+    {
+      "id": "health",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "법정 건강검진이라면 ‘공가’로 상신하세요.",
+        "kind": "summary",
+        "rule_id": "health-leave",
+        "evidence": [
+          [
+            "88a565bed1145e6cfb5db10f8185ea7c9b5ee9b6c363db8123ac022c7861cbac",
+            "지방공무원 복무규정",
+            "제7조의6(공가)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "법정 건강검진이라면 ‘공가’로 상신하세요.",
+        "kind": "summary",
+        "rule_id": "health-leave",
+        "evidence": [
+          [
+            "88a565bed1145e6cfb5db10f8185ea7c9b5ee9b6c363db8123ac022c7861cbac",
+            "지방공무원 복무규정",
+            "제7조의6(공가)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "sick-national",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "인사혁신처 제도 안내·FAQ에서 관련 설명을 찾았어요",
+        "kind": "reference",
+        "rule_id": null,
+        "evidence": [],
+        "ai_used": false
+      },
+      "public": {
+        "title": "인사혁신처 제도 안내·FAQ에서 관련 설명을 찾았어요",
+        "kind": "reference",
+        "rule_id": null,
+        "evidence": [],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "sick-local",
+      "status": "fail",
+      "equal": false,
+      "mismatches": [
+        "public_error"
+      ],
+      "local": {
+        "title": "병가는 사유와 누적 일수를 함께 확인해요",
+        "kind": "summary",
+        "rule_id": "sick-leave",
+        "evidence": [
+          [
+            "5157d7899f3b59df4ff3aee140a143dc7d901ce9b8d4ef1aceefa9ff5f50a015",
+            "지방공무원 복무규정",
+            "제7조의5(병가)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://gongmudam.visanu81.workers.dev/api/ask'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+      },
+      "error": true
+    },
+    {
+      "id": "child-care",
+      "status": "fail",
+      "equal": false,
+      "mismatches": [
+        "public_error"
+      ],
+      "local": {
+        "title": "가족돌봄휴가를 먼저 확인해요",
+        "kind": "summary",
+        "rule_id": "family-care-situation",
+        "evidence": [
+          [
+            "156f83e9646084245c69e35ee1186cdbe52101ebe6489c0f7d134e90acca7f62",
+            "국가공무원 복무규정",
+            "제20조(특별휴가)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://gongmudam.visanu81.workers.dev/api/ask'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+      },
+      "error": true
+    },
+    {
+      "id": "blood",
+      "status": "fail",
+      "equal": false,
+      "mismatches": [
+        "public_error"
+      ],
+      "local": {
+        "title": "법에 따른 헌혈 참여는 공가 사유예요",
+        "kind": "summary",
+        "rule_id": "blood-leave",
+        "evidence": [
+          [
+            "88a565bed1145e6cfb5db10f8185ea7c9b5ee9b6c363db8123ac022c7861cbac",
+            "지방공무원 복무규정",
+            "제7조의6(공가)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://gongmudam.visanu81.workers.dev/api/ask'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+      },
+      "error": true
+    },
+    {
+      "id": "marriage",
+      "status": "fail",
+      "equal": false,
+      "mismatches": [
+        "public_error"
+      ],
+      "local": {
+        "title": "국가공무원 경조사 별표에서 확인해요",
+        "kind": "summary",
+        "rule_id": "extended-occasion",
+        "evidence": [
+          [
+            "156f83e9646084245c69e35ee1186cdbe52101ebe6489c0f7d134e90acca7f62",
+            "국가공무원 복무규정",
+            "제20조(특별휴가)"
+          ],
+          [
+            "d0729ac9f46986b5f2c1d0c3b58fe4913449276030f9240026935d686c4135d4",
+            "국가공무원 복무규정",
+            "별표 2 경조사별 휴가 일수표"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://gongmudam.visanu81.workers.dev/api/ask'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+      },
+      "error": true
+    },
+    {
+      "id": "side-job",
+      "status": "fail",
+      "equal": false,
+      "mismatches": [
+        "public_error"
+      ],
+      "local": {
+        "title": "겸직은 금지 업무인지 먼저 보고 사전 허가를 확인해요",
+        "kind": "summary",
+        "rule_id": "service-v70-side_job",
+        "evidence": [
+          [
+            "66d99077842d39bb41c3c36211f1977f55ed2e31c2ffdbf18e6185a21c777230",
+            "국가공무원 복무규정",
+            "제26조(겸직 허가)"
+          ],
+          [
+            "a454f317a1a87afbfb26d58cd040a6d3ac05aa4b1dbb75633deca3f37d02dc44",
+            "국가공무원 복무규정",
+            "제25조(영리 업무의 금지)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://gongmudam.visanu81.workers.dev/api/ask'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+      },
+      "error": true
+    },
+    {
+      "id": "settlement",
+      "status": "fail",
+      "equal": false,
+      "mismatches": [
+        "public_error"
+      ],
+      "local": {
+        "title": "출장이 끝나면 증빙을 모아 정산을 신청해요",
+        "kind": "summary",
+        "rule_id": "settlement",
+        "evidence": [
+          [
+            "df2441b6245eff78480a96d9f60ea8d94c1abb19add82ddae2258dd83ca4c567",
+            "공무원 여비 규정",
+            "제8조의2(여비의 결제와 정산 등)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://gongmudam.visanu81.workers.dev/api/ask'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+      },
+      "error": true
+    },
+    {
+      "id": "daily-car",
+      "status": "fail",
+      "equal": false,
+      "mismatches": [
+        "public_error"
+      ],
+      "local": {
+        "title": "공무용 차량을 이용하면 일비 감액을 확인해요",
+        "kind": "summary",
+        "rule_id": "daily-car",
+        "evidence": [
+          [
+            "0b22c01ecffbd69f3c7ceecb499322d0f3d05a21ac9928188fc97d101bb29983",
+            "공무원 여비 규정",
+            "제16조(일비ㆍ숙박비ㆍ식비의 지급)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://gongmudam.visanu81.workers.dev/api/ask'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+      },
+      "error": true
+    },
+    {
+      "id": "local-trip",
+      "status": "fail",
+      "equal": false,
+      "mismatches": [
+        "public_error"
+      ],
+      "local": {
+        "title": "근무지 안의 출장은 시간과 차량을 함께 봐요",
+        "kind": "summary",
+        "rule_id": "local-trip",
+        "evidence": [
+          [
+            "d314a501ef76929e78473c3e1c4a4c3e1754504c6a70b06fd46a5790a509b7e1",
+            "공무원 여비 규정",
+            "제18조(근무지 내 국내 출장 시의 여비)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://gongmudam.visanu81.workers.dev/api/ask'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+      },
+      "error": true
+    },
+    {
+      "id": "additional",
+      "status": "fail",
+      "equal": false,
+      "mismatches": [
+        "public_error"
+      ],
+      "local": {
+        "title": "기준을 넘겨 쓴 여비는 추가 정산 기준을 확인해요",
+        "kind": "summary",
+        "rule_id": "additional-settlement",
+        "evidence": [
+          [
+            "0b22c01ecffbd69f3c7ceecb499322d0f3d05a21ac9928188fc97d101bb29983",
+            "공무원 여비 규정",
+            "제16조(일비ㆍ숙박비ㆍ식비의 지급)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://gongmudam.visanu81.workers.dev/api/ask'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+      },
+      "error": true
+    },
+    {
+      "id": "goods-payment",
+      "status": "fail",
+      "equal": false,
+      "mismatches": [
+        "public_error"
+      ],
+      "local": {
+        "title": "원칙은 검사 뒤에 대금을 지급하는 거예요",
+        "kind": "summary",
+        "rule_id": "goods-payment",
+        "evidence": [
+          [
+            "9ef32ba59708e61398cba96229485881cc8b4a50ec1562cf0862ec34814e5021",
+            "지방자치단체를 당사자로 하는 계약에 관한 법률",
+            "제18조(대가의 지급)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://gongmudam.visanu81.workers.dev/api/ask'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+      },
+      "error": true
+    },
+    {
+      "id": "goods-inspection-deadline",
+      "status": "fail",
+      "equal": false,
+      "mismatches": [
+        "public_error"
+      ],
+      "local": {
+        "title": "납품 완료 통지를 받은 날부터 검사기간을 확인해요",
+        "kind": "summary",
+        "rule_id": "extended-goods_inspection_deadline",
+        "evidence": [
+          [
+            "327e6cf235be7813eaaa77dd61d34c07bae0700d95c4af50eb3fdb0932e36cda",
+            "지방자치단체를 당사자로 하는 계약에 관한 법률 시행령",
+            "제64조(검사)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://gongmudam.visanu81.workers.dev/api/ask'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+      },
+      "error": true
+    },
+    {
+      "id": "goods-payment-deadline",
+      "status": "fail",
+      "equal": false,
+      "mismatches": [
+        "public_error"
+      ],
+      "local": {
+        "title": "검사 완료와 청구일을 확인한 뒤 지급기한을 봐요",
+        "kind": "summary",
+        "rule_id": "extended-goods_payment_deadline",
+        "evidence": [
+          [
+            "54c66cb1200baea79cc94dc70bef3585e58589cc82dbc95bde5537c5918a7a1a",
+            "지방자치단체를 당사자로 하는 계약에 관한 법률 시행령",
+            "제67조(대가의 지급)"
+          ],
+          [
+            "9ef32ba59708e61398cba96229485881cc8b4a50ec1562cf0862ec34814e5021",
+            "지방자치단체를 당사자로 하는 계약에 관한 법률",
+            "제18조(대가의 지급)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://gongmudam.visanu81.workers.dev/api/ask'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+      },
+      "error": true
+    },
+    {
+      "id": "goods-quote",
+      "status": "fail",
+      "equal": false,
+      "mismatches": [
+        "public_error"
+      ],
+      "local": {
+        "title": "견적서는 2인 이상 원칙과 1인 예외를 함께 봐요",
+        "kind": "summary",
+        "rule_id": "extended-goods_quote",
+        "evidence": [
+          [
+            "2295149b4f876d96b8378e1683281ef7780ad9671b752ae28145be3fdd22e0bb",
+            "지방자치단체를 당사자로 하는 계약에 관한 법률 시행령",
+            "제30조(수의계약대상자의 선정절차 등)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://gongmudam.visanu81.workers.dev/api/ask'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+      },
+      "error": true
+    },
+    {
+      "id": "goods-inventory",
+      "status": "fail",
+      "equal": false,
+      "mismatches": [
+        "public_error"
+      ],
+      "local": {
+        "title": "물품대장·재물조사·불용 처리 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:goods-national-inventory",
+        "evidence": [
+          [
+            "3c6e1a82673ca8568488709b015f9244e091bcd802da1f60049b17b9b36beb24",
+            "물품관리법 시행령",
+            "제22조(재물조사)"
+          ],
+          [
+            "c48f68327fc791be68267bb30cad00fb856babebfa2579cb6a174696655179a9",
+            "물품관리법",
+            "제2조(정의)"
+          ],
+          [
+            "dc5cd97ecab1cc64ac5bcf72faa2b60575d3495df8b427ad6b08492395e730c4",
+            "물품관리법 시행규칙",
+            "제27조(재물조사)"
+          ],
+          [
+            "e3e92819cbe43835a633af451228f2528c5934d2eb4ad0fc6bfd63d9125c5613",
+            "물품관리법",
+            "제19조(재물조사)"
+          ],
+          [
+            "f8a471b3b952f7095642214bf92812b7af06e3f3474c108a39220247c5ee38a7",
+            "물품관리법",
+            "제4조(다른 법률과의 관계)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://gongmudam.visanu81.workers.dev/api/ask'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+      },
+      "error": true
+    },
+    {
+      "id": "goods-disposal",
+      "status": "fail",
+      "equal": false,
+      "mismatches": [
+        "public_error"
+      ],
+      "local": {
+        "title": "물품대장·재물조사·불용 처리 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:goods-local-disposal",
+        "evidence": [
+          [
+            "345a093995ffa6c30e629e772a82cb425e24fc851b736f13a0e0ca0b78eb8b21",
+            "공유재산 및 물품 관리법",
+            "제2조(정의)"
+          ],
+          [
+            "3bfeb8d4bc8db6b52d74605c4d78981676817ae821b3d7042692cff170de6527",
+            "공유재산 및 물품 관리법 시행령",
+            "제76조(불용 결정)"
+          ],
+          [
+            "407ece049eec1340482193a26375780216098c976fdeb96b61ed64d9845ccf6d",
+            "공유재산 및 물품 관리법",
+            "제75조(불용의 결정 등)"
+          ],
+          [
+            "703980f178ba1f88098aa0fcec496473699f806aae8ddb8e270af7cdba616d05",
+            "공유재산 및 물품 관리법 시행령",
+            "제77조(물품관리관이 불용 결정을 할 수 있는 물품)"
+          ],
+          [
+            "a0ff45cffeff52425fad05695add351a5f32c83419ee598c3a40598670dc1f22",
+            "공유재산 및 물품 관리법 시행령",
+            "제91조(적용 배제)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://gongmudam.visanu81.workers.dev/api/ask'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+      },
+      "error": true
+    },
+    {
+      "id": "documents-receipt",
+      "status": "fail",
+      "equal": false,
+      "mismatches": [
+        "public_error"
+      ],
+      "local": {
+        "title": "공문 접수·기안·결재 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:documents-receipt",
+        "evidence": [
+          [
+            "0cb82062deedfd535308952112435684d9127ec9a8a4438e70402878c90051de",
+            "행정업무의 운영 및 혁신에 관한 규정",
+            "제2조(적용범위)"
+          ],
+          [
+            "47b4fad4aab848a529052bf7302e7b8bd2aabf3a996b7e902f96e43899a4ea40",
+            "행정업무의 운영 및 혁신에 관한 규정",
+            "제3조(정의)"
+          ],
+          [
+            "9d23e1c3102a44d888257c71a97b75c38534be3cb981ec36a498773098964120",
+            "행정업무의 운영 및 혁신에 관한 규정",
+            "제18조(문서의 접수ㆍ처리)"
+          ],
+          [
+            "f755671c42dbf7cf652fe7806c6dab1ca3f3e48cefc2ac0db4ab490129274825",
+            "행정업무의 운영 및 혁신에 관한 규정 시행규칙",
+            "제15조(문서의 접수ㆍ처리)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://gongmudam.visanu81.workers.dev/api/ask'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+      },
+      "error": true
+    },
+    {
+      "id": "documents-draft",
+      "status": "fail",
+      "equal": false,
+      "mismatches": [
+        "public_error"
+      ],
+      "local": {
+        "title": "공문 접수·기안·결재 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:documents-drafting",
+        "evidence": [
+          [
+            "0cb82062deedfd535308952112435684d9127ec9a8a4438e70402878c90051de",
+            "행정업무의 운영 및 혁신에 관한 규정",
+            "제2조(적용범위)"
+          ],
+          [
+            "146254004bd0149ba5c9559a7eee3b6d9b183d0888f891701ac7d8bf1f3728a5",
+            "행정업무의 운영 및 혁신에 관한 규정",
+            "제9조(문서의 검토 및 협조)"
+          ],
+          [
+            "351e56ba273c95f3a8b7833134cdb74099e1844e4f9862fdeb5acbc7ce97ba27",
+            "행정업무의 운영 및 혁신에 관한 규정",
+            "제10조(문서의 결재)"
+          ],
+          [
+            "3bd7b36c5bf9396bcae024b49edf346a405a45d2226d761b44fb26fd293a15e7",
+            "행정업무의 운영 및 혁신에 관한 규정",
+            "제11조(문서의 등록 등)"
+          ],
+          [
+            "9a98fdad8ad11876eaf9120e7993fbe253a9fb89d8d63e00dd38f7e30c643f2e",
+            "행정업무의 운영 및 혁신에 관한 규정",
+            "제6조(문서의 성립 및 효력 발생)"
+          ],
+          [
+            "b45c6a5f9fddc45be4d05930ba33beac3f13186b12772b91924a0a841608e847",
+            "행정업무의 운영 및 혁신에 관한 규정",
+            "제8조(문서의 기안)"
+          ],
+          [
+            "bc54d5004f4d06c59944e8ec92b2cff9db136940358d2a21188da4f54d35ee35",
+            "행정업무의 운영 및 혁신에 관한 규정",
+            "제12조(시행문의 작성)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://gongmudam.visanu81.workers.dev/api/ask'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+      },
+      "error": true
+    },
+    {
+      "id": "documents-absence",
+      "status": "fail",
+      "equal": false,
+      "mismatches": [
+        "public_error"
+      ],
+      "local": {
+        "title": "공문 접수·기안·결재 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:documents-drafting",
+        "evidence": [
+          [
+            "0cb82062deedfd535308952112435684d9127ec9a8a4438e70402878c90051de",
+            "행정업무의 운영 및 혁신에 관한 규정",
+            "제2조(적용범위)"
+          ],
+          [
+            "146254004bd0149ba5c9559a7eee3b6d9b183d0888f891701ac7d8bf1f3728a5",
+            "행정업무의 운영 및 혁신에 관한 규정",
+            "제9조(문서의 검토 및 협조)"
+          ],
+          [
+            "351e56ba273c95f3a8b7833134cdb74099e1844e4f9862fdeb5acbc7ce97ba27",
+            "행정업무의 운영 및 혁신에 관한 규정",
+            "제10조(문서의 결재)"
+          ],
+          [
+            "3bd7b36c5bf9396bcae024b49edf346a405a45d2226d761b44fb26fd293a15e7",
+            "행정업무의 운영 및 혁신에 관한 규정",
+            "제11조(문서의 등록 등)"
+          ],
+          [
+            "9a98fdad8ad11876eaf9120e7993fbe253a9fb89d8d63e00dd38f7e30c643f2e",
+            "행정업무의 운영 및 혁신에 관한 규정",
+            "제6조(문서의 성립 및 효력 발생)"
+          ],
+          [
+            "b45c6a5f9fddc45be4d05930ba33beac3f13186b12772b91924a0a841608e847",
+            "행정업무의 운영 및 혁신에 관한 규정",
+            "제8조(문서의 기안)"
+          ],
+          [
+            "bc54d5004f4d06c59944e8ec92b2cff9db136940358d2a21188da4f54d35ee35",
+            "행정업무의 운영 및 혁신에 관한 규정",
+            "제12조(시행문의 작성)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://gongmudam.visanu81.workers.dev/api/ask'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+      },
+      "error": true
+    },
+    {
+      "id": "private-check",
+      "status": "fail",
+      "equal": false,
+      "mismatches": [
+        "public_error"
+      ],
+      "local": {
+        "title": "법정 건강검진이라면 ‘공가’로 상신하세요.",
+        "kind": "summary",
+        "rule_id": "service-v70-public_health",
+        "evidence": [
+          [
+            "f459b93473b181b1dc9333903d8ccc97f66930fc7954fabe074a2ff8628d3533",
+            "국가공무원 복무규정",
+            "제19조(공가)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://gongmudam.visanu81.workers.dev/api/ask'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+      },
+      "error": true
+    },
+    {
+      "id": "goods-owner-missing",
+      "status": "fail",
+      "equal": false,
+      "mismatches": [
+        "public_error"
+      ],
+      "local": {
+        "title": "자료를 더 확인해야 답할 수 있어요",
+        "kind": "unavailable",
+        "rule_id": null,
+        "evidence": [],
+        "ai_used": false
+      },
+      "public": {
+        "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://gongmudam.visanu81.workers.dev/api/ask'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+      },
+      "error": true
+    },
+    {
+      "id": "institution-deadline",
+      "status": "fail",
+      "equal": false,
+      "mismatches": [
+        "public_error"
+      ],
+      "local": {
+        "title": "기관 교육 안내·회신 자료가 필요해요",
+        "kind": "unavailable",
+        "rule_id": null,
+        "evidence": [],
+        "ai_used": false
+      },
+      "public": {
+        "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://gongmudam.visanu81.workers.dev/api/ask'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+      },
+      "error": true
+    },
+    {
+      "id": "leave-ambiguous",
+      "status": "fail",
+      "equal": false,
+      "mismatches": [
+        "public_error"
+      ],
+      "local": {
+        "title": "인사혁신처 제도 안내·FAQ에서 관련 설명을 찾았어요",
+        "kind": "reference",
+        "rule_id": null,
+        "evidence": [],
+        "ai_used": false
+      },
+      "public": {
+        "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'https://gongmudam.visanu81.workers.dev/api/ask'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+      },
+      "error": true
+    }
+  ],
+  "summary": {
+    "all_pass": false,
+    "passed": 2,
+    "failed": 22,
+    "total": 24
+  }
+}

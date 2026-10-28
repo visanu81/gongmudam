@@ -1,0 +1,223 @@
+{
+  "date": "2026-10-25",
+  "sources": [
+    {
+      "id": "office-privacy-art15",
+      "title": "개인정보 보호법",
+      "article": "제15조(개인정보의 수집ㆍ이용)",
+      "effective_date": "2026-09-11",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=283839&efYd=20260911",
+      "sha256": "c8e7680131327f38843b394ab0f30ea47460da319c6076db8d0a9d06dfcf0005",
+      "raw_sha256": "5eff996f84ee1310eb5c3cfd974b69cb7f0b5328156e7da5899fb2457d6ef0c4"
+    },
+    {
+      "id": "office-privacy-art16",
+      "title": "개인정보 보호법",
+      "article": "제16조(개인정보의 수집 제한)",
+      "effective_date": "2026-09-11",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=283839&efYd=20260911",
+      "sha256": "bcd2cd0e90b6d78ac8deab16aeaec1c6c3486ed525ec045eafd163306db516e3",
+      "raw_sha256": "5eff996f84ee1310eb5c3cfd974b69cb7f0b5328156e7da5899fb2457d6ef0c4"
+    },
+    {
+      "id": "office-privacy-art17",
+      "title": "개인정보 보호법",
+      "article": "제17조(개인정보의 제공)",
+      "effective_date": "2026-09-11",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=283839&efYd=20260911",
+      "sha256": "608e1b723cbd8a152a83ac763e6320a3da961c83b9e6cbec349120ad15a6adc8",
+      "raw_sha256": "5eff996f84ee1310eb5c3cfd974b69cb7f0b5328156e7da5899fb2457d6ef0c4"
+    },
+    {
+      "id": "office-privacy-art18",
+      "title": "개인정보 보호법",
+      "article": "제18조(개인정보의 목적 외 이용ㆍ제공 제한)",
+      "effective_date": "2026-09-11",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=283839&efYd=20260911",
+      "sha256": "1746aae67b335212b6dcc8d29ec48c058cafe7a49666bbe0ee3b57d2b9b7c218",
+      "raw_sha256": "5eff996f84ee1310eb5c3cfd974b69cb7f0b5328156e7da5899fb2457d6ef0c4"
+    },
+    {
+      "id": "office-privacy-art21",
+      "title": "개인정보 보호법",
+      "article": "제21조(개인정보의 파기)",
+      "effective_date": "2026-09-11",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=283839&efYd=20260911",
+      "sha256": "cd8d8e8e5e403afc1efe5313d59909738e6ba5eacb763350c6c2f82725e2865d",
+      "raw_sha256": "5eff996f84ee1310eb5c3cfd974b69cb7f0b5328156e7da5899fb2457d6ef0c4"
+    },
+    {
+      "id": "office-privacy-art24-2",
+      "title": "개인정보 보호법",
+      "article": "제24조의2(주민등록번호 처리의 제한)",
+      "effective_date": "2026-09-11",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=283839&efYd=20260911",
+      "sha256": "a6bf36128decd1ddc338dbee944aeb6a1f88a355fafc5ac15dd2852d0849d7f4",
+      "raw_sha256": "5eff996f84ee1310eb5c3cfd974b69cb7f0b5328156e7da5899fb2457d6ef0c4"
+    },
+    {
+      "id": "office-privacy-art29",
+      "title": "개인정보 보호법",
+      "article": "제29조(안전조치의무)",
+      "effective_date": "2026-09-11",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=283839&efYd=20260911",
+      "sha256": "ffaf7d7c8f0bf65859a382690aace6102c7eeea68e83c84c3ab7840505787fbf",
+      "raw_sha256": "5eff996f84ee1310eb5c3cfd974b69cb7f0b5328156e7da5899fb2457d6ef0c4"
+    },
+    {
+      "id": "office-privacy-art34",
+      "title": "개인정보 보호법",
+      "article": "제34조(개인정보 유출등의 통지ㆍ신고)",
+      "effective_date": "2026-09-11",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=283839&efYd=20260911",
+      "sha256": "1b7a64c1dd5ed25bb85f24352376f97852574ec0b772198a4792a764b27f8f35",
+      "raw_sha256": "5eff996f84ee1310eb5c3cfd974b69cb7f0b5328156e7da5899fb2457d6ef0c4"
+    },
+    {
+      "id": "office-privacy-art23",
+      "title": "개인정보 보호법",
+      "article": "제23조(민감정보의 처리 제한)",
+      "effective_date": "2026-09-11",
+      "source_url": "https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=283839&efYd=20260911",
+      "sha256": "06c122a53124bde990f90e7626a6f44e7c561176aff288a4459fc539c036abe0",
+      "raw_sha256": "5eff996f84ee1310eb5c3cfd974b69cb7f0b5328156e7da5899fb2457d6ef0c4"
+    },
+    {
+      "id": "office-public-records-16",
+      "title": "공공기록물 관리에 관한 법률",
+      "article": "제16조(기록물 생산의 원칙)",
+      "effective_date": "2025-10-01",
+      "source_url": "https://www.law.go.kr/LSW/lsSideInfoP.do?docCls=jo&joBrNo=00&joNo=0016&lsiSeq=277313&urlMode=lsScJoRltInfoR",
+      "sha256": "3690ef0a0f65ca1ef935b9c0b4c47e5f0e2096683fdd4ede79b98c142e917d6d",
+      "raw_sha256": "59401f0ec698a889512f5d6644fe585358b0793102dd41138ec1efcbb7c2facb"
+    },
+    {
+      "id": "office-public-records-17",
+      "title": "공공기록물 관리에 관한 법률",
+      "article": "제17조(주요 기록물의 생산의무)",
+      "effective_date": "2025-10-01",
+      "source_url": "https://www.law.go.kr/lsLinkCommonInfo.do?lsJoLnkSeq=1019433175",
+      "sha256": "2c8866066eef05347c55d326b601cbbec473137e857d34d3e5af3996bd3c09ed",
+      "raw_sha256": "d008c798d1968154d0dced3b44861266ef780c5d2adb25da4cc75abe299b4267"
+    },
+    {
+      "id": "office-public-records-18",
+      "title": "공공기록물 관리에 관한 법률",
+      "article": "제18조(기록물의 등록ㆍ분류ㆍ편철 등)",
+      "effective_date": "2025-10-01",
+      "source_url": "https://www.law.go.kr/lsLinkCommonInfo.do?lsJoLnkSeq=1028019751",
+      "sha256": "46ec69ed75966255cb0b9617b648670f9adb820c0509b00ed91c3e5d2639fce9",
+      "raw_sha256": "1436e4e8bd5e1731116eb50992f86a9a2849ab0e6e04430a009c46de5d6f224b"
+    },
+    {
+      "id": "office-public-records-19",
+      "title": "공공기록물 관리에 관한 법률",
+      "article": "제19조(기록물의 관리 등)",
+      "effective_date": "2025-10-01",
+      "source_url": "https://www.law.go.kr/lsLinkCommonInfo.do?lsJoLnkSeq=1023573943",
+      "sha256": "444542263c8854dc080ba966cec7a26d09f8a4273116a7ddbc97d10c76fee7e6",
+      "raw_sha256": "48866c25f68de821ea9c36925858226b33c729ac80e8e5089899293c23717f3e"
+    },
+    {
+      "id": "office-public-records-27",
+      "title": "공공기록물 관리에 관한 법률",
+      "article": "제27조(기록물의 폐기)",
+      "effective_date": "2025-10-01",
+      "source_url": "https://www.law.go.kr/lsLinkCommonInfo.do?lsJoLnkSeq=1029551049",
+      "sha256": "555e62dc81b83f1d40190c93f7dcfa7814620bf72bec3f44cddc29db1f1c696b",
+      "raw_sha256": "f065f6967fafaa1db886fd0d9cabfa8c25a57dc0731296475dc41aadba47ffaf"
+    },
+    {
+      "id": "office-disclosure-11",
+      "title": "공공기관의 정보공개에 관한 법률",
+      "article": "제11조(정보공개 여부의 결정)",
+      "effective_date": "2023-11-17",
+      "source_url": "https://www.law.go.kr/lsLinkCommonInfo.do?lsJoLnkSeq=1011235965",
+      "sha256": "1368dae95eadc76bf260714a88ae878e3db9276c5952b84d38f816f2bcdcfe7c",
+      "raw_sha256": "3d80ce005a3645a5919802bb1a17a56dfcb7fc3200d444b1d2d15670ae4a19f2"
+    },
+    {
+      "id": "office-disclosure-13",
+      "title": "공공기관의 정보공개에 관한 법률",
+      "article": "제13조(정보공개 여부 결정의 통지)",
+      "effective_date": "2023-11-17",
+      "source_url": "https://www.law.go.kr/LSW/lsSideInfoP.do?docCls=jo&joBrNo=00&joNo=0013&lsiSeq=251019&urlMode=lsScJoRltInfoR",
+      "sha256": "c79bd818d7a987da71fc94d6aba1120211225f8c6e788d47874d3300f0005d75",
+      "raw_sha256": "680a786123fbd5becbb3dfe26181226f297b6801b2ef355510741a5514875605"
+    },
+    {
+      "id": "office-disclosure-14",
+      "title": "공공기관의 정보공개에 관한 법률",
+      "article": "제14조(부분 공개)",
+      "effective_date": "2023-11-17",
+      "source_url": "https://www.law.go.kr/lsLinkCommonInfo.do?lsJoLnkSeq=1011235989",
+      "sha256": "1b7541a141d7ade884693c376ff6a85b4617239e257471211dfb73735fae6936",
+      "raw_sha256": "f9b5d17ffb610f40a443cc99034bfe839f260d0993ae4f46cc2a1de574e0de89"
+    },
+    {
+      "id": "office-disclosure-18",
+      "title": "공공기관의 정보공개에 관한 법률",
+      "article": "제18조(이의신청)",
+      "effective_date": "2023-11-17",
+      "source_url": "https://www.law.go.kr/lsLinkCommonInfo.do?lsJoLnkSeq=1031228369",
+      "sha256": "2a31b6e738ddda235a38f9c2edd7914b41dc13cc7ee5669876f3a029b754ce3d",
+      "raw_sha256": "ff39edecac9e93c25c1e4b61be0584e3452eacc801b95fd5295e5deacff200f8"
+    },
+    {
+      "id": "office-administration-61",
+      "title": "행정업무의 운영 및 혁신에 관한 규정",
+      "article": "제61조(업무의 인계ㆍ인수)",
+      "effective_date": "2026-10-02",
+      "source_url": "https://law.go.kr/LSW/lsLinkCommonInfo.do?chrClsCd=010202&lspttninfSeq=176551",
+      "sha256": "91ef32de3ce7ac5ecaf8e533ad56616e9b1bee001482256f5eb99473b25f522f",
+      "raw_sha256": "b8cb8656741e1f6f5300504a7ac272e86b2dc37ab58ed4ab57d9b6c7dc152abb"
+    },
+    {
+      "id": "office-administration-62",
+      "title": "행정업무의 운영 및 혁신에 관한 규정",
+      "article": "제62조(업무편람의 작성ㆍ활용)",
+      "effective_date": "2026-10-02",
+      "source_url": "https://law.go.kr/LSW/lsLinkCommonInfo.do?chrClsCd=010202&lspttninfSeq=176551",
+      "sha256": "ba8b1d6fc205617eb02abaca70db450e6030a7f836e3ccba8c3257f8bc859a9f",
+      "raw_sha256": "b8cb8656741e1f6f5300504a7ac272e86b2dc37ab58ed4ab57d9b6c7dc152abb"
+    },
+    {
+      "id": "office-administration-rules-46",
+      "title": "행정업무의 운영 및 혁신에 관한 규정 시행규칙",
+      "article": "제46조(직무편람의 작성ㆍ관리 등)",
+      "effective_date": "2023-06-28",
+      "source_url": "https://www.law.go.kr/LSW/lsSideInfoP.do?docCls=jo&joBrNo=00&joNo=0046&lsiSeq=252189&urlMode=lsScJoRltInfoR",
+      "sha256": "4c389a0744eaedff95562b740daa50132cc63256bf5474a3c19e8cdb0a080679",
+      "raw_sha256": "1892fdf73c759a300f1c5e050232d88cb2cdb653278065ca7faffcfa43afaa4b"
+    },
+    {
+      "id": "office-disclosure-9",
+      "title": "공공기관의 정보공개에 관한 법률",
+      "article": "제9조(비공개 대상 정보)",
+      "effective_date": "2023-11-17",
+      "source_url": "https://www.law.go.kr/LSW/lsSideInfoP.do?docCls=jo&joBrNo=00&joNo=0009&lsiSeq=251019&urlMode=lsScJoRltInfoR",
+      "sha256": "e64ae44fb41774323ad19a5d8800acdb503241c58747f87c29b6815b811b9ce6",
+      "raw_sha256": "fa837544293da79a4e329938aa7593d4e474c5847d465507fc6b3f6a6302017a"
+    },
+    {
+      "id": "office-public-records-3",
+      "title": "공공기록물 관리에 관한 법률",
+      "article": "제3조(정의)",
+      "effective_date": "2025-10-01",
+      "source_url": "https://www.law.go.kr/LSW/lsSideInfoP.do?docCls=jo&joBrNo=00&joNo=0003&lsiSeq=277313&urlMode=lsScJoRltInfoR",
+      "sha256": "0d19f739c7080e8e9f62ec6084001445d498368c90dd81a96a8af78e8e0a6bf7",
+      "raw_sha256": "9ccb9b59a789cad6ce408bcc030c7663da3547ffebbbcdfc03f29f035cf1d9ab"
+    },
+    {
+      "id": "office-disclosure-21",
+      "title": "공공기관의 정보공개에 관한 법률",
+      "article": "제21조(제3자의 비공개 요청 등)",
+      "effective_date": "2023-11-17",
+      "source_url": "https://www.law.go.kr/LSW/lsSideInfoP.do?docCls=jo&joBrNo=00&joNo=0021&lsiSeq=251019&urlMode=lsScJoRltInfoR",
+      "sha256": "d061035e176ea6b4b933e1677e4faea7ddfe2ee75a05c6398bc48b67b9129afe",
+      "raw_sha256": "3ec58c8a1fe322dabb217113fed125e907a1a38f226f3a4fb278520a90b0dfd3"
+    }
+  ],
+  "all_hashes_match": true,
+  "article_count": 24
+}

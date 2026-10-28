@@ -1,0 +1,62 @@
+{
+  "public_status": {
+    "status": "ok",
+    "service_version": "v70",
+    "desktop_connected": true,
+    "public_demo": true,
+    "private_data_isolated": true,
+    "requires_origin_pc": true,
+    "shared_demo": true
+  },
+  "registered_sources": 36,
+  "guides": 10,
+  "faqs": 26,
+  "snapshot_links_checked": 36,
+  "manuals_checked": 6,
+  "questions": [
+    {
+      "query": "국가공무원인데 아이가 아파서 휴가를 써야 해",
+      "article": "제20조",
+      "ai_used": false,
+      "passed": true
+    },
+    {
+      "query": "국가공무원 제가 독감이라 병가를 쓰려는데 진단서가 필요해?",
+      "article": "제18조",
+      "ai_used": false,
+      "passed": true
+    },
+    {
+      "query": "국가공무원 국민건강보험공단 건강검진은 어떤 휴가야?",
+      "article": "제19조",
+      "ai_used": false,
+      "passed": true
+    },
+    {
+      "query": "국가공무원 유튜브 수익이 생기면 겸직 허가를 받아야 해?",
+      "article": "제26조",
+      "ai_used": false,
+      "passed": true
+    },
+    {
+      "query": "국가공무원 출장 정산 기한은?",
+      "article": "제8조의2",
+      "ai_used": false,
+      "passed": true
+    }
+  ],
+  "preserved_attachments_checked": [
+    {
+      "kind": "travel",
+      "sha256": "a85f33b5f953a2c273eaa134890770485c4283aa32f8cbe23e8504bd47f65d5a",
+      "bytes": 107387
+    },
+    {
+      "kind": "adhoc",
+      "sha256": "a85f33b5f953a2c273eaa134890770485c4283aa32f8cbe23e8504bd47f65d5a",
+      "bytes": 107387
+    }
+  ],
+  "service_pages": 8,
+  "passed": true
+}

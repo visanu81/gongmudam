@@ -1,0 +1,500 @@
+{
+  "passed": true,
+  "missing_key_fallback": true,
+  "key_saved_and_masked": true,
+  "model_check": {
+    "selection_id": "8a0079745713255dc2ad0ddf247fa6cce9c99fe8354a7d03ba508a611c9b3f46",
+    "profile": "upstage",
+    "model": "solar-pro4",
+    "response": {
+      "state": "verified",
+      "checked_at": "2026-10-28T08:11:42.025376+00:00",
+      "requested_model": "solar-pro4",
+      "response_model": "solar-pro4-260806",
+      "characters": 12,
+      "message": "선택한 모델의 텍스트 응답과 서버가 보고한 모델명을 확인했습니다.",
+      "elapsed_seconds": 0.85
+    }
+  },
+  "upstage_answer": {
+    "query": "국가공무원이 공무용 차량으로 관외 출장 가면 일비는 어떻게 지급하나요?",
+    "mode": "structured_guidance",
+    "model": "solar-pro4",
+    "profile": null,
+    "summary": "등록 자료로 처리 방법을 함께 확인해요.",
+    "answer": "[1] 제16조(일비ㆍ숙박비ㆍ식비의 지급) ① 국내 여행자의 일비(日費)ㆍ숙박비 및 식비는 별표 2에 따라 지급하고, 국외 여행자의 경우는 별표 4에 따라 지급한다. 다만, 공무의 형편이나 그 밖의 부득이한 사유로 숙박비의 상한액 및 지급받은 식비(국내 여행의 경우 식비는 제외한다)를 초과하여 여비를 지출하였을 때에는 국내 여행의 경우에는 숙박비 상한액의 10분의 3을, 국외 여행의 경우에는 숙박비 및 식비의 2분의 1을 넘지 아니하는 범위에서 여비를 추가로 지급할 수 있다. <개정 2011. 2. 9.>\n② 제1항 단서에 따라 여비를 추가로 지급받으려는 공무원은 여행을 마친 날의 다음 날부터 기산하여 1주일 이내(국외 여행의 경우에는 2주일 이내를 말한다)에 정부구매카드 또는 신용카드를 사용하고 받은 매출전표에 세부 사용내용이 명시된 증거자료를 갖추어 회계 관계 공무원에게 정산을 신청하여야 한다. <개정 2011. 2. 9.>\n③ 일비는 여행일수에 따라 지급하되, 공무용 차량을 이용하는 경우 등 인사혁신처장이 정하는 바에 따라 여행을 하는 경우에는 일비의 2분의 1을 지급한다. <개정 2013. 3. 23., 2014. 11. 19., 2024. 7. 2.>\n④ 숙박비는 숙박하는 밤의 수에 따라 지급한다. 다만, 수로여행과 항공여행에는 숙박비를 지급하지 아니하되, 천재지변이나 그 밖의 부득이한 사유로 육지에서 숙박할 필요가 있는 경우에는 숙박비를 지급한다.\n⑤ 식비는 여행일수에 따라 지급한다. 다만, 수로여행과 항공여행에는 따로 식비가 필요한 경우에만 식비를 지급한다.\n⑥ 삭제 <2012. 1. 6.>\n[전문개정 2010. 11. 10.]",
+    "notice": "",
+    "plan": null,
+    "alternatives": [],
+    "cited": [],
+    "related": [],
+    "personal_notes": [],
+    "knowledge": {
+      "evidence": [
+        {
+          "id": "243ca624713948529fd3d16292770ffb:0:0",
+          "text": "제16조(일비ㆍ숙박비ㆍ식비의 지급) ① 국내 여행자의 일비(日費)ㆍ숙박비 및 식비는 별표 2에 따라 지급하고, 국외 여행자의 경우는 별표 4에 따라 지급한다. 다만, 공무의 형편이나 그 밖의 부득이한 사유로 숙박비의 상한액 및 지급받은 식비(국내 여행의 경우 식비는 제외한다)를 초과하여 여비를 지출하였을 때에는 국내 여행의 경우에는 숙박비 상한액의 10분의 3을, 국외 여행의 경우에는 숙박비 및 식비의 2분의 1을 넘지 아니하는 범위에서 여비를 추가로 지급할 수 있다. <개정 2011. 2. 9.>\n② 제1항 단서에 따라 여비를 추가로 지급받으려는 공무원은 여행을 마친 날의 다음 날부터 기산하여 1주일 이내(국외 여행의 경우에는 2주일 이내를 말한다)에 정부구매카드 또는 신용카드를 사용하고 받은 매출전표에 세부 사용내용이 명시된 증거자료를 갖추어 회계 관계 공무원에게 정산을 신청하여야 한다. <개정 2011. 2. 9.>\n③ 일비는 여행일수에 따라 지급하되, 공무용 차량을 이용하는 경우 등 인사혁신처장이 정하는 바에 따라 여행을 하는 경우에는 일비의 2분의 1을 지급한다. <개정 2013. 3. 23., 2014. 11. 19., 2024. 7. 2.>\n④ 숙박비는 숙박하는 밤의 수에 따라 지급한다. 다만, 수로여행과 항공여행에는 숙박비를 지급하지 아니하되, 천재지변이나 그 밖의 부득이한 사유로 육지에서 숙박할 필요가 있는 경우에는 숙박비를 지급한다.\n⑤ 식비는 여행일수에 따라 지급한다. 다만, 수로여행과 항공여행에는 따로 식비가 필요한 경우에만 식비를 지급한다.\n⑥ 삭제 <2012. 1. 6.>\n[전문개정 2010. 11. 10.]",
+          "loc": "제16조(일비ㆍ숙박비ㆍ식비의 지급) · 1~7행",
+          "source_id": "243ca624713948529fd3d16292770ffb",
+          "title": "공무원 여비 규정 제16조(일비ㆍ숙박비ㆍ식비의 지급)",
+          "kind": "법령·규정",
+          "institution": "국가공무원 · 지방공무원 적용은 해당 여비 조례 확인",
+          "effective_date": "2026-10-02",
+          "sha256": "0b22c01ecffbd69f3c7ceecb499322d0f3d05a21ac9928188fc97d101bb29983",
+          "limited": false,
+          "library_id": "2d452f42d15242f7b3506c111148aff6",
+          "file_id": "d419421d5f88524eba9ffce257780e9f",
+          "official": {
+            "title": "공무원 여비 규정",
+            "article": "제16조(일비ㆍ숙박비ㆍ식비의 지급)",
+            "effective_date": "2026-10-02",
+            "publication": "대통령령 제36728호",
+            "issuer": "인사혁신처",
+            "institution": "국가공무원 · 지방공무원 적용은 해당 여비 조례 확인",
+            "kind": "법령·규정",
+            "source_url": "https://www.law.go.kr/lsLinkCommonInfo.do?lspttninfSeq=57051",
+            "download_url": "https://www.law.go.kr/lsLinkCommonInfo.do?lspttninfSeq=57051",
+            "retrieved_at": "2026-10-20T10:08:58.555646+00:00",
+            "raw_file": "travel.html",
+            "raw_sha256": "53ca5e0ddb3fa144330c61520070391f54c1b90e9d3b28a9d410464a40b79840",
+            "filename": "공무원 여비 규정_제16조.txt",
+            "sha256": "0b22c01ecffbd69f3c7ceecb499322d0f3d05a21ac9928188fc97d101bb29983",
+            "scope": "해당 조항 본문 발췌 · 별표·부칙·기관 조례 미포함",
+            "paragraphs": 7
+          },
+          "score": 42.53,
+          "quote": "제16조(일비ㆍ숙박비ㆍ식비의 지급) ① 국내 여행자의 일비(日費)ㆍ숙박비 및 식비는 별표 2에 따라 지급하고, 국외 여행자의 경우는 별표 4에 따라 지급한다. 다만, 공무의 형편이나 그 밖의 부득이한 사유로 숙박비의 상한액 및 지급받은 식비(국내 여행의 경우 식비는 제외한다)를 초과하여 여비를 지출하였을 때에는 국내 여행의 경우에는 숙박비 상한액의 10분의 3을, 국외 여행의 경우에는 숙박비 및 식비의 2분의 1을 넘지 아니하는 범위에서 여비를 추가로 지급할 수 있다. <개정 2011. 2. 9.>\n② 제1항 단서에 따라 여비를 추가로 지급받으려는 공무원은 여행을 마친 날의 다음 날부터 기산하여 1주일 이내(국외 여행의 경우에는 2주일 이내를 말한다)에 정부구매카드 또는 신용카드를 사용하고 받은 매출전표에 세부 사용내용이 명시된 증거자료를 갖추어 회계 관계 공무원에게 정산을 신청하여야 한다. <개정 2011. 2. 9.>\n③ 일비는 여행일수에 따라 지급하되, 공무용 차량을 이용하는 경우 등 인사혁신처장이 정하는 바에 따라 여행을 하는 경우에는 일비의 2분의 1을 지급한다. <개정 2013. 3. 23., 2014. 11. 19., 2024. 7. 2.>\n④ 숙박비는 숙박하는 밤의 수에 따라 지급한다. 다만, 수로여행과 항공여행에는 숙박비를 지급하지 아니하되, 천재지변이나 그 밖의 부득이한 사유로 육지에서 숙박할 필요가 있는 경우에는 숙박비를 지급한다.\n⑤ 식비는 여행일수에 따라 지급한다. 다만, 수로여행과 항공여행에는 따로 식비가 필요한 경우에만 식비를 지급한다.\n⑥ 삭제 <2012. 1. 6.>\n[전문개정 2010. 11. 10.]",
+          "model_selected_quote": "③ 일비는 여행일수에 따라 지급하되, 공무용 차량을 이용하는 경우 등 인사혁신처장이 정하는 바에 따라 여행을 하는 경우에는 일비의 2분의 1을 지급한다. <개정 2013. 3. 23., 2014. 11. 19., 2024. 7. 2.>",
+          "quote_basis": "original_context"
+        }
+      ],
+      "experiences": [],
+      "excluded": [
+        {
+          "title": "지방자치단체 회계관리에 관한 훈령 제115조(채권관리상황의 기록)",
+          "reason": "국가기관·국가공무원에 적용할 근거가 필요합니다."
+        },
+        {
+          "title": "지방자치단체 회계관리에 관한 훈령 제120조(인센티브의 처리)",
+          "reason": "국가기관·국가공무원에 적용할 근거가 필요합니다."
+        },
+        {
+          "title": "지방공무원 복무규정 제7조의6(공가)",
+          "reason": "국가기관·국가공무원에 적용할 근거가 필요합니다."
+        },
+        {
+          "title": "지방자치단체를 당사자로 하는 계약에 관한 법률 시행령 제65조(검사조서의 작성 생략)",
+          "reason": "국가기관·국가공무원에 적용할 근거가 필요합니다."
+        },
+        {
+          "title": "지방자치단체를 당사자로 하는 계약에 관한 법률 시행령 제30조(수의계약대상자의 선정절차 등)",
+          "reason": "국가기관·국가공무원에 적용할 근거가 필요합니다."
+        },
+        {
+          "title": "지방자치단체를 당사자로 하는 계약에 관한 법률 제17조(검사)",
+          "reason": "국가기관·국가공무원에 적용할 근거가 필요합니다."
+        },
+        {
+          "title": "지방자치단체 예산편성 운영기준 01.자산및물품취득비",
+          "reason": "국가기관·국가공무원에 적용할 근거가 필요합니다."
+        },
+        {
+          "title": "지방자치단체 회계관리에 관한 훈령 제121조(집행현황의 공개)",
+          "reason": "국가기관·국가공무원에 적용할 근거가 필요합니다."
+        },
+        {
+          "title": "지방자치단체를 당사자로 하는 계약에 관한 법률 시행령 제67조(대가의 지급)",
+          "reason": "국가기관·국가공무원에 적용할 근거가 필요합니다."
+        },
+        {
+          "title": "지방공무원 복무규정 제7조의7(특별휴가)",
+          "reason": "국가기관·국가공무원에 적용할 근거가 필요합니다."
+        },
+        {
+          "title": "지방자치단체를 당사자로 하는 계약에 관한 법률 시행령 제64조(검사)",
+          "reason": "국가기관·국가공무원에 적용할 근거가 필요합니다."
+        },
+        {
+          "title": "지방자치단체 예산편성 운영기준 01.사무관리비",
+          "reason": "국가기관·국가공무원에 적용할 근거가 필요합니다."
+        },
+        {
+          "title": "지방자치단체를 당사자로 하는 계약에 관한 법률 시행령 제68조(대가 지급 지연에 대한 이자)",
+          "reason": "국가기관·국가공무원에 적용할 근거가 필요합니다."
+        },
+        {
+          "title": "지방공무원 복무규정 별표 1 경조사 휴가일수표",
+          "reason": "국가기관·국가공무원에 적용할 근거가 필요합니다."
+        },
+        {
+          "title": "지방공무원 복무규정 제7조의5(병가)",
+          "reason": "국가기관·국가공무원에 적용할 근거가 필요합니다."
+        },
+        {
+          "title": "지방공무원 복무규정 제7조(연가일수 및 연가보상비의 지급)",
+          "reason": "국가기관·국가공무원에 적용할 근거가 필요합니다."
+        },
+        {
+          "title": "지방자치단체를 당사자로 하는 계약에 관한 법률 제18조(대가의 지급)",
+          "reason": "국가기관·국가공무원에 적용할 근거가 필요합니다."
+        }
+      ],
+      "mode": "source_llm",
+      "model": "solar-pro4",
+      "notice": "",
+      "answer": "[1] 제16조(일비ㆍ숙박비ㆍ식비의 지급) ① 국내 여행자의 일비(日費)ㆍ숙박비 및 식비는 별표 2에 따라 지급하고, 국외 여행자의 경우는 별표 4에 따라 지급한다. 다만, 공무의 형편이나 그 밖의 부득이한 사유로 숙박비의 상한액 및 지급받은 식비(국내 여행의 경우 식비는 제외한다)를 초과하여 여비를 지출하였을 때에는 국내 여행의 경우에는 숙박비 상한액의 10분의 3을, 국외 여행의 경우에는 숙박비 및 식비의 2분의 1을 넘지 아니하는 범위에서 여비를 추가로 지급할 수 있다. <개정 2011. 2. 9.>\n② 제1항 단서에 따라 여비를 추가로 지급받으려는 공무원은 여행을 마친 날의 다음 날부터 기산하여 1주일 이내(국외 여행의 경우에는 2주일 이내를 말한다)에 정부구매카드 또는 신용카드를 사용하고 받은 매출전표에 세부 사용내용이 명시된 증거자료를 갖추어 회계 관계 공무원에게 정산을 신청하여야 한다. <개정 2011. 2. 9.>\n③ 일비는 여행일수에 따라 지급하되, 공무용 차량을 이용하는 경우 등 인사혁신처장이 정하는 바에 따라 여행을 하는 경우에는 일비의 2분의 1을 지급한다. <개정 2013. 3. 23., 2014. 11. 19., 2024. 7. 2.>\n④ 숙박비는 숙박하는 밤의 수에 따라 지급한다. 다만, 수로여행과 항공여행에는 숙박비를 지급하지 아니하되, 천재지변이나 그 밖의 부득이한 사유로 육지에서 숙박할 필요가 있는 경우에는 숙박비를 지급한다.\n⑤ 식비는 여행일수에 따라 지급한다. 다만, 수로여행과 항공여행에는 따로 식비가 필요한 경우에만 식비를 지급한다.\n⑥ 삭제 <2012. 1. 6.>\n[전문개정 2010. 11. 10.]",
+      "intent": {
+        "topics": [
+          "travel_daily"
+        ],
+        "status": "ready",
+        "question": "",
+        "recognized": true,
+        "labels": [
+          "일비 지급"
+        ]
+      },
+      "scope": "등록·선택한 추출 본문을 검색합니다. 인용 확인은 적용 대상·현행성·법적 해석을 보증하지 않습니다. 처리 경험은 공식 근거와 구분합니다.",
+      "tree": {
+        "kind": "summary",
+        "title": "공무용 차량 이용 등 정해진 조건이면 일비의 절반을 지급해요.",
+        "branches": [
+          {
+            "label": "차량 이용 조건",
+            "items": [
+              {
+                "text": "공무용 차량 이용 등 정해진 조건이면 일비의 절반을 지급해요.",
+                "ref": 1,
+                "support_quotes": [
+                  "공무용 차량을 이용하는 경우",
+                  "일비의 2분의 1을 지급한다."
+                ]
+              }
+            ]
+          },
+          {
+            "label": "기본 기준",
+            "items": [
+              {
+                "text": "일비는 출장 일수에 따라 지급해요.",
+                "ref": 1,
+                "support_quotes": [
+                  "일비는 여행일수에 따라 지급하되"
+                ]
+              }
+            ]
+          },
+          {
+            "label": "지금 확인할 것",
+            "items": [
+              {
+                "text": "차량 이용 여부를 확인하고, 실제 금액은 여비 금액표와 함께 확인해요.",
+                "ref": 1,
+                "support_quotes": [
+                  "일비의 2분의 1을 지급한다.",
+                  "국내 여행자의 일비(日費)ㆍ숙박비 및 식비는 별표 2에 따라 지급"
+                ]
+              }
+            ]
+          }
+        ],
+        "note": "이해를 돕는 요약이에요. 내 기관에 적용되는 조건은 근거에서 확인하세요.",
+        "rule_id": "daily-car",
+        "reviewed_source_sha256": "0b22c01ecffbd69f3c7ceecb499322d0f3d05a21ac9928188fc97d101bb29983"
+      }
+    },
+    "guidance": {
+      "topic": "travel",
+      "title": "출장·여비 처리 방법",
+      "context": "국가공무원이 공무용 차량으로 관외 출장 가면 일비는 어떻게 지급하나요?",
+      "questions": [
+        "실제 출장 시작일과 종료일을 알려주세요. 2박 3일만으로 날짜를 정하지 않아요."
+      ],
+      "steps": [
+        {
+          "id": "scope",
+          "title": "적용 조건 확인",
+          "detail": "소속 기관과 실제 출장 일정, 이동수단·숙박·제공받은 항목을 확인해요.",
+          "kind": "preparation"
+        },
+        {
+          "id": "materials",
+          "title": "증빙·서식 준비",
+          "detail": "아래 등록 근거에서 필요한 증빙과 기한을 확인하고, 기관에서 쓰는 서식을 준비해요.",
+          "kind": "preparation"
+        },
+        {
+          "id": "system",
+          "title": "e-사람에서 신청·정산",
+          "detail": "아래 매뉴얼의 원문과 쪽수를 참고해 기관 시스템에서 처리해요. 화면·권한 차이는 담당자에게 확인해요.",
+          "kind": "preparation"
+        },
+        {
+          "id": "check",
+          "title": "처리 결과 확인",
+          "detail": "신청·결재 상태와 보완 요청을 확인해요. 필요하면 아래 보조 도구에서 계산·증빙을 검토할 수 있어요.",
+          "kind": "preparation"
+        }
+      ],
+      "deadlines": [],
+      "forms": [
+        {
+          "id": "form-travel",
+          "name": "국내출장 여비 정산서",
+          "href": "/api/documents/form-travel-doc/download",
+          "synthetic": true,
+          "source_id": "form-travel-doc",
+          "sha256": "42d22f055904595ce30f55f899a6d378f3f1e989e1330370f9d3985861b54eb5"
+        }
+      ],
+      "service_guide": {
+        "evidence": [
+          {
+            "id": "BizService07",
+            "title": "국내출장",
+            "reference_kind": "official_service_guide",
+            "quote": "출장공무원이 그 출장용무를 마치고 사무실로 돌아왔을 때에는 지체 없이 소속기관의 장에게 결과보고서를 제출함. 다만, 경미한 사항에 대한 결과 보고는 말로 갈음할 수 있음",
+            "loc": "출장공무원의 의무",
+            "sha256": "2d156cb701e91beae7ba9fb1c79651c871514db29235505becd47d53c0b4ef29",
+            "source_url": "https://www.mpm.go.kr/mpm/info/infoService/BizService07/",
+            "snapshot_url": "/api/service-guides/BizService07/original",
+            "retrieved_at": "2026-10-24T13:00:58.899363+00:00",
+            "scope": "국가공무원 제도 설명; 현행 법령 및 기관별 적용조건 별도 확인"
+          },
+          {
+            "id": "BizService07",
+            "title": "국내출장",
+            "reference_kind": "official_service_guide",
+            "quote": "근무지내 출장 : 특별시와 광역시를 포함한 동일시와 군 및 섬(제주특별자치도 제외) 안에서의 출장 또는 여행거리가 12km 미만인 출장. 그리고 여행거리가 12km를 넘더라도 동일한 시·군 및 섬 안에서의 출장은 근무지내 출장에 해당 단, 섬 밖으로의 출장은 같은 시·군이라도 근무지외 출장으로 보나 육로와 교량으로 연결된 같은 시·군의 섬은 근무지내 출장에 해당됨",
+            "loc": "출장의 구분",
+            "sha256": "2d156cb701e91beae7ba9fb1c79651c871514db29235505becd47d53c0b4ef29",
+            "source_url": "https://www.mpm.go.kr/mpm/info/infoService/BizService07/",
+            "snapshot_url": "/api/service-guides/BizService07/original",
+            "retrieved_at": "2026-10-24T13:00:58.899363+00:00",
+            "scope": "국가공무원 제도 설명; 현행 법령 및 기관별 적용조건 별도 확인"
+          }
+        ],
+        "coverage": {
+          "guide_pages": 10,
+          "faq_questions": 26
+        },
+        "notice": "국가공무원 제도 설명·FAQ의 보관본입니다. 확인일은 수집일이며 답변의 개정일을 뜻하지 않아요. 실제 적용·일수·예외는 현행 법령과 기관 기준을 확인하세요.",
+        "problems": []
+      },
+      "institution_scope": null,
+      "manual": {
+        "evidence": [
+          {
+            "id": "manual-d297a014798bc804ba99e51cd62ee2c1:page:14",
+            "source_id": "manual-d297a014798bc804ba99e51cd62ee2c1",
+            "library_id": "esaram-manuals-v68",
+            "file_id": "d297a014798bc804ba99e51cd62ee2c1",
+            "title": "[개인용]3세대 e-사람_사용자매뉴얼_02.복무_04.출장관리_v1.0.pdf",
+            "kind": "업무편람",
+            "institution": "e-사람 사용자매뉴얼 · 제공 파일",
+            "effective_date": "",
+            "sha256": "d297a014798bc804ba99e51cd62ee2c154725b7daa54b097ba6b809a958b8d24",
+            "limited": false,
+            "reference_kind": "system_manual",
+            "page": 14,
+            "page_count": 57,
+            "indexed_pages": 57,
+            "loc": "PDF 14쪽",
+            "text": "Copyrightⓒ Ministry of Personnel Management. All Rights reserved 14\n5-1\n5. 여비 정산을 위해 출장 시 사용한 결제수단을 선택한다.\n6. 결재를 상신할 결재자 정보를 확인한 후 [결재신청]을 클릭해 상신한다.\n7. 정산 결재가 완료된 출장 건을 체크한 후 [정산신청서]를 출력할 수 있다.\n‘숙박비실비’의 경우, 숙박비 내역을 작성한다.\nTIP\n5\n스마트출장예약앱을 통해 결제한 경우, 스마트출장정산내역에서 사용한 건을 클릭해\n[정산적용]한다. \n6\n3/5\n",
+            "quote": "Copyrightⓒ Ministry of Personnel Management. All Rights reserved 14\n5-1\n5. 여비 정산을 위해 출장 시 사용한 결제수단을 선택한다.\n6. 결재를 상신할 결재자 정보를 확인한 후 [결재신청]을 클릭해 상신한다.\n7. 정산 결재가 완료된 출장 건을 체크한 후 [정산신청서]를 출력할 수 있다.\n‘숙박비실비’의 경우, 숙박비 내역을 작성한다.\nTIP\n5\n스마트출장예약앱을 통해 결제한 경우, 스마트출장정산내역에서 사용한 건을 클릭해\n[정산적용]한다. \n6\n3/5\n",
+            "score": 34.61,
+            "official": null
+          },
+          {
+            "id": "manual-618f2550225650b009cb68dd0f8597cb:page:60",
+            "source_id": "manual-618f2550225650b009cb68dd0f8597cb",
+            "library_id": "esaram-manuals-v68",
+            "file_id": "618f2550225650b009cb68dd0f8597cb",
+            "title": "[서무_출장] 3세대 e-사람_스마트출장앱 교육.pdf",
+            "kind": "업무편람",
+            "institution": "e-사람 사용자매뉴얼 · 제공 파일",
+            "effective_date": "",
+            "sha256": "618f2550225650b009cb68dd0f8597cbb6ef68d32c38641129743357a9daf815",
+            "limited": false,
+            "reference_kind": "system_manual",
+            "page": 60,
+            "page_count": 111,
+            "indexed_pages": 111,
+            "loc": "PDF 60쪽",
+            "text": "PART\n7\n60\n출장정산\n1 사용내역일자조회\n스마트출장예약정산앱을 통해 예약한\n사용일자를검색합니다.\n7.4 e-사람 출장정산\n7.4.1  출장정산 기능\n1\n2\n3\n4\ntab\n2 정산내역선택\n해당 출장건에 등록할 정산내역을\n선택합니다.\n정산적용\n정산건 선택후 정산적용및 저장버튼을\n클릭합니다.\n3 4",
+            "quote": "PART\n7\n60\n출장정산\n1 사용내역일자조회\n스마트출장예약정산앱을 통해 예약한\n사용일자를검색합니다.\n7.4 e-사람 출장정산\n7.4.1  출장정산 기능\n1\n2\n3\n4\ntab\n2 정산내역선택\n해당 출장건에 등록할 정산내역을\n선택합니다.\n정산적용\n정산건 선택후 정산적용및 저장버튼을\n클릭합니다.\n3 4",
+            "score": 32.42,
+            "official": null
+          },
+          {
+            "id": "manual-618f2550225650b009cb68dd0f8597cb:page:81",
+            "source_id": "manual-618f2550225650b009cb68dd0f8597cb",
+            "library_id": "esaram-manuals-v68",
+            "file_id": "618f2550225650b009cb68dd0f8597cb",
+            "title": "[서무_출장] 3세대 e-사람_스마트출장앱 교육.pdf",
+            "kind": "업무편람",
+            "institution": "e-사람 사용자매뉴얼 · 제공 파일",
+            "effective_date": "",
+            "sha256": "618f2550225650b009cb68dd0f8597cbb6ef68d32c38641129743357a9daf815",
+            "limited": false,
+            "reference_kind": "system_manual",
+            "page": 81,
+            "page_count": 111,
+            "indexed_pages": 111,
+            "loc": "PDF 81쪽",
+            "text": "Copyrightⓒ Ministry of Personnel Management. All Rights reserved \n‘숙박비실비’의 경우, 숙박비 내역을 작성한다.\n5. 여비 정산을 위해 출장 시 사용한 결제수단을 선택한다.\n6. 결재를 상신할 결재자 정보를 확인한 후 [결재신청]을 클릭해 상신한다.\n81\n스마트출장정산\n5\n5-1\n3/5\n스마트출장예약정산 앱을 통해 결제한 경우, 스마트출장정산내역에서 사용한 건을 클\n릭해 [정산적용]한다. \n6\nTIP",
+            "quote": "Copyrightⓒ Ministry of Personnel Management. All Rights reserved \n‘숙박비실비’의 경우, 숙박비 내역을 작성한다.\n5. 여비 정산을 위해 출장 시 사용한 결제수단을 선택한다.\n6. 결재를 상신할 결재자 정보를 확인한 후 [결재신청]을 클릭해 상신한다.\n81\n스마트출장정산\n5\n5-1\n3/5\n스마트출장예약정산 앱을 통해 결제한 경우, 스마트출장정산내역에서 사용한 건을 클\n릭해 [정산적용]한다. \n6\nTIP",
+            "score": 29.67,
+            "official": null
+          }
+        ],
+        "scope": "제공된 e-사람 매뉴얼의 화면 조작 안내입니다. PDF 쪽수 기준이며 현재 기관 화면과 다를 수 있어요. 법정 지급액·휴가일수는 규정 근거로 별도 확인하세요.",
+        "notice": ""
+      },
+      "ai_requested": true,
+      "ai_used": true,
+      "notice": "진행 순서는 실무 준비 제안입니다. 법정 기한·필수 서류·적용 조건은 아래 등록 근거에서 확인하세요.",
+      "map": {
+        "nodes": [
+          {
+            "id": "topic:travel",
+            "label": "travel",
+            "kind": "topic"
+          },
+          {
+            "id": "step:travel:scope",
+            "label": "적용 조건 확인",
+            "kind": "preparation"
+          },
+          {
+            "id": "step:travel:materials",
+            "label": "증빙·서식 준비",
+            "kind": "preparation"
+          },
+          {
+            "id": "step:travel:system",
+            "label": "e-사람에서 신청·정산",
+            "kind": "preparation"
+          },
+          {
+            "id": "step:travel:check",
+            "label": "처리 결과 확인",
+            "kind": "preparation"
+          },
+          {
+            "id": "source:243ca624713948529fd3d16292770ffb",
+            "label": "공무원 여비 규정 제16조(일비ㆍ숙박비ㆍ식비의 지급)",
+            "kind": "legal",
+            "sha256": "0b22c01ecffbd69f3c7ceecb499322d0f3d05a21ac9928188fc97d101bb29983",
+            "loc": "제16조(일비ㆍ숙박비ㆍ식비의 지급) · 1~7행",
+            "page": null
+          },
+          {
+            "id": "source:BizService07",
+            "label": "국내출장",
+            "kind": "official_service_guide",
+            "sha256": "2d156cb701e91beae7ba9fb1c79651c871514db29235505becd47d53c0b4ef29",
+            "loc": "출장공무원의 의무",
+            "page": null
+          },
+          {
+            "id": "source:manual-d297a014798bc804ba99e51cd62ee2c1:14",
+            "label": "[개인용]3세대 e-사람_사용자매뉴얼_02.복무_04.출장관리_v1.0.pdf",
+            "kind": "system_manual",
+            "sha256": "d297a014798bc804ba99e51cd62ee2c154725b7daa54b097ba6b809a958b8d24",
+            "loc": "PDF 14쪽",
+            "page": 14
+          },
+          {
+            "id": "source:manual-618f2550225650b009cb68dd0f8597cb:60",
+            "label": "[서무_출장] 3세대 e-사람_스마트출장앱 교육.pdf",
+            "kind": "system_manual",
+            "sha256": "618f2550225650b009cb68dd0f8597cbb6ef68d32c38641129743357a9daf815",
+            "loc": "PDF 60쪽",
+            "page": 60
+          },
+          {
+            "id": "source:manual-618f2550225650b009cb68dd0f8597cb:81",
+            "label": "[서무_출장] 3세대 e-사람_스마트출장앱 교육.pdf",
+            "kind": "system_manual",
+            "sha256": "618f2550225650b009cb68dd0f8597cbb6ef68d32c38641129743357a9daf815",
+            "loc": "PDF 81쪽",
+            "page": 81
+          },
+          {
+            "id": "form:form-travel",
+            "label": "국내출장 여비 정산서",
+            "kind": "form",
+            "sha256": "42d22f055904595ce30f55f899a6d378f3f1e989e1330370f9d3985861b54eb5"
+          }
+        ],
+        "edges": [
+          {
+            "source": "topic:travel",
+            "target": "step:travel:scope",
+            "relation": "준비 순서"
+          },
+          {
+            "source": "topic:travel",
+            "target": "step:travel:materials",
+            "relation": "준비 순서"
+          },
+          {
+            "source": "topic:travel",
+            "target": "step:travel:system",
+            "relation": "준비 순서"
+          },
+          {
+            "source": "topic:travel",
+            "target": "step:travel:check",
+            "relation": "준비 순서"
+          },
+          {
+            "source": "topic:travel",
+            "target": "source:243ca624713948529fd3d16292770ffb",
+            "relation": "검색된 자료"
+          },
+          {
+            "source": "topic:travel",
+            "target": "source:BizService07",
+            "relation": "검색된 자료"
+          },
+          {
+            "source": "topic:travel",
+            "target": "source:manual-d297a014798bc804ba99e51cd62ee2c1:14",
+            "relation": "검색된 자료"
+          },
+          {
+            "source": "topic:travel",
+            "target": "source:manual-618f2550225650b009cb68dd0f8597cb:60",
+            "relation": "검색된 자료"
+          },
+          {
+            "source": "topic:travel",
+            "target": "source:manual-618f2550225650b009cb68dd0f8597cb:81",
+            "relation": "검색된 자료"
+          },
+          {
+            "source": "topic:travel",
+            "target": "form:form-travel",
+            "relation": "등록 서식 후보"
+          }
+        ],
+        "note": "자료의 관련을 보여줍니다. 법적 적용 관계를 자동 판정한 결과는 아닙니다."
+      }
+    },
+    "review_context": {
+      "query": "국가공무원이 공무용 차량으로 관외 출장 가면 일비는 어떻게 지급하나요?",
+      "affiliation": null,
+      "library_id": null,
+      "institution_rule_id": null,
+      "today": "2026-10-28"
+    }
+  },
+  "profile_switches": [
+    "local_gemma",
+    "local_llama",
+    "offline"
+  ],
+  "local_inference_retested": false
+}

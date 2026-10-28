@@ -1,0 +1,226 @@
+{
+  "project_id": "2cca2cb070b848d399c850136c24aee3",
+  "base": "http://127.0.0.1:8896",
+  "checks": {
+    "pdf_page25": true,
+    "xlsx_sheet6_row501": true,
+    "no_unrelated_answer": true,
+    "draft_persisted": true,
+    "originals_unchanged": true,
+    "citations_match": true
+  },
+  "results": [
+    {
+      "scenario": "PDF 마지막 25쪽",
+      "answer": {
+        "id": "f7187b09bf57412892ad14adceaa04a4",
+        "project_id": "2cca2cb070b848d399c850136c24aee3",
+        "role": "assistant",
+        "content": "프로젝트 원문에서 확인한 내용\n\n\n\n[1] 25쪽 교육자료.pdf · PDF 25쪽\nLATEDEADLINE 2026-11-06",
+        "status": "completed",
+        "created_at": "2026-10-25T10:10:36.749887+00:00",
+        "question": "LATEDEADLINE",
+        "user_id": "6953e788f10f45118b9ca01433ac7c66",
+        "file_ids": [],
+        "draft": false,
+        "evidence": [
+          {
+            "ref": 1,
+            "file_id": "de4f81b04692529bb12a82860ce9130b",
+            "name": "25쪽 교육자료.pdf",
+            "unit": 25,
+            "loc": "PDF 25쪽",
+            "text": "LATEDEADLINE 2026-11-06",
+            "sha256": "9fdea9b6dcb5feba8fe3c53c398854debfa516d3118e812b30f3eefeae51caff",
+            "stale": false
+          }
+        ],
+        "coverage": {
+          "total": 3,
+          "ready": 3,
+          "partial": 0,
+          "unread": 0
+        },
+        "mode": "offline",
+        "model": null,
+        "model_metadata": {},
+        "notice": "AI 없이 프로젝트 원문을 찾아 구성했습니다. 이번 답변은 검색된 1개 파일의 발췌이며, 읽은 모든 파일을 인용한 결과는 아닙니다. 필요하면 자료를 선택해 나눠 질문하세요.",
+        "finished_at": "2026-10-25T10:10:39.889570+00:00"
+      }
+    },
+    {
+      "scenario": "엑셀 여섯째 시트 501행",
+      "answer": {
+        "id": "3573a20bcda5470d9c3b8df6e25e02d9",
+        "project_id": "2cca2cb070b848d399c850136c24aee3",
+        "role": "assistant",
+        "content": "프로젝트 원문에서 확인한 내용\n\n\n\n[1] 교육 안내.txt · 2행\n교육 회신 마감은 2026-11-06입니다.\n\n[2] 6개 시트 명단.xlsx · 시트6!C501:C501\nC=교육 회신 마감은 2026-11-06입니다.",
+        "status": "completed",
+        "created_at": "2026-10-25T10:10:40.369838+00:00",
+        "question": "교육 회신 마감",
+        "user_id": "b9dd27e853464eb5a9345044b77cd63e",
+        "file_ids": [],
+        "draft": false,
+        "evidence": [
+          {
+            "ref": 1,
+            "file_id": "d06bbe7c503b53bebed5de009fc084f6",
+            "name": "교육 안내.txt",
+            "unit": 2,
+            "loc": "2행",
+            "text": "교육 회신 마감은 2026-11-06입니다.",
+            "sha256": "470820bc3088acf0073054ef6149cd08e3c0ee5ab918aefc83eab4ffa4a0ec58",
+            "stale": false
+          },
+          {
+            "ref": 2,
+            "file_id": "f7d079b34117578cba9931eab954b6aa",
+            "name": "6개 시트 명단.xlsx",
+            "unit": 1,
+            "loc": "시트6!C501:C501",
+            "text": "C=교육 회신 마감은 2026-11-06입니다.",
+            "sha256": "5ddfed82dc1893f4f746171496d91939e877df88696b18673303243f7364ec03",
+            "stale": false
+          }
+        ],
+        "coverage": {
+          "total": 3,
+          "ready": 3,
+          "partial": 0,
+          "unread": 0
+        },
+        "mode": "offline",
+        "model": null,
+        "model_metadata": {},
+        "notice": "AI 없이 프로젝트 원문을 찾아 구성했습니다. 이번 답변은 검색된 2개 파일의 발췌이며, 읽은 모든 파일을 인용한 결과는 아닙니다. 필요하면 자료를 선택해 나눠 질문하세요.",
+        "finished_at": "2026-10-25T10:10:40.446658+00:00"
+      }
+    },
+    {
+      "scenario": "자료에 없는 질문",
+      "answer": {
+        "id": "180f4fabee514d0cb54a7de8db0462ce",
+        "project_id": "2cca2cb070b848d399c850136c24aee3",
+        "role": "assistant",
+        "content": "프로젝트 자료에서 질문에 답할 직접 근거를 찾지 못했습니다. 관련 파일을 추가하거나 자료를 다시 읽은 뒤 질문해 주세요.",
+        "status": "completed",
+        "created_at": "2026-10-25T10:10:40.922297+00:00",
+        "question": "항공권 취소 수수료는 얼마인가요?",
+        "user_id": "a8ba134af1fa4cf284a9005b977a89df",
+        "file_ids": [],
+        "draft": false,
+        "evidence": [],
+        "coverage": {
+          "total": 3,
+          "ready": 3,
+          "partial": 0,
+          "unread": 0
+        },
+        "mode": "offline",
+        "model": null,
+        "model_metadata": {},
+        "notice": "AI 없이 프로젝트 원문을 찾아 구성했습니다.",
+        "finished_at": "2026-10-25T10:10:40.997779+00:00"
+      }
+    },
+    {
+      "scenario": "보고서 초안",
+      "answer": {
+        "id": "cb32f7b694a642f9a1dd3c8b64649a05",
+        "project_id": "2cca2cb070b848d399c850136c24aee3",
+        "role": "assistant",
+        "content": "합성 교육 준비 · 실제 구동 검증 · 보고서 초안\n\n\n\n목적: [보고·안내 목적을 입력하세요]\n\n\n\n자료에서 확인한 내용\n\n[1] 25쪽 교육자료.pdf · PDF 1쪽\nordinary page 1\n\n[2] 6개 시트 명단.xlsx · 시트6!C501:C501\nC=교육 회신 마감은 2026-11-06입니다.\n\n[3] 교육 안내.txt · 1행\n합성 검증자료\n\n[4] 25쪽 교육자료.pdf · PDF 2쪽\nordinary page 2\n\n[5] 교육 안내.txt · 2행\n교육 회신 마감은 2026-11-06입니다.\n\n[6] 25쪽 교육자료.pdf · PDF 3쪽\nordinary page 3\n\n[7] 교육 안내.txt · 3행\n참석 대상은 총무과와 회계과입니다.\n\n\n\n추가 확인: 담당자·최종 일정·기관 내부 승인 여부 [작성 필요]\n\n다음 조치: 위 근거와 수신 대상을 확인한 뒤 문안을 확정하세요.",
+        "status": "completed",
+        "created_at": "2026-10-25T10:10:41.482141+00:00",
+        "question": "보고서 초안을 작성해줘",
+        "user_id": "64a2f3e5fe734e04ae124c0b5882968c",
+        "file_ids": [],
+        "draft": true,
+        "evidence": [
+          {
+            "ref": 1,
+            "file_id": "de4f81b04692529bb12a82860ce9130b",
+            "name": "25쪽 교육자료.pdf",
+            "unit": 1,
+            "loc": "PDF 1쪽",
+            "text": "ordinary page 1",
+            "sha256": "9fdea9b6dcb5feba8fe3c53c398854debfa516d3118e812b30f3eefeae51caff",
+            "stale": false
+          },
+          {
+            "ref": 2,
+            "file_id": "f7d079b34117578cba9931eab954b6aa",
+            "name": "6개 시트 명단.xlsx",
+            "unit": 1,
+            "loc": "시트6!C501:C501",
+            "text": "C=교육 회신 마감은 2026-11-06입니다.",
+            "sha256": "5ddfed82dc1893f4f746171496d91939e877df88696b18673303243f7364ec03",
+            "stale": false
+          },
+          {
+            "ref": 3,
+            "file_id": "d06bbe7c503b53bebed5de009fc084f6",
+            "name": "교육 안내.txt",
+            "unit": 1,
+            "loc": "1행",
+            "text": "합성 검증자료",
+            "sha256": "470820bc3088acf0073054ef6149cd08e3c0ee5ab918aefc83eab4ffa4a0ec58",
+            "stale": false
+          },
+          {
+            "ref": 4,
+            "file_id": "de4f81b04692529bb12a82860ce9130b",
+            "name": "25쪽 교육자료.pdf",
+            "unit": 2,
+            "loc": "PDF 2쪽",
+            "text": "ordinary page 2",
+            "sha256": "9fdea9b6dcb5feba8fe3c53c398854debfa516d3118e812b30f3eefeae51caff",
+            "stale": false
+          },
+          {
+            "ref": 5,
+            "file_id": "d06bbe7c503b53bebed5de009fc084f6",
+            "name": "교육 안내.txt",
+            "unit": 2,
+            "loc": "2행",
+            "text": "교육 회신 마감은 2026-11-06입니다.",
+            "sha256": "470820bc3088acf0073054ef6149cd08e3c0ee5ab918aefc83eab4ffa4a0ec58",
+            "stale": false
+          },
+          {
+            "ref": 6,
+            "file_id": "de4f81b04692529bb12a82860ce9130b",
+            "name": "25쪽 교육자료.pdf",
+            "unit": 3,
+            "loc": "PDF 3쪽",
+            "text": "ordinary page 3",
+            "sha256": "9fdea9b6dcb5feba8fe3c53c398854debfa516d3118e812b30f3eefeae51caff",
+            "stale": false
+          },
+          {
+            "ref": 7,
+            "file_id": "d06bbe7c503b53bebed5de009fc084f6",
+            "name": "교육 안내.txt",
+            "unit": 3,
+            "loc": "3행",
+            "text": "참석 대상은 총무과와 회계과입니다.",
+            "sha256": "470820bc3088acf0073054ef6149cd08e3c0ee5ab918aefc83eab4ffa4a0ec58",
+            "stale": false
+          }
+        ],
+        "coverage": {
+          "total": 3,
+          "ready": 3,
+          "partial": 0,
+          "unread": 0
+        },
+        "mode": "offline",
+        "model": null,
+        "model_metadata": {},
+        "notice": "AI 없이 프로젝트 원문을 찾아 구성했습니다.",
+        "finished_at": "2026-10-25T10:10:41.557037+00:00"
+      }
+    }
+  ],
+  "passed": true
+}
