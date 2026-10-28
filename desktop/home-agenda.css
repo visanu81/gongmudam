@@ -1,0 +1,125 @@
+/* Home agenda: compact B palette surface, sized to the right-side desktop shelf. */
+body.approved-design[data-variant="B"] .work-shelf {
+  box-sizing: border-box;
+  top: 24px;
+  bottom: auto;
+  max-height: min(65%, calc(100% - 360px));
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #9aafbf transparent;
+}
+
+#home-agenda { min-width: 0; color: #263f54; }
+.home-agenda-header { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.home-agenda-header h2 { margin: 0; font-size: 18px; font-weight: 650; letter-spacing: -.025em; }
+.home-agenda-controls { display: flex; flex: 0 0 auto; gap: 4px; }
+.home-agenda-controls button,
+.home-agenda-more,
+.home-agenda-next {
+  min-height: 36px;
+  padding: 6px 9px;
+  border: 1px solid #c7d7e3;
+  border-radius: 7px;
+  background: #f8fbfd;
+  color: #315e80;
+  font-size: 12px;
+}
+.home-agenda-controls button:hover,
+.home-agenda-more:hover,
+.home-agenda-next:hover { background: #e3edf4; }
+.home-agenda-controls button:focus-visible,
+.home-agenda-task:focus-visible,
+.home-agenda-more:focus-visible,
+.home-agenda-next:focus-visible,
+.recent-work-disclosure > summary:focus-visible { outline: 3px solid #3a7195; outline-offset: 2px; }
+.home-agenda-controls button:disabled,
+.home-agenda-task:disabled,
+.home-agenda-more:disabled,
+.home-agenda-next:disabled { cursor: not-allowed; opacity: .55; }
+.home-agenda-context { margin: 3px 0 14px; color: #526d82; font-size: 12px; word-break: keep-all; }
+.home-agenda-group { margin: 0 0 12px; }
+.home-agenda-group h3 { margin: 0 0 3px; color: #355b77; font-size: 13px; font-weight: 650; letter-spacing: -.01em; }
+.home-agenda-items { display: grid; min-width: 0; }
+.home-agenda-task {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 2px 8px;
+  width: 100%;
+  min-width: 0;
+  padding: 8px 0;
+  border-bottom: 1px solid #d8e3eb;
+  background: transparent;
+  color: #263f54;
+  text-align: left;
+}
+.home-agenda-task:hover { background: #e5eef4; }
+.home-agenda-task strong { min-width: 0; overflow: hidden; font-size: 13px; font-weight: 620; text-overflow: ellipsis; white-space: nowrap; }
+.home-agenda-task small { grid-column: 1; min-width: 0; overflow: hidden; color: #506d82; font-size: 12px; text-overflow: ellipsis; white-space: nowrap; }
+.home-agenda-task > span { grid-column: 2; grid-row: 1 / span 2; color: #315e80; font-size: 12px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.home-agenda-empty,
+.home-agenda-status { margin: 4px 0 8px; color: #526d82; font-size: 12px; line-height: 1.5; }
+.home-agenda-more,
+.home-agenda-next { margin-top: 4px; }
+.home-agenda-next { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: baseline; gap: 3px 8px; width: 100%; text-align: left; }
+.home-agenda-next :is(small, span) { min-width: 0; color: #526d82; font-size: 12px; }
+.recent-work-disclosure { margin-top: 12px; border-top: 1px solid #d1dee8; }
+.recent-work-disclosure > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  min-height: 42px;
+  padding: 6px 0;
+  color: #315e80;
+  font-size: 13px;
+  font-weight: 620;
+  cursor: pointer;
+}
+.recent-work-disclosure > summary span { color: #526d82; font-size: 11px; font-weight: 450; white-space: nowrap; }
+.recent-work-disclosure[open] > summary { margin-bottom: 4px; }
+.recent-work-disclosure .shelf-note { margin-top: 10px; }
+.recent-work-disclosure #recent-work-items > .recent-work-item { padding-block: 9px; }
+
+@media (max-height: 850px) and (min-width: 701px) {
+  body.approved-design[data-variant="B"] #desktop-companion .companion-bubble { display: none; }
+  body.approved-design[data-variant="B"] .work-shelf { max-height: min(72%, calc(100% - 160px)); }
+}
+@media (max-width: 700px) {
+  body.approved-design[data-variant="B"] #desktop-area { display: flex; flex-direction: column; }
+  body.approved-design[data-variant="B"] .work-shelf {
+    display: block !important;
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    width: auto;
+    order: 0;
+    flex: 0 0 auto;
+    margin: 16px 12px 12px;
+    max-height: none;
+    padding: 12px 14px;
+    overflow: visible;
+    border-radius: 12px;
+    background: #f0f5f9;
+  }
+  body.approved-design[data-variant="B"] .desktop-apps {
+    position: relative;
+    order: 1;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px 5px;
+    flex: 0 0 auto;
+    margin: 8px 12px 20px;
+  }
+  body.approved-design[data-variant="B"] #desktop-companion { display: none; }
+  body.approved-design[data-variant="B"] .work-shelf .home-agenda-context { margin-bottom: 8px; }
+  body.approved-design[data-variant="B"] .work-shelf .home-agenda-group { margin-bottom: 7px; }
+  body.approved-design[data-variant="B"] .work-shelf .home-agenda-task { padding-block: 6px; }
+  body.approved-design[data-variant="B"] .work-shelf .recent-work-disclosure { margin-top: 7px; }
+}

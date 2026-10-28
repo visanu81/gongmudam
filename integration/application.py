@@ -12,8 +12,10 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 DESKTOP = ROOT / 'desktop'
-INJECTION = (b'<link rel="stylesheet" href="/desktop/embedded.css">'
-             b'<script src="/desktop/embedded.js" defer></script>')
+INJECTION = (b'<link rel="stylesheet" href="/desktop/embedded.css?v=74-entry">'
+             b'<script src="/desktop/service-entry.js?v=74-entry"></script>'
+             b'<script src="/desktop/deployment-context.js" defer></script>'
+             b'<script src="/desktop/embedded.js?v=77-affiliation" defer></script>')
 
 
 def desktop_asset(name: str) -> Path | None:
@@ -27,6 +29,19 @@ def desktop_asset(name: str) -> Path | None:
     return None
 
 
+def service_version(service: Path) -> str:
+    """Read and validate the release version declared by the selected bundle."""
+    manifest_path = service / 'submission-manifest.json'
+    try:
+        manifest = json.loads(manifest_path.read_text(encoding='utf-8'))
+    except (OSError, json.JSONDecodeError) as error:
+        raise RuntimeError(f'Cannot read required submission manifest: {manifest_path}') from error
+    version = manifest.get('release_version') if isinstance(manifest, dict) else None
+    if not isinstance(version, str) or not version.strip():
+        raise RuntimeError('submission-manifest.json must contain a non-empty string release_version.')
+    return version
+
+
 class EmbeddedPages:
     """Inject a browser adapter without editing archived HTML or buffering downloads."""
     def __init__(self, app):
@@ -35,6 +50,11 @@ class EmbeddedPages:
     async def __call__(self, scope, receive, send):
         if scope['type'] != 'http':
             return await self.app(scope, receive, send)
+        # The adapter can change without a legacy HTML file changing its ETag.
+        # Do not let a cached pre-adapter page skip the current entry script.
+        if scope['path'].endswith('.html') and not scope['path'].startswith(('/desktop/', '/api/')):
+            scope = {**scope, 'headers': [(key,value) for key,value in scope.get('headers', [])
+                     if key.lower() not in (b'if-none-match', b'if-modified-since')]}
         html = False
         buffered = []
 
@@ -46,7 +66,7 @@ class EmbeddedPages:
                         any(k.lower() == b'content-type' and b'text/html' in v for k, v in headers))
                 updated = []
                 for key, value in headers:
-                    if html and key.lower() == b'content-length':
+                    if html and key.lower() in (b'content-length', b'etag', b'last-modified', b'cache-control'):
                         continue
                     if key.lower() == b'content-security-policy':
                         value = value.replace(b"frame-ancestors 'none'", b"frame-ancestors 'self'")
@@ -56,6 +76,8 @@ class EmbeddedPages:
                                      b"img-src 'self' data: blob:; connect-src 'self' blob:; "
                                      b"font-src 'self'; frame-ancestors 'self'; base-uri 'self'; object-src 'none'")
                     updated.append((key, value))
+                if html:
+                    updated.append((b'cache-control', b'no-store'))
                 message = {**message, 'headers': updated}
             elif message['type'] == 'http.response.body' and html:
                 buffered.append(message.get('body', b''))
@@ -161,6 +183,7 @@ def ensure_demo_library(service, folders):
 
 def create_app():
     service = Path(os.environ.get('GONGMUDAM_SERVICE_ROOT', str(ROOT / 'service'))).resolve()
+    version = service_version(service)
     public = os.environ.get('GONGMUDAM_PUBLIC') == '1'
     if not (service / 'app/main.py').is_file():
         raise RuntimeError('Run prepare_public_runtime.py before starting Gongmudam.')
@@ -221,7 +244,7 @@ def create_app():
 
     @app.get('/api/gongmudam/status')
     def status():
-        return {'status': 'ok', 'service_version': 'v69', 'desktop_connected': True,
+        return {'status': 'ok', 'service_version': version, 'desktop_connected': True,
                 'public_demo': public, 'private_data_isolated': public,
                 'requires_origin_pc': True, 'shared_demo': public}
 

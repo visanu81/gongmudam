@@ -2,17 +2,19 @@
   'use strict';
   if (window.parent === window) return;
   let profile = null;
+  let environment = {known: false, publicDemo: null};
+  let environmentChecked = false;
   let pending = null;
   let waitTimer = null;
   const origin = location.origin;
   const nativeFetch = window.fetch.bind(window);
   const labels = {national_public_official: '국가공무원', local_public_official: '지방공무원', other: '구분 확인 필요'};
-  const appPages = new Set(['/index.html', '/travel.html', '/adhoc.html', '/folders.html', '/toolbox.html', '/change-inbox.html', '/calendar.html', '/local-ai.html']);
+  const appPages = new Set(['/index.html', '/travel.html', '/adhoc.html', '/folders.html', '/folders-advanced.html', '/toolbox.html', '/change-inbox.html', '/calendar.html', '/local-ai.html']);
   const post = (message) => window.parent.postMessage(message, origin);
 
   function cleanProfile(value) {
     if (!value || value.confirmed !== true || !Object.hasOwn(labels, value.personnel_framework)) return null;
-    return {personnel_framework: value.personnel_framework,
+    return {confirmed: true, personnel_framework: value.personnel_framework,
       organization: String(value.organization || '').slice(0, 300),
       department: String(value.department || '').slice(0, 80), region: String(value.region || '').slice(0, 40)};
   }
@@ -22,7 +24,11 @@
       banner = document.createElement('p'); banner.id = 'gongmudam-context';
       banner.setAttribute('role', 'status'); document.body.prepend(banner);
     }
-    banner.textContent = profile ? `${labels[profile.personnel_framework]} · ${profile.region} · ${profile.organization} — 질문에 함께 전달합니다. 출장 계산의 적용 기관·규정팩은 정산 화면에서 확인하세요.` : '공개 시연 · 누구나 같은 업무를 볼 수 있어요. 실제 개인정보와 업무자료를 입력하지 마세요.';
+    banner.textContent = profile ? `${labels[profile.personnel_framework]} · ${profile.region} · ${profile.organization} — 질문에 함께 전달합니다. 출장 계산의 적용 기관·규정팩은 정산 화면에서 확인하세요.`
+      : !environmentChecked ? '업무 환경을 확인하고 있습니다.'
+        : !environment.known ? '서버에 연결할 수 없습니다. 업무 환경을 확인해 주세요.'
+          : environment.publicDemo ? '공개 시연 · 누구나 같은 업무를 볼 수 있어요. 실제 개인정보와 업무자료를 입력하지 마세요.'
+            : '내 PC 업무 공간 · 업무와 등록 자료는 이 PC에 저장됩니다.';
   }
   window.fetch = async (input, init) => {
     let url;
@@ -31,10 +37,7 @@
     if (url.origin === origin && url.pathname === '/api/ask' && method === 'POST' && typeof init?.body === 'string' && profile) {
       try {
         const body = JSON.parse(init.body);
-        if (typeof body.query === 'string' && body.guidance === true && !/(?:국가|지방)(?:공무원|직)|중앙부처|국가기관|지방자치단체/.test(body.query) && profile.personnel_framework !== 'other') {
-          const context = `\n업무환경: ${labels[profile.personnel_framework]} · ${profile.region} · ${profile.organization}`;
-          if (body.query.length + context.length <= 3000) body.query += context;
-        }
+        if (body.guidance === true) body.affiliation = profile;
         init = {...init, body: JSON.stringify(body)};
       } catch { /* The existing service will validate the unmodified request. */ }
     }
@@ -78,11 +81,16 @@
     const anchor = event.target.closest('a[href]');
     if (!anchor || anchor.hasAttribute('download') || event.ctrlKey || event.metaKey || event.shiftKey || event.button !== 0) return;
     const url = new URL(anchor.href, location.href);
-    if (url.origin !== origin || !appPages.has(url.pathname) || (url.pathname === location.pathname && !url.search)) return;
+    if (url.origin !== origin) return;
+    if (url.pathname === '/start.html' || (url.pathname === '/index.html' && (!url.hash || url.hash === '#home'))) {
+      event.preventDefault(); post({type:'gongmudam:home'}); return;
+    }
+    if (!appPages.has(url.pathname) || (url.pathname === location.pathname && !url.search)) return;
     event.preventDefault(); post({type: 'gongmudam:open', href: url.pathname + url.search + url.hash});
   });
   function boot() {
     document.body.classList.add('gongmudam-embedded'); profileNote();
+    window.GongmudamEnvironment?.get().then((result) => { environment = result; environmentChecked = true; profileNote(); });
     post({type: 'gongmudam:ready'});
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot, {once: true}); else boot();

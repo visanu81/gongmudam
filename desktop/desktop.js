@@ -14,9 +14,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
   const serviceRoutes = window.GongmudamServiceBridge?.routes || {};
-  const serviceLabels = { chat: '서무 안내', travel: '출장정산', collection: '자료 취합', folders: '업무자료 정리', toolbox: '업무도구함', inbox: '변경 알림함', calendar: '달력', models: '로컬 AI 설정' };
+  const serviceLabels = { chat: '서무 안내', travel: '출장정산', collection: '자료 취합', folders: '업무자료 정리', toolbox: '업무도구함', inbox: '변경 알림함', calendar: '업무 달력', models: '로컬 AI 설정' };
   Object.entries(serviceRoutes).forEach(([id]) => { if (!apps.has(id)) apps.set(id, { id, label: serviceLabels[id] || id, kind: 'service', icon: null }); });
-  const recentWorkApps = new Set(['travel', 'collection', 'folders', 'toolbox', 'inbox']);
+  const recentWorkApps = new Set(['travel', 'collection', 'folders', 'toolbox', 'inbox', 'calendar']);
+  let homeAgenda = null;
   let recentWorkRequest = null;
   let recentWorkSequence = 0;
 
@@ -56,8 +57,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const width = rect.width || button.offsetWidth; const height = rect.height || button.offsetHeight;
     const shelf = document.querySelector('.work-shelf');
     const shelfRect = shelf?.getBoundingClientRect();
+    const reserveShelf = bounds.width > 700 && shelfRect && shelfRect.width > 0;
     const maxLeft = Math.max(0, Math.min(bounds.width - width,
-      shelfRect && shelfRect.width > 0 ? shelfRect.left - bounds.left - width - 16 : bounds.width - width));
+      reserveShelf ? shelfRect.left - bounds.left - width - 16 : bounds.width - width));
     return {
       left: Math.max(0, Math.min(position.left, maxLeft)),
       top: Math.max(0, Math.min(position.top, Math.max(0, bounds.height - height))),
@@ -67,6 +69,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const icons = [...area.querySelectorAll('.desktop-app[data-open]')];
     if (!icons.length) return;
     const bounds = area.getBoundingClientRect(); const size = { width: bounds.width, height: bounds.height };
+    if (bounds.width <= 700) {
+      clearBIconLayout(); bIconPositions = null; bLayoutSize = null;
+      return;
+    }
     if (!bIconPositions || !bLayoutSize || (bLayoutSize.width > 700) !== (size.width > 700) || Math.abs(bLayoutSize.width - size.width) > Math.max(180, bLayoutSize.width * 0.35)) {
       clearBIconLayout();
       bIconPositions = new Map(icons.map((icon) => { const rect = icon.getBoundingClientRect(); return [icon.dataset.open, { left: rect.left - bounds.left, top: rect.top - bounds.top }]; }));
@@ -163,7 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
     state.window.classList.add('is-active'); state.window.style.zIndex = String(++zIndex);
     if (focus) state.window.focus({ preventScroll: true });
     renderTaskbar();
-    if (state.service && recentWorkApps.has(state.id)) refreshRecentWork();
+    if (state.service && recentWorkApps.has(state.id)) refreshWorkspace();
   }
   function clampWindow(state) {
     state.resizer?.cancel();
@@ -210,7 +216,7 @@ document.addEventListener('DOMContentLoaded', () => {
     state.service?.dispose();
     if (openAgencyPicker === state.agencyPicker) openAgencyPicker = null;
     windows.delete(state.id); win.classList.remove('is-active');
-    if (recentWorkApps.has(state.id)) refreshRecentWork();
+    if (recentWorkApps.has(state.id)) refreshWorkspace();
     win.classList.add('closing');
     state.closeTimer = window.setTimeout(() => win.remove(), motionDelay(150));
     const next = [...windows.values()].reverse().find((item) => !item.window.hidden);
@@ -274,9 +280,14 @@ document.addEventListener('DOMContentLoaded', () => {
       state.serviceItemId = itemId || null;
       state.service = window.GongmudamServiceBridge.mount(body, id, {
         href: state.serviceHref, title: app.label, profile: getServiceProfile(),
-        onOpen: (nextId, href) => openApp(nextId, href),
-        onChanged: refreshRecentWork,
-        onFocus: () => { if (recentWorkApps.has(id)) refreshRecentWork(); },
+        onOpen: (nextId, href) => openApp(nextId, href, null, true),
+        onHome: () => {
+          windows.forEach((item) => { if (!item.window.hidden) minimize(item); });
+          const homeUrl = new URL(location.href); homeUrl.searchParams.delete('open'); homeUrl.hash = '';
+          history.replaceState(null, '', homeUrl); refreshWorkspace();
+        },
+        onChanged: refreshWorkspace,
+        onFocus: () => { if (recentWorkApps.has(id)) refreshWorkspace(); },
       });
     }
     min.addEventListener('click', () => minimize(state)); max.addEventListener('click', () => toggleMaximize(state)); shut.addEventListener('click', () => close(state));
@@ -301,15 +312,16 @@ document.addEventListener('DOMContentLoaded', () => {
     window.setTimeout(() => win.classList.remove('opening'), motionDelay(260));
     return state;
   }
-  function openApp(id, optionalHref, itemId) {
+  function openApp(id, optionalHref, itemId, forceNavigate = false) {
     if (!apps.has(id) && !Object.hasOwn(serviceRoutes, id)) return null;
     let state = windows.get(id);
     if (!state) state = makeWindow(id, optionalHref, itemId);
-    else if (optionalHref && state.service && state.serviceHref !== optionalHref) { state.serviceHref = optionalHref; state.serviceItemId = itemId || null; state.service.navigate(optionalHref); }
+    else if (optionalHref && state.service && (forceNavigate || state.serviceHref !== optionalHref)) { state.serviceHref = optionalHref; state.serviceItemId = itemId || null; state.service.navigate(optionalHref); }
     if (state) activate(state, true);
     document.querySelector('#start-menu')?.setAttribute('hidden', '');
     return state;
   }
+  function openHomeAgenda(id, href) { return openApp(id, href, null, true); }
   function toast(message) {
     const node = document.querySelector('#prototype-toast'); if (!node) return;
     node.textContent = message; node.hidden = false;
@@ -326,6 +338,10 @@ document.addEventListener('DOMContentLoaded', () => {
       return id ? { id, href: `${url.pathname}${url.search}${url.hash}` } : null;
     } catch { return null; }
   }
+  function refreshWorkspace() {
+    refreshRecentWork();
+    homeAgenda?.refresh();
+  }
   async function refreshRecentWork() {
     const host = document.querySelector('#recent-work-items'); const status = document.querySelector('#recent-work-status');
     if (!host || !status) return;
@@ -336,7 +352,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const response = await fetch('/api/workspace/recent', { method: 'GET', headers: { Accept: 'application/json' }, credentials: 'same-origin', signal: controller.signal });
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
       const data = await response.json(); if (token !== recentWorkSequence) return;
-      const referenceLibraryIds = new Set(['esaram-manuals-v68', '2d452f42d15242f7b3506c111148aff6']);
+      const referenceLibraryIds = new Set(['esaram-manuals-v68', '2d452f42d15242f7b3506c111148aff6', 'national-service-v70']);
       const items = Array.isArray(data?.items) ? data.items.filter((item) => !referenceLibraryIds.has(item?.library_id) && !referenceLibraryIds.has(item?.id)) : [];
       const renderable = items.map((item) => ({ item, itemId: typeof item?.id === 'string' || Number.isFinite(item?.id) ? String(item.id) : '', destination: resolveRecentHref(item?.href) })).filter(({ itemId, destination }) => destination && itemId.length > 0 && itemId.length <= 200);
       if (!renderable.length) {
@@ -557,5 +573,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
   renderTaskbar();
+  homeAgenda = window.GongmudamHomeAgenda?.mount({ root: document.querySelector('#home-agenda'), open: openHomeAgenda }) || null;
   refreshRecentWork();
+  const initialService = window.GongmudamEntry?.resolveService(params.get('open') || '');
+  if (initialService) openApp(initialService.id, initialService.href);
 });

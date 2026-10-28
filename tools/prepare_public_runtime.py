@@ -15,12 +15,49 @@ DEST = ROOT / '.local-runtime/service'
 def prepare():
     manifest_raw = (SOURCE / 'submission-manifest.json').read_bytes()
     manifest = json.loads(manifest_raw)
+    sources = manifest.get('sources')
+    if type(sources) is not int or sources < 0:
+        raise RuntimeError('submission-manifest.json must contain a non-negative integer sources count.')
     digest = hashlib.sha256(manifest_raw).hexdigest()
     marker = DEST / 'gongmudam-runtime.json'
     if DEST.exists():
-        if marker.is_file() and json.loads(marker.read_text(encoding='utf-8')).get('source_manifest_sha256') == digest:
-            return {'status': 'preserved', 'public_runtime': True}
-        raise RuntimeError('Existing runtime differs or preparation was interrupted; inspect it before updating. No data was overwritten.')
+        try:
+            runtime_manifest_path = DEST / 'submission-manifest.json'
+            runtime_raw = runtime_manifest_path.read_bytes()
+            runtime_manifest = json.loads(runtime_raw)
+            runtime_digest = hashlib.sha256(runtime_raw).hexdigest()
+            marker_data = json.loads(marker.read_text(encoding='utf-8'))
+            definition = json.loads((DEST / 'public-demo.json').read_text(encoding='utf-8'))
+            if not all(isinstance(value, dict) for value in (runtime_manifest, marker_data, definition)):
+                raise ValueError('invalid runtime metadata')
+            if not isinstance(runtime_manifest.get('release_version'), str) or not runtime_manifest['release_version'].strip():
+                raise ValueError('runtime version is missing')
+            if marker_data.get('source_manifest_sha256') != runtime_digest:
+                raise ValueError('runtime marker mismatch')
+            if definition.get('mode') != 'public-synthetic-demo' or definition.get('private_data_isolated') is not True:
+                raise ValueError('runtime is not an isolated public demo')
+            if (DEST / 'data/gongmudam-upgrade.lock').exists():
+                raise ValueError('runtime upgrade is interrupted')
+            files = runtime_manifest.get('files')
+            if not isinstance(files, dict) or not files:
+                raise ValueError('runtime manifest has no managed files')
+            for name, expected in files.items():
+                if Path(name).is_absolute():
+                    raise ValueError('managed paths must be relative')
+                target = (DEST / name).resolve()
+                if not target.is_relative_to(DEST.resolve()):
+                    raise ValueError('managed file is outside runtime')
+                if name.startswith('wheels/'):
+                    continue
+                if not target.is_file():
+                    raise ValueError('managed runtime file is missing or outside runtime')
+                if hashlib.sha256(target.read_bytes()).hexdigest() != expected:
+                    raise ValueError('managed runtime file checksum mismatch')
+            return {'status': 'preserved', 'public_runtime': True,
+                    'version': runtime_manifest.get('release_version'),
+                    'source_update_available': runtime_digest != digest}
+        except (OSError, ValueError, TypeError, json.JSONDecodeError):
+            raise RuntimeError('Existing runtime differs or preparation was interrupted; inspect it before updating. No data was overwritten.') from None
     for name, expected in manifest['files'].items():
         source = (SOURCE / name).resolve()
         if not source.is_relative_to(SOURCE) or hashlib.sha256(source.read_bytes()).hexdigest() != expected:
@@ -46,10 +83,11 @@ def prepare():
     incoming.mkdir(parents=True)
     (incoming / '교육_참석_안내.txt').write_text('합성 시연자료\n공공 AI 실무교육 참석 희망자를 취합합니다. 대상 부서는 총무과와 회계과입니다. 실제 개인정보를 입력하지 마세요.\n', encoding='utf-8')
     definition = {'mode': 'public-synthetic-demo', 'private_data_isolated': True,
-                  'folder_library_id': 'gongmudam-demo', 'created_from': 'verified v69 public sources; no private databases'}
+                  'folder_library_id': 'gongmudam-demo',
+                  'created_from': f"verified {manifest['release_version']} public sources; no private databases"}
     (DEST / 'public-demo.json').write_text(json.dumps(definition, ensure_ascii=False, indent=2), encoding='utf-8')
     marker.write_text(json.dumps({'source_manifest_sha256': digest}, indent=2), encoding='utf-8')
-    return {'status': 'created', 'public_sources': 31, 'private_data_copied': False}
+    return {'status': 'created', 'public_sources': sources, 'private_data_copied': False}
 
 
 if __name__ == '__main__':

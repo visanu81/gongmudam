@@ -27,3 +27,11 @@ The preview now uses server.py and an isolated read-only agency snapshot. Agency
 Scroll World was inspected as an external reference only. It produces scroll-driven pre-rendered cinematic video, whereas this prototype checks direct window manipulation. It was not installed or invoked.
 
 The literal monitor and OS affordances are the explicit user brief; they take precedence over generic app-layout recommendations. No lasting global skill defaults are recorded by this exploration.
+
+## Home agenda — 2026-10-25
+
+The B desktop shelf shows tasks due today and unfinished deadlines for the current Monday–Sunday week using the existing calendar agenda API and its Korean dates. Two rows per group keep the shelf compact; more opens the corresponding day/week. A quiet week offers the next actual deadline. Recent work remains in a collapsed disclosure. Manual calendar links carry validated date/view parameters; education links open the exact workflow step. Home links explicitly navigate reused windows, while icon/taskbar activation keeps existing behavior. Unchanged background refresh retains click targets and focus. Failed refresh labels retained results as stale, never as zero tasks. Mobile places the agenda before the native three-column icon grid; desktop keeps draggable icons and reserves space for the companion.
+
+## Header sayings — 2026-10-25
+
+The approved B header carries eight original Gongmudam sentences, centered in the wide header with quiet next/pause controls. The strip is hidden below 1280px to protect brand and date controls. It rotates every45seconds without motion, stops in a hidden document, preserves a browser-local pause choice, and makes no AI/network calls. Text is not attributed to famous authors.

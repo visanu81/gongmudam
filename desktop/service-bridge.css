@@ -5,6 +5,7 @@
 .service-bridge-status[data-unavailable=true]{color:#9a352d}
 .service-bridge-retry,.service-bridge-full{flex:0 0 auto;padding:6px 9px;border:1px solid #cddbd0;border-radius:7px;background:#fff;color:#315e47;font-size:12px;text-decoration:none}
 .service-bridge-frame{display:block;flex:1;width:100%;min-width:0;min-height:0;border:0;background:#fff}
+.service-bridge-frame[hidden]{display:none}
 #recent-work-items{display:grid;gap:0}
 .work-shelf #recent-work-items>.recent-work-item{position:relative;display:grid;gap:6px;width:100%;padding:14px 18px 14px 0;border-bottom:1px solid #dce6de;background:transparent;text-align:left}
 .recent-work-item .work-type{font-size:12px;color:#406d50}

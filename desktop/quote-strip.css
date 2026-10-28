@@ -1,0 +1,62 @@
+.header-quote {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-rows: auto auto;
+  align-items: center;
+  gap: 1px 12px;
+  flex: 1 1 360px;
+  min-width: 0;
+  max-width: 480px;
+  margin: 0 auto;
+  color: #294a63;
+}
+body.approved-design[data-variant="B"] .header-quote {
+  position: absolute;
+  left: 50%;
+  width: 480px;
+  max-width: calc(100% - 420px);
+  margin: 0;
+  transform: translateX(-50%);
+}
+.header-quote p {
+  grid-column: 1;
+  grid-row: 1;
+  display: -webkit-box;
+  min-width: 0;
+  max-height: 2.7em;
+  margin: 0;
+  overflow: hidden;
+  color: #294a63;
+  font-size: 13px;
+  font-weight: 520;
+  line-height: 1.35;
+  text-align: center;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.header-quote figcaption {
+  grid-column: 1;
+  grid-row: 2;
+  color: #5b7182;
+  font-size: 10px;
+  line-height: 1.25;
+  text-align: center;
+}
+.header-quote-controls { grid-column: 2; grid-row: 1 / span 2; display: flex; gap: 4px; }
+.header-quote-controls button {
+  display: grid;
+  place-items: center;
+  flex: 0 0 32px;
+  width: 32px;
+  min-height: 32px;
+  padding: 6px;
+  border: 1px solid #c7d7e3;
+  border-radius: 7px;
+  background: transparent;
+  color: #315e80;
+}
+.header-quote-controls button:hover { background: #e6eef4; }
+.header-quote-controls button:focus-visible { outline: 3px solid #3a7195; outline-offset: 2px; }
+.header-quote-controls svg { display: block; width: 17px; height: 17px; stroke: currentColor; stroke-width: 1.7; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+@media (max-width: 1279px) { .header-quote { display: none; } }

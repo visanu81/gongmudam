@@ -11,7 +11,7 @@
   };
   const pageToApp = new Map([
     ['/index.html', 'chat'], ['/travel.html', 'travel'], ['/adhoc.html', 'collection'],
-    ['/folders.html', 'folders'], ['/toolbox.html', 'toolbox'], ['/change-inbox.html', 'inbox'],
+    ['/folders.html', 'folders'], ['/folders-advanced.html', 'folders'], ['/toolbox.html', 'toolbox'], ['/change-inbox.html', 'inbox'],
     ['/calendar.html', 'calendar'], ['/local-ai.html', 'models'],
   ]);
 
@@ -36,16 +36,19 @@
     const openFull = document.createElement('a'); openFull.className = 'service-bridge-full'; openFull.target = '_blank'; openFull.rel = 'noopener'; openFull.textContent = '새 탭에서 열기';
     toolbar.append(status, retry, openFull);
     const frame = document.createElement('iframe'); frame.className = 'service-bridge-frame'; frame.title = `${options.title || id} 서비스 화면`; frame.setAttribute('referrerpolicy', 'same-origin');
+    frame.hidden = true;
+    shell.setAttribute('aria-busy', 'true');
     shell.append(toolbar, frame); body.append(shell);
 
     let currentHref = parseAllowedHref(options.href || route)?.href || route;
-    let ready = false; let disposed = false; let unavailable = false; let timeout = null;
+    let ready = false; let disposed = false; let unavailable = false; let timedOut = false; let timeout = null;
     let profile = options.profile || null; let requestQueue = []; let inFlight = null;
 
     function setStatus(message, failed = false) {
       unavailable = failed; status.textContent = message; status.dataset.unavailable = String(failed); retry.hidden = !failed;
+      if (failed) shell.setAttribute('aria-busy', 'false');
     }
-    function updateFullLink() { openFull.href = currentHref; }
+    function updateFullLink() { openFull.href = '/desktop/?variant=B&open=' + encodeURIComponent(currentHref); }
     function sendContext() {
       if (ready && !disposed) frame.contentWindow?.postMessage({ type: 'gongmudam:context', profile }, location.origin);
     }
@@ -57,15 +60,19 @@
     function load(href = currentHref) {
       const allowed = parseAllowedHref(href); if (!allowed) { setStatus('열 수 없는 서비스 화면입니다.', true); return false; }
       currentHref = allowed.href; updateFullLink(); ready = false; inFlight = null;
+      timedOut = false;
+      frame.hidden = true; shell.setAttribute('aria-busy', 'true');
       if (timeout) clearTimeout(timeout);
       setStatus('서비스 화면을 불러오는 중입니다.');
       frame.src = currentHref;
       timeout = window.setTimeout(() => {
-        if (!ready && !disposed) setStatus('서비스 연결을 확인하지 못했습니다. 다시 시도하거나 새 탭에서 열어 주세요.', true);
+        if (!ready && !disposed) { timedOut = true; setStatus('서비스 연결을 확인하지 못했습니다. 다시 시도하거나 새 탭에서 열어 주세요.', true); }
       }, 15000);
       return true;
     }
     function onLoad() {
+      if (timedOut) return;
+      frame.hidden = !ready; shell.setAttribute('aria-busy', String(!ready));
       if (!ready) setStatus('페이지가 열렸습니다. 서비스 연결을 확인하는 중입니다.');
     }
     function onFrameFocus() { options.onFocus?.(); }
@@ -74,10 +81,13 @@
       const data = event.data;
       if (!data || typeof data !== 'object' || typeof data.type !== 'string') return;
       if (data.type === 'gongmudam:ready') {
+        timedOut = false;
+        frame.hidden = false; shell.setAttribute('aria-busy', 'false');
         ready = true; if (timeout) clearTimeout(timeout); timeout = null;
         setStatus('서비스 화면이 준비되었습니다.'); sendContext(); sendNextQuestion(); return;
       }
       if (!ready) return;
+      if (data.type === 'gongmudam:home') { options.onHome?.(); return; }
       if (data.type === 'gongmudam:open') {
         const target = parseAllowedHref(data.href);
         if (!target) { setStatus('허용되지 않은 서비스 화면 요청입니다.'); return; }
