@@ -19,6 +19,7 @@ from contextvars import ContextVar
 from typing import Any
 
 import httpx
+from . import upstage
 
 
 log = logging.getLogger(__name__)
@@ -68,7 +69,8 @@ class BaseProvider:
         return True
 
     def chat(self, messages: list[dict[str, str]], *, max_tokens: int = 1500,
-             temperature: float | None = None) -> str:
+             temperature: float | None = None,
+             response_schema: dict[str, Any] | None = None) -> str:
         raise NotImplementedError
 
 
@@ -87,7 +89,13 @@ class OfflineProvider(BaseProvider):
 class OpenAICompatibleProvider(BaseProvider):
     name = "openai_compatible"
 
-    def chat(self, messages, *, max_tokens=1500, temperature=None) -> str:
+    @property
+    def available(self) -> bool:
+        return not upstage.matches(self.profile) or bool(request_headers(self.profile).get('Authorization'))
+
+    def chat(self, messages, *, max_tokens=1500, temperature=None, response_schema=None) -> str:
+        if not self.available:
+            raise LLMError('업스테이지 API 키를 입력하세요.')
         base = (self.profile.get("base_url") or "").rstrip("/")
         if not base:
             raise LLMError("base_url 이 비어 있습니다.")
@@ -99,6 +107,18 @@ class OpenAICompatibleProvider(BaseProvider):
             "temperature": self.profile.get("temperature", 0.2) if temperature is None else temperature,
         }
         body.update(self.profile.get("extra_body") or {})
+        if response_schema is not None:
+            body.update({
+                "model": self.profile.get("model", ""),
+                "messages": messages,
+                "max_tokens": max_tokens,
+                "temperature": self.profile.get("temperature", 0.2) if temperature is None else temperature,
+                "stream": False,
+                "response_format": {
+                    "type": "json_schema",
+                    "json_schema": {"name": "quote_selection", "strict": True, "schema": response_schema},
+                },
+            })
         headers = request_headers(self.profile)
         try:
             started=time.perf_counter()
@@ -107,7 +127,7 @@ class OpenAICompatibleProvider(BaseProvider):
         except httpx.HTTPError as e:
             raise LLMError("모델 서버 연결 실패", f"{type(e).__name__}: {e}") from e
         if r.status_code >= 400:
-            raise LLMError(f"모델 서버 HTTP {r.status_code} 오류", r.text[:300])
+            raise LLMError(f"모델 서버 HTTP {r.status_code} 오류", '' if upstage.matches(self.profile) else r.text[:300])
         try:
             payload=r.json()
             content = payload["choices"][0]["message"]["content"] or ""

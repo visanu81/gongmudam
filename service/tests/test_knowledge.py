@@ -31,6 +31,36 @@ class KnowledgeTest(unittest.TestCase):
         self.register();hits=k.retrieve('출장 영수증')['hits'];h=hits[0]
         self.assertEqual(k.validate_quotes({'evidence':[{'id':h['id'],'quote':h['text']}]},hits)[0]['quote'],h['text'])
         for item in [{'id':'invented','quote':h['text']},{'id':h['id'],'quote':'등록되지 않은 허위 답변 문장입니다.'},{'id':[],'quote':h['text']}]:self.assertFalse(k.validate_quotes({'evidence':[item]},hits))
+    def test_model_evidence_skips_model_when_no_quote_choices(self):
+        provider=Mock()
+        self.assertEqual(k._model_evidence('질문',[],provider),[])
+        provider.chat.assert_not_called()
+    def test_upstage_selects_verified_original_and_off_switch_never_calls_cloud(self):
+        from app import upstage
+        import httpx
+        self.register();query='출장 영수증';found=k.retrieve(query)
+        key=next(iter(k.quote_choices(found['hits'],query)))
+        profile=upstage.profile() | {'api_key':'SYNTHETIC'}
+        response=httpx.Response(200,json={'choices':[{'message':{'content':json.dumps({'selected_quote_id':key})}}]})
+        with patch.object(k.config,'active_profile',return_value=profile),patch.object(llm.httpx,'post',return_value=response) as post:
+            result=k.answer(query,found)
+            self.assertEqual(result['mode'],'source_llm')
+            self.assertEqual(result['model'],'solar-pro4')
+            self.assertEqual([e['quote'] for e in result['evidence']],[h['text'] for h in found['hits']])
+            self.assertEqual(post.call_args.args[0],upstage.BASE_URL+'/chat/completions')
+            post.reset_mock()
+            offline=k.answer(query,found,use_ai=False)
+            self.assertEqual(offline['mode'],'source_search');post.assert_not_called()
+
+    def test_upstage_failure_keeps_original_evidence(self):
+        from app import upstage
+        import httpx
+        self.register();query='출장 영수증';found=k.retrieve(query)
+        with patch.object(k.config,'active_profile',return_value=upstage.profile() | {'api_key':'SYNTHETIC'}),patch.object(llm.httpx,'post',return_value=httpx.Response(401,json={'error':'invalid key'})):
+            result=k.answer(query,found)
+        self.assertEqual(result['mode'],'source_search')
+        self.assertEqual([e['quote'] for e in result['evidence']],[h['text'] for h in found['hits']])
+
     def test_offline_returns_excerpts_without_model(self):
         self.register()
         with patch.object(k.config,'active_profile',return_value={'provider':'offline'}):r=k.answer('출장 영수증',k.retrieve('출장 영수증'))
@@ -50,6 +80,11 @@ class KnowledgeTest(unittest.TestCase):
     def test_unknown_span_id_falls_back_to_original_source(self):
         self.register();found=k.retrieve('출장 영수증')
         with patch.object(k.config,'active_profile',return_value={'provider':'openai_compatible','base_url':'http://localhost:11434/v1','model':'test'}),patch.object(llm.OpenAICompatibleProvider,'chat',return_value='{"selected_quote_id":"invented"}'):
+            r=k.answer('출장 영수증',found)
+        self.assertEqual(r['mode'],'source_search');self.assertTrue(r['evidence']);self.assertIn('검증 가능한 인용',r['notice'])
+    def test_plain_null_is_safe_abstention(self):
+        self.register();found=k.retrieve('출장 영수증')
+        with patch.object(k.config,'active_profile',return_value={'provider':'openai_compatible','base_url':'http://localhost:11434/v1','model':'test'}),patch.object(llm.OpenAICompatibleProvider,'chat',return_value=' null '):
             r=k.answer('출장 영수증',found)
         self.assertEqual(r['mode'],'source_search');self.assertTrue(r['evidence']);self.assertIn('검증 가능한 인용',r['notice'])
     def test_official_quote_keeps_conditions_and_separate_model_selection(self):
@@ -86,6 +121,8 @@ class KnowledgeTest(unittest.TestCase):
         self.assertEqual([e['quote'] for e in result['evidence']],[h['text'] for h in found['hits']])
         messages=provider.chat.call_args.args[0];request=json.loads(messages[1]['content'])
         self.assertEqual(request['question'],query);self.assertTrue(request['quote_options'])
-        self.assertEqual(provider.chat.call_args.kwargs,{'max_tokens':80,'temperature':0})
+        self.assertEqual(provider.chat.call_args.kwargs['max_tokens'],80);self.assertEqual(provider.chat.call_args.kwargs['temperature'],0)
+        schema=provider.chat.call_args.kwargs['response_schema'];self.assertEqual(schema['properties']['selected_quote_id']['enum'],list(k.quote_choices(found['hits'],query))+[None])
+        self.assertEqual(schema['required'],['selected_quote_id']);self.assertFalse(schema['additionalProperties'])
 
 if __name__=='__main__':unittest.main()

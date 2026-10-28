@@ -93,6 +93,7 @@ def register_files(paths,progress=None):
 def classify(query):
     q=flat(query)
     explicit=bool(re.search(r'e[-·]?사람|이사람|스마트출장(?:앱|예약)|디브레인|dbrain',q))
+    if not explicit and any(t in q for t in ('공문','기안문','시행문')):return None
     legal=any(t in q for t in LEGAL_TERMS)
     control=any(t in q for t in ('입력','버튼','메뉴','화면','목록','안나','안떠','안보','불러','클릭','변경','취소','상신','결재선','신청방법','신고방법','엑셀','등록','전송','적용','조회','출력','반영','지정'))
     if legal and not control:return None
@@ -133,6 +134,11 @@ def retrieve(query,docs,plan):
             t=flat(u['text'])
             if re.search(r'contents|목차',t[:140]):continue
             if '단위업무' in t or '개요' in t[:120]:continue
+            if family=='travel' and '취소' in q and '신청' in q:
+                # The broad training PDF also contains ID-card, payment and
+                # budget-mapping cancellation. Its filename is not evidence
+                # that those actions cancel a travel application.
+                if '출장신청' not in t or '취소' not in t:continue
             if family=='travel' and '정산' in q:
                 # The app's product name appears in unrelated application tips.
                 # A chapter list is navigation, not the requested operation.

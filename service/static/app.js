@@ -25,10 +25,10 @@ const fail = (e) => alert("처리하지 못했습니다: " + e.message);
 $$(".sb-item[data-view]").forEach((a) => a.addEventListener("click", () => showView(a.dataset.view)));
 $("#sbUser").addEventListener("click", () => showView("settings"));
 function showView(name) {
-  if(!["home","chat","cards","docs","forms","settings"].includes(name)) return;
+  if(!["home","chat","cards","docs","forms","settings","reviews"].includes(name)) return;
   if(location.hash!=="#"+name) history.replaceState(null,"","#"+name);
   selectView(name);
-  ({ home: loadHome, chat: () => $("#query").focus(), cards: loadCards, docs: loadDocs, forms: loadForms, settings: renderSettings }[name] || (() => {}))();
+  ({ home: loadHome, chat: () => $("#query").focus(), cards: loadCards, docs: loadDocs, forms: loadForms, settings: renderSettings, reviews: () => window.SeomuAnswerReview?.load() }[name] || (() => {}))();
 }
 function selectView(name) {
   $$(".sb-item").forEach((a) => {
@@ -96,7 +96,7 @@ let msgSeq = 0;
 $$(".ex").forEach((a) => a.addEventListener("click", (e) => { e.preventDefault(); sendAsk(a.textContent); }));
 $("#askBtn").addEventListener("click", () => { const q = $("#query").value.trim(); if (q && sendAsk(q)) $("#query").value = ""; });
 $("#query").addEventListener("keydown", (e) => { if (e.key === "Enter" && !e.shiftKey && !e.isComposing) { e.preventDefault(); $("#askBtn").click(); } });
-$("#chatClear").addEventListener("click", () => { chatRequests.clear(); greet(); });
+$("#chatClear").addEventListener("click", () => { chatRequests.clear(); window.SeomuInstitutionHandoff=null; greet(); });
 const layers = () => $$(".layer:checked").map((c) => c.value);
 
 function addMsg(who, html, cls = "") {
@@ -148,7 +148,8 @@ const chatRequests = (() => {
     box.classList.add("thinking"); box.innerHTML = "등록 자료와 업무 절차를 확인하고 있습니다…";
     addContext(box, context);
     try {
-      const response = record.prepared || await api("POST", "/api/ask", body);
+      const selectedInstitutionRule=window.SeomuInstitutionHandoff?.id;
+      const response = record.prepared || await api("POST", "/api/ask", selectedInstitutionRule ? {...body,institution_rule_id:selectedInstitutionRule} : body);
       if (epoch !== generation || !box.isConnected) return;
       box.classList.remove("thinking"); renderAnswer(box, response, context); addContext(box, context);
       status("");
@@ -194,7 +195,7 @@ function sendAsk(query, options) { return chatRequests.send(query, options); }
 function renderAnswer(box, res, context = {}) {
   if (res.mode === "workflow_edit" && window.SeomuWorkflowChat) { window.SeomuWorkflowChat.render(box, res, (query, fields) => sendAsk(query, { workflowFields: fields })); return; }
   if(res.guidance && window.SeomuGuidance){
-    const label=res.guidance.ai_used?`등록 자료 안내 · 로컬 AI 보조 ${esc(res.model||'')}`:'등록 자료 안내 · AI 미사용';
+    const label=res.guidance.ai_used?`등록 자료 안내 · AI 보조 ${esc(res.model||'')}`:'등록 자료 안내 · AI 미사용';
     const tree=res.knowledge?.tree;
     const directTree=tree && tree.kind!=='extract';
     box.innerHTML=`<div class="bot-hd">${label}</div>${directTree?answerTreeHtml(tree,res.knowledge?.evidence?.length||0):''}<div class="guidance-root"></div>${res.knowledge?.evidence?.length?`<details class="answer-original"><summary>규정 원문·근거 자세히 보기 (${res.knowledge.evidence.length}개)</summary>${knowledgeAnswerHtml(res.knowledge)}</details>`:''}${res.notice?`<p class="notice">${esc(res.notice)}</p>`:''}`;
@@ -202,12 +203,13 @@ function renderAnswer(box, res, context = {}) {
     if(tree)bindAnswerTree(box);
     window.SeomuTaskLinks?.render(box,res,context.today,fail);
     window.SeomuAnswerRecord?.attach(box,res,{today:context.today});
+    if(res.review_context) window.SeomuAnswerReview?.attach(box,res,{today:context.today});
     return;
   }
   const id = "m" + (++msgSeq);
   const treeMode = !!res.knowledge?.tree;
   const clarificationMode = res.mode === "source_clarification";
-  const modeText = clarificationMode ? "상황 확인 · 모델 미사용" : res.mode === "travel_workflow" ? "출장정산 준비 · 대화 내용 연결 · 모델 미사용" : res.mode === "source_manual" ? "e-사람 사용법 · 등록 매뉴얼 원문" : res.mode === "folder_workflow" ? "업무자료 정리 안내 · 모델 미사용" : res.mode === "education_workflow" ? "교육 취합 업무 안내 · 모델 미사용" : res.mode === "source_unavailable" ? "추가 자료 필요" : res.mode === "source_llm" ? "등록 자료 확인 · 로컬 AI 도움" : res.mode === "source_search" ? "등록 자료에서 확인" : res.mode === "leave_guide" ? "휴가·휴무 종류 확인 · 등록 안내자료 사용 (모델 미사용)" : res.mode === "llm" ? `규칙 기반 안내 · 절차 선택 보조 모델 ${esc(res.profile)} (${esc(res.model)})` : res.mode === "fallback" ? "규칙 기반 안내 (모델 응답 실패)" : "규칙 기반 안내 (오프라인)";
+  const modeText = clarificationMode ? "상황 확인 · 모델 미사용" : res.mode === "travel_workflow" ? "출장정산 준비 · 대화 내용 연결 · 모델 미사용" : res.mode === "source_manual" ? "e-사람 사용법 · 등록 매뉴얼 원문" : res.mode === "folder_workflow" ? "업무자료 정리 안내 · 모델 미사용" : res.mode === "education_workflow" ? "교육 취합 업무 안내 · 모델 미사용" : res.mode === "source_unavailable" ? "추가 자료 필요" : res.mode === "source_llm" ? "등록 자료 확인 · AI 보조" : res.mode === "source_search" ? "등록 자료에서 확인" : res.mode === "leave_guide" ? "휴가·휴무 종류 확인 · 등록 안내자료 사용 (모델 미사용)" : res.mode === "llm" ? `규칙 기반 안내 · 절차 선택 보조 모델 ${esc(res.profile)} (${esc(res.model)})` : res.mode === "fallback" ? "규칙 기반 안내 (모델 응답 실패)" : "규칙 기반 안내 (오프라인)";
   let h = `<div class="bot-hd">${modeText}</div>`;
   if (treeMode) h += answerTreeHtml(res.knowledge.tree, res.knowledge.evidence?.length || 0);
   else h += `<div class="answer">${esc(res.summary)}</div>`;
@@ -243,6 +245,7 @@ function renderAnswer(box, res, context = {}) {
   if (res.plan) renderPlan($("#" + id, box), res.plan, res.query);
   window.SeomuTaskLinks?.render(box, res, res.plan?.today || context.today, fail);
   window.SeomuAnswerRecord?.attach(box, res, { today: context.today });
+  if(res.review_context) window.SeomuAnswerReview?.attach(box,res,{today:context.today});
 }
 
 function renderLeaveGuide(el,res) {
@@ -459,6 +462,7 @@ function pickBasis(stepIdx) {
 
 // ------------------------------------------------------------------ 자료실
 async function loadDocs() {
+  window.SeomuInstitutionRules?.load();
   S.docs = await api("GET", "/api/documents");
   $("#docList").innerHTML = S.docs.map((d) => `<li data-id="${d.id}"><span class="tag ${d.layer}">${d.layer}</span><span class="tag">${d.kind}</span><br>${esc(d.title)} <span class="muted">· 근거 ${d.chunk_count}개</span></li>`).join("") || '<li class="muted">등록된 자료가 없습니다.</li>';
   $$("#docList li[data-id]").forEach((li) => li.addEventListener("click", () => viewDoc(li.dataset.id)));
@@ -532,12 +536,13 @@ async function renderSettings() {
   const llm = S.settings.llm;
   $("#llmProfiles").innerHTML = Object.entries(llm.profiles).map(([name, p]) => {
     const on = name === llm.active;
-    const fields = p.provider === "offline" ? "" : `<details class="profile-options"><summary>연결 주소·모델명·고급 설정</summary><div class="grid2">
+    const fields = p.provider === "offline" ? "" : `<details class="profile-options" ${name === "upstage" && !p.has_api_key ? "open" : ""}><summary>연결 주소·모델명·고급 설정</summary><div class="grid2">
       <label>주소(base_url)<input class="pv" data-k="base_url" value="${esc(p.base_url || "")}"></label>
       <label>모델명<input class="pv" data-k="model" value="${esc(p.model || "")}"></label>
-      <label>API 키<input class="pv" data-k="api_key" type="password" placeholder="${p.has_api_key ? "저장된 키 있음 (바꿀 때만 입력)" : p.api_key_env ? `비우면 환경변수 ${esc(p.api_key_env)} 사용` : "로컬 서버는 비워도 됨"}"></label>
-      <label>온도<input class="pv" data-k="temperature" type="number" step="0.1" value="${p.temperature ?? 0.2}"></label></div></details>`;
-    return `<div class="profileCard ${on ? "active" : ""}" data-name="${esc(name)}"><div class="row"><b>${esc(name)}</b> <span class="muted">${esc(p.provider)}</span>
+      <label>${name === "upstage" ? "업스테이지 API 키" : "API 키"}<input class="pv" data-k="api_key" type="password" autocomplete="new-password" aria-label="${name === "upstage" ? "업스테이지 API 키" : "API 키"}" placeholder="${p.has_api_key ? "저장된 키 있음 (바꿀 때만 입력)" : p.api_key_env ? `비우면 환경변수 ${esc(p.api_key_env)} 사용` : name === "upstage" ? "API 키 입력" : "로컬 서버는 비워도 됨"}"></label>
+      <label>온도<input class="pv" data-k="temperature" type="number" step="0.1" value="${p.temperature ?? 0.2}"></label></div>${name === "upstage" ? '<p class="muted">키는 이 PC 서버 설정에 저장하며 화면에는 다시 표시하지 않습니다.</p>' : ""}</details>`;
+    const displayName = name === "upstage" ? "업스테이지 Solar Pro 4" : name;
+    return `<div class="profileCard ${on ? "active" : ""}" data-name="${esc(name)}"><div class="row"><b>${esc(displayName)}</b> <span class="muted">${esc(p.provider)}</span>
       <span>${on ? '<span class="tag 확정">사용 중</span>' : '<button class="small pUse">이 모델 사용</button>'} ${p.provider !== "offline" ? `<button class="small pSave">연결값 저장</button><button class="small pTest">${on ? "실제 응답 확인" : "연결 시험"}</button>` : ""}</span></div>
       ${fields}<div class="pMsg muted"></div></div>`;
   }).join("");
@@ -610,9 +615,9 @@ $("#resetBtn").addEventListener("click", async () => {
 
 window.addEventListener("hashchange",()=>showView(location.hash.slice(1)));
 // Show the requested screen while settings load, avoiding a flash of the old home screen.
-selectView(["home","chat","cards","docs","forms","settings"].includes(location.hash.slice(1))?location.hash.slice(1):"home");
+selectView(["home","chat","cards","docs","forms","settings","reviews"].includes(location.hash.slice(1))?location.hash.slice(1):"home");
 loadSettings().then(()=>{
-  const target=location.hash.slice(1);showView(["home","chat","cards","docs","forms","settings"].includes(target)?target:"home");
+  const target=location.hash.slice(1);showView(["home","chat","cards","docs","forms","settings","reviews"].includes(target)?target:"home");
   const handoff=SeomuFlow.take("question");
   if(handoff){
     showView("chat");const input=$("#query");
@@ -628,4 +633,15 @@ loadSettings().then(()=>{
 }).catch(fail);
 greet();
 loadKnowledgeScope();
+const institutionHandoff=new URLSearchParams(location.search).get('institution_rule');
+if(institutionHandoff){
+  Promise.all([fetch('/api/institution-rules/'+encodeURIComponent(institutionHandoff)).then(r=>{if(!r.ok)throw Error('기관 자료를 확인하세요.');return r.json();}),loadKnowledgeScope()]).then(([doc])=>{
+    if(location.hash!=='#chat'||!doc.enabled||doc.deleted_at)return;
+    const input=$('#query');if(input.value.trim())return;
+    window.SeomuInstitutionHandoff={id:doc.id};
+    const scope=$('#knowledge-library');scope.value='';
+    $('#chat-status').textContent='선택한 기관 자료와 공통 근거를 함께 확인할 수 있습니다. 질문을 입력한 뒤 보내세요.';
+    input.value=`${doc.institution} ${doc.keywords[0]}에 대해 알려주세요.`;input.focus();
+  }).catch(fail);
+}
 window.SeomuWorkflowChat?.init();

@@ -32,7 +32,8 @@ test('structured guidance can be saved with separate legal and e-Saram evidence'
       title: '휴가 처리 방법', context: '연가 신청', notice: '실무 준비 제안입니다. 법령 근거를 확인하세요.',
       steps: [{ title: '잔여 일수 확인', detail: '복무 기록 확인' }], questions: ['적용 신분을 확인해 주세요.'],
       deadlines: [{ text: '신청 기한은 기관 기준 확인', ref: 1 }], forms: [{ name: '연가 신청서', href: '/api/documents/doc-1/download', synthetic: true }],
-      manual: { evidence: [{ title: 'e-사람 휴가 매뉴얼', page: 27, source_id: 'manual-1', sha256: 'abc123', quote: '휴가 신청 메뉴에서 등록합니다.' }] }
+      manual: { evidence: [{ title: 'e-사람 휴가 매뉴얼', page: 27, source_id: 'manual-1', sha256: 'abc123', quote: '휴가 신청 메뉴에서 등록합니다.' }] },
+      service_guide: { notice: '공식 제도 설명입니다.', evidence: [{ title: '휴가 FAQ', reference_kind: 'official_faq', quote: 'FAQ 원문 인용', loc: '질문 3', source_url: 'https://www.mpm.go.kr/mpm/info/abc', snapshot_url: '/api/service-guides/faq_3/original', retrieved_at: '2026-10-23', sha256: 'feed123' }] }
     },
     knowledge: { evidence: [{ title: '복무 규정', kind: '규정', loc: '제12조', source_id: 'legal-1', sha256: 'def456', quote: '휴가에 관한 규정 원문입니다.' }] }
   };
@@ -52,6 +53,10 @@ test('structured guidance can be saved with separate legal and e-Saram evidence'
     assert.match(contents, /복무 규정[\s\S]*휴가에 관한 규정 원문입니다/);
     assert.match(contents, /e-사람 사용법 · 등록 매뉴얼 원문/);
     assert.match(contents, /PDF 쪽수: 27[\s\S]*휴가 신청 메뉴에서 등록합니다/);
+    assert.match(contents, /인사혁신처 제도 안내·FAQ[\s\S]*휴가 FAQ[\s\S]*질문 3[\s\S]*https:\/\/www\.mpm\.go\.kr\/mpm\/info\/abc[\s\S]*\/api\/service-guides\/faq_3\/original[\s\S]*2026-10-23[\s\S]*feed123[\s\S]*FAQ 원문 인용/);
+    assert.match(contents, /국가공무원 제도 설명·FAQ입니다\. 실제 적용과 최신 일수는 법령·기관 기준으로 확인하세요\./);
+    assert.equal((contents.match(/\[근거 1\]/g) || []).length, 1);
+    assert.doesNotMatch(contents, /\[근거 2\]/);
     assert.doesNotMatch(contents, /모델:/);
   });
 });

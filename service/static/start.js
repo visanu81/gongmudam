@@ -5,7 +5,7 @@ function recentHref(item){
  if(item.kind==='travel'&&/^[a-f0-9]{32}$/i.test(id))return `travel.html?case=${id}#settle`;
  if(item.kind==='education'&&/^[a-f0-9]{32}$/i.test(id))return `adhoc.html#job-${id}`;
  if(item.kind==='collection'&&/^[a-f0-9]{32}$/i.test(id))return `adhoc.html#job-${id}`;
- if(item.kind==='folder'&&/^[a-f0-9]{32}$/i.test(id))return `folders.html#${id}`;
+ if(item.kind==='folder'&&/^[a-f0-9]{32}$/i.test(id))return item.project ? `folders.html#project=${id}` : `folders.html#${id}`;
  if(item.kind==='folder'&&id==='esaram-manuals-v68')return 'folders.html?view=references#esaram-manuals-v68';
  return '';
 }

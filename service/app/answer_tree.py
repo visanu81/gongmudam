@@ -17,6 +17,14 @@ def rules():
     except (OSError,ValueError,KeyError):return []
 
 def build(query,reply):
+    from . import institution_rules, answer_conclusion
+    tree=institution_rules.extend_tree(query,reply,_build(query,reply))
+    return answer_conclusion.lead(query,tree)
+
+def _build(query,reply):
+    from . import office_knowledge
+    office=office_knowledge.summary(query,reply)
+    if office:return office
     evidence=reply.get('evidence',[])
     plan=reply.get('intent') or intent.analyze(query)
     note='이해를 돕는 요약이에요. 내 기관에 적용되는 조건은 근거에서 확인하세요.'
@@ -41,6 +49,11 @@ def build(query,reply):
             dict(label='어떤 자료가 필요한가요?',items=[dict(text=missing,ref=None)]),
             dict(label='지금 할 일',items=[dict(text=action,ref=None),dict(text='자료를 등록한 뒤 같은 질문을 다시 해보세요.',ref=None)])],note='질문에 직접 답하는 원문을 확인한 뒤 안내할게요.')
     q=''.join(query.split())
+    from . import leave_situations
+    care=leave_situations.summary(query,reply)
+    from . import service_legal_summary
+    service=service_legal_summary.build(query,reply)
+    if service:return service
     from . import knowledge_supplement
     extended=knowledge_supplement.summary(query,reply)
     if extended:return extended
@@ -61,6 +74,7 @@ def build(query,reply):
             if not nodes or any(not item.get('requires') or not all(quote in h['text'] for quote in item['requires']) for item in nodes):continue
             branches=[dict(label=b['label'],items=[dict(text=i['text'],ref=index,support_quotes=i['requires']) for i in b['items']]) for b in rule['branches']]
             return dict(kind='summary',title=rule['title'],branches=branches,note=rule.get('note',note),rule_id=rule['id'],reviewed_source_sha256=rule['sha256'])
+    if care:return care
     return dict(kind='extract',title='찾은 자료를 차례로 확인해요',branches=[
         dict(label='관련 자료',items=[dict(text=h['title'],ref=i) for i,h in enumerate(evidence,1)]),
         dict(label='지금 할 일',items=[dict(text='근거 버튼을 눌러 질문에 맞는 조항과 적용 조건을 확인해 보세요.',ref=None)])],note='이 자료는 아직 쉬운 설명이 준비되지 않았어요. 원문을 펼쳐 확인할 수 있어요.')

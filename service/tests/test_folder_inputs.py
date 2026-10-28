@@ -31,11 +31,11 @@ class FolderInputsTest(unittest.TestCase):
         self.assertEqual(self.post(content=b'x'*(folders.MAX_BYTES+1)).status_code,413)
         self.assertEqual(list((self.root/'synthetic-folders/uploads').iterdir()),[])
     def test_public_cannot_open_native_dialog(self):
-        with patch.object(inputs.subprocess,'run') as launch:
+        with patch.object(inputs.native_picker,'choose_paths') as launch:
             self.assertEqual(self.client.post('/api/folders/choose-local',headers={'origin':'http://testserver'}).status_code,403);launch.assert_not_called()
     def test_tunnel_host_cannot_open_native_dialog(self):
         self.app.state.public_demo=False
-        with TestClient(self.app,client=('127.0.0.1',1234),base_url='https://public.example') as c,patch.object(inputs.subprocess,'run') as launch:
+        with TestClient(self.app,client=('127.0.0.1',1234),base_url='https://public.example') as c,patch.object(inputs.native_picker,'choose_paths') as launch:
             self.assertEqual(c.post('/api/folders/choose-local',headers={'origin':'https://public.example'}).status_code,403);launch.assert_not_called()
     def test_missing_origin_cannot_open_dialog(self):
         self.app.state.public_demo=False
@@ -43,9 +43,16 @@ class FolderInputsTest(unittest.TestCase):
             self.assertEqual(c.post('/api/folders/choose-local').status_code,403)
     def test_local_cancel_returns_without_connecting(self):
         self.app.state.public_demo=False
-        with TestClient(self.app,client=('127.0.0.1',1234),base_url='http://127.0.0.1:8766') as c,patch.object(inputs.subprocess,'run') as launch:
-            launch.return_value.returncode=0;launch.return_value.stdout=b'{"path":""}'
+        with TestClient(self.app,client=('127.0.0.1',1234),base_url='http://127.0.0.1:8766') as c,patch.object(inputs.native_picker,'choose_paths',return_value=[]) as launch:
             r=c.post('/api/folders/choose-local',headers={'origin':'http://127.0.0.1:8766'})
             self.assertEqual(r.status_code,200);self.assertTrue(r.json()['cancelled']);launch.assert_called_once()
+
+    def test_picker_timeout_and_failure_release_shared_lock(self):
+        self.app.state.public_demo=False
+        with TestClient(self.app,client=('127.0.0.1',1234),base_url='http://127.0.0.1:8766') as c:
+            for error,status in ((TimeoutError(),408),(RuntimeError(),503)):
+                with patch.object(inputs.native_picker,'choose_paths',side_effect=error):
+                    self.assertEqual(c.post('/api/folders/choose-local',headers={'origin':'http://127.0.0.1:8766'}).status_code,status)
+                self.assertTrue(inputs.picker_lock.acquire(blocking=False));inputs.picker_lock.release()
 
 if __name__=='__main__':unittest.main()

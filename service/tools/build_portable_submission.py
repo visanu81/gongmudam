@@ -25,6 +25,7 @@ def export_knowledge(root,dest,manual_source_ids=()):
     records=[];selected=set(manual_source_ids);exported_manuals=set()
     for enabled,payload in rows:
         row=json.loads(payload)
+        if row.get('reference_kind')=='institution_rule' or row.get('id','').startswith('institution:'):continue
         manual=row.get('reference_kind')=='system_manual'
         if manual:
             if row['id'] not in selected:continue
@@ -97,7 +98,7 @@ def build(dest,wheels,root=ROOT,manual_source_ids=()):
     bundle=export_knowledge(root,dest,manual_source_ids) if manual_source_ids else export_knowledge(root,dest)
     release='53'
     guide=root/'먼저읽기.txt'
-    for version in ('69','68','67','66','64','61','57','55','54','53','45','44'):
+    for version in ('70','69','68','67','66','64','61','57','55','54','53','45','44'):
         candidate=root/f'docs/다른PC_제출패키지_구동안내_v{version}.txt'
         if candidate.exists():guide=candidate;release=version;break
     if guide.exists():shutil.copyfile(guide,dest/'먼저읽기.txt')

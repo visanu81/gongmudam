@@ -18,7 +18,7 @@ from urllib.parse import urlsplit
 
 import httpx
 from fastapi import HTTPException
-from . import config, llm
+from . import config, llm, upstage
 
 EVIDENCE_TTL = 300
 _secret = secrets.token_bytes(32)
@@ -52,6 +52,8 @@ def _target(profile, model):
         port = url.port
         if url.scheme not in ('http', 'https') or not url.hostname or url.username or url.password or url.query or url.fragment or port == 0:
             return 'invalid', None
+        if upstage.matches(profile):
+            return 'upstage', None
         if url.hostname not in ('localhost', '127.0.0.1', '::1'):
             return 'external', None
         if not isinstance(model, str) or not model.strip():
@@ -70,6 +72,8 @@ def _same_model(expected, actual):
 def _connection(profile, model):
     kind, target = _target(profile, model)
     value = dict(state=kind, checked_at=_stamp(), server_responded=False, model_present=None)
+    if kind == 'upstage' and not llm.request_headers(profile).get('Authorization'):
+        value['state'] = 'key_missing'
     if kind != 'local':
         return value
     try:
@@ -121,7 +125,9 @@ def snapshot():
     with _state_lock:
         in_progress = _inflight is not None
     return dict(selection_id=token, profile=profile['_name'], model=model, offline=connection['state'] == 'offline',
-                local=_target(profile, model)[0] == 'local', checked_at=connection['checked_at'], connection=connection,
+                local=_target(profile, model)[0] == 'local',
+                checkable=_target(profile, model)[0] in ('local','upstage') and connection['state'] != 'key_missing',
+                checked_at=connection['checked_at'], connection=connection,
                 response=_response_for(token), check_in_progress=in_progress,
                 evidence_ttl_seconds=EVIDENCE_TTL,
                 notice='서버·모델 목록 확인과 최근 시험 응답을 구분합니다. 시험 결과는 5분간 유지되며 현재 질문에서 AI를 사용했다는 뜻은 아닙니다.')
@@ -133,8 +139,10 @@ def check(selection_id):
     token, profile, model = _selection()
     if selection_id != token:
         _assert_selection(selection_id)
-    if _target(profile, model)[0] != 'local':
-        raise HTTPException(422, dict(code='not_local', message='이 확인 기능은 선택한 로컬 모델 서버에만 시험 요청을 보냅니다.'))
+    if _target(profile, model)[0] not in ('local','upstage'):
+        raise HTTPException(422, dict(code='not_local', message='이 확인 기능은 로컬 모델 또는 등록된 업스테이지 모델에만 시험 요청을 보냅니다.'))
+    if upstage.matches(profile) and not llm.request_headers(profile).get('Authorization'):
+        raise HTTPException(422, dict(code='key_missing', message='업스테이지 API 키를 먼저 입력하세요.'))
     if not _check_lock.acquire(blocking=False):
         raise HTTPException(409, dict(code='check_busy', message='이전 응답 시험을 마무리하고 있습니다. 잠시 후 다시 확인하세요.'))
     try:
@@ -167,7 +175,7 @@ def check(selection_id):
                 value.update(requested_model=request_model, response_model=response_model if isinstance(response_model, str) else None, characters=len(text))
                 if not isinstance(response_model, str) or not response_model:
                     value.update(state='model_unverified', message='응답은 도착했지만 서버가 응답 모델명을 알려주지 않았습니다.')
-                elif not _same_model(model, request_model) or not _same_model(model, response_model):
+                elif not _same_model(model, request_model) or not (upstage.same_model(model, response_model) if upstage.matches(profile) else _same_model(model, response_model)):
                     value.update(state='model_mismatch', message='선택한 모델과 서버가 보고한 응답 모델이 다릅니다.')
                 else:
                     value.update(state='verified', message='선택한 모델의 텍스트 응답과 서버가 보고한 모델명을 확인했습니다.')

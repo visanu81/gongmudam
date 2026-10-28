@@ -13,6 +13,79 @@ from fastapi.testclient import TestClient
 from app import folders, folder_scan, folder_scan_io, folder_watch, knowledge
 
 
+def wait_for_scan(status, states, timeout, *, monotonic=time.monotonic, event_wait=None):
+    progress_fields = ('phase', 'discovered', 'processed', 'bytes_read', 'failed_files', 'current_file')
+    started = monotonic()
+    hard_deadline = started + max(120, timeout)
+    idle_deadline = started + timeout
+    last_progress = object()
+    wait_event = event_wait or threading.Event().wait
+    while True:
+        now = monotonic()
+        deadline = min(idle_deadline, hard_deadline)
+        if now >= deadline:
+            return None
+        value = status()
+        if value['status'] in states:
+            return value
+        progress = tuple(value.get(key) for key in progress_fields)
+        if progress != last_progress:
+            last_progress = progress
+            idle_deadline = min(monotonic() + timeout, hard_deadline)
+        now = monotonic()
+        deadline = min(idle_deadline, hard_deadline)
+        if now >= deadline:
+            return None
+        wait_event(min(.02, deadline - now))
+
+
+class ScanWaitTimingTest(unittest.TestCase):
+    def run_wait(self, status, timeout):
+        now = [0.0]
+        def monotonic(): return now[0]
+        def event_wait(seconds): now[0] += seconds
+        result = wait_for_scan(status, ('completed', 'failed', 'cancelled'), timeout,
+                               monotonic=monotonic, event_wait=event_wait)
+        return result, now[0]
+
+    def test_real_progress_can_complete_after_idle_timeout(self):
+        now = [0.0]
+        def monotonic(): return now[0]
+        def event_wait(seconds): now[0] += seconds
+        def status():
+            if now[0] >= .12:
+                return {'status': 'completed'}
+            return {'status': 'running', 'phase': 'reading', 'discovered': 1,
+                    'processed': int(now[0] / .02), 'bytes_read': int(now[0] * 100),
+                    'failed_files': 0, 'current_file': 'a.txt', 'updated_at': now[0]}
+        result = wait_for_scan(status, ('completed',), .04, monotonic=monotonic, event_wait=event_wait)
+        self.assertEqual(result['status'], 'completed')
+        self.assertGreater(now[0], .04)
+
+    def test_heartbeat_without_progress_does_not_reset_idle_timeout(self):
+        now = [0.0]
+        def status():
+            return {'status': 'running', 'phase': 'reading', 'discovered': 5, 'processed': 2,
+                    'bytes_read': 100, 'failed_files': 0, 'current_file': 'b.txt', 'updated_at': now[0]}
+        def monotonic(): return now[0]
+        def event_wait(seconds): now[0] += seconds
+        result = wait_for_scan(status, ('completed', 'failed', 'cancelled'), .06,
+                               monotonic=monotonic, event_wait=event_wait)
+        self.assertIsNone(result)
+        self.assertAlmostEqual(now[0], .06)
+
+    def test_ongoing_progress_cannot_exceed_hard_total_cap(self):
+        processed = [0]
+        def status():
+            processed[0] += 1
+            return {'status': 'running', 'phase': 'reading', 'discovered': processed[0],
+                    'processed': processed[0], 'bytes_read': processed[0],
+                    'failed_files': 0, 'current_file': f'{processed[0]}.txt'}
+        result, elapsed = self.run_wait(status, .04)
+        self.assertIsNone(result)
+        self.assertAlmostEqual(elapsed, 120)
+
+
 class FolderScanTest(unittest.TestCase):
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory()
@@ -48,14 +121,11 @@ class FolderScanTest(unittest.TestCase):
         self.assertEqual(r.status_code, 200, r.text)
         return r.json()
 
-    def wait(self, job, states=('completed', 'failed', 'cancelled'), timeout=10):
-        deadline = time.monotonic() + timeout
-        while time.monotonic() < deadline:
-            value = self.status(job)
-            if value['status'] in states:
-                return value
-            threading.Event().wait(.02)
-        self.fail(f"scan job did not finish: {self.status(job)}")
+    def wait(self, job, states=('completed', 'failed', 'cancelled'), timeout=folder_scan_io.PARSE_SECONDS + 15):
+        result = wait_for_scan(lambda: self.status(job), states, timeout)
+        if result is None:
+            self.fail(f"scan job did not finish: {self.status(job)}")
+        return result
 
     def library(self, key):
         r = self.client.get(f'/api/folders/libraries/{key}')

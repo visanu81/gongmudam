@@ -74,10 +74,46 @@ def expanded_query(query):
     extra=(' 기본사무용품비 필기구' if 'office_supplies' in focus else '')+(' 자산및물품취득비' if 'assets' in focus else '')
     return query+' '+' '.join(FACETS[key][0] for key in sorted(facets(query)))+extra+' '+intent.expanded_terms(intent.analyze(query))
 
+def evidence_context(query):
+    """Explicit handling purposes outrank incidental words in unrelated laws."""
+    q=flat(query)
+    q=re.sub(r'개인정보(?:보호|처리|취급)?(?:업무)?(?:를|을)?담당(?:하는|하고|자)?(?:인|인데|로서)?','',q)
+    privacy=any(t in q for t in ('개인정보','주민등록번호','주민번호','민감정보','고유식별정보'))
+    handling=any(t in q for t in ('수집','제공','파기','보관','가려','가리','마스킹','익명','전송','보내','받아도','동의','공개','유출','처리'))
+    # An employee's job title is context, not a request about privacy handling.
+    if privacy and (handling or intent.analyze(query) is None):return 'privacy'
+    meal=any(t in q for t in ('식비','식대','급식비','매식비','급량비'))
+    if meal and any(t in q for t in ('초과근무','시간외근무','시간외','야근','특근','급량비')):return 'overtime_meal'
+    if meal and any(t in q for t in ('회의','간담회','업무추진비')):return 'meeting_meal'
+    return None
+
+
+def context_source(context,hit):
+    """Require a substantive subject in the heading, not a cross-reference."""
+    official=hit.get('official') or {}
+    heading=flat(hit['title']+' '+official.get('title','')+' '+official.get('article',''))
+    text=flat(hit['text'])
+    if context=='privacy':
+        return any(t in heading for t in ('개인정보','주민등록','고유식별','민감정보')) and any(
+            t in text for t in ('개인정보','주민등록','고유식별','민감정보'))
+    if not any(t in heading for t in ('예산','회계','집행','매식','급량','급식','식비','식대','업무추진비','회의비')):return False
+    if context=='overtime_meal':
+        return any(t in text for t in ('특근매식비','급량비','시간외근무','초과근무','야근')) and any(
+            t in text for t in ('식비','식대','급식','매식','급량'))
+    return any(t in text for t in ('회의','간담회','업무추진비')) and any(t in text for t in ('식비','식대','급식','매식','음식'))
+
+
 def filter_hits(query,hits,plan=None):
     plan=plan or intent.analyze(query)
+    context=evidence_context(query)
+    if context:
+        labels={'privacy':'개인정보 수집·제공·가림 등 처리 기준','overtime_meal':'초과근무 급식비·특근매식비 집행 기준','meeting_meal':'회의·간담회 식비 집행 기준'}
+        hits=[h for h in hits if context_source(context,h)]
+        if not hits:return [],'등록 원문에서 '+labels[context]+'의 직접 근거를 확인하지 못했습니다. 기관에 적용되는 해당 법령·지침을 추가해 주세요.'
+        if context in {'overtime_meal','meeting_meal'} and any(t in flat(query) for t in ('출장','여비')):
+            return [],'출장 식비와 업무 집행 식비는 적용 기준이 다릅니다. 질문을 나누어 각각의 근거를 확인해 주세요.'
     if plan:return intent.filter_hits(query,hits,plan)
-    wanted=facets(query); specific=wanted-BROAD;q=flat(query)
+    wanted=set() if context else facets(query); specific=wanted-BROAD;q=flat(query)
     domains=set()
     if '출장' in wanted or wanted&{'일비','숙박비','식비','운임','근무지 내 출장'}:domains.add('travel')
     if wanted&{'연가','병가','공가','특별휴가','출산휴가','육아시간','가족돌봄','건강검진','헌혈','대체휴무'}:domains.add('leave')
@@ -85,8 +121,9 @@ def filter_hits(query,hits,plan=None):
     candidates=[]
     for h in hits:
         official=h.get('official') or {}; title=official.get('title',''); article=official.get('article','')
-        if official.get('budget_scope') and '예산 과목' not in wanted:continue
-        if official.get('budget_topics') and not set(official['budget_topics'])&budget_topics(query):continue
+        if official and not wanted and not context:continue
+        if official.get('budget_scope') and '예산 과목' not in wanted and not context:continue
+        if official.get('budget_topics') and not context and not set(official['budget_topics'])&budget_topics(query):continue
         if any(t in q for t in ('국가공무원','국가직','중앙부처')) and ('지방공무원' in title or '지방자치단체' in title):continue
         if '예산 과목' in wanted and not budget_evidence(h):continue
         if domains and title:

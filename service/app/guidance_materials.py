@@ -1,0 +1,25 @@
+"""Describe missing operational data without inventing institutional facts.
+
+Only used after retrieval found no direct evidence. These are requests for
+materials, not legal rules or automatic connections to business databases.
+"""
+import re
+
+
+def needed(query):
+    q=re.sub(r'\s+','',query)
+    if '예산' in q and any(w in q for w in ('잔액','집행률','얼마남','남은예산')):
+        return ('부서 예산·집행 내역', '기관의 해당 연도 예산 배정액과 기준일별 집행 내역이 필요해요. 규정만으로 실제 잔액이나 집행률을 알 수는 없어요.')
+    if '예산' in q and any(w in q for w in ('요구서','제출마감','편성일정')):
+        return ('기관 예산 편성 안내', '기관의 해당 연도 예산 요구 공문·서식·제출 일정을 확인해 주세요.')
+    if any(w in q for w in ('재고','배부현황','배부내역')):
+        return ('물품 재고·배부 내역', '기관의 최신 물품대장과 입출고·배부 내역, 조회 기준일이 필요해요.')
+    if any(w in q for w in ('프린터','복사기','노트북','컴퓨터')) and any(w in q for w in ('고장','수리요청','수리를요청','반납')):
+        return ('기관 물품 관리 안내', '기관의 물품 관리 담당·수리 연락처 또는 반납 서식·인계 절차 자료를 확인해 주세요.')
+    if '출장복명' in q or ('출장' in q and '결과보고' in q):
+        return ('기관 출장 결과보고 기준', '출장복명서의 제출 기한·서식을 확인할 기관 복무 지침이 필요해요. 여비 정산 기한을 결과보고 기한으로 대신 안내하지 않아요.')
+    if any(w in q for w in ('주간보고','의회요구','요구자료','미회신','사무전결','최종결재권자')):
+        return ('기관 보고·업무분장 자료', '기관의 요청 공문·회신 현황·업무분장 또는 사무전결 규칙이 필요해요. 실제 담당자와 내부 마감은 기관 자료에서 확인해야 해요.')
+    if '교육' in q and any(w in q for w in ('희망자','신청','회신','의무교육','승인','보고서','제출서류')):
+        return ('기관 교육 안내·회신 자료', '기관의 교육 안내 공문·회신 서식·대상 부서·마감과 현재 회신 내역이 필요해요. 의무교육 종류·시간이나 승인 절차는 해당 교육 지침에서 확인해 주세요.')
+    return None

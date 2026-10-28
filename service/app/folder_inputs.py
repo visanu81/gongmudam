@@ -2,7 +2,7 @@
 from pathlib import Path, PurePosixPath
 import json, os, re, shutil, subprocess, sys, threading, uuid
 from fastapi import APIRouter, File, Form, HTTPException, Request, UploadFile
-from . import folders
+from . import folders, native_picker
 
 router = APIRouter(prefix='/api/folders', tags=['폴더 선택·업로드'])
 ROOT = Path(__file__).resolve().parents[1]
@@ -40,14 +40,14 @@ def choose_local(request:Request):
     if os.name!='nt':raise HTTPException(400, '현재 탐색기 선택은 Windows에서 지원합니다. 경로 입력을 사용하세요.')
     if not picker_lock.acquire(blocking=False):raise HTTPException(409, '이미 열린 폴더 선택 창을 먼저 닫으세요.')
     try:
-        code="import tkinter as t,json;from tkinter import filedialog;r=t.Tk();r.withdraw();r.attributes('-topmost',True);p=filedialog.askdirectory(title='서무비서에 연결할 업무 폴더 선택',parent=r);r.destroy();print(json.dumps({'path':p}))"
-        result=subprocess.run([sys.executable,'-c',code],capture_output=True,timeout=120,creationflags=subprocess.CREATE_NO_WINDOW)
-        if result.returncode:raise HTTPException(503,'폴더 선택 창을 열지 못했습니다. 경로 입력을 사용하세요.')
-        data=json.loads(result.stdout.decode('ascii'));path=data['path']
+        paths=native_picker.choose_paths('folder')
+        path=paths[0] if paths else ''
         if path:folders.roots_checked([path])
         return {'path':path,'cancelled':not bool(path)}
-    except subprocess.TimeoutExpired:
+    except TimeoutError:
         raise HTTPException(408,'폴더 선택 시간이 지났습니다. 다시 선택하세요.') from None
+    except (OSError, RuntimeError, ValueError):
+        raise HTTPException(503,'폴더 선택 창을 열지 못했습니다. 다시 시도해 주세요.') from None
     finally:picker_lock.release()
 
 @router.post('/uploads',status_code=201)

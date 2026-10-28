@@ -236,6 +236,26 @@ class SubmissionBuildDocsTests(unittest.TestCase):
         self.assertNotIn("v67", links)
         self.assertEqual(manifest["release_version"], "v69")
 
+    def test_v70_guide_and_evidence_links_precede_previous_releases(self):
+        dest, manifest = self.build_with_guides({
+            "docs/다른PC_제출패키지_구동안내_v70.txt": "v70 guide",
+            "docs/다른PC_제출패키지_구동안내_v69.txt": "v69 guide",
+            "docs/다른PC_제출패키지_구동안내_v68.txt": "v68 guide",
+        })
+        self.assertEqual((dest / "먼저읽기.txt").read_text(encoding="utf-8"), "v70 guide")
+        links = (dest / "검증결과바로가기.txt").read_text(encoding="utf-8")
+        self.assertIn("검증보고서_v70.txt", links)
+        self.assertIn("최종검증요약_v70.json", links)
+        self.assertIn("archive --evidence", links)
+        self.assertNotIn("v69", links)
+        self.assertNotIn("v68", links)
+        self.assertEqual(manifest["release_version"], "v70")
+        for name in ("먼저읽기.txt", "검증결과바로가기.txt"):
+            self.assertEqual(
+                manifest["files"][name],
+                hashlib.sha256((dest / name).read_bytes()).hexdigest(),
+            )
+
     def test_root_guide_is_fallback_when_docs_guides_are_missing(self):
         dest, _ = self.build_with_guides({"먼저읽기.txt": "root guide"})
         self.assertEqual((dest / "먼저읽기.txt").read_text(encoding="utf-8"), "root guide")

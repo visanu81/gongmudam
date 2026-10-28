@@ -12,6 +12,7 @@ from unittest import mock
 from pathlib import Path
 
 from tools import restore_submission
+from tools import build_portable_submission
 
 
 def make_root(parent: Path, name="package") -> Path:
@@ -71,6 +72,44 @@ class PortableSubmissionTests(unittest.TestCase):
 
     def tearDown(self):
         self.temp.cleanup()
+
+    def test_export_skips_managed_institution_rules_without_mutating_live_database(self):
+        root = self.base / "export-root"
+        database = root / "data/folders.db"
+        database.parent.mkdir(parents=True)
+        valid_path = root / "data/law.txt"
+        valid_path.write_text("공개 법령 내용", encoding="utf-8")
+        private_path = root / "private/institution-rule.txt"
+        private_path.parent.mkdir()
+        private_path.write_text("기관 내부 규정 비공개 내용", encoding="utf-8")
+        valid = {
+            "id": "law-1", "library_id": "library-1", "title": "법령",
+            "sha256": hashlib.sha256(valid_path.read_bytes()).hexdigest(),
+            "units": [], "limited": False, "kind": "법령·규정", "path": str(valid_path),
+        }
+        managed = {
+            "id": "institution:managed-1", "reference_kind": "institution_rule",
+            "title": "기관 내부 규정", "kind": "기관 지침", "path": str(private_path),
+            "sha256": hashlib.sha256(private_path.read_bytes()).hexdigest(),
+        }
+        with closing(sqlite3.connect(database)) as connection:
+            connection.execute("CREATE TABLE knowledge_sources (id TEXT, enabled INTEGER, payload TEXT)")
+            connection.executemany("INSERT INTO knowledge_sources VALUES(?,?,?)", [
+                (valid["id"], 1, json.dumps(valid, ensure_ascii=False)),
+                (managed["id"], 1, json.dumps(managed, ensure_ascii=False)),
+            ])
+            connection.commit()
+        before = database.read_bytes()
+
+        destination = self.base / "export"
+        bundle = build_portable_submission.export_knowledge(root, destination)
+
+        self.assertEqual([source["id"] for source in bundle["sources"]], ["law-1"])
+        exported_files = [path for path in destination.rglob("*") if path.is_file()]
+        self.assertEqual(len(exported_files), 2)  # law asset and knowledge manifest
+        self.assertTrue(any(path.read_bytes() == valid_path.read_bytes() for path in exported_files))
+        self.assertFalse(any(private_path.read_bytes() in path.read_bytes() for path in exported_files))
+        self.assertEqual(database.read_bytes(), before)
 
     def test_restore_preserves_source_identity_hash_units_and_current_source(self):
         root = make_root(self.base)

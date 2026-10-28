@@ -9,6 +9,7 @@ from urllib.parse import urlsplit
 from fastapi import HTTPException,Request
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel,ConfigDict,Field
+from . import upstage
 
 ROOT=Path(__file__).resolve().parents[1]
 MODELS={'local_gemma':'gemma3:4b','local_llama':'llama3.2:3b'}
@@ -16,7 +17,8 @@ MODELS={'local_gemma':'gemma3:4b','local_llama':'llama3.2:3b'}
 def validate_config(cfg,baseline):
     candidate=copy.deepcopy(cfg);original=copy.deepcopy(baseline)
     active=candidate.get('llm',{}).get('active')
-    if active not in MODELS:raise ValueError('공개 시연에서는 준비한 Gemma·Llama만 선택할 수 있습니다.')
+    allowed=set(MODELS) | ({'upstage'} if 'upstage' in original.get('llm',{}).get('profiles',{}) else set())
+    if active not in allowed:raise ValueError('공개 시연에서는 운영자가 준비한 AI만 선택할 수 있습니다.')
     candidate['llm']['active']=original['llm']['active']
     if candidate!=original:raise ValueError('공개 시연에서는 서버 주소·키·모델 설정을 변경할 수 없습니다.')
 
@@ -45,7 +47,13 @@ def create_app():
     sandbox=ROOT/'synthetic-folders';sandbox.mkdir(exist_ok=True);incoming=sandbox/'추가회신';incoming.mkdir(exist_ok=True)
     from . import config,folders
     baseline=config.load()
-    if set(baseline.get('llm',{}).get('profiles',{}))!=set(MODELS):raise RuntimeError('공개 시연 모델 구성이 잘못됐습니다.')
+    profiles=baseline.get('llm',{}).get('profiles',{})
+    if set(profiles) not in (set(MODELS),set(MODELS)|{'upstage'}):raise RuntimeError('공개 시연 모델 구성이 잘못됐습니다.')
+    if 'upstage' in profiles:
+        p=profiles['upstage']
+        if (not upstage.matches(p) or p.get('api_key_env') not in (None,'','UPSTAGE_API_KEY')
+            or p.get('extra_body',{}) != {'reasoning_effort':'none'}):
+            raise RuntimeError('공개 업스테이지 연결은 공식 주소와 고정된 요청 옵션만 허용합니다.')
     for key,model in MODELS.items():
         p=baseline['llm']['profiles'][key]
         if p.get('provider')!='openai_compatible' or p.get('base_url')!='http://127.0.0.1:11434/v1' or p.get('model')!=model or p.get('api_key') or p.get('api_key_env'):raise RuntimeError('공개 시연은 고정된 로컬 AI만 사용합니다.')

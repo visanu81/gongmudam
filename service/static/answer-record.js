@@ -63,6 +63,15 @@
         out.push(...line("제목", entry.title), ...line("PDF 쪽수", entry.page), ...line("자료 ID", entry.source_id ?? entry.id), ...line("SHA-256", entry.sha256), "인용 원문:", text(entry.quote), "");
       });
     } else if (guidance?.manual?.notice) out.push("", "e-사람 사용법", text(guidance.manual.notice));
+    const serviceGuide = guidance?.service_guide && typeof guidance.service_guide === "object" ? guidance.service_guide : null;
+    const serviceEvidence = list(serviceGuide?.evidence);
+    if (serviceEvidence.length) {
+      out.push("", "인사혁신처 제도 안내·FAQ · 법령 근거 및 e-사람 매뉴얼과 별도", ...line("안내", serviceGuide.notice), "국가공무원 제도 설명·FAQ입니다. 실제 적용과 최신 일수는 법령·기관 기준으로 확인하세요.");
+      serviceEvidence.forEach((entry) => {
+        if (!entry || typeof entry !== "object") return;
+        out.push(...line("제목", entry.title), ...line("종류", entry.reference_kind === "official_faq" ? "FAQ" : "제도 안내"), ...line("위치", entry.loc), ...line("인사혁신처 원문", entry.source_url), ...line("저장된 원문 텍스트", entry.snapshot_url), ...line("확인일", entry.retrieved_at), ...line("SHA-256", entry.sha256), "인용 원문:", text(entry.quote), "");
+      });
+    }
     const experiences = list(knowledge.experiences).filter((x) => x && typeof x === "object");
     if (experiences.length) {
       out.push("", "처리 경험 · 공식 근거 아님");

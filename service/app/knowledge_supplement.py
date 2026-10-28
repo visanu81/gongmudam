@@ -23,6 +23,7 @@ def foreign_query(query):
 
 
 def requirements(topic,query):
+    if topic=='side_job':return [(NATIONAL,'제25조('),(NATIONAL,'제26조(')]
     if topic=='goods_payment_interest' and not any(t in flat(query) for t in ('계산','산식','이율','연체이자율','얼마')):return None
     return {
         'travel_rate_domestic':[(TRAVEL,'별표 2 '),(TRAVEL,'제16조(')],

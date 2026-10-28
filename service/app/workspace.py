@@ -84,12 +84,23 @@ def recent():
     with folders.db() as c:
         totals['folder']=c.execute('SELECT count(*) FROM libraries').fetchone()[0]
         candidates=[]
+        linked=set()
+        if c.execute("SELECT 1 FROM sqlite_master WHERE type='table' AND name='folder_projects'").fetchone():
+            for row in c.execute('SELECT payload FROM folder_projects'):
+                p=json.loads(row[0]);linked.update(p.get('library_ids',[]))
+                candidates.append((p['updated_at'],p['id'],{'project':True,**p}))
+            totals['folder']+=len(candidates)-len(linked)
         # The payload owns its history time; SQLite row order is not an update time.
         for row in c.execute('SELECT id,payload FROM libraries'):
+            if row['id'] in linked:continue
             payload=json.loads(row['payload'])
             updated_at=max([payload.get('scanned_at','')]+[h.get('at','') for h in payload.get('history',[])])
             candidates.append((updated_at,row['id'],payload))
         for updated_at,key,payload in sorted(candidates,key=lambda v:(v[0],v[1]),reverse=True)[:2]:
+            if payload.get('project'):
+                items.append(dict(kind='folder',id=key,project=True,title=payload['name'],status='프로젝트 자료·대화',
+                    next_action='자료를 추가하거나 저장한 대화에서 이어서 질문하세요.',href=f'folders.html#project={key}',updated_at=updated_at))
+                continue
             summary=folders.present(payload)['summary'];review=summary['review']
             items.append(dict(kind='folder',id=key,title=payload['name'],status=f'분류 확인 {review}개 남음' if review else '분류 확인됨' if summary['files'] else '폴더 자료 확인 필요',
                 next_action=f'분류 제안 {review}개를 확인하고 분석 결과를 저장하세요.' if review else '분석 결과를 저장하고 업무별 다음 할 일을 확인하세요.',

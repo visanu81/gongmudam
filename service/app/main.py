@@ -23,9 +23,12 @@ from . import leave
 from . import adhoc, folders, folder_ai, folder_watch, change_inbox, folder_inputs
 from . import knowledge, answer_tree, manual_knowledge
 from . import education_intent, workflow_chat, task_intent
-from . import guidance
+from . import guidance, answer_reviews
+from . import service_knowledge,finance_knowledge,office_knowledge
+from . import institution_rules
 from . import regulation_monitor,regulation_registry
 from . import toolbox, folder_scan, calendar_api, education_calendar, calendar_agenda
+from . import folder_projects
 
 ROOT = Path(__file__).resolve().parent.parent
 
@@ -37,9 +40,12 @@ async def _lifespan(_app):
     toolbox.initialize()
     folders.initialize()
     folder_scan.initialize(recover=True)
+    folder_projects.initialize(recover=True)
+    project_worker=folder_projects.Worker().start()
     calendar_api.initialize()
     calendar_agenda.initialize()
     knowledge.initialize()
+    institution_rules.initialize()
     folder_ai.initialize()
     folder_watch.initialize()
     store.conn()
@@ -53,6 +59,7 @@ async def _lifespan(_app):
     finally:
         watcher.stop()
         folder_scan.stop()
+        project_worker.stop()
         regulation_worker.stop()
 
 
@@ -65,10 +72,16 @@ app.include_router(toolbox.router)
 app.include_router(folders.router)
 app.include_router(folder_inputs.router)
 app.include_router(folder_scan.router)
+app.include_router(folder_projects.router)
 app.include_router(calendar_api.router)
 app.include_router(education_calendar.router)
 app.include_router(calendar_agenda.router)
 app.include_router(knowledge.router)
+app.include_router(service_knowledge.router)
+app.include_router(finance_knowledge.router)
+app.include_router(office_knowledge.router)
+app.include_router(institution_rules.router)
+app.include_router(answer_reviews.router)
 app.include_router(folder_ai.router)
 app.include_router(folder_watch.router)
 app.include_router(change_inbox.router)
@@ -97,7 +110,10 @@ def api_ask(body: dict = Body(...)) -> dict:
     edit_result=workflow_chat.handle(query,body)
     if edit_result is not None:return edit_result
     if body.get('guidance') is True and not body.get('card_id') and not body.get('leave_type'):
-        return guidance.respond(query,body,_today(body.get('today')))
+        today = _today(body.get('today'))
+        reply = guidance.respond(query,body,today,public_mode=bool(getattr(app.state,'public_demo',False)))
+        reply['review_context'] = answer_reviews.response_context(reply.get('query',query),body,today)
+        return reply
     manual_reply=manual_knowledge.respond(query,body.get('knowledge_library_id') or None)
     if manual_reply is not None and not body.get('card_id') and not body.get('leave_type'):return manual_reply
     task_action = task_intent.action(query)
@@ -107,9 +123,9 @@ def api_ask(body: dict = Body(...)) -> dict:
         return result
     if task_intent.is_folder_start(query, task_action) and not body.get('knowledge_library_id') and not body.get('card_id') and not body.get('leave_type'):
         return with_task_action(dict(query=query,mode='folder_workflow',model=None,profile=None,
-            summary='폴더를 고르고, 자료를 업무별로 정리해요.',
-            answer='폴더 선택 → 문서 내용 확인 → 업무별 분류 검토 → 분석 결과 저장\n\n위의 ‘이 내용으로 업무자료 정리’를 누르면 입력한 업무 목적을 이어받아요. 정리할 폴더를 직접 고른 뒤 분류 제안을 확인하고 저장하세요.',
-            notice='분류 제안은 담당자가 확인해 적용해요. 파일 원본은 그대로 보존해요.',
+            summary='프로젝트에 자료를 담고 바로 질문해요.',
+            answer='프로젝트 만들기 → 폴더·파일 추가 → 질문하기\n\n위의 ‘이 내용으로 업무자료 정리’를 누르면 질문을 이어받아요. 프로젝트에 자료를 담으면 핵심 내용·일정·할 일을 찾고 문서 초안을 만들 수 있어요. 답변의 원문과 위치도 함께 확인하세요.',
+            notice='개인용 앱은 이 PC 원본을 읽고, 공개 시연은 시연자료를 사용해요. 파일 원본은 그대로 보존해요.',
             plan=None,alternatives=[],cited=[],related=[],personal_notes=[]))
     if task_action and education_intent.is_start_request(query) and not body.get('card_id') and not body.get('leave_type'):
         return with_task_action(dict(query=query,mode='education_workflow',model=None,profile=None,
@@ -117,10 +133,12 @@ def api_ask(body: dict = Body(...)) -> dict:
             answer='안내 확인 → 희망자 모집 → 회신 취합 → 누락·중복 검토 → 명단·결과보고\n\n위의 ‘교육 취합 시작하기’를 누르면 입력한 내용을 이어받고, 교육명·일정·대상 부서를 확인해요. 단계마다 필요한 서식과 자료를 연결할 수 있어요.',
             notice='앱의 실무 진행 안내예요. 기관의 공식 절차·법적 근거는 등록한 자료로 별도 확인해요.',
             plan=None,alternatives=[],cited=[],related=[],personal_notes=[]))
-    found=knowledge.retrieve(query,body.get('knowledge_library_id') or None,_today(body.get('today')))
+    found=knowledge.retrieve(query,body.get('knowledge_library_id') or None,_today(body.get('today')),**({'institution_rule_id':body['institution_rule_id']} if body.get('institution_rule_id') else {}))
     if (found['hits'] or body.get('knowledge_library_id') or found['requires_basis']) and not body.get('card_id') and not body.get('leave_type'):
-        reply=knowledge.answer(query,found)
+        reply=knowledge.answer(query,found,use_ai=body.get('use_ai') is not False)
         reply['tree']=answer_tree.build(query,reply)
+        if (reply.get('office_plan') or found.get('institution')) and reply['tree'].get('kind') in {'summary','reference'}:
+            reply['answer']='\n\n'.join(i['text']+f" [근거 {i['ref']}]" for b in reply['tree']['branches'] for i in b['items'])
         summary=('상황을 조금 더 확인한 뒤 맞는 근거를 찾겠습니다.' if reply['mode']=='source_clarification' else
                  '등록 원문에서 확인한 내용입니다. 인용 번호에 해당하는 출처와 적용 조건을 함께 확인하세요.' if found['hits'] else
                  '등록한 자료에서 질문에 필요한 직접 근거를 확인하지 못했습니다.')
@@ -386,6 +404,8 @@ def api_llm_test(body: dict = Body(default={})) -> dict:
     prof = dict(cfg["llm"]["profiles"].get(name) or {})
     provider = llm.get_provider(prof)
     if not provider.available:
+        if prof.get('provider') != 'offline':
+            return {"ok": False, "message": "API 키가 없습니다. 모델 설정에 키를 입력한 뒤 다시 확인하세요."}
         return {"ok": True, "message": "오프라인 모드: 모델을 호출하지 않고 규칙 기반으로 동작합니다."}
     try:
         out = provider.chat([{"role": "user", "content": "'연결 성공' 네 글자만 답하세요."}], max_tokens=20)

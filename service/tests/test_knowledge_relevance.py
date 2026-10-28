@@ -12,7 +12,8 @@ class QuestionEvidenceTest(unittest.TestCase):
         self.db_patch=patch.object(folders,'DB_PATH',Path(self.tmp.name)/'folders.db');self.db_patch.start()
         folders.initialize();k.initialize()
         manifest_rows=json.loads(DEFAULT_MANIFEST.read_text(encoding='utf-8'))
-        old_digests={row['sha256'] for row in manifest_rows if row.get('collection') != 'v40'}
+        # This historical fixture deliberately omits later national sources.
+        old_digests={row['sha256'] for row in manifest_rows if row.get('collection') not in {'v40','v70'}}
         v=folders.connect(folders.Connect(name='공식 조문 검증',roots=[str(DEFAULT_MANIFEST.parent/'excerpts')]))
         self.key=v['id']
         old_files=[f for f in v['files'] if hashlib.sha256(Path(f['path']).read_bytes()).hexdigest() in old_digests]

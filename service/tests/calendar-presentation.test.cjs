@@ -5,7 +5,7 @@ const fields=new Map();
 function field(id){if(!fields.has(id))fields.set(id,{value:'',checked:false,hidden:false,childNodes:[{textContent:''}]});return fields.get(id)}
 const context={document:{getElementById:field},window:{},Intl,Date,WeakMap,URL,URLSearchParams};
 const anchor='\n init();\n})();';assert(source.includes(anchor));
-vm.runInNewContext(source.replace(anchor,'\n window.boundary={setDateFields,buildEvent,validateEvent,toggleAllDayMode,setEditor:v=>editor=v};\n})();'),context);
+vm.runInNewContext(source.replace(anchor,'\n window.boundary={entryOptions,setDateFields,buildEvent,validateEvent,toggleAllDayMode,setEditor:v=>editor=v};\n})();'),context);
 const api=context.window.boundary;
 function base(){fields.clear();api.setEditor(null);field('event-title').value='합성 일정';field('event-kind').value='event';field('event-recurrence').value='none';field('event-interval').value='1'}
 for(const [name,start,end,last] of [
@@ -23,3 +23,13 @@ test('timed UTC input remains KST timed and does not get an extra day',()=>{base
 test('recurring series retains interval, anchor and inclusive repeat-until',()=>{base();api.setDateFields('2026-10-24','2026-10-26',true);field('event-recurrence').value='weekly';field('event-interval').value='2';field('event-repeat-until').value='2026-11-30';const saved=api.buildEvent();assert.equal(saved.end,'2026-10-26');assert.equal(saved.recurrence,'weekly');assert.equal(saved.interval,2);assert.equal(saved.repeat_until,'2026-11-30')});
 test('editing one recurring occurrence keeps its original one-day interval',()=>{base();api.setEditor({detail:{series:{recurrence:'weekly'}}});field('event-scope').value='occurrence';api.setDateFields('2026-11-07','2026-11-08',true);field('event-recurrence').value='weekly';const saved=api.buildEvent();assert.equal(saved.end,'2026-11-08');assert.equal(saved.recurrence,'none');assert.equal(saved.repeat_until,null)});
 test('repeated midnight timed/all-day toggles preserve the original timed interval',()=>{base();api.setDateFields('2026-10-24T09:00:00+09:00','2026-10-26T00:00:00+09:00',false);for(let i=0;i<3;i++){field('event-all-day').checked=true;api.toggleAllDayMode();assert.equal(field('event-end-date').value,'2026-10-25');assert.equal(api.buildEvent().end,'2026-10-26');field('event-all-day').checked=false;api.toggleAllDayMode();assert.equal(api.buildEvent().end,'2026-10-26T00:00:00+09:00')}});
+
+
+test('home calendar links focus the intended month/day/week across date boundaries',()=>{
+ for(const [day,view] of [['2026-11-01','timeGridWeek'],['2027-01-01','timeGridDay'],['2028-02-29','dayGridMonth']]){
+  const options=api.entryOptions('?date='+day+'&view='+view);
+  assert.equal(options.initialDate,day);assert.equal(options.initialView,view);
+ }
+ for(const day of ['2026-02-29','2026-02-31','not-a-date','2026-13-01'])assert.notEqual(api.entryOptions('?date='+day).initialDate,day);
+ assert.equal(api.entryOptions('?view=unknown').initialView,'dayGridMonth');
+});

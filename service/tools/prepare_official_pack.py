@@ -52,7 +52,8 @@ def build():
    records.append(dict(title=title,article=label,effective_date=effective,publication=number,issuer=issuer,institution=scope,kind=kind,source_url=url,download_url=source['url'],retrieved_at=source['retrieved_at'],raw_file=source['file'],raw_sha256=source['raw_sha256'],filename=path.name,sha256=hashlib.sha256(path.read_bytes()).hexdigest(),scope='해당 조항 본문 발췌 · 별표·부칙·기관 조례 미포함',paragraphs=len(paragraphs)))
   if seen!=wanted:raise ValueError(f'{title}: missing {wanted-seen}')
  manifest=BASE/'manifest.json'
- extended=[r for r in json.loads(manifest.read_text(encoding='utf-8')) if r.get('collection')=='v40'] if manifest.exists() else []
+ extended=[r for r in json.loads(manifest.read_text(encoding='utf-8'))
+           if r.get('collection') in {'v40','v70'}] if manifest.exists() else []
  manifest.write_text(json.dumps(records+extended,ensure_ascii=False,indent=2),encoding='utf-8');print('Prepared',len(records),'article excerpts')
  if (BASE/'local_budget_2026.pdf').is_file():
   from tools.prepare_budget_pack import build as budget_build
