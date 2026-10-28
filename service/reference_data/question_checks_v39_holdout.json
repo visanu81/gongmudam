@@ -78,7 +78,9 @@
     "category": "추가 검토",
     "question": "지방공무원이 자녀 담임교사와 상담할 때 가족돌봄휴가를 쓸 수 있나요?",
     "outcome": "answer",
-    "allow_rules": [],
+    "allow_rules": [
+      "family-care-situation"
+    ],
     "allow_articles": [
       "제7조의7("
     ],
@@ -137,7 +139,9 @@
     "category": "추가 검토",
     "question": "지방공무원이 아이 건강검진에 동행할 때 공가인가요?",
     "outcome": "answer",
-    "allow_rules": [],
+    "allow_rules": [
+      "family-care-situation"
+    ],
     "allow_articles": [
       "제7조의7("
     ],

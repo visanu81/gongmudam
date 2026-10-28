@@ -1,0 +1,1558 @@
+[
+  {
+    "id": "L01",
+    "category": "복무",
+    "question": "국가공무원인데 아이가 아파서 병원에 데려가야 해요. 무슨 휴가를 쓰나요?",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "국가공무원 복무규정.*제20조"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "가족돌봄"
+      ]
+    ],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "L02",
+    "category": "복무",
+    "question": "국가직인데 아이가 열이 나서 어린이집에 못 가요. 제가 돌봐야 해요.",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "국가공무원 복무규정.*제20조"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "가족돌봄"
+      ]
+    ],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "L03",
+    "category": "복무",
+    "question": "지방공무원인데 딸이 입원해서 간병해야 해요. 쓸 수 있는 휴가가 있나요?",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "지방공무원 복무규정.*제7조의7"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "가족돌봄"
+      ]
+    ],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "L04",
+    "category": "복무",
+    "question": "국가공무원 자녀 담임선생님 상담에 참석하려고 하는데 휴가가 있나요?",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "국가공무원 복무규정.*제20조"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "가족돌봄"
+      ]
+    ],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "L05",
+    "category": "복무",
+    "question": "국가공무원 본인이 아파서 병가를 쓰려면 진단서는 언제 필요한가요?",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "국가공무원 복무규정.*제18조"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "진단서"
+      ]
+    ],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "L06",
+    "category": "복무",
+    "question": "국가직인데 제가 독감이라 출근이 어려워요. 병가를 신청할 수 있나요?",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "국가공무원 복무규정.*제18조"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "병가"
+      ]
+    ],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "L07",
+    "category": "복무",
+    "question": "지방공무원 병가는 일반 질병과 공무상 부상에 따라 어떻게 다른가요?",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "지방공무원 복무규정.*제7조의5"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "병가"
+      ]
+    ],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "L08",
+    "category": "복무",
+    "question": "국가공무원 건강검진을 받으러 가는데 공가인가요?",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "국가공무원 복무규정.*제19조"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "공가"
+      ]
+    ],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "L09",
+    "category": "복무",
+    "question": "국가공무원인데 개인적으로 예약한 종합검진도 모두 공가인가요?",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "국가공무원 복무규정.*제19조"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "검진"
+      ]
+    ],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "L10",
+    "category": "복무",
+    "question": "지방공무원 헌혈하러 갈 때 공가를 쓸 수 있나요?",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "지방공무원 복무규정.*제7조의6"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "공가"
+      ]
+    ],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "L11",
+    "category": "복무",
+    "question": "국가공무원 본인이 결혼할 때 경조사휴가는 며칠인가요?",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "국가공무원 복무규정.*별표 2"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "본인",
+        "결혼"
+      ]
+    ],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "L12",
+    "category": "복무",
+    "question": "지방공무원 부모님이 돌아가셨을 때 경조사휴가는 어떻게 되나요?",
+    "expected": "institution",
+    "require_source_groups": [],
+    "answer_terms_groups": [],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님. 초기 기대 수정: 보관된 지방공무원 별표1에는 부모 사망 항목이 없으며 기관 조례 확인이 필요. 국가 별표를 대입하지 않음."
+  },
+  {
+    "id": "L13",
+    "category": "복무",
+    "question": "국가공무원 배우자가 출산하면 어떤 휴가를 신청하나요?",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "국가공무원 복무규정.*제20조"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "출산"
+      ]
+    ],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "L14",
+    "category": "복무",
+    "question": "국가공무원인데 퇴근 후 유료 강의를 계속하려고 해요. 겸직 허가가 필요한가요?",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "국가공무원 복무규정.*제26조"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "허가"
+      ]
+    ],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "L15",
+    "category": "복무",
+    "question": "국가공무원이 온라인 쇼핑몰을 운영해도 되나요? 영리업무와 겸직 기준을 알려주세요.",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "국가공무원 복무규정.*제25조"
+      ],
+      [
+        "국가공무원 복무규정.*제26조"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "영리",
+        "겸직"
+      ]
+    ],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "L16",
+    "category": "복무",
+    "question": "지방공무원 재직기간에 따른 연가일수는 어떻게 정하나요?",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "지방공무원 복무규정.*제7조\\("
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "연가"
+      ]
+    ],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "L17",
+    "category": "복무",
+    "question": "제 남은 연가는 지금 몇 일이에요?",
+    "expected": "institution",
+    "require_source_groups": [],
+    "answer_terms_groups": [],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "L18",
+    "category": "복무",
+    "question": "우리 기관 대체휴무 신청 승인자는 누구인가요?",
+    "expected": "institution",
+    "require_source_groups": [],
+    "answer_terms_groups": [],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "L19",
+    "category": "복무",
+    "question": "휴가를 쓰려는데 어떤 걸 골라야 해요?",
+    "expected": "clarify",
+    "require_source_groups": [],
+    "answer_terms_groups": [],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "L20",
+    "category": "복무",
+    "question": "e-사람에서 외출 근무상황을 신청하는 메뉴를 알려주세요.",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "근무상황"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "외출",
+        "근무상황"
+      ]
+    ],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님.",
+    "evidence_channel": "manual"
+  },
+  {
+    "id": "T01",
+    "category": "출장·여비",
+    "question": "국가공무원 제2호 기준 서울 출장 숙박비 상한액은 얼마인가요?",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "공무원 여비 규정.*별표 2"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "서울"
+      ]
+    ],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "T02",
+    "category": "출장·여비",
+    "question": "국가공무원 제2호 기준 부산에서 자는 출장의 숙박비 상한액은?",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "공무원 여비 규정.*별표 2"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "광역",
+        "부산"
+      ]
+    ],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "T03",
+    "category": "출장·여비",
+    "question": "국가공무원 제2호 강릉 출장 숙박비 한도를 알고 싶어요.",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "공무원 여비 규정.*별표 2"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "그 밖",
+        "그밖",
+        "지역"
+      ]
+    ],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "T04",
+    "category": "출장·여비",
+    "question": "국가공무원 제2호 국내 출장 일비와 식비는 얼마인가요?",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "공무원 여비 규정.*별표 2"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "일비",
+        "식비"
+      ]
+    ],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "T05",
+    "category": "출장·여비",
+    "question": "공무원 여비 지급 구분표에서 제1호와 제2호는 어떻게 구분하나요?",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "공무원 여비 규정.*별표 1"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "제1호",
+        "제2호"
+      ]
+    ],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "T06",
+    "category": "출장·여비",
+    "question": "국가공무원 근무지 내 출장 4시간 이상이면 여비는 얼마인가요?",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "공무원 여비 규정.*제18조"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "4시간"
+      ]
+    ],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "T07",
+    "category": "출장·여비",
+    "question": "국가공무원 관내출장 3시간이면 여비는 어떻게 계산하나요?",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "공무원 여비 규정.*제18조"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "4시간"
+      ]
+    ],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "T08",
+    "category": "출장·여비",
+    "question": "국가공무원 관내출장에 공용차량을 이용하면 여비가 달라지나요?",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "공무원 여비 규정.*제18조"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "공용차량",
+        "공무용 차량"
+      ]
+    ],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님. 초기 기대 수정: 원문의 공무용 차량 표현도 인정."
+  },
+  {
+    "id": "T09",
+    "category": "출장·여비",
+    "question": "국가공무원이 관외출장에서 공용차량을 사용하면 일비를 줄이나요?",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "공무원 여비 규정.*제16조"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "공용차량",
+        "공무용 차량"
+      ]
+    ],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님. 초기 기대 수정: 원문의 공무용 차량 표현도 인정."
+  },
+  {
+    "id": "T10",
+    "category": "출장·여비",
+    "question": "국가공무원이 출장 다녀온 뒤 여비 증거서류는 언제까지 제출하나요?",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "공무원 여비 규정.*제8조의2"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "증거",
+        "정산"
+      ]
+    ],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "T11",
+    "category": "출장·여비",
+    "question": "e-사람에서 출장 신청을 취소하는 방법을 알려주세요.",
+    "expected": "missing",
+    "require_source_groups": [],
+    "answer_terms_groups": [],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님. 초기 기대 수정: 전체 등록 매뉴얼 검색상 출장신청 취소 절차 없음. 출장관리48쪽 지급명세서, 교육PDF3쪽 공무원증·85쪽 예산매핑·109쪽 지급취소는 다른 작업. 자료 부족으로 안내해야 함.",
+    "evidence_channel": "manual"
+  },
+  {
+    "id": "T12",
+    "category": "출장·여비",
+    "question": "e-사람 출장 신청은 어디에서 입력하나요?",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "출장관리"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "출장"
+      ]
+    ],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님.",
+    "evidence_channel": "manual"
+  },
+  {
+    "id": "T13",
+    "category": "출장·여비",
+    "question": "출장 결과보고서인 출장복명서는 언제까지 제출하나요?",
+    "expected": "missing",
+    "require_source_groups": [],
+    "answer_terms_groups": [],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "T14",
+    "category": "출장·여비",
+    "question": "우리 기관 출장 사전 승인 결재선은 누구 순서인가요?",
+    "expected": "institution",
+    "require_source_groups": [],
+    "answer_terms_groups": [],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "T15",
+    "category": "출장·여비",
+    "question": "출장 식비와 초과근무 식비를 각각 지급하려면 어떤 증빙이 필요한가요?",
+    "expected": "clarify",
+    "require_source_groups": [],
+    "answer_terms_groups": [],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "B01",
+    "category": "예산·회계",
+    "question": "국가기관 사무용품을 사려는데 어느 예산 목을 쓰나요?",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "finance-national-2026-supplies"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "일반수용비"
+      ]
+    ],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님.",
+    "forbidden_sources": [
+      "계약에 관한 법률.*제17조",
+      "계약에 관한 법률.*제64조"
+    ]
+  },
+  {
+    "id": "B02",
+    "category": "예산·회계",
+    "question": "지방자치단체 사무용품 구입은 무슨 예산 목인가요?",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "사무관리비"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "사무관리비"
+      ]
+    ],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님.",
+    "forbidden_sources": [
+      "계약에 관한 법률.*제17조",
+      "계약에 관한 법률.*제64조"
+    ]
+  },
+  {
+    "id": "B03",
+    "category": "예산·회계",
+    "question": "국가기관 업무용 컴퓨터를 새로 사면 예산 비목은 무엇인가요?",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "finance-national-2026-assets"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "자산취득비"
+      ]
+    ],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님.",
+    "forbidden_sources": [
+      "계약에 관한 법률.*제17조",
+      "계약에 관한 법률.*제64조"
+    ]
+  },
+  {
+    "id": "B04",
+    "category": "예산·회계",
+    "question": "지방자치단체 책상과 의자를 새로 사려는데 자산 및 물품취득비인가요?",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "자산.*물품취득비"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "자산"
+      ]
+    ],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님.",
+    "forbidden_sources": [
+      "계약에 관한 법률.*제17조",
+      "계약에 관한 법률.*제64조"
+    ]
+  },
+  {
+    "id": "B05",
+    "category": "예산·회계",
+    "question": "국가기관 야근 식대를 집행할 때 지급 대상과 제외 조건은?",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "finance-national-2026-overtime-meals"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "특근매식비"
+      ]
+    ],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님.",
+    "forbidden_sources": [
+      "계약에 관한 법률.*제17조",
+      "계약에 관한 법률.*제64조"
+    ]
+  },
+  {
+    "id": "B06",
+    "category": "예산·회계",
+    "question": "지자체 초과근무 급식비는 어떤 경우에 지급할 수 있나요?",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "finance-local-446-overtime-meals"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "급식비"
+      ]
+    ],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님.",
+    "forbidden_sources": [
+      "계약에 관한 법률.*제17조",
+      "계약에 관한 법률.*제64조"
+    ]
+  },
+  {
+    "id": "B07",
+    "category": "예산·회계",
+    "question": "국가기관 회의 식비를 업무추진비로 집행할 때 어떤 기준을 확인하나요?",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "finance-national-2026-meetings"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "업무추진비"
+      ]
+    ],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님.",
+    "forbidden_sources": [
+      "계약에 관한 법률.*제17조",
+      "계약에 관한 법률.*제64조"
+    ]
+  },
+  {
+    "id": "B08",
+    "category": "예산·회계",
+    "question": "지방자치단체 간담회 식비 집행 기준과 증빙은?",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "finance-local-446-meetings"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "업무추진비"
+      ]
+    ],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님.",
+    "forbidden_sources": [
+      "계약에 관한 법률.*제17조",
+      "계약에 관한 법률.*제64조"
+    ]
+  },
+  {
+    "id": "B09",
+    "category": "예산·회계",
+    "question": "국가기관 정부구매카드 사용 원칙을 알려주세요.",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "finance-national-2026-cards"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "카드"
+      ]
+    ],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님.",
+    "forbidden_sources": [
+      "계약에 관한 법률.*제17조",
+      "계약에 관한 법률.*제64조"
+    ]
+  },
+  {
+    "id": "B10",
+    "category": "예산·회계",
+    "question": "지자체 구매카드 사용 기준은 어떻게 되나요?",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "finance-local-446-cards"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "카드"
+      ]
+    ],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님.",
+    "forbidden_sources": [
+      "계약에 관한 법률.*제17조",
+      "계약에 관한 법률.*제64조"
+    ]
+  },
+  {
+    "id": "B11",
+    "category": "예산·회계",
+    "question": "국가기관 외래강사 강사료 지급 기준은 어디서 확인하나요?",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "finance-national-2026-lecturers"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "강사"
+      ]
+    ],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님.",
+    "forbidden_sources": [
+      "계약에 관한 법률.*제17조",
+      "계약에 관한 법률.*제64조"
+    ]
+  },
+  {
+    "id": "B12",
+    "category": "예산·회계",
+    "question": "지방자치단체 공무원교육 외래강사료 지급 기준은?",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "finance-local-446-lecturers"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "강사"
+      ]
+    ],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님.",
+    "forbidden_sources": [
+      "계약에 관한 법률.*제17조",
+      "계약에 관한 법률.*제64조"
+    ]
+  },
+  {
+    "id": "B13",
+    "category": "예산·회계",
+    "question": "현재 우리 부서의 예산 잔액은 얼마인가요?",
+    "expected": "institution",
+    "require_source_groups": [],
+    "answer_terms_groups": [],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "B14",
+    "category": "예산·회계",
+    "question": "우리 기관 내년도 예산 요구서 양식과 제출 마감은?",
+    "expected": "institution",
+    "require_source_groups": [],
+    "answer_terms_groups": [],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "B15",
+    "category": "예산·회계",
+    "question": "우리 부서 이번 달 예산 집행률을 계산해서 알려주세요.",
+    "expected": "institution",
+    "require_source_groups": [],
+    "answer_terms_groups": [],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "G01",
+    "category": "물품·계약",
+    "question": "지방자치단체 물품이 납품되면 검사는 언제까지 해야 하나요?",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "시행령.*제64조"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "검사"
+      ]
+    ],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "G02",
+    "category": "물품·계약",
+    "question": "지방자치단체 물품 납품 검사조서를 생략할 수 있나요?",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "시행령.*제65조"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "검사조서"
+      ]
+    ],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "G03",
+    "category": "물품·계약",
+    "question": "지방자치단체 물품 검사 자체와 검사조서 작성 생략은 같은 건가요?",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "계약에 관한 법률 제17조"
+      ],
+      [
+        "시행령.*제65조"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "생략"
+      ]
+    ],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "G04",
+    "category": "물품·계약",
+    "question": "지방자치단체 납품 검사 후 대금은 언제까지 지급하나요?",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "시행령.*제67조"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "지급"
+      ]
+    ],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "G05",
+    "category": "물품·계약",
+    "question": "지방자치단체 물품 대금 지급이 늦어졌을 때 지연이자는 어떻게 되나요?",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "시행령.*제68조"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "이자"
+      ]
+    ],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "G06",
+    "category": "물품·계약",
+    "question": "지자체 계약 대가는 검사를 마치기 전에 바로 지급해도 되나요?",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "계약에 관한 법률 제18조"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "검사"
+      ]
+    ],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "G07",
+    "category": "물품·계약",
+    "question": "지방자치단체 물품 수의계약 때 견적서는 몇 곳에서 받아야 하나요?",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "시행령.*제30조"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "견적"
+      ]
+    ],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "G08",
+    "category": "물품·계약",
+    "question": "지자체 수의계약에서 한 곳의 견적서만 받아도 되는 경우는?",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "시행령.*제30조"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "견적"
+      ]
+    ],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "G09",
+    "category": "물품·계약",
+    "question": "국가기관의 물품 계약 검사 기한을 알려주세요.",
+    "expected": "missing",
+    "require_source_groups": [],
+    "answer_terms_groups": [],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "G10",
+    "category": "물품·계약",
+    "question": "공공기관 비품 자산 관리대장에 반드시 기록할 항목은?",
+    "expected": "institution",
+    "require_source_groups": [],
+    "answer_terms_groups": [],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "G11",
+    "category": "물품·계약",
+    "question": "공공기관 재물조사는 법적으로 몇 년마다 해야 하나요?",
+    "expected": "institution",
+    "require_source_groups": [],
+    "answer_terms_groups": [],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "G12",
+    "category": "물품·계약",
+    "question": "지방자치단체 불용 물품 폐기와 처분 절차를 알려주세요.",
+    "expected": "answer",
+    "require_source_groups": [["office-goods-local-act-75"], ["office-goods-local-decree-76"]],
+    "answer_terms_groups": [["불용결정"], ["처분방법"], ["매각할 수 없는"]],
+    "notes": "2026-10-26 물품관리 공식 조문 추가에 따른 기대값 갱신. 이전 missing 판정은 docs/evidence/practice-100-20261026에 보존. 적용대상 일반 지자체 물품의 불용·폐기 기본 절차이며 특수물품·기관별 서식은 별도 확인."
+  },
+  {
+    "id": "G13",
+    "category": "물품·계약",
+    "question": "우리 기관 프린터가 고장났는데 누구에게 수리를 요청하나요?",
+    "expected": "institution",
+    "require_source_groups": [],
+    "answer_terms_groups": [],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "G14",
+    "category": "물품·계약",
+    "question": "우리 부서 복사용지 재고와 직원별 배부 현황을 알려주세요.",
+    "expected": "institution",
+    "require_source_groups": [],
+    "answer_terms_groups": [],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "G15",
+    "category": "물품·계약",
+    "question": "우리 기관 노트북 반납 서식과 인계 절차는?",
+    "expected": "institution",
+    "require_source_groups": [],
+    "answer_terms_groups": [],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "D01",
+    "category": "공문·기록·인수인계",
+    "question": "공문을 접수한 뒤 담당 부서로 배부하는 절차는?",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "office-documents-decree-18"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "배부"
+      ]
+    ],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "D02",
+    "category": "공문·기록·인수인계",
+    "question": "문서과에서 받은 공문은 어느 부서로 넘기나요?",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "office-documents-decree-18"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "처리과"
+      ]
+    ],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "D03",
+    "category": "공문·기록·인수인계",
+    "question": "당직 중에 공문을 받았어요. 다음 날 누구에게 넘기나요?",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "office-documents-rule-15"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "당직"
+      ]
+    ],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "D04",
+    "category": "공문·기록·인수인계",
+    "question": "공문 기안에서 검토와 결재는 어떤 순서로 하나요?",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "office-documents-decree-9"
+      ],
+      [
+        "office-documents-decree-10"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "결재"
+      ]
+    ],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "D05",
+    "category": "공문·기록·인수인계",
+    "question": "결재권자가 출장 중일 때 대결은 어떻게 하나요?",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "office-documents-decree-10"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "대결"
+      ]
+    ],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "D06",
+    "category": "공문·기록·인수인계",
+    "question": "이메일로 받은 업무자료도 기록물로 등록해야 하나요?",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "office-public-records-18"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "등록"
+      ]
+    ],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "D07",
+    "category": "공문·기록·인수인계",
+    "question": "전자문서와 종이 기록물 등록번호는 언제 부여하나요?",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "office-extra-records-decree-20"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "등록"
+      ]
+    ],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "D08",
+    "category": "공문·기록·인수인계",
+    "question": "모든 회의가 회의록 작성 의무 대상인가요?",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "office-extra-records-decree-18"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "회의록"
+      ]
+    ],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "D09",
+    "category": "공문·기록·인수인계",
+    "question": "보존기간이 끝난 기록물은 그냥 버려도 되나요?",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "office-public-records-27"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "폐기"
+      ]
+    ],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "D10",
+    "category": "공문·기록·인수인계",
+    "question": "기록물 보존기간은 누가 정하고 어떻게 확인하나요?",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "office-extra-records-decree-26"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "보존기간"
+      ]
+    ],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "D11",
+    "category": "공문·기록·인수인계",
+    "question": "정보공개 청구를 받았는데 언제까지 결정해야 하나요?",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "office-disclosure-11"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "10일"
+      ]
+    ],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "D12",
+    "category": "공문·기록·인수인계",
+    "question": "다른 기관이 가진 자료에 대한 정보공개 청구가 왔어요.",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "office-disclosure-11"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "이송"
+      ]
+    ],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "D13",
+    "category": "공문·기록·인수인계",
+    "question": "정보공개 자료에 개인정보가 섞여 있으면 전부 비공개인가요?",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "office-disclosure-14"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "부분",
+        "분리"
+      ]
+    ],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "D14",
+    "category": "공문·기록·인수인계",
+    "question": "정보공개 비공개 결정에 이의신청이 들어오면 어떻게 처리하나요?",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "office-disclosure-18"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "이의신청"
+      ]
+    ],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "D15",
+    "category": "공문·기록·인수인계",
+    "question": "행정기관 후임자에게 업무 인수인계를 어떻게 해야 하나요?",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "office-administration-61"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "인계",
+        "인수"
+      ]
+    ],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "D16",
+    "category": "공문·기록·인수인계",
+    "question": "업무편람은 한 번 만들면 끝인가요?",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "office-administration-62"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "업무편람"
+      ]
+    ],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "D17",
+    "category": "공문·기록·인수인계",
+    "question": "우리 부서 주간보고 제출 마감과 양식을 알려주세요.",
+    "expected": "institution",
+    "require_source_groups": [],
+    "answer_terms_groups": [],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "D18",
+    "category": "공문·기록·인수인계",
+    "question": "우리 기관 의회 요구자료를 누구에게 전달하고 언제까지 회신하나요?",
+    "expected": "institution",
+    "require_source_groups": [],
+    "answer_terms_groups": [],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "D19",
+    "category": "공문·기록·인수인계",
+    "question": "우리 기관 공문 사무전결 규칙상 최종 결재권자는 누구인가요?",
+    "expected": "institution",
+    "require_source_groups": [],
+    "answer_terms_groups": [],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "D20",
+    "category": "공문·기록·인수인계",
+    "question": "우리 기관 문서 미회신 부서에 독촉하는 절차와 마감은?",
+    "expected": "institution",
+    "require_source_groups": [],
+    "answer_terms_groups": [],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "E01",
+    "category": "교육·자료 취합",
+    "question": "교육 참석 희망자를 모으려는데 무엇부터 준비해야 하나요?",
+    "expected": "institution",
+    "require_source_groups": [],
+    "answer_terms_groups": [],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "E02",
+    "category": "교육·자료 취합",
+    "question": "우리 기관 교육 희망자 회신 서식과 마감은 언제인가요?",
+    "expected": "institution",
+    "require_source_groups": [],
+    "answer_terms_groups": [],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "E03",
+    "category": "교육·자료 취합",
+    "question": "지금 교육 참석 신청을 아직 안 보낸 부서는 어디인가요?",
+    "expected": "institution",
+    "require_source_groups": [],
+    "answer_terms_groups": [],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "E04",
+    "category": "교육·자료 취합",
+    "question": "우리 기관 외부교육 참석 승인 절차와 교육 후 제출 서류는?",
+    "expected": "institution",
+    "require_source_groups": [],
+    "answer_terms_groups": [],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "E05",
+    "category": "교육·자료 취합",
+    "question": "우리 기관 의무교육 종류와 필수 이수시간은?",
+    "expected": "institution",
+    "require_source_groups": [],
+    "answer_terms_groups": [],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "E06",
+    "category": "교육·자료 취합",
+    "question": "교육 신청 명단에 이름과 연락처를 받으려면 어떤 기준을 확인하나요?",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "office-privacy-art15"
+      ],
+      [
+        "office-privacy-art16"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "수집"
+      ],
+      [
+        "최소한",
+        "최소"
+      ]
+    ],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님. 초기 기대 수정: 요약 문장의 수집·최소 항목 설명을 검사. 개인정보라는 단어 출현만으로 판정하지 않음."
+  },
+  {
+    "id": "E07",
+    "category": "교육·자료 취합",
+    "question": "교육 명단을 다른 기관에 보내도 되나요?",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "office-privacy-art17"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "제공"
+      ]
+    ],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "E08",
+    "category": "교육·자료 취합",
+    "question": "교육이 끝났는데 참가자 연락처 명단을 계속 보관해도 되나요?",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "office-privacy-art21"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "파기"
+      ]
+    ],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "E09",
+    "category": "교육·자료 취합",
+    "question": "교육생 주민등록번호를 편의상 받아도 되나요?",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "office-privacy-art24-2"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "주민등록번호"
+      ]
+    ],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "E10",
+    "category": "교육·자료 취합",
+    "question": "교육 신청서에 건강정보도 수집하려면 어떤 기준을 확인하나요?",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "office-privacy-art23"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "민감정보"
+      ]
+    ],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "E11",
+    "category": "교육·자료 취합",
+    "question": "만 14세 미만 아동의 교육 신청 정보를 받을 때 동의는 어떻게 확인하나요?",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "office-extra-privacy-art22-2"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "법정대리인"
+      ]
+    ],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "E12",
+    "category": "교육·자료 취합",
+    "question": "교육 운영을 외부 업체에 맡길 때 참가자 개인정보 위탁은 어떻게 관리하나요?",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "office-extra-privacy-art26"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "위탁"
+      ]
+    ],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "E13",
+    "category": "교육·자료 취합",
+    "question": "교육 참가자가 본인 연락처를 삭제해 달라고 요청했어요.",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "office-extra-privacy-art36"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "삭제"
+      ]
+    ],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "E14",
+    "category": "교육·자료 취합",
+    "question": "교육 명단을 이메일로 다른 사람에게 잘못 보냈어요. 어떻게 해야 하나요?",
+    "expected": "answer",
+    "require_source_groups": [
+      [
+        "office-privacy-art34"
+      ]
+    ],
+    "answer_terms_groups": [
+      [
+        "유출"
+      ]
+    ],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  },
+  {
+    "id": "E15",
+    "category": "교육·자료 취합",
+    "question": "우리 기관 교육 결과보고서 최종 승인본은 어디에 있나요?",
+    "expected": "institution",
+    "require_source_groups": [],
+    "answer_terms_groups": [],
+    "notes": "합성 실무 질문. 기대 근거는 기존 보관 원문·검토된 규칙을 기준으로 사전 지정. 현행 법률 전체의 정확성을 인증하는 시험은 아님."
+  }
+]

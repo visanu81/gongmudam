@@ -1,0 +1,325 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+ <head>         
+  <script type="text/javascript" src="/LSW/js/jquery/jquery.js"></script> 
+  <script type="text/javascript" src="/LSW/js/common/jquery-custom.js"></script> 
+  <script type="text/javascript" src="/LSW/js/common/common.js"></script> 
+  <script type="text/javascript" src="/LSW/js/common/common-ex.js"></script> 
+  <script type="text/javascript" src="/LSW/js/common/xmlHttpUtil.js"></script> 
+  <script type="text/javascript" src="/LSW/js/ls/ls.js"></script> 
+  <script type="text/javascript" src="/LSW/js/ls/lsLink.js"></script> 
+  <script type="text/javascript" src="/LSW/js/ls/lsJo.js"></script> 
+  <script type="text/javascript" src="/LSW/js/ls/lsPopLayer.js"></script> 
+  <script type="text/javascript" src="/LSW/js/ls/lsOutPutJoNew.js"></script> 
+  <script type="text/javascript" src="/LSW/js/jquery/jquery.loadmask.js"></script> 
+  <script type="text/javascript" src="/LSW/js/jquery/jquery-ui.js"></script> 
+  <script type="text/javascript" src="/LSW/js/jquery/jquery.layout-latest.js"></script> 
+  <script type="text/javascript" src="/LSW/js/jquery/jquery.print.js"></script> 
+  <script type="text/javascript" src="/LSW/js/ls/lumLsLinkPop.js"></script>   
+  <link rel="stylesheet" type="text/css" href="/LSW/css/lsw/xtheme-ls.css" />
+  <link rel="stylesheet" type="text/css" href="/LSW/css/lsw/common.css" />
+  <link rel="stylesheet" type="text/css" href="/LSW/css/lsw/ext_all_ex.css" />
+  <link rel="stylesheet" type="text/css" href="/LSW/css/ui_2017.css" />
+  <link rel="stylesheet" type="text/css" href="/LSW/css/lsw/commonForLs.css" />
+  <link rel="stylesheet" type="text/css" href="/LSW/js/jquery/layout-default-latest.css" />
+  <link rel="stylesheet" type="text/css" href="/LSW/css/lsw/xtheme-layer.css" />
+  <link rel="stylesheet" type="text/css" href="/LSW/css/lumLsLinkPop.css" />
+  <style type="text/css">
+	.ui-layout-toggler-west-open {
+		background-image: url(/LSW/images/button/leslidev7_1.gif);
+		background-color: white;
+		background-repeat: no-repeat;
+		border: none;
+	}
+	.ui-layout-toggler-west-closed {
+		background-image: url(/LSW/images/button/leslidev7_2.gif);
+		background-color: white;
+		background-repeat: no-repeat;
+		border: none;
+		object-fit: contain;
+		width: 15px;
+		height: auto;
+	}
+</style>
+  <title>국가법령정보센터 | 조문정보</title>
+ </head> 
+ <body id="bodyId"> 
+  <div class="outer-north" id="topMenu"> 
+   <div class="div-top-container" id="top-container"> 
+    <div class="div-top" id="pop_top"> 
+     <div style="float:left;margin-left:10px;color:#fff;font-size:14px;font-weight:bolder;line-height:36px;">
+      조문정보
+     </div> 
+     <div style="float:right;margin-right:10px;"> 
+      <a href="https://www.law.go.kr" target="_blank"><img src="/LSW/images/common/poplogo.gif" alt="법제처 국가법령정보센터" title="법제처 국가법령정보센터가 새창으로 열립니다." /></a> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="div-message-container" id="message-container" style="background-color:#f7f7f7; height:40px; display: flex;"> 
+    <span style="display: inline-block; margin: 0 0 0 15px;"> <a href="javascript:;" id="backBtn" title="이전으로" onclick="goBack();"><img src="/LSW/images/btn_pre_pop.png" alt="이전으로" /></a> </span> 
+    <div class="r_bx" style="margin-left: auto;"> 
+     <div id="saveAndPrintBtn" class="div-print" style="display: flex; align-items: center;"> 
+      <label for="bdySearch" class="blind">검색</label>
+      <input id="bdySearch" type="text" maxlength="10" onkeydown="onKeyDown();" value="" /> 
+      <a href="javascript:;" title="검색" class="btn type4" id="keywordSch" onclick="joBdySearch()" style="display: flex; align-items: center; margin-right: 10px;"> 검색 </a> 
+      <a href="javascript:;" title="저장" class="btn_c type3 typeB" id="bdySaveBtn" onclick="saveAndPrint(0, this ,0);"> <img src="/LSW/images/common/btn_v13fn6_1.png" alt="저장" /> </a> 
+      <a href="javascript:;" class="btn_c type3 typeC" id="bdyPrintBtn" title="인쇄" onclick="javascript:lsLinkCommonPrint('');"> <img src="/LSW/images/common/btn_v13fn7_1.png" alt="인쇄" /> </a> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="outer-west" id="content_left"> 
+   <p class="deactive" id="ls002643" title="국가공무원 복무규정"> 국가공무원 복무규정<br /> <span class="subtit1_1"> [시행 2026. 10. 2.] [대통령령 제36728호, 2026. 9. 29., 타법개정] </span> </p> 
+   <ul class="sub-menu"> 
+    <li class="rlatJoLi"> <a href="javascript:;" id="jo99430631:0020:00" onclick="f_autoScroll(this);" title="제20조 특별휴가">제20조 특별휴가</a> </li> 
+   </ul> 
+  </div> 
+  <div class="outer-center" id="content-container"> 
+   <div class="middle-north" id="content-title"></div> 
+   <div class="middle-center" id="linkedJoContent"> 
+    <!-- 법령명 --> 
+    <div id="conTop" class="cont_top"> 
+     <a id="top"></a> 
+     <h2 id="002643"> 국가공무원 복무규정 </h2> 
+     <div class="ct_sub"> 
+      <span>[시행 2026. 10. 2.] [대통령령 제36728호, 2026. 9. 29., 타법개정]</span> 
+      <img src="/LSW/images/button/btn_alljo.gif" alt="전체조문보기" onclick="javascript:window.open('/LSW/lsInfoP.do?lsiSeq=290349')" /> 
+     </div> 
+    </div> 
+    <!-- 조문정보 --> 
+    <a name="J20:0" id="J20:0"></a> 
+    <div class="pgroup"> 
+     <ul class="lawico01"> 
+     </ul> 
+     <div class="lawcon"> 
+      <p class="pty1_p4"> <span class="bl"> <label for="Y002000" id="J99430631:0020:00"> 제20조(특별휴가) </label> </span> ① 행정기관의 장은 소속 공무원이 결혼하거나 그 밖의 경조사가 있는 경우에는 해당 공무원의 신청에 따라 <a title="팝업으로 이동" class="link sfon6" onclick="javascript:fncLsLawPop('1035258325','BE','');" href="javascript:;">별표 2</a>의 기준에 따른 경조사휴가를 주어야 한다. <span class="sfon">&lt;개정 2017. 3. 20.&gt;</span> </p>
+      <p class="pty1_de2_1">② 임신 중인 공무원은 출산 전과 출산 후를 통하여 90일(<a href="#AJAX" title="팝업으로 이동" class="delegatedAdmRul_link" onclick="javascript:joDelegatePop('290349','0020','00','010102','DEG','인사혁신처장이 정하는','56209');">인사혁신처장이 정하는</a> 미숙아를 출산한 경우에는 100일, 한 번에 둘 이상의 자녀를 임신한 경우에는 120일)의 출산휴가를 사용할 수 있되, 출산 후의 휴가기간이 45일(한 번에 둘 이상의 자녀를 임신한 경우에는 60일) 이상이 되도록 해야 한다. 다만, 임신 중인 공무원은 다음 각 호의 어느 하나에 해당하는 사유로 출산휴가를 신청하는 경우에는 출산 전 어느 때라도 최장 44일(한 번에 둘 이상의 자녀를 임신한 경우에는 59일)의 범위에서 출산휴가를 나누어 사용할 수 있다. <span class="sfon">&lt;개정 2014. 6. 30., 2015. 10. 6., 2021. 12. 31., 2023. 7. 18., 2024. 7. 2., 2025. 2. 11.&gt;</span> </p> 
+      <p class="pty1_de2h">1. 임신 중인 공무원이 유산(<a title="팝업으로 이동" class="link sfon1" onclick="javascript:fncLsLawPop('1035258333','ALLJO','');" href="javascript:;">「모자보건법」</a> <a title="팝업으로 이동" class="link sfon2" onclick="javascript:fncLsLawPop('1035258277','JO','');" href="javascript:;">제14조</a><a title="팝업으로 이동" class="link sfon3" onclick="javascript:fncLsLawPop('1035258329','JO','');" href="javascript:;">제1항</a>에 따라 허용되는 경우 외의 인공임신중절에 의한 유산은 제외한다. 이하 제3호를 제외하고 같다)ㆍ사산의 경험이 있는 경우 </p> 
+      <p class="pty1_de2h">2. 임신 중인 공무원이 출산휴가를 신청할 당시 연령이 40세 이상인 경우 </p> 
+      <p class="pty1_de2h">3. 임신 중인 공무원이 유산ㆍ사산 또는 조산(早産)의 위험이 있다는 의료기관의 진단서를 제출한 경우 </p> 
+      <p class="pty1_de2_1">③ 여성공무원은 생리기간 중 휴식을 위하여 매월 1일의 여성보건휴가를 사용할 수 있다. 이 경우 여성보건휴가는 무급으로 한다. <span class="sfon">&lt;개정 2011. 7. 4., 2019. 12. 31., 2024. 7. 2.&gt;</span> </p> 
+      <p class="pty1_de2_1">④ 임신 중인 여성공무원은 1일 2시간의 범위에서 휴식이나 병원 진료 등을 위한 모성보호시간을 사용할 수 있다. 이 경우 행정기관의 장은 임신 후 12주 이내 또는 32주 이후에 있는 여성공무원이 모성보호시간의 사용을 신청하면 이를 승인해야 한다. <span class="sfon">&lt;신설 2013. 5. 31., 2018. 7. 2., 2024. 7. 2., 2025. 2. 11., 2025. 7. 22.&gt;</span> </p> 
+      <p class="pty1_de2_1">⑤ 8세 이하 또는 초등학교 2학년 이하의 자녀가 있는 공무원은 자녀를 돌보기 위하여 36개월의 범위에서 1일 최대 2시간의 육아시간을 사용할 수 있다. <span class="sfon">&lt;개정 2018. 7. 2., 2024. 7. 2., 2025. 2. 11.&gt;</span> </p> 
+      <p class="pty1_de2_1">⑥ 한국방송통신대학교에 재학 중인 공무원은 <a title="팝업으로 이동" class="link sfon1" onclick="javascript:fncLsLawPop('1035258291','ALLJO','');" href="javascript:;">「한국방송통신대학교 설립 및 운영에 관한 법률」</a> <a title="팝업으로 이동" class="link sfon2" onclick="javascript:fncLsLawPop('1035258299','JO','');" href="javascript:;">제9조</a><a title="팝업으로 이동" class="link sfon3" onclick="javascript:fncLsLawPop('1035258301','JO','');" href="javascript:;">제1항</a>에 따른 출석수업에 참석하기 위하여 <a title="팝업으로 이동" class="link sfon2" onclick="javascript:fncLsLawPop('1035258321','JO','');" href="javascript:;">제15조</a>의 연가 일수를 초과하는 출석수업 기간에 대한 수업휴가를 받을 수 있다. <span class="sfon">&lt;개정 2011. 7. 4., 2013. 5. 31., 2021. 6. 1.&gt;</span> </p> 
+      <p class="pty1_de2_1">⑦ 삭제 <span class="sfon">&lt;2005. 6. 30.&gt;</span> </p> 
+      <p class="pty1_de2_1">⑧ 삭제 <span class="sfon">&lt;2005. 6. 30.&gt;</span> </p> 
+      <p class="pty1_de2_1">⑨ <a title="팝업으로 이동" class="link sfon1" onclick="javascript:fncLsLawPop('1035258275','ALLJO','');" href="javascript:;">「재난 및 안전관리 기본법」</a> <a title="팝업으로 이동" class="link sfon2" onclick="javascript:fncLsLawPop('1035258295','JO','');" href="javascript:;">제3조</a><a title="팝업으로 이동" class="link sfon4" onclick="javascript:fncLsLawPop('1035258313','JO','');" href="javascript:;">제1호</a>에 따른 재난으로 피해[배우자, 부모(배우자의 부모를 포함한다) 또는 자녀가 입은 피해를 포함한다. 이하 이 항에서 같다]를 입은 공무원과 재난 발생 지역에서 자원봉사활동을 하려는 공무원은 5일(<a title="팝업으로 이동" class="link sfon1" onclick="javascript:fncLsLawPop('1035258311','ALLJO','');" href="javascript:;">같은 법</a> <a title="팝업으로 이동" class="link sfon2" onclick="javascript:fncLsLawPop('1035258283','JO','');" href="javascript:;">제14조</a><a title="팝업으로 이동" class="link sfon3" onclick="javascript:fncLsLawPop('1035258267','JO','');" href="javascript:;">제1항</a>에 따른 대규모 재난으로 피해를 입은 공무원으로서 장기간 피해 수습이 필요하다고 소속 행정기관의 장이 인정하는 경우에는 10일) 이내의 재해구호휴가를 받을 수 있다. <span class="sfon">&lt;개정 2020. 10. 20.&gt;</span> </p> 
+      <p class="pty1_de2_1">⑩ 유산하거나 사산한 여성공무원은 다음 각 호의 구분에 따른 유산휴가 또는 사산휴가를 사용할 수 있다. <span class="sfon">&lt;개정 2011. 7. 4., 2014. 6. 30., 2019. 12. 31., 2024. 7. 2.&gt;</span> </p> 
+      <p class="pty1_de2h">1. 임신기간이 15주 이내인 경우: 유산하거나 사산한 날부터 10일까지 </p> 
+      <p class="pty1_de2h">2. 임신기간이 16주 이상 21주 이내인 경우: 유산하거나 사산한 날부터 30일까지 </p> 
+      <p class="pty1_de2h">3. 임신기간이 22주 이상 27주 이내인 경우: 유산하거나 사산한 날부터 60일까지 </p> 
+      <p class="pty1_de2h">4. 임신기간이 28주 이상인 경우: 유산하거나 사산한 날부터 90일까지 </p> 
+      <p class="pty1_de2_1">⑪ 남성공무원은 배우자가 유산하거나 사산한 경우 제10항 각 호의 구분에 따른 기간 중 3일의 유산휴가 또는 사산휴가를 사용할 수 있다. <span class="sfon">&lt;신설 2019. 12. 31., 2024. 7. 2.&gt;</span> </p> 
+      <p class="pty1_de2_1">⑫ 인공수정 또는 체외수정 등 난임치료 시술을 받는 공무원은 다음 각 호의 구분에 따라 난임치료시술휴가를 사용할 수 있다. <span class="sfon">&lt;개정 2011. 7. 4., 2018. 7. 2., 2018. 12. 18., 2019. 12. 31., 2021. 12. 31., 2024. 7. 2.&gt;</span> </p> 
+      <p class="pty1_de2h">1. 여성공무원: 다음 각 목의 어느 하나에 해당하는 경우 해당 목에서 정한 기간 </p> 
+      <p class="pty1_de3">가. 인공수정 등 시술을 받는 경우: 총 2일(시술 당일에 1일과 시술일 전날, 시술일 후 2일 이내이거나 시술 관련 진료일 중에 1일) <span class="sfon"></span></p> 
+      <p class="pty1_de3">나. 동결 보존된 배아를 이식하는 체외수정 시술을 받는 경우: 총 3일(시술 당일에 1일과 시술일 전날, 시술일 후 2일 이내이거나 시술 관련 진료일 중에 2일) <span class="sfon"></span></p> 
+      <p class="pty1_de3">다. 난자 채취를 하여 체외수정 시술을 받는 경우: 총 4일(난자 채취일에 1일, 시술 당일에 1일과 시술일 전날, 난자 채취일 전날, 시술일 후 2일 이내, 난자 채취일 후 2일 이내이거나 시술 관련 진료일 중에 2일) <span class="sfon"></span></p> 
+      <p class="pty1_de2h">2. 남성공무원: 정자 채취일에 1일 </p> 
+      <p class="pty1_de2_1">⑬ 행정기관의 장은 소속 공무원이 국가 또는 해당 기관의 주요 업무를 성공적으로 수행하여 탁월한 성과와 공로가 인정되는 경우에는 10일 이내의 포상휴가를 줄 수 있다. 이 경우 탁월한 성과와 공로에 대한 판단의 기준은 <a href="#AJAX" title="팝업으로 이동" class="delegatedAdmRul_link" onclick="javascript:joDelegatePop('290349','0020','00','010102','DEG','인사혁신처장이 정한다','9831');">인사혁신처장이 정한다</a>. <span class="sfon">&lt;신설 2015. 10. 6., 2019. 12. 31.&gt;</span> </p> 
+      <p class="pty1_de2_1">⑭ 공무원은 다음 각 호의 어느 하나에 해당하는 경우 연간 10일의 범위에서 가족돌봄휴가를 사용할 수 있다. <span class="sfon">&lt;개정 2020. 10. 20., 2024. 7. 2., 2026. 6. 23.&gt;</span> </p> 
+      <p class="pty1_de2h">1. <a title="팝업으로 이동" class="link sfon1" onclick="javascript:fncLsLawPop('1035258269','ALLJO','');" href="javascript:;">「영유아보육법」</a>에 따른 어린이집, <a title="팝업으로 이동" class="link sfon1" onclick="javascript:fncLsLawPop('1035258305','ALLJO','');" href="javascript:;">「유아교육법」</a>에 따른 유치원 및 <a title="팝업으로 이동" class="link sfon1" onclick="javascript:fncLsLawPop('1035258335','ALLJO','');" href="javascript:;">「초ㆍ중등교육법」</a> <a title="팝업으로 이동" class="link sfon2" onclick="javascript:fncLsLawPop('1035258281','JO','');" href="javascript:;">제2조</a> 각 호의 학교(이하 이 항에서 “어린이집등”이라 한다)의 휴업ㆍ휴원ㆍ휴교, 그 밖에 이에 준하는 사유로 자녀 또는 손자녀를 돌봐야 하는 경우 </p> 
+      <p class="pty1_de2h">2. 자녀 또는 손자녀가 다니는 어린이집등의 공식 행사 또는 교사와의 상담에 참여하는 경우 </p> 
+      <p class="pty1_de2h">3. 자녀 또는 손자녀가 어린이집등을 졸업한 후 <a title="팝업으로 이동" class="link sfon1" onclick="javascript:fncLsLawPop('1035258319','ALLJO','');" href="javascript:;">「유아교육법」</a>에 따른 유치원 또는 <a title="팝업으로 이동" class="link sfon1" onclick="javascript:fncLsLawPop('1035258293','ALLJO','');" href="javascript:;">「초ㆍ중등교육법」</a> <a title="팝업으로 이동" class="link sfon2" onclick="javascript:fncLsLawPop('1035258303','JO','');" href="javascript:;">제2조</a> 각 호의 학교에 입학하기 전까지 자녀 또는 손자녀를 돌봐야 하는 경우 </p> 
+      <p class="pty1_de2h">4. 미성년자 또는 <a title="팝업으로 이동" class="link sfon1" onclick="javascript:fncLsLawPop('1035258315','ALLJO','');" href="javascript:;">「장애인복지법」</a> <a title="팝업으로 이동" class="link sfon2" onclick="javascript:fncLsLawPop('1035258331','JO','');" href="javascript:;">제2조</a><a title="팝업으로 이동" class="link sfon3" onclick="javascript:fncLsLawPop('1035258287','JO','');" href="javascript:;">제2항</a>에 따른 장애인(이하 이 조에서 “장애인”이라 한다)인 자녀ㆍ손자녀의 병원 진료(<a title="팝업으로 이동" class="link sfon1" onclick="javascript:fncLsLawPop('1035258279','ALLJO','');" href="javascript:;">「국민건강보험법」</a> <a title="팝업으로 이동" class="link sfon2" onclick="javascript:fncLsLawPop('1035258285','JO','');" href="javascript:;">제52조</a>에 따른 건강검진 또는 <a title="팝업으로 이동" class="link sfon1" onclick="javascript:fncLsLawPop('1035258297','ALLJO','');" href="javascript:;">「감염병의 예방 및 관리에 관한 법률」</a> <a title="팝업으로 이동" class="link sfon2" onclick="javascript:fncLsLawPop('1035258337','JO','');" href="javascript:;">제24조</a> 및 <a title="팝업으로 이동" class="link sfon2" onclick="javascript:fncLsLawPop('1035258271','JO','');" href="javascript:;">제25조</a>에 따른 예방접종을 포함한다)에 동행하는 경우 </p> 
+      <p class="pty1_de2h">5. 질병, 사고, 노령 등의 사유로 조부모, 외조부모, 부모(배우자의 부모를 포함한다), 배우자, 자녀 또는 손자녀를 돌봐야 하는 경우 </p> 
+      <p class="pty1_de2_1">⑮ 제14항에 따른 가족돌봄휴가는 무급으로 하되, 자녀(같은 항 제5호의 경우에는 미성년자 또는 장애인인 자녀로 한정한다)를 돌보기 위한 가족돌봄휴가는 해당 공무원의 자녀(제14항제1호에 따른 어린이집등에 재학 중이거나 미성년인 자녀 또는 장애인인 자녀를 말한다) 수에 1을 더한 일수까지를 연간 유급휴가 일수로 한다. 다만, 장애인인 자녀가 있는 공무원 또는 <a title="팝업으로 이동" class="link sfon1" onclick="javascript:fncLsLawPop('1035258307','ALLJO','');" href="javascript:;">「한부모가족지원법」</a> <a title="팝업으로 이동" class="link sfon2" onclick="javascript:fncLsLawPop('1035258289','JO','');" href="javascript:;">제4조</a><a title="팝업으로 이동" class="link sfon4" onclick="javascript:fncLsLawPop('1035258309','JO','');" href="javascript:;">제1호</a>의 모 또는 부에 해당하는 공무원의 경우에는 본문에 따른 연간 유급휴가 일수에 1일을 더한 일수까지 연간 유급휴가 일수로 한다. <span class="sfon">&lt;신설 2020. 10. 20., 2024. 7. 2., 2026. 6. 23.&gt;</span> </p> 
+      <p class="pty1_de2_1">⑯ 여성공무원은 임신기간 중 검진을 위해 10일의 범위에서 임신검진휴가를 사용할 수 있다. <span class="sfon">&lt;신설 2019. 12. 31., 2020. 10. 20., 2024. 7. 2.&gt;</span> </p> 
+      <p class="pty1_de2_1">⑰ 행정기관의 장은 소속 공무원이 다음 각 호의 요건을 모두 충족하는 경우 4일의 범위에서 심리상담, 진료 및 휴식을 위한 심리안정휴가를 줄 수 있다. 이 경우 사건ㆍ사고 등 심리안정휴가의 세부 인정 기준, 심리안정휴가의 부여 방법 및 사용 절차에 관하여 필요한 사항은 <a href="#AJAX" title="팝업으로 이동" class="delegatedAdmRul_link" onclick="javascript:joDelegatePop('290349','0020','00','010102','DEG','인사혁신처장이 정한다','39509');">인사혁신처장이 정한다</a>. <span class="sfon">&lt;신설 2023. 7. 18.&gt;</span> </p> 
+      <p class="pty1_de2h">1. <a title="팝업으로 이동" class="link sfon1" onclick="javascript:fncLsLawPop('1035258327','ALLJO','');" href="javascript:;">「공무원 재해보상법」</a> <a title="팝업으로 이동" class="link sfon2" onclick="javascript:fncLsLawPop('1035258273','JO','');" href="javascript:;">제5조</a> 각 호의 어느 하나에 해당하는 직무를 수행하는 과정에서 인명피해가 있는 사건ㆍ사고를 경험했을 것 </p> 
+      <p class="pty1_de2h">2. 제1호에 따른 인명피해가 있는 사건ㆍ사고의 경험으로 인해 심리적 안정과 정신적 회복이 필요하다고 인정될 것 </p> 
+      <p class="pty1_de2_1">⑱ 행정기관의 장은 5년 이상 재직한 공무원에 대하여 다음 각 호의 구분에 따라 해당 호에 따른 재직기간 중에 사용할 수 있는 장기재직휴가를 각 1회 주어야 한다. 이 경우 재직기간의 산정은 <a title="팝업으로 이동" class="link sfon2" onclick="javascript:fncLsLawPop('1035258323','JO','');" href="javascript:;">제15조</a><a title="팝업으로 이동" class="link sfon3" onclick="javascript:fncLsLawPop('1035258317','JO','');" href="javascript:;">제2항</a>에 따른다. <span class="sfon">&lt;신설 2025. 7. 22., 2026. 6. 23.&gt;</span> </p> 
+      <p class="pty1_de2h">1. 재직기간이 5년 이상 10년 미만인 공무원: 3일 </p> 
+      <p class="pty1_de2h">2. 재직기간이 10년 이상 20년 미만인 공무원: 5일 </p> 
+      <p class="pty1_de2h">3. 재직기간이 20년 이상인 공무원: 7일 </p> 
+      <p class="pty1_de2_1">⑲ 남성공무원은 배우자의 임신기간 중 검진에 동행하기 위해 10일의 범위에서 임신검진 동행휴가를 사용할 수 있다. <span class="sfon">&lt;신설 2025. 7. 22.&gt;</span> </p> 
+      <p class="pty1_de2_1">⑳ 제1항부터 제6항까지, 제9항부터 제16항까지, 제18항 및 제19항에서 규정한 사항 외에 특별휴가의 사용 기준 및 절차 등에 관하여 필요한 사항은 <a href="#AJAX" title="팝업으로 이동" class="delegatedAdmRul_link" onclick="javascript:joDelegatePop('290349','0020','00','010102','DEG','인사혁신처장이 정한다','59111');">인사혁신처장이 정한다</a>. <span class="sfon">&lt;신설 2025. 2. 11., 2025. 7. 22.&gt;</span> </p> 
+      <p></p> 
+     </div> 
+    </div> 
+    <!-- 조문정보 --> 
+   </div> 
+  </div> 
+  <div id="lsOutPutDivWrite"> 
+   <div id="lsOutPutLayer"> 
+    <!-- 본문 저장 layer --> 
+    <div class="vwrap7" id="infoSaveLayer" style="display:none;"> 
+     <form id="infoSaveForm" name="infoSaveForm" target="_self" action=""> 
+      <fieldset> 
+       <legend>파일형식 선택</legend> 
+       <input type="hidden" name="saveExt" value="" /> 
+       <input type="hidden" name="lsJoLnkSeq" value="1033978333" /> 
+      </fieldset> 
+     </form> 
+     <div class="contwrap"> 
+      <div class="viewla"> 
+       <div class="ins" id="infoSaveLayerLoding"> 
+        <div class="inctn"> 
+         <ul> 
+          <li class="itit">파일형식</li> 
+          <li class="rdi"> <input type="radio" class="radio" name="fileType" id="FileSaveHwp" checked="checked" value="hwp" style="margin-left:50px" /><label for="FileSaveHwp">HWP</label> <input type="radio" class="radio" name="fileType" id="FileSavePdf" value="pdf" /><label for="FileSavePdf">PDF</label> </li> 
+         </ul> 
+        </div> 
+        <!-- button --> 
+        <div class="btnc2_1"> 
+         <input id="lsSaveBtn" type="image" onclick="javascript:saveContent();" src="/LSW/images/button/btn_save2.gif" alt="저장" /> 
+         <span class="btn_close"><a href="javascript:;" onkeypress="" onclick="javascript:saveAndPrint(0, this ,0);"><img src="/LSW/images/button/btn_close2.gif" alt="닫기" /></a></span> 
+        </div> 
+        <!-- button //--> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+    <!-- 본문 저장 layer //--> 
+   </div> 
+  </div> 
+  <div id="lsLinkDivWrite"> 
+   <div id="lsLinkLayer" style="display:none"></div> 
+  </div> 
+  <div id="tmpLsLinkDivWrite"> 
+   <div id="joTempDeleLayer" style="display:none"></div> 
+  </div> 
+  <script type="text/javascript" src="/LSW/js/common/hrefRemove.js"></script>  
+  <script type="text/javascript">
+//<![CDATA[
+	 /* jstl 변수를 스크립트에서 사용하기위해 html태그 뒤에 스크립트를 선언 */	 
+	var lsSearchObj = new LsSearchObj();
+
+	if ((typeof Range !=="undefined") && !Range.prototype.createContextualFragment){
+		Range.prototype.createContextualFragment = function(html){
+			var frag = document.createDocumentFragment(),
+			div = document.createElement("div");
+			frag.appendChild(div);
+			div.outerHTML = html;
+			return frag;
+		};
+	}
+	
+	var pageLayoutOptions = {
+			name:					'pageLayout'
+		,	resizeWithWindowDelay:	1
+		,	north__paneSelector:	".outer-north"
+		,	north__spacing_open:	0
+		,	north__size:			71
+		,	north__maxSize:		    71
+		,	resizable:				true
+		,	slidable:				false
+		,	closable:				true
+		,	west__paneSelector:  	".outer-west"
+		,	west__onresize:			sizeControll
+		,	west__size:				185
+		,	west__maxSize:		    400
+		,	west__initClosed:		false		
+		,	west__spacing_open:		15
+		,	west__spacing_closed:	15
+		,west__togglerLength_closed:65
+		,west__togglerLength_open:	65
+		,	center__paneSelector:	".outer-center" 
+		,	center__children: {
+					name:					'middle-contentLayoput'
+				,	center__paneSelector:	".middle-center"
+				,	center__size:             605
+		}
+	};
+	
+    $(document).ready(function() {
+		// 뒤로가기 버튼 설정
+    	updateBackBtn();
+        
+    	$("body").layout( pageLayoutOptions );
+    	$('#printContents').html($('#linkedJoContent').html());
+    	var content_head = $('#content_left > p');
+    	content_head.first().removeClass('deactive');
+    	content_head.first().addClass('active')
+
+    	// 법령목록의 첫번째 법령의 본문과 선택 조로 focus 이동
+		//f_findLinkedJoContent(el('firstRlatLsId').value);
+    	
+    	content_head.on('click', function(event) {
+           event.preventDefault();
+        	        
+           if ($(this).attr('class') != 'active'){
+           	content_head.removeClass('deactive');
+           	content_head.removeClass('active');
+           	content_head.addClass('deactive');
+               $(this).removeClass('deactive');
+               $(this).addClass('active');
+           }
+            
+            // 법령명 클릭했을때 해당 본문 띄우기
+            var activeId = $('.active').attr('id');
+            scrollActiveId = activeId.substring(2);
+			if(typeof activeId == "undefined"){
+				alert("정보가 없습니다.");
+			}else{
+				target = document.getElementById(scrollActiveId);
+				target.scrollIntoView(true);
+				return;
+			}
+        });
+    });
+    
+	$(window).resize(function() {
+		sizeControll();
+	});
+	
+	function onKeyDown(){
+		if(event.keyCode == 13){
+			joBdySearch();
+		}
+	}
+
+	function joBdySearch() {
+		var schKey = el("bdySearch");
+		var chkMode = "down";
+
+		if (schKey == null || schKey.value == "") {
+			alert("검색키워드를 입력하세요");
+			el("bdySearch").focus();
+
+		} else {
+			bodyInfoRSearch('linkedJoContent');
+		}
+	}
+	
+	/* 뒤로가기 버튼 */
+	function goBack() {		
+		var preUrl = document.referrer;                      // 전 페이지 url
+		var iniUrl = sessionStorage.getItem('iniUrl');	     // 최초 팝업창 url
+
+		if(window.history.length > 1){                       // 최초 팝업창(length=1)이 아니라면
+			if(iniUrl == preUrl) {                           // 뒤로갈 페이지가 처음 열린 팝업창일 때
+				sessionStorage.setItem('equalUrl', 'init');				
+			} else {
+				sessionStorage.setItem('equalUrl', 'diff');
+			}		
+			window.history.back();                           // 뒤로 가기			
+		} 
+	}
+	
+	/* 뒤로가기 버튼 세팅 */
+	function updateBackBtn() {
+		var backBtn = document.getElementById('backBtn');
+ 				
+		if (window.history.length == 1) {                    // 처음 팝업을 열었을때 길이는 1
+			backBtn.style.display = 'none'; 			
+			// 최초의 열린 팝업 url 저장
+			sessionStorage.setItem('iniUrl', window.location.href);
+
+		} else {                                             // history 길이가 2 이상  
+			var equalUrl = sessionStorage.getItem('equalUrl');
+			
+			if (equalUrl == "init"){
+				backBtn.style.display = 'none';              // 최초 url과 동일할 경우 뒤로가기 아이콘 숨김
+				sessionStorage.setItem('equalUrl', 'diff');		
+						
+			} else {
+				backBtn.style.display = 'inline-block';      // diff 인  경우
+			}
+		} 
+	}
+
+	//]]>
+</script>  
+ </body>
+</html>

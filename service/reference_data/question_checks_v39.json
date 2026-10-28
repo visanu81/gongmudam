@@ -639,7 +639,8 @@
     ],
     "allow_rules": [
       "family-care",
-      "childcare-time"
+      "childcare-time",
+      "family-care-situation"
     ]
   },
   {
@@ -655,7 +656,8 @@
     ],
     "allow_rules": [
       "family-care",
-      "childcare-time"
+      "childcare-time",
+      "family-care-situation"
     ]
   },
   {

@@ -1,0 +1,677 @@
+[
+  {
+    "id": "office-goods-national-act-2",
+    "title": "물품관리법",
+    "article": "제2조(정의)",
+    "filename": "national-act-2.txt",
+    "kind": "법령·규정",
+    "issuer": "재정경제부",
+    "institution": "국가기관 물품",
+    "effective_date": "2026-01-02",
+    "publication": "법률 제21065호, 2025. 10. 1., 타법개정",
+    "source_url": "https://www.law.go.kr/LSW/lsSideInfoP.do?lsiSeq=276107&joNo=0002&joBrNo=00&docCls=jo&urlMode=lsScJoRltInfoR",
+    "raw_file": "national-act-2.html",
+    "raw_sha256": "bed64f7d241ac3080737acfabbc35ca4658aa22c611fcbfc0a6316ea676f1029",
+    "retrieved_at": "2026-10-26",
+    "collection": "office-goods-20261026",
+    "office_topic": "goods_management",
+    "scope": "일반 동산의 물품관리. 국가·지자체 소유/관리 구분 필요. 공기업·공공기관 자체규정, 군수품·특수물품, 기관별 별지·실제 재고는 별도 확인. 과거·미래 판본은 검토하지 않음.",
+    "sha256": "c48f68327fc791be68267bb30cad00fb856babebfa2579cb6a174696655179a9",
+    "units": [
+      {
+        "loc": "제2조(정의) 全文",
+        "text": "제2조(정의) ① 이 법에서 “물품”이란 국가가 소유하는 동산(動産)과 국가가 사용하기 위하여 보관하는 동산(「국유재산법」에 따라 관리하고 있는 국유재산에서 개별적으로 분리된 동산을 포함한다)을 말한다. 다만, 다음 각 호의 동산은 제외한다.\n1. 현금\n2. 법령에 따라 한국은행에 기탁(寄託)하여야 할 유가증권\n3. 「국유재산법」 제5조제1항제1호부터 제3호까지와 같은 조 제2항에 따른 국유재산\n② 이 법에서 “중앙관서의 장”이란 「국가재정법」 제6조에 따른 중앙관서의 장을 말한다.\n[전문개정 2009. 3. 25.]"
+      }
+    ]
+  },
+  {
+    "id": "office-goods-national-act-3",
+    "title": "물품관리법",
+    "article": "제3조(군수품관리에 관한 특례)",
+    "filename": "national-act-3.txt",
+    "kind": "법령·규정",
+    "issuer": "재정경제부",
+    "institution": "국가기관 물품",
+    "effective_date": "2026-01-02",
+    "publication": "법률 제21065호, 2025. 10. 1., 타법개정",
+    "source_url": "https://www.law.go.kr/LSW/lsSideInfoP.do?lsiSeq=276107&joNo=0003&joBrNo=00&docCls=jo&urlMode=lsScJoRltInfoR",
+    "raw_file": "national-act-3.html",
+    "raw_sha256": "6a59ca8504230b28d649c15b5d848005eb5dd015ca8e5a025dc8e9ca57d5aadf",
+    "retrieved_at": "2026-10-26",
+    "collection": "office-goods-20261026",
+    "office_topic": "goods_management",
+    "scope": "일반 동산의 물품관리. 국가·지자체 소유/관리 구분 필요. 공기업·공공기관 자체규정, 군수품·특수물품, 기관별 별지·실제 재고는 별도 확인. 과거·미래 판본은 검토하지 않음.",
+    "sha256": "47c5e1cbab4b8e860c786230cc6170d72c4777881c10b995ec9bbd777f5b5c26",
+    "units": [
+      {
+        "loc": "제3조(군수품관리에 관한 특례) 全文",
+        "text": "제3조(군수품관리에 관한 특례) 군수품의 관리에 관하여는 따로 법률로 정한다.\n[전문개정 2009. 3. 25.]"
+      }
+    ]
+  },
+  {
+    "id": "office-goods-national-act-4",
+    "title": "물품관리법",
+    "article": "제4조(다른 법률과의 관계)",
+    "filename": "national-act-4.txt",
+    "kind": "법령·규정",
+    "issuer": "재정경제부",
+    "institution": "국가기관 물품",
+    "effective_date": "2026-01-02",
+    "publication": "법률 제21065호, 2025. 10. 1., 타법개정",
+    "source_url": "https://www.law.go.kr/LSW/lsSideInfoP.do?lsiSeq=276107&joNo=0004&joBrNo=00&docCls=jo&urlMode=lsScJoRltInfoR",
+    "raw_file": "national-act-4.html",
+    "raw_sha256": "dbc778237142ded542d3575e3c84a125dd1bea3c2cef3312e88db4fe3b3622f4",
+    "retrieved_at": "2026-10-26",
+    "collection": "office-goods-20261026",
+    "office_topic": "goods_management",
+    "scope": "일반 동산의 물품관리. 국가·지자체 소유/관리 구분 필요. 공기업·공공기관 자체규정, 군수품·특수물품, 기관별 별지·실제 재고는 별도 확인. 과거·미래 판본은 검토하지 않음.",
+    "sha256": "f8a471b3b952f7095642214bf92812b7af06e3f3474c108a39220247c5ee38a7",
+    "units": [
+      {
+        "loc": "제4조(다른 법률과의 관계) 全文",
+        "text": "제4조(다른 법률과의 관계) 물품관리에 관하여는 다른 법률에 특별한 규정이 있는 경우 외에는 이 법에서 정하는 바에 따른다.\n[전문개정 2009. 3. 25.]"
+      }
+    ]
+  },
+  {
+    "id": "office-goods-national-act-19",
+    "title": "물품관리법",
+    "article": "제19조(재물조사)",
+    "filename": "national-act-19.txt",
+    "kind": "법령·규정",
+    "issuer": "재정경제부",
+    "institution": "국가기관 물품",
+    "effective_date": "2026-01-02",
+    "publication": "법률 제21065호, 2025. 10. 1., 타법개정",
+    "source_url": "https://www.law.go.kr/LSW/lsSideInfoP.do?lsiSeq=276107&joNo=0019&joBrNo=00&docCls=jo&urlMode=lsScJoRltInfoR",
+    "raw_file": "national-act-19.html",
+    "raw_sha256": "854e1965331b2cff136bf0c539b3030a27929b83bd9eca303e68aa93ea7b67f1",
+    "retrieved_at": "2026-10-26",
+    "collection": "office-goods-20261026",
+    "office_topic": "goods_management",
+    "scope": "일반 동산의 물품관리. 국가·지자체 소유/관리 구분 필요. 공기업·공공기관 자체규정, 군수품·특수물품, 기관별 별지·실제 재고는 별도 확인. 과거·미래 판본은 검토하지 않음.",
+    "sha256": "e3e92819cbe43835a633af451228f2528c5934d2eb4ad0fc6bfd63d9125c5613",
+    "units": [
+      {
+        "loc": "제19조(재물조사) 全文",
+        "text": "제19조(재물조사) ① 각 중앙관서의 장은 대통령령으로 정하는 바에 따라 연 1회 그 소관 물품에 대한 정기재물조사(定期在物調査)를 실시하여야 하고, 필요하다고 인정하면 정기재물조사 외에 수시로 재물조사를 실시할 수 있다.\n② 조달청장은 대통령령으로 정하는 바에 따라 각 중앙관서의 장의 소관 물품에 대한 특별재물조사를 실시할 수 있다.\n③ 각 중앙관서의 장은 제1항에 따른 정기재물조사의 보고서를 조달청장에게 제출하여야 한다.\n[전문개정 2009. 3. 25.]"
+      }
+    ]
+  },
+  {
+    "id": "office-goods-national-act-24",
+    "title": "물품관리법",
+    "article": "제24조(표준서식)",
+    "filename": "national-act-24.txt",
+    "kind": "법령·규정",
+    "issuer": "재정경제부",
+    "institution": "국가기관 물품",
+    "effective_date": "2026-01-02",
+    "publication": "법률 제21065호, 2025. 10. 1., 타법개정",
+    "source_url": "https://www.law.go.kr/LSW/lsSideInfoP.do?lsiSeq=276107&joNo=0024&joBrNo=00&docCls=jo&urlMode=lsScJoRltInfoR",
+    "raw_file": "national-act-24.html",
+    "raw_sha256": "1e10d55f467aeb5d46820929e2b7ada2188dee1e7d94437b112fc0b89e78fa1c",
+    "retrieved_at": "2026-10-26",
+    "collection": "office-goods-20261026",
+    "office_topic": "goods_management",
+    "scope": "일반 동산의 물품관리. 국가·지자체 소유/관리 구분 필요. 공기업·공공기관 자체규정, 군수품·특수물품, 기관별 별지·실제 재고는 별도 확인. 과거·미래 판본은 검토하지 않음.",
+    "sha256": "6f4aaa0b92532df65f1eed1cb5fad4c7775d23acaeae96328eb62e142f7fddff",
+    "units": [
+      {
+        "loc": "제24조(표준서식) 全文",
+        "text": "제24조(표준서식) 물품관리관ㆍ물품운용관 및 물품출납공무원(제12조제1항에 따라 그 사무의 일부를 분장하는 공무원을 포함한다. 이하 같다)은 대통령령으로 정하는 표준서식(전산처리에 필요한 입ㆍ출력자료서식을 포함한다. 이하 같다)에 물품관리에 필요한 사항을 기록ㆍ유지하여야 한다.\n[전문개정 2009. 3. 25.]"
+      }
+    ]
+  },
+  {
+    "id": "office-goods-national-act-35",
+    "title": "물품관리법",
+    "article": "제35조(불용의 결정 등)",
+    "filename": "national-act-35.txt",
+    "kind": "법령·규정",
+    "issuer": "재정경제부",
+    "institution": "국가기관 물품",
+    "effective_date": "2026-01-02",
+    "publication": "법률 제21065호, 2025. 10. 1., 타법개정",
+    "source_url": "https://www.law.go.kr/LSW/lsSideInfoP.do?lsiSeq=276107&joNo=0035&joBrNo=00&docCls=jo&urlMode=lsScJoRltInfoR",
+    "raw_file": "national-act-35.html",
+    "raw_sha256": "7de5c15d0afc35da3b34783af956262e79e57086b2d109bce096c7796a349ac8",
+    "retrieved_at": "2026-10-26",
+    "collection": "office-goods-20261026",
+    "office_topic": "goods_management",
+    "scope": "일반 동산의 물품관리. 국가·지자체 소유/관리 구분 필요. 공기업·공공기관 자체규정, 군수품·특수물품, 기관별 별지·실제 재고는 별도 확인. 과거·미래 판본은 검토하지 않음.",
+    "sha256": "71ed2da8c4f16d7b8ac379ae2bec5e4184445f6ad811dfb26cdd85197f1d3b24",
+    "units": [
+      {
+        "loc": "제35조(불용의 결정 등) 全文",
+        "text": "제35조(불용의 결정 등) ① 물품관리관은 그 소관 물품 중 사용할 필요가 없거나 사용할 수 없는 물품이 있으면 그 물품에 대하여 불용의 결정을 하여야 한다. 다만, 대통령령으로 정하는 물품에 대하여는 소속 중앙관서의 장의 승인을 받아야 한다.\n② 물품관리관은 제1항에 따라 불용의 결정을 한 물품(이하 “불용품”이라 한다)이 매각하기에 부적당하거나 매각하면 국가에 불리하다고 인정될 경우 또는 매각할 수 없는 경우에는 폐기할 수 있다. 다만, 대통령령으로 정하는 물품에 대하여는 소속 중앙관서의 장의 승인을 받아야 한다.\n[전문개정 2009. 3. 25.]"
+      }
+    ]
+  },
+  {
+    "id": "office-goods-national-decree-22",
+    "title": "물품관리법 시행령",
+    "article": "제22조(재물조사)",
+    "filename": "national-decree-22.txt",
+    "kind": "법령·규정",
+    "issuer": "재정경제부",
+    "institution": "국가기관 물품",
+    "effective_date": "2026-01-02",
+    "publication": "대통령령 제35947호, 2025. 12. 30., 타법개정",
+    "source_url": "https://www.law.go.kr/LSW/lsSideInfoP.do?lsiSeq=280849&joNo=0022&joBrNo=00&docCls=jo&urlMode=lsScJoRltInfoR",
+    "raw_file": "national-decree-22.html",
+    "raw_sha256": "112cf427f18cdc5ed138f6eaa3e0908fe59165430bc7d763db0292f33bbacbc4",
+    "retrieved_at": "2026-10-26",
+    "collection": "office-goods-20261026",
+    "office_topic": "goods_management",
+    "scope": "일반 동산의 물품관리. 국가·지자체 소유/관리 구분 필요. 공기업·공공기관 자체규정, 군수품·특수물품, 기관별 별지·실제 재고는 별도 확인. 과거·미래 판본은 검토하지 않음.",
+    "sha256": "3c6e1a82673ca8568488709b015f9244e091bcd802da1f60049b17b9b36beb24",
+    "units": [
+      {
+        "loc": "제22조(재물조사) 全文",
+        "text": "제22조(재물조사) ① 조달청장은 법 제19조제1항에 따라 각 중앙관서의 장이 실시하는 정기재물조사에 관한 지침을 정하여 매년 9월 30일까지 각 중앙관서의 장에게 통보하여야 한다.\n② 각 중앙관서의 장은 제1항에 따른 정기재물조사지침에 따라 매년 12월 31일을 기준으로 정기재물조사를 실시하고, 정기재물조사 보고서를 작성하여 다음 연도 2월 말일까지 조달청장에게 제출하여야 한다. 이 경우 정기재물조사 보고서는 「국고금관리법」 제46조에 따른 정보통신매체 및 프로그램(이하 “디지털예산ㆍ회계시스템”이라 한다)에 게재함으로써 그 제출을 갈음할 수 있다.\n③ 조달청장은 제2항에 따라 각 중앙관서의 장이 제출한 정기재물조사 보고서를 검토하여, 보완이 필요한 경우에는 즉시 해당 중앙관서의 장에게 보완을 요청하여야 한다.\n④ 제3항에 따라 보완 요청을 받은 중앙관서의 장은 해당 연도 3월 15일까지 정기재물조사 보고서를 보완하여야 한다.\n⑤ 조달청장은 조직의 변경 등으로 물품관리 상황에 대한 점검이 필요한 경우에는 법 제19조제2항에 따라 각 중앙관서의 장의 소관 물품에 대한 특별재물조사를 실시할 수 있다.\n[전문개정 2009. 10. 21.]"
+      }
+    ]
+  },
+  {
+    "id": "office-goods-national-decree-39",
+    "title": "물품관리법 시행령",
+    "article": "제39조(불용 결정의 기준 등)",
+    "filename": "national-decree-39.txt",
+    "kind": "법령·규정",
+    "issuer": "재정경제부",
+    "institution": "국가기관 물품",
+    "effective_date": "2026-01-02",
+    "publication": "대통령령 제35947호, 2025. 12. 30., 타법개정",
+    "source_url": "https://www.law.go.kr/LSW/lsSideInfoP.do?lsiSeq=280849&joNo=0039&joBrNo=00&docCls=jo&urlMode=lsScJoRltInfoR",
+    "raw_file": "national-decree-39.html",
+    "raw_sha256": "8da01c6c640986e8ffab1d7ff66e7a9d7bf7ddd3b98d2c845be822c6eb733fb7",
+    "retrieved_at": "2026-10-26",
+    "collection": "office-goods-20261026",
+    "office_topic": "goods_management",
+    "scope": "일반 동산의 물품관리. 국가·지자체 소유/관리 구분 필요. 공기업·공공기관 자체규정, 군수품·특수물품, 기관별 별지·실제 재고는 별도 확인. 과거·미래 판본은 검토하지 않음.",
+    "sha256": "78967e878b9a8fc2105856b07d11167a13c182fdd5780647019a749d0e705122",
+    "units": [
+      {
+        "loc": "제39조(불용 결정의 기준 등) 全文",
+        "text": "제39조(불용 결정의 기준 등) 물품관리관은 법 제35조에 따라 그 소관 물품에 대하여 불용(不用)의 결정을 하거나 폐기처분을 할 때에는 재정경제부령으로 정하는 기준에 따라야 한다. <개정 2025. 12. 30.>\n[전문개정 2009. 10. 21.]"
+      }
+    ]
+  },
+  {
+    "id": "office-goods-national-decree-40",
+    "title": "물품관리법 시행령",
+    "article": "제40조(중앙관서의 장의 승인을 받아 불용의 결정 또는 폐기를 하는 물품)",
+    "filename": "national-decree-40.txt",
+    "kind": "법령·규정",
+    "issuer": "재정경제부",
+    "institution": "국가기관 물품",
+    "effective_date": "2026-01-02",
+    "publication": "대통령령 제35947호, 2025. 12. 30., 타법개정",
+    "source_url": "https://www.law.go.kr/LSW/lsSideInfoP.do?lsiSeq=280849&joNo=0040&joBrNo=00&docCls=jo&urlMode=lsScJoRltInfoR",
+    "raw_file": "national-decree-40.html",
+    "raw_sha256": "1bd1e42701e32aae98892290878abc4fa6c396921d3d7f4d4915a42ef7f1a8e7",
+    "retrieved_at": "2026-10-26",
+    "collection": "office-goods-20261026",
+    "office_topic": "goods_management",
+    "scope": "일반 동산의 물품관리. 국가·지자체 소유/관리 구분 필요. 공기업·공공기관 자체규정, 군수품·특수물품, 기관별 별지·실제 재고는 별도 확인. 과거·미래 판본은 검토하지 않음.",
+    "sha256": "d2b097de3b1c958939eee61c455d054f367ee6231aac88cfb6351ea2ec834fb1",
+    "units": [
+      {
+        "loc": "제40조(중앙관서의 장의 승인을 받아 불용의 결정 또는 폐기를 하는 물품) 全文",
+        "text": "제40조(중앙관서의 장의 승인을 받아 불용의 결정 또는 폐기를 하는 물품) ① 법 제35조제1항 단서에 따라 물품관리관이 소속 중앙관서의 장의 승인을 받아 불용의 결정을 하는 물품은 취득단가가 500만원 이상으로서 활용이 가능한 물품으로 한다.\n② 법 제35조제2항 단서에 따라 물품관리관이 소속 중앙관서의 장의 승인을 받아 폐기하는 물품은 취득단가가 500만원 이상인 물품으로 한다.\n③ 물품관리관은 불용의 결정을 할 때에는 다음 각 호의 사항을 명백히 하여야 한다.\n1. 불용의 결정을 하려는 물품의 물품목록번호, 품명, 품목, 수량 및 가액\n2. 물품의 구입 연월일과 물품의 상황\n3. 물품의 사용 경위\n4. 불용의 결정을 하는 이유\n5. 다른 목적으로 사용할 수 있는 지의 확인 여부\n6. 처분방법\n[전문개정 2009. 10. 21.]"
+      }
+    ]
+  },
+  {
+    "id": "office-goods-national-rule-27",
+    "title": "물품관리법 시행규칙",
+    "article": "제27조(재물조사)",
+    "filename": "national-rule-27.txt",
+    "kind": "법령·규정",
+    "issuer": "재정경제부",
+    "institution": "국가기관 물품",
+    "effective_date": "2026-01-02",
+    "publication": "재정경제부령 제1호, 2026. 1. 2., 타법개정",
+    "source_url": "https://www.law.go.kr/LSW/lsSideInfoP.do?lsiSeq=282641&joNo=0027&joBrNo=00&docCls=jo&urlMode=lsScJoRltInfoR",
+    "raw_file": "national-rule-27.html",
+    "raw_sha256": "fd7d84e90c36d1ea934cd50a13558103640c008a15a6a165642ab57d757783ee",
+    "retrieved_at": "2026-10-26",
+    "collection": "office-goods-20261026",
+    "office_topic": "goods_management",
+    "scope": "일반 동산의 물품관리. 국가·지자체 소유/관리 구분 필요. 공기업·공공기관 자체규정, 군수품·특수물품, 기관별 별지·실제 재고는 별도 확인. 과거·미래 판본은 검토하지 않음.",
+    "sha256": "dc5cd97ecab1cc64ac5bcf72faa2b60575d3495df8b427ad6b08492395e730c4",
+    "units": [
+      {
+        "loc": "제27조(재물조사) 全文",
+        "text": "제27조(재물조사) ① 영 제22조제2항 전단에 따른 정기재물조사 보고서의 서식은 조달청장이 정한다.\n② 각 중앙관서의 장은 물품관리관이나 물품출납공무원이 교체되었을 때에는 그 소관 물품에 대해 재물조사를 실시하게 해야 한다. <개정 2020. 12. 30.>\n③ 각 중앙관서의 장이 그 소관 물품에 대한 재물조사를 실시할 때에는 물품관리에 직접 관련되지 않은 공무원을 재물조사요원으로 임명해야 한다. <개정 2020. 12. 30.>\n④ 각 중앙관서의 장은 재물조사를 실시할 때에는 별표 1의 물품상태 분류기준에 따라 그 상태를 분류해야 한다. <개정 2020. 12. 30.>\n⑤ 제4항에 따라 물품의 상태를 분류하는 경우에는 관능검사[사람의 오감(五感)으로 평가하는 물품검사를 말한다. 이하 같다]의 방법으로 하되, 관능검사로 물품의 상태를 분류하기 어려울 때에는 이화학시험 등의 방법으로 할 수 있다. <개정 2020. 12. 30., 2021. 10. 28.>\n[전문개정 2009. 12. 29.]"
+      }
+    ]
+  },
+  {
+    "id": "office-goods-national-rule-34",
+    "title": "물품관리법 시행규칙",
+    "article": "제34조(관리전환의 절차)",
+    "filename": "national-rule-34.txt",
+    "kind": "법령·규정",
+    "issuer": "재정경제부",
+    "institution": "국가기관 물품",
+    "effective_date": "2026-01-02",
+    "publication": "재정경제부령 제1호, 2026. 1. 2., 타법개정",
+    "source_url": "https://www.law.go.kr/LSW/lsSideInfoP.do?lsiSeq=282641&joNo=0034&joBrNo=00&docCls=jo&urlMode=lsScJoRltInfoR",
+    "raw_file": "national-rule-34.html",
+    "raw_sha256": "c0a5915a659c07271a086435108390ad43127f48225c9b1776f8ce0e1a08ab6b",
+    "retrieved_at": "2026-10-26",
+    "collection": "office-goods-20261026",
+    "office_topic": "goods_management",
+    "scope": "일반 동산의 물품관리. 국가·지자체 소유/관리 구분 필요. 공기업·공공기관 자체규정, 군수품·특수물품, 기관별 별지·실제 재고는 별도 확인. 과거·미래 판본은 검토하지 않음.",
+    "sha256": "55c458f2a631837a971c192a45520a1bbf5230f1c07fd717d74178b78432ceec",
+    "units": [
+      {
+        "loc": "제34조(관리전환의 절차) 全文",
+        "text": "제34조(관리전환의 절차) ① 물품관리관은 그 관리하는 물품을 관리전환하려는 때에는 물품을 보관하고 있는 물품출납공무원에게는 물품의 출급명령을 하여야 하고, 그 물품을 사용하게 하고 있는 물품운용관에게는 물품의 반납명령을 하여야 한다.\n② 물품관리관은 제1항에 따른 반납명령을 할 때에는 그 물품운용관에게 해당 물품을 인도받을 자를 명백히 하여 물품의 인도명령을 하여야 한다.\n③ 물품관리관은 그 관리하는 물품의 관리전환을 하려는 경우에는 관리전환을 받을 물품관리관에게 그 물품을 인도하는 자와 그 물품을 인도하는 시기, 장소, 품명, 그 밖에 필요한 사항을 통지하여야 한다.\n④ 물품의 관리전환을 받을 물품관리관은 제3항에 따른 통지를 받은 경우에는 물품출납공무원에게 물품의 수입명령(收入命令)을 하여야 한다.\n⑤ 물품관리관은 관리전환을 받으려는 관서에서 해당 물품을 열람하려고 할 때에는 이에 협조하여야 한다.\n⑥ 제1항에 따른 반납명령에 따라 물품운용관이 물품을 반납하는 경우 물품의 상태 분류에 관해서는 제27조제4항 및 제5항을 준용한다.\n[전문개정 2009. 12. 29.]"
+      }
+    ]
+  },
+  {
+    "id": "office-goods-national-rule-35",
+    "title": "물품관리법 시행규칙",
+    "article": "제35조(표준서식)",
+    "filename": "national-rule-35.txt",
+    "kind": "법령·규정",
+    "issuer": "재정경제부",
+    "institution": "국가기관 물품",
+    "effective_date": "2026-01-02",
+    "publication": "재정경제부령 제1호, 2026. 1. 2., 타법개정",
+    "source_url": "https://www.law.go.kr/LSW/lsSideInfoP.do?lsiSeq=282641&joNo=0035&joBrNo=00&docCls=jo&urlMode=lsScJoRltInfoR",
+    "raw_file": "national-rule-35.html",
+    "raw_sha256": "22bc7fe5076b2a558e1b18f826f38e83a0504eaea156c864f3c7350e3bdfb716",
+    "retrieved_at": "2026-10-26",
+    "collection": "office-goods-20261026",
+    "office_topic": "goods_management",
+    "scope": "일반 동산의 물품관리. 국가·지자체 소유/관리 구분 필요. 공기업·공공기관 자체규정, 군수품·특수물품, 기관별 별지·실제 재고는 별도 확인. 과거·미래 판본은 검토하지 않음.",
+    "sha256": "bd8ce1b35771474fd2a8c65958cc9c82251620a32b495f5522178a2496abfa01",
+    "units": [
+      {
+        "loc": "제35조(표준서식) 全文",
+        "text": "제35조(표준서식) ① 표준서식은 별지 제8호서식부터 별지 제11호서식까지, 별지 제11호의2서식 및 별지 제12호서식과 같다.\n② 각 중앙관서의 장은 물품의 관리에 관하여 표준서식 외의 서식 이나 표준서식을 변경한 서식을 사용하려는 경우에는 미리 조달청장과 협의하여야 한다.\n③ 물품관리관은 표준서식을 전산파일로 작성하는 경우에는 매월 말일을 기준으로 해당 월의 물품 증감 현황이 실제와 맞는지를 확인하여야 한다.\n④ 물품관리관은 「국고금관리법 시행령」 제10조제3항에 따른 디지털예산ㆍ회계시스템을 이용하여 물품을 관리하는 경우에는 표준서식을 사용한 것으로 본다.\n[전문개정 2009. 12. 29.]"
+      }
+    ]
+  },
+  {
+    "id": "office-goods-national-rule-37",
+    "title": "물품관리법 시행규칙",
+    "article": "제37조(물품상황의 정리)",
+    "filename": "national-rule-37.txt",
+    "kind": "법령·규정",
+    "issuer": "재정경제부",
+    "institution": "국가기관 물품",
+    "effective_date": "2026-01-02",
+    "publication": "재정경제부령 제1호, 2026. 1. 2., 타법개정",
+    "source_url": "https://www.law.go.kr/LSW/lsSideInfoP.do?lsiSeq=282641&joNo=0037&joBrNo=00&docCls=jo&urlMode=lsScJoRltInfoR",
+    "raw_file": "national-rule-37.html",
+    "raw_sha256": "54688f1821e045c4393edde578eedf3a62a02a1d82264ceda848b311b869c43e",
+    "retrieved_at": "2026-10-26",
+    "collection": "office-goods-20261026",
+    "office_topic": "goods_management",
+    "scope": "일반 동산의 물품관리. 국가·지자체 소유/관리 구분 필요. 공기업·공공기관 자체규정, 군수품·특수물품, 기관별 별지·실제 재고는 별도 확인. 과거·미래 판본은 검토하지 않음.",
+    "sha256": "2ad8b3d431b3b34c78be6b0ce0f044d601793e48914d56865ee68318b3cd5b7d",
+    "units": [
+      {
+        "loc": "제37조(물품상황의 정리) 全文",
+        "text": "제37조(물품상황의 정리) 표준서식에 물품의 상황을 정리할 때에는 별표 2의 물품의 정리기준에 따른다.\n[전문개정 2009. 12. 29.]"
+      }
+    ]
+  },
+  {
+    "id": "office-goods-national-rule-51",
+    "title": "물품관리법 시행규칙",
+    "article": "제51조(불용 결정 및 폐기처분의 기준)",
+    "filename": "national-rule-51.txt",
+    "kind": "법령·규정",
+    "issuer": "재정경제부",
+    "institution": "국가기관 물품",
+    "effective_date": "2026-01-02",
+    "publication": "재정경제부령 제1호, 2026. 1. 2., 타법개정",
+    "source_url": "https://www.law.go.kr/LSW/lsSideInfoP.do?lsiSeq=282641&joNo=0051&joBrNo=00&docCls=jo&urlMode=lsScJoRltInfoR",
+    "raw_file": "national-rule-51.html",
+    "raw_sha256": "f0b095f9f34f1a7f06cb3140923d05f5274eb9638f31a44810c2591c0b0bae4d",
+    "retrieved_at": "2026-10-26",
+    "collection": "office-goods-20261026",
+    "office_topic": "goods_management",
+    "scope": "일반 동산의 물품관리. 국가·지자체 소유/관리 구분 필요. 공기업·공공기관 자체규정, 군수품·특수물품, 기관별 별지·실제 재고는 별도 확인. 과거·미래 판본은 검토하지 않음.",
+    "sha256": "e62b0d683c3ad8cc8d3d93ed6de8e12052e56c94de8fe9cdcda00869aa452cc1",
+    "units": [
+      {
+        "loc": "제51조(불용 결정 및 폐기처분의 기준) 全文",
+        "text": "제51조(불용 결정 및 폐기처분의 기준) ① 영 제39조에 따라 불용의 결정을 할 수 있는 물품은 다음 각 호와 같다.\n1. 사용할 필요가 없게 된 물품으로서 앞으로도 사용할 전망이 없는 물품\n2. 정수를 초과하는 물품과 예측할 수 있는 일정기간의 수요를 초과하여 재고로 보유하고 있는 물품\n3. 원장비(原裝備)의 사용이 불가능하거나 원장비가 없어진 경우로서 이를 새로 취득할 필요성이나 가능성이 없는 경우의 그 부속품\n4. 규격 또는 모형이 달라져 수리가 곤란하거나 수리하여도 본래의 목적에 사용할 수 없는 물품\n5. 시설물에서 제거된 물품으로서 활용할 수 없는 물품\n6. 훼손되거나 마모되어 수리하여도 본래의 목적에 사용할 수 없는 물품\n7. 수선이 필요한 물품으로서 수선을 하는 것이 비경제적인 물품\n8. 제1호부터 제7호까지의 규정에 준하는 사유가 있다고 각 중앙관서의 장이 인정하는 물품\n② 영 제39조에 따라 폐기처분을 할 수 있는 물품은 다음 각 호와 같다.\n1. 관리전환, 양여, 매각, 교환의 방법으로 처분을 하려고 해도 처분되지 아니하는 물품\n2. 변질ㆍ부패 또는 그 밖의 사유로 매각할 수 없다고 인정되는 물품\n[전문개정 2009. 12. 29.]"
+      }
+    ]
+  },
+  {
+    "id": "office-goods-national-rule-52",
+    "title": "물품관리법 시행규칙",
+    "article": "제52조(불용 결정의 절차 등)",
+    "filename": "national-rule-52.txt",
+    "kind": "법령·규정",
+    "issuer": "재정경제부",
+    "institution": "국가기관 물품",
+    "effective_date": "2026-01-02",
+    "publication": "재정경제부령 제1호, 2026. 1. 2., 타법개정",
+    "source_url": "https://www.law.go.kr/LSW/lsSideInfoP.do?lsiSeq=282641&joNo=0052&joBrNo=00&docCls=jo&urlMode=lsScJoRltInfoR",
+    "raw_file": "national-rule-52.html",
+    "raw_sha256": "0fb14cc9d9f239fb381e5e13b188df9557181441a6196b705b2444c516c69c4e",
+    "retrieved_at": "2026-10-26",
+    "collection": "office-goods-20261026",
+    "office_topic": "goods_management",
+    "scope": "일반 동산의 물품관리. 국가·지자체 소유/관리 구분 필요. 공기업·공공기관 자체규정, 군수품·특수물품, 기관별 별지·실제 재고는 별도 확인. 과거·미래 판본은 검토하지 않음.",
+    "sha256": "ffcb7f9ef0b14ac5242e0b9ce21c88719d881e7e2006a800113edbbc8549506f",
+    "units": [
+      {
+        "loc": "제52조(불용 결정의 절차 등) 全文",
+        "text": "제52조(불용 결정의 절차 등) 물품관리관은 영 제39조에 따라 불용의 결정을 하거나 영 제40조제1항에 따라 중앙관서의 장의 승인을 받아 불용의 결정을 할 때에는 별지 제17호의3서식의 불용 결정(승인요청)서에 의한다.\n[전문개정 2009. 12. 29.]"
+      }
+    ]
+  },
+  {
+    "id": "office-goods-national-rule-57",
+    "title": "물품관리법 시행규칙",
+    "article": "제57조(불용품의 해체 및 폐기의 절차)",
+    "filename": "national-rule-57.txt",
+    "kind": "법령·규정",
+    "issuer": "재정경제부",
+    "institution": "국가기관 물품",
+    "effective_date": "2026-01-02",
+    "publication": "재정경제부령 제1호, 2026. 1. 2., 타법개정",
+    "source_url": "https://www.law.go.kr/LSW/lsSideInfoP.do?lsiSeq=282641&joNo=0057&joBrNo=00&docCls=jo&urlMode=lsScJoRltInfoR",
+    "raw_file": "national-rule-57.html",
+    "raw_sha256": "0d49b9160f7ed18f8011f92df9e711eaab17bd2f1fa8e98c26259fd1545fd5e4",
+    "retrieved_at": "2026-10-26",
+    "collection": "office-goods-20261026",
+    "office_topic": "goods_management",
+    "scope": "일반 동산의 물품관리. 국가·지자체 소유/관리 구분 필요. 공기업·공공기관 자체규정, 군수품·특수물품, 기관별 별지·실제 재고는 별도 확인. 과거·미래 판본은 검토하지 않음.",
+    "sha256": "196d3bd9120862963e2342795e8ad4699169d8a00888337a21456b5d4fe49779",
+    "units": [
+      {
+        "loc": "제57조(불용품의 해체 및 폐기의 절차) 全文",
+        "text": "제57조(불용품의 해체 및 폐기의 절차) ① 물품관리관은 불용품을 해체하거나 폐기할 때에는 별지 제17호의4서식의 불용품 해체ㆍ폐기조서를 작성하여야 한다.\n② 제1항에 따른 불용품 해체ㆍ폐기조서에는 그 해체 또는 폐기에 관련된 자료를 첨부하여야 한다.\n③ 물품을 해체하거나 폐기하는 경우 제34조제1항 및 제2항을 준용한다.\n[전문개정 2009. 12. 29.]"
+      }
+    ]
+  },
+  {
+    "id": "office-goods-national-rule-58",
+    "title": "물품관리법 시행규칙",
+    "article": "제58조(불용품 처분의 정리)",
+    "filename": "national-rule-58.txt",
+    "kind": "법령·규정",
+    "issuer": "재정경제부",
+    "institution": "국가기관 물품",
+    "effective_date": "2026-01-02",
+    "publication": "재정경제부령 제1호, 2026. 1. 2., 타법개정",
+    "source_url": "https://www.law.go.kr/LSW/lsSideInfoP.do?lsiSeq=282641&joNo=0058&joBrNo=00&docCls=jo&urlMode=lsScJoRltInfoR",
+    "raw_file": "national-rule-58.html",
+    "raw_sha256": "6a039d23b0b88a2846bc22b9c4716fb37b31472ca45734f7bf62aee1aa774f85",
+    "retrieved_at": "2026-10-26",
+    "collection": "office-goods-20261026",
+    "office_topic": "goods_management",
+    "scope": "일반 동산의 물품관리. 국가·지자체 소유/관리 구분 필요. 공기업·공공기관 자체규정, 군수품·특수물품, 기관별 별지·실제 재고는 별도 확인. 과거·미래 판본은 검토하지 않음.",
+    "sha256": "76edec01bd2a7a6c05b58c00fd31a070ddd90c033841d8c95fa01afbabb70233",
+    "units": [
+      {
+        "loc": "제58조(불용품 처분의 정리) 全文",
+        "text": "제58조(불용품 처분의 정리) ① 물품관리관은 물품이 불용품으로 결정되었을 때에는 장부 등에 다음 각 호의 사항을 기록하여야 한다.\n1. 불용결정 연월일\n2. 별표 1의 물품상태 분류기준에 따른 물품의 상태\n② 물품관리관은 불용품이 처분되었을 때에는 장부 등에 다음 각 호의 사항을 기록하여야 한다.\n1. 처분의 구분(관리전환ㆍ매각ㆍ양여ㆍ대부ㆍ해체ㆍ폐기 등)\n2. 처분연월일\n3. 처분금액(매각대금ㆍ대부료 등)\n4. 해체에 의하여 취득한 부분품의 명세표\n[전문개정 2009. 12. 29.]"
+      }
+    ]
+  },
+  {
+    "id": "office-goods-local-act-2",
+    "title": "공유재산 및 물품 관리법",
+    "article": "제2조(정의)",
+    "filename": "local-act-2.txt",
+    "kind": "법령·규정",
+    "issuer": "행정안전부",
+    "institution": "지방자치단체 물품",
+    "effective_date": "2026-10-13",
+    "publication": "법률 제22072호, 2026. 10. 13., 일부개정",
+    "source_url": "https://www.law.go.kr/LSW/lsSideInfoP.do?lsiSeq=291145&joNo=0002&joBrNo=00&docCls=jo&urlMode=lsScJoRltInfoR",
+    "raw_file": "local-act-2.html",
+    "raw_sha256": "4519730c391c948c93c0189edb8f3063ed02d17b1cc6ee779a795ab31621acfb",
+    "retrieved_at": "2026-10-26",
+    "collection": "office-goods-20261026",
+    "office_topic": "goods_management",
+    "scope": "일반 동산의 물품관리. 국가·지자체 소유/관리 구분 필요. 공기업·공공기관 자체규정, 군수품·특수물품, 기관별 별지·실제 재고는 별도 확인. 과거·미래 판본은 검토하지 않음.",
+    "sha256": "345a093995ffa6c30e629e772a82cb425e24fc851b736f13a0e0ca0b78eb8b21",
+    "units": [
+      {
+        "loc": "제2조(정의) 全文",
+        "text": "제2조(정의) 이 법에서 사용하는 용어의 뜻은 다음과 같다. <개정 2021. 4. 20.>\n1. “공유재산”이란 지방자치단체의 부담, 기부채납(寄附採納)이나 법령에 따라 지방자치단체 소유로 된 제4조제1항 각 호의 재산을 말한다.\n2. “물품”이란 지방자치단체가 소유하는 동산(動産)과 지방자치단체가 사용하기 위하여 보관하는 동산 중 다음 각 목의 것을 제외한 동산을 말한다.\n가. 현금\n나. 유가증권\n다. 제4조에 따른 공유재산\n3. “기부채납”이란 지방자치단체 외의 자가 제4조제1항 각 호에 해당하는 재산의 소유권을 무상으로 지방자치단체에 이전하여 지방자치단체가 이를 취득하는 것을 말한다.\n4. “관리”란 공유재산 및 물품의 취득ㆍ운용과 유지ㆍ보존을 위한 모든 행위를 말한다.\n5. “해당 지방자치단체”란 공유재산 또는 물품을 소유한 지방자치단체를 말한다.\n6. “처분”이란 공유재산 및 물품의 매각, 교환, 양여(讓與), 신탁, 현물 출자 등의 방법으로 공유재산 및 물품의 소유권이 해당 지방자치단체 외의 자에게 이전되는 것을 말한다.\n7. “사용허가”란 제5조제2항에 따른 행정재산을 해당 지방자치단체 외의 자가 일정 기간 유상이나 무상으로 사용ㆍ수익할 수 있도록 허용하는 것을 말한다.\n8. “대부계약”이란 제5조제3항에 따른 일반재산 또는 물품을 해당 지방자치단체 외의 자가 일정 기간 유상이나 무상으로 사용ㆍ수익할 수 있도록 체결하는 계약을 말한다.\n9. “변상금”이란 사용허가나 대부계약 없이 공유재산 또는 물품을 사용ㆍ수익하거나 점유한 자(사용허가나 대부계약 기간이 끝난 후 다시 사용허가나 대부계약 없이 공유재산 또는 물품을 계속 사용ㆍ수익하거나 점유한 자를 포함한다. 이하 “무단점유자”라 한다)에게 부과하는 금액을 말한다.\n[전문개정 2010. 2. 4.]"
+      }
+    ]
+  },
+  {
+    "id": "office-goods-local-act-52",
+    "title": "공유재산 및 물품 관리법",
+    "article": "제52조(물품관리관)",
+    "filename": "local-act-52.txt",
+    "kind": "법령·규정",
+    "issuer": "행정안전부",
+    "institution": "지방자치단체 물품",
+    "effective_date": "2026-10-13",
+    "publication": "법률 제22072호, 2026. 10. 13., 일부개정",
+    "source_url": "https://www.law.go.kr/LSW/lsSideInfoP.do?lsiSeq=291145&joNo=0052&joBrNo=00&docCls=jo&urlMode=lsScJoRltInfoR",
+    "raw_file": "local-act-52.html",
+    "raw_sha256": "7bf52fee84afb95f0fa0479afd84737430d34e1f318301ccd97fde9456fcfff7",
+    "retrieved_at": "2026-10-26",
+    "collection": "office-goods-20261026",
+    "office_topic": "goods_management",
+    "scope": "일반 동산의 물품관리. 국가·지자체 소유/관리 구분 필요. 공기업·공공기관 자체규정, 군수품·특수물품, 기관별 별지·실제 재고는 별도 확인. 과거·미래 판본은 검토하지 않음.",
+    "sha256": "326d12146ab55d5fd4623a62defb2f2f4cba14ca0743c3cdb61de92f4ed5ccbb",
+    "units": [
+      {
+        "loc": "제52조(물품관리관) 全文",
+        "text": "제52조(물품관리관) ① 지방자치단체의 장은 소관 물품의 관리 사무를 소속 공무원에게 위임하여 물품을 관리하게 할 수 있다. <개정 2021. 4. 20.>\n② 제1항에 따라 위임받은 공무원을 “물품관리관”이라 한다.\n[전문개정 2008. 12. 26.]"
+      }
+    ]
+  },
+  {
+    "id": "office-goods-local-act-60",
+    "title": "공유재산 및 물품 관리법",
+    "article": "제60조(재물조사 등)",
+    "filename": "local-act-60.txt",
+    "kind": "법령·규정",
+    "issuer": "행정안전부",
+    "institution": "지방자치단체 물품",
+    "effective_date": "2026-10-13",
+    "publication": "법률 제22072호, 2026. 10. 13., 일부개정",
+    "source_url": "https://www.law.go.kr/LSW/lsSideInfoP.do?lsiSeq=291145&joNo=0060&joBrNo=00&docCls=jo&urlMode=lsScJoRltInfoR",
+    "raw_file": "local-act-60.html",
+    "raw_sha256": "32130f5971e0aab32cb213dc525e36b346f3e89517854187fdba71c7ddcd1397",
+    "retrieved_at": "2026-10-26",
+    "collection": "office-goods-20261026",
+    "office_topic": "goods_management",
+    "scope": "일반 동산의 물품관리. 국가·지자체 소유/관리 구분 필요. 공기업·공공기관 자체규정, 군수품·특수물품, 기관별 별지·실제 재고는 별도 확인. 과거·미래 판본은 검토하지 않음.",
+    "sha256": "eb13ddc4f52ff2bee9f490e30c55cbe3718aeaa07196958b64ddcb8f9b5919e9",
+    "units": [
+      {
+        "loc": "제60조(재물조사 등) 全文",
+        "text": "제60조(재물조사 등) ① 지방자치단체의 장은 관리하는 물품에 대하여 대통령령으로 정하는 바에 따라 1년마다 재물조사를 실시하여야 하며, 필요한 경우에는 수시로 재물조사를 할 수 있다. <개정 2021. 4. 20.>\n② 제1항에 따른 재물조사 결과 잃어버리거나 훼손된 물품이 발견되면 「회계관계직원 등의 책임에 관한 법률」에 따라 조치하여야 한다. <개정 2021. 4. 20.>\n[전문개정 2008. 12. 26.]"
+      }
+    ]
+  },
+  {
+    "id": "office-goods-local-act-75",
+    "title": "공유재산 및 물품 관리법",
+    "article": "제75조(불용의 결정 등)",
+    "filename": "local-act-75.txt",
+    "kind": "법령·규정",
+    "issuer": "행정안전부",
+    "institution": "지방자치단체 물품",
+    "effective_date": "2026-10-13",
+    "publication": "법률 제22072호, 2026. 10. 13., 일부개정",
+    "source_url": "https://www.law.go.kr/LSW/lsSideInfoP.do?lsiSeq=291145&joNo=0075&joBrNo=00&docCls=jo&urlMode=lsScJoRltInfoR",
+    "raw_file": "local-act-75.html",
+    "raw_sha256": "bd5b25da6e0ee6a14008b6ceb7e5941aa9cf39824ddf9eb70913db8e522084b8",
+    "retrieved_at": "2026-10-26",
+    "collection": "office-goods-20261026",
+    "office_topic": "goods_management",
+    "scope": "일반 동산의 물품관리. 국가·지자체 소유/관리 구분 필요. 공기업·공공기관 자체규정, 군수품·특수물품, 기관별 별지·실제 재고는 별도 확인. 과거·미래 판본은 검토하지 않음.",
+    "sha256": "407ece049eec1340482193a26375780216098c976fdeb96b61ed64d9845ccf6d",
+    "units": [
+      {
+        "loc": "제75조(불용의 결정 등) 全文",
+        "text": "제75조(불용의 결정 등) ① 지방자치단체의 장은 소관 물품 중 사용할 필요가 없거나 사용할 수 없는 물품이 있으면 그 물품에 대하여 불용(不用)의 결정을 하여야 한다. 다만, 대통령령으로 정하는 물품은 물품관리관이 그 결정을 할 수 있다. <개정 2021. 4. 20.>\n② 지방자치단체의 장 또는 물품관리관은 제1항에 따라 불용의 결정을 한 물품(이하 “불용품”이라 한다) 중 매각하는 것이 지방자치단체에 불리하거나 부적합한 물품 또는 매각할 수 없는 물품은 폐기할 수 있다. <개정 2021. 4. 20.>\n[전문개정 2008. 12. 26.]"
+      }
+    ]
+  },
+  {
+    "id": "office-goods-local-act-76",
+    "title": "공유재산 및 물품 관리법",
+    "article": "제76조(물품의 매각)",
+    "filename": "local-act-76.txt",
+    "kind": "법령·규정",
+    "issuer": "행정안전부",
+    "institution": "지방자치단체 물품",
+    "effective_date": "2026-10-13",
+    "publication": "법률 제22072호, 2026. 10. 13., 일부개정",
+    "source_url": "https://www.law.go.kr/LSW/lsSideInfoP.do?lsiSeq=291145&joNo=0076&joBrNo=00&docCls=jo&urlMode=lsScJoRltInfoR",
+    "raw_file": "local-act-76.html",
+    "raw_sha256": "f570b1b06048bc3c72eb36721759c5ba66e52ff89e97c569fc36aa6cc88bdabd",
+    "retrieved_at": "2026-10-26",
+    "collection": "office-goods-20261026",
+    "office_topic": "goods_management",
+    "scope": "일반 동산의 물품관리. 국가·지자체 소유/관리 구분 필요. 공기업·공공기관 자체규정, 군수품·특수물품, 기관별 별지·실제 재고는 별도 확인. 과거·미래 판본은 검토하지 않음.",
+    "sha256": "4c7d673012896d3ca375dcbf00f589141391ddfc25fa5998fbaa6ce1c850f4bf",
+    "units": [
+      {
+        "loc": "제76조(물품의 매각) 全文",
+        "text": "제76조(물품의 매각) ① 지방자치단체의 장은 매각을 목적으로 한 물품이거나 불용품이 아니면 매각할 수 없다. <개정 2021. 4. 20.>\n② 물품을 매각할 때에는 일반입찰에 부쳐야 한다. 다만 대통령령으로 정하는 경우에는 경매나 수의계약으로 매각할 수 있다. <신설 2021. 4. 20.>\n③ 지방자치단체의 장은 제1항의 물품으로서 매각되지 아니하는 것은 대통령령으로 정하는 바에 따라 매각의 특례를 둘 수 있다. <개정 2021. 4. 20.>\n[전문개정 2008. 12. 26.][제목개정 2021. 4. 20.]"
+      }
+    ]
+  },
+  {
+    "id": "office-goods-local-decree-59",
+    "title": "공유재산 및 물품 관리법 시행령",
+    "article": "제59조(정기재물조사)",
+    "filename": "local-decree-59.txt",
+    "kind": "법령·규정",
+    "issuer": "행정안전부",
+    "institution": "지방자치단체 물품",
+    "effective_date": "2026-07-21",
+    "publication": "대통령령 제36515호, 2026. 7. 21., 일부개정",
+    "source_url": "https://www.law.go.kr/LSW/lsSideInfoP.do?lsiSeq=288163&joNo=0059&joBrNo=00&docCls=jo&urlMode=lsScJoRltInfoR",
+    "raw_file": "local-decree-59.html",
+    "raw_sha256": "5cb6a7ac44b2abd367c76df4ac168c4d170330a64b63421b56699545775c94d3",
+    "retrieved_at": "2026-10-26",
+    "collection": "office-goods-20261026",
+    "office_topic": "goods_management",
+    "scope": "일반 동산의 물품관리. 국가·지자체 소유/관리 구분 필요. 공기업·공공기관 자체규정, 군수품·특수물품, 기관별 별지·실제 재고는 별도 확인. 과거·미래 판본은 검토하지 않음.",
+    "sha256": "dcd2b45a6ab83edadaade8c78c94cc612e7492e4640408f9cf0c8bba7f049d39",
+    "units": [
+      {
+        "loc": "제59조(정기재물조사) 全文",
+        "text": "제59조(정기재물조사) ① 지방자치단체의 장은 법 제60조에 따른 매 1년 단위의 재물조사(이하 “정기재물조사”라 한다)를 할 때 행정안전부장관이 정하는 재물조사지침에 따라야 한다. <개정 2013. 3. 23., 2014. 11. 19., 2017. 7. 26., 2022. 4. 20.>\n② 행정안전부장관은 제1항의 재물조사지침을 작성할 때 「물품관리법 시행령」 제22조에 따라 조달청장이 정하는 정부의 정기재물조사지침을 참고하여야 한다. <개정 2013. 3. 23., 2014. 11. 19., 2017. 7. 26.>\n③ 지방자치단체의 장은 정기재물조사를 한 후 그 결과를 행정안전부장관에게 제출해야 한다. 이 경우 시장ㆍ군수 및 자치구의 구청장은 특별시장ㆍ통합특별시장ㆍ광역시장ㆍ도지사 또는 특별자치도지사를 거쳐서 제출해야 한다. <개정 2026. 7. 21.>\n④ 행정안전부장관은 제3항에 따라 정기재물조사 결과를 제출받은 경우에는 그 내용을 조달청장에게 통보하여야 한다. <개정 2013. 3. 23., 2014. 11. 19., 2017. 7. 26., 2023. 11. 16.>\n[전문개정 2009. 4. 24.]"
+      }
+    ]
+  },
+  {
+    "id": "office-goods-local-decree-76",
+    "title": "공유재산 및 물품 관리법 시행령",
+    "article": "제76조(불용 결정)",
+    "filename": "local-decree-76.txt",
+    "kind": "법령·규정",
+    "issuer": "행정안전부",
+    "institution": "지방자치단체 물품",
+    "effective_date": "2026-07-21",
+    "publication": "대통령령 제36515호, 2026. 7. 21., 일부개정",
+    "source_url": "https://www.law.go.kr/LSW/lsSideInfoP.do?lsiSeq=288163&joNo=0076&joBrNo=00&docCls=jo&urlMode=lsScJoRltInfoR",
+    "raw_file": "local-decree-76.html",
+    "raw_sha256": "161cf7f53a3c41f82fc0d3a28b4362cc3eeb637b116b62fe49b2df98bfaeeac7",
+    "retrieved_at": "2026-10-26",
+    "collection": "office-goods-20261026",
+    "office_topic": "goods_management",
+    "scope": "일반 동산의 물품관리. 국가·지자체 소유/관리 구분 필요. 공기업·공공기관 자체규정, 군수품·특수물품, 기관별 별지·실제 재고는 별도 확인. 과거·미래 판본은 검토하지 않음.",
+    "sha256": "3bfeb8d4bc8db6b52d74605c4d78981676817ae821b3d7042692cff170de6527",
+    "units": [
+      {
+        "loc": "제76조(불용 결정) 全文",
+        "text": "제76조(불용 결정) 법 제75조제1항 본문에 따라 지방자치단체의 장이 물품에 대하여 불용(不用)의 결정을 할 때에는 그 불용 결정서에 다음 각 호의 사항을 명확하게 적어야 한다.\n1. 불용 결정을 하려는 물품의 분류번호ㆍ품명ㆍ규격ㆍ수량 및 가액\n2. 물품의 구입 연월일과 물품의 상황\n3. 물품의 사용 경위\n4. 불용 결정을 하는 이유\n5. 다른 목적을 위하여 사용할 수 있는지의 확인 여부\n6. 처분방법\n[전문개정 2009. 4. 24.]"
+      }
+    ]
+  },
+  {
+    "id": "office-goods-local-decree-77",
+    "title": "공유재산 및 물품 관리법 시행령",
+    "article": "제77조(물품관리관이 불용 결정을 할 수 있는 물품)",
+    "filename": "local-decree-77.txt",
+    "kind": "법령·규정",
+    "issuer": "행정안전부",
+    "institution": "지방자치단체 물품",
+    "effective_date": "2026-07-21",
+    "publication": "대통령령 제36515호, 2026. 7. 21., 일부개정",
+    "source_url": "https://www.law.go.kr/LSW/lsSideInfoP.do?lsiSeq=288163&joNo=0077&joBrNo=00&docCls=jo&urlMode=lsScJoRltInfoR",
+    "raw_file": "local-decree-77.html",
+    "raw_sha256": "161833bb0f6cce6bb3cbd69ee197ec9c949f56fb2894808ae92104dfe98fbe70",
+    "retrieved_at": "2026-10-26",
+    "collection": "office-goods-20261026",
+    "office_topic": "goods_management",
+    "scope": "일반 동산의 물품관리. 국가·지자체 소유/관리 구분 필요. 공기업·공공기관 자체규정, 군수품·특수물품, 기관별 별지·실제 재고는 별도 확인. 과거·미래 판본은 검토하지 않음.",
+    "sha256": "703980f178ba1f88098aa0fcec496473699f806aae8ddb8e270af7cdba616d05",
+    "units": [
+      {
+        "loc": "제77조(물품관리관이 불용 결정을 할 수 있는 물품) 全文",
+        "text": "제77조(물품관리관이 불용 결정을 할 수 있는 물품) 법 제75조제1항 단서에 따라 물품관리관이 불용 결정을 할 수 있는 물품은 다음 각 호의 어느 하나에 해당하는 물품으로 한다. 다만, 각 지방자치단체의 장이 지정하는 물품은 제외한다. <개정 2014. 7. 7.>\n1. 취득 단가가 500만원 미만인 물품\n2. 사용이 불가능한 물품\n3. 사용할 필요가 없게 된 물품으로서 앞으로도 사용할 전망이 없는 물품\n4. 정수를 초과하는 물품과 예측할 수 있는 일정기간의 수요를 초과하여 재고로 보유하고 있는 물품\n5. 원장비(原裝備)의 사용이 불가능하거나 원장비가 없어진 경우로서 이를 새로 취득할 필요성이나 가능성이 없는 경우의 그 부속품\n6. 규격 또는 모형이 달라져 수리가 곤란하거나 수리하여도 본래의 목적에 사용할 수 없는 물품\n7. 시설물에서 제거된 물품으로서 활용할 수 없는 물품\n8. 훼손되거나 마모되어 수리하여도 본래의 목적에 사용할 수 없는 물품\n9. 수선이 필요한 물품으로서 수선을 하는 것이 비경제적인 물품\n10. 제1호부터 제9호까지의 규정에 준하는 사유가 있다고 각 지방자치단체의 장이 인정하는 물품\n[전문개정 2009. 4. 24.]"
+      }
+    ]
+  },
+  {
+    "id": "office-goods-local-decree-78",
+    "title": "공유재산 및 물품 관리법 시행령",
+    "article": "제78조(불용품의 매각방법 및 특례)",
+    "filename": "local-decree-78.txt",
+    "kind": "법령·규정",
+    "issuer": "행정안전부",
+    "institution": "지방자치단체 물품",
+    "effective_date": "2026-07-21",
+    "publication": "대통령령 제36515호, 2026. 7. 21., 일부개정",
+    "source_url": "https://www.law.go.kr/LSW/lsSideInfoP.do?lsiSeq=288163&joNo=0078&joBrNo=00&docCls=jo&urlMode=lsScJoRltInfoR",
+    "raw_file": "local-decree-78.html",
+    "raw_sha256": "c40e2a1a7a7bb67e149207459af4365fd1c9499d0aca0ea19bab47ad1bc15a92",
+    "retrieved_at": "2026-10-26",
+    "collection": "office-goods-20261026",
+    "office_topic": "goods_management",
+    "scope": "일반 동산의 물품관리. 국가·지자체 소유/관리 구분 필요. 공기업·공공기관 자체규정, 군수품·특수물품, 기관별 별지·실제 재고는 별도 확인. 과거·미래 판본은 검토하지 않음.",
+    "sha256": "af13ffc07a814ee28988b7767e4108c7302536018f99cceb35c36713f55d06bd",
+    "units": [
+      {
+        "loc": "제78조(불용품의 매각방법 및 특례) 全文",
+        "text": "제78조(불용품의 매각방법 및 특례) ① 불용품을 일반입찰로 매각하는 경우에는 지정정보처리장치를 이용하여 입찰공고 및 개찰ㆍ낙찰 선언을 하여야 한다. <신설 2018. 1. 9.>\n② 제1항에 따라 일반입찰로 불용품을 매각하는 경우에는 예정가격 이상으로 입찰한 1개 이상의 유효한 입찰이 있는 경우에 최고가격으로 응찰한 자를 낙찰자로 한다. <신설 2018. 1. 9.>\n③ 2회 이상 일반입찰로 매각되지 않은 불용품은 법 제76조제2항 단서에 따라 경매나 수의계약으로 매각할 수 있다. 다만, 다음 각 호의 경우에는 처음부터 일반입찰을 하지 않고 경매나 수의계약으로 매각할 수 있다. <개정 2010. 8. 4., 2016. 7. 12., 2018. 1. 9., 2022. 4. 20.>\n1. 처분단가가 10만원 이하이며 처분총액이 500만원 이하인 불용품을 매각하는 경우\n2. 처분단가가 500만원 이하이며 처분총액이 1천만원 이하인 불용농기계를 해당 지방자치단체에 거주하는 농업인에게 매각하는 경우\n3. 국가나 다른 지방자치단체에 매각하는 경우\n④ 제1항부터 제3항까지의 규정에 따라 불용품을 매각하는 경우의 예정가격은 감정평가법인등에게 의뢰하여 평가한 감정평가액으로 한다. 다만, 다음 각 호의 불용품의 경우에는 해당 호에서 정하는 자로부터 견적서를 받아 예정가격을 정할 수 있다. <개정 2014. 7. 7., 2015. 2. 16., 2018. 1. 9., 2022. 1. 21., 2022. 4. 20.>\n1. 취득단가가 10만원 이하인 불용품: 계약대상자 또는 제3자\n2. 감정비용이 예정가격을 초과할 것으로 예상되는 불용품: 계약대상자 또는 제3자\n3. 감정평가법인등의 감정이 곤란한 불용품: 계약대상자 또는 제3자\n4. 「자동차관리법」에 따른 자동차인 불용품: 같은 법 제58조의5에 따른 자동차가격의 조사ㆍ산정에 관한 자격을 갖춘 자\n⑤ 제4항에 따라 결정한 예정가격은 해당 불용품을 사려는 자에게 제시해서는 아니 된다. 다만, 예정가격을 제시하면 쉽게 매각할 수 있다고 인정되는 경우에는 제시할 수 있다. <개정 2018. 1. 9.>\n[전문개정 2009. 4. 24.]"
+      }
+    ]
+  },
+  {
+    "id": "office-goods-local-decree-91",
+    "title": "공유재산 및 물품 관리법 시행령",
+    "article": "제91조(적용 배제)",
+    "filename": "local-decree-91.txt",
+    "kind": "법령·규정",
+    "issuer": "행정안전부",
+    "institution": "지방자치단체 물품",
+    "effective_date": "2026-07-21",
+    "publication": "대통령령 제36515호, 2026. 7. 21., 일부개정",
+    "source_url": "https://www.law.go.kr/LSW/lsSideInfoP.do?lsiSeq=288163&joNo=0091&joBrNo=00&docCls=jo&urlMode=lsScJoRltInfoR",
+    "raw_file": "local-decree-91.html",
+    "raw_sha256": "3a64fe7ea070da26db7fb0d83b168f4c98d38347c95615116291131c3a0c2a2d",
+    "retrieved_at": "2026-10-26",
+    "collection": "office-goods-20261026",
+    "office_topic": "goods_management",
+    "scope": "일반 동산의 물품관리. 국가·지자체 소유/관리 구분 필요. 공기업·공공기관 자체규정, 군수품·특수물품, 기관별 별지·실제 재고는 별도 확인. 과거·미래 판본은 검토하지 않음.",
+    "sha256": "a0ff45cffeff52425fad05695add351a5f32c83419ee598c3a40598670dc1f22",
+    "units": [
+      {
+        "loc": "제91조(적용 배제) 全文",
+        "text": "제91조(적용 배제) ① 법 제91조에 따라 다음 각 호의 어느 하나에 해당하는 물품에 대해서는 법 제49조, 제52조, 제53조, 제57조, 제58조, 제60조, 제62조부터 제64조까지, 제69조, 제75조, 제78조, 제86조, 제93조 및 제94조를 적용하지 않을 수 있다. <개정 2014. 7. 7., 2016. 11. 29., 2022. 4. 20.>\n1. 지방자치단체의 사무 또는 사업의 집행에 필요한 서류\n2. 지급명령서\n3. 법령에 따라 몰수되거나 지방자치단체에 귀속된 물품\n4. 지방자치단체의 사무 또는 사업의 집행에 필요한 물품으로서 법령에 따라 지방자치단체가 점유하여 보관하고 있는 물품\n5. 「지방회계법」 제7조제2항에 따른 일상경비등으로 취득한 물품 중 해당 지방자치단체의 장이 자산으로 관리할 필요가 없다고 인정하는 물품\n6. 서화, 조각, 사진, 공예품 등 미술품\n7. 도서, 박물관 보존물품, 과학관 전시물품\n8. 불용품 중 역사적ㆍ학술적 보존가치가 있다고 지방자치단체의 장이 인정하여 보관하는 물품\n9. 지방자치단체의 장이 재활용하기 위하여 기부 등으로 받은 물품\n10. 동식물 등 특수물품\n11. 소프트웨어\n12. 리스 물품\n② 지방자치단체의 장은 제1항 각 호의 물품에 대해서는 다른 법령에 특별한 규정이 있는 경우를 제외하고는 그 물품의 특성을 고려하여 그 물품을 효율적이고 적정하게 관리하는 데 필요한 사항을 정하여 관리하여야 한다.\n[전문개정 2009. 4. 24.]"
+      }
+    ]
+  }
+]

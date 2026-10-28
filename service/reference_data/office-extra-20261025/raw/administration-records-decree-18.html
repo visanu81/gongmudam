@@ -1,0 +1,301 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+ <head>         
+  <script type="text/javascript" src="/LSW/js/jquery/jquery.js"></script> 
+  <script type="text/javascript" src="/LSW/js/common/jquery-custom.js"></script> 
+  <script type="text/javascript" src="/LSW/js/common/common.js"></script> 
+  <script type="text/javascript" src="/LSW/js/common/common-ex.js"></script> 
+  <script type="text/javascript" src="/LSW/js/common/xmlHttpUtil.js"></script> 
+  <script type="text/javascript" src="/LSW/js/ls/ls.js"></script> 
+  <script type="text/javascript" src="/LSW/js/ls/lsLink.js"></script> 
+  <script type="text/javascript" src="/LSW/js/ls/lsJo.js"></script> 
+  <script type="text/javascript" src="/LSW/js/ls/lsPopLayer.js"></script> 
+  <script type="text/javascript" src="/LSW/js/ls/lsOutPutJoNew.js"></script> 
+  <script type="text/javascript" src="/LSW/js/jquery/jquery.loadmask.js"></script> 
+  <script type="text/javascript" src="/LSW/js/jquery/jquery-ui.js"></script> 
+  <script type="text/javascript" src="/LSW/js/jquery/jquery.layout-latest.js"></script> 
+  <script type="text/javascript" src="/LSW/js/jquery/jquery.print.js"></script> 
+  <script type="text/javascript" src="/LSW/js/ls/lumLsLinkPop.js"></script>   
+  <link rel="stylesheet" type="text/css" href="/LSW/css/lsw/xtheme-ls.css" />
+  <link rel="stylesheet" type="text/css" href="/LSW/css/lsw/common.css" />
+  <link rel="stylesheet" type="text/css" href="/LSW/css/lsw/ext_all_ex.css" />
+  <link rel="stylesheet" type="text/css" href="/LSW/css/ui_2017.css" />
+  <link rel="stylesheet" type="text/css" href="/LSW/css/lsw/commonForLs.css" />
+  <link rel="stylesheet" type="text/css" href="/LSW/js/jquery/layout-default-latest.css" />
+  <link rel="stylesheet" type="text/css" href="/LSW/css/lsw/xtheme-layer.css" />
+  <link rel="stylesheet" type="text/css" href="/LSW/css/lumLsLinkPop.css" />
+  <style type="text/css">
+	.ui-layout-toggler-west-open {
+		background-image: url(/LSW/images/button/leslidev7_1.gif);
+		background-color: white;
+		background-repeat: no-repeat;
+		border: none;
+	}
+	.ui-layout-toggler-west-closed {
+		background-image: url(/LSW/images/button/leslidev7_2.gif);
+		background-color: white;
+		background-repeat: no-repeat;
+		border: none;
+		object-fit: contain;
+		width: 15px;
+		height: auto;
+	}
+</style>
+  <title>국가법령정보센터 | 연계정보</title>
+ </head> 
+ <body id="bodyId"> 
+  <div class="outer-north" id="topMenu"> 
+   <div class="div-top-container" id="top-container"> 
+    <div class="div-top" id="pop_top"> 
+     <div style="float:left;margin-left:10px;color:#fff;font-size:14px;font-weight:bolder;line-height:36px;">
+      연계정보
+     </div> 
+     <div style="float:right;margin-right:10px;"> 
+      <a href="https://www.law.go.kr" target="_blank"><img src="/LSW/images/common/poplogo.gif" alt="법제처 국가법령정보센터" title="법제처 국가법령정보센터가 새창으로 열립니다." /></a> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="div-message-container" id="message-container" style="background-color:#f7f7f7; height:40px; display: flex;"> 
+    <span style="display: inline-block; margin: 0 0 0 15px;"> <a href="javascript:;" id="backBtn" title="이전으로" onclick="goBack();"><img src="/LSW/images/btn_pre_pop.png" alt="이전으로" /></a> </span> 
+    <div class="r_bx" style="margin-left: auto;"> 
+     <div id="saveAndPrintBtn" class="div-print" style="display: flex; align-items: center;"> 
+      <label for="bdySearch" class="blind">검색</label>
+      <input id="bdySearch" type="text" maxlength="10" onkeydown="onKeyDown();" value="" /> 
+      <a href="javascript:;" title="검색" class="btn type4" id="keywordSch" onclick="joBdySearch()" style="display: flex; align-items: center; margin-right: 10px;"> 검색 </a> 
+      <a href="javascript:;" title="저장" class="btn_c type3 typeB" id="bdySaveBtn" onclick="saveAndPrint(0, this ,0);"> <img src="/LSW/images/common/btn_v13fn6_1.png" alt="저장" /> </a> 
+      <a href="javascript:;" class="btn_c type3 typeC" id="bdyPrintBtn" title="인쇄" onclick="javascript:lsLinkCommonPrint('');"> <img src="/LSW/images/common/btn_v13fn7_1.png" alt="인쇄" /> </a> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="outer-west" id="content_left"> 
+   <p class="deactive" id="ls002254" title="공공기록물 관리에 관한 법률 시행령"> 공공기록물 관리에 관한 법률 시행령<br /> <span class="subtit1_1"> [시행 2026. 10. 2.] [대통령령 제36728호, 2026. 9. 29., 타법개정] </span> </p> 
+   <ul class="sub-menu"> 
+    <li class="rlatJoLi"> <a href="javascript:;" id="jo99447129:0018:00" onclick="f_autoScroll(this);" title="제18조 회의록의 작성ㆍ관리">제18조 회의록의 작성ㆍ관리</a> </li> 
+   </ul> 
+  </div> 
+  <div class="outer-center" id="content-container"> 
+   <div class="middle-north" id="content-title"></div> 
+   <div class="middle-center" id="linkedJoContent"> 
+    <!-- 법령명 --> 
+    <div id="conTop" class="cont_top"> 
+     <a id="top"></a> 
+     <h2 id="002254"> 공공기록물 관리에 관한 법률 시행령 <span>( 약칭: 공공기록물법 시행령 )</span> </h2> 
+     <div class="ct_sub"> 
+      <span>[시행 2026. 10. 2.] [대통령령 제36728호, 2026. 9. 29., 타법개정]</span> 
+      <img src="/LSW/images/button/btn_alljo.gif" alt="전체조문보기" onclick="javascript:window.open('/LSW/lsInfoP.do?lsiSeq=290311')" /> 
+     </div> 
+    </div> 
+    <!-- 조문정보 --> 
+    <a name="J18:0" id="J18:0"></a> 
+    <div class="pgroup"> 
+     <ul class="lawico01"> 
+     </ul> 
+     <div class="lawcon"> 
+      <p class="pty1_p4"> <span class="bl"> <label for="Y001800" id="J99447129:0018:00"> 제18조(회의록의 작성ㆍ관리) </label> </span> ①<a title="팝업으로 이동" class="link sfon1" onclick="javascript:fncLsLawPop('1035271079','ALLJO','');" href="javascript:;">법</a> <a title="팝업으로 이동" class="link sfon2" onclick="javascript:fncLsLawPop('1035271095','JO','');" href="javascript:;">제17조</a><a title="팝업으로 이동" class="link sfon3" onclick="javascript:fncLsLawPop('1035271085','JO','');" href="javascript:;">제2항</a>에 따라 공공기관이 다음 각 호의 어느 하나에 해당하는 회의를 개최하는 경우에는 회의록을 작성해야 한다. <span class="sfon">&lt;개정 2020. 3. 31., 2026. 8. 25.&gt;</span> </p>
+      <p class="pty1_de2h">1. 대통령이 참석하는 회의 </p> 
+      <p class="pty1_de2h">2. 국무총리가 참석하는 회의 </p> 
+      <p class="pty1_de2h">3. 주요 정책의 심의 또는 의견조정을 목적으로 차관급 이상의 주요 직위자를 구성원으로 하여 운영하는 회의 </p> 
+      <p class="pty1_de2h">4. 정당과의 업무협의를 목적으로 차관급 이상의 주요 직위자가 참석하는 회의 </p> 
+      <p class="pty1_de2h">5. 개별법 또는 특별법에 따라 구성된 위원회 또는 심의회 등이 운영하는 회의 </p> 
+      <p class="pty1_de2h">6. 지방자치단체장, 교육감 및 <a title="팝업으로 이동" class="link sfon1" onclick="javascript:fncLsLawPop('1035271071','ALLJO','');" href="javascript:;">「지방교육자치에 관한 법률」</a> <a title="팝업으로 이동" class="link sfon2" onclick="javascript:fncLsLawPop('1035271069','JO','');" href="javascript:;">제34조</a>에 따른 교육장이 참석하는 회의 </p> 
+      <p class="pty1_de2h">7. <a title="팝업으로 이동" class="link sfon2" onclick="javascript:fncLsLawPop('1035271089','JO','');" href="javascript:;">제3조</a><a title="팝업으로 이동" class="link sfon4" onclick="javascript:fncLsLawPop('1035271097','JO','');" href="javascript:;">제1호부터 제4호</a>까지의 기관의 장 및 <a title="팝업으로 이동" class="link sfon2" onclick="javascript:fncLsLawPop('1035271081','JO','');" href="javascript:;">같은 조</a> <a title="팝업으로 이동" class="link sfon4" onclick="javascript:fncLsLawPop('1035271075','JO','');" href="javascript:;">제5호</a> 중 <a title="팝업으로 이동" class="link sfon1" onclick="javascript:fncLsLawPop('1035271077','ALLJO','');" href="javascript:;">「고등교육법」</a>에 따라 설립된 학교의 장이 참석하는 회의 </p> 
+      <p class="pty1_de2h">8. <a title="팝업으로 이동" class="link sfon2" onclick="javascript:fncLsLawPop('1035271091','JO','');" href="javascript:;">제17조</a><a title="팝업으로 이동" class="link sfon3" onclick="javascript:fncLsLawPop('1035271083','JO','');" href="javascript:;">제1항</a> 각 호의 어느 하나에 해당하는 사항에 관한 심의 또는 의견조정을 목적으로 관계기관의 국장급 이상 공무원 3인 이상이 참석하는 회의 </p> 
+      <p class="pty1_de2h">9. 그 밖에 회의록의 작성이 필요하다고 인정되는 주요 회의 </p> 
+      <p class="pty1_de2_1">②제1항에 따른 회의록에는 회의의 명칭, 개최기관, 일시 및 장소, 참석자 및 배석자 명단, 진행 순서, 상정 안건, 발언 요지, 결정 사항 및 표결 내용에 관한 사항이 포함되어야 하며, 전자기록생산시스템을 통하여 회의록을 생산 또는 등록하여 관리해야 한다. 이 경우 제1항제1호부터 제3호까지, 제5호 또는 제6호에 해당하는 회의 중 영구기록물관리기관의 장이 지정하는 회의(이하 “지정회의”라 한다)는 회의록과 함께 속기록 또는 녹음기록 중 어느 하나를 생산해야 하며, 녹음기록의 경우에는 녹취록을 함께 생산해야 한다. <span class="sfon">&lt;개정 2014. 11. 4., 2025. 5. 20.&gt;</span> </p> 
+      <p class="pty1_de2_1">③제2항에 따라 속기록 또는 녹음기록(녹취록을 포함한다)을 생산한 공공기관은 <a title="팝업으로 이동" class="link sfon1" onclick="javascript:fncLsLawPop('1035271093','ALLJO','');" href="javascript:;">법</a> <a title="팝업으로 이동" class="link sfon2" onclick="javascript:fncLsLawPop('1035271087','JO','');" href="javascript:;">제17조</a><a title="팝업으로 이동" class="link sfon3" onclick="javascript:fncLsLawPop('1035271073','JO','');" href="javascript:;">제2항</a>에 따라 그 기록물의 전부 또는 일부를 보존기간의 기산일부터 10년을 초과하지 아니하는 범위 내에서 공개하지 아니할 수 있다. 다만, 제1항제1호에 해당하는 경우에는 보존기간의 기산일부터 15년을 초과하지 아니하는 범위 내에서 공개하지 아니할 수 있다. </p> 
+      <p class="pty1_de2_1">④회의록(제2항 후단에 따른 회의의 경우에는 속기록 또는 녹음기록을 포함한다)은 그 회의를 소집 또는 주관하는 공공기관이 작성하여야 하며, 주관기관이 불분명하거나 공공기관이 아닌 경우에는 대상 회의의 참석자 중 회의 안건과 관련하여 업무의 연관성이 가장 높은 공공기관을 정하고, 해당 공공기관이 작성하도록 한다. </p> 
+      <p class="pty1_de2_1">⑤ 영구기록물관리기관의 장은 다음 각 호의 어느 하나에 해당하는 경우 지정회의의 지정을 해제할 수 있다. <span class="sfon">&lt;신설 2025. 5. 20.&gt;</span> </p> 
+      <p class="pty1_de2h">1. 지정회의가 폐지된 경우 </p> 
+      <p class="pty1_de2h">2. 지정회의가 제1항제1호부터 제3호까지, 제5호 또는 제6호에 해당하지 않게 된 경우 </p> 
+      <p class="pty1_de2h">3. 더 이상 속기록 및 녹음기록을 생산할 필요가 없다고 인정되는 경우 </p> 
+      <p class="pty1_de2_1">⑥ 영구기록물관리기관의 장은 제2항에 따라 지정회의를 지정하거나 제5항에 따라 지정회의의 지정을 해제하는 경우에는 해당 회의의 명칭, 소관부서, 지정 사유 또는 해제 사유 등을 관보(지방기록물관리기관의 경우에는 공보를 말한다) 또는 인터넷 홈페이지 등 정보통신망에 공고해야 한다. <span class="sfon">&lt;신설 2025. 5. 20.&gt;</span> </p> 
+      <p></p> 
+     </div> 
+    </div> 
+    <!-- 조문정보 --> 
+   </div> 
+  </div> 
+  <div id="lsOutPutDivWrite"> 
+   <div id="lsOutPutLayer"> 
+    <!-- 본문 저장 layer --> 
+    <div class="vwrap7" id="infoSaveLayer" style="display:none;"> 
+     <form id="infoSaveForm" name="infoSaveForm" target="_self" action=""> 
+      <fieldset> 
+       <legend>파일형식 선택</legend> 
+       <input type="hidden" name="saveExt" value="" /> 
+       <input type="hidden" name="lspttninfSeq" value="67911" /> 
+      </fieldset> 
+     </form> 
+     <div class="contwrap"> 
+      <div class="viewla"> 
+       <div class="ins" id="infoSaveLayerLoding"> 
+        <div class="inctn"> 
+         <ul> 
+          <li class="itit">파일형식</li> 
+          <li class="rdi"> <input type="radio" class="radio" name="fileType" id="FileSaveHwp" checked="checked" value="hwp" style="margin-left:50px" /><label for="FileSaveHwp">HWP</label> <input type="radio" class="radio" name="fileType" id="FileSavePdf" value="pdf" /><label for="FileSavePdf">PDF</label> </li> 
+         </ul> 
+        </div> 
+        <!-- button --> 
+        <div class="btnc2_1"> 
+         <input id="lsSaveBtn" type="image" onclick="javascript:saveContent();" src="/LSW/images/button/btn_save2.gif" alt="저장" /> 
+         <span class="btn_close"><a href="javascript:;" onkeypress="" onclick="javascript:saveAndPrint(0, this ,0);"><img src="/LSW/images/button/btn_close2.gif" alt="닫기" /></a></span> 
+        </div> 
+        <!-- button //--> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+    <!-- 본문 저장 layer //--> 
+   </div> 
+  </div> 
+  <div id="lsLinkDivWrite"> 
+   <div id="lsLinkLayer" style="display:none"></div> 
+  </div> 
+  <div id="tmpLsLinkDivWrite"> 
+   <div id="joTempDeleLayer" style="display:none"></div> 
+  </div> 
+  <script type="text/javascript" src="/LSW/js/common/hrefRemove.js"></script>  
+  <script type="text/javascript">
+//<![CDATA[
+	 /* jstl 변수를 스크립트에서 사용하기위해 html태그 뒤에 스크립트를 선언 */	 
+	var lsSearchObj = new LsSearchObj();
+
+	if ((typeof Range !=="undefined") && !Range.prototype.createContextualFragment){
+		Range.prototype.createContextualFragment = function(html){
+			var frag = document.createDocumentFragment(),
+			div = document.createElement("div");
+			frag.appendChild(div);
+			div.outerHTML = html;
+			return frag;
+		};
+	}
+	
+	var pageLayoutOptions = {
+			name:					'pageLayout'
+		,	resizeWithWindowDelay:	1
+		,	north__paneSelector:	".outer-north"
+		,	north__spacing_open:	0
+		,	north__size:			71
+		,	north__maxSize:		    71
+		,	resizable:				true
+		,	slidable:				false
+		,	closable:				true
+		,	west__paneSelector:  	".outer-west"
+		,	west__onresize:			sizeControll
+		,	west__size:				185
+		,	west__maxSize:		    400
+		,	west__initClosed:		false		
+		,	west__spacing_open:		15
+		,	west__spacing_closed:	15
+		,west__togglerLength_closed:65
+		,west__togglerLength_open:	65
+		,	center__paneSelector:	".outer-center" 
+		,	center__children: {
+					name:					'middle-contentLayoput'
+				,	center__paneSelector:	".middle-center"
+				,	center__size:             605
+		}
+	};
+	
+    $(document).ready(function() {
+		// 뒤로가기 버튼 설정
+    	updateBackBtn();
+        
+    	$("body").layout( pageLayoutOptions );
+    	$('#printContents').html($('#linkedJoContent').html());
+    	var content_head = $('#content_left > p');
+    	content_head.first().removeClass('deactive');
+    	content_head.first().addClass('active')
+
+    	// 법령목록의 첫번째 법령의 본문과 선택 조로 focus 이동
+		//f_findLinkedJoContent(el('firstRlatLsId').value);
+    	
+    	content_head.on('click', function(event) {
+           event.preventDefault();
+        	        
+           if ($(this).attr('class') != 'active'){
+           	content_head.removeClass('deactive');
+           	content_head.removeClass('active');
+           	content_head.addClass('deactive');
+               $(this).removeClass('deactive');
+               $(this).addClass('active');
+           }
+            
+            // 법령명 클릭했을때 해당 본문 띄우기
+            var activeId = $('.active').attr('id');
+            scrollActiveId = activeId.substring(2);
+			if(typeof activeId == "undefined"){
+				alert("정보가 없습니다.");
+			}else{
+				target = document.getElementById(scrollActiveId);
+				target.scrollIntoView(true);
+				return;
+			}
+        });
+    });
+    
+	$(window).resize(function() {
+		sizeControll();
+	});
+	
+	function onKeyDown(){
+		if(event.keyCode == 13){
+			joBdySearch();
+		}
+	}
+
+	function joBdySearch() {
+		var schKey = el("bdySearch");
+		var chkMode = "down";
+
+		if (schKey == null || schKey.value == "") {
+			alert("검색키워드를 입력하세요");
+			el("bdySearch").focus();
+
+		} else {
+			bodyInfoRSearch('linkedJoContent');
+		}
+	}
+	
+	/* 뒤로가기 버튼 */
+	function goBack() {		
+		var preUrl = document.referrer;                      // 전 페이지 url
+		var iniUrl = sessionStorage.getItem('iniUrl');	     // 최초 팝업창 url
+
+		if(window.history.length > 1){                       // 최초 팝업창(length=1)이 아니라면
+			if(iniUrl == preUrl) {                           // 뒤로갈 페이지가 처음 열린 팝업창일 때
+				sessionStorage.setItem('equalUrl', 'init');				
+			} else {
+				sessionStorage.setItem('equalUrl', 'diff');
+			}		
+			window.history.back();                           // 뒤로 가기			
+		} 
+	}
+	
+	/* 뒤로가기 버튼 세팅 */
+	function updateBackBtn() {
+		var backBtn = document.getElementById('backBtn');
+ 				
+		if (window.history.length == 1) {                    // 처음 팝업을 열었을때 길이는 1
+			backBtn.style.display = 'none'; 			
+			// 최초의 열린 팝업 url 저장
+			sessionStorage.setItem('iniUrl', window.location.href);
+
+		} else {                                             // history 길이가 2 이상  
+			var equalUrl = sessionStorage.getItem('equalUrl');
+			
+			if (equalUrl == "init"){
+				backBtn.style.display = 'none';              // 최초 url과 동일할 경우 뒤로가기 아이콘 숨김
+				sessionStorage.setItem('equalUrl', 'diff');		
+						
+			} else {
+				backBtn.style.display = 'inline-block';      // diff 인  경우
+			}
+		} 
+	}
+
+	//]]>
+</script>  
+ </body>
+</html>
