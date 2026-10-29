@@ -11,7 +11,10 @@ DECREE=LAW+' 시행령'
 def flat(text):return re.sub(r'\s+','',text)
 
 
-def national(query):return any(t in flat(query) for t in ('국가공무원','국가직','국가기관','중앙부처','소방공무원'))
+def national(query):
+    # Fire and police officers apply the national conduct regulation where their own decree is silent.
+    from . import service_rules
+    return any(t in flat(query) for t in ('국가공무원','국가직','국가기관','중앙부처','소방공무원')) or service_rules.status(query) in ('fire','police')
 
 
 def local(query):return any(t in flat(query) for t in ('지방공무원','지방직','지자체공무원'))

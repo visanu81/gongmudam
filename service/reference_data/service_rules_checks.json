@@ -1,27 +1,172 @@
 [
- {"id":"sr-national-annual","question":"국가공무원 연가는 재직기간별로 며칠인가요?","article":"국가공무원 복무규정 제15조(","rule":"service-rules:national-annual"},
- {"id":"sr-national-annual-2","question":"국가직 공무원인데 입사 2년차면 연가가 며칠이에요?","article":"국가공무원 복무규정 제15조("},
- {"id":"sr-local-annual","question":"지방공무원 재직기간별 연가 일수 알려줘","article":"지방공무원 복무규정 제7조(","rule":"service-rules:local-annual"},
- {"id":"sr-fire-annual","question":"소방공무원 연가 일수는 재직기간별로 어떻게 돼?","article":"국가공무원 복무규정 제15조(","rule":"service-rules:national-annual"},
- {"id":"sr-police-annual","question":"경찰공무원 연가는 며칠인가요?","article":"국가공무원 복무규정 제15조(","rule":"service-rules:national-annual"},
- {"id":"sr-local-advance","question":"지방공무원 연가 당겨쓰기 가능한가요?","article":"지방공무원 복무규정 제7조의3(","rule":"service-rules:local-annual-advance"},
- {"id":"sr-national-sick","question":"국가공무원 병가는 연간 며칠까지 쓸 수 있나요?","article":"국가공무원 복무규정 제18조("},
- {"id":"sr-fire-public","question":"소방공무원 공가 사유가 뭐예요?","article":"소방공무원 복무규정 제8조의2(","rule":"service-rules:fire-public-leave"},
- {"id":"sr-fire-health","question":"소방관인데 특수건강진단 받으러 가면 공가인가요?","article":"소방공무원 복무규정 제8조의2(","rule":"service-rules:fire-public-leave"},
- {"id":"sr-police-public","question":"경찰공무원 공가는 어떤 경우에 받을 수 있나요?","article":"국가공무원 복무규정 제19조("},
- {"id":"sr-fire-reward","question":"소방공무원 포상휴가는 며칠까지 가능한가요?","article":"소방공무원 복무규정 제9조(","rule":"service-rules:fire-reward-leave"},
- {"id":"sr-police-reward","question":"경찰 포상휴가는 연가에 포함돼?","article":"경찰공무원 복무규정 제18조(","rule":"service-rules:police-reward-leave"},
- {"id":"sr-national-holiday","question":"국가공무원 휴가기간 중 토요일이나 공휴일은 휴가일수에 포함되나요?","article":"국가공무원 복무규정 제22조(","rule":"service-rules:national-leave-holiday"},
- {"id":"sr-local-holiday","question":"지방공무원 병가 중에 낀 공휴일도 휴가 일수에 들어가나요?","article":"지방공무원 복무규정 제7조의8(","rule":"service-rules:local-leave-holiday"},
- {"id":"sr-national-hours","question":"국가공무원 근무시간은 몇 시부터 몇 시까지인가요?","article":"국가공무원 복무규정 제9조(","rule":"service-rules:national-work-hours"},
- {"id":"sr-local-hours","question":"지방공무원 근무시간은 몇 시부터인가요?","article":"지방공무원 복무규정 제2조(","rule":"service-rules:local-work-hours"},
- {"id":"sr-national-overtime","question":"국가공무원 시간외근무는 어떻게 명하나요?","article":"국가공무원 복무규정 제11조(","rule":"service-rules:national-overtime"},
- {"id":"sr-local-overtime","question":"지방공무원 초과근무하면 다음날 쉴 수 있나요?","article":"지방공무원 복무규정 제4조(","rule":"service-rules:local-overtime"},
- {"id":"sr-police-drinking","question":"경찰공무원 근무시간 중 음주해도 되나요?","article":"경찰공무원 복무규정 제9조(","rule":"service-rules:police-drinking"},
- {"id":"sr-police-travel","question":"경찰공무원 휴무일에 여행 갈 때 신고해야 하나요?","article":"경찰공무원 복무규정 제13조(","rule":"service-rules:police-travel-limit"},
- {"id":"sr-fire-travel","question":"소방공무원이 비번날 멀리 여행 가면 신고해야 하나요?","article":"소방공무원 복무규정 제4조(","rule":"service-rules:fire-travel-limit"},
- {"id":"sr-fire-duty","question":"소방공무원 비상소집은 어떻게 하나요?","article":"소방공무원 복무규정 제5조(","rule":"service-rules:fire-duty"},
- {"id":"sr-police-duty","question":"경찰 비상소집 절차는 누가 정하나요?","article":"경찰공무원 복무규정 제14조(","rule":"service-rules:police-duty"},
- {"id":"sr-unknown-sick","question":"병가는 연간 며칠까지 쓸 수 있나요?","notice":"신분을 알려주시면"},
- {"id":"sr-overtime-not-trip","question":"시간외근무 명령은 누가 하나요?","not_mode":"source_clarification"}
+ {
+  "id": "sr-national-annual",
+  "question": "국가공무원 연가는 재직기간별로 며칠인가요?",
+  "article": "국가공무원 복무규정 제15조(",
+  "rule": "service-rules:national-annual"
+ },
+ {
+  "id": "sr-national-annual-2",
+  "question": "국가직 공무원인데 입사 2년차면 연가가 며칠이에요?",
+  "article": "국가공무원 복무규정 제15조("
+ },
+ {
+  "id": "sr-local-annual",
+  "question": "지방공무원 재직기간별 연가 일수 알려줘",
+  "article": "지방공무원 복무규정 제7조(",
+  "rule": "service-rules:local-annual"
+ },
+ {
+  "id": "sr-fire-annual",
+  "question": "소방공무원 연가 일수는 재직기간별로 어떻게 돼?",
+  "article": "국가공무원 복무규정 제15조(",
+  "rule": "service-rules:national-annual"
+ },
+ {
+  "id": "sr-police-annual",
+  "question": "경찰공무원 연가는 며칠인가요?",
+  "article": "국가공무원 복무규정 제15조(",
+  "rule": "service-rules:national-annual"
+ },
+ {
+  "id": "sr-local-advance",
+  "question": "지방공무원 연가 당겨쓰기 가능한가요?",
+  "article": "지방공무원 복무규정 제7조의3(",
+  "rule": "service-rules:local-annual-advance"
+ },
+ {
+  "id": "sr-national-sick",
+  "question": "국가공무원 병가는 연간 며칠까지 쓸 수 있나요?",
+  "article": "국가공무원 복무규정 제18조("
+ },
+ {
+  "id": "sr-fire-public",
+  "question": "소방공무원 공가 사유가 뭐예요?",
+  "article": "소방공무원 복무규정 제8조의2(",
+  "rule": "service-rules:fire-public-leave"
+ },
+ {
+  "id": "sr-fire-health",
+  "question": "소방관인데 특수건강진단 받으러 가면 공가인가요?",
+  "article": "소방공무원 복무규정 제8조의2(",
+  "rule": "service-rules:fire-public-leave"
+ },
+ {
+  "id": "sr-police-public",
+  "question": "경찰공무원 공가는 어떤 경우에 받을 수 있나요?",
+  "article": "국가공무원 복무규정 제19조("
+ },
+ {
+  "id": "sr-fire-reward",
+  "question": "소방공무원 포상휴가는 며칠까지 가능한가요?",
+  "article": "소방공무원 복무규정 제9조(",
+  "rule": "service-rules:fire-reward-leave"
+ },
+ {
+  "id": "sr-police-reward",
+  "question": "경찰 포상휴가는 연가에 포함돼?",
+  "article": "경찰공무원 복무규정 제18조(",
+  "rule": "service-rules:police-reward-leave"
+ },
+ {
+  "id": "sr-national-holiday",
+  "question": "국가공무원 휴가기간 중 토요일이나 공휴일은 휴가일수에 포함되나요?",
+  "article": "국가공무원 복무규정 제22조(",
+  "rule": "service-rules:national-leave-holiday"
+ },
+ {
+  "id": "sr-local-holiday",
+  "question": "지방공무원 병가 중에 낀 공휴일도 휴가 일수에 들어가나요?",
+  "article": "지방공무원 복무규정 제7조의8(",
+  "rule": "service-rules:local-leave-holiday"
+ },
+ {
+  "id": "sr-national-hours",
+  "question": "국가공무원 근무시간은 몇 시부터 몇 시까지인가요?",
+  "article": "국가공무원 복무규정 제9조(",
+  "rule": "service-rules:national-work-hours"
+ },
+ {
+  "id": "sr-local-hours",
+  "question": "지방공무원 근무시간은 몇 시부터인가요?",
+  "article": "지방공무원 복무규정 제2조(",
+  "rule": "service-rules:local-work-hours"
+ },
+ {
+  "id": "sr-national-overtime",
+  "question": "국가공무원 시간외근무는 어떻게 명하나요?",
+  "article": "국가공무원 복무규정 제11조(",
+  "rule": "service-rules:national-overtime"
+ },
+ {
+  "id": "sr-local-overtime",
+  "question": "지방공무원 초과근무하면 다음날 쉴 수 있나요?",
+  "article": "지방공무원 복무규정 제4조(",
+  "rule": "service-rules:local-overtime"
+ },
+ {
+  "id": "sr-police-drinking",
+  "question": "경찰공무원 근무시간 중 음주해도 되나요?",
+  "article": "경찰공무원 복무규정 제9조(",
+  "rule": "service-rules:police-drinking"
+ },
+ {
+  "id": "sr-police-travel",
+  "question": "경찰공무원 휴무일에 여행 갈 때 신고해야 하나요?",
+  "article": "경찰공무원 복무규정 제13조(",
+  "rule": "service-rules:police-travel-limit"
+ },
+ {
+  "id": "sr-fire-travel",
+  "question": "소방공무원이 비번날 멀리 여행 가면 신고해야 하나요?",
+  "article": "소방공무원 복무규정 제4조(",
+  "rule": "service-rules:fire-travel-limit"
+ },
+ {
+  "id": "sr-fire-duty",
+  "question": "소방공무원 비상소집은 어떻게 하나요?",
+  "article": "소방공무원 복무규정 제5조(",
+  "rule": "service-rules:fire-duty"
+ },
+ {
+  "id": "sr-police-duty",
+  "question": "경찰 비상소집 절차는 누가 정하나요?",
+  "article": "경찰공무원 복무규정 제14조(",
+  "rule": "service-rules:police-duty"
+ },
+ {
+  "id": "sr-unknown-sick",
+  "question": "병가는 연간 며칠까지 쓸 수 있나요?",
+  "notice": "신분을 알려주시면"
+ },
+ {
+  "id": "sr-overtime-not-trip",
+  "question": "시간외근무 명령은 누가 하나요?",
+  "not_mode": "source_clarification"
+ },
+ {
+  "id": "sr-fire-occasion",
+  "question": "소방공무원 부모님 사망 경조사휴가 일수는?",
+  "article": "국가공무원 복무규정 별표 2",
+  "notice": "소방공무원 복무규정 제11조",
+  "registered": true
+ },
+ {
+  "id": "sr-police-occasion",
+  "question": "경찰공무원 자녀 결혼 휴가는?",
+  "article": "국가공무원 복무규정 별표 2",
+  "registered": true
+ },
+ {
+  "id": "sr-fire-grandparent",
+  "question": "소방관 조부모 사망하면 특별휴가 며칠이에요?",
+  "article": "국가공무원 복무규정 별표 2",
+  "registered": true
+ },
+ {
+  "id": "sr-police-spouse-birth",
+  "question": "경찰 배우자 출산휴가 며칠?",
+  "article": "국가공무원 복무규정 제20조(",
+  "registered": true
+ }
 ]

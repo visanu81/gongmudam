@@ -160,4 +160,6 @@ def documents(query,today):
     found=status(query)
     docs=[document(row,text) for law in READS[found] for row,text in catalog() if row['law']==law and row['effective_date']<=today.isoformat()]
     notice='' if found else '국가·지방·소방·경찰공무원은 적용 조문이 달라요. 신분을 알려주시면 해당 복무규정으로 다시 확인해요.'
+    if found=='fire' and re.search(r'특별휴가|경조사|결혼|사망|출산|장기재직|육아|돌봄|난임|임신',re.sub(r'\s+','',query)):
+        notice='시·도 소속 소방공무원은 국가공무원 복무규정에 없는 특별휴가와 장기재직휴가에 소속 지방자치단체 조례를 적용해요(소방공무원 복무규정 제11조).'
     return docs,notice

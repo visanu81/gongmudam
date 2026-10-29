@@ -210,7 +210,7 @@ def respond(query,body,today,public_mode=False):
     managed_forms=knowledge.institution_rules.related_forms(effective,reply.get('evidence',[]),today,affiliation)
     forms=managed_forms+[f for f in forms if f.get('source_id') not in {m['source_id'] for m in managed_forms}]
     guide=dict(topic=key,title=label+' 처리 방법',context=query,questions=questions,steps=steps,deadlines=deadlines,forms=forms,
-               service_guide=service,institution_scope=found.get('institution_scope'),
+               service_guide=service,institution_scope=found.get('institution_scope'),practice=reply.get('practice',[]),
                manual=dict(evidence=manuals,scope=manual_k.get('scope',''),notice=manual_k.get('notice','') if manual_query else '이 업무에 맞는 시스템 매뉴얼을 등록하면 사용법을 연결할 수 있어요.'),
                ai_requested=body.get('use_ai') is True,ai_used=reply.get('mode')=='source_llm',
                notice='진행 순서는 실무 준비 제안입니다. 법정 기한·필수 서류·적용 조건은 아래 등록 근거에서 확인하세요.')

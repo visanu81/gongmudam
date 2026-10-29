@@ -5,7 +5,7 @@ from pathlib import Path
 from urllib.parse import urlsplit
 from fastapi import APIRouter,HTTPException
 from pydantic import Field
-from . import folders,config,llm,official_sources,finance_knowledge,office_knowledge,institution_rules,upstage,service_rules
+from . import folders,config,llm,official_sources,finance_knowledge,office_knowledge,institution_rules,upstage,service_rules,service_guidelines
 from .search import BM25
 from . import knowledge_relevance as relevance
 from . import knowledge_intent as intent
@@ -153,6 +153,23 @@ def _experience_hits(query,library_id):
         bm=BM25([' '.join(n[k] for k in ('title','situation','handling','caution')) for n in notes]);notes=[notes[i] for i,s in bm.top(query,k=3,min_score=1.0)]
     return notes
 
+# Operating questions the decree leaves to the guideline; entitlement tables stay with the decree.
+GUIDELINE_PRIMARY={'annual_use','work_hours','overtime','duty','compensatory','travel_limit','shift','dress','politics'}
+
+def _with_guidelines(query,plan,hits,reason,missing,today):
+    """Return (hits, reason, notice, practice): the guideline's operating standard beside
+    the cited articles, or the answer itself when no article applies."""
+    # Deliberate abstentions (a missing annex, a specific spending domain) stay abstentions.
+    if (plan or {}).get('status')=='clarify' or missing or relevance.evidence_context(query):return hits,reason,'',[]
+    if intent.scope_reason(query,dict(title=service_guidelines.SOURCE_TITLE,institution='국가공무원'),today):return hits,reason,'',[]
+    guidance=service_guidelines.search(query)
+    if not guidance:return hits,reason,'',[]
+    # Articles stay the evidence; the guideline is shown separately as practice.
+    if hits:return hits,reason,'',guidance[:1]
+    # An amount or entitlement needs the decree or statute itself, not operating guidance.
+    if plan and not set(plan['topics'])<=GUIDELINE_PRIMARY or intent.amount_question(query):return hits,reason,'',[]
+    return guidance,'',service_guidelines.NOTICE,[]
+
 def retrieve(query,library_id=None,today=None,*,institution_rule_id=None,affiliation=None):
     today=today or date.today();all_docs=sources(library_id);plan=intent.analyze(query)
     docs=[d for d in all_docs if d.get('reference_kind')!='institution_rule']
@@ -189,8 +206,10 @@ def retrieve(query,library_id=None,today=None,*,institution_rule_id=None,affilia
     hits,reason=relevance.filter_hits(query,hits,plan)
     missing=relevance.missing_reference(query,hits)
     if missing:hits=[];reason=missing
+    hits,reason,guideline_notice,practice=_with_guidelines(query,plan,hits,reason,missing,today)
+    if guideline_notice:service_notice=' '.join(n for n in (guideline_notice,service_notice) if n)
     notes=_experience_hits(query,library_id)
-    return finish({'hits':hits,'experiences':notes,'excluded':excluded,'registered_count':len(docs),'unavailable_reason':reason,'requires_basis':bool(plan or relevance.facets(query) or relevance.evidence_context(query) or missing),'intent':plan,'service_notice':service_notice})
+    return finish({'hits':hits,'experiences':notes,'excluded':excluded,'registered_count':len(docs),'unavailable_reason':reason,'requires_basis':bool(plan or relevance.facets(query) or relevance.evidence_context(query) or missing),'intent':plan,'service_notice':service_notice,'practice':practice})
 
 @router.get('/sources/{key}/original')
 def original_manual(key:str):
@@ -281,4 +300,5 @@ def answer(query,found,*,use_ai=True):
     evidence=_context_evidence(found['hits'],selected,len(found['hits']) if found.get('office_plan') or found.get('institution') else 6)
     if not selected:mode='source_search'
     notice=' '.join(n for n in (notice,found.get('institution_notice',''),found.get('service_notice','')) if n)
+    extra['practice']=[p|{'quote':p['text']} for p in found.get('practice',[])]
     return {'evidence':evidence,'experiences':found['experiences'],'excluded':found['excluded'],'mode':mode,'model':model,'notice':notice,'answer':relevance.original_answer(query,evidence),'intent':found.get('intent'),'scope':'등록·선택한 추출 본문을 검색합니다. 인용 확인은 적용 대상·현행성·법적 해석을 보증하지 않습니다. 처리 경험은 공식 근거와 구분합니다.',**extra}
