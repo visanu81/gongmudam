@@ -1,0 +1,19 @@
+[
+ {
+  "id": "sr-local-annual",
+  "question": "지방공무원 재직기간별 연가 일수 알려줘",
+  "article": "지방공무원 복무규정 제7조(",
+  "rule": "service-rules:local-annual"
+ },
+ {
+  "id": "sr-national-sick",
+  "question": "국가공무원 병가는 연간 며칠까지 쓸 수 있나요?",
+  "article": "국가공무원 복무규정 제18조("
+ },
+ {
+  "id": "sr-fire-reward",
+  "question": "소방공무원 포상휴가는 며칠까지 가능한가요?",
+  "article": "소방공무원 복무규정 제9조(",
+  "rule": "service-rules:fire-reward-leave"
+ }
+]
