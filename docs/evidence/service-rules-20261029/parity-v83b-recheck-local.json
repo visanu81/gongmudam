@@ -1,0 +1,137 @@
+{
+  "today": "2026-10-29",
+  "cases": [
+    {
+      "id": "sg-id-card-lost",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "찾은 자료를 차례로 확인해요",
+        "kind": "extract",
+        "rule_id": null,
+        "evidence": [
+          [
+            "6507b14f827bf859a86f5bc9478473213b707257880cfb2bc2064d2694463c18",
+            "국가공무원 복무·징계 관련 예규",
+            "제11장 공무원증 > 3. 모바일 공무원증 > 마. 모바일 공무원증 분실자 등에 대한 조치"
+          ],
+          [
+            "f54f1ceb8e616a7eb0c3494d8a6a39bf2a36f481b0cf0dded04523542f002918",
+            "국가공무원 복무·징계 관련 예규",
+            "제11장 공무원증 > 2. 공무원증 > 마. 공무원증 분실자 등에 대한 조치"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "찾은 자료를 차례로 확인해요",
+        "kind": "extract",
+        "rule_id": null,
+        "evidence": [
+          [
+            "6507b14f827bf859a86f5bc9478473213b707257880cfb2bc2064d2694463c18",
+            "국가공무원 복무·징계 관련 예규",
+            "제11장 공무원증 > 3. 모바일 공무원증 > 마. 모바일 공무원증 분실자 등에 대한 조치"
+          ],
+          [
+            "f54f1ceb8e616a7eb0c3494d8a6a39bf2a36f481b0cf0dded04523542f002918",
+            "국가공무원 복무·징계 관련 예규",
+            "제11장 공무원증 > 2. 공무원증 > 마. 공무원증 분실자 등에 대한 조치"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "sg-discipline-committee",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "찾은 자료를 차례로 확인해요",
+        "kind": "extract",
+        "rule_id": null,
+        "evidence": [
+          [
+            "bd428c71b1d3f706e5000948876b617e72318e10e9e4ceff7d210a168969c066",
+            "국가공무원 복무·징계 관련 예규",
+            "제12장 징계 > 2. 징계위원회의 설치 및 구성 > 다. 징계위원회의 구성"
+          ],
+          [
+            "eab53d88b5376a2ffb2b60ceb9d6950694c0d6aeaa68c23e6b074791fe74b91d",
+            "국가공무원 복무·징계 관련 예규",
+            "제12장 징계 > 2. 징계위원회의 설치 및 구성 > 다. 징계위원회의 구성"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "찾은 자료를 차례로 확인해요",
+        "kind": "extract",
+        "rule_id": null,
+        "evidence": [
+          [
+            "bd428c71b1d3f706e5000948876b617e72318e10e9e4ceff7d210a168969c066",
+            "국가공무원 복무·징계 관련 예규",
+            "제12장 징계 > 2. 징계위원회의 설치 및 구성 > 다. 징계위원회의 구성"
+          ],
+          [
+            "eab53d88b5376a2ffb2b60ceb9d6950694c0d6aeaa68c23e6b074791fe74b91d",
+            "국가공무원 복무·징계 관련 예규",
+            "제12장 징계 > 2. 징계위원회의 설치 및 구성 > 다. 징계위원회의 구성"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "sg-outside-lecture",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "찾은 자료를 차례로 확인해요",
+        "kind": "extract",
+        "rule_id": null,
+        "evidence": [
+          [
+            "309fa9dbe144043bd3fbfb604c8dc2e7b7d9035c0b776eda2173718c5b8ff925",
+            "국가공무원 복무·징계 관련 예규",
+            "제10장 외부강의 > 3. 외부강의의 허가 및 복무관리"
+          ],
+          [
+            "fa5946b1c94ed0fa4dfc1291401110a516f1c0c8114d752ac7863261d31c7029",
+            "국가공무원 복무·징계 관련 예규",
+            "제10장 외부강의 > 2. 기본방향 > 나. 공무원 행동강령에 따른 외부강의 신고 철저"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "찾은 자료를 차례로 확인해요",
+        "kind": "extract",
+        "rule_id": null,
+        "evidence": [
+          [
+            "309fa9dbe144043bd3fbfb604c8dc2e7b7d9035c0b776eda2173718c5b8ff925",
+            "국가공무원 복무·징계 관련 예규",
+            "제10장 외부강의 > 3. 외부강의의 허가 및 복무관리"
+          ],
+          [
+            "fa5946b1c94ed0fa4dfc1291401110a516f1c0c8114d752ac7863261d31c7029",
+            "국가공무원 복무·징계 관련 예규",
+            "제10장 외부강의 > 2. 기본방향 > 나. 공무원 행동강령에 따른 외부강의 신고 철저"
+          ]
+        ],
+        "ai_used": false
+      }
+    }
+  ],
+  "summary": {
+    "all_pass": true,
+    "passed": 3,
+    "failed": 0,
+    "total": 3
+  }
+}
