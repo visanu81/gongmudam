@@ -19,7 +19,7 @@ def read(path):return json.loads(path.read_text(encoding='utf-8'))
 def save(path,value):path.write_text(json.dumps(value,ensure_ascii=False,indent=2),encoding='utf-8')
 
 
-def prepare(dest, root=ROOT):
+def prepare(dest, root=ROOT, version='v79-answer-first-20261026'):
     source=root/'service'; public=root/'.local-runtime/service';dest=Path(dest).resolve()
     if dest.exists():raise ValueError('Use a new candidate directory')
     old=read(public/'submission-manifest.json')
@@ -81,7 +81,7 @@ def prepare(dest, root=ROOT):
             official=row,asset=asset,enabled=1,library_name='국가·지방 물품관리 공식 근거'))
     old_bundle['created_at']=datetime.now(timezone.utc).isoformat()
     save(dest/'submission-data/knowledge.json',old_bundle)
-    manifest=dict(old, release_version='v79-answer-first-20261026',sources=len(old_bundle['sources']),
+    manifest=dict(old, release_version=version,sources=len(old_bundle['sources']),
                   created_at=datetime.now(timezone.utc).isoformat())
     manifest.pop('hotfix',None)
     manifest['files']={p.relative_to(dest).as_posix():digest(p) for p in sorted(dest.rglob('*')) if p.is_file()}
@@ -91,4 +91,5 @@ def prepare(dest, root=ROOT):
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--dest',type=Path,required=True)
-    args=parser.parse_args();print(json.dumps(prepare(args.dest),ensure_ascii=False,indent=2))
+    parser.add_argument('--version',default='v79-answer-first-20261026',help='release_version shown by the runtime')
+    args=parser.parse_args();print(json.dumps(prepare(args.dest,version=args.version),ensure_ascii=False,indent=2))

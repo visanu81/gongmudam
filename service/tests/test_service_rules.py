@@ -46,6 +46,15 @@ class ServiceRulesTest(Base):
             service_rules.catalog.cache_clear()
             shutil.rmtree(tmp, ignore_errors=True)
 
+    def test_stale_registered_article_does_not_hide_bundled_article(self):
+        bundled = next(service_rules.document(r, t) for r, t in service_rules.catalog() if r['id'] == 'local-7')
+        stale = dict(bundled, id='registered', sha256='0' * 64, current=False,
+                     official=dict(bundled['official'], sha256='0' * 64))
+        with patch.object(knowledge, 'sources', return_value=[stale]), \
+                patch.object(knowledge.official_sources, 'metadata', return_value={'title': 'x'}):
+            found = knowledge.retrieve('지방공무원 연가 일수는 며칠인가요?', None, TODAY)
+        self.assertEqual([h['source_id'] for h in found['hits']][:1], ['service-rules:local-7'])
+
     def test_every_reviewed_sentence_has_its_anchor_in_the_article(self):
         texts = {(r['law'], r['article']): t for r, t in service_rules.catalog()}
         for card in service_rules.summaries():

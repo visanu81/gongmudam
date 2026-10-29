@@ -182,7 +182,7 @@ def retrieve(query,library_id=None,today=None,*,institution_rule_id=None,affilia
         # summaries; the bundled text fills only the articles not yet verified.
         bundled,service_notice=rules;articles={service_rules.article_key(d['official']) for d in bundled}
         key=lambda d:service_rules.article_key(d.get('official') or {})
-        verified={key(d) for d in docs if key(d) in articles and official_sources.metadata(d['sha256'])}
+        verified={key(d) for d in docs if key(d) in articles and d['enabled'] and d['current'] and official_sources.metadata(d['sha256'])}
         docs=[d for d in docs if key(d) not in articles or key(d) in verified]+[d for d in bundled if key(d) not in verified]
     units,excluded=_source_units(query,docs,today,plan)
     hits=service_rules.special_first(query,_rank_units(query,units))

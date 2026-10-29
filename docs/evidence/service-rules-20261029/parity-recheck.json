@@ -1,0 +1,139 @@
+{
+  "today": "2026-10-29",
+  "cases": [
+    {
+      "id": "sr-local-annual",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "지방공무원 연가는 재직기간에 따라 연 11일~21일이에요",
+        "kind": "summary",
+        "rule_id": "service-rules:local-annual",
+        "evidence": [
+          [
+            "7aac68230a13a6db61e4313fa30455cb9ba6474790abc5ba4de4f42236e7557b",
+            "지방공무원 복무규정",
+            "제7조(연가일수 및 연가보상비의 지급)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "지방공무원 연가는 재직기간에 따라 연 11일~21일이에요",
+        "kind": "summary",
+        "rule_id": "service-rules:local-annual",
+        "evidence": [
+          [
+            "7aac68230a13a6db61e4313fa30455cb9ba6474790abc5ba4de4f42236e7557b",
+            "지방공무원 복무규정",
+            "제7조(연가일수 및 연가보상비의 지급)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "sr-national-sick",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "일반 병가와 공무상 병가는 구분해요. 필요한 기간과 올해 사용한 일수를 확인하고 승인 절차를 진행해요.",
+        "kind": "summary",
+        "rule_id": "service-v70-sick",
+        "evidence": [
+          [
+            "c4edc04864da363cc056b9ed5ccfd1086ac5364b3fcd356e9e8492a3c2489aae",
+            "국가공무원 복무규정",
+            "제18조(병가)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "일반 병가와 공무상 병가는 구분해요. 필요한 기간과 올해 사용한 일수를 확인하고 승인 절차를 진행해요.",
+        "kind": "summary",
+        "rule_id": "service-v70-sick",
+        "evidence": [
+          [
+            "c4edc04864da363cc056b9ed5ccfd1086ac5364b3fcd356e9e8492a3c2489aae",
+            "국가공무원 복무규정",
+            "제18조(병가)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "sr-police-public",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "찾은 자료를 차례로 확인해요",
+        "kind": "extract",
+        "rule_id": null,
+        "evidence": [
+          [
+            "f459b93473b181b1dc9333903d8ccc97f66930fc7954fabe074a2ff8628d3533",
+            "국가공무원 복무규정",
+            "제19조(공가)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "찾은 자료를 차례로 확인해요",
+        "kind": "extract",
+        "rule_id": null,
+        "evidence": [
+          [
+            "f459b93473b181b1dc9333903d8ccc97f66930fc7954fabe074a2ff8628d3533",
+            "국가공무원 복무규정",
+            "제19조(공가)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "sr-unknown-sick",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "일반 병가는 연 60일, 공무상 부상·질병 등은 연 180일 범위예요.",
+        "kind": "summary",
+        "rule_id": "sick-leave",
+        "evidence": [
+          [
+            "5157d7899f3b59df4ff3aee140a143dc7d901ce9b8d4ef1aceefa9ff5f50a015",
+            "지방공무원 복무규정",
+            "제7조의5(병가)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "일반 병가는 연 60일, 공무상 부상·질병 등은 연 180일 범위예요.",
+        "kind": "summary",
+        "rule_id": "sick-leave",
+        "evidence": [
+          [
+            "5157d7899f3b59df4ff3aee140a143dc7d901ce9b8d4ef1aceefa9ff5f50a015",
+            "지방공무원 복무규정",
+            "제7조의5(병가)"
+          ]
+        ],
+        "ai_used": false
+      }
+    }
+  ],
+  "summary": {
+    "all_pass": true,
+    "passed": 4,
+    "failed": 0,
+    "total": 4
+  }
+}

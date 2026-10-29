@@ -1,0 +1,23 @@
+[
+ {
+  "id": "sr-local-annual",
+  "question": "지방공무원 재직기간별 연가 일수 알려줘",
+  "article": "지방공무원 복무규정 제7조(",
+  "rule": "service-rules:local-annual"
+ },
+ {
+  "id": "sr-national-sick",
+  "question": "국가공무원 병가는 연간 며칠까지 쓸 수 있나요?",
+  "article": "국가공무원 복무규정 제18조("
+ },
+ {
+  "id": "sr-police-public",
+  "question": "경찰공무원 공가는 어떤 경우에 받을 수 있나요?",
+  "article": "국가공무원 복무규정 제19조("
+ },
+ {
+  "id": "sr-unknown-sick",
+  "question": "병가는 연간 며칠까지 쓸 수 있나요?",
+  "notice": "신분을 알려주시면"
+ }
+]

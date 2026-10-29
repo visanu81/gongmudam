@@ -21,7 +21,22 @@
   근거 없음 상황을 시험하는 테스트 2건은 자료팩을 끈 상태로 실행.
 - Graphify 코드 지도 갱신: 3,641 노드 / 10,676 연결, 모델 미사용.
 
-미완료
-- 개인용 앱(8787)과 공유 사이트(8892·Workers)는 원본 폴더에서 실행 중이라 아직 반영되지 않았다.
-  옮길 때 docs/PUBLIC-ANSWER-RELEASE.txt 절차와 tools/check_answer_parity.py(--cases service/reference_data/service_rules_checks.json)로 비교한다.
+반영 (2026-10-29 10:00 KST, 실행 위치를 gongmudam-2로 이전)
+- 재부팅 후 원본 폴더 서버는 모두 꺼져 있었다(공유 주소는 origin_unavailable).
+- 공유: prepare_answer_release.py --version v82-service-rules-20261029 후보(테스트 1000 통과) →
+  upgrade_public_runtime.py --apply(239파일, 백업 .local-runtime/upgrades/20261029T010110821169Z) →
+  launch_gongmudam.py로 8892와 터널 시작. 판 이름은 도구에 고정돼 있던 v79 대신 --version 인자로 지정했다.
+- 폴더 복사로 공유 DB의 등록 자료 123건 경로가 원본 폴더를 가리켜 "원문 미확인"으로 제외되던 문제를,
+  DB 백업(.local-runtime/service/data/relocation-backups/20261029T100710) 후 restore_submission.py 재배치로 바로잡았다
+  (설치 표시의 root를 이전 위치로 되돌려 재배치가 동작하게 함). 123건 모두 새 폴더 경로.
+- 개인용: gongmudam-2에서 uvicorn 8787(GONGMUDAM_PUBLIC 미설정). run_local_app.py의 복원 단계는 기존 개인 DB라 거부되어 쓰지 않았다.
+- 비교: 평가 질문 25개 로컬 8787 ↔ 공유 Workers 주소. 첫 실행 21/25(경로 문제), 재배치 후 불일치 4건 재확인 4/4 일치 →
+  25개 모두 결론·근거 해시·조문 일치. 증거: docs/evidence/service-rules-20261029/parity.json, parity-recheck.json.
+- 공유 화면(B안) 표시 확인. 공유 API 시간당 30건 중 29건을 비교에 써서 화면에서 새 질문 전송·증거 저장은 하지 않았다.
+
+미완료·남은 차이
+- 등록 조문이 "원문 미확인"이면 같은 조문의 번들 사본까지 막던 잠재 버그를 저장소에서 고쳤다(테스트 1001 통과).
+  실행 중인 8787·8892는 재시작 전이라 이 수정이 아직 로드되지 않았다(서버 종료 명령이 권한 확인에서 거부됨). 현재는 경로 재배치로 해당 상황이 없다.
+- 개인 DB(service/data/folders.db)의 등록 경로는 아직 원본 gongmudam 폴더를 가리킨다. 원본 폴더를 지우면 해당 등록 자료가 제외된다.
+- 8787 상태의 service_version은 service/submission-manifest.json 표기(v79)이며 코드는 이번 변경을 포함한다.
 - 별표(경조사 일수표 등)·복무 예규·편람 질의회신·보수지침은 다음 단계 범위다.
