@@ -2,6 +2,7 @@ import importlib.util
 import copy
 import hashlib
 import json
+import os
 import tempfile
 import unittest
 from pathlib import Path
@@ -132,6 +133,15 @@ class ModelBudgetTests(unittest.TestCase):
         self.assertEqual(client.post('/api/workspace/model-check').status_code, 200)
         self.assertEqual(client.post('/api/settings/llm/test').status_code, 429)
         self.assertEqual(client.get('/api/workspace/model-status').status_code, 200)
+
+    def test_limits_come_from_environment_with_pc_defaults(self):
+        from integration.application import public_limit
+        with patch.dict('os.environ', {}, clear=False):
+            os.environ.pop('GONGMUDAM_PUBLIC_HOURLY', None)
+            self.assertEqual(public_limit('GONGMUDAM_PUBLIC_HOURLY', 30), 30)
+        for value, expected in (('120', 120), ('0', 30), ('abc', 30), ('99999', 30)):
+            with patch.dict('os.environ', {'GONGMUDAM_PUBLIC_HOURLY': value}):
+                self.assertEqual(public_limit('GONGMUDAM_PUBLIC_HOURLY', 30), expected)
 
 
 class PublicConfigTests(unittest.TestCase):

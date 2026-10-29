@@ -90,14 +90,23 @@ class EmbeddedPages:
         await self.app(scope, receive, adapted)
 
 
+def public_limit(name, default):
+    """Positive integer from the environment, else the PC default."""
+    try:
+        value = int(os.environ.get(name, default))
+    except ValueError:
+        return default
+    return value if 0 < value <= 10000 else default
+
+
 class PublicModelBudget:
     """One shared budget includes the model check routes added after the old demo."""
-    def __init__(self, app, limit=30, window=3600):
+    def __init__(self, app, limit=30, window=3600, concurrency=1):
         self.app = app
         self.limit = limit
         self.window = window
         self.calls = deque()
-        self.semaphore = asyncio.Semaphore(1)
+        self.semaphore = asyncio.Semaphore(concurrency)
 
     async def __call__(self, scope, receive, send):
         path = scope.get('path', '').rstrip('/')
@@ -251,5 +260,7 @@ def create_app():
     app.router.routes.append(static)
     app.add_middleware(EmbeddedPages)
     if public:
-        app.add_middleware(PublicModelBudget)
+        # The PC demo protects one local model; the cloud demo raises these by environment.
+        app.add_middleware(PublicModelBudget, limit=public_limit('GONGMUDAM_PUBLIC_HOURLY', 30),
+                           concurrency=public_limit('GONGMUDAM_PUBLIC_CONCURRENCY', 1))
     return app

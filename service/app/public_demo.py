@@ -14,6 +14,17 @@ from . import upstage
 ROOT=Path(__file__).resolve().parents[1]
 MODELS={'local_gemma':'gemma3:4b','local_llama':'llama3.2:3b'}
 
+
+def _limit(name,default):
+    try:value=int(os.environ.get(name,default))
+    except ValueError:return default
+    return value if 0<value<=10000 else default
+
+
+# The PC demo protects one local model; the cloud demo raises these by environment.
+HOURLY=_limit('GONGMUDAM_PUBLIC_HOURLY',30)
+CONCURRENCY=_limit('GONGMUDAM_PUBLIC_CONCURRENCY',1)
+
 def validate_config(cfg,baseline):
     candidate=copy.deepcopy(cfg);original=copy.deepcopy(baseline)
     active=candidate.get('llm',{}).get('active')
@@ -67,7 +78,7 @@ def create_app():
         with native_lock:
             current=time.monotonic()
             while native_calls and current-native_calls[0]>3600:native_calls.popleft()
-            if len(native_calls)>=30:raise llm.LLMError('공개 시연 AI의 시간당 요청 한도입니다. 잠시 후 다시 시도하세요.')
+            if len(native_calls)>=HOURLY:raise llm.LLMError('공개 시연 AI의 시간당 요청 한도입니다. 잠시 후 다시 시도하세요.')
             native_calls.append(current)
         return original_call(*args,**kwargs)
     folder_ai.call_model=limited_model
@@ -75,7 +86,7 @@ def create_app():
     app.state.public_demo=True
     static_mount=app.router.routes.pop()
     if getattr(static_mount,'path',None)!='':raise RuntimeError('정적 파일 라우트 위치를 확인하세요.')
-    semaphore=asyncio.Semaphore(1);model_calls=deque();writes=deque()
+    semaphore=asyncio.Semaphore(CONCURRENCY);model_calls=deque();writes=deque()
     @app.middleware('http')
     async def public_limits(request:Request,call_next):
         path=request.url.path.rstrip('/');method=request.method
@@ -99,7 +110,7 @@ def create_app():
         if is_model:
             current=time.monotonic()
             while model_calls and current-model_calls[0]>3600:model_calls.popleft()
-            if len(model_calls)>=30 or semaphore.locked():return JSONResponse({'detail':'공유 로컬 AI가 사용 중이거나 시연 요청 한도에 도달했습니다. 잠시 후 다시 시도하세요.'},429,headers={'Retry-After':'60'})
+            if len(model_calls)>=HOURLY or semaphore.locked():return JSONResponse({'detail':'공유 로컬 AI가 사용 중이거나 시연 요청 한도에 도달했습니다. 잠시 후 다시 시도하세요.'},429,headers={'Retry-After':'60'})
             await semaphore.acquire();model_calls.append(current)
         try:response=await call_next(request)
         finally:
