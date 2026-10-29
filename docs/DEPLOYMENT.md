@@ -2,6 +2,27 @@
 
 공개 주소: **https://gongmudam.visanu81.workers.dev**
 
+## 현재 구조 (2026-10-29부터: PC 불필요)
+
+```text
+방문자 → Workers 정적 B안(/desktop)
+         └─ 업무 화면·API → Cloudflare Container 1개(GongmudamDemo, 1/4 vCPU·1GiB)
+                             └─ 공개 시연 실행본(v82-service-rules-20261029b)
+                                ├─ 시작할 때마다 공개 원문 123건·합성 자료로 새 DB 복원
+                                └─ Upstage solar-pro4 (키는 Worker 비밀값 UPSTAGE_API_KEY)
+```
+
+- 운영 PC·8892 서버·터널이 꺼져 있어도 공유 사이트가 동작합니다. 개인용 앱은 각자 PC에서 실행합니다.
+- 20분간 요청이 없으면 컨테이너가 잠들고, 다음 접속에서 약 20초 뒤 깨어납니다. 이때 시연 자료는 처음 상태로 돌아갑니다.
+- 갱신: 공유 실행본을 갱신한 뒤 Docker Desktop이 켜진 상태에서 `npm run deploy`
+  (정적 화면 빌드 → `tools/stage_container.py`로 해시 검증된 공개 파일만 스테이징 → 이미지 빌드·배포).
+  스테이징에는 DB·config.json·API 키가 들어가지 않습니다.
+- 키 교체: `npx wrangler secret put UPSTAGE_API_KEY`.
+- 2026-10-29 검증: 평가 질문 25개를 개인용 앱(8787)과 공유 주소에 보내 결론·근거 해시·조문 25/25 일치
+  (docs/evidence/service-rules-20261029/parity-cloud.json). AI 사용 질문 1건에서 solar-pro4 인용 선택 확인.
+
+아래는 2026-10-24~28의 이전 구조(PC 터널) 기록입니다.
+
 2026-10-24 Workers 배포와 B안의 v70 기능·자료 연결을 완료했습니다. Python 서버 자체를 Workers로 이식한 배포는 아닙니다.
 
 ```text
