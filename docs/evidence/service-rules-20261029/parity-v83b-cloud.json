@@ -1,0 +1,1019 @@
+{
+  "today": "2026-10-29",
+  "cases": [
+    {
+      "id": "sr-fire-occasion",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "본인 및 배우자의 부모 사망은 5일이에요.",
+        "kind": "summary",
+        "rule_id": "extended-occasion",
+        "evidence": [
+          [
+            "156f83e9646084245c69e35ee1186cdbe52101ebe6489c0f7d134e90acca7f62",
+            "국가공무원 복무규정",
+            "제20조(특별휴가)"
+          ],
+          [
+            "d0729ac9f46986b5f2c1d0c3b58fe4913449276030f9240026935d686c4135d4",
+            "국가공무원 복무규정",
+            "별표 2 경조사별 휴가 일수표"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "본인 및 배우자의 부모 사망은 5일이에요.",
+        "kind": "summary",
+        "rule_id": "extended-occasion",
+        "evidence": [
+          [
+            "156f83e9646084245c69e35ee1186cdbe52101ebe6489c0f7d134e90acca7f62",
+            "국가공무원 복무규정",
+            "제20조(특별휴가)"
+          ],
+          [
+            "d0729ac9f46986b5f2c1d0c3b58fe4913449276030f9240026935d686c4135d4",
+            "국가공무원 복무규정",
+            "별표 2 경조사별 휴가 일수표"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "sr-police-occasion",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "자녀 결혼은 1일이에요.",
+        "kind": "summary",
+        "rule_id": "extended-occasion",
+        "evidence": [
+          [
+            "156f83e9646084245c69e35ee1186cdbe52101ebe6489c0f7d134e90acca7f62",
+            "국가공무원 복무규정",
+            "제20조(특별휴가)"
+          ],
+          [
+            "d0729ac9f46986b5f2c1d0c3b58fe4913449276030f9240026935d686c4135d4",
+            "국가공무원 복무규정",
+            "별표 2 경조사별 휴가 일수표"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "자녀 결혼은 1일이에요.",
+        "kind": "summary",
+        "rule_id": "extended-occasion",
+        "evidence": [
+          [
+            "156f83e9646084245c69e35ee1186cdbe52101ebe6489c0f7d134e90acca7f62",
+            "국가공무원 복무규정",
+            "제20조(특별휴가)"
+          ],
+          [
+            "d0729ac9f46986b5f2c1d0c3b58fe4913449276030f9240026935d686c4135d4",
+            "국가공무원 복무규정",
+            "별표 2 경조사별 휴가 일수표"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "sr-fire-grandparent",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "본인 및 배우자의 조부모·외조부모 사망은 3일이에요.",
+        "kind": "summary",
+        "rule_id": "extended-occasion",
+        "evidence": [
+          [
+            "156f83e9646084245c69e35ee1186cdbe52101ebe6489c0f7d134e90acca7f62",
+            "국가공무원 복무규정",
+            "제20조(특별휴가)"
+          ],
+          [
+            "d0729ac9f46986b5f2c1d0c3b58fe4913449276030f9240026935d686c4135d4",
+            "국가공무원 복무규정",
+            "별표 2 경조사별 휴가 일수표"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "본인 및 배우자의 조부모·외조부모 사망은 3일이에요.",
+        "kind": "summary",
+        "rule_id": "extended-occasion",
+        "evidence": [
+          [
+            "156f83e9646084245c69e35ee1186cdbe52101ebe6489c0f7d134e90acca7f62",
+            "국가공무원 복무규정",
+            "제20조(특별휴가)"
+          ],
+          [
+            "d0729ac9f46986b5f2c1d0c3b58fe4913449276030f9240026935d686c4135d4",
+            "국가공무원 복무규정",
+            "별표 2 경조사별 휴가 일수표"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "sr-police-spouse-birth",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "배우자 출산은 20일이며, 한 번에 둘 이상의 자녀를 출산하면 25일이에요.",
+        "kind": "summary",
+        "rule_id": "extended-occasion",
+        "evidence": [
+          [
+            "156f83e9646084245c69e35ee1186cdbe52101ebe6489c0f7d134e90acca7f62",
+            "국가공무원 복무규정",
+            "제20조(특별휴가)"
+          ],
+          [
+            "d0729ac9f46986b5f2c1d0c3b58fe4913449276030f9240026935d686c4135d4",
+            "국가공무원 복무규정",
+            "별표 2 경조사별 휴가 일수표"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "배우자 출산은 20일이며, 한 번에 둘 이상의 자녀를 출산하면 25일이에요.",
+        "kind": "summary",
+        "rule_id": "extended-occasion",
+        "evidence": [
+          [
+            "156f83e9646084245c69e35ee1186cdbe52101ebe6489c0f7d134e90acca7f62",
+            "국가공무원 복무규정",
+            "제20조(특별휴가)"
+          ],
+          [
+            "d0729ac9f46986b5f2c1d0c3b58fe4913449276030f9240026935d686c4135d4",
+            "국가공무원 복무규정",
+            "별표 2 경조사별 휴가 일수표"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "sg-halfday",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "찾은 자료를 차례로 확인해요",
+        "kind": "extract",
+        "rule_id": null,
+        "evidence": [
+          [
+            "8fa1a3f70fd6227edaa46a11221796ecce95eb37a091e8798f10af968943dc47",
+            "국가공무원 복무·징계 관련 예규",
+            "제8장 휴가 > 2. 연가"
+          ],
+          [
+            "fb73debbf7038545645bfefd9f7c2fceff73877f7b2ad0f70a8fd249af59b9ed",
+            "국가공무원 복무·징계 관련 예규",
+            "제8장 휴가 > 3. 휴가제도의 운영 > 다. 휴가일수의 계산"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "찾은 자료를 차례로 확인해요",
+        "kind": "extract",
+        "rule_id": null,
+        "evidence": [
+          [
+            "8fa1a3f70fd6227edaa46a11221796ecce95eb37a091e8798f10af968943dc47",
+            "국가공무원 복무·징계 관련 예규",
+            "제8장 휴가 > 2. 연가"
+          ],
+          [
+            "fb73debbf7038545645bfefd9f7c2fceff73877f7b2ad0f70a8fd249af59b9ed",
+            "국가공무원 복무·징계 관련 예규",
+            "제8장 휴가 > 3. 휴가제도의 운영 > 다. 휴가일수의 계산"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "sg-id-card-lost",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "찾은 자료를 차례로 확인해요",
+        "kind": "extract",
+        "rule_id": null,
+        "evidence": [
+          [
+            "6507b14f827bf859a86f5bc9478473213b707257880cfb2bc2064d2694463c18",
+            "국가공무원 복무·징계 관련 예규",
+            "제11장 공무원증 > 3. 모바일 공무원증 > 마. 모바일 공무원증 분실자 등에 대한 조치"
+          ],
+          [
+            "f54f1ceb8e616a7eb0c3494d8a6a39bf2a36f481b0cf0dded04523542f002918",
+            "국가공무원 복무·징계 관련 예규",
+            "제11장 공무원증 > 2. 공무원증 > 마. 공무원증 분실자 등에 대한 조치"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "찾은 자료를 차례로 확인해요",
+        "kind": "extract",
+        "rule_id": null,
+        "evidence": [
+          [
+            "6507b14f827bf859a86f5bc9478473213b707257880cfb2bc2064d2694463c18",
+            "국가공무원 복무·징계 관련 예규",
+            "제11장 공무원증 > 3. 모바일 공무원증 > 마. 모바일 공무원증 분실자 등에 대한 조치"
+          ],
+          [
+            "f54f1ceb8e616a7eb0c3494d8a6a39bf2a36f481b0cf0dded04523542f002918",
+            "국가공무원 복무·징계 관련 예규",
+            "제11장 공무원증 > 2. 공무원증 > 마. 공무원증 분실자 등에 대한 조치"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "sg-discipline-committee",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "찾은 자료를 차례로 확인해요",
+        "kind": "extract",
+        "rule_id": null,
+        "evidence": [
+          [
+            "bd428c71b1d3f706e5000948876b617e72318e10e9e4ceff7d210a168969c066",
+            "국가공무원 복무·징계 관련 예규",
+            "제12장 징계 > 2. 징계위원회의 설치 및 구성 > 다. 징계위원회의 구성"
+          ],
+          [
+            "eab53d88b5376a2ffb2b60ceb9d6950694c0d6aeaa68c23e6b074791fe74b91d",
+            "국가공무원 복무·징계 관련 예규",
+            "제12장 징계 > 2. 징계위원회의 설치 및 구성 > 다. 징계위원회의 구성"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "찾은 자료를 차례로 확인해요",
+        "kind": "extract",
+        "rule_id": null,
+        "evidence": [
+          [
+            "bd428c71b1d3f706e5000948876b617e72318e10e9e4ceff7d210a168969c066",
+            "국가공무원 복무·징계 관련 예규",
+            "제12장 징계 > 2. 징계위원회의 설치 및 구성 > 다. 징계위원회의 구성"
+          ],
+          [
+            "eab53d88b5376a2ffb2b60ceb9d6950694c0d6aeaa68c23e6b074791fe74b91d",
+            "국가공무원 복무·징계 관련 예규",
+            "제12장 징계 > 2. 징계위원회의 설치 및 구성 > 다. 징계위원회의 구성"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "sg-outside-lecture",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "찾은 자료를 차례로 확인해요",
+        "kind": "extract",
+        "rule_id": null,
+        "evidence": [
+          [
+            "309fa9dbe144043bd3fbfb604c8dc2e7b7d9035c0b776eda2173718c5b8ff925",
+            "국가공무원 복무·징계 관련 예규",
+            "제10장 외부강의 > 3. 외부강의의 허가 및 복무관리"
+          ],
+          [
+            "fa5946b1c94ed0fa4dfc1291401110a516f1c0c8114d752ac7863261d31c7029",
+            "국가공무원 복무·징계 관련 예규",
+            "제10장 외부강의 > 2. 기본방향 > 나. 공무원 행동강령에 따른 외부강의 신고 철저"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "찾은 자료를 차례로 확인해요",
+        "kind": "extract",
+        "rule_id": null,
+        "evidence": [
+          [
+            "309fa9dbe144043bd3fbfb604c8dc2e7b7d9035c0b776eda2173718c5b8ff925",
+            "국가공무원 복무·징계 관련 예규",
+            "제10장 외부강의 > 3. 외부강의의 허가 및 복무관리"
+          ],
+          [
+            "fa5946b1c94ed0fa4dfc1291401110a516f1c0c8114d752ac7863261d31c7029",
+            "국가공무원 복무·징계 관련 예규",
+            "제10장 외부강의 > 2. 기본방향 > 나. 공무원 행동강령에 따른 외부강의 신고 철저"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "sr-national-annual",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "국가공무원 연가는 재직기간에 따라 연 11일~21일이에요",
+        "kind": "summary",
+        "rule_id": "service-rules:national-annual",
+        "evidence": [
+          [
+            "16044d5acf9548b293505d7f841ec00b89649ed14f8b4f77ef1bd6871a409c2f",
+            "국가공무원 복무규정",
+            "제15조(연가 일수)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "국가공무원 연가는 재직기간에 따라 연 11일~21일이에요",
+        "kind": "summary",
+        "rule_id": "service-rules:national-annual",
+        "evidence": [
+          [
+            "16044d5acf9548b293505d7f841ec00b89649ed14f8b4f77ef1bd6871a409c2f",
+            "국가공무원 복무규정",
+            "제15조(연가 일수)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "sr-national-annual-2",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "찾은 자료를 차례로 확인해요",
+        "kind": "extract",
+        "rule_id": null,
+        "evidence": [
+          [
+            "16044d5acf9548b293505d7f841ec00b89649ed14f8b4f77ef1bd6871a409c2f",
+            "국가공무원 복무규정",
+            "제15조(연가 일수)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "찾은 자료를 차례로 확인해요",
+        "kind": "extract",
+        "rule_id": null,
+        "evidence": [
+          [
+            "16044d5acf9548b293505d7f841ec00b89649ed14f8b4f77ef1bd6871a409c2f",
+            "국가공무원 복무규정",
+            "제15조(연가 일수)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "sr-local-annual",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "지방공무원 연가는 재직기간에 따라 연 11일~21일이에요",
+        "kind": "summary",
+        "rule_id": "service-rules:local-annual",
+        "evidence": [
+          [
+            "7aac68230a13a6db61e4313fa30455cb9ba6474790abc5ba4de4f42236e7557b",
+            "지방공무원 복무규정",
+            "제7조(연가일수 및 연가보상비의 지급)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "지방공무원 연가는 재직기간에 따라 연 11일~21일이에요",
+        "kind": "summary",
+        "rule_id": "service-rules:local-annual",
+        "evidence": [
+          [
+            "7aac68230a13a6db61e4313fa30455cb9ba6474790abc5ba4de4f42236e7557b",
+            "지방공무원 복무규정",
+            "제7조(연가일수 및 연가보상비의 지급)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "sr-fire-annual",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "국가공무원 연가는 재직기간에 따라 연 11일~21일이에요",
+        "kind": "summary",
+        "rule_id": "service-rules:national-annual",
+        "evidence": [
+          [
+            "16044d5acf9548b293505d7f841ec00b89649ed14f8b4f77ef1bd6871a409c2f",
+            "국가공무원 복무규정",
+            "제15조(연가 일수)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "국가공무원 연가는 재직기간에 따라 연 11일~21일이에요",
+        "kind": "summary",
+        "rule_id": "service-rules:national-annual",
+        "evidence": [
+          [
+            "16044d5acf9548b293505d7f841ec00b89649ed14f8b4f77ef1bd6871a409c2f",
+            "국가공무원 복무규정",
+            "제15조(연가 일수)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "sr-police-annual",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "국가공무원 연가는 재직기간에 따라 연 11일~21일이에요",
+        "kind": "summary",
+        "rule_id": "service-rules:national-annual",
+        "evidence": [
+          [
+            "16044d5acf9548b293505d7f841ec00b89649ed14f8b4f77ef1bd6871a409c2f",
+            "국가공무원 복무규정",
+            "제15조(연가 일수)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "국가공무원 연가는 재직기간에 따라 연 11일~21일이에요",
+        "kind": "summary",
+        "rule_id": "service-rules:national-annual",
+        "evidence": [
+          [
+            "16044d5acf9548b293505d7f841ec00b89649ed14f8b4f77ef1bd6871a409c2f",
+            "국가공무원 복무규정",
+            "제15조(연가 일수)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "sr-local-advance",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "지방공무원은 연가가 모자라면 다음 재직기간 연가를 미리 쓸 수 있어요",
+        "kind": "summary",
+        "rule_id": "service-rules:local-annual-advance",
+        "evidence": [
+          [
+            "9bed575736d3b656ad1ace413ae04580d12a5f23119f11db6fedfe742ba87096",
+            "지방공무원 복무규정",
+            "제7조의3(연가 당겨쓰기)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "지방공무원은 연가가 모자라면 다음 재직기간 연가를 미리 쓸 수 있어요",
+        "kind": "summary",
+        "rule_id": "service-rules:local-annual-advance",
+        "evidence": [
+          [
+            "9bed575736d3b656ad1ace413ae04580d12a5f23119f11db6fedfe742ba87096",
+            "지방공무원 복무규정",
+            "제7조의3(연가 당겨쓰기)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "sr-national-sick",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "일반 병가와 공무상 병가는 구분해요. 필요한 기간과 올해 사용한 일수를 확인하고 승인 절차를 진행해요.",
+        "kind": "summary",
+        "rule_id": "service-v70-sick",
+        "evidence": [
+          [
+            "c4edc04864da363cc056b9ed5ccfd1086ac5364b3fcd356e9e8492a3c2489aae",
+            "국가공무원 복무규정",
+            "제18조(병가)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "일반 병가와 공무상 병가는 구분해요. 필요한 기간과 올해 사용한 일수를 확인하고 승인 절차를 진행해요.",
+        "kind": "summary",
+        "rule_id": "service-v70-sick",
+        "evidence": [
+          [
+            "c4edc04864da363cc056b9ed5ccfd1086ac5364b3fcd356e9e8492a3c2489aae",
+            "국가공무원 복무규정",
+            "제18조(병가)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "sr-fire-public",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "소방공무원 공가는 소방공무원 복무규정에 정한 사유에 해당할 때 승인돼요",
+        "kind": "summary",
+        "rule_id": "service-rules:fire-public-leave",
+        "evidence": [
+          [
+            "f0bec32260f39ddca26b37094ec35d6e72385d86699a4d3e74faca8dc8888acb",
+            "소방공무원 복무규정",
+            "제8조의2(공가)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "소방공무원 공가는 소방공무원 복무규정에 정한 사유에 해당할 때 승인돼요",
+        "kind": "summary",
+        "rule_id": "service-rules:fire-public-leave",
+        "evidence": [
+          [
+            "f0bec32260f39ddca26b37094ec35d6e72385d86699a4d3e74faca8dc8888acb",
+            "소방공무원 복무규정",
+            "제8조의2(공가)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "sr-fire-health",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "소방공무원 공가는 소방공무원 복무규정에 정한 사유에 해당할 때 승인돼요",
+        "kind": "summary",
+        "rule_id": "service-rules:fire-public-leave",
+        "evidence": [
+          [
+            "f0bec32260f39ddca26b37094ec35d6e72385d86699a4d3e74faca8dc8888acb",
+            "소방공무원 복무규정",
+            "제8조의2(공가)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "소방공무원 공가는 소방공무원 복무규정에 정한 사유에 해당할 때 승인돼요",
+        "kind": "summary",
+        "rule_id": "service-rules:fire-public-leave",
+        "evidence": [
+          [
+            "f0bec32260f39ddca26b37094ec35d6e72385d86699a4d3e74faca8dc8888acb",
+            "소방공무원 복무규정",
+            "제8조의2(공가)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "sr-police-public",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "찾은 자료를 차례로 확인해요",
+        "kind": "extract",
+        "rule_id": null,
+        "evidence": [
+          [
+            "f459b93473b181b1dc9333903d8ccc97f66930fc7954fabe074a2ff8628d3533",
+            "국가공무원 복무규정",
+            "제19조(공가)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "찾은 자료를 차례로 확인해요",
+        "kind": "extract",
+        "rule_id": null,
+        "evidence": [
+          [
+            "f459b93473b181b1dc9333903d8ccc97f66930fc7954fabe074a2ff8628d3533",
+            "국가공무원 복무규정",
+            "제19조(공가)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "sr-fire-reward",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "소방공무원 포상휴가는 1회 10일 이내예요",
+        "kind": "summary",
+        "rule_id": "service-rules:fire-reward-leave",
+        "evidence": [
+          [
+            "f64fefcb8f0ae75d566b51e6b49d613c4ae286c52ed0776a9874336f85c5c149",
+            "소방공무원 복무규정",
+            "제9조(포상휴가)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "소방공무원 포상휴가는 1회 10일 이내예요",
+        "kind": "summary",
+        "rule_id": "service-rules:fire-reward-leave",
+        "evidence": [
+          [
+            "f64fefcb8f0ae75d566b51e6b49d613c4ae286c52ed0776a9874336f85c5c149",
+            "소방공무원 복무규정",
+            "제9조(포상휴가)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "sr-police-reward",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "경찰공무원 포상휴가는 1회 10일 이내예요",
+        "kind": "summary",
+        "rule_id": "service-rules:police-reward-leave",
+        "evidence": [
+          [
+            "1bb0e61d1724d8a701b79dc39506d491f1d49743ee9ef84ed8e5a4935f99eda9",
+            "경찰공무원 복무규정",
+            "제18조(포상휴가)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "경찰공무원 포상휴가는 1회 10일 이내예요",
+        "kind": "summary",
+        "rule_id": "service-rules:police-reward-leave",
+        "evidence": [
+          [
+            "1bb0e61d1724d8a701b79dc39506d491f1d49743ee9ef84ed8e5a4935f99eda9",
+            "경찰공무원 복무규정",
+            "제18조(포상휴가)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "sr-national-holiday",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "휴가 중 토요일·공휴일은 원칙적으로 휴가 일수에 넣지 않아요",
+        "kind": "summary",
+        "rule_id": "service-rules:national-leave-holiday",
+        "evidence": [
+          [
+            "0a9bdebcca91023db3ebbfd2f2995dc7832a18c52f2d2d25eaa200f11db2a568",
+            "국가공무원 복무규정",
+            "제22조(휴가기간 중의 토요일 또는 공휴일)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "휴가 중 토요일·공휴일은 원칙적으로 휴가 일수에 넣지 않아요",
+        "kind": "summary",
+        "rule_id": "service-rules:national-leave-holiday",
+        "evidence": [
+          [
+            "0a9bdebcca91023db3ebbfd2f2995dc7832a18c52f2d2d25eaa200f11db2a568",
+            "국가공무원 복무규정",
+            "제22조(휴가기간 중의 토요일 또는 공휴일)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "sr-local-holiday",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "휴가 중 토요일·공휴일은 원칙적으로 휴가 일수에 넣지 않아요",
+        "kind": "summary",
+        "rule_id": "service-rules:local-leave-holiday",
+        "evidence": [
+          [
+            "68de5598af7a4eb67a4917e9166962a4647aa8da5affd35e18a587669a07008f",
+            "지방공무원 복무규정",
+            "제7조의8(휴가기간 중의 토요일 또는 공휴일)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "휴가 중 토요일·공휴일은 원칙적으로 휴가 일수에 넣지 않아요",
+        "kind": "summary",
+        "rule_id": "service-rules:local-leave-holiday",
+        "evidence": [
+          [
+            "68de5598af7a4eb67a4917e9166962a4647aa8da5affd35e18a587669a07008f",
+            "지방공무원 복무규정",
+            "제7조의8(휴가기간 중의 토요일 또는 공휴일)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "sr-national-hours",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "근무시간은 오전 9시부터 오후 6시까지예요",
+        "kind": "summary",
+        "rule_id": "service-rules:national-work-hours",
+        "evidence": [
+          [
+            "2be8f6ec199f2e43a53ee524b044d2c95e4e0b951b930b1296bf1ccb2ebde497",
+            "국가공무원 복무규정",
+            "제9조(근무시간 등)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "근무시간은 오전 9시부터 오후 6시까지예요",
+        "kind": "summary",
+        "rule_id": "service-rules:national-work-hours",
+        "evidence": [
+          [
+            "2be8f6ec199f2e43a53ee524b044d2c95e4e0b951b930b1296bf1ccb2ebde497",
+            "국가공무원 복무규정",
+            "제9조(근무시간 등)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "sr-local-hours",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "근무시간은 9시부터 18시까지예요",
+        "kind": "summary",
+        "rule_id": "service-rules:local-work-hours",
+        "evidence": [
+          [
+            "654a2e9db0198155c45ce528cadc3fc391801078fb6d1494902188e40d907171",
+            "지방공무원 복무규정",
+            "제2조(근무시간 등)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "근무시간은 9시부터 18시까지예요",
+        "kind": "summary",
+        "rule_id": "service-rules:local-work-hours",
+        "evidence": [
+          [
+            "654a2e9db0198155c45ce528cadc3fc391801078fb6d1494902188e40d907171",
+            "지방공무원 복무규정",
+            "제2조(근무시간 등)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "sr-national-overtime",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "기관장은 필요하면 시간외근무나 토요일·공휴일 근무를 명할 수 있어요",
+        "kind": "summary",
+        "rule_id": "service-rules:national-overtime",
+        "evidence": [
+          [
+            "6d667f8d2e8614fdc0a88b5fc675abc4fef8de548646b792af1ae51ef0e4b4dc",
+            "국가공무원 복무규정",
+            "제11조(시간외근무 및 공휴일 등 근무)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "기관장은 필요하면 시간외근무나 토요일·공휴일 근무를 명할 수 있어요",
+        "kind": "summary",
+        "rule_id": "service-rules:national-overtime",
+        "evidence": [
+          [
+            "6d667f8d2e8614fdc0a88b5fc675abc4fef8de548646b792af1ae51ef0e4b4dc",
+            "국가공무원 복무규정",
+            "제11조(시간외근무 및 공휴일 등 근무)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "sr-local-overtime",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "기관장은 필요하면 시간외근무나 토요일·공휴일 근무를 명할 수 있어요",
+        "kind": "summary",
+        "rule_id": "service-rules:local-overtime",
+        "evidence": [
+          [
+            "908a30721c9dc185ffac4293e5143d8ae39a4883230df32e150579802b0bc94d",
+            "지방공무원 복무규정",
+            "제4조(시간외근무 및 공휴일 등 근무)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "기관장은 필요하면 시간외근무나 토요일·공휴일 근무를 명할 수 있어요",
+        "kind": "summary",
+        "rule_id": "service-rules:local-overtime",
+        "evidence": [
+          [
+            "908a30721c9dc185ffac4293e5143d8ae39a4883230df32e150579802b0bc94d",
+            "지방공무원 복무규정",
+            "제4조(시간외근무 및 공휴일 등 근무)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "sr-police-drinking",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "경찰공무원은 근무시간 중 음주가 금지돼요",
+        "kind": "summary",
+        "rule_id": "service-rules:police-drinking",
+        "evidence": [
+          [
+            "ab11edd9090f235acdd5a687a10daf3c64f0fc90c2418c09590ec7755aa9233d",
+            "경찰공무원 복무규정",
+            "제9조(근무시간중 음주금지)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "경찰공무원은 근무시간 중 음주가 금지돼요",
+        "kind": "summary",
+        "rule_id": "service-rules:police-drinking",
+        "evidence": [
+          [
+            "ab11edd9090f235acdd5a687a10daf3c64f0fc90c2418c09590ec7755aa9233d",
+            "경찰공무원 복무규정",
+            "제9조(근무시간중 음주금지)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "sr-police-travel",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "2시간 안에 복귀하기 어려운 곳으로 여행하려면 신고해야 해요",
+        "kind": "summary",
+        "rule_id": "service-rules:police-travel-limit",
+        "evidence": [
+          [
+            "ed1d08bb129bec862083971e5641b85f8ce82aaa7dabb3d3c83063830a2c20d9",
+            "경찰공무원 복무규정",
+            "제13조(여행의 제한)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "2시간 안에 복귀하기 어려운 곳으로 여행하려면 신고해야 해요",
+        "kind": "summary",
+        "rule_id": "service-rules:police-travel-limit",
+        "evidence": [
+          [
+            "ed1d08bb129bec862083971e5641b85f8ce82aaa7dabb3d3c83063830a2c20d9",
+            "경찰공무원 복무규정",
+            "제13조(여행의 제한)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "sr-fire-travel",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "3시간 안에 복귀하기 어려운 곳으로 여행하려면 신고해야 해요",
+        "kind": "summary",
+        "rule_id": "service-rules:fire-travel-limit",
+        "evidence": [
+          [
+            "f59687564311634ffa48d65246ea467bb46e8ce0a38b79d9d80378c138dc1aa9",
+            "소방공무원 복무규정",
+            "제4조(여행의 제한)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "3시간 안에 복귀하기 어려운 곳으로 여행하려면 신고해야 해요",
+        "kind": "summary",
+        "rule_id": "service-rules:fire-travel-limit",
+        "evidence": [
+          [
+            "f59687564311634ffa48d65246ea467bb46e8ce0a38b79d9d80378c138dc1aa9",
+            "소방공무원 복무규정",
+            "제4조(여행의 제한)"
+          ]
+        ],
+        "ai_used": false
+      }
+    }
+  ],
+  "summary": {
+    "all_pass": true,
+    "passed": 29,
+    "failed": 0,
+    "total": 29
+  }
+}
