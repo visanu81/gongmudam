@@ -1,0 +1,121 @@
+{
+  "today": "2026-10-29",
+  "cases": [
+    {
+      "id": "sg-halfday",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "찾은 자료를 차례로 확인해요",
+        "kind": "extract",
+        "rule_id": null,
+        "evidence": [
+          [
+            "8fa1a3f70fd6227edaa46a11221796ecce95eb37a091e8798f10af968943dc47",
+            "국가공무원 복무·징계 관련 예규",
+            "제8장 휴가 > 2. 연가"
+          ],
+          [
+            "fb73debbf7038545645bfefd9f7c2fceff73877f7b2ad0f70a8fd249af59b9ed",
+            "국가공무원 복무·징계 관련 예규",
+            "제8장 휴가 > 3. 휴가제도의 운영 > 다. 휴가일수의 계산"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "찾은 자료를 차례로 확인해요",
+        "kind": "extract",
+        "rule_id": null,
+        "evidence": [
+          [
+            "8fa1a3f70fd6227edaa46a11221796ecce95eb37a091e8798f10af968943dc47",
+            "국가공무원 복무·징계 관련 예규",
+            "제8장 휴가 > 2. 연가"
+          ],
+          [
+            "fb73debbf7038545645bfefd9f7c2fceff73877f7b2ad0f70a8fd249af59b9ed",
+            "국가공무원 복무·징계 관련 예규",
+            "제8장 휴가 > 3. 휴가제도의 운영 > 다. 휴가일수의 계산"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "sg-id-card-lost",
+      "status": "fail",
+      "equal": false,
+      "mismatches": [
+        "public_error"
+      ],
+      "local": {
+        "title": "자료를 더 확인해야 답할 수 있어요",
+        "kind": "unavailable",
+        "rule_id": null,
+        "evidence": [],
+        "ai_used": false
+      },
+      "public": {
+        "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'http://127.0.0.1:18080/api/ask'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+      },
+      "error": true
+    },
+    {
+      "id": "sg-discipline-committee",
+      "status": "fail",
+      "equal": false,
+      "mismatches": [
+        "public_error"
+      ],
+      "local": {
+        "title": "찾은 자료를 차례로 확인해요",
+        "kind": "extract",
+        "rule_id": null,
+        "evidence": [
+          [
+            "bd428c71b1d3f706e5000948876b617e72318e10e9e4ceff7d210a168969c066",
+            "국가공무원 복무·징계 관련 예규",
+            "제12장 징계 > 2. 징계위원회의 설치 및 구성 > 다. 징계위원회의 구성"
+          ],
+          [
+            "eab53d88b5376a2ffb2b60ceb9d6950694c0d6aeaa68c23e6b074791fe74b91d",
+            "국가공무원 복무·징계 관련 예규",
+            "제12장 징계 > 2. 징계위원회의 설치 및 구성 > 다. 징계위원회의 구성"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'http://127.0.0.1:18080/api/ask'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+      },
+      "error": true
+    },
+    {
+      "id": "sg-outside-lecture",
+      "status": "fail",
+      "equal": false,
+      "mismatches": [
+        "public_error"
+      ],
+      "local": {
+        "title": "자료를 더 확인해야 답할 수 있어요",
+        "kind": "unavailable",
+        "rule_id": null,
+        "evidence": [],
+        "ai_used": false
+      },
+      "public": {
+        "error": "HTTPStatusError: Client error '429 Too Many Requests' for url 'http://127.0.0.1:18080/api/ask'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+      },
+      "error": true
+    }
+  ],
+  "summary": {
+    "all_pass": false,
+    "passed": 1,
+    "failed": 3,
+    "total": 4
+  }
+}

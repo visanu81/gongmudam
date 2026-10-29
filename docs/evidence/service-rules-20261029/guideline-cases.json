@@ -1,0 +1,26 @@
+[
+ {
+  "id": "sg-halfday",
+  "question": "국가공무원 반일연가는 몇 시 기준으로 오전 오후를 나누나요?",
+  "article": "국가공무원 복무·징계 관련 예규 제8장 휴가",
+  "notice": "예규"
+ },
+ {
+  "id": "sg-id-card-lost",
+  "question": "공무원증 분실하면 어떻게 하나요?",
+  "article": "국가공무원 복무·징계 관련 예규 제11장 공무원증",
+  "notice": "예규"
+ },
+ {
+  "id": "sg-discipline-committee",
+  "question": "징계위원회는 어떻게 구성하나요?",
+  "article": "국가공무원 복무·징계 관련 예규 제12장 징계",
+  "notice": "예규"
+ },
+ {
+  "id": "sg-outside-lecture",
+  "question": "국가공무원 외부강의 신고는 어떻게 하나요?",
+  "article": "국가공무원 복무·징계 관련 예규 제10장 외부강의",
+  "notice": "예규"
+ }
+]

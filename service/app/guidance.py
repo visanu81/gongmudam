@@ -143,7 +143,8 @@ def respond(query,body,today,public_mode=False):
         found=dict(hits=[],experiences=[],excluded=[],intent=None)
         reply=dict(evidence=[],experiences=[],excluded=[],mode='source_search',model=None,answer='',notice='',scope='')
     else:
-        if key=='general' and not knowledge.intent.analyze(effective):
+        # A conduct subject covered only by the national guideline still reaches retrieval.
+        if key=='general' and not knowledge.intent.analyze(effective) and not knowledge.service_guidelines.chapter(effective):
             found=dict(hits=[],experiences=[],excluded=[],intent=None,unavailable_reason='이 질문에 직접 답하는 등록 근거를 확인하지 못했어요. 업무 종류와 관련 규정·지침을 알려주세요.')
         else:found=knowledge.retrieve(effective,library,today,**({'institution_rule_id':body['institution_rule_id']} if body.get('institution_rule_id') else {}),**({'affiliation':affiliation} if affiliation else {}))
         reply=knowledge.answer(effective,found,use_ai=body.get('use_ai') is True)
