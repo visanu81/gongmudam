@@ -2,7 +2,7 @@
   "$schema": "./node_modules/wrangler/config-schema.json",
   "name": "gongmudam",
   "account_id": "bf848c0112a24bf78192b5b721290ded",
-  "main": "cloudflare/worker.js",
+  "main": "cloudflare/index.js",
   "compatibility_date": "2026-10-24",
   "workers_dev": true,
   "assets": {
@@ -12,9 +12,18 @@
     "html_handling": "none",
     "not_found_handling": "none"
   },
-  "vpc_services": [{
-    "binding": "BACKEND",
-    "service_id": "01a16ddf-2b4a-7b60-8a74-1b4f9f72fc92"
+  // The public demo runs in one container built by tools/stage_container.py.
+  "containers": [{
+    "class_name": "GongmudamDemo",
+    "image": "./work/container-stage/Dockerfile",
+    "instance_type": "basic",
+    "max_instances": 1
   }],
+  "durable_objects": {
+    "bindings": [{"name": "DEMO", "class_name": "GongmudamDemo"}]
+  },
+  "exports": {
+    "GongmudamDemo": {"type": "durable-object", "storage": "sqlite"}
+  },
   "observability": {"enabled": false}
 }

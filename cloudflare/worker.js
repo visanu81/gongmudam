@@ -1,13 +1,13 @@
 const STATIC_PREFIX = '/desktop/';
 
 export function offlineResponse(api = false) {
-  const text = '업무 서버에 연결하지 못했어요. 연결 PC와 공무담 서버가 켜져 있는지 확인한 뒤 다시 시도해 주세요.';
+  const text = '공무담 공유 서버를 준비하는 중이거나 연결하지 못했어요. 잠시 후 다시 시도해 주세요.';
   return new Response(api ? JSON.stringify({detail: text, code: 'origin_unavailable'}) :
     `<!doctype html><html lang="ko"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>공무담 연결 확인</title><body><main><h1>업무 서버 연결이 필요해요</h1><p>${text}</p><p><a href="/desktop/">공무담 바탕화면으로</a></p></main></body></html>`,
     {status: 503, headers: {'Content-Type': api ? 'application/json; charset=utf-8' : 'text/html; charset=utf-8', 'Cache-Control': 'no-store', 'Retry-After': '15'}});
 }
 
-export async function handle(request, env) {
+export async function handle(request, env, backend = env.BACKEND) {
   const url = new URL(request.url);
   if (url.pathname === '/') return Response.redirect(url.origin + '/desktop/?variant=B', 307);
   if (url.pathname.startsWith(STATIC_PREFIX)) {
@@ -29,7 +29,7 @@ export async function handle(request, env) {
   headers.set('X-Forwarded-Host', url.host);
   headers.set('X-Forwarded-Proto', 'https');
   try {
-    const response = await env.BACKEND.fetch(new Request(target, {method: request.method,
+    const response = await backend.fetch(new Request(target, {method: request.method,
       headers, body: ['GET', 'HEAD'].includes(request.method) ? undefined : request.body,
       duplex: 'half',
       redirect: 'manual'}));
