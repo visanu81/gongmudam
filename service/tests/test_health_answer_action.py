@@ -61,6 +61,8 @@ class HealthAnswerActionTest(Base):
             hit['sha256'] = '0'*64
         self.assertNotEqual(answer_tree.build(result['query'], reply)['kind'], 'summary')
         self.sources = []
-        missing = self.ask('국가공무원 건강검진은 어떤 복무로 신청하나요?')
+        # Neither a registered nor a bundled national article is available.
+        with patch.object(knowledge.service_rules, 'catalog', return_value=()):
+            missing = self.ask('국가공무원 건강검진은 어떤 복무로 신청하나요?')
         self.assertFalse(missing['knowledge']['evidence'])
         self.assertNotIn('공가’로 상신', missing['knowledge']['tree']['title'])

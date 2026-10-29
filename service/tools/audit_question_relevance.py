@@ -172,8 +172,10 @@ def evaluate_case(case: Any, result: Any, verified_sources: dict[str, str]) -> d
 
 
 def _run_cases(cases: list[Any], verified_sources: dict[str, str], include_extended: bool = False) -> list[dict[str, Any]]:
-    from app import assistant, folders, knowledge, main
+    from app import assistant, folders, knowledge, main, service_rules
 
+    # The app also cites the bundled, hash-verified conduct regulations.
+    verified_sources = {**{row["sha256"]: text for row, text in service_rules.catalog()}, **verified_sources}
     results: list[dict[str, Any]] = []
     with tempfile.TemporaryDirectory(prefix="question-audit-") as temp_dir:
         db_patch = patch.object(folders, "DB_PATH", Path(temp_dir) / "folders.db")

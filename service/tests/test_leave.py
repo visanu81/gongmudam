@@ -52,8 +52,10 @@ class LeaveGuideTest(unittest.TestCase):
             self.assertIsNone(leave.guide(q))
 
     def test_new_api_route_does_not_call_model_or_mock_annual(self):
+        # An empty library without the bundled conduct regulations.
         with tempfile.TemporaryDirectory() as directory, patch.object(
-                main.folders, 'DB_PATH', Path(directory) / 'folders.db'):
+                main.folders, 'DB_PATH', Path(directory) / 'folders.db'), patch.object(
+                main.knowledge.service_rules, 'catalog', return_value=()):
             main.folders.initialize()
             main.knowledge.initialize()
             with patch.object(main.assistant,'ask',side_effect=AssertionError('should not call legacy card')) as legacy, \

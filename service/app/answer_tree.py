@@ -75,6 +75,9 @@ def _build(query,reply):
             branches=[dict(label=b['label'],items=[dict(text=i['text'],ref=index,support_quotes=i['requires']) for i in b['items']]) for b in rule['branches']]
             return dict(kind='summary',title=rule['title'],branches=branches,note=rule.get('note',note),rule_id=rule['id'],reviewed_source_sha256=rule['sha256'])
     if care:return care
+    from . import service_rules
+    reviewed=service_rules.summary(query,reply)
+    if reviewed:return reviewed
     return dict(kind='extract',title='찾은 자료를 차례로 확인해요',branches=[
         dict(label='관련 자료',items=[dict(text=h['title'],ref=i) for i,h in enumerate(evidence,1)]),
         dict(label='지금 할 일',items=[dict(text='근거 버튼을 눌러 질문에 맞는 조항과 적용 조건을 확인해 보세요.',ref=None)])],note='이 자료는 아직 쉬운 설명이 준비되지 않았어요. 원문을 펼쳐 확인할 수 있어요.')

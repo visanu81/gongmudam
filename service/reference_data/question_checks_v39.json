@@ -775,7 +775,16 @@
     "id": "leave-no-basis-01",
     "category": "휴가",
     "question": "국가공무원 연가 일수는 얼마인가요?",
-    "outcome": "unavailable"
+    "outcome": "answer",
+    "allow_articles": [
+      "제15조("
+    ],
+    "require_articles": [
+      "제15조("
+    ],
+    "allow_rules": [
+      "service-rules:national-annual"
+    ]
   },
   {
     "id": "leave-no-basis-02",

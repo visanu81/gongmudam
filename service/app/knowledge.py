@@ -5,7 +5,7 @@ from pathlib import Path
 from urllib.parse import urlsplit
 from fastapi import APIRouter,HTTPException
 from pydantic import Field
-from . import folders,config,llm,official_sources,finance_knowledge,office_knowledge,institution_rules,upstage
+from . import folders,config,llm,official_sources,finance_knowledge,office_knowledge,institution_rules,upstage,service_rules
 from .search import BM25
 from . import knowledge_relevance as relevance
 from . import knowledge_intent as intent
@@ -175,13 +175,22 @@ def retrieve(query,library_id=None,today=None,*,institution_rule_id=None,affilia
     # the legacy broad-word fallback when the finance question was unrecognized.
     docs=[d for d in docs if not (d.get('official') or {}).get('finance_topics') and
           (d.get('official') or {}).get('collection') not in office_knowledge.COLLECTIONS]
+    rules=service_rules.documents(query,today)
+    service_notice=''
+    if rules:
+        # A hash-verified official article already registered keeps its reviewed
+        # summaries; the bundled text fills only the articles not yet verified.
+        bundled,service_notice=rules;articles={service_rules.article_key(d['official']) for d in bundled}
+        key=lambda d:service_rules.article_key(d.get('official') or {})
+        verified={key(d) for d in docs if key(d) in articles and official_sources.metadata(d['sha256'])}
+        docs=[d for d in docs if key(d) not in articles or key(d) in verified]+[d for d in bundled if key(d) not in verified]
     units,excluded=_source_units(query,docs,today,plan)
-    hits=_rank_units(query,units)
+    hits=service_rules.special_first(query,_rank_units(query,units))
     hits,reason=relevance.filter_hits(query,hits,plan)
     missing=relevance.missing_reference(query,hits)
     if missing:hits=[];reason=missing
     notes=_experience_hits(query,library_id)
-    return finish({'hits':hits,'experiences':notes,'excluded':excluded,'registered_count':len(docs),'unavailable_reason':reason,'requires_basis':bool(plan or relevance.facets(query) or relevance.evidence_context(query) or missing),'intent':plan})
+    return finish({'hits':hits,'experiences':notes,'excluded':excluded,'registered_count':len(docs),'unavailable_reason':reason,'requires_basis':bool(plan or relevance.facets(query) or relevance.evidence_context(query) or missing),'intent':plan,'service_notice':service_notice})
 
 @router.get('/sources/{key}/original')
 def original_manual(key:str):
@@ -271,5 +280,5 @@ def answer(query,found,*,use_ai=True):
     selected={e['id']:e['quote'] for e in evidence}
     evidence=_context_evidence(found['hits'],selected,len(found['hits']) if found.get('office_plan') or found.get('institution') else 6)
     if not selected:mode='source_search'
-    notice=(notice+' '+found.get('institution_notice','')).strip()
+    notice=' '.join(n for n in (notice,found.get('institution_notice',''),found.get('service_notice','')) if n)
     return {'evidence':evidence,'experiences':found['experiences'],'excluded':found['excluded'],'mode':mode,'model':model,'notice':notice,'answer':relevance.original_answer(query,evidence),'intent':found.get('intent'),'scope':'등록·선택한 추출 본문을 검색합니다. 인용 확인은 적용 대상·현행성·법적 해석을 보증하지 않습니다. 처리 경험은 공식 근거와 구분합니다.',**extra}

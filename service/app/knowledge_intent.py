@@ -38,7 +38,7 @@ TOPICS = {
     'travel_general': ('질문한 직군의 여비 기준', ('여비','출장')),
     'travel_foreign_local': ('국외 근무지 내 출장 기준', ('국외','해외')),
     'annual': ('연가 일수·재직기간', ('연가','연차')),
-    'annual_use': ('연가 사용·승인 절차', ('반일','반차','승인','허가절차','이월','저축')),
+    'annual_use': ('연가 사용·승인 절차', ('반일','반차','승인','허가절차','이월','저축','당겨','연속')),
     'sick': ('병가', ('병가',)),
     'public_health': ('법정 건강검진 공가', ('건강검진','건강진단','국가검진')),
     'public_blood': ('헌혈 공가', ('헌혈',)),
@@ -57,6 +57,16 @@ TOPICS = {
     'mental_leave': ('심리안정휴가', ('심리안정휴가',)),
     'occasion': ('경조사휴가 일수표', ('배우자출산','아내출산','와이프출산','경조사','결혼','사망')),
     'compensatory': ('대체휴무', ('대체휴무','대체휴가')),
+    'reward_leave': ('포상휴가', ('포상휴가',)),
+    'leave_holiday': ('휴가 중 토요일·공휴일', ('토요일','공휴일')),
+    'drinking': ('근무시간 중 음주', ('음주',)),
+    'overtime': ('시간외근무·공휴일 근무', ('시간외근무','초과근무')),
+    'duty': ('당직·비상근무', ('당직','비상근무','비상소집')),
+    'travel_limit': ('휴무일 여행의 제한', ('여행','신고')),
+    'shift': ('교대제 근무', ('교대',)),
+    'politics': ('정치적 행위', ('정치','선거운동')),
+    'dress': ('복장·복제', ('복장','복제','용모')),
+    'work_hours': ('근무시간', ('근무시간','출근')),
     'goods_inspection': ('물품 검사·검사조서', ('검수','검사','검사조서')),
     'goods_inspection_limit': ('검사조서 생략 금액', ('검사조서','생략')),
     'goods_payment': ('대금 지급·선금 예외', ('대금','대가','선금','돈부터','돈을먼저','돈먼저')),
@@ -117,7 +127,8 @@ def analyze(query):
         if any(t in q for t in ('병가','연가','출장','출산휴가')) and any(t in q for t in ('각각','둘다','함께','이랑','비교')):
             return dict(topics=[],status='clarify',question='예산 과목과 다른 업무는 적용 자료가 달라요. 질문을 하나씩 나누어 알려주세요.',recognized=True,labels=[])
         return None
-    travel=any(t in q for t in ('출장','여비','외근','일비','숙박비','숙박료','호텔비','기름값','택시비','주유비','항공권'))
+    # '시간외근무' contains '외근' but is overtime, not a business trip.
+    travel=any(t in q for t in ('출장','여비','일비','숙박비','숙박료','호텔비','기름값','택시비','주유비','항공권')) or bool(re.search(r'(?<!시간)외근',q))
     care=leave_situations.family_care(query)
     own_sick=leave_situations.self_sick(query)
     leave=care or own_sick or any(t in q for t in ('휴가','휴무','연가','연차','병가','공가','육아시간','모성보호','건강검진','건강진단','헌혈'))
@@ -179,12 +190,18 @@ def analyze(query):
         if 'occasion' in topics and any(t in q for t in ('사용기한','분할','나눠','언제까지')):
             topics.remove('occasion');add('occasion_use')
         if not any(t in SPECIAL for t in topics) and '출산' in q:add('maternity')
-        if not any(t in SPECIAL for t in topics):
+        # Whether a weekend inside a leave counts is its own rule, whatever the leave type.
+        if not any(t in SPECIAL for t in topics) and any(t in q for t in ('토요일','공휴일')) and any(t in q for t in ('포함','들어가','산입','일수에','빼','제외')):
+            add('leave_holiday')
+        if not any(t in SPECIAL for t in topics) and 'leave_holiday' not in topics:
             if '연가' in q and '병가' in q and any(t in q for t in ('가산','더해','추가','안썼','미사용','사용하지않','22일')):add('annual')
             elif any(a in q for a in TOPICS['public_health'][1]):add('public_health')
             elif '헌혈' in q:add('public_blood')
             elif '병가' in q or own_sick:add('sick')
             elif any(t in q for t in ('대체휴무','대체휴가')):add('compensatory')
+            elif '포상휴가' in q:add('reward_leave')
+            elif '여행' in q and '휴무' in q:add('travel_limit')
+            elif any(t in q for t in ('토요일','공휴일')):add('leave_holiday')
             elif any(t in q for t in ('연가','연차')):
                 if any(t in q for t in ('남은','남았','잔여','잔량')) and not any(t in q for t in ('근거','규정','이월','보상')):question='개인의 남은 연가는 규정만으로 알 수 없어요. 올해 부여·이월·사용한 연가 내역을 확인해 주세요.'
                 elif any(t in q for t in TOPICS['annual_use'][1]) and not any(t in q for t in ('보상','재직기간')):add('annual_use')
@@ -223,9 +240,17 @@ def analyze(query):
                     elif any(t in q for t in ('며칠','몇일','기한','언제까지')):add('goods_inspection_deadline')
                     else:add('goods_inspection')
                 else:question='물품 구매의 어떤 단계인가요? 예산 과목, 견적·계약, 납품 검사, 대금 지급 중 궁금한 부분을 알려주세요.'
-    if not (travel or leave or goods or sidejob) and (re.search(r'^(?:그럼|그러면|그거|그건|그것|이거)',q) or '검사' in q or '재직기간' in q):
+    conduct=None
+    # e-사람 screen questions stay with the system manual.
+    if not (travel or leave or goods or sidejob or re.search(r'e[-·]?사람|이사람|스마트출장',q)):
+        # One conduct subject per question, the most specific first.
+        conduct=next((t for t in ('drinking','overtime','duty','travel_limit','shift','politics','dress','work_hours')
+                      if any(a in q for a in TOPICS[t][1][:1 if t=='travel_limit' else None])),None)
+        if conduct=='work_hours' and not re.search(r'근무시간(?:은|이|은몇|몇|이몇|이어떻게|변경|조정|기준)|출근시간|퇴근시간',q):conduct=None
+        if conduct:add(conduct)
+    if not (travel or leave or goods or sidejob or conduct) and (re.search(r'^(?:그럼|그러면|그거|그건|그것|이거)',q) or '검사' in q or '재직기간' in q):
         question='어떤 업무와 상황인지 함께 알려주세요. 다른 업무의 기준을 임의로 적용하지 않을게요.'
-    elif not (travel or leave or goods or sidejob):
+    elif not (travel or leave or goods or sidejob or conduct):
         return None
     if supplement.national(query) and any(t in q for t in ('지방공무원','지방직','지자체','지방자치단체')):
         question='국가기관과 지방기관의 기준은 적용 범위가 달라요. 기관별 질문을 나누어 알려주시면 각각 맞는 근거로 확인할게요.'
@@ -259,6 +284,13 @@ def scope_reason(query, source, today):
 def supports(topic, hit, query=''):
     official=hit.get('official') or {}; text=flat(hit['text']); title=flat(hit['title'])
     if official:
+        from . import service_rules
+        target=service_rules.expected(topic,query)
+        if target:
+            # The stated status decides the regulation; fire/police special rules first.
+            if topic=='family_care' and not all(t in text for t in ('가족돌봄휴가','질병,사고,노령','연간10일','가족돌봄휴가는무급으로하되')):return False
+            if official.get('title')!=target[0] or not official.get('article','').startswith(target[1]):return False
+            return not (topic in SPECIAL and SPECIAL[topic] not in text)
         expected=ARTICLE.get(topic)
         if supplement.national(query):
             if topic=='sick':expected=('국가공무원 복무규정','제18조(')
