@@ -37,6 +37,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const frameworks = {
     national_public_official: '국가공무원',
     local_public_official: '지방공무원',
+    fire_public_official: '소방공무원',
+    police_public_official: '경찰공무원',
     other: '구분 확인 필요',
   };
   const regions = ['서울특별시', '부산광역시', '대구광역시', '인천광역시', '광주광역시', '대전광역시', '울산광역시', '세종특별자치시', '경기도', '강원특별자치도', '충청북도', '충청남도', '전북특별자치도', '전라남도', '경상북도', '경상남도', '제주특별자치도'];

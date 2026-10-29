@@ -83,10 +83,34 @@ def relevant(query,source):
     overlap=terms(query)&terms(text)
     return bool(shared and overlap) or len(overlap)>=2
 
+FRAMEWORKS={'national_public_official':'국가공무원','local_public_official':'지방공무원',
+            'fire_public_official':'소방공무원','police_public_official':'경찰공무원','other':''}
+# Fire and police officers are national public officials under their own decrees.
+NATIONAL_FRAMEWORKS={'national_public_official','fire_public_official','police_public_official'}
+NATIONAL_FIRE=r'소방청|중앙소방학교|국립소방연구원|중앙119구조본부'
+
+
+def provincial(profile):
+    """A province's own agency, not one of its cities, counties or education office."""
+    region=flat(profile.get('region',''));organization=profile.get('organization','').split()
+    if not region or not organization or not flat(organization[0]).startswith(region):return False
+    if '교육' in flat(profile['organization']):return False
+    return not (len(organization)>1 and re.search(r'[시군구]$',organization[1]))
+
+
+def personnel_label(profile):
+    """Status wording for common-law search; the region only where its ordinance applies."""
+    framework=profile['personnel_framework'];label=FRAMEWORKS.get(framework,'')
+    if framework=='fire_public_official':
+        return '소방청 소속 '+label if re.search(NATIONAL_FIRE,flat(profile['organization'])) else f"{profile['region']} 소속 {label}".strip()
+    if framework=='local_public_official' and provincial(profile):return f"{profile['region']} 소속 {label}"
+    return label
+
+
 def clean_profile(value):
     if not isinstance(value,dict) or value.get('confirmed') is not True:return None
     framework=value.get('personnel_framework')
-    if framework not in {'national_public_official','local_public_official','other'}:return None
+    if framework not in FRAMEWORKS:return None
     fields={k:value.get(k,'') for k in ('organization','department','region')}
     if any(not isinstance(v,str) or len(v)>300 or '\n' in v or '\r' in v for v in fields.values()):return None
     if len(flat(fields['organization']))<2:return None
@@ -109,15 +133,18 @@ def scoped_sources(query,sources,profile=None):
     if re.search(r'다른\s*기관|타\s*기관|타기관|다른\s*소속',query) or any(flat(n) not in own for n in named):return [],'explicit_other'
     national=bool(re.search(r'국가공무원|국가직|중앙부처|국가기관',query))
     local=bool(re.search(r'지방공무원|지방직|지방자치단체',query))
-    if national and profile['personnel_framework']=='local_public_official' or local and profile['personnel_framework']=='national_public_official':return [],'explicit_other'
+    if national and profile['personnel_framework']=='local_public_official' or local and profile['personnel_framework'] in NATIONAL_FRAMEWORKS:return [],'explicit_other'
     return [s for s in sources if flat(s['institution'])==own],'affiliation'
 
 def scope_query(query,profile,organizations=()):
     """Supply only confirmed personnel scope to common-law search."""
     profile=clean_profile(profile)
     if not profile or re.search(r'국가공무원|국가직|지방공무원|지방직|중앙부처|국가기관|지방자치단체|다른\s*기관|타기관',query):return query
+    # Asking about another status (a local official asking about fire officers) drops the own scope.
+    own={'fire_public_official':'소방','police_public_official':'경찰'}.get(profile['personnel_framework'])
+    if any(word in flat(query) and word!=own for word in ('소방','경찰')):return query
     if any(flat(n) not in flat(profile['organization']) for n in named_agencies(query)):return query
     mentioned=[name for name in organizations if re.search(agency_pattern(name),query,re.IGNORECASE)]
     if any(flat(name)!=flat(profile['organization']) for name in mentioned):return query
-    label={'national_public_official':'국가공무원','local_public_official':'지방공무원'}.get(profile['personnel_framework'])
+    label=personnel_label(profile)
     return query+'\n업무환경: '+label if label and len(query)<2950 else query

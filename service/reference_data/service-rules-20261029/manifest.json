@@ -3165,5 +3165,464 @@
     "sha256": "319fa1b06439e7e7c6c74b15ad36a75769015c30074c2eb47c39fd671c55f82c",
     "paragraphs": 2,
     "scope": "해당 조문 전체 · 별표·부칙·관련 예규·기관 지침은 별도 확인"
+  },
+  {
+    "id": "gyeonggi-1",
+    "collection": "service-rules-20261029",
+    "law": "gyeonggi",
+    "title": "경기도 공무원 복무 조례",
+    "article": "제1조(목적)",
+    "article_label": "제1조",
+    "article_name": "목적",
+    "topics": [],
+    "applies_to": [
+      "gyeonggi"
+    ],
+    "effective_date": "2026-10-12",
+    "publication": "경기도조례 제8974호",
+    "issuer": "경기도",
+    "institution": "경기도 소속 공무원",
+    "kind": "법령·규정",
+    "source_url": "https://www.law.go.kr/LSW/ordinInfoR.do?ordinSeq=2178481",
+    "download_url": "https://www.law.go.kr/LSW/ordinInfoR.do?ordinSeq=2178481",
+    "retrieved_at": "2026-10-29T07:41:48.213539+00:00",
+    "raw_file": "gyeonggi_2178481.html",
+    "raw_sha256": "7fe22ee6e281d677f521ba52787d9c76dc7c27bbade07e19025f74fb9dc45ab9",
+    "filename": "경기도 공무원 복무 조례_제1조.txt",
+    "sha256": "41082af3a9e1bbdadc6fa9d5eb1f5c98693e15a6d432a5b13cb75ca383fca8d0",
+    "paragraphs": 1,
+    "scope": "해당 조문 전체 · 별표·부칙·시행규칙은 별도 확인 · 시·군 소속은 해당 시·군 조례 적용"
+  },
+  {
+    "id": "gyeonggi-2",
+    "collection": "service-rules-20261029",
+    "law": "gyeonggi",
+    "title": "경기도 공무원 복무 조례",
+    "article": "제2조(복무선서)",
+    "article_label": "제2조",
+    "article_name": "복무선서",
+    "topics": [
+      "conduct"
+    ],
+    "applies_to": [
+      "gyeonggi"
+    ],
+    "effective_date": "2026-10-12",
+    "publication": "경기도조례 제8974호",
+    "issuer": "경기도",
+    "institution": "경기도 소속 공무원",
+    "kind": "법령·규정",
+    "source_url": "https://www.law.go.kr/LSW/ordinInfoR.do?ordinSeq=2178481",
+    "download_url": "https://www.law.go.kr/LSW/ordinInfoR.do?ordinSeq=2178481",
+    "retrieved_at": "2026-10-29T07:41:48.214538+00:00",
+    "raw_file": "gyeonggi_2178481.html",
+    "raw_sha256": "7fe22ee6e281d677f521ba52787d9c76dc7c27bbade07e19025f74fb9dc45ab9",
+    "filename": "경기도 공무원 복무 조례_제2조.txt",
+    "sha256": "d33725800d8fdedf8cd9121f25007af31030908c537159dc6dbb34fb11cf55f9",
+    "paragraphs": 3,
+    "scope": "해당 조문 전체 · 별표·부칙·시행규칙은 별도 확인 · 시·군 소속은 해당 시·군 조례 적용"
+  },
+  {
+    "id": "gyeonggi-3",
+    "collection": "service-rules-20261029",
+    "law": "gyeonggi",
+    "title": "경기도 공무원 복무 조례",
+    "article": "제3조(책임완수)",
+    "article_label": "제3조",
+    "article_name": "책임완수",
+    "topics": [
+      "conduct"
+    ],
+    "applies_to": [
+      "gyeonggi"
+    ],
+    "effective_date": "2026-10-12",
+    "publication": "경기도조례 제8974호",
+    "issuer": "경기도",
+    "institution": "경기도 소속 공무원",
+    "kind": "법령·규정",
+    "source_url": "https://www.law.go.kr/LSW/ordinInfoR.do?ordinSeq=2178481",
+    "download_url": "https://www.law.go.kr/LSW/ordinInfoR.do?ordinSeq=2178481",
+    "retrieved_at": "2026-10-29T07:41:48.244282+00:00",
+    "raw_file": "gyeonggi_2178481.html",
+    "raw_sha256": "7fe22ee6e281d677f521ba52787d9c76dc7c27bbade07e19025f74fb9dc45ab9",
+    "filename": "경기도 공무원 복무 조례_제3조.txt",
+    "sha256": "2bd87e35d95a89aafd99d51ed576e1e7a60f578c9afd63c4f93a90be28d664ce",
+    "paragraphs": 1,
+    "scope": "해당 조문 전체 · 별표·부칙·시행규칙은 별도 확인 · 시·군 소속은 해당 시·군 조례 적용"
+  },
+  {
+    "id": "gyeonggi-4",
+    "collection": "service-rules-20261029",
+    "law": "gyeonggi",
+    "title": "경기도 공무원 복무 조례",
+    "article": "제4조(비밀엄수)",
+    "article_label": "제4조",
+    "article_name": "비밀엄수",
+    "topics": [
+      "conduct"
+    ],
+    "applies_to": [
+      "gyeonggi"
+    ],
+    "effective_date": "2026-10-12",
+    "publication": "경기도조례 제8974호",
+    "issuer": "경기도",
+    "institution": "경기도 소속 공무원",
+    "kind": "법령·규정",
+    "source_url": "https://www.law.go.kr/LSW/ordinInfoR.do?ordinSeq=2178481",
+    "download_url": "https://www.law.go.kr/LSW/ordinInfoR.do?ordinSeq=2178481",
+    "retrieved_at": "2026-10-29T07:41:48.245289+00:00",
+    "raw_file": "gyeonggi_2178481.html",
+    "raw_sha256": "7fe22ee6e281d677f521ba52787d9c76dc7c27bbade07e19025f74fb9dc45ab9",
+    "filename": "경기도 공무원 복무 조례_제4조.txt",
+    "sha256": "f4aa94603d6016ad57217aff98ac0db21c520c8d15118fcf83381e793d97bd6e",
+    "paragraphs": 5,
+    "scope": "해당 조문 전체 · 별표·부칙·시행규칙은 별도 확인 · 시·군 소속은 해당 시·군 조례 적용"
+  },
+  {
+    "id": "gyeonggi-5",
+    "collection": "service-rules-20261029",
+    "law": "gyeonggi",
+    "title": "경기도 공무원 복무 조례",
+    "article": "제5조(친절ㆍ공정)",
+    "article_label": "제5조",
+    "article_name": "친절ㆍ공정",
+    "topics": [
+      "conduct"
+    ],
+    "applies_to": [
+      "gyeonggi"
+    ],
+    "effective_date": "2026-10-12",
+    "publication": "경기도조례 제8974호",
+    "issuer": "경기도",
+    "institution": "경기도 소속 공무원",
+    "kind": "법령·규정",
+    "source_url": "https://www.law.go.kr/LSW/ordinInfoR.do?ordinSeq=2178481",
+    "download_url": "https://www.law.go.kr/LSW/ordinInfoR.do?ordinSeq=2178481",
+    "retrieved_at": "2026-10-29T07:41:48.245289+00:00",
+    "raw_file": "gyeonggi_2178481.html",
+    "raw_sha256": "7fe22ee6e281d677f521ba52787d9c76dc7c27bbade07e19025f74fb9dc45ab9",
+    "filename": "경기도 공무원 복무 조례_제5조.txt",
+    "sha256": "fb2a49d4d982250cb1a12588f6f297d9e9715b6908fef77b53ee062c1ac17f5c",
+    "paragraphs": 3,
+    "scope": "해당 조문 전체 · 별표·부칙·시행규칙은 별도 확인 · 시·군 소속은 해당 시·군 조례 적용"
+  },
+  {
+    "id": "gyeonggi-6",
+    "collection": "service-rules-20261029",
+    "law": "gyeonggi",
+    "title": "경기도 공무원 복무 조례",
+    "article": "제6조(당직 및 비상근무)",
+    "article_label": "제6조",
+    "article_name": "당직 및 비상근무",
+    "topics": [
+      "duty"
+    ],
+    "applies_to": [
+      "gyeonggi"
+    ],
+    "effective_date": "2026-10-12",
+    "publication": "경기도조례 제8974호",
+    "issuer": "경기도",
+    "institution": "경기도 소속 공무원",
+    "kind": "법령·규정",
+    "source_url": "https://www.law.go.kr/LSW/ordinInfoR.do?ordinSeq=2178481",
+    "download_url": "https://www.law.go.kr/LSW/ordinInfoR.do?ordinSeq=2178481",
+    "retrieved_at": "2026-10-29T07:41:48.246286+00:00",
+    "raw_file": "gyeonggi_2178481.html",
+    "raw_sha256": "7fe22ee6e281d677f521ba52787d9c76dc7c27bbade07e19025f74fb9dc45ab9",
+    "filename": "경기도 공무원 복무 조례_제6조.txt",
+    "sha256": "8832f781fd38e89fe1799aa0830c438af2708bd561e08374055fb4d2663cdaa7",
+    "paragraphs": 4,
+    "scope": "해당 조문 전체 · 별표·부칙·시행규칙은 별도 확인 · 시·군 소속은 해당 시·군 조례 적용"
+  },
+  {
+    "id": "gyeonggi-7",
+    "collection": "service-rules-20261029",
+    "law": "gyeonggi",
+    "title": "경기도 공무원 복무 조례",
+    "article": "제7조(출장공무원)",
+    "article_label": "제7조",
+    "article_name": "출장공무원",
+    "topics": [
+      "travel"
+    ],
+    "applies_to": [
+      "gyeonggi"
+    ],
+    "effective_date": "2026-10-12",
+    "publication": "경기도조례 제8974호",
+    "issuer": "경기도",
+    "institution": "경기도 소속 공무원",
+    "kind": "법령·규정",
+    "source_url": "https://www.law.go.kr/LSW/ordinInfoR.do?ordinSeq=2178481",
+    "download_url": "https://www.law.go.kr/LSW/ordinInfoR.do?ordinSeq=2178481",
+    "retrieved_at": "2026-10-29T07:41:48.247286+00:00",
+    "raw_file": "gyeonggi_2178481.html",
+    "raw_sha256": "7fe22ee6e281d677f521ba52787d9c76dc7c27bbade07e19025f74fb9dc45ab9",
+    "filename": "경기도 공무원 복무 조례_제7조.txt",
+    "sha256": "c8cbfe987da2e7df19472036d53935ce2871f3c50879ab9503ef09ce5fd5d416",
+    "paragraphs": 5,
+    "scope": "해당 조문 전체 · 별표·부칙·시행규칙은 별도 확인 · 시·군 소속은 해당 시·군 조례 적용"
+  },
+  {
+    "id": "gyeonggi-8",
+    "collection": "service-rules-20261029",
+    "law": "gyeonggi",
+    "title": "경기도 공무원 복무 조례",
+    "article": "제8조(겸임근무)",
+    "article_label": "제8조",
+    "article_name": "겸임근무",
+    "topics": [
+      "dispatch"
+    ],
+    "applies_to": [
+      "gyeonggi"
+    ],
+    "effective_date": "2026-10-12",
+    "publication": "경기도조례 제8974호",
+    "issuer": "경기도",
+    "institution": "경기도 소속 공무원",
+    "kind": "법령·규정",
+    "source_url": "https://www.law.go.kr/LSW/ordinInfoR.do?ordinSeq=2178481",
+    "download_url": "https://www.law.go.kr/LSW/ordinInfoR.do?ordinSeq=2178481",
+    "retrieved_at": "2026-10-29T07:41:48.247286+00:00",
+    "raw_file": "gyeonggi_2178481.html",
+    "raw_sha256": "7fe22ee6e281d677f521ba52787d9c76dc7c27bbade07e19025f74fb9dc45ab9",
+    "filename": "경기도 공무원 복무 조례_제8조.txt",
+    "sha256": "5d461c04a382c7ceb60cfd34c1208847cdef134b57d2236e07db5246a8d7afd1",
+    "paragraphs": 2,
+    "scope": "해당 조문 전체 · 별표·부칙·시행규칙은 별도 확인 · 시·군 소속은 해당 시·군 조례 적용"
+  },
+  {
+    "id": "gyeonggi-9",
+    "collection": "service-rules-20261029",
+    "law": "gyeonggi",
+    "title": "경기도 공무원 복무 조례",
+    "article": "제9조(파견근무)",
+    "article_label": "제9조",
+    "article_name": "파견근무",
+    "topics": [
+      "dispatch"
+    ],
+    "applies_to": [
+      "gyeonggi"
+    ],
+    "effective_date": "2026-10-12",
+    "publication": "경기도조례 제8974호",
+    "issuer": "경기도",
+    "institution": "경기도 소속 공무원",
+    "kind": "법령·규정",
+    "source_url": "https://www.law.go.kr/LSW/ordinInfoR.do?ordinSeq=2178481",
+    "download_url": "https://www.law.go.kr/LSW/ordinInfoR.do?ordinSeq=2178481",
+    "retrieved_at": "2026-10-29T07:41:48.248285+00:00",
+    "raw_file": "gyeonggi_2178481.html",
+    "raw_sha256": "7fe22ee6e281d677f521ba52787d9c76dc7c27bbade07e19025f74fb9dc45ab9",
+    "filename": "경기도 공무원 복무 조례_제9조.txt",
+    "sha256": "1bd19f3a5f6e5a163301428dd4b7d4f75ccc1eeb95632e6df1805e0a17994dc5",
+    "paragraphs": 3,
+    "scope": "해당 조문 전체 · 별표·부칙·시행규칙은 별도 확인 · 시·군 소속은 해당 시·군 조례 적용"
+  },
+  {
+    "id": "gyeonggi-10",
+    "collection": "service-rules-20261029",
+    "law": "gyeonggi",
+    "title": "경기도 공무원 복무 조례",
+    "article": "제10조(복장 등)",
+    "article_label": "제10조",
+    "article_name": "복장 등",
+    "topics": [
+      "conduct"
+    ],
+    "applies_to": [
+      "gyeonggi"
+    ],
+    "effective_date": "2026-10-12",
+    "publication": "경기도조례 제8974호",
+    "issuer": "경기도",
+    "institution": "경기도 소속 공무원",
+    "kind": "법령·규정",
+    "source_url": "https://www.law.go.kr/LSW/ordinInfoR.do?ordinSeq=2178481",
+    "download_url": "https://www.law.go.kr/LSW/ordinInfoR.do?ordinSeq=2178481",
+    "retrieved_at": "2026-10-29T07:41:48.249286+00:00",
+    "raw_file": "gyeonggi_2178481.html",
+    "raw_sha256": "7fe22ee6e281d677f521ba52787d9c76dc7c27bbade07e19025f74fb9dc45ab9",
+    "filename": "경기도 공무원 복무 조례_제10조.txt",
+    "sha256": "c888af4fe7e837feb9ac1327ba094a73067bded9984f9566290eff735934b8a2",
+    "paragraphs": 2,
+    "scope": "해당 조문 전체 · 별표·부칙·시행규칙은 별도 확인 · 시·군 소속은 해당 시·군 조례 적용"
+  },
+  {
+    "id": "gyeonggi-11",
+    "collection": "service-rules-20261029",
+    "law": "gyeonggi",
+    "title": "경기도 공무원 복무 조례",
+    "article": "제11조(경력직공무원 및 특수경력직공무원의 연가가산)",
+    "article_label": "제11조",
+    "article_name": "경력직공무원 및 특수경력직공무원의 연가가산",
+    "topics": [
+      "leave"
+    ],
+    "applies_to": [
+      "gyeonggi"
+    ],
+    "effective_date": "2026-10-12",
+    "publication": "경기도조례 제8974호",
+    "issuer": "경기도",
+    "institution": "경기도 소속 공무원",
+    "kind": "법령·규정",
+    "source_url": "https://www.law.go.kr/LSW/ordinInfoR.do?ordinSeq=2178481",
+    "download_url": "https://www.law.go.kr/LSW/ordinInfoR.do?ordinSeq=2178481",
+    "retrieved_at": "2026-10-29T07:41:48.249286+00:00",
+    "raw_file": "gyeonggi_2178481.html",
+    "raw_sha256": "7fe22ee6e281d677f521ba52787d9c76dc7c27bbade07e19025f74fb9dc45ab9",
+    "filename": "경기도 공무원 복무 조례_제11조.txt",
+    "sha256": "724dcffe9b28ea3dc56eecadb4fe286dc31dfb14d95e176664a676f92acf23cb",
+    "paragraphs": 1,
+    "scope": "해당 조문 전체 · 별표·부칙·시행규칙은 별도 확인 · 시·군 소속은 해당 시·군 조례 적용"
+  },
+  {
+    "id": "gyeonggi-12",
+    "collection": "service-rules-20261029",
+    "law": "gyeonggi",
+    "title": "경기도 공무원 복무 조례",
+    "article": "제12조(연가계획 및 허가)",
+    "article_label": "제12조",
+    "article_name": "연가계획 및 허가",
+    "topics": [
+      "leave"
+    ],
+    "applies_to": [
+      "gyeonggi"
+    ],
+    "effective_date": "2026-10-12",
+    "publication": "경기도조례 제8974호",
+    "issuer": "경기도",
+    "institution": "경기도 소속 공무원",
+    "kind": "법령·규정",
+    "source_url": "https://www.law.go.kr/LSW/ordinInfoR.do?ordinSeq=2178481",
+    "download_url": "https://www.law.go.kr/LSW/ordinInfoR.do?ordinSeq=2178481",
+    "retrieved_at": "2026-10-29T07:41:48.250288+00:00",
+    "raw_file": "gyeonggi_2178481.html",
+    "raw_sha256": "7fe22ee6e281d677f521ba52787d9c76dc7c27bbade07e19025f74fb9dc45ab9",
+    "filename": "경기도 공무원 복무 조례_제12조.txt",
+    "sha256": "ef43124a87042619d01719f56eb30cd12e40a71748bd99ab52270fe2af1b3d05",
+    "paragraphs": 5,
+    "scope": "해당 조문 전체 · 별표·부칙·시행규칙은 별도 확인 · 시·군 소속은 해당 시·군 조례 적용"
+  },
+  {
+    "id": "gyeonggi-13",
+    "collection": "service-rules-20261029",
+    "law": "gyeonggi",
+    "title": "경기도 공무원 복무 조례",
+    "article": "제13조(시간외근무시간 저축연가)",
+    "article_label": "제13조",
+    "article_name": "시간외근무시간 저축연가",
+    "topics": [
+      "leave",
+      "hours"
+    ],
+    "applies_to": [
+      "gyeonggi"
+    ],
+    "effective_date": "2026-10-12",
+    "publication": "경기도조례 제8974호",
+    "issuer": "경기도",
+    "institution": "경기도 소속 공무원",
+    "kind": "법령·규정",
+    "source_url": "https://www.law.go.kr/LSW/ordinInfoR.do?ordinSeq=2178481",
+    "download_url": "https://www.law.go.kr/LSW/ordinInfoR.do?ordinSeq=2178481",
+    "retrieved_at": "2026-10-29T07:41:48.250288+00:00",
+    "raw_file": "gyeonggi_2178481.html",
+    "raw_sha256": "7fe22ee6e281d677f521ba52787d9c76dc7c27bbade07e19025f74fb9dc45ab9",
+    "filename": "경기도 공무원 복무 조례_제13조.txt",
+    "sha256": "5b200fff2e4db5460accecdb6b32fa9d5d1bf2ccfe0d2f07d21e4dda09cc7493",
+    "paragraphs": 1,
+    "scope": "해당 조문 전체 · 별표·부칙·시행규칙은 별도 확인 · 시·군 소속은 해당 시·군 조례 적용"
+  },
+  {
+    "id": "gyeonggi-14",
+    "collection": "service-rules-20261029",
+    "law": "gyeonggi",
+    "title": "경기도 공무원 복무 조례",
+    "article": "제14조(특별휴가)",
+    "article_label": "제14조",
+    "article_name": "특별휴가",
+    "topics": [
+      "leave"
+    ],
+    "applies_to": [
+      "gyeonggi"
+    ],
+    "effective_date": "2026-10-12",
+    "publication": "경기도조례 제8974호",
+    "issuer": "경기도",
+    "institution": "경기도 소속 공무원",
+    "kind": "법령·규정",
+    "source_url": "https://www.law.go.kr/LSW/ordinInfoR.do?ordinSeq=2178481",
+    "download_url": "https://www.law.go.kr/LSW/ordinInfoR.do?ordinSeq=2178481",
+    "retrieved_at": "2026-10-29T07:41:48.250288+00:00",
+    "raw_file": "gyeonggi_2178481.html",
+    "raw_sha256": "7fe22ee6e281d677f521ba52787d9c76dc7c27bbade07e19025f74fb9dc45ab9",
+    "filename": "경기도 공무원 복무 조례_제14조.txt",
+    "sha256": "a6374d88bc7dec64bbb8e79d8a4e0487473e39cd662bf4b97602f39d2275aad3",
+    "paragraphs": 26,
+    "scope": "해당 조문 전체 · 별표·부칙·시행규칙은 별도 확인 · 시·군 소속은 해당 시·군 조례 적용"
+  },
+  {
+    "id": "gyeonggi-15",
+    "collection": "service-rules-20261029",
+    "law": "gyeonggi",
+    "title": "경기도 공무원 복무 조례",
+    "article": "제15조(평가 및 포상)",
+    "article_label": "제15조",
+    "article_name": "평가 및 포상",
+    "topics": [],
+    "applies_to": [
+      "gyeonggi"
+    ],
+    "effective_date": "2026-10-12",
+    "publication": "경기도조례 제8974호",
+    "issuer": "경기도",
+    "institution": "경기도 소속 공무원",
+    "kind": "법령·규정",
+    "source_url": "https://www.law.go.kr/LSW/ordinInfoR.do?ordinSeq=2178481",
+    "download_url": "https://www.law.go.kr/LSW/ordinInfoR.do?ordinSeq=2178481",
+    "retrieved_at": "2026-10-29T07:41:48.251286+00:00",
+    "raw_file": "gyeonggi_2178481.html",
+    "raw_sha256": "7fe22ee6e281d677f521ba52787d9c76dc7c27bbade07e19025f74fb9dc45ab9",
+    "filename": "경기도 공무원 복무 조례_제15조.txt",
+    "sha256": "b467ac9764f90aaa4d1e41890f4c207a7190653a9d1efc3dddfb81722e9737c5",
+    "paragraphs": 1,
+    "scope": "해당 조문 전체 · 별표·부칙·시행규칙은 별도 확인 · 시·군 소속은 해당 시·군 조례 적용"
+  },
+  {
+    "id": "gyeonggi-16",
+    "collection": "service-rules-20261029",
+    "law": "gyeonggi",
+    "title": "경기도 공무원 복무 조례",
+    "article": "제16조(시행규칙)",
+    "article_label": "제16조",
+    "article_name": "시행규칙",
+    "topics": [],
+    "applies_to": [
+      "gyeonggi"
+    ],
+    "effective_date": "2026-10-12",
+    "publication": "경기도조례 제8974호",
+    "issuer": "경기도",
+    "institution": "경기도 소속 공무원",
+    "kind": "법령·규정",
+    "source_url": "https://www.law.go.kr/LSW/ordinInfoR.do?ordinSeq=2178481",
+    "download_url": "https://www.law.go.kr/LSW/ordinInfoR.do?ordinSeq=2178481",
+    "retrieved_at": "2026-10-29T07:41:48.252285+00:00",
+    "raw_file": "gyeonggi_2178481.html",
+    "raw_sha256": "7fe22ee6e281d677f521ba52787d9c76dc7c27bbade07e19025f74fb9dc45ab9",
+    "filename": "경기도 공무원 복무 조례_제16조.txt",
+    "sha256": "f1da7087bf0f8c523f83070fbddec697e26fa77b501841322f8e837749695987",
+    "paragraphs": 1,
+    "scope": "해당 조문 전체 · 별표·부칙·시행규칙은 별도 확인 · 시·군 소속은 해당 시·군 조례 적용"
   }
 ]

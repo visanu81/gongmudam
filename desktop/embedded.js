@@ -8,7 +8,7 @@
   let waitTimer = null;
   const origin = location.origin;
   const nativeFetch = window.fetch.bind(window);
-  const labels = {national_public_official: '국가공무원', local_public_official: '지방공무원', other: '구분 확인 필요'};
+  const labels = {national_public_official: '국가공무원', local_public_official: '지방공무원', fire_public_official: '소방공무원', police_public_official: '경찰공무원', other: '구분 확인 필요'};
   const appPages = new Set(['/index.html', '/travel.html', '/adhoc.html', '/folders.html', '/folders-advanced.html', '/toolbox.html', '/change-inbox.html', '/calendar.html', '/local-ai.html']);
   const post = (message) => window.parent.postMessage(message, origin);
 

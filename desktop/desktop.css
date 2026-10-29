@@ -112,7 +112,7 @@ body[data-variant=B] .desktop-companion{display:flex}
 .profile-fields :is(input,select){display:block;margin-top:7px;min-height:46px}
 .optional-label{font-size:12px;color:#627b8c;margin-left:4px}
 .profile-rule-hint{font-size:13px;line-height:1.75;color:#4b6578;margin:24px 0 20px;max-width:70ch}
-.profile-framework-group{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;padding:0;margin:0;border:0;min-width:0}
+.profile-framework-group{grid-column:1/-1;display:grid;grid-template-columns:repeat(auto-fit,minmax(116px,1fr));gap:10px;padding:0;margin:0;border:0;min-width:0}
 .profile-framework-group legend{padding:0;margin-bottom:9px;font-size:13px}
 .settings-example .profile-fields .profile-framework-group label{display:flex;align-items:center;gap:9px;min-height:52px;padding:12px;border:1px solid #c8d8e4;border-radius:9px;cursor:pointer;background:#f7fafc}
 .profile-framework-group label:has(input:checked){background:#dceaf4!important;border-color:#315e80!important;color:#234b69}

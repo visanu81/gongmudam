@@ -27,7 +27,7 @@ class ServiceRulesTest(Base):
     def test_all_four_regulations_are_hash_verified(self):
         rows = [row for row, _ in service_rules.catalog()]
         counts = {law: sum(r['law'] == law for r in rows) for law in service_rules.TITLES}
-        self.assertEqual(counts, {'national': 46, 'local': 32, 'fire': 13, 'police': 20})
+        self.assertEqual(counts, {'national': 46, 'local': 32, 'fire': 13, 'police': 20, 'gyeonggi': 16})
         self.assertTrue(all(r['source_url'].startswith('https://www.law.go.kr/') for r in rows))
 
     def test_changed_article_text_is_dropped(self):
@@ -74,6 +74,30 @@ class ServiceRulesTest(Base):
         self.assertEqual(service_rules.expected('annual', '소방공무원 연가'), ('국가공무원 복무규정', ('제15조(',)))
         # Without a status the existing local-first leave mapping is kept.
         self.assertIsNone(service_rules.expected('sick', '병가 며칠'))
+
+    def test_province_ordinance_applies_only_to_its_own_officials(self):
+        self.assertEqual(service_rules.status('소방청 소속 소방공무원'), 'fire_national')
+        self.assertEqual(service_rules.reads('경기도 소속 소방공무원 장기재직'), ('gyeonggi', 'fire', 'national'))
+        self.assertEqual(service_rules.reads('경기도 소속 지방공무원'), ('gyeonggi', 'local'))
+        self.assertEqual(service_rules.reads('소방청 소속 소방공무원'), ('fire', 'national'))
+        # The education office follows its own ordinance, not the province's.
+        self.assertIsNone(service_rules.region('경기도교육청 지방공무원'))
+        self.assertEqual(service_rules.expected('long_service', '경기도 소속 소방공무원'), ('경기도 공무원 복무 조례', ('제14조(',)))
+        self.assertEqual(service_rules.expected('long_service', '소방공무원'), ('소방공무원 복무규정', ('제11조(',)))
+
+    def test_affiliation_adds_status_and_only_an_applicable_province(self):
+        from app import institution_matching as matching
+        def scope(framework, organization, region, query='장기재직휴가 며칠?'):
+            profile = dict(confirmed=True, personnel_framework=framework, organization=organization, region=region, department='')
+            return matching.scope_query(query, profile).split(chr(10))[-1]
+        self.assertEqual(scope('fire_public_official', '경기도 수원소방서', '경기도'), '업무환경: 경기도 소속 소방공무원')
+        self.assertEqual(scope('fire_public_official', '소방청 중앙119구조본부', '세종특별자치시'), '업무환경: 소방청 소속 소방공무원')
+        self.assertEqual(scope('local_public_official', '경기도', '경기도'), '업무환경: 경기도 소속 지방공무원')
+        # A city follows its own ordinance; the province's is not implied.
+        self.assertEqual(scope('local_public_official', '경기도 수원시', '경기도'), '업무환경: 지방공무원')
+        self.assertEqual(scope('police_public_official', '경기남부경찰청', '경기도'), '업무환경: 경찰공무원')
+        # A question about another status keeps the question's own scope.
+        self.assertEqual(scope('local_public_official', '경기도', '경기도', '소방공무원 장기재직휴가는?'), '소방공무원 장기재직휴가는?')
 
     def test_overtime_is_not_a_business_trip(self):
         plan = knowledge_intent.analyze('시간외근무 명령은 누가 하나요?')

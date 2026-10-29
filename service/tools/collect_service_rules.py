@@ -27,6 +27,12 @@ LAWS={
   version='[시행 2021. 1. 5.]',publication='대통령령 제31380호',effective_date='2021-01-05',
   articles='1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20'),
 }
+# Ordinances are published as one page; each article is stored separately and
+# keeps the hash of that single raw page.
+ORDINANCES={
+ 'gyeonggi':dict(title='경기도 공무원 복무 조례',ordin=2178481,issuer='경기도',institution='경기도 소속 공무원',
+  version='[시행 2026. 10. 12.]',publication='경기도조례 제8974호',effective_date='2026-10-12'),
+}
 # Navigation tags only; an answer still needs the stored article text.
 TOPICS=(('leave',r'휴가|연가|병가|공가|휴무|포상휴가'),('hours',r'근무시간|시간외|현업|교대제|근무혁신|연일근무'),
         ('duty',r'당직|비상|소집'),('travel',r'출장|여행'),('sidejob',r'영리|겸직'),('politics',r'정치'),
@@ -101,6 +107,34 @@ def collect(keys=None,delay=0.5):
     return list(rows.values())
 
 
+def collect_ordinance(key):
+    law=ORDINANCES[key];manifest=BASE/'manifest.json'
+    rows={r['id']:r for r in json.loads(manifest.read_text(encoding='utf-8'))}
+    address=f"https://www.law.go.kr/LSW/ordinInfoR.do?ordinSeq={law['ordin']}"
+    raw=fetch(address);tree=Tree(raw.decode('utf-8'))
+    if law['version'] not in tree.root.text() or law['publication'] not in tree.root.text():
+        raise ValueError('Unexpected effective version: '+law['title'])
+    raw_name=f"{key}_{law['ordin']}.html";keep(BASE/'raw'/raw_name,raw)
+    for container in [n for n in tree.root.walk() if 'lawcon' in n.attrs.get('class','').split()]:
+        paragraphs=[p.text() for p in container.walk() if p.tag=='p' and p.text()]
+        heading=re.match(r'제(\d+)조(?:의(\d+))?\(([^)]{1,40})\)',paragraphs[0] if paragraphs else '')
+        if not heading:raise ValueError('Article heading differs: '+law['title'])
+        article=heading[1]+(f'-{heading[2]}' if heading[2] else '');name=heading[3]
+        text='\n'.join(paragraphs)+'\n';filename=f"{law['title']}_{label(article)}.txt"
+        keep(BASE/'excerpts'/filename,text.encode('utf-8'))
+        rows[f'{key}-{article}']=dict(id=f'{key}-{article}',collection=COLLECTION,law=key,title=law['title'],
+            article=f'{label(article)}({name})',article_label=label(article),article_name=name,
+            topics=[t for t,pattern in TOPICS if re.search(pattern,name)],applies_to=[key],
+            effective_date=law['effective_date'],publication=law['publication'],issuer=law['issuer'],institution=law['institution'],
+            kind='법령·규정',source_url=address,download_url=address,retrieved_at=datetime.now(timezone.utc).isoformat(),
+            raw_file=raw_name,raw_sha256=hashlib.sha256(raw).hexdigest(),filename=filename,
+            sha256=hashlib.sha256(text.encode('utf-8')).hexdigest(),paragraphs=len(paragraphs),
+            scope='해당 조문 전체 · 별표·부칙·시행규칙은 별도 확인 · 시·군 소속은 해당 시·군 조례 적용')
+    manifest.write_text(json.dumps(list(rows.values()),ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    return list(rows.values())
+
+
 if __name__=='__main__':
-    result=collect(set(sys.argv[1:]) or None)
-    print(json.dumps({k:sum(r['law']==k for r in result) for k in LAWS},ensure_ascii=True))
+    keys=set(sys.argv[1:])
+    result=collect_ordinance('gyeonggi') if keys=={'gyeonggi'} else collect(keys or None)
+    print(json.dumps({k:sum(r['law']==k for r in result) for k in (*LAWS,*ORDINANCES)},ensure_ascii=True))

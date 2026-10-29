@@ -58,6 +58,9 @@ TOPICS = {
     'occasion': ('경조사휴가 일수표', ('배우자출산','아내출산','와이프출산','경조사','결혼','사망')),
     'compensatory': ('대체휴무', ('대체휴무','대체휴가')),
     'reward_leave': ('포상휴가', ('포상휴가',)),
+    'long_service': ('장기재직휴가', ('장기재직','조례로 정하는')),
+    'region_leave': ('지역 고유 특별휴가', ('새내기도약','생일특별','악성민원','조례로 정하는')),
+    'election_rest': ('선거사무 후 휴무', ('선거','휴무')),
     'leave_holiday': ('휴가 중 토요일·공휴일', ('토요일','공휴일')),
     'drinking': ('근무시간 중 음주', ('음주',)),
     'overtime': ('시간외근무·공휴일 근무', ('시간외근무','초과근무')),
@@ -200,6 +203,13 @@ def analyze(query):
             elif '병가' in q or own_sick:add('sick')
             elif any(t in q for t in ('대체휴무','대체휴가')):add('compensatory')
             elif '포상휴가' in q:add('reward_leave')
+            elif '장기재직' in q or any(t in q for t in TOPICS['region_leave'][1][:3]):
+                from . import service_rules
+                # The days differ by status and province; a national figure would mislead others.
+                if not (service_rules.status(query) or service_rules.region(query)):
+                    question='장기재직휴가와 지역 특별휴가는 신분과 소속에 따라 달라요. 국가·지방(시·도)·소방·경찰 중 어디에 해당하는지 알려주세요.'
+                else:add('long_service' if '장기재직' in q else 'region_leave')
+            elif '선거' in q and '휴무' in q:add('election_rest')
             elif '여행' in q and '휴무' in q:add('travel_limit')
             elif any(t in q for t in ('토요일','공휴일')):add('leave_holiday')
             elif any(t in q for t in ('연가','연차')):
@@ -290,6 +300,8 @@ def supports(topic, hit, query=''):
             # The stated status decides the regulation; fire/police special rules first.
             if topic=='family_care' and not all(t in text for t in ('가족돌봄휴가','질병,사고,노령','연간10일','가족돌봄휴가는무급으로하되')):return False
             if official.get('title')!=target[0] or not official.get('article','').startswith(target[1]):return False
+            # The local decree only delegates these leaves; its other paragraphs are not the answer.
+            if topic in ('long_service','region_leave') and target[0]=='지방공무원 복무규정' and '조례로정하는바에따른다' not in text:return False
             return not (topic in SPECIAL and SPECIAL[topic] not in text)
         expected=ARTICLE.get(topic)
         if supplement.national(query):

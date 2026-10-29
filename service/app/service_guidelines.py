@@ -84,7 +84,9 @@ def chapter(query):
 
 def applies(query):
     from . import service_rules
-    return service_rules.status(query)!='local'
+    found=service_rules.status(query)
+    # The national guideline does not govern a province's own officials.
+    return found!='local' and not (found is None and service_rules.region(query))
 
 
 def search(query,k=2):

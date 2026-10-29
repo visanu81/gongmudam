@@ -192,5 +192,73 @@
   "question": "국가공무원 외부강의 신고는 어떻게 하나요?",
   "article": "국가공무원 복무·징계 관련 예규 제10장 외부강의",
   "notice": "예규"
+ },
+ {
+  "id": "sr-national-long-service",
+  "question": "국가공무원 장기재직휴가 며칠?",
+  "article": "국가공무원 복무규정 제20조(",
+  "rule": "service-rules:national-long-service"
+ },
+ {
+  "id": "sr-gyeonggi-long-service",
+  "question": "경기도청 지방공무원 장기재직휴가 며칠?",
+  "article": "경기도 공무원 복무 조례 제14조(",
+  "rule": "service-rules:gyeonggi-long-service",
+  "notice": "시·군 소속이면"
+ },
+ {
+  "id": "sr-gyeonggi-fire-long-service",
+  "question": "장기재직휴가 며칠이야?\n업무환경: 경기도 소속 소방공무원",
+  "article": "경기도 공무원 복무 조례 제14조(",
+  "rule": "service-rules:gyeonggi-long-service",
+  "notice": "소방공무원 복무규정 제11조"
+ },
+ {
+  "id": "sr-national-fire-long-service",
+  "question": "장기재직휴가 며칠이야?\n업무환경: 소방청 소속 소방공무원",
+  "article": "국가공무원 복무규정 제20조(",
+  "rule": "service-rules:national-long-service"
+ },
+ {
+  "id": "sr-fire-long-service-unbundled",
+  "question": "소방공무원 장기재직휴가 며칠?",
+  "article": "소방공무원 복무규정 제11조(",
+  "rule": "service-rules:fire-long-service",
+  "notice": "경기도 조례만"
+ },
+ {
+  "id": "sr-city-long-service",
+  "question": "장기재직휴가 며칠이야?\n업무환경: 지방공무원",
+  "article": "지방공무원 복무규정 제7조의7(",
+  "rule": "service-rules:local-long-service",
+  "notice": "소속 조례를 확인"
+ },
+ {
+  "id": "sr-long-service-no-status",
+  "question": "장기재직휴가 며칠이야?",
+  "notice": "신분과 소속에 따라 달라요"
+ },
+ {
+  "id": "sr-gyeonggi-region-leave",
+  "question": "새내기도약휴가 며칠?\n업무환경: 경기도 소속 지방공무원",
+  "article": "경기도 공무원 복무 조례 제14조(",
+  "rule": "service-rules:gyeonggi-region-leave"
+ },
+ {
+  "id": "sr-national-election-rest",
+  "question": "국가공무원 선거사무 후 휴무 기한은?",
+  "article": "국가공무원 복무규정 제6조의2(",
+  "rule": "service-rules:national-election-rest"
+ },
+ {
+  "id": "sr-local-election-rest",
+  "question": "선거사무 종사 후 휴무는 언제까지 써야 해?\n업무환경: 지방공무원",
+  "article": "지방공무원 복무규정 제4조의3(",
+  "rule": "service-rules:local-election-rest"
+ },
+ {
+  "id": "sr-gyeonggi-fire-public-leave",
+  "question": "공가 사유 알려줘\n업무환경: 경기도 소속 소방공무원",
+  "article": "소방공무원 복무규정 제8조의2("
  }
 ]
