@@ -13,11 +13,11 @@
     "not_found_handling": "none"
   },
   // The public demo runs in one container built by tools/stage_container.py.
+  // The image and instance size are chosen in cloudflare/index.js at start.
   "containers": [{
     "class_name": "GongmudamDemo",
-    "image": "./work/container-stage/Dockerfile",
-    "instance_type": "basic",
-    "max_instances": 1
+    "scheduling_policy": "durable_object",
+    "images": {"base": {"dockerfile": "./work/container-stage/Dockerfile"}}
   }],
   "durable_objects": {
     "bindings": [{"name": "DEMO", "class_name": "GongmudamDemo"}]
