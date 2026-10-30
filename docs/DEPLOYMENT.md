@@ -14,7 +14,7 @@
 
 - 운영 PC·8892 서버·터널이 꺼져 있어도 공유 사이트가 동작합니다. 개인용 앱은 각자 PC에서 실행합니다.
 - 20분간 요청이 없으면 컨테이너가 잠들고, 다음 접속에서 약 20초 뒤 깨어납니다. 이때 시연 자료는 처음 상태로 돌아갑니다.
-- 갱신: 공유 실행본을 갱신한 뒤 Docker Desktop이 켜진 상태에서 `npm run deploy`
+- 갱신: 공유 실행본을 갱신한 뒤 Docker Desktop이 켜진 상태에서 `npm run deploy`. 컨테이너 이름에 판 이름이 붙어 배포 즉시 새 판이 뜬다
   (정적 화면 빌드 → `tools/stage_container.py`로 해시 검증된 공개 파일만 스테이징 → 이미지 빌드·배포).
   스테이징에는 DB·config.json·API 키가 들어가지 않습니다.
 - 키 교체: `npx wrangler secret put UPSTAGE_API_KEY`.
