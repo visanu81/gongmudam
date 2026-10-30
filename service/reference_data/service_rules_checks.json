@@ -260,5 +260,79 @@
   "id": "sr-gyeonggi-fire-public-leave",
   "question": "공가 사유 알려줘\n업무환경: 경기도 소속 소방공무원",
   "article": "소방공무원 복무규정 제8조의2("
+ },
+ {
+  "id": "sa-diligence-no-status",
+  "question": "정근수당 지급 기준 알려줘",
+  "article": "지방공무원 수당 등에 관한 규정 제6조(",
+  "rule": "service-rules:local_allowance-diligence",
+  "notice": "신분을 알려주시면"
+ },
+ {
+  "id": "sa-national-diligence",
+  "question": "국가공무원 정근수당 언제 받아?",
+  "article": "공무원수당 등에 관한 규정 제7조(",
+  "rule": "service-rules:national_allowance-diligence"
+ },
+ {
+  "id": "sa-local-family",
+  "question": "지방공무원 가족수당 얼마야?",
+  "article": "지방공무원 수당 등에 관한 규정 제10조(",
+  "rule": "service-rules:local_allowance-family"
+ },
+ {
+  "id": "sa-fire-family",
+  "question": "소방공무원 가족수당 기준",
+  "article": "공무원수당 등에 관한 규정 제10조(",
+  "rule": "service-rules:national_allowance-family"
+ },
+ {
+  "id": "sa-national-holiday",
+  "question": "명절휴가비 얼마나 나와?\n업무환경: 국가공무원",
+  "article": "공무원수당 등에 관한 규정 제18조의3(",
+  "rule": "service-rules:national_allowance-holiday-bonus"
+ },
+ {
+  "id": "sa-local-holiday",
+  "question": "지방공무원 명절휴가비 기준",
+  "article": "지방공무원 수당 등에 관한 규정 제18조의3(",
+  "rule": "service-rules:local_allowance-holiday-bonus"
+ },
+ {
+  "id": "sa-local-overtime",
+  "question": "초과근무수당 지급 기준\n업무환경: 지방공무원",
+  "article": "지방공무원 수당 등에 관한 규정 제15조("
+ },
+ {
+  "id": "sa-national-annual-comp",
+  "question": "연가보상비 못 받는 경우는?\n업무환경: 국가공무원",
+  "article": "공무원수당 등에 관한 규정 제18조의5("
+ },
+ {
+  "id": "sa-allowance-clarify",
+  "question": "수당 알려줘",
+  "notice": "어떤 수당인가요"
+ },
+ {
+  "id": "sw-welfare-use",
+  "question": "맞춤형복지 포인트 사용 기준은?",
+  "article": "공무원 후생복지에 관한 규정 제9조(",
+  "rule": "service-rules:welfare-points-use"
+ },
+ {
+  "id": "sw-welfare-grant",
+  "question": "맞춤형복지 복지점수 어떻게 부여해?\n업무환경: 국가공무원",
+  "article": "공무원 후생복지에 관한 규정 제10조(",
+  "rule": "service-rules:welfare-points-grant"
+ },
+ {
+  "id": "sw-welfare-local",
+  "question": "맞춤형복지\n업무환경: 경기도 소속 지방공무원",
+  "notice": "후생복지 조례"
+ },
+ {
+  "id": "sd-national-duty",
+  "question": "국가공무원 당직 편성 기준",
+  "article": "국가공무원 복무규칙 제"
  }
 ]

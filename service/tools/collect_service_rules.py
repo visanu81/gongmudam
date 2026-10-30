@@ -26,6 +26,19 @@ LAWS={
  'police':dict(title='경찰공무원 복무규정',lsi=227157,issuer='경찰청',institution='경찰공무원',
   version='[시행 2021. 1. 5.]',publication='대통령령 제31380호',effective_date='2021-01-05',
   articles='1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20'),
+ # Allowances, welfare and the national rules on duty (2nd stage: 수당·복리후생·당직).
+ 'national_allowance':dict(title='공무원수당 등에 관한 규정',lsi=290323,issuer='인사혁신처',institution='국가공무원',
+  version='[시행 2026. 10. 2.]',publication='대통령령 제36728호',effective_date='2026-10-02',
+  articles='1 2 3 4 6-2 7 7-2 10 11 11-2 11-3 12 13 14 14-2 14-3 15 16 17 17-2 18 18-3 18-5 18-6 18-7 19 20 21 22 22-2 23 23-2 24'),
+ 'local_allowance':dict(title='지방공무원 수당 등에 관한 규정',lsi=289957,issuer='행정안전부',institution='지방공무원',
+  version='[시행 2026. 10. 1.]',publication='대통령령 제36701호',effective_date='2026-10-01',
+  articles='1 2 3 5-2 6 6-2 9 10 11-2 12 13 14 14-2 15 16 17 17-2 17-3 18 18-3 18-5 18-6 18-7 18-8 19 20 21 21-2 21-3 22 23'),
+ 'welfare':dict(title='공무원 후생복지에 관한 규정',lsi=227215,issuer='인사혁신처',institution='공무원',
+  version='[시행 2021. 1. 5.]',publication='대통령령 제31380호',effective_date='2021-01-05',
+  articles='1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 17-2 18 19 20 21 21-2 21-3 21-4 22 23'),
+ 'national_rules':dict(title='국가공무원 복무규칙',lsi=290865,issuer='인사혁신처',institution='국가공무원',
+  version='[시행 2026. 10. 2.]',publication='총리령 제2161호',effective_date='2026-10-02',
+  articles='1 2 6 7 8 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 57 58 59 60 61 62 62-2 62-3 62-4 62-5 62-6 62-7 63 64 65'),
 }
 # Ordinances are published as one page; each article is stored separately and
 # keeps the hash of that single raw page.
@@ -70,7 +83,7 @@ def article_text(raw,law,article):
     containers=[n for n in tree.root.walk() if 'lawcon' in n.attrs.get('class','').split()]
     if len(containers)!=1:raise ValueError('Unexpected article layout: '+law['title']+' '+article)
     paragraphs=[p.text() for p in containers[0].walk() if p.tag=='p' and p.text()]
-    heading=re.match(re.escape(label(article))+r'\(([^)]{1,40})\)',paragraphs[0] if paragraphs else '')
+    heading=re.match(re.escape(label(article))+r'\(([^)]{1,80})\)',paragraphs[0] if paragraphs else '')
     if not heading:raise ValueError('Article heading differs: '+law['title']+' '+article)
     return paragraphs,heading[1]
 
@@ -117,7 +130,7 @@ def collect_ordinance(key):
     raw_name=f"{key}_{law['ordin']}.html";keep(BASE/'raw'/raw_name,raw)
     for container in [n for n in tree.root.walk() if 'lawcon' in n.attrs.get('class','').split()]:
         paragraphs=[p.text() for p in container.walk() if p.tag=='p' and p.text()]
-        heading=re.match(r'제(\d+)조(?:의(\d+))?\(([^)]{1,40})\)',paragraphs[0] if paragraphs else '')
+        heading=re.match(r'제(\d+)조(?:의(\d+))?\(([^)]{1,80})\)',paragraphs[0] if paragraphs else '')
         if not heading:raise ValueError('Article heading differs: '+law['title'])
         article=heading[1]+(f'-{heading[2]}' if heading[2] else '');name=heading[3]
         text='\n'.join(paragraphs)+'\n';filename=f"{law['title']}_{label(article)}.txt"

@@ -30,6 +30,8 @@ READS={'national':('national',),'local':('local',),'fire':('fire','national'),'f
 # through 소방공무원 복무규정 제11조, to its fire officers; a city or county has its own.
 ORDINANCE={'gyeonggi':(r'경기도(?!교육)|경기소방','경기도 공무원 복무 조례')}
 TITLES={'national':'국가공무원 복무규정','local':'지방공무원 복무규정','fire':'소방공무원 복무규정','police':'경찰공무원 복무규정',
+        'national_allowance':'공무원수당 등에 관한 규정','local_allowance':'지방공무원 수당 등에 관한 규정',
+        'welfare':'공무원 후생복지에 관한 규정','national_rules':'국가공무원 복무규칙',
         **{key:title for key,(_,title) in ORDINANCE.items()}}
 _PUBLIC=('public_leave','public_health','public_blood')
 _SPECIAL=('childcare','family_care','maternity','pregnancy_check','pregnancy_accompany','maternal_time',
@@ -50,10 +52,28 @@ ARTICLES={
  'fire':{**{t:('제8조의2(',) for t in _PUBLIC},'reward_leave':('제9조(',),'duty':('제5조(',),'travel_limit':('제4조(',),'shift':('제6조(',)},
  'police':{'reward_leave':('제18조(',),'duty':('제14조(',),'travel_limit':('제13조(',),'drinking':('제9조(',),'dress':('제5조(',)},
  'gyeonggi':{'long_service':('제14조(',),'region_leave':('제14조(',)},
+ 'national_rules':{'duty':('제13조(','제15조(','제21조(','제23조(','제37조(','제38조(','제42조(')},
+ 'welfare':{'welfare_points':tuple(f'제{n}조(' for n in range(5,13)),'welfare_grant':('제10조(','제11조(')},
 }
+# Allowance articles share numbers in both decrees except those listed separately.
+def _label(number):
+    main,_,branch=number.partition('의')
+    return f'제{main}조'+(f'의{branch}' if branch else '')+'('
+
+
+_SAME={'allowance_family':'10','allowance_overtime':'15','allowance_holiday':'18의3','allowance_annual':'18의5','allowance_meal':'18',
+       'allowance_management':'17의2','allowance_risk':'13','allowance_special':'14','allowance_remote':'12','allowance_position':'18의6',
+       'allowance_proxy':'14의2','allowance_night':'16','allowance_holiday_work':'17'}
+ARTICLES['national_allowance']={**{t:(_label(n),) for t,n in _SAME.items()},'allowance_diligence':('제7조(',),
+    'allowance_childcare':('제11조의3(',),'allowance_senior':('제6조의2(',),'allowance_performance':('제7조의2(',),
+    'allowance_housing':('제11조의2(',),'allowance_tuition':('제11조(',)}
+ARTICLES['local_allowance']={**{t:(_label(n),) for t,n in _SAME.items()},'allowance_diligence':('제6조(',),
+    'allowance_childcare':('제11조의2(',),'allowance_senior':('제5조의2(',),'allowance_performance':('제6조의2(',)}
+# Allowances follow the pay system, not the conduct decree: fire and police are national.
+DOMAINS=(('welfare',r'맞춤형복지|복지점수|복지포인트|후생복지'),('allowance',r'수당|명절휴가비|연가보상|정액급식비|직급보조비|성과상여금|성과급'))
 # 시·도 소방의 장기재직휴가는 국가 기준이 아니라 조례로 정합니다(소방공무원 복무규정 제11조②).
 FIRE_ORDINANCE=('long_service','region_leave')
-SUBJECT=re.compile(r'장기재직|새내기|생일특별|휴가|연가|병가|공가|특별휴가|경조사|출산|육아시간|모성보호|난임|근무시간|시간외|초과근무|당직|비상근무|비상소집|'
+SUBJECT=re.compile(r'수당|명절휴가비|연가보상|정액급식비|직급보조비|성과상여금|성과급|맞춤형복지|복지점수|복지포인트|후생복지|장기재직|새내기|생일특별|휴가|연가|병가|공가|특별휴가|경조사|출산|육아시간|모성보호|난임|근무시간|시간외|초과근무|당직|비상근무|비상소집|'
                    r'겸직|영리|정치|복장|복제|지각|조퇴|외출|휴무|포상|국외여행|여행|교대|선서|비밀|친절|복무|토요일|공휴일|근무혁신|유연근무|파견|겸임')
 
 
@@ -67,9 +87,21 @@ def region(query):
     return next((key for key,(pattern,_) in ORDINANCE.items() if re.search(pattern,q)),None)
 
 
+def domain(query):
+    q=re.sub(r'\s+','',query)
+    # The payable leave days are a conduct-decree rule (연가 일수), not an allowance article.
+    if '연가보상' in q and re.search(r'일수|며칠|몇일|\d+일',q):return None
+    return next((key for key,pattern in DOMAINS if re.search(pattern,q)),None)
+
+
 def reads(query):
     """Regulations for the stated status; a known province's ordinance goes first."""
-    found=status(query);place=region(query)
+    found=status(query);place=region(query);area=domain(query)
+    if area=='welfare':return ('welfare',)
+    if area=='allowance':
+        if found=='local' or found is None and place:return ('local_allowance',)
+        return ('local_allowance','national_allowance') if found is None else ('national_allowance',)
+    if found=='national':return ('national_rules','national')
     if place and found in ('local','fire',None):
         return (place,)+READS[found if found else 'local']
     return READS[found]
@@ -132,6 +164,9 @@ def expected(topic,query):
     found=status(query);place=region(query)
     # Without a status, leave topics keep their existing local-first mapping.
     if not found and not place and topic in knowledge_intent.ARTICLE:return None
+    if topic.startswith(('allowance_','welfare_')):
+        law=next((law for law in reads(query) if topic in ARTICLES.get(law,{})),None)
+        return (TITLES[law],ARTICLES[law][topic]) if law else None
     # A fire officer of an unbundled province: the fire decree says the ordinance applies.
     if found=='fire' and not place and topic in FIRE_ORDINANCE:return TITLES['fire'],('제11조(',)
     for law in reads(query):
@@ -161,9 +196,11 @@ def summary(query,reply):
         ref=next((i for i,h in enumerate(evidence,1) if (h.get('official') or {}).get('title')==TITLES[card['law']] and
                   h['official'].get('article','').startswith(card['article']) and official_sources.metadata(h.get('sha256'))),None)
         if not ref:continue
+        # The cited passage can be a slice of a long article; the verified whole article holds the anchors.
+        text=next((t for row,t in catalog() if row['sha256']==evidence[ref-1].get('sha256')),evidence[ref-1]['text'])
         items=[]
         for item in card['items']:
-            quotes=[re.search(r'\s*'.join(map(re.escape,re.sub(r'\s+','',anchor))),evidence[ref-1]['text']) for anchor in item['anchors']]
+            quotes=[re.search(r'\s*'.join(map(re.escape,re.sub(r'\s+','',anchor))),text) for anchor in item['anchors']]
             if not all(quotes):break
             items.append(dict(text=item['text'],ref=ref,support_quotes=[m[0] for m in quotes]))
         else:
@@ -187,6 +224,16 @@ def documents(query,today):
     found=status(query);place=region(query);q=re.sub(r'\s+','',query)
     docs=[document(row,text) for law in reads(query) for row,text in catalog() if row['law']==law and row['effective_date']<=today.isoformat()]
     notice='' if found or place else '국가·지방·소방·경찰공무원은 적용 조문이 달라요. 신분을 알려주시면 해당 복무규정으로 다시 확인해요.'
+    area=domain(query)
+    if area=='allowance':
+        notice='' if found else '국가공무원(소방·경찰 포함)은 「공무원수당 등에 관한 규정」, 지방공무원은 「지방공무원 수당 등에 관한 규정」을 따라요. 신분을 알려주시면 해당 규정으로 다시 확인해요.'
+        if found=='local' or found is None and place:notice='지방공무원 수당 중 일부(특수지근무수당 지역 등)는 자치단체 조례로 달라질 수 있어요.'
+        return docs,notice
+    if area=='welfare':
+        notice=''
+        if found in ('local','fire') or place:
+            notice='지방공무원과 지방자치단체에서 근무하는 국가공무원(시·도 소방 포함)은 해당 지방자치단체의 후생복지 조례를 따라요(공무원 후생복지에 관한 규정 제3조). 공무담에는 아직 조례가 없어요.'
+        return docs,notice
     regional=re.search(r'특별휴가|경조사|결혼|사망|출산|장기재직|새내기|생일|육아|돌봄|난임|임신|부모휴가|입영',q)
     if place and found in ('local','fire',None) and regional:
         title=ORDINANCE[place][1]

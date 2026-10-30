@@ -61,6 +61,19 @@ TOPICS = {
     'long_service': ('장기재직휴가', ('장기재직','조례로 정하는')),
     'region_leave': ('지역 고유 특별휴가', ('새내기도약','생일특별','악성민원','조례로 정하는')),
     'election_rest': ('선거사무 후 휴무', ('선거','휴무')),
+    **{key:(label,(word,)) for key,label,word in (
+        ('allowance_diligence','정근수당','정근수당'),('allowance_family','가족수당','가족수당'),
+        ('allowance_overtime','시간외근무수당','시간외근무수당'),('allowance_holiday','명절휴가비','명절휴가비'),
+        ('allowance_annual','연가보상비','연가보상비'),('allowance_childcare','육아휴직수당','육아휴직수당'),
+        ('allowance_meal','정액급식비','정액급식비'),('allowance_management','관리업무수당','관리업무수당'),
+        ('allowance_risk','위험근무수당','위험근무수당'),('allowance_special','특수업무수당','특수업무수당'),
+        ('allowance_remote','특수지근무수당','특수지근무수당'),('allowance_senior','대우공무원수당','대우공무원수당'),
+        ('allowance_performance','성과상여금','성과상여금'),('allowance_position','직급보조비','직급보조비'),
+        ('allowance_proxy','업무대행수당','업무대행수당'),('allowance_night','야간근무수당','야간근무수당'),
+        ('allowance_holiday_work','휴일근무수당','휴일근무수당'),('allowance_housing','주택수당','주택수당'),
+        ('allowance_tuition','자녀학비보조수당','자녀학비'))},
+    'welfare_points': ('맞춤형 복지점수', ('맞춤형복지','복지점수')),
+    'welfare_grant': ('복지점수 부여 기준', ('복지점수','부여')),
     'leave_holiday': ('휴가 중 토요일·공휴일', ('토요일','공휴일')),
     'drinking': ('근무시간 중 음주', ('음주',)),
     'overtime': ('시간외근무·공휴일 근무', ('시간외근무','초과근무')),
@@ -123,6 +136,26 @@ def amount_question(query):
     return bool(re.search(r'얼마(?!나빨리)|몇(?:만)?원|금액|지급액|기준액|상한|한도',q))
 
 
+# Common wording mapped to the article name; a bare '수당' is too broad to answer.
+ALLOWANCE_WORDS=(('allowance_overtime',('시간외근무수당','초과근무수당','야근수당','시간외수당')),('allowance_holiday',('명절휴가비','명절상여','명절수당')),
+    ('allowance_annual',('연가보상비','연가보상','연차수당')),('allowance_performance',('성과상여금','성과급')),
+    ('allowance_tuition',('자녀학비보조','학비보조수당')),('allowance_position',('직급보조비',)),('allowance_meal',('정액급식비',)))
+
+
+def _allowance(q):
+    from . import service_rules
+    if not service_rules.domain(q):return None
+    if any(t in q for t in ('맞춤형복지','복지점수','복지포인트','후생복지')):
+        topic='welfare_grant' if any(t in q for t in ('부여','기본복지','변동복지','몇점','배정')) else 'welfare_points'
+        return dict(topics=[topic],status='ready',question='',recognized=True,labels=[TOPICS[topic][0]])
+    found=next((key for key,words in ALLOWANCE_WORDS if any(w in q for w in words)),None)
+    found=found or next((key for key in TOPICS if key.startswith('allowance_') and TOPICS[key][1][0] in q),None)
+    if found:return dict(topics=[found],status='ready',question='',recognized=True,labels=[TOPICS[found][0]])
+    if '수당' in q and not any(t in q for t in ('위험수당','출장')):
+        return dict(topics=[],status='clarify',question='어떤 수당인가요? 정근수당·가족수당·시간외근무수당·명절휴가비처럼 수당 이름을 알려주세요.',recognized=True,labels=[])
+    return None
+
+
 def analyze(query):
     q=flat(query)
     # The separately scoped budget-table matcher remains responsible for budget questions.
@@ -132,6 +165,9 @@ def analyze(query):
         return None
     # '시간외근무' contains '외근' but is overtime, not a business trip.
     travel=any(t in q for t in ('출장','여비','일비','숙박비','숙박료','호텔비','기름값','택시비','주유비','항공권')) or bool(re.search(r'(?<!시간)외근',q))
+    if not travel:
+        allowance=_allowance(q)
+        if allowance:return allowance
     care=leave_situations.family_care(query)
     own_sick=leave_situations.self_sick(query)
     leave=care or own_sick or any(t in q for t in ('휴가','휴무','연가','연차','병가','공가','육아시간','모성보호','건강검진','건강진단','헌혈'))

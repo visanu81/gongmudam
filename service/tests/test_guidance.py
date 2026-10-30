@@ -71,9 +71,10 @@ class GuidanceTest(Base):
         self.assertTrue(result['guidance']['questions'])
 
     def test_unknown_pay_question_does_not_use_weak_unrelated_matches(self):
-        with patch.object(knowledge,'retrieve',side_effect=AssertionError('unknown topic must not use weak matches')):
-            result=main.api_ask(dict(query='등록되지 않은 수당 지급액을 알려줘',guidance=True))
+        # An unnamed allowance asks which one instead of matching weakly related articles.
+        result=main.api_ask(dict(query='등록되지 않은 수당 지급액을 알려줘',guidance=True))
         self.assertEqual(result['knowledge']['evidence'],[])
+        self.assertIn('어떤 수당',result['notice'])
         self.assertNotIn('출장',guidance.effective_query('등록 안 된 수당 기한을 알려줘','출장 다녀왔어'))
 
     def test_data_map_provenance_and_no_dangling_edges(self):

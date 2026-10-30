@@ -27,7 +27,8 @@ class ServiceRulesTest(Base):
     def test_all_four_regulations_are_hash_verified(self):
         rows = [row for row, _ in service_rules.catalog()]
         counts = {law: sum(r['law'] == law for r in rows) for law in service_rules.TITLES}
-        self.assertEqual(counts, {'national': 46, 'local': 32, 'fire': 13, 'police': 20, 'gyeonggi': 16})
+        self.assertEqual(counts, {'national': 46, 'local': 32, 'fire': 13, 'police': 20, 'gyeonggi': 16,
+                                  'national_allowance': 33, 'local_allowance': 31, 'welfare': 27, 'national_rules': 58})
         self.assertTrue(all(r['source_url'].startswith('https://www.law.go.kr/') for r in rows))
 
     def test_changed_article_text_is_dropped(self):
