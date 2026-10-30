@@ -1,6 +1,8 @@
 // Worker entry: the public demo runs in one Cloudflare container, not on a PC.
 import {Container} from '@cloudflare/containers';
 import {handle} from './worker.js';
+// Written by tools/stage_container.py during npm run deploy.
+import release from '../work/container-stage/release.json';
 
 // Same size as the former "basic" instance type; the app uses about 130 MiB.
 const INSTANCE = {vcpu: 0.25, memoryMib: 1024, diskMb: 4096};
@@ -29,6 +31,8 @@ export class GongmudamDemo extends Container {
 
 export default {
   fetch(request, env) {
-    return handle(request, env, env.DEMO.getByName('public-demo'));
+    // One instance per release: a running container keeps its old image until it sleeps,
+    // so a new name makes the deploy take effect at once; the old instance sleeps unused.
+    return handle(request, env, env.DEMO.getByName('public-demo-' + release.version));
   },
 };

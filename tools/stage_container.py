@@ -65,6 +65,8 @@ def stage(dest):
     if leaked:
         raise ValueError('Private runtime file staged: ' + ', '.join(map(str, leaked)))
     (dest / MARKER).write_text(manifest['release_version'] + '\n', encoding='utf-8')
+    # The Worker names the container instance after this release, so a deploy starts a fresh one.
+    (dest / 'release.json').write_text(json.dumps({'version': manifest['release_version']}), encoding='utf-8')
     return dict(staged=str(dest), files=sum(1 for p in dest.rglob('*') if p.is_file()),
                 version=manifest['release_version'], private_data_copied=False)
 
