@@ -74,6 +74,12 @@ TOPICS = {
         ('allowance_tuition','자녀학비보조수당','자녀학비'))},
     'welfare_points': ('맞춤형 복지점수', ('맞춤형복지','복지점수')),
     'welfare_grant': ('복지점수 부여 기준', ('복지점수','부여')),
+    'pay_payday': ('보수 지급일', ('지급일','보수')),'pay_initial_step': ('초임호봉 획정', ('초임호봉','경력')),
+    'pay_promotion_step': ('승진 시 호봉 획정', ('승진','호봉')),'pay_regular_raise': ('정기승급', ('승급기간','승급')),
+    'pay_raise_limit': ('승급 제한', ('승급','제한')),'pay_reassess': ('호봉 재획정', ('재획정','호봉')),
+    'pay_deduct_leave': ('휴직기간 봉급 감액', ('휴직','봉급')),'pay_deduct_absence': ('결근기간 봉급 감액', ('결근','봉급')),
+    'pay_deduct_discipline': ('징계처분기간 보수 감액', ('징계','감액')),'pay_deduct_suspension': ('직위해제기간 봉급 감액', ('직위해제','봉급')),
+    'pay_calc': ('월 중 보수 계산', ('일할','보수계산')),'pay_table': ('봉급표', ('봉급','봉급표')),
     'leave_holiday': ('휴가 중 토요일·공휴일', ('토요일','공휴일')),
     'drinking': ('근무시간 중 음주', ('음주',)),
     'overtime': ('시간외근무·공휴일 근무', ('시간외근무','초과근무')),
@@ -142,9 +148,21 @@ ALLOWANCE_WORDS=(('allowance_overtime',('시간외근무수당','초과근무수
     ('allowance_tuition',('자녀학비보조','학비보조수당')),('allowance_position',('직급보조비',)),('allowance_meal',('정액급식비',)))
 
 
+PAY_WORDS=(('pay_deduct_suspension',('직위해제',)),('pay_deduct_leave',('휴직',)),('pay_deduct_absence',('결근',)),
+    ('pay_deduct_discipline',('징계','감봉','정직')),('pay_raise_limit',('승급제한','승급이제한','승급안')),('pay_reassess',('재획정',)),
+    ('pay_promotion_step',('승진',)),('pay_initial_step',('초임호봉','호봉획정','경력환산','경력인정','호봉산정','경력')),
+    ('pay_regular_raise',('정기승급','승급')),('pay_payday',('지급일','월급날','급여일','언제나와','언제들어','언제줘','며칠에')),
+    ('pay_calc',('일할','월중','중도','보수계산')),('pay_table',('봉급표','봉급액','호봉표','얼마')))
+
+
 def _allowance(q):
     from . import service_rules
-    if not service_rules.domain(q):return None
+    area=service_rules.domain(q)
+    if not area:return None
+    if area=='pay':
+        found=next((key for key,words in PAY_WORDS if any(w in q for w in words)),None)
+        if found:return dict(topics=[found],status='ready',question='',recognized=True,labels=[TOPICS[found][0]])
+        return dict(topics=[],status='clarify',question='어떤 보수 업무인가요? 초임호봉 획정, 정기승급, 보수 지급일, 휴직·결근·징계 시 감액처럼 알려주세요.',recognized=True,labels=[])
     if any(t in q for t in ('맞춤형복지','복지점수','복지포인트','후생복지')):
         topic='welfare_grant' if any(t in q for t in ('부여','기본복지','변동복지','몇점','배정')) else 'welfare_points'
         return dict(topics=[topic],status='ready',question='',recognized=True,labels=[TOPICS[topic][0]])

@@ -334,5 +334,63 @@
   "id": "sd-national-duty",
   "question": "국가공무원 당직 편성 기준",
   "article": "국가공무원 복무규칙 제"
+ },
+ {
+  "id": "sp-local-payday",
+  "question": "월급 언제 나와?\n업무환경: 지방공무원",
+  "article": "지방공무원 보수규정 제19조(",
+  "rule": "service-rules:local_pay-payday"
+ },
+ {
+  "id": "sp-police-payday",
+  "question": "보수 지급일은?\n업무환경: 경찰공무원",
+  "article": "공무원보수규정 제20조(",
+  "rule": "service-rules:national_pay-payday"
+ },
+ {
+  "id": "sp-raise-no-status",
+  "question": "승급은 언제 해?",
+  "article": "지방공무원 보수규정 제12조(",
+  "rule": "service-rules:local_pay-regular-raise",
+  "notice": "신분을 알려주시면"
+ },
+ {
+  "id": "sp-national-raise",
+  "question": "정기승급 기간\n업무환경: 국가공무원",
+  "article": "공무원보수규정 제13조(",
+  "rule": "service-rules:national_pay-regular-raise"
+ },
+ {
+  "id": "sp-national-sick-leave-pay",
+  "question": "질병휴직하면 봉급 얼마나 받아?\n업무환경: 국가공무원",
+  "article": "공무원보수규정 제28조(",
+  "rule": "service-rules:national_pay-leave-deduction"
+ },
+ {
+  "id": "sp-local-salary-table",
+  "question": "9급 1호봉 봉급 얼마야?\n업무환경: 지방공무원",
+  "article": "지방공무원 보수규정 제4조(",
+  "notice": "법제처 원문 별표"
+ },
+ {
+  "id": "sp-national-initial-step",
+  "question": "초임호봉 경력 인정 기준\n업무환경: 국가공무원",
+  "article": "공무원보수규정 제8조("
+ },
+ {
+  "id": "sp-local-absence",
+  "question": "결근하면 봉급 감액돼?\n업무환경: 지방공무원",
+  "article": "지방공무원 보수규정 제26조("
+ },
+ {
+  "id": "sp-pay-clarify",
+  "question": "호봉 알려줘",
+  "notice": "어떤 보수 업무"
+ },
+ {
+  "id": "sd-fire-duty-exemption",
+  "question": "당직 면제 대상은?\n업무환경: 경기도 소속 소방공무원",
+  "article": "소방공무원 당직 및 비상업무 규칙 제9조의2(",
+  "rule": "service-rules:fire_duty-exemption"
  }
 ]

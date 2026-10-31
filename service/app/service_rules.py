@@ -32,6 +32,7 @@ ORDINANCE={'gyeonggi':(r'경기도(?!교육)|경기소방','경기도 공무원 
 TITLES={'national':'국가공무원 복무규정','local':'지방공무원 복무규정','fire':'소방공무원 복무규정','police':'경찰공무원 복무규정',
         'national_allowance':'공무원수당 등에 관한 규정','local_allowance':'지방공무원 수당 등에 관한 규정',
         'welfare':'공무원 후생복지에 관한 규정','national_rules':'국가공무원 복무규칙',
+        'national_pay':'공무원보수규정','local_pay':'지방공무원 보수규정','fire_duty':'소방공무원 당직 및 비상업무 규칙',
         **{key:title for key,(_,title) in ORDINANCE.items()}}
 _PUBLIC=('public_leave','public_health','public_blood')
 _SPECIAL=('childcare','family_care','maternity','pregnancy_check','pregnancy_accompany','maternal_time',
@@ -69,11 +70,23 @@ ARTICLES['national_allowance']={**{t:(_label(n),) for t,n in _SAME.items()},'all
     'allowance_housing':('제11조의2(',),'allowance_tuition':('제11조(',)}
 ARTICLES['local_allowance']={**{t:(_label(n),) for t,n in _SAME.items()},'allowance_diligence':('제6조(',),
     'allowance_childcare':('제11조의2(',),'allowance_senior':('제5조의2(',),'allowance_performance':('제6조의2(',)}
-# Allowances follow the pay system, not the conduct decree: fire and police are national.
-DOMAINS=(('welfare',r'맞춤형복지|복지점수|복지포인트|후생복지'),('allowance',r'수당|명절휴가비|연가보상|정액급식비|직급보조비|성과상여금|성과급'))
+# Pay articles: (national, local) article numbers for each pay topic.
+_PAY={'pay_payday':('20','19'),'pay_initial_step':('8','8'),'pay_promotion_step':('11','10'),'pay_regular_raise':('13','12'),
+      'pay_raise_limit':('14','13'),'pay_reassess':('9','9'),'pay_deduct_leave':('28','27'),'pay_deduct_absence':('27','26'),
+      'pay_deduct_discipline':('26','25'),'pay_deduct_suspension':('29','28'),'pay_calc':('22','21'),'pay_table':('5','4')}
+ARTICLES['national_pay']={t:(_label(n),) for t,(n,_) in _PAY.items()}
+ARTICLES['local_pay']={t:(_label(n),) for t,(_,n) in _PAY.items()}
+# The fire decree only delegates duty details; the fire agency's rule holds them.
+ARTICLES['fire_duty']={'duty':('제3조(','제4조(','제9조(','제9조의2(','제9조의3(','제13조(','제14조(','제20조(','제21조(','제21조의2(')}
+# Detail wording -> the fire duty rule's own article for it.
+DUTY_DETAIL=(('당직.*면제',('제9조의2(',)),('비상.*면제',('제21조의2(',)),('면제',('제9조의2(','제21조의2(')),('유예',('제9조의3(',)),('편성',('제9조(',)),('교대|휴식',('제4조(',)),
+             ('응소',('제21조(',)),('비상근무의?종류|동원',('제13조(',)),('장거리여행',('제24조(',)))
+# Allowances and pay follow the pay system, not the conduct decree: fire and police are national.
+DOMAINS=(('welfare',r'맞춤형복지|복지점수|복지포인트|후생복지'),('allowance',r'수당|명절휴가비|연가보상|정액급식비|직급보조비|성과상여금|성과급'),
+         ('pay',r'호봉|봉급|승급|월급|급여|보수지급|보수계산|보수감액|보수가|보수는|근속가봉'))
 # 시·도 소방의 장기재직휴가는 국가 기준이 아니라 조례로 정합니다(소방공무원 복무규정 제11조②).
 FIRE_ORDINANCE=('long_service','region_leave')
-SUBJECT=re.compile(r'수당|명절휴가비|연가보상|정액급식비|직급보조비|성과상여금|성과급|맞춤형복지|복지점수|복지포인트|후생복지|장기재직|새내기|생일특별|휴가|연가|병가|공가|특별휴가|경조사|출산|육아시간|모성보호|난임|근무시간|시간외|초과근무|당직|비상근무|비상소집|'
+SUBJECT=re.compile(r'호봉|봉급|승급|월급|급여|보수지급|보수계산|보수감액|보수가|보수는|근속가봉|수당|명절휴가비|연가보상|정액급식비|직급보조비|성과상여금|성과급|맞춤형복지|복지점수|복지포인트|후생복지|장기재직|새내기|생일특별|휴가|연가|병가|공가|특별휴가|경조사|출산|육아시간|모성보호|난임|근무시간|시간외|초과근무|당직|비상근무|비상소집|'
                    r'겸직|영리|정치|복장|복제|지각|조퇴|외출|휴무|포상|국외여행|여행|교대|선서|비밀|친절|복무|토요일|공휴일|근무혁신|유연근무|파견|겸임')
 
 
@@ -98,13 +111,15 @@ def reads(query):
     """Regulations for the stated status; a known province's ordinance goes first."""
     found=status(query);place=region(query);area=domain(query)
     if area=='welfare':return ('welfare',)
-    if area=='allowance':
-        if found=='local' or found is None and place:return ('local_allowance',)
-        return ('local_allowance','national_allowance') if found is None else ('national_allowance',)
+    if area in ('allowance','pay'):
+        local,national=('local_allowance','national_allowance') if area=='allowance' else ('local_pay','national_pay')
+        if found=='local' or found is None and place:return (local,)
+        return (local,national) if found is None else (national,)
     if found=='national':return ('national_rules','national')
-    if place and found in ('local','fire',None):
-        return (place,)+READS[found if found else 'local']
-    return READS[found]
+    laws=(place,)+READS[found if found else 'local'] if place and found in ('local','fire',None) else READS[found]
+    # The fire agency's duty rule is read after the fire decree that delegates to it.
+    if found in ('fire','fire_national'):laws=tuple(x for law in laws for x in ((law,'fire_duty') if law=='fire' else (law,)))
+    return laws
 
 
 def is_subject(query):
@@ -164,7 +179,10 @@ def expected(topic,query):
     found=status(query);place=region(query)
     # Without a status, leave topics keep their existing local-first mapping.
     if not found and not place and topic in knowledge_intent.ARTICLE:return None
-    if topic.startswith(('allowance_','welfare_')):
+    if topic=='duty' and found in ('fire','fire_national'):
+        detail=next((articles for pattern,articles in DUTY_DETAIL if re.search(pattern,re.sub(r'\s+','',query))),None)
+        if detail:return TITLES['fire_duty'],detail
+    if topic.startswith(('allowance_','welfare_','pay_')):
         law=next((law for law in reads(query) if topic in ARTICLES.get(law,{})),None)
         return (TITLES[law],ARTICLES[law][topic]) if law else None
     # A fire officer of an unbundled province: the fire decree says the ordinance applies.
@@ -228,6 +246,12 @@ def documents(query,today):
     if area=='allowance':
         notice='' if found else '국가공무원(소방·경찰 포함)은 「공무원수당 등에 관한 규정」, 지방공무원은 「지방공무원 수당 등에 관한 규정」을 따라요. 신분을 알려주시면 해당 규정으로 다시 확인해요.'
         if found=='local' or found is None and place:notice='지방공무원 수당 중 일부(특수지근무수당 지역 등)는 자치단체 조례로 달라질 수 있어요.'
+        return docs,notice
+    if area=='pay':
+        notice='' if found else '국가공무원(소방·경찰 포함)은 「공무원보수규정」, 지방공무원은 「지방공무원 보수규정」을 따라요. 신분을 알려주시면 해당 규정으로 다시 확인해요.'
+        if re.search(r'봉급표|봉급액|호봉표|\d+급',q):
+            table='공무원보수규정 별표 3 등' if found and found!='local' else '지방공무원 보수규정 별표 3 등' if found else '각 보수규정의 봉급표 별표'
+            notice=(notice+' ' if notice else '')+f'봉급 금액은 직종별 봉급표({table})에 있어요. 금액표는 공무담에 넣지 않았으니 법제처 원문 별표에서 확인하세요.'
         return docs,notice
     if area=='welfare':
         notice=''

@@ -28,7 +28,8 @@ class ServiceRulesTest(Base):
         rows = [row for row, _ in service_rules.catalog()]
         counts = {law: sum(r['law'] == law for r in rows) for law in service_rules.TITLES}
         self.assertEqual(counts, {'national': 46, 'local': 32, 'fire': 13, 'police': 20, 'gyeonggi': 16,
-                                  'national_allowance': 33, 'local_allowance': 31, 'welfare': 27, 'national_rules': 58})
+                                  'national_allowance': 33, 'local_allowance': 31, 'welfare': 27, 'national_rules': 58,
+                                  'national_pay': 32, 'local_pay': 32, 'fire_duty': 35})
         self.assertTrue(all(r['source_url'].startswith('https://www.law.go.kr/') for r in rows))
 
     def test_changed_article_text_is_dropped(self):
@@ -78,9 +79,9 @@ class ServiceRulesTest(Base):
 
     def test_province_ordinance_applies_only_to_its_own_officials(self):
         self.assertEqual(service_rules.status('소방청 소속 소방공무원'), 'fire_national')
-        self.assertEqual(service_rules.reads('경기도 소속 소방공무원 장기재직'), ('gyeonggi', 'fire', 'national'))
+        self.assertEqual(service_rules.reads('경기도 소속 소방공무원 장기재직'), ('gyeonggi', 'fire', 'fire_duty', 'national'))
         self.assertEqual(service_rules.reads('경기도 소속 지방공무원'), ('gyeonggi', 'local'))
-        self.assertEqual(service_rules.reads('소방청 소속 소방공무원'), ('fire', 'national'))
+        self.assertEqual(service_rules.reads('소방청 소속 소방공무원'), ('fire', 'fire_duty', 'national'))
         # The education office follows its own ordinance, not the province's.
         self.assertIsNone(service_rules.region('경기도교육청 지방공무원'))
         self.assertEqual(service_rules.expected('long_service', '경기도 소속 소방공무원'), ('경기도 공무원 복무 조례', ('제14조(',)))

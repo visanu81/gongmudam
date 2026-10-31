@@ -39,12 +39,24 @@ LAWS={
  'national_rules':dict(title='국가공무원 복무규칙',lsi=290865,issuer='인사혁신처',institution='국가공무원',
   version='[시행 2026. 10. 2.]',publication='총리령 제2161호',effective_date='2026-10-02',
   articles='1 2 6 7 8 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 57 58 59 60 61 62 62-2 62-3 62-4 62-5 62-6 62-7 63 64 65'),
+ # Pay: the step, salary and deduction articles a 서무 officer handles; salary-system
+ # chapters for diplomats, senior executives and annual-salary posts are left out.
+ 'national_pay':dict(title='공무원보수규정',lsi=290321,issuer='인사혁신처',institution='국가공무원',
+  version='[시행 2026. 10. 2.]',publication='대통령령 제36728호',effective_date='2026-10-02',
+  articles='1 2 4 5 6 7 8 9 10 11 12 13 14 15 16 18 19 19-2 20 21 22 24 25 26 27 28 29 30 30-2 30-3 31 32'),
+ 'local_pay':dict(title='지방공무원 보수규정',lsi=288435,issuer='행정안전부',institution='지방공무원',
+  version='[시행 2026. 8. 1.]',publication='대통령령 제36548호',effective_date='2026-08-01',
+  articles='1 2 3 4 5 6 8 9 9-2 10 11 12 13 14 15 17 18 18-2 19 20 21 23 24 25 26 27 28 29 29-2 29-3 30 31'),
 }
-# Ordinances are published as one page; each article is stored separately and
-# keeps the hash of that single raw page.
+# Ordinances and administrative rules are published as one page; each article is
+# stored separately and keeps the hash of that single raw page.
 ORDINANCES={
- 'gyeonggi':dict(title='경기도 공무원 복무 조례',ordin=2178481,issuer='경기도',institution='경기도 소속 공무원',
-  version='[시행 2026. 10. 12.]',publication='경기도조례 제8974호',effective_date='2026-10-12'),
+ 'gyeonggi':dict(title='경기도 공무원 복무 조례',page='https://www.law.go.kr/LSW/ordinInfoR.do?ordinSeq=2178481',raw='gyeonggi_2178481.html',
+  issuer='경기도',institution='경기도 소속 공무원',version='[시행 2026. 10. 12.]',publication='경기도조례 제8974호',effective_date='2026-10-12',
+  scope='해당 조문 전체 · 별표·부칙·시행규칙은 별도 확인 · 시·군 소속은 해당 시·군 조례 적용'),
+ 'fire_duty':dict(title='소방공무원 당직 및 비상업무 규칙',page='https://www.law.go.kr/LSW/admRulInfoR.do?admRulSeq=2100000275662',
+  raw='fire_duty_2100000275662.html',issuer='소방청',institution='소방공무원',version='소방청훈령 제456호',
+  publication='2026. 3. 11.',effective_date='2026-03-11',scope='해당 조문 전체 · 별표·서식은 별도 확인 · 시·도 소방본부의 세부 기준은 별도 확인'),
 }
 # Navigation tags only; an answer still needs the stored article text.
 TOPICS=(('leave',r'휴가|연가|병가|공가|휴무|포상휴가'),('hours',r'근무시간|시간외|현업|교대제|근무혁신|연일근무'),
@@ -123,11 +135,11 @@ def collect(keys=None,delay=0.5):
 def collect_ordinance(key):
     law=ORDINANCES[key];manifest=BASE/'manifest.json'
     rows={r['id']:r for r in json.loads(manifest.read_text(encoding='utf-8'))}
-    address=f"https://www.law.go.kr/LSW/ordinInfoR.do?ordinSeq={law['ordin']}"
+    address=law['page']
     raw=fetch(address);tree=Tree(raw.decode('utf-8'))
     if law['version'] not in tree.root.text() or law['publication'] not in tree.root.text():
         raise ValueError('Unexpected effective version: '+law['title'])
-    raw_name=f"{key}_{law['ordin']}.html";keep(BASE/'raw'/raw_name,raw)
+    raw_name=law['raw'];keep(BASE/'raw'/raw_name,raw)
     for container in [n for n in tree.root.walk() if 'lawcon' in n.attrs.get('class','').split()]:
         paragraphs=[p.text() for p in container.walk() if p.tag=='p' and p.text()]
         heading=re.match(r'제(\d+)조(?:의(\d+))?\(([^)]{1,80})\)',paragraphs[0] if paragraphs else '')
@@ -142,12 +154,13 @@ def collect_ordinance(key):
             kind='법령·규정',source_url=address,download_url=address,retrieved_at=datetime.now(timezone.utc).isoformat(),
             raw_file=raw_name,raw_sha256=hashlib.sha256(raw).hexdigest(),filename=filename,
             sha256=hashlib.sha256(text.encode('utf-8')).hexdigest(),paragraphs=len(paragraphs),
-            scope='해당 조문 전체 · 별표·부칙·시행규칙은 별도 확인 · 시·군 소속은 해당 시·군 조례 적용')
+            scope=law['scope'])
     manifest.write_text(json.dumps(list(rows.values()),ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     return list(rows.values())
 
 
 if __name__=='__main__':
     keys=set(sys.argv[1:])
-    result=collect_ordinance('gyeonggi') if keys=={'gyeonggi'} else collect(keys or None)
+    pages=keys & set(ORDINANCES)
+    result=[collect_ordinance(key) for key in sorted(pages)][-1] if pages and pages==keys else collect(keys or None)
     print(json.dumps({k:sum(r['law']==k for r in result) for k in (*LAWS,*ORDINANCES)},ensure_ascii=True))
