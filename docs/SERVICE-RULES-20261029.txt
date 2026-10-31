@@ -137,3 +137,6 @@
   단위 테스트에서 빠지고 PC(8787) HTTP로 3/3 확인. Docker Desktop이 꺼져 있어 로컬 컨테이너 비교는 못 했다.
 - Graphify: Windows 애플리케이션 제어 정책이 graphify.exe 실행을 막아, 같은 도구의 Python 모듈(uv tools graphifyy)로 갱신(3,722 노드).
 - 공유 런타임 v87 → v88(318파일, 백업 .local-runtime/upgrades/20261031T231441603352Z), 스테이징 완료. 클라우드 배포 대기.
+- 2026-11-01: 첫 배포는 Docker Desktop이 꺼져 있어 실패, 재배포 후 공유 주소 v88 확인. PC(8787)↔클라우드 평가 질문 84/84,
+  실무 기준 27/27 일치(parity-v88-cloud.json, practice-v88-cloud.json). 경기 출장 3개도 클라우드에서 같은 결과.
+  비교에 공유 시연 한도 시간당 120건 중 약 111건 사용.
