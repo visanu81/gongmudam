@@ -204,7 +204,7 @@
   "question": "경기도청 지방공무원 장기재직휴가 며칠?",
   "article": "경기도 공무원 복무 조례 제14조(",
   "rule": "service-rules:gyeonggi-long-service",
-  "notice": "시·군 소속이면"
+  "notice": "시·군·구 소속이면"
  },
  {
   "id": "sr-gyeonggi-fire-long-service",
@@ -224,14 +224,14 @@
   "question": "소방공무원 장기재직휴가 며칠?",
   "article": "소방공무원 복무규정 제11조(",
   "rule": "service-rules:fire-long-service",
-  "notice": "경기도 조례만"
+  "notice": "소속 시·도를 알려주시면"
  },
  {
   "id": "sr-city-long-service",
   "question": "장기재직휴가 며칠이야?\n업무환경: 지방공무원",
   "article": "지방공무원 복무규정 제7조의7(",
   "rule": "service-rules:local-long-service",
-  "notice": "소속 조례를 확인"
+  "notice": "해당 조례를 확인"
  },
  {
   "id": "sr-long-service-no-status",
@@ -392,5 +392,112 @@
   "question": "당직 면제 대상은?\n업무환경: 경기도 소속 소방공무원",
   "article": "소방공무원 당직 및 비상업무 규칙 제9조의2(",
   "rule": "service-rules:fire_duty-exemption"
+ },
+ {
+  "id": "sr-busan-long-service",
+  "question": "장기재직휴가 며칠이야?\n업무환경: 부산광역시 소속 지방공무원",
+  "article": "부산광역시 공무원 복무 조례 제15조(",
+  "notice": "시·군·구 소속이면",
+  "rule": "service-rules:busan-long-service"
+ },
+ {
+  "id": "sr-jeju-fire-long-service",
+  "question": "장기재직휴가 며칠이야?\n업무환경: 제주특별자치도 소속 소방공무원",
+  "article": "제주특별자치도 공무원 복무 조례 제19조(",
+  "notice": "소방공무원 복무규정 제11조",
+  "rule": "service-rules:jeju-long-service"
+ },
+ {
+  "id": "sr-gyeongnam-long-service",
+  "question": "경상남도청 지방공무원 장기재직휴가는?",
+  "article": "경상남도 지방공무원 복무 조례 제23조(",
+  "rule": "service-rules:gyeongnam-long-service"
+ },
+ {
+  "id": "sr-seoul-long-service",
+  "question": "장기재직휴가 며칠이야?\n업무환경: 서울특별시 소속 지방공무원",
+  "article": "지방공무원 복무규정 제7조의7(",
+  "rule": "service-rules:local-long-service",
+  "notice": "장기재직휴가 조항이 없어요"
+ },
+ {
+  "id": "sr-gwangju-long-service",
+  "question": "광주광역시 지방공무원 장기재직휴가는?",
+  "article": "지방공무원 복무규정 제7조의7(",
+  "rule": "service-rules:local-long-service"
+ },
+ {
+  "id": "st-gyeonggi-daily",
+  "question": "출장 일비 지급 기준\n업무환경: 경기도 소속 지방공무원",
+  "article": "공무원 여비 규정 제16조(",
+  "notice": "제4조의 예외",
+  "registered": true
+ },
+ {
+  "id": "st-gyeonggi-local-trip",
+  "question": "근무지내 출장 여비 기준\n업무환경: 경기도 소속 지방공무원",
+  "article": "공무원 여비 규정 제18조(",
+  "notice": "왕복 2km",
+  "registered": true
+ },
+ {
+  "id": "st-gyeonggi-settlement",
+  "question": "출장 정산 증빙은 언제까지 내?\n업무환경: 경기도 소속 지방공무원",
+  "notice": "제8조의2제1항·제4항을 준용하지 않아요",
+  "registered": true
+ },
+ {
+  "id": "sr-daegu-long-service",
+  "question": "장기재직휴가 며칠이야?\n업무환경: 대구광역시 소속 지방공무원",
+  "article": "대구광역시 지방공무원 복무 조례 제16조(",
+  "rule": "service-rules:daegu-long-service"
+ },
+ {
+  "id": "sr-incheon-long-service",
+  "question": "장기재직휴가 며칠이야?\n업무환경: 인천광역시 소속 지방공무원",
+  "article": "인천광역시 공무원 복무 조례 제23조(",
+  "rule": "service-rules:incheon-long-service"
+ },
+ {
+  "id": "sr-daejeon-long-service",
+  "question": "장기재직휴가 며칠이야?\n업무환경: 대전광역시 소속 지방공무원",
+  "article": "대전광역시 지방공무원 복무 조례 제18조(",
+  "rule": "service-rules:daejeon-long-service"
+ },
+ {
+  "id": "sr-ulsan-long-service",
+  "question": "장기재직휴가 며칠이야?\n업무환경: 울산광역시 소속 지방공무원",
+  "article": "울산광역시 공무원 복무 조례 제13조(",
+  "rule": "service-rules:ulsan-long-service"
+ },
+ {
+  "id": "sr-sejong-long-service",
+  "question": "장기재직휴가 며칠이야?\n업무환경: 세종특별자치시 소속 지방공무원",
+  "article": "세종특별자치시 지방공무원 복무 조례 제21조(",
+  "rule": "service-rules:sejong-long-service"
+ },
+ {
+  "id": "sr-gangwon-long-service",
+  "question": "장기재직휴가 며칠이야?\n업무환경: 강원특별자치도 소속 지방공무원",
+  "article": "강원특별자치도 공무원 복무 조례 제14조(",
+  "rule": "service-rules:gangwon-long-service"
+ },
+ {
+  "id": "sr-chungbuk-long-service",
+  "question": "장기재직휴가 며칠이야?\n업무환경: 충청북도 소속 지방공무원",
+  "article": "충청북도 지방공무원 복무 조례 제14조(",
+  "rule": "service-rules:chungbuk-long-service"
+ },
+ {
+  "id": "sr-jeonbuk-long-service",
+  "question": "장기재직휴가 며칠이야?\n업무환경: 전북특별자치도 소속 지방공무원",
+  "article": "전북특별자치도 지방공무원 복무조례 제23조(",
+  "rule": "service-rules:jeonbuk-long-service"
+ },
+ {
+  "id": "sr-gyeongbuk-long-service",
+  "question": "장기재직휴가 며칠이야?\n업무환경: 경상북도 소속 지방공무원",
+  "article": "경상북도 공무원 복무 조례 제17조(",
+  "rule": "service-rules:gyeongbuk-long-service"
  }
 ]

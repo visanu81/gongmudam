@@ -29,7 +29,9 @@ class ServiceRulesTest(Base):
         counts = {law: sum(r['law'] == law for r in rows) for law in service_rules.TITLES}
         self.assertEqual(counts, {'national': 46, 'local': 32, 'fire': 13, 'police': 20, 'gyeonggi': 16,
                                   'national_allowance': 33, 'local_allowance': 31, 'welfare': 27, 'national_rules': 58,
-                                  'national_pay': 32, 'local_pay': 32, 'fire_duty': 35})
+                                  'national_pay': 32, 'local_pay': 32, 'fire_duty': 35,
+                                  'seoul': 37, 'busan': 18, 'daegu': 20, 'incheon': 18, 'daejeon': 16, 'ulsan': 16, 'sejong': 22,
+                                  'gangwon': 17, 'chungbuk': 17, 'chungnam': 20, 'jeonbuk': 30, 'gyeongbuk': 22, 'gyeongnam': 18, 'jeju': 18})
         self.assertTrue(all(r['source_url'].startswith('https://www.law.go.kr/') for r in rows))
 
     def test_changed_article_text_is_dropped(self):
@@ -84,6 +86,11 @@ class ServiceRulesTest(Base):
         self.assertEqual(service_rules.reads('소방청 소속 소방공무원'), ('fire', 'fire_duty', 'national'))
         # The education office follows its own ordinance, not the province's.
         self.assertIsNone(service_rules.region('경기도교육청 지방공무원'))
+        self.assertIsNone(service_rules.region('서울특별시교육청 지방공무원'))
+        self.assertEqual(service_rules.region('부산광역시 소속 소방공무원'), 'busan')
+        self.assertEqual(service_rules.region('충북 소방공무원'), 'chungbuk')
+        # 광주·전남 ordinances are not bundled; their officials get the delegation answer.
+        self.assertIsNone(service_rules.region('광주광역시 지방공무원'))
         self.assertEqual(service_rules.expected('long_service', '경기도 소속 소방공무원'), ('경기도 공무원 복무 조례', ('제14조(',)))
         self.assertEqual(service_rules.expected('long_service', '소방공무원'), ('소방공무원 복무규정', ('제11조(',)))
 

@@ -50,6 +50,7 @@ LAWS={
 }
 # Ordinances and administrative rules are published as one page; each article is
 # stored separately and keeps the hash of that single raw page.
+PROVINCE_SCOPE='해당 조문 전체 · 별표·부칙·시행규칙은 별도 확인 · 시·군·구 소속은 해당 시·군·구 조례 적용'
 ORDINANCES={
  'gyeonggi':dict(title='경기도 공무원 복무 조례',page='https://www.law.go.kr/LSW/ordinInfoR.do?ordinSeq=2178481',raw='gyeonggi_2178481.html',
   issuer='경기도',institution='경기도 소속 공무원',version='[시행 2026. 10. 12.]',publication='경기도조례 제8974호',effective_date='2026-10-12',
@@ -57,6 +58,38 @@ ORDINANCES={
  'fire_duty':dict(title='소방공무원 당직 및 비상업무 규칙',page='https://www.law.go.kr/LSW/admRulInfoR.do?admRulSeq=2100000275662',
   raw='fire_duty_2100000275662.html',issuer='소방청',institution='소방공무원',version='소방청훈령 제456호',
   publication='2026. 3. 11.',effective_date='2026-03-11',scope='해당 조문 전체 · 별표·서식은 별도 확인 · 시·도 소방본부의 세부 기준은 별도 확인'),
+ 'gyeonggi_travel':dict(title='경기도 공무원 여비 조례',page='https://www.law.go.kr/LSW/ordinInfoR.do?ordinSeq=2136163',raw='gyeonggi_travel_2136163.html',
+  issuer='경기도',institution='경기도 소속 공무원',version='[시행 2026. 6. 29.]',publication='경기도조례 제8887호',effective_date='2026-06-29',
+  scope='해당 조문 전체 · 공무원 여비 규정을 준용(제4조 예외) · 시행규칙·도지사 기준은 별도 확인'),
+ # Other provinces (2026-11-01): 광주광역시·전라남도 service ordinances were not found under their usual names.
+ 'seoul':dict(title='서울특별시 공무원 복무 조례',page='https://www.law.go.kr/LSW/ordinInfoR.do?ordinSeq=2147731',raw='seoul_2147731.html',
+  issuer='서울특별시',institution='서울특별시 소속 공무원',version='[시행 2026. 7. 13.]',publication='서울특별시조례 제10159호',effective_date='2026-07-13',scope=PROVINCE_SCOPE),
+ 'busan':dict(title='부산광역시 공무원 복무 조례',page='https://www.law.go.kr/LSW/ordinInfoR.do?ordinSeq=2120461',raw='busan_2120461.html',
+  issuer='부산광역시',institution='부산광역시 소속 공무원',version='[시행 2026. 4. 8.]',publication='부산광역시조례 제7920호',effective_date='2026-04-08',scope=PROVINCE_SCOPE),
+ 'daegu':dict(title='대구광역시 지방공무원 복무 조례',page='https://www.law.go.kr/LSW/ordinInfoR.do?ordinSeq=2079933',raw='daegu_2079933.html',
+  issuer='대구광역시',institution='대구광역시 소속 공무원',version='[시행 2025. 10. 30.]',publication='대구광역시조례 제6399호',effective_date='2025-10-30',scope=PROVINCE_SCOPE),
+ 'incheon':dict(title='인천광역시 공무원 복무 조례',page='https://www.law.go.kr/LSW/ordinInfoR.do?ordinSeq=2177511',raw='incheon_2177511.html',
+  issuer='인천광역시',institution='인천광역시 소속 공무원',version='[시행 2026. 10. 8.]',publication='인천광역시조례 제7795호',effective_date='2026-10-08',scope=PROVINCE_SCOPE),
+ 'daejeon':dict(title='대전광역시 지방공무원 복무 조례',page='https://www.law.go.kr/LSW/ordinInfoR.do?ordinSeq=2063591',raw='daejeon_2063591.html',
+  issuer='대전광역시',institution='대전광역시 소속 공무원',version='[시행 2025. 8. 8.]',publication='대전광역시조례 제6483호',effective_date='2025-08-08',scope=PROVINCE_SCOPE),
+ 'ulsan':dict(title='울산광역시 공무원 복무 조례',page='https://www.law.go.kr/LSW/ordinInfoR.do?ordinSeq=2026977',raw='ulsan_2026977.html',
+  issuer='울산광역시',institution='울산광역시 소속 공무원',version='[시행 2025. 4. 3.]',publication='울산광역시조례 제3082호',effective_date='2025-04-03',scope=PROVINCE_SCOPE),
+ 'sejong':dict(title='세종특별자치시 지방공무원 복무 조례',page='https://www.law.go.kr/LSW/ordinInfoR.do?ordinSeq=2113497',raw='sejong_2113497.html',
+  issuer='세종특별자치시',institution='세종특별자치시 소속 공무원',version='[시행 2026. 2. 27.]',publication='세종특별자치시조례 제2984호',effective_date='2026-02-27',scope=PROVINCE_SCOPE),
+ 'gangwon':dict(title='강원특별자치도 공무원 복무 조례',page='https://www.law.go.kr/LSW/ordinInfoR.do?ordinSeq=2083281',raw='gangwon_2083281.html',
+  issuer='강원특별자치도',institution='강원특별자치도 소속 공무원',version='[시행 2025. 11. 7.]',publication='강원특별자치도조례 제5696호',effective_date='2025-11-07',scope=PROVINCE_SCOPE),
+ 'chungbuk':dict(title='충청북도 지방공무원 복무 조례',page='https://www.law.go.kr/LSW/ordinInfoR.do?ordinSeq=2143389',raw='chungbuk_2143389.html',
+  issuer='충청북도',institution='충청북도 소속 공무원',version='[시행 2026. 7. 3.]',publication='충청북도조례 제5592호',effective_date='2026-07-03',scope=PROVINCE_SCOPE),
+ 'chungnam':dict(title='충청남도 공무원 복무 조례',page='https://www.law.go.kr/LSW/ordinInfoR.do?ordinSeq=2074361',raw='chungnam_2074361.html',
+  issuer='충청남도',institution='충청남도 소속 공무원',version='[시행 2025. 9. 30.]',publication='충청남도조례 제5987호',effective_date='2025-09-30',scope=PROVINCE_SCOPE),
+ 'jeonbuk':dict(title='전북특별자치도 지방공무원 복무조례',page='https://www.law.go.kr/LSW/ordinInfoR.do?ordinSeq=2078317',raw='jeonbuk_2078317.html',
+  issuer='전북특별자치도',institution='전북특별자치도 소속 공무원',version='[시행 2025. 10. 10.]',publication='전북특별자치도조례 제5882호',effective_date='2025-10-10',scope=PROVINCE_SCOPE),
+ 'gyeongbuk':dict(title='경상북도 공무원 복무 조례',page='https://www.law.go.kr/LSW/ordinInfoR.do?ordinSeq=2057005',raw='gyeongbuk_2057005.html',
+  issuer='경상북도',institution='경상북도 소속 공무원',version='[시행 2025. 7. 14.]',publication='경상북도조례 제5302호',effective_date='2025-07-14',scope=PROVINCE_SCOPE),
+ 'gyeongnam':dict(title='경상남도 지방공무원 복무 조례',page='https://www.law.go.kr/LSW/ordinInfoR.do?ordinSeq=2127133',raw='gyeongnam_2127133.html',
+  issuer='경상남도',institution='경상남도 소속 공무원',version='[시행 2026. 4. 30.]',publication='경상남도조례 제6069호',effective_date='2026-04-30',scope=PROVINCE_SCOPE),
+ 'jeju':dict(title='제주특별자치도 공무원 복무 조례',page='https://www.law.go.kr/LSW/ordinInfoR.do?ordinSeq=2158643',raw='jeju_2158643.html',
+  issuer='제주특별자치도',institution='제주특별자치도 소속 공무원',version='[시행 2026. 8. 7.]',publication='제주특별자치도조례 제4351호',effective_date='2026-08-07',scope=PROVINCE_SCOPE),
 }
 # Navigation tags only; an answer still needs the stored article text.
 TOPICS=(('leave',r'휴가|연가|병가|공가|휴무|포상휴가'),('hours',r'근무시간|시간외|현업|교대제|근무혁신|연일근무'),
@@ -142,7 +175,10 @@ def collect_ordinance(key):
     raw_name=law['raw'];keep(BASE/'raw'/raw_name,raw)
     for container in [n for n in tree.root.walk() if 'lawcon' in n.attrs.get('class','').split()]:
         paragraphs=[p.text() for p in container.walk() if p.tag=='p' and p.text()]
-        heading=re.match(r'제(\d+)조(?:의(\d+))?\(([^)]{1,80})\)',paragraphs[0] if paragraphs else '')
+        first=paragraphs[0] if paragraphs else ''
+        heading=re.match(r'제(\d+)조(?:의(\d+))?\s?\(([^)]{1,80})\)',first)
+        # A repealed article ("제8조 삭제", "제11조 ① 삭제", "제16조의2 (제목) <삭제 ...>") has no text to store.
+        if re.match(r'제\d+조(?:의\d+)?\s*(?:①\s*)?<?\s*삭제',first) or heading and re.match(r'\s*<\s*삭제',first[heading.end():]):continue
         if not heading:raise ValueError('Article heading differs: '+law['title'])
         article=heading[1]+(f'-{heading[2]}' if heading[2] else '');name=heading[3]
         text='\n'.join(paragraphs)+'\n';filename=f"{law['title']}_{label(article)}.txt"

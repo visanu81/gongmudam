@@ -213,6 +213,11 @@ def retrieve(query,library_id=None,today=None,*,institution_rule_id=None,affilia
     # Pay, allowance and welfare answers show the matching pay-guideline page as practice.
     if not practice and hits and plan and len(plan['topics'])==1:
         practice=pay_guidelines.search(query,plan['topics'][0],(hits[0].get('official') or {}).get('law'))
+    # A Gyeonggi official's travel answer shows the ordinance's exceptions to the travel decree.
+    travel_notice,travel_practice=service_rules.travel_note(query,(plan or {}).get('topics',[]))
+    if travel_practice:
+        practice=travel_practice+practice
+        service_notice=' '.join(n for n in (service_notice,travel_notice) if n)
     notes=_experience_hits(query,library_id)
     return finish({'hits':hits,'experiences':notes,'excluded':excluded,'registered_count':len(docs),'unavailable_reason':reason,'requires_basis':bool(plan or relevance.facets(query) or relevance.evidence_context(query) or missing),'intent':plan,'service_notice':service_notice,'practice':practice})
 

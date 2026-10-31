@@ -156,6 +156,12 @@ def filter_hits(query,hits,plan=None):
 def missing_reference(query,hits):
     q=flat(query)
     if any(t in q for t in ('지방공무원','지방직')) and any((h.get('official') or {}).get('title')=='공무원 여비 규정' for h in hits):
+        from . import service_rules
+        # The bundled Gyeonggi travel ordinance applies the decree except its 제4조 list.
+        if service_rules.region(query)=='gyeonggi':
+            if {'travel_settlement','travel_card'}&set((intent.analyze(query) or {}).get('topics',[])):
+                return '경기도 소속 공무원에게는 공무원 여비 규정 제8조의2제1항·제4항을 준용하지 않아요(경기도 공무원 여비 조례 제4조제1호). 도의 정산·결제 기준을 확인하세요.'
+            return ''
         if not any('여비' in h['title'] and '조례' in h['title'] for h in hits):return '해당 지방자치단체 여비 조례의 준용·지급 기준이 등록되지 않아 지방공무원에게 적용할 금액을 확정할 수 없습니다.'
     amount=intent.amount_question(query)
     if amount and any(t in q for t in ('숙박','호텔','일비','식비','식대')) and any('별표 2' in h['text'] for h in hits):

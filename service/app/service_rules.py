@@ -28,7 +28,28 @@ READS={'national':('national',),'local':('local',),'fire':('fire','national'),'f
        'police':('police','national'),None:('local','national')}
 # Bundled ordinances by region. They apply to the province's own officials and,
 # through 소방공무원 복무규정 제11조, to its fire officers; a city or county has its own.
-ORDINANCE={'gyeonggi':(r'경기도(?!교육)|경기소방','경기도 공무원 복무 조례')}
+def _place(*names):
+    # A province's own name, not its education office (교육청 has its own ordinance).
+    return '(?:'+'|'.join(names)+')(?![가-힣]{0,5}교육)|(?:'+'|'.join(names)+')소방'
+
+
+ORDINANCE={
+ 'gyeonggi':(_place('경기도','경기'),'경기도 공무원 복무 조례'),
+ 'seoul':(_place('서울특별시','서울시'),'서울특별시 공무원 복무 조례'),
+ 'busan':(_place('부산광역시','부산시'),'부산광역시 공무원 복무 조례'),
+ 'daegu':(_place('대구광역시','대구시'),'대구광역시 지방공무원 복무 조례'),
+ 'incheon':(_place('인천광역시','인천시'),'인천광역시 공무원 복무 조례'),
+ 'daejeon':(_place('대전광역시','대전시'),'대전광역시 지방공무원 복무 조례'),
+ 'ulsan':(_place('울산광역시','울산시'),'울산광역시 공무원 복무 조례'),
+ 'sejong':(_place('세종특별자치시','세종시'),'세종특별자치시 지방공무원 복무 조례'),
+ 'gangwon':(_place('강원특별자치도','강원도'),'강원특별자치도 공무원 복무 조례'),
+ 'chungbuk':(_place('충청북도','충북'),'충청북도 지방공무원 복무 조례'),
+ 'chungnam':(_place('충청남도','충남'),'충청남도 공무원 복무 조례'),
+ 'jeonbuk':(_place('전북특별자치도','전라북도','전북'),'전북특별자치도 지방공무원 복무조례'),
+ 'gyeongbuk':(_place('경상북도','경북'),'경상북도 공무원 복무 조례'),
+ 'gyeongnam':(_place('경상남도','경남'),'경상남도 지방공무원 복무 조례'),
+ 'jeju':(_place('제주특별자치도','제주도'),'제주특별자치도 공무원 복무 조례'),
+}
 TITLES={'national':'국가공무원 복무규정','local':'지방공무원 복무규정','fire':'소방공무원 복무규정','police':'경찰공무원 복무규정',
         'national_allowance':'공무원수당 등에 관한 규정','local_allowance':'지방공무원 수당 등에 관한 규정',
         'welfare':'공무원 후생복지에 관한 규정','national_rules':'국가공무원 복무규칙',
@@ -53,6 +74,11 @@ ARTICLES={
  'fire':{**{t:('제8조의2(',) for t in _PUBLIC},'reward_leave':('제9조(',),'duty':('제5조(',),'travel_limit':('제4조(',),'shift':('제6조(',)},
  'police':{'reward_leave':('제18조(',),'duty':('제14조(',),'travel_limit':('제13조(',),'drinking':('제9조(',),'dress':('제5조(',)},
  'gyeonggi':{'long_service':('제14조(',),'region_leave':('제14조(',)},
+ # The special-leave article holding each province's long-service (or 자기계발) leave.
+ # 서울·충남 ordinances have none in their articles, so the local delegation answers.
+ **{key:{'long_service':(article,)} for key,article in (('busan','제15조('),('daegu','제16조('),('incheon','제23조('),('daejeon','제18조('),
+    ('ulsan','제13조('),('sejong','제21조('),('gangwon','제14조('),('chungbuk','제14조('),('jeonbuk','제23조('),('gyeongbuk','제17조('),
+    ('gyeongnam','제23조('),('jeju','제19조('))},
  'national_rules':{'duty':('제13조(','제15조(','제21조(','제23조(','제37조(','제38조(','제42조(')},
  'welfare':{'welfare_points':tuple(f'제{n}조(' for n in range(5,13)),'welfare_grant':('제10조(','제11조(')},
 }
@@ -188,7 +214,7 @@ def expected(topic,query):
     # A fire officer of an unbundled province: the fire decree says the ordinance applies.
     if found=='fire' and not place and topic in FIRE_ORDINANCE:return TITLES['fire'],('제11조(',)
     for law in reads(query):
-        prefixes=_annual_use(law,query) if topic=='annual_use' else ARTICLES[law].get(topic)
+        prefixes=_annual_use(law,query) if topic=='annual_use' else ARTICLES.get(law,{}).get(topic)
         if prefixes:return TITLES[law],prefixes
     return None
 
@@ -262,9 +288,28 @@ def documents(query,today):
     if place and found in ('local','fire',None) and regional:
         title=ORDINANCE[place][1]
         notice=(f'시·도 소속 소방공무원의 특별휴가·장기재직휴가는 {title}를 적용해요(소방공무원 복무규정 제11조).' if found=='fire' and regional else
-                f'{title}는 도와 도 소속기관 공무원 기준이에요. 시·군 소속이면 해당 시·군 조례를 확인하세요.')
+                f'{title}는 시·도 본청과 소속기관 공무원 기준이에요. 시·군·구 소속이면 해당 시·군·구 조례를 확인하세요.')
+        if '장기재직' in q and 'long_service' not in ARTICLES.get(place,{}):
+            notice+=f' {title} 본문에는 장기재직휴가 조항이 없어요. 시행규칙이나 기관 지침을 확인하세요.'
     elif found=='fire' and regional:
-        notice='시·도 소속 소방공무원은 국가공무원 복무규정에 없는 특별휴가와 장기재직휴가에 소속 지방자치단체 조례를 적용해요(소방공무원 복무규정 제11조). 공무담에는 현재 경기도 조례만 있어요.'
+        notice='시·도 소속 소방공무원은 국가공무원 복무규정에 없는 특별휴가와 장기재직휴가에 소속 지방자치단체 조례를 적용해요(소방공무원 복무규정 제11조). 소속 시·도를 알려주시면 그 조례로 확인해요(광주·전남 조례는 아직 없어요).'
     elif found=='local' and regional:
-        notice='지방공무원의 특별휴가 일부와 장기재직휴가는 소속 지방자치단체 조례로 정해요. 공무담에는 현재 경기도 조례만 있어요. 소속 조례를 확인하세요.'
+        notice='지방공무원의 특별휴가 일부와 장기재직휴가는 소속 지방자치단체 조례로 정해요. 시·도 본청 소속이면 소속 시·도를 알려주세요(광주·전남 조례는 아직 없어요). 시·군·구 소속이면 해당 조례를 확인하세요.'
     return docs,notice
+
+
+def travel_note(query,topics):
+    """(notice, practice) for a Gyeonggi official's travel question: the ordinance applies the
+    national travel decree with the exceptions in its 제4조."""
+    if not any(t.startswith('travel_') for t in topics) or region(query)!='gyeonggi' or status(query) not in ('local','fire',None):return '',[]
+    row,text=next(((r,t) for r,t in catalog() if r['law']=='gyeonggi_travel' and r['article'].startswith('제4조(')),(None,None))
+    if not row:return '',[]
+    notice='경기도 소속 공무원은 「경기도 공무원 여비 조례」가 공무원 여비 규정을 준용하되 제4조의 예외를 둬요.'
+    if {'travel_settlement','travel_card'}&set(topics):
+        notice+=' 여비 규정 제8조의2제1항·제4항은 경기도 소속에 준용하지 않아요(조례 제4조제1호). 도의 정산 기준을 확인하세요.'
+    if 'travel_local' in topics:
+        notice+=' 근무지 내 왕복 2km 이내 근거리 출장은 실비로 지급해요(조례 제4조제4호의2).'
+    practice=[dict(id=f"{LIBRARY}:{row['id']}",text=text,quote=text,loc=row['article'],title=row['title']+' '+row['article'],
+                   kind=row['kind'],institution=row['institution'],effective_date=row['effective_date'],sha256=row['sha256'],
+                   official=row,library_id=LIBRARY,file_id=row['id'],limited=False)]
+    return notice,practice
