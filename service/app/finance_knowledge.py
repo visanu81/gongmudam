@@ -81,9 +81,11 @@ def documents(query,docs,today):
     target=scope(query)
     if target=='unsupported':return [],'교육청·공공기관 등 해당 회계에 맞는 별도 집행기준이 필요합니다.'
     if target in {None,'mixed'}:return [],'국가기관인지 지방자치단체인지 알려주세요. 두 회계의 집행기준을 섞지 않고 확인하겠습니다.'
-    years={int(y) for y in re.findall(r'(?<!\d)(20\d{2})(?!\d)(?!\s*(?:만|천|억)?(?:원|명|건|개))',query)} or {today.year}
+    from .knowledge_supplement import without_document_numbers
+    dated=without_document_numbers(query)
+    years={int(y) for y in re.findall(r'(?<!\d)(20\d{2})(?!\d)(?!\s*(?:만|천|억)?(?:원|명|건|개))',dated)} or {today.year}
     requested_dates=[]
-    for y,m,d in re.findall(r'(20\d{2})\s*[-./년]\s*(\d{1,2})\s*[-./월]\s*(\d{1,2})(?:일)?',query):
+    for y,m,d in re.findall(r'(20\d{2})\s*[-./년]\s*(\d{1,2})\s*[-./월]\s*(\d{1,2})(?:일)?',dated):
         try:requested_dates.append(date(int(y),int(m),int(d)).isoformat())
         except ValueError:return [],'질문한 날짜를 확인해 주세요. 적용 시점에 맞는 판본을 찾아야 합니다.'
     valid=[]

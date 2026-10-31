@@ -339,7 +339,7 @@ def scope_reason(query, source, today):
     if any(t in q for t in ('국가기관','국가공무원','국가직','중앙부처','국가회계')) and any(t in scope for t in ('지방공무원','지방자치단체','교육청','학교')) and '국가공무원' not in scope:
         return '국가기관·국가공무원에 적용할 근거가 필요합니다.'
     if supplement.local(query) and '국가공무원복무규정' in flat(title):return '지방공무원에게 국가공무원 복무규정을 대신 적용하지 않습니다.'
-    years={int(y) for y in re.findall(r'(?<!\d)(20\d{2})(?!\d)',query)}
+    years={int(y) for y in re.findall(r'(?<!\d)(20\d{2})(?!\d)',supplement.without_document_numbers(query))}
     if years and min(years)<int(source.get('effective_date','0000')[:4] or 0):
         return '질문한 과거 시점에 시행된 원문이 필요합니다. 현재 등록한 판본을 소급 적용하지 않습니다.'
     return ''

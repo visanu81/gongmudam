@@ -64,6 +64,15 @@ async def _lifespan(_app):
 
 
 app = FastAPI(title="서무비서", version="1.0.0", lifespan=_lifespan)
+
+
+@app.middleware('http')
+async def local_request_boundary(request, call_next):
+    from . import local_boundary
+    rejected=local_boundary.check(request)
+    return rejected if rejected is not None else await call_next(request)
+
+
 app.include_router(travel_api.router)
 app.include_router(local_ai.router)
 app.include_router(workspace.router)
@@ -105,6 +114,11 @@ async def _value_err(_req, exc):
 # ------------------------------------------------------------------ 상황 안내
 @app.post("/api/ask")
 def api_ask(body: dict = Body(...)) -> dict:
+    with llm.inference_policy(body.get('use_ai') is False):
+        return _ask(body)
+
+
+def _ask(body: dict) -> dict:
     query=str(body.get('query') or '').strip()
     if not query or len(query)>3000:raise HTTPException(422,'질문은 1~3000자로 입력하세요.')
     edit_result=workflow_chat.handle(query,body)

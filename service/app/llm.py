@@ -24,6 +24,21 @@ from . import upstage
 
 log = logging.getLogger(__name__)
 _capture = ContextVar('local_model_capture', default=None)
+_no_inference = ContextVar('no_inference', default=False)
+
+
+def disabled():
+    """No model call for this runtime (GONGMUDAM_NO_LLM=1) or this request (AI 사용 안 함)."""
+    return os.environ.get('GONGMUDAM_NO_LLM') == '1' or _no_inference.get()
+
+
+@contextmanager
+def inference_policy(no_inference=False):
+    token = _no_inference.set(no_inference or _no_inference.get())
+    try:
+        yield
+    finally:
+        _no_inference.reset(token)
 
 
 def request_headers(profile: dict[str, Any]) -> dict[str, str]:
@@ -94,6 +109,8 @@ class OpenAICompatibleProvider(BaseProvider):
         return not upstage.matches(self.profile) or bool(request_headers(self.profile).get('Authorization'))
 
     def chat(self, messages, *, max_tokens=1500, temperature=None, response_schema=None) -> str:
+        if disabled():
+            raise LLMError("이 요청에서는 AI를 사용하지 않도록 설정되어 있습니다.")
         if not self.available:
             raise LLMError('업스테이지 API 키를 입력하세요.')
         base = (self.profile.get("base_url") or "").rstrip("/")
@@ -148,6 +165,9 @@ PROVIDERS = {
 
 
 def get_provider(profile: dict[str, Any]) -> BaseProvider:
+    # A request with AI turned off never reaches a model, whatever path it takes.
+    if disabled():
+        return OfflineProvider({"provider": "offline"})
     cls = PROVIDERS.get(profile.get("provider", "offline"))
     if cls is None:
         raise LLMError(f"지원하지 않는 provider: {profile.get('provider')}")

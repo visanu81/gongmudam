@@ -11,6 +11,7 @@ import re
 import struct
 import zipfile
 import zlib
+import warnings
 from pathlib import Path
 from xml.etree import ElementTree as ET
 
@@ -30,7 +31,10 @@ def parse_file(path: Path) -> list[dict]:
     }.get(ext)
     if fn is None:
         raise ParseError(f"지원하지 않는 형식: {ext}")
-    units = fn(path)
+    try:
+        units = fn(path)
+    except (ET.ParseError, csv.Error, struct.error, UnicodeError, zlib.error, KeyError, zipfile.BadZipFile) as e:
+        raise ParseError(f"문서 구조 또는 인코딩이 올바르지 않습니다: {e}") from e
     return [u for u in units if u["text"].strip()]
 
 
@@ -42,7 +46,7 @@ def _read_text(path: Path) -> str:
             return raw.decode(enc)
         except UnicodeDecodeError:
             continue
-    return raw.decode("utf-8", errors="replace")
+    raise ParseError("지원 인코딩(UTF-8, CP949, EUC-KR)으로 원문을 읽을 수 없습니다.")
 
 
 def _parse_text(path: Path) -> list[dict]:
@@ -51,20 +55,33 @@ def _parse_text(path: Path) -> list[dict]:
 
 
 def _parse_csv(path: Path) -> list[dict]:
-    rows = list(csv.reader(io.StringIO(_read_text(path))))
-    return _rows_to_units(rows, sheet=None)
+    reader = csv.reader(io.StringIO(_read_text(path)), strict=True)
+    rows, row_numbers = [], []
+    while True:
+        start = reader.line_num + 1
+        try:
+            row = next(reader)
+        except StopIteration:
+            break
+        rows.append(row)
+        row_numbers.append(start)
+    return _rows_to_units(rows, sheet=None, row_numbers=row_numbers)
 
 
-def _rows_to_units(rows: list[list], sheet: str | None) -> list[dict]:
+def _rows_to_units(rows: list[list], sheet: str | None, row_numbers=None) -> list[dict]:
     """첫 행을 머리글로 보고 각 행을 '머리글: 값' 문장으로 만든다."""
     units = []
     rows = [[("" if c is None else str(c).strip()) for c in r] for r in rows]
-    rows = [r for r in rows if any(r)]
-    if not rows:
+    header_index = next((i for i, r in enumerate(rows) if any(r)), None)
+    if header_index is None:
         return units
-    header = rows[0]
+    header = rows[header_index]
     prefix = f"시트 '{sheet}' " if sheet else ""
-    for idx, r in enumerate(rows[1:], 2):
+    for idx, r in enumerate(rows[header_index + 1:], header_index + 2):
+        if row_numbers is not None:
+            idx = row_numbers[idx - 1]
+        if any(r[len(header):]):
+            raise ParseError(f"{prefix}{idx}행의 값이 머리글 열 수를 초과합니다.")
         parts = []
         for h, v in zip(header, r):
             if v:
@@ -108,10 +125,62 @@ def _parse_pdf(path: Path) -> list[dict]:
         raise ParseError(f"PDF를 열 수 없습니다: {e}") from e
     units = []
     for pno, page in enumerate(reader.pages, 1):
-        text = page.extract_text() or ""
+        plain = page.extract_text() or ""
+        layout_failed = False
+        try:
+            text = page.extract_text(extraction_mode="layout", layout_mode_strip_rotated=False) or ""
+        except Exception:  # noqa: BLE001
+            layout_failed = True
+            # r2 (N5): layout mode raises on some valid pages (e.g. a page without
+            # /Contents) and r1 then rejected the whole document. Fall back to the
+            # r4 plain extraction for that page only.
+            text = plain
+        # Two consecutive printed footers on a landscape sheet identify a
+        # two-up spread. Preserve its content-stream order rather than merging
+        # columns into sentences; defer semantic layout reading to the reviewer.
+        spread = re.search(r"(?m)^\s*-\s*(\d+)\s*-\s{3,}-\s*(\d+)\s*-\s*$", text)
+        two_up = (float(page.mediabox.width) > float(page.mediabox.height)
+                  and spread is not None and int(spread[2]) == int(spread[1]) + 1)
+        supplement = []
+        if two_up:
+            text = plain
+        elif not layout_failed:
+            # r2: layout mode can drop running headers, side tabs or footers.
+            # Re-add the plain-mode lines that carry the missing characters so no
+            # letter/digit of the page is lost (duplication is preferred to omission).
+            supplement = _layout_missing_lines(text, plain)
         for para in _split_paragraphs(text):
-            units.append({"text": para, "loc": f"{pno}쪽"})
+            unit = {"text": para, "loc": f"{pno}쪽"}
+            if two_up:
+                unit["layout_review"] = f"2면 배치 · 인쇄 {spread[1]}·{spread[2]}쪽 · 원문 확인 필요"
+            units.append(unit)
+        for line in supplement:
+            units.append({"text": line, "loc": f"{pno}쪽", "extraction_note": "layout 추출 누락 보충(일반 추출 줄)"})
     return units
+
+
+# CR3-26: mathematical operators and ranges carry meaning even when letters match.
+_CHARS = re.compile(r"[가-힣0-9A-Za-z<>=+−×÷≤≥≠±%‰/\-]")
+
+
+def _layout_missing_lines(layout_text: str, plain_text: str) -> list[str]:
+    from collections import Counter
+    lost = Counter(_CHARS.findall(plain_text)) - Counter(_CHARS.findall(layout_text))
+    lines = [ln.strip() for ln in plain_text.splitlines() if ln.strip()]
+    chosen = set()
+    # First the lines that are mostly missing (headers, side tabs, footers), then any
+    # line still needed so that every missing letter/digit is covered.
+    for strict in (True, False):
+        for i, line in enumerate(lines):
+            if not +lost:
+                break
+            have = Counter(_CHARS.findall(line))
+            overlap = sum((have & lost).values())
+            if i in chosen or not overlap or (strict and overlap * 2 < sum(have.values())):
+                continue
+            chosen.add(i)
+            lost -= have
+    return [lines[i] for i in sorted(chosen)]
 
 
 def _split_paragraphs(text: str) -> list[str]:
@@ -124,7 +193,7 @@ def _split_paragraphs(text: str) -> list[str]:
                 buf = []
             continue
         # 번호·기호로 시작하면 새 문단으로 본다
-        if buf and re.match(r"^([0-9]+[.)]|[가-하][.)]|[□○◦▶\-•※]|제\s*\d+\s*조)", ln):
+        if buf and re.match(r"^(\((?:[0-9]+|[가-하])\)|[0-9]+[.)]|[가-하][.)]|[□○◦▶\-•※]|제\s*\d+\s*조)", ln):
             out.append(" ".join(buf))
             buf = []
         buf.append(ln)
@@ -151,6 +220,25 @@ def _parse_docx(path: Path) -> list[dict]:
 
 
 # ---------------------------------------------------------------- HWPX (OWPML, zip+xml)
+# OWPML <hp:t> children. 'hypen' is the schema's own spelling of the hyphen control.
+# Markers without text (title mark, highlighter start/end) add nothing (r2: r1 inserted a space).
+_HWPX_CONTROLS = {'nbSpace': ' ', 'fwSpace': ' ', 'tab': '\t', 'lineBreak': '\n',
+                  'hypen': '-', 'hyphen': '-', 'titleMark': '', 'markpenBegin': '', 'markpenEnd': ''}
+
+
+def _hwpx_text(element):
+    out = [element.text or '']
+    for child in element:
+        name = child.tag.rsplit('}',1)[-1]
+        if name in _HWPX_CONTROLS:out.append(_HWPX_CONTROLS[name])
+        else:
+            # Unknown element: keep its text; an empty one keeps a word boundary (r1 rule).
+            warnings.warn(f'HWPX 본문 제어 요소 확인 필요: {name}', RuntimeWarning)
+            out.append(_hwpx_text(child) or ' ')
+        out.append(child.tail or '')
+    return ''.join(out)
+
+
 def _parse_hwpx(path: Path) -> list[dict]:
     try:
         z = zipfile.ZipFile(path)
@@ -175,7 +263,11 @@ def _parse_hwpx(path: Path) -> list[dict]:
                     continue
                 for t in run:
                     if t.tag.endswith("}t"):
-                        texts.append("".join(t.itertext()))
+                        texts.append(_hwpx_text(t))
+                    elif t.tag.endswith("}equation"):
+                        # CR3-27: keep raw Hancom equation source in position; no evaluation.
+                        script = next((e.text or '' for e in t.iter() if e.tag.endswith('}script')), '')
+                        texts.append('[한컴 수식 원문 · 표시 미검증: ' + script + ']')
             line = "".join(texts).strip()
             if line:
                 n += 1
@@ -229,20 +321,36 @@ def _hwp_records_text(data: bytes):
         pos += 4
         tag, length = hdr & 0x3FF, (hdr >> 20) & 0xFFF
         if length == 0xFFF:
+            if pos + 4 > size:
+                raise ParseError("HWP 확장 레코드 길이가 잘렸습니다.")
             length = struct.unpack("<I", data[pos:pos + 4])[0]
             pos += 4
+        if pos + length > size:
+            raise ParseError("HWP 레코드 본문이 잘렸습니다.")
         payload = data[pos:pos + length]
         pos += length
         if tag == HWPTAG_PARA_TEXT:
             yield _hwp_para_text(payload)
+    if pos != size:
+        raise ParseError("HWP 레코드 머리글이 잘렸습니다.")
 
 
 def _hwp_para_text(payload: bytes) -> str:
+    if len(payload) % 2:
+        raise ParseError("HWP 문자 레코드 길이가 올바르지 않습니다.")
     out, i, n = [], 0, len(payload) // 2
     while i < n:
         ch = struct.unpack("<H", payload[i * 2:i * 2 + 2])[0]
         if ch < 32:
+            # HWP5 table 6: character-sized hyphen/nonbreaking/fixed-width space.
+            # Normalize spacing while preserving the original word boundary.
+            if ch in (24, 30, 31):
+                out.append('-' if ch == 24 else ' ')
+                i += 1
+                continue
             if ch in _EXT_CTRL or ch in _INLINE_CTRL:
+                if i + 8 > n:
+                    raise ParseError("HWP 제어문자 레코드가 잘렸습니다.")
                 if ch == 9:  # 탭도 8글자 크기의 인라인 컨트롤
                     out.append("\t")
                 i += 8
@@ -251,6 +359,17 @@ def _hwp_para_text(payload: bytes) -> str:
                 out.append("\n")
             i += 1
             continue
+        if 0xD800 <= ch <= 0xDBFF:
+            if i + 1 >= n:
+                raise ParseError("HWP UTF-16 문자가 손상되었습니다.")
+            low = struct.unpack("<H", payload[(i + 1) * 2:(i + 2) * 2])[0]
+            if not 0xDC00 <= low <= 0xDFFF:
+                raise ParseError("HWP UTF-16 문자가 손상되었습니다.")
+            out.append(chr(0x10000 + ((ch - 0xD800) << 10) + low - 0xDC00))
+            i += 2
+            continue
+        if 0xDC00 <= ch <= 0xDFFF:
+            raise ParseError("HWP UTF-16 문자가 손상되었습니다.")
         out.append(chr(ch))
         i += 1
     return "".join(out)

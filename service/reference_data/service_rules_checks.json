@@ -499,5 +499,11 @@
   "question": "장기재직휴가 며칠이야?\n업무환경: 경상북도 소속 지방공무원",
   "article": "경상북도 공무원 복무 조례 제17조(",
   "rule": "service-rules:gyeongbuk-long-service"
+ },
+ {
+  "id": "sr-national-annual-docnum",
+  "question": "인사혁신처예규 제2025-3호에 따른 국가공무원 연가 일수는?",
+  "article": "국가공무원 복무규정 제15조(",
+  "rule": "service-rules:national-annual"
  }
 ]

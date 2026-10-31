@@ -229,7 +229,9 @@ def summary(query,reply):
     """Reviewed conclusion-first tree; every sentence must match the cited article."""
     topics=(reply.get('intent') or {}).get('topics',[]);evidence=reply.get('evidence',[])
     if len(topics)!=1:return None
-    q=re.sub(r'\s+','',query)
+    from .knowledge_supplement import without_document_numbers
+    # An issuance number (예규 제2025-3호) is not a personal case like "3년 재직".
+    q=re.sub(r'\s+','',without_document_numbers(query))
     for card in summaries():
         if topics[0] not in card['topics'] or card.get('when_any') and not any(re.sub(r'\s+','',t) in q for t in card['when_any']):continue
         # A personal case (years served, pay-out, leave of absence) needs the full article, not a table summary.

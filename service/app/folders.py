@@ -100,7 +100,7 @@ def extract(path,raw):
         for enc in ('utf-8-sig','cp949'):
             try:value=raw.decode(enc);break
             except UnicodeDecodeError:pass
-        value=value if value is not None else raw.decode('utf-8',errors='replace')
+        if value is None:raise ValueError('본문 인코딩을 해독할 수 없습니다 · 원문 확인 필요')
         units=[{'text':line.strip()[:2000],'loc':f'{n}행'} for n,line in enumerate(value.splitlines(),1) if line.strip()]
     else:
         # 기존 문서 파서 재사용. 압축 해제 제한을 먼저 검사한다.

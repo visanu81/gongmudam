@@ -58,7 +58,7 @@ def budget_scope_reason(query, source, today):
     if official['budget_scope']=='local_government' and any(t in q for t in ('국가기관','중앙부처','국가예산','국가회계','교육청','학교회계','교육비특별회계','공기업')):
         return '질문한 기관·회계 구분에 맞는 예산 과목 기준이 필요합니다.'
     years=official.get('fiscal_years',[])
-    requested={int(y) for y in re.findall(r'(?<!\d)(20\d{2})(?!\d)',query)} or {today.year}
+    requested={int(y) for y in re.findall(r'(?<!\d)(20\d{2})(?!\d)',intent.supplement.without_document_numbers(query))} or {today.year}
     missing=requested-set(years)
     if years and missing:
         return ', '.join(str(y) for y in sorted(missing))+'년도 예산에 적용할 과목 기준이 필요합니다. 등록한 자료는 '+', '.join(str(y) for y in years)+'년도 자료입니다.'

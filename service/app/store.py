@@ -68,6 +68,12 @@ def conn() -> sqlite3.Connection:
             _conn.row_factory = sqlite3.Row
             _conn.execute("PRAGMA foreign_keys = ON")
             _conn.executescript(SCHEMA)
+            # Only our staging/version names can be uncommitted after interruption.
+            referenced = {r[0] for r in _conn.execute('SELECT stored_name FROM documents')}
+            for path in LIBRARY.iterdir():
+                owned = re.fullmatch(r'_staging_[0-9a-f]+\.[a-z0-9]+|[A-Za-z0-9_-]+__[0-9a-f]{32}\.[a-z0-9]+', path.name)
+                if owned and path.name not in referenced and path.is_file():
+                    path.unlink(missing_ok=True)
         return _conn
 
 
@@ -93,7 +99,29 @@ def sha256_of(path: Path) -> str:
 
 # ------------------------------------------------------------------ 조문 단위 묶기
 _ARTICLE = re.compile(r"^\s*(제\s*\d+\s*조(?:의\s*\d+)?)\s*(\([^)]*\))?")
-_HEADING = re.compile(r"^\s*(\d+\.\s|[가-하]\.\s|[□■◆▶]\s?)")
+_HEADING = re.compile(r"^\s*(\d+\.(?!\d)\s*|[가-하]\.\s*|[□■◆▶]\s?)")
+
+
+def _article_structured(units: list[dict]) -> bool:
+    """True when articles (제N조) are the document's own structure, not occasional quotations.
+
+    Measured on official sources (2026-10-31): laws/regulations 0.15~0.57 of units start
+    with an article; guidelines that quote articles (예규 225·226·376 등) 0.001~0.03."""
+    texts = [u['text'] for u in units
+             if u.get('text', '').strip() and not u.get('layout_review') and not u.get('extraction_note')]
+    starts = sum(1 for t in texts if _ARTICLE.match(t.strip()))
+    if starts / max(1, len(texts)) < 0.1:
+        return False
+    if starts >= 3:
+        return True
+    # CR3-15: a short document beginning with its own purpose article can have
+    # only one or two articles. Keep numbered subitems under their parent.
+    # Prefaced quotations, sparse excerpts and nonconsecutive articles retain
+    # the established guideline behavior.
+    articles = [_ARTICLE.match(t) for t in texts if _ARTICLE.match(t)]
+    return bool(articles and re.match(r'^\s*제\s*1\s*조\s*\(목적\)', texts[0])
+                and [re.sub(r'\s+', '', a.group(1)) for a in articles]
+                == ['제1조', '제2조'][:starts])
 
 
 def group_units(units: list[dict], tabular: bool = False) -> list[dict]:
@@ -103,28 +131,71 @@ def group_units(units: list[dict], tabular: bool = False) -> list[dict]:
     if tabular:
         return [{"label": f"{u['loc']} {u['text'].split(' / ')[0]}"[:60], "loc": u["loc"], "text": u["text"]}
                 for u in units]
-    has_articles = any(_ARTICLE.match(u["text"]) for u in units)
     groups: list[dict] = []
-    cur: dict | None = None
+    cur = None
+    heading = None
+    label = ''
+    limit = 1500
+    # Article-structured documents (laws, regulations, article-form 예규) keep the
+    # article as the citation label; numbered items (1. 가. (1)) inside an article
+    # stay under that article. Guideline/manual documents that only quote articles
+    # use heading boundaries instead (r2: restores article labels lost in r1).
+    article_mode = _article_structured(units)
     for u in units:
-        t = u["text"].strip()
-        m = _ARTICLE.match(t)
-        start = bool(m) if has_articles else (bool(_HEADING.match(t)) or cur is None)
-        if start or cur is None:
-            if m:
-                label = re.sub(r"\s+", "", m.group(1)) + (m.group(2) or "")
-            else:
-                label = t[:30] + ("…" if len(t) > 30 else "")
-            cur = {"label": label, "loc": u["loc"], "texts": [t]}
-            groups.append(cur)
-        else:
-            cur["texts"].append(t)
-            if len(" ".join(cur["texts"])) > 1500 and not has_articles:
+        text = u['text'].strip()
+        if not text:continue
+        if u.get('layout_review'):
+            cur = None
+            heading = None
+            label = ''
+            for start in range(0, len(text), limit):
+                groups.append({'label':u['layout_review'],'loc':u['loc'],
+                               'loc_start':u['loc'],'loc_end':u['loc'],
+                               'text':text[start:start+limit]})
+            continue
+        if u.get('extraction_note'):
+            # r2: PDF supplement lines (running headers, side tabs, footers re-added so no
+            # character is lost) form their own group and never change the article or
+            # heading label of the body text around them.
+            cur = None
+            for start in range(0, len(text), limit):
+                groups.append({'label':'보충 추출 · '+u['extraction_note'],'loc':u['loc'],
+                               'loc_start':u['loc'],'loc_end':u['loc'],
+                               'text':text[start:start+limit]})
+            continue
+        article = _ARTICLE.match(text)
+        if article_mode:
+            major = minor = None
+            if article:
+                label = re.sub(r'\s+', '', article.group(1)) + (article.group(2) or '')
                 cur = None
-    out = []
-    for g in groups:
-        out.append({"label": g["label"], "loc": g["loc"], "text": "\n".join(g["texts"])})
-    return out
+            elif not label:
+                label = text[:30] + ('…' if len(text)>30 else '')
+        else:
+            major = _HEADING.match(text)
+            minor = re.match(r'^\s*\((?:\d+|[가-하])\)', text)
+            if major:
+                heading = text[:60]
+                label = heading
+            elif article:
+                heading = None
+                label = re.sub(r'\s+', '', article.group(1)) + (article.group(2) or '')
+            elif minor:
+                label = (heading + ' · ' if heading else '') + text[:40]
+            elif not label:
+                label = text[:30] + ('…' if len(text)>30 else '')
+            if major or article or minor:cur = None
+        # Never drop a long paragraph; split it into bounded consecutive fragments.
+        for start in range(0,len(text),limit):
+            part = text[start:start+limit]
+            if cur is None or len(cur['text'])+1+len(part)>limit:
+                cur = {'label':label,'loc':u['loc'],'text':part,'loc_start':u['loc'],'loc_end':u['loc']}
+                groups.append(cur)
+            else:
+                cur['text'] += '\n'+part
+                cur['loc_end'] = u['loc']
+                cur['loc'] = cur['loc_start'] if cur['loc_start']==u['loc'] else cur['loc_start']+'~'+u['loc']
+    return groups
 
 
 # ------------------------------------------------------------------ 문서
@@ -163,7 +234,7 @@ def add_document(src: Path, *, title: str, kind: str, layer: str, filename: str 
     if dup and (insert or dup["id"] != doc_id):
         raise ValueError(f"이미 등록된 파일입니다: {dup['title']}")
     new_id = doc_id or uuid.uuid4().hex[:12]
-    stored = f"{new_id}{ext}"
+    stored = f"{new_id}__{uuid.uuid4().hex}{ext}"
     staged = LIBRARY / (f"_staging_{uuid.uuid4().hex[:8]}" + ext)
     LIBRARY.mkdir(parents=True, exist_ok=True)
     shutil.copyfile(src, staged)
@@ -179,22 +250,40 @@ def add_document(src: Path, *, title: str, kind: str, layer: str, filename: str 
         {"label": f"{i}번째 문단", "loc": u["loc"], "text": u["text"]} for i, u in enumerate(units, 1)]
     with _lock:
         c = conn()
-        ts = now()
-        if doc_id and not insert:
-            old = _rows("SELECT stored_name FROM documents WHERE id=?", (doc_id,))
-            c.execute("DELETE FROM chunks WHERE doc_id=?", (doc_id,))
-            c.execute("UPDATE documents SET title=?, kind=?, layer=?, filename=?, stored_name=?, sha256=?, note=?, updated_at=? WHERE id=?",
-                      (title, kind, layer, filename, stored, sha, note, ts, doc_id))
-            if old and old[0]["stored_name"] != stored:
-                (LIBRARY / old[0]["stored_name"]).unlink(missing_ok=True)
-        else:
-            c.execute("INSERT INTO documents VALUES (?,?,?,?,?,?,?,?,?,?)",
-                      (new_id, title, kind, layer, filename, stored, sha, note, ts, ts))
-        for i, g in enumerate(groups):
-            c.execute("INSERT INTO chunks VALUES (?,?,?,?,?,?)",
-                      (f"{new_id}-{i + 1}", new_id, i + 1, g["label"], g["loc"], g["text"]))
-        c.commit()
-    staged.replace(LIBRARY / stored)
+        old = None
+        target = LIBRARY / stored
+        try:
+            # Serialize duplicate checking with insertion as well as file publication.
+            dup = find_document_by_sha(sha)
+            if dup and (insert or dup['id'] != doc_id):raise ValueError('이미 등록된 파일입니다: '+dup['title'])
+            if doc_id and not insert:
+                old = c.execute('SELECT stored_name FROM documents WHERE id=?',(doc_id,)).fetchone()
+                if old is None:raise ValueError('교체할 문서가 없습니다.')
+            # A unique destination leaves the old original intact until DB commit.
+            staged.replace(target)
+            ts = now()
+            if old:
+                c.execute('DELETE FROM chunks WHERE doc_id=?',(doc_id,))
+                c.execute('UPDATE documents SET title=?, kind=?, layer=?, filename=?, stored_name=?, sha256=?, note=?, updated_at=? WHERE id=?',
+                          (title,kind,layer,filename,stored,sha,note,ts,doc_id))
+            else:
+                c.execute('INSERT INTO documents VALUES (?,?,?,?,?,?,?,?,?,?)',
+                          (new_id,title,kind,layer,filename,stored,sha,note,ts,ts))
+            for i,g in enumerate(groups):
+                c.execute('INSERT INTO chunks VALUES (?,?,?,?,?,?)',
+                          (f'{new_id}-{i+1}',new_id,i+1,g['label'],g['loc'],g['text']))
+            c.commit()
+        except Exception:
+            c.rollback()
+            # Never remove a destination already referenced by a committed row.
+            if not c.execute('SELECT 1 FROM documents WHERE stored_name=?',(stored,)).fetchone():target.unlink(missing_ok=True)
+            raise
+        finally:
+            staged.unlink(missing_ok=True)
+        if old and old['stored_name'] != stored:
+            try:(LIBRARY / old['stored_name']).unlink(missing_ok=True)
+            except OSError:pass  # Recoverable orphan; committed original remains intact.
+
     return get_document(new_id)
 
 

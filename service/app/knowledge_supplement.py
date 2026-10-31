@@ -11,6 +11,13 @@ DECREE=LAW+' 시행령'
 def flat(text):return re.sub(r'\s+','',text)
 
 
+# An issuance number such as 예규 제2025-3호 is not the year a question is about.
+DOCUMENT_NUMBER=re.compile(r'(?:제\s*)?20\d{2}\s*-\s*\d+\s*호')
+
+
+def without_document_numbers(query):return DOCUMENT_NUMBER.sub(' ',query)
+
+
 def national(query):
     # Fire and police officers apply the national conduct regulation where their own decree is silent.
     from . import service_rules

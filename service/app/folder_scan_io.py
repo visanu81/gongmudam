@@ -1,7 +1,6 @@
 """Bounded, sequential original-file reads. No upload copies or model calls."""
 from __future__ import annotations
 import copy
-import codecs
 import hashlib
 import io
 import json
@@ -34,12 +33,17 @@ def check_path(path, root):
 
 
 def text_preview(stream):
-    sample = stream.read(65536); stream.seek(0)
-    try:
-        codecs.getincrementaldecoder('utf-8-sig')().decode(sample, final=False); encoding = 'utf-8-sig'
-    except UnicodeDecodeError:
-        encoding = 'cp949'
-    wrapper = io.TextIOWrapper(stream, encoding=encoding, errors='replace')
+    stream.seek(0);prefix=stream.read(4);stream.seek(0)
+    encodings=('utf-32',) if prefix in (b'\xff\xfe\x00\x00',b'\x00\x00\xfe\xff') else ('utf-16',) if prefix[:2] in (b'\xff\xfe',b'\xfe\xff') else ('utf-8-sig','cp949')
+    for encoding in encodings:
+        try:return _text_preview_with_encoding(stream, encoding)
+        except UnicodeDecodeError:continue
+    raise ValueError('텍스트 인코딩을 확인할 수 없습니다. UTF-8·CP949 또는 BOM이 있는 UTF-16/32 파일인지 확인하세요.')
+
+
+def _text_preview_with_encoding(stream, encoding):
+    stream.seek(0)
+    wrapper = io.TextIOWrapper(stream, encoding=encoding, errors='strict')
     units = []; limited = False
     try:
         for n in range(1, 257):
