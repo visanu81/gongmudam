@@ -16,6 +16,6 @@ def metadata(sha):
         return row
     from . import finance_knowledge
     from . import office_knowledge
-    from . import service_rules, service_guidelines
+    from . import service_rules, service_guidelines, pay_guidelines
     return (finance_knowledge.metadata(sha) or office_knowledge.metadata(sha) or service_rules.metadata(sha)
-            or service_guidelines.metadata(sha))
+            or service_guidelines.metadata(sha) or pay_guidelines.metadata(sha))

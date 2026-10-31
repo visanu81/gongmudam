@@ -5,7 +5,7 @@ from pathlib import Path
 from urllib.parse import urlsplit
 from fastapi import APIRouter,HTTPException
 from pydantic import Field
-from . import folders,config,llm,official_sources,finance_knowledge,office_knowledge,institution_rules,upstage,service_rules,service_guidelines
+from . import folders,config,llm,official_sources,finance_knowledge,office_knowledge,institution_rules,upstage,service_rules,service_guidelines,pay_guidelines
 from .search import BM25
 from . import knowledge_relevance as relevance
 from . import knowledge_intent as intent
@@ -162,6 +162,8 @@ def _with_guidelines(query,plan,hits,reason,missing,today):
     # Deliberate abstentions (a missing annex, a specific spending domain) stay abstentions.
     if (plan or {}).get('status')=='clarify' or missing or relevance.evidence_context(query):return hits,reason,'',[]
     if intent.scope_reason(query,dict(title=service_guidelines.SOURCE_TITLE,institution='국가공무원'),today):return hits,reason,'',[]
+    # Pay, allowance and welfare questions take the pay guidelines, not the conduct guideline.
+    if service_rules.domain(query):return hits,reason,'',[]
     guidance=service_guidelines.search(query)
     if not guidance:return hits,reason,'',[]
     # Articles stay the evidence; the guideline is shown separately as practice.
@@ -208,6 +210,9 @@ def retrieve(query,library_id=None,today=None,*,institution_rule_id=None,affilia
     if missing:hits=[];reason=missing
     hits,reason,guideline_notice,practice=_with_guidelines(query,plan,hits,reason,missing,today)
     if guideline_notice:service_notice=' '.join(n for n in (guideline_notice,service_notice) if n)
+    # Pay, allowance and welfare answers show the matching pay-guideline page as practice.
+    if not practice and hits and plan and len(plan['topics'])==1:
+        practice=pay_guidelines.search(query,plan['topics'][0],(hits[0].get('official') or {}).get('law'))
     notes=_experience_hits(query,library_id)
     return finish({'hits':hits,'experiences':notes,'excluded':excluded,'registered_count':len(docs),'unavailable_reason':reason,'requires_basis':bool(plan or relevance.facets(query) or relevance.evidence_context(query) or missing),'intent':plan,'service_notice':service_notice,'practice':practice})
 
@@ -300,5 +305,5 @@ def answer(query,found,*,use_ai=True):
     evidence=_context_evidence(found['hits'],selected,len(found['hits']) if found.get('office_plan') or found.get('institution') else 6)
     if not selected:mode='source_search'
     notice=' '.join(n for n in (notice,found.get('institution_notice',''),found.get('service_notice','')) if n)
-    extra['practice']=[p|{'quote':p['text']} for p in found.get('practice',[])]
+    extra['practice']=[{'quote':p['text']}|p for p in found.get('practice',[])]
     return {'evidence':evidence,'experiences':found['experiences'],'excluded':found['excluded'],'mode':mode,'model':model,'notice':notice,'answer':relevance.original_answer(query,evidence),'intent':found.get('intent'),'scope':'등록·선택한 추출 본문을 검색합니다. 인용 확인은 적용 대상·현행성·법적 해석을 보증하지 않습니다. 처리 경험은 공식 근거와 구분합니다.',**extra}

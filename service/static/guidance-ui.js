@@ -49,7 +49,7 @@ window.SeomuGuidance = (() => {
       return `<li><strong>${esc(item.title || "인사혁신처 자료")}</strong> · ${item.reference_kind === "official_faq" ? "FAQ" : "제도 안내"}${item.loc ? ` · ${esc(item.loc)}` : ""}${item.retrieved_at ? ` · 확인일 ${esc(item.retrieved_at)}` : ""}<blockquote>${esc(item.quote)}</blockquote>${officialHref ? ` <a href="${esc(officialHref)}" target="_blank" rel="noopener noreferrer">인사혁신처 원문</a>` : ""}${snapshotHref ? ` · <a href="${esc(snapshotHref)}">저장된 원문 텍스트</a>` : ""}</li>`;
     }).join("")}</ul>${serviceGuide.coverage && typeof serviceGuide.coverage === "object" ? `<p class="guidance-note">안내 페이지 ${esc(serviceGuide.coverage.guide_pages ?? 0)}개 · FAQ 질문 ${esc(serviceGuide.coverage.faq_questions ?? 0)}개 확인</p>` : ""}</details>` : "";
     const practice = Array.isArray(guidance.practice) ? guidance.practice : [];
-    const practiceHtml = practice.length ? `<details class="guidance-details" open><summary>실무 기준 · 인사혁신처 예규</summary><p class="guidance-note">법령 조문 아래의 실무 운영 기준입니다. 소속 기관의 별도 기준을 함께 확인하세요.</p><ul>${practice.map(item => {
+    const practiceHtml = practice.length ? `<details class="guidance-details" open><summary>실무 기준 · 소관 부처 예규·지침</summary><p class="guidance-note">법령 조문 아래의 실무 운영 기준입니다. 소속 기관의 별도 기준을 함께 확인하세요.</p><ul>${practice.map(item => {
       if (!item || typeof item !== "object") return "";
       const official = item.official && typeof item.official === "object" ? item.official : {};
       return `<li><strong>${esc(official.title || item.title || "인사혁신처 예규")}</strong>${official.publication ? ` · ${esc(official.publication)}` : ""}${item.loc ? ` · ${esc(item.loc)}` : ""}<blockquote>${esc(item.quote || item.text || "")}</blockquote></li>`;

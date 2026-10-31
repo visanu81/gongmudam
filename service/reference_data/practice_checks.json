@@ -1,0 +1,158 @@
+[
+ {
+  "id": "sg-halfday",
+  "question": "국가공무원 반일연가는 몇 시 기준으로 오전 오후를 나누나요?",
+  "article": "국가공무원 복무·징계 관련 예규 제8장 휴가",
+  "notice": "예규"
+ },
+ {
+  "id": "sg-id-card-lost",
+  "question": "공무원증 분실하면 어떻게 하나요?",
+  "article": "국가공무원 복무·징계 관련 예규 제11장 공무원증",
+  "notice": "예규"
+ },
+ {
+  "id": "sg-discipline-committee",
+  "question": "징계위원회는 어떻게 구성하나요?",
+  "article": "국가공무원 복무·징계 관련 예규 제12장 징계",
+  "notice": "예규"
+ },
+ {
+  "id": "sg-outside-lecture",
+  "question": "국가공무원 외부강의 신고는 어떻게 하나요?",
+  "article": "국가공무원 복무·징계 관련 예규 제10장 외부강의",
+  "notice": "예규"
+ },
+ {
+  "id": "sa-diligence-no-status",
+  "question": "정근수당 지급 기준 알려줘",
+  "article": "지방공무원 수당 등에 관한 규정 제6조(",
+  "rule": "service-rules:local_allowance-diligence",
+  "notice": "신분을 알려주시면"
+ },
+ {
+  "id": "sa-national-diligence",
+  "question": "국가공무원 정근수당 언제 받아?",
+  "article": "공무원수당 등에 관한 규정 제7조(",
+  "rule": "service-rules:national_allowance-diligence"
+ },
+ {
+  "id": "sa-local-family",
+  "question": "지방공무원 가족수당 얼마야?",
+  "article": "지방공무원 수당 등에 관한 규정 제10조(",
+  "rule": "service-rules:local_allowance-family"
+ },
+ {
+  "id": "sa-fire-family",
+  "question": "소방공무원 가족수당 기준",
+  "article": "공무원수당 등에 관한 규정 제10조(",
+  "rule": "service-rules:national_allowance-family"
+ },
+ {
+  "id": "sa-national-holiday",
+  "question": "명절휴가비 얼마나 나와?\n업무환경: 국가공무원",
+  "article": "공무원수당 등에 관한 규정 제18조의3(",
+  "rule": "service-rules:national_allowance-holiday-bonus"
+ },
+ {
+  "id": "sa-local-holiday",
+  "question": "지방공무원 명절휴가비 기준",
+  "article": "지방공무원 수당 등에 관한 규정 제18조의3(",
+  "rule": "service-rules:local_allowance-holiday-bonus"
+ },
+ {
+  "id": "sa-local-overtime",
+  "question": "초과근무수당 지급 기준\n업무환경: 지방공무원",
+  "article": "지방공무원 수당 등에 관한 규정 제15조("
+ },
+ {
+  "id": "sa-national-annual-comp",
+  "question": "연가보상비 못 받는 경우는?\n업무환경: 국가공무원",
+  "article": "공무원수당 등에 관한 규정 제18조의5("
+ },
+ {
+  "id": "sa-allowance-clarify",
+  "question": "수당 알려줘",
+  "notice": "어떤 수당인가요"
+ },
+ {
+  "id": "sw-welfare-use",
+  "question": "맞춤형복지 포인트 사용 기준은?",
+  "article": "공무원 후생복지에 관한 규정 제9조(",
+  "rule": "service-rules:welfare-points-use"
+ },
+ {
+  "id": "sw-welfare-grant",
+  "question": "맞춤형복지 복지점수 어떻게 부여해?\n업무환경: 국가공무원",
+  "article": "공무원 후생복지에 관한 규정 제10조(",
+  "rule": "service-rules:welfare-points-grant"
+ },
+ {
+  "id": "sw-welfare-local",
+  "question": "맞춤형복지\n업무환경: 경기도 소속 지방공무원",
+  "notice": "후생복지 조례"
+ },
+ {
+  "id": "sd-national-duty",
+  "question": "국가공무원 당직 편성 기준",
+  "article": "국가공무원 복무규칙 제"
+ },
+ {
+  "id": "sp-local-payday",
+  "question": "월급 언제 나와?\n업무환경: 지방공무원",
+  "article": "지방공무원 보수규정 제19조(",
+  "rule": "service-rules:local_pay-payday"
+ },
+ {
+  "id": "sp-police-payday",
+  "question": "보수 지급일은?\n업무환경: 경찰공무원",
+  "article": "공무원보수규정 제20조(",
+  "rule": "service-rules:national_pay-payday"
+ },
+ {
+  "id": "sp-raise-no-status",
+  "question": "승급은 언제 해?",
+  "article": "지방공무원 보수규정 제12조(",
+  "rule": "service-rules:local_pay-regular-raise",
+  "notice": "신분을 알려주시면"
+ },
+ {
+  "id": "sp-national-raise",
+  "question": "정기승급 기간\n업무환경: 국가공무원",
+  "article": "공무원보수규정 제13조(",
+  "rule": "service-rules:national_pay-regular-raise"
+ },
+ {
+  "id": "sp-national-sick-leave-pay",
+  "question": "질병휴직하면 봉급 얼마나 받아?\n업무환경: 국가공무원",
+  "article": "공무원보수규정 제28조(",
+  "rule": "service-rules:national_pay-leave-deduction"
+ },
+ {
+  "id": "sp-local-salary-table",
+  "question": "9급 1호봉 봉급 얼마야?\n업무환경: 지방공무원",
+  "article": "지방공무원 보수규정 제4조(",
+  "notice": "법제처 원문 별표"
+ },
+ {
+  "id": "sp-national-initial-step",
+  "question": "초임호봉 경력 인정 기준\n업무환경: 국가공무원",
+  "article": "공무원보수규정 제8조("
+ },
+ {
+  "id": "sp-local-absence",
+  "question": "결근하면 봉급 감액돼?\n업무환경: 지방공무원",
+  "article": "지방공무원 보수규정 제26조("
+ },
+ {
+  "id": "sp-pay-clarify",
+  "question": "호봉 알려줘",
+  "notice": "어떤 보수 업무"
+ },
+ {
+  "id": "sd-fire-duty-exemption",
+  "question": "당직 면제 대상은?\n업무환경: 경기도 소속 소방공무원",
+  "article": "소방공무원 당직 및 비상업무 규칙 제9조의2(",
+  "rule": "service-rules:fire_duty-exemption"
+ }
+]

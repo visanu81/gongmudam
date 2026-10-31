@@ -1,0 +1,61 @@
+[
+  {
+    "title": "공무원보수 등의 업무지침",
+    "publication": "인사혁신처예규 제226호",
+    "effective_date": "2026-10-01",
+    "issuer": "인사혁신처",
+    "institution": "국가공무원",
+    "kind": "업무지침",
+    "raw_file": "national-226.pdf",
+    "pages_file": "national-226.pages.json",
+    "page_url": "https://www.law.go.kr/LSW/admRulInfoP.do?admRulSeq=2100000285788",
+    "download_url": "https://www.law.go.kr/LSW/flDownload.do?flSeq=170002251",
+    "key": "national",
+    "collection": "pay-guidelines-20261031",
+    "download_name": "attachment; filename=\"공무원보수 등의 업무지침(인사혁신처예규 제226호).pdf\"",
+    "retrieved_at": "2026-10-31T13:38:48.995080+00:00",
+    "raw_sha256": "60a074a4c1b29077b31dd26316bb889831982be4c2ba42bea658fa8b1a5110f6",
+    "pages_sha256": "7d20f2769af2366623679be15c0b37f4bd1934435b2ee498bdd23afba8224d52",
+    "pages": 674,
+    "chapters": [
+      "제1장 공무원 봉급업무 처리기준",
+      "제2장 공무원 특별승급제도 운영기준",
+      "제3장 원천징수 등 업무 처리기준",
+      "제4장 공무원 연봉업무 처리기준",
+      "제5장 외무공무원 보수업무 처리기준",
+      "제6장 고위공무원단 보수업무 처리기준",
+      "제7장 공무원수당 등의 업무 처리기준",
+      "제8장 성과상여금업무 처리기준",
+      "제9장 공무원여비업무 처리기준",
+      "제10장 보수성과심의위원회 설치 및 운영",
+      "제11장 맞춤형 복지제도업무 처리기준"
+    ]
+  },
+  {
+    "title": "지방공무원보수업무 등 처리지침",
+    "publication": "행정안전부예규 제389호",
+    "effective_date": "2026-10-01",
+    "issuer": "행정안전부",
+    "institution": "지방공무원",
+    "kind": "업무지침",
+    "raw_file": "local-389.pdf",
+    "pages_file": "local-389.pages.json",
+    "page_url": "https://www.law.go.kr/LSW/admRulInfoP.do?admRulSeq=2100000285694",
+    "download_url": "https://www.law.go.kr/LSW/flDownload.do?flSeq=169846039",
+    "key": "local",
+    "collection": "pay-guidelines-20261031",
+    "download_name": "attachment; filename=\"지방공무원보수업무 등 처리지침(전문).pdf\"",
+    "retrieved_at": "2026-10-31T13:39:04.495601+00:00",
+    "raw_sha256": "405fc29257826f826b40ede70924979b1bf2559967d544084ff8617514e5c336",
+    "pages_sha256": "d44294cd8795133ae2bf120a9cfc1c6472085c5ae5defce61a46f799c454a5b6",
+    "pages": 439,
+    "chapters": [
+      "제1장 지방공무원봉급업무 처리기준",
+      "제2장 지방공무원특별승급제도 운영기준",
+      "제3장 지방공무원원천징수 등 업무 처리기준",
+      "제4장 지방공무원연봉업무 처리기준",
+      "제5장 지방공무원수당 등의 업무 처리기준",
+      "제6장 지방공무원성과상여금업무 처리기준"
+    ]
+  }
+]

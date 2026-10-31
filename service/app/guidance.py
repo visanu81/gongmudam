@@ -20,6 +20,9 @@ TOPICS = (
     ('travel', '출장·여비', r'출장|여비'),
 )
 PREPARATION = {
+    'pay': [('scope','적용 신분과 규정 확인','국가(소방·경찰 포함)인지 지방인지에 따라 보수·수당 규정과 지침이 달라요.'),
+            ('materials','조문과 실무 기준 확인','위 결론의 조문과 아래 실무 기준(소관 부처 지침)을 함께 확인하고, 금액은 별표 원문으로 확인해요.'),
+            ('check','급여 담당과 처리','개인별 지급액·감액은 소속 기관 급여 담당이 인사기록과 함께 확인해요.')],
     'office': [('scope','실제 상황과 담당 확인','어떤 자료를 누가 처리하는지, 적용 기관과 현재 단계를 확인해요.'),
                ('materials','답변과 원문 조건 확인','위 답변의 근거를 펼쳐 적용 조건과 예외를 확인해요. 기관 서식·보존기간·내부 절차가 더 필요한지 점검해요.'),
                ('check','기관 절차와 처리 기록 확인','결정·승인은 권한 있는 담당자가 진행하고, 처리 내용과 다음 할 일을 기록해요.')],
@@ -53,6 +56,9 @@ def topic(query):
     context=knowledge.relevance.evidence_context(query)
     if context:return context,{'privacy':'개인정보','overtime_meal':'초과근무 급식비','meeting_meal':'회의·간담회 식비'}[context]
     if knowledge.finance_knowledge.topics(query):return 'finance','예산·회계'
+    # Pay, allowance and welfare words (명절휴가비 contains 휴가) are not leave questions.
+    area=knowledge.service_rules.domain(query)
+    if area:return 'pay',{'pay':'보수·호봉','allowance':'수당','welfare':'맞춤형복지'}[area]
     matched=next(((key,label) for key,label,pattern in TOPICS if re.search(pattern,query)),None)
     if matched:return matched
     domain=service_knowledge.domain(query)
@@ -160,6 +166,7 @@ def respond(query,body,today,public_mode=False):
     manual_k=(manual or {}).get('knowledge',{})
     manuals=[e for e in manual_k.get('evidence',[]) if e.get('reference_kind')=='system_manual']
     service=service_knowledge.retrieve(effective,library)
+    if key=='pay':service=dict(service,evidence=[])
     if service['evidence'] and not reply.get('evidence') and not manual_only and not found.get('finance') and not found.get('office_plan') and reply.get('tree',{}).get('kind')!='clarification':
         reply['tree']=dict(kind='reference',title='인사혁신처 제도 안내·FAQ에서 관련 설명을 찾았어요',
             branches=[dict(label='제도 설명 · 법령 근거와 별도',items=[dict(text=h['title']+' — '+h['quote'][:240]+('…' if len(h['quote'])>240 else ''),ref=None) for h in service['evidence']])],
@@ -182,6 +189,8 @@ def respond(query,body,today,public_mode=False):
             elif 'public_health' in topics:questions.append('검진 안내에 적힌 법적 근거와 검진일·직접 필요한 시간, 기관에서 확인할 증빙을 확인해 주세요.')
             elif plan.get('status')=='clarify':questions.append('누가 어떤 사유로 쉬어야 하는지 알려주세요. 휴가 이름은 몰라도 괜찮아요.')
             else:questions.append('신청할 날짜·시간과 올해 같은 종류를 사용한 내역, 소속 기관의 증빙·승인 절차를 확인해 주세요.')
+    elif key=='pay' and (not reply.get('evidence') or not knowledge.service_rules.status(effective)):
+        questions.append('국가공무원(소방·경찰 포함)인지 지방공무원인지와, 확인하려는 보수·수당 항목 이름을 알려주세요.')
     elif key=='goods':questions.append('소속 기관·회계 구분, 적용 연도와 구매 품목을 확인해 주세요.')
     elif key=='sidejob':questions.extend(['소속 기관·적용 신분과 겸하려는 업무 내용을 알려주세요. 국가공무원 기준을 다른 신분에 그대로 적용하지 않아요.',
         '보수·수익 여부, 계속성, 업무 시간과 담당 직무의 관련성을 확인한 뒤 소속 기관의 사전 허가 절차를 확인해요.'])
