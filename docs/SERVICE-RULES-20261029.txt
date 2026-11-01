@@ -179,3 +179,20 @@
 - 2026-11-01: 사용자 배포 후 공유 주소 v90 확인, 새 3단 화면(folders.html fp-three) 제공 확인. PC(8787)↔클라우드 평가 질문 85/85
   (parity-v90-cloud.json). 공유 사이트에서 합성 프로젝트로 시연 자료 추가 → 빼기 → 다시 넣기 → 요약 노트(결과물) 확인.
   참고: 브라우저 헤더 없는 스크립트 요청은 공유 주소에서 403이 나서, 사이트 자신의 Origin과 브라우저 User-Agent를 붙여 확인했다.
+
+10단계: 업무자료 정리 문서 구조 보존 (2026-11-01, v91-structured-docs-20261101)
+- 비교(docs/research/문서변환기_비교_20261101.md) 결과에 따라 HWPX·HWP는 skdconv 1.0.5(Python), PDF는 kordoc 4.24.33(Node.js, PDF 부분만)로 읽는다.
+  DOCX·XLSX는 기존 해석기가 이미 표 6/6·100%였고 머리말·꼬리말·수식 상태도 읽어 그대로 둔다. 변환기가 없거나 실패하면 기존 해석기로 돌아간다.
+  HWP는 skdconv 실패 시 문서함의 HWP5 해석기(parsers.py)로 읽는다. 업무자료 정리에서 .hwp를 처음 받는다.
+- 표의 각 행은 열 이름과 함께 한 단위로 저장("부서: 회계과 / 참석 인원: 0"). 병합 칸은 제자리, 엑셀식 덮인 칸은 버린다.
+- 압축 해제 한도 20MB→256MB, 구성원 512→4000(큰 HWPX 0% 문제). 압축폭탄·암호·매크로 검사는 변환기 전에 그대로 한다. 읽기 제한 시간 60→120초.
+- 같은 8개 문서 재채점(공무담): 국가 예산집행지침 HWPX 표 49→468/474, 지방 예산편성기준 HWPX 0%→98.4%·표 3556/3603,
+  같은 문서 PDF 71.5%→97.1%·표 3569/3603. 알려진 차이: HWPX 문단 안 강제 줄바꿈이 공백 없이 이어지고, 문단 안에 든 문단은 한 단위로 읽힌다.
+- 추출기 판본(project_text.EXTRACTOR_VERSION='structured-20261101'): 예전 추출기로 읽은 파일은 다시 읽고, 그때의 인용은 "원문 변경됨"으로 표시한다.
+- 팀원 재검수(docs/research/팀원작업_변경ID별_재검수_20261101.md)에서 나온 AI 전역 끔 구멍을 막았다: folder_ai.call_model이 Ollama를 직접 부르기 전에 llm.disabled()를 확인.
+- 설치: service/wheels에 skdconv·pycryptodome 휠 추가, requirements·lock·컨테이너 requirements 고정. PC는 tools/install_kordoc.py(.local-runtime/kordoc, 약 98MB, 선택).
+  컨테이너는 node:22 이미지에서 node와 kordoc을 복사(이미지 약 967MB로 증가, 배포 업로드가 길어질 수 있음).
+- 검증: 테스트 1050·통합·JS 통과, 후보(work/release-20261101f) 통과. 로컬 컨테이너에서 PDF(kordoc)·HWPX(skdconv) 읽기 확인,
+  처음엔 kordoc에 상대 경로를 넘겨 실패 → 절대 경로로 고치고 시험 추가. 평가 질문 85개 PC↔로컬 컨테이너 85/85.
+  공유 런타임 v90 → v91(백업 .local-runtime/upgrades/20261101T012150222182Z), 배포 대기.
+- 미검증: 옛 HWP(5.x 바이너리) 실제 파일, 스캔 PDF OCR(kordoc OCR 부품 미설치), 공유 사이트.

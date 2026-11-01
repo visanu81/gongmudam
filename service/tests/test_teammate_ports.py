@@ -64,3 +64,8 @@ class AiOffTest(unittest.TestCase):
     def test_runtime_switch_turns_every_model_call_off(self):
         with patch.dict(os.environ, {'GONGMUDAM_NO_LLM': '1'}):
             self.assertTrue(llm.disabled())
+            # 업무자료 정리 calls Ollama directly; that path is closed too.
+            from app import folder_ai
+            with patch.object(folder_ai.httpx, 'post', side_effect=AssertionError('model called')):
+                with self.assertRaises(llm.LLMError):
+                    folder_ai.call_model({'base_url': 'http://127.0.0.1:11434/v1', 'model': 'x'}, [])

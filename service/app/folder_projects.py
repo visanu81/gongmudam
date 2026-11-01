@@ -23,12 +23,13 @@ from fastapi import APIRouter, HTTPException, Request
 from fastapi.responses import FileResponse
 from pydantic import Field
 
-from . import folders, folder_inputs, folder_scan_io, config, local_ai, llm, folder_ai, project_query, project_tasks, upstage
+from . import folders, folder_inputs, folder_scan_io, config, local_ai, llm, folder_ai, project_query, project_tasks, project_text, upstage
 
 router = APIRouter(prefix='/api/folder-projects', tags=['프로젝트 자료·대화'])
 MAX_FILES = 10_000
 MAX_ENTRIES = 50_000
-PARSE_SECONDS = 60
+# kordoc reads a 539-page PDF in about 12s; the built-in fallback may follow it.
+PARSE_SECONDS = 120
 
 
 def stamp():
@@ -118,7 +119,7 @@ def detail(c, pid):
     for m in messages:
         for e in m.get('evidence', []):
             f = lookup.get(e['file_id'])
-            e['stale'] = not f or e['sha256'] != f.get('sha256') or stale(f)
+            e['stale'] = not f or e['sha256'] != f.get('sha256') or e.get('extractor') != f.get('extractor') or stale(f)
     # Excluded files are listed by name and an opaque id; the PC path stays on the server.
     value = value | {'excluded': [{'id': excluded_id(e['key']), 'name': e['name']} for e in value.get('excluded', [])]}
     return value | {'sources': [{k: v for k, v in s.items() if k != 'path'} for s in rows(c, 'project_sources', pid)],
@@ -619,7 +620,8 @@ def retrieve(c, pid, question, selected, draft=False):
         used[fid] = used.get(fid, 0) + 1
         chars += len(text)
         f = files[fid]
-        output.append(dict(ref=len(output)+1, file_id=fid, name=f['name'], unit=index, loc=loc, text=text, sha256=f['sha256'], stale=False))
+        output.append(dict(ref=len(output)+1, file_id=fid, name=f['name'], unit=index, loc=loc, text=text, sha256=f['sha256'],
+                           extractor=f.get('extractor'), stale=False))
     return output
 
 
@@ -655,7 +657,8 @@ def compose(c, message):
         previous = [m for m in rows(c, 'project_messages', pid) if m['id'] != message['id'] and m.get('evidence')]
         if previous:
             allowed = {f['id']: f for f in scope if not stale(f)}
-            evidence = [e for e in previous[-1]['evidence'] if e['file_id'] in allowed and e['sha256'] == allowed[e['file_id']]['sha256']]
+            evidence = [e for e in previous[-1]['evidence'] if e['file_id'] in allowed and e['sha256'] == allowed[e['file_id']]['sha256']
+                        and e.get('extractor') == allowed[e['file_id']].get('extractor')]
             if evidence and plan['mode'] != 'lookup':
                 evidence = retrieve(c, pid, question, list({e['file_id'] for e in evidence}), message.get('draft', False))
     else:
@@ -839,7 +842,9 @@ class Worker:
                     f, old = read_one(c, pid, path, root, sid)
                 seen.add(f['id'])
                 try:
-                    if old.get('sha256') and (old.get('size'), old.get('mtime_ns')) == (f['size'], f['mtime_ns']) and old['status'] in ('ready', 'partial', 'unsupported'):
+                    if (old.get('sha256') and (old.get('size'), old.get('mtime_ns')) == (f['size'], f['mtime_ns'])
+                            and old['status'] in ('ready', 'partial', 'unsupported')
+                            and old.get('extractor') == project_text.EXTRACTOR_VERSION):
                         f = old
                     else:
                         digest = hashlib.sha256()
@@ -855,7 +860,7 @@ class Worker:
                         if (after.st_size, after.st_mtime_ns) != (f['size'], f['mtime_ns']):
                             raise ValueError('파일 변경 중')
                         units = result.pop('units')
-                        f.update(result, unit_count=len(units))
+                        f.update(result, unit_count=len(units), extractor=project_text.EXTRACTOR_VERSION)
                         with db(self.path) as c:
                             c.execute('DELETE FROM project_units WHERE file_id=?', (f['id'],))
                             c.executemany('INSERT INTO project_units VALUES(?,?,?,?)', [(f['id'], i, u['loc'], u['text']) for i, u in enumerate(units, 1)])

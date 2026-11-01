@@ -8,7 +8,7 @@ from docx import Document
 from openpyxl import Workbook
 from pypdf import PdfWriter
 
-from app import project_text
+from app import document_convert, project_text
 
 
 class ProjectTextTest(unittest.TestCase):
@@ -155,7 +155,16 @@ class ProjectTextTest(unittest.TestCase):
             archive.writestr('Contents/section0.xml', xml)
         result = project_text.extract(path)
         self.assertEqual(result['status'], 'ready')
-        by_loc = {unit['loc']: unit['text'] for unit in result['units']}
+        texts = [unit['text'] for unit in result['units']]
+        # HWPX now reads through skdconv so table rows stay together. Known differences from
+        # the former reader: a forced line break joins without a space, and a paragraph nested
+        # inside another is read inline. The text itself is kept.
+        self.assertIn('가. 공무원교육훈련기관의 예산', texts)
+        self.assertIn('에서지급한다.', texts)
+        self.assertTrue(any('바깥' in t and '안쪽' in t and '끝' in t for t in texts))
+        # The built-in reader, used when the converter fails, keeps its exact behaviour.
+        with patch.object(document_convert, '_skdconv_blocks', side_effect=document_convert.ConvertError('x')):
+            by_loc = {unit['loc']: unit['text'] for unit in project_text.extract(path)['units']}
         self.assertEqual(by_loc['1구역 1문단'], '가. 공무원교육훈련기관의 예산')
         self.assertEqual(by_loc['1구역 2문단'], '에서\n지급한다.')
         self.assertEqual(by_loc['1구역 3문단'], '바깥끝')

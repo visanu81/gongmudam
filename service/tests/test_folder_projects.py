@@ -148,6 +148,18 @@ class FolderProjectsTest(unittest.TestCase):
         self.assertEqual((v['sources'],v['files']),([],[]))
         for path in (keep,drop,single):self.assertTrue(path.exists())
 
+    def test_new_extractor_rereads_files_and_marks_old_citations_changed(self):
+        a=self.root/'a.txt';a.write_text('교육 회신 마감은 11월 6일입니다.',encoding='utf-8')
+        pid=self.create();self.source(pid,a,'file');self.start()
+        self.wait(pid,lambda v:v['jobs'][-1]['status']=='completed')
+        self.question(pid,'회신 마감은 언제인가요?')
+        answer=self.answered(pid)['messages'][-1]
+        self.assertFalse(answer['evidence'][0]['stale'])
+        with patch.object(project_text,'EXTRACTOR_VERSION','next-extractor'):
+            self.client.post(f'/api/folder-projects/{pid}/refresh')
+            v=self.wait(pid,lambda v:v['files'][0].get('extractor')=='next-extractor' and v['jobs'][-1]['status']=='completed')
+        self.assertTrue(v['messages'][-1]['evidence'][0]['stale'])
+
     def test_removal_waits_for_a_running_read(self):
         a=self.root/'a.txt';a.write_text('내용',encoding='utf-8')
         pid=self.create();v=self.source(pid,a,'file')

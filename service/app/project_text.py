@@ -8,13 +8,18 @@ import zipfile
 import xml.etree.ElementTree as ET
 
 MAX_FILE_BYTES = 64 * 1024 * 1024
-MAX_ARCHIVE_BYTES = 20 * 1024 * 1024
-MAX_ARCHIVE_MEMBERS = 512
+# Uncompressed size and member limits for HWPX/DOCX/XLSX. Government guides in
+# HWPX reach ~70MB uncompressed; 20MB stopped them entirely (2026-11-01).
+MAX_ARCHIVE_BYTES = 256 * 1024 * 1024
+MAX_ARCHIVE_MEMBERS = 4000
 MAX_UNITS = 100_000
 MAX_TEXT_CHARS = 8_000_000
 CHUNK_CHARS = 1800
 MAX_PDF_PAGES = 1000
-SUPPORTED = {'.txt', '.md', '.csv', '.pdf', '.xlsx', '.docx', '.hwpx'}
+# Bump when extraction changes what units a file yields; files read by an older
+# extractor are read again and their old citations are shown as changed.
+EXTRACTOR_VERSION = 'structured-20261101'
+SUPPORTED = {'.txt', '.md', '.csv', '.pdf', '.xlsx', '.docx', '.hwpx', '.hwp'}
 
 
 class _Limit(Exception):
@@ -262,7 +267,16 @@ def _hwpx(path, out):
                     out.add(f'{snum}구역 {pnum}문단', text)
                     if out.partial:
                         return
-        covered = {i.filename for i in sections}
+    finally:
+        archive.close()
+    _hwpx_unread_areas(path, out)
+
+
+def _hwpx_unread_areas(path, out):
+    """Master pages, headers and footers are not read; say so when they hold text."""
+    archive, infos = _archive(path)
+    try:
+        covered = {i.filename for i in infos if i.filename.startswith('Contents/section') and i.filename.endswith('.xml')}
         for info in infos:
             name = info.filename.casefold()
             if (info.filename in covered or not name.endswith('.xml')
@@ -288,7 +302,28 @@ def extract(path: Path) -> dict:
             return {'units': [], 'status': 'unsupported', 'detail': '지원하지 않는 파일 형식'}
         if path.stat().st_size > MAX_FILE_BYTES:
             return {'units': [], 'status': 'partial', 'detail': '파일 크기 한도 초과 · 일부 또는 전체 본문 미확인'}
-        if suffix in {'.txt', '.md'}:
+        from . import document_convert
+        converter = ''
+        if suffix in document_convert.STRUCTURED | {'.pdf'}:
+            if suffix == '.hwpx':
+                _archive(path)[0].close()  # Same bomb, encryption and macro checks before any converter.
+            try:
+                converter = document_convert.convert(path, out.add)
+            except document_convert.ConvertError as error:
+                out = _Collector()
+                if suffix == '.hwp':
+                    # The registry's own HWP 5 reader is the fallback for old Hancom files.
+                    from . import parsers
+                    try:
+                        for unit in parsers.parse_file(path):
+                            out.add(unit['loc'], unit['text'])
+                        converter = 'HWP 기본 해석기'
+                    except Exception:
+                        return {'units': [], 'status': 'error', 'detail': f'HWP 본문을 읽지 못했습니다 · {error}'}
+        if converter:
+            if suffix == '.hwpx':
+                _hwpx_unread_areas(path, out)
+        elif suffix in {'.txt', '.md'}:
             _text(path, out)
         elif suffix == '.csv':
             _csv(path, out)
@@ -302,6 +337,8 @@ def extract(path: Path) -> dict:
             _hwpx(path, out)
         detail = getattr(out, 'detail', '')
         status = 'partial' if out.partial else ('ready' if out.units else 'partial')
+        if not detail and converter and status == 'ready':
+            detail = f'본문 추출 완료 · 표는 행과 열 이름을 함께 보존({converter})'
         if not detail:
             detail = '본문 추출 완료' if status == 'ready' else ('추출 가능한 텍스트가 없습니다' if not out.units else '자원 한도로 본문 일부만 추출했습니다')
         return {'units': out.units, 'status': status, 'detail': detail}

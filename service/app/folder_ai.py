@@ -227,6 +227,8 @@ def model_schema(prompt):
     return schema
 
 def call_model(profile,messages,schema=None):
+    # Ollama is called directly below, so the AI-off switch must be honoured here too.
+    if llm.disabled():raise llm.LLMError('이 요청에서는 AI를 사용하지 않도록 설정되어 있습니다.')
     parsed=urlsplit(profile['base_url'])
     if parsed.port==11434 and parsed.path.rstrip('/')=='/v1':
         # Ollama의 요청별 문맥 크기·JSON 스키마를 사용한다. 서버 전역 설정은 변경하지 않는다.

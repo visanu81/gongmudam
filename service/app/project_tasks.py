@@ -50,7 +50,7 @@ def retrieve(c, pid, files, plan):
             continue
         pool = pools.setdefault(fid, {})
         ev = dict(file_id=fid, unit=unit, loc=loc, text=text, name=files[fid]['name'],
-                  sha256=files[fid]['sha256'], stale=False)
+                  sha256=files[fid]['sha256'], extractor=files[fid].get('extractor'), stale=False)
         for field in dict.fromkeys(key for key, _ in facts(text)):
             values = pool.setdefault(field, [])
             if len(values) < 2 and not any(item['unit'] == unit for item in values):
