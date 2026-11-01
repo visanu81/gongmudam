@@ -11,7 +11,7 @@
   const draftValues = new Map();
   const storageKey = id => `folder-project-question:${id}`;
   const setMessage = (target, text, error = false) => { target.textContent = text || ''; target.classList.toggle('is-error', error); };
-  function materialAdded() { if(matchMedia('(max-width: 680px)').matches) $('#source-details').open=false; question.focus({preventScroll:true}); }
+  function materialAdded() { $('#add-menu').open = false; question.focus({preventScroll:true}); }
   async function api(path, method = 'GET', body) {
     const response = await fetch(`/api/folder-projects${path}`, { method, headers: body === undefined ? {} : { 'Content-Type': 'application/json' }, body: body === undefined ? undefined : JSON.stringify(body) });
     const data = await response.json().catch(() => ({}));
@@ -21,7 +21,7 @@
   function safeId(value) { return encodeURIComponent(value); }
   function projectUrl(id) { return `folders.html#project=${encodeURIComponent(id)}`; }
   function showList() { resetCreateForm(); currentId = ''; generation++; requestVersion++; project = null; selectedFiles.clear(); explicitSelection = false; seenProject = ''; libraryProject = ''; lastMessagesSignature = ''; clearTimeout(timer); timer = null; listView.hidden = false; projectView.hidden = true; $('#back-projects').hidden = true; history.replaceState(null, '', 'folders.html'); question.value = ''; }
-  function showProject(id) { currentId = id; generation++; requestVersion++; project = null; selectedFiles.clear(); explicitSelection = false; draftMode = false; $('#draft-toggle').setAttribute('aria-pressed','false'); $('#draft-toggle').textContent='초안 작성'; seenProject = id; libraryProject = ''; lastMessagesSignature = ''; clearTimeout(timer); timer = null; listView.hidden = true; projectView.hidden = false; $('#source-details').open = matchMedia('(min-width: 681px)').matches; $('#back-projects').hidden = false; history.replaceState(null, '', projectUrl(id)); question.value = localStorage.getItem(storageKey(id)) || ''; setMessage($('#project-message'), ''); refreshProject(); }
+  function showProject(id) { currentId = id; generation++; requestVersion++; project = null; selectedFiles.clear(); explicitSelection = false; draftMode = false; $('#draft-toggle').setAttribute('aria-pressed','false'); $('#draft-toggle').textContent='초안 작성'; seenProject = id; libraryProject = ''; lastMessagesSignature = ''; clearTimeout(timer); timer = null; listView.hidden = true; projectView.hidden = false; $('#add-menu').open = false; $('#back-projects').hidden = false; history.replaceState(null, '', projectUrl(id)); question.value = localStorage.getItem(storageKey(id)) || ''; setMessage($('#project-message'), ''); refreshProject(); }
   function renderProjects() {
     projectList.replaceChildren();
     if (!projects.length) { projectList.append(el('p', 'fp-empty', '아직 프로젝트가 없습니다. 이름을 입력해 프로젝트를 만들어 보세요.')); return; }
@@ -53,7 +53,7 @@
     const focused = document.activeElement?.closest('.fp-file')?.querySelector('input')?.value;
     const previous = selectedFiles; fileList.replaceChildren(); const available = new Set(files.map(f => f.id)); selectedFiles = new Set([...previous].filter(id => available.has(id)));
     $('.fp-source-tools').hidden = !files.length;
-    if (!files.length) { fileList.append(el('p', 'fp-empty', publicDemo ? '시연 자료 추가를 눌러 시작하세요.' : '폴더 추가 또는 파일 추가를 눌러주세요.')); return; }
+    if (!files.length) { fileList.append(el('p', 'fp-empty', '+ 자료 추가를 눌러 파일이나 폴더를 넣어 주세요.')); return; }
     files.slice(0,fileLimit).forEach(file => {
       const label = el('label', 'fp-file'); const input = document.createElement('input'); input.type = 'checkbox'; input.value = file.id;
       input.checked = explicitSelection ? selectedFiles.has(file.id) : true;
@@ -61,7 +61,11 @@
       const body = el('span', 'fp-file-body'); body.append(el('strong', '', file.name), el('small', `fp-status status-${file.status || 'unknown'}`, statusLabel(file.status)));
       if (file.detail && file.status !== 'ready') body.append(el('small', 'fp-muted', file.detail));
       if(file.stale) body.append(el('small','fp-stale','원본 변경 · 다시 읽기 대기'));
-      label.append(input, body); fileList.append(label);
+      label.append(input, body);
+      const row = el('div', 'fp-file-row'); const remove = el('button', 'fp-remove', '빼기'); remove.type = 'button';
+      remove.setAttribute('aria-label', `${file.name} 프로젝트에서 빼기`); remove.title = '이 프로젝트에서만 뺍니다. 원본 파일은 그대로입니다.';
+      remove.addEventListener('click', () => removeItem(`/files/${safeId(file.id)}`, `‘${file.name}’ 파일을 이 프로젝트에서 뺐습니다. 원본 파일은 그대로입니다.`));
+      row.append(label, remove); fileList.append(row);
     });
     if(files.length > fileLimit) { const more=el('button','secondary',`자료 더 보기 (${fileLimit}/${files.length})`); more.type='button';more.onclick=()=>{fileLimit+=100;renderFiles(project.files);};fileList.append(more); }
     if(focused) fileList.querySelector(`input[value="${CSS.escape(focused)}"]`)?.focus({preventScroll:true});
@@ -74,7 +78,14 @@
   function renderSources(sources) {
     const list = el('div', 'fp-source-list');
     if (!sources.length) list.append(el('p', 'fp-empty', '연결된 자료가 없습니다.'));
-    sources.forEach(source => { const row = el('div', 'fp-source-row'); row.append(el('strong', '', source.label), el('span', 'fp-muted', `${source.kind === 'folder' ? '연결 폴더' : '연결 파일'} · ${statusLabel(source.status)}`)); if (source.detail) row.append(el('small', 'fp-muted', source.detail)); list.append(row); });
+    sources.forEach(source => {
+      const row = el('div', 'fp-source-row'); const text = el('div', 'fp-source-text');
+      text.append(el('strong', '', source.label), el('span', 'fp-muted', `${source.kind === 'folder' ? '폴더' : '파일'} · ${statusLabel(source.status)}`));
+      const remove = el('button', 'fp-remove', '빼기'); remove.type = 'button'; remove.setAttribute('aria-label', `${source.label} 연결 빼기`);
+      remove.addEventListener('click', () => { if (source.kind === 'folder' && !window.confirm(`${source.label} 폴더의 파일을 모두 이 프로젝트에서 뺄까요? 원본 폴더는 그대로입니다.`)) return; removeItem(`/sources/${safeId(source.id)}`, `${source.label} 연결을 뺐습니다. 원본은 그대로입니다.`); });
+      row.append(text, remove); list.append(row);
+    });
+    $('#source-count').textContent = sources.length ? `${sources.length}개` : '';
     if (localAccess) {
       $('#add-folder').hidden = false; $('#add-file').hidden = false; $('#add-folder').disabled = pickerBusy; $('#add-file').disabled = pickerBusy;
     } else { $('#add-folder').hidden = true; $('#add-file').hidden = true; }
@@ -84,15 +95,25 @@
     $('#demo-source').hidden = !publicDemo;
     if (publicDemo) $('#demo-source').onclick = async () => { const id = currentId, gen = generation; try { await api(`/${safeId(id)}/demo-source`, 'POST', {}); if (id === currentId && gen === generation) { await refreshProject(id, gen); materialAdded(); } } catch (e) { if (id === currentId && gen === generation) setMessage($('#project-message'), e.message, true); } };
     $('#source-controls').replaceChildren(list);
+    $('#add-note').textContent = localAccess ? '연결한 PC 원본은 바뀌면 자동으로 다시 읽습니다. 사본은 올린 시점의 내용입니다.' : (publicDemo ? '공개 시연에서는 다른 방문자도 자료를 볼 수 있습니다. 공개·합성 자료만 올리세요.' : 'PC 원본 연결은 이 PC의 공무담 화면에서만 할 수 있습니다.');
+  }
+  function renderExcluded(items) {
+    const box = $('#excluded-list'); box.replaceChildren(); $('#excluded-details').hidden = !items.length; $('#excluded-count').textContent = items.length ? `${items.length}개` : '';
+    items.forEach(item => {
+      const row = el('div', 'fp-source-row'); const back = el('button', 'fp-text-button', '다시 넣기'); back.type = 'button';
+      back.addEventListener('click', async () => { const id = currentId, gen = generation; try { await api(`/${safeId(id)}/excluded/restore`, 'POST', { id: item.id }); if (id === currentId && gen === generation) { setMessage($('#project-message'), `‘${item.name}’ 파일을 다시 넣었습니다. 읽기가 끝나면 질문에 사용됩니다.`); await refreshProject(id, gen); } } catch (e) { if (id === currentId && gen === generation) setMessage($('#project-message'), e.message, true); } });
+      row.append(el('strong', '', item.name), back); box.append(row);
+    });
+  }
+  async function removeItem(path, done) {
+    const id = currentId, gen = generation; if (!id) return;
+    try { await api(`/${safeId(id)}${path}`, 'DELETE'); if (id === currentId && gen === generation) { setMessage($('#project-message'), done); await refreshProject(id, gen); } }
+    catch (e) { if (id === currentId && gen === generation) setMessage($('#project-message'), e.message, true); }
   }
   async function loadLibrariesForProject(id = currentId, gen = generation) {
     if (!id || libraryProject === id) return;
     libraryProject = id;
     const container = $('#library-controls'); container.replaceChildren();
-    const uploads = el('details', 'fp-uploads'); uploads.append(el('summary', '', '파일 사본 업로드'));
-    uploads.append(el('p', 'fp-muted', publicDemo ? '공개·합성 자료만 추가하세요. 방문자가 같은 자료를 봅니다.' : '원본 폴더와 자동 동기화되지 않는 사본을 추가합니다.'));
-    for(const folder of [false,true]) { const button = el('button','secondary', folder ? '폴더 사본 선택' : '파일 사본 선택'); button.type='button'; button.addEventListener('click',()=>addUploads(id,gen,folder)); uploads.append(button); }
-    container.append(uploads);
     try {
       const response = await fetch('/api/folders/libraries'); const libraries = await readJson(response);
       if (id !== currentId || gen !== generation) return;
@@ -100,9 +121,9 @@
       if (!items.length) { container.append(el('p', 'fp-muted', '연결할 기존 자료함이 없습니다.')); return; }
       const label = el('label', '', '기존 자료함 연결'); const select = document.createElement('select'); select.setAttribute('aria-label', '연결할 기존 자료함');
       select.append(new Option('자료함 선택', ''));
-      items.forEach(lib => { const option = new Option(lib.name || lib.id, lib.id); option.dataset.projectId = lib.id; select.append(option); const a = el('a', 'fp-library-link', lib.name || lib.id); a.href = `folders-advanced.html#${encodeURIComponent(lib.id)}`; container.append(a); });
+      items.forEach(lib => { const option = new Option(lib.name || lib.id, lib.id); option.dataset.projectId = lib.id; select.append(option); });
       const add = el('button', 'secondary', '자료함 연결'); add.type = 'button'; add.addEventListener('click', async () => { if (!select.value) return; const target = id; try { await api(`/${safeId(target)}/libraries`, 'POST', { library_id: select.value }); if (target === currentId && gen === generation) await refreshProject(target, gen); } catch (e) { if (target === currentId && gen === generation) setMessage($('#project-message'), e.message, true); } });
-      label.append(select); container.append(label, add);
+      label.append(select); const all = el('a', 'fp-library-link', '기존 자료함 전체 보기 →'); all.href = 'folders-advanced.html'; container.append(label, add, all);
     } catch (e) { if (id === currentId && gen === generation) { libraryProject = ''; container.append(el('p', 'fp-muted', `기존 자료함 목록을 불러오지 못했습니다: ${e.message}`)); } }
   }
   async function chooseLocal(kind, id = currentId, gen = generation) {
@@ -138,7 +159,7 @@
         const created = await readJson(await fetch('/api/folders/uploads', { method: 'POST', body: form }));
         if (id !== currentId || gen !== generation) return;
         await api(`/${safeId(id)}/libraries`, 'POST', { library_id: created.id });
-        if (id === currentId && gen === generation) { setMessage($('#project-message'), '업로드한 자료함을 프로젝트에 연결했습니다. 원본 폴더와 자동 동기화되지 않습니다.'); await refreshProject(id, gen); }
+        if (id === currentId && gen === generation) { setMessage($('#project-message'), '올린 사본을 프로젝트에 넣었습니다. 원본과 자동 동기화되지 않습니다.'); await refreshProject(id, gen); materialAdded(); }
       } catch (e) { if (id === currentId && gen === generation) setMessage($('#project-message'), e.message, true); }
     });
     input.click();
@@ -167,6 +188,8 @@
         if (coverage) info.append(el('p', 'fp-coverage', `자료 확인 범위: 전체 ${coverage.total ?? 0} · 읽음 ${coverage.ready ?? 0} · 일부 ${coverage.partial ?? 0} · 미확인 ${coverage.unread ?? 0}`));
         article.append(info);
       }
+      const keep = el('button', 'fp-text-button fp-keep', isOutput(message) ? '결과물에 저장됨 ✓' : '결과물로 저장'); keep.type = 'button'; keep.setAttribute('aria-pressed', String(isOutput(message)));
+      keep.addEventListener('click', () => setOutput(message, !isOutput(message))); article.append(keep);
       if (message.evidence?.length) { const group = el('details', 'fp-citations'); group.append(el('summary', '', `근거 ${message.evidence.length}개`)); message.evidence.forEach(ev => group.append(evidenceBlock(ev))); article.append(group); }
       if (message.draft) {
         const edit = el('details', 'fp-edit-draft'); const summary = el('summary', '', '초안 수정'); const area = document.createElement('textarea'); area.rows = 8; area.value = draftValues.get(message.id) ?? (message.content || ''); area.setAttribute('aria-label', '보고서 초안 수정'); area.addEventListener('input', () => draftValues.set(message.id, area.value));
@@ -186,7 +209,6 @@
     const area = $('#job-area'); area.replaceChildren();
     const active = jobs.filter(job => ['queued', 'waiting', 'running'].includes(job.status));
     const history = jobs.filter(job => !['queued', 'waiting', 'running'].includes(job.status));
-    $('#job-history').hidden = !jobs.length;
     const reading = active[0];
     $('#reading-progress').hidden = !reading;
     $('#reading-progress').textContent = reading ? `자료 읽는 중 · 전체 ${reading.total ?? '확인 중'}개 중 ${reading.processed || 0}개 읽음 · 질문을 미리 입력해도 됩니다.` : '';
@@ -209,9 +231,9 @@
     const files = data.files || [], messages = data.messages || [];
     $('#project-summary').textContent = files.length ? `${files.length}개 파일이 담겨 있습니다.` : (publicDemo ? '시연 자료를 추가해 시작하세요.' : '폴더나 파일을 추가해 시작하세요.');
     $('#file-count').textContent = `${files.length}개 파일`;
-    renderSources(data.sources || []); renderFiles(files); renderJobs(data.jobs || [], files);
+    renderSources(data.sources || []); renderFiles(files); renderExcluded(data.excluded || []); renderJobs(data.jobs || [], files); renderOutputs(messages);
     updateSelectionSummary(files);
-    const signature = JSON.stringify(messages.map(m => [m.id, m.status, m.content, m.draft, m.evidence?.map(e => [e.file_id,e.stale])]));
+    const signature = JSON.stringify(messages.map(m => [m.id, m.status, m.content, m.draft, m.output, m.evidence?.map(e => [e.file_id,e.stale])]));
     if (signature !== lastMessagesSignature) {
       const focused = document.activeElement; const focusMessage = focused?.closest('.fp-message-row')?.dataset.messageId; const selection = focused?.selectionStart;
       const openDetails = new Set([...conversation.querySelectorAll('details[open]')].map(d => `${d.closest('[data-message-id]')?.dataset.messageId}:${d.querySelector('summary')?.textContent}`));
@@ -225,8 +247,40 @@
       if (focusMessage) { const row = conversation.querySelector(`[data-message-id="${CSS.escape(focusMessage)}"]`); const area = row?.querySelector('textarea'); if (area) { area.focus(); if (selection !== undefined) area.setSelectionRange(selection, selection); } }
     }
     if (seenProject !== currentId) { seenProject = currentId; libraryProject = ''; }
-    const librariesDetails = $('#project-material-management');
-    if (librariesDetails.open && libraryProject !== currentId) loadLibrariesForProject(currentId, generation);
+    if ($('#add-menu').open && libraryProject !== currentId) loadLibrariesForProject(currentId, generation);
+  }
+  // Outputs: answers made from the outputs panel, drafts, and answers the user kept.
+  function isOutput(message) { return message.role === 'assistant' && (message.output === true || (message.output == null && !!message.draft)); }
+  async function setOutput(message, saved) {
+    const id = currentId, gen = generation;
+    try { await api(`/${safeId(id)}/messages/${safeId(message.id)}/output`, 'POST', { saved }); if (id === currentId && gen === generation) await refreshProject(id, gen); }
+    catch (e) { if (id === currentId && gen === generation) setMessage($('#project-message'), e.message, true); }
+  }
+  const outputLabels = new Map([...document.querySelectorAll('[data-output]')].map(b => [b.dataset.output, b.textContent.trim()]));
+  function outputTitle(message, messages) { const asked = messages.find(m => m.id === message.user_id)?.content || message.question || ''; if (outputLabels.has(asked)) return outputLabels.get(asked); return asked.length > 40 ? asked.slice(0, 40) + '…' : asked || '결과물'; }
+  function localTime(value) { const at = new Date(value || ''); return isNaN(at) ? '' : at.toLocaleString('ko-KR', { month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit' }); }
+  function renderOutputs(messages) {
+    const list = $('#output-list'); const items = messages.filter(isOutput).reverse();
+    const open = new Set([...list.querySelectorAll('details[open]')].map(d => d.dataset.messageId));
+    list.replaceChildren();
+    if (!items.length) { list.append(el('p', 'fp-empty', '아직 결과물이 없습니다. 위 버튼으로 만들거나 대화 답변을 저장하세요.')); return; }
+    items.forEach(message => {
+      const card = el('details', 'fp-output'); card.dataset.messageId = message.id; card.open = open.has(message.id);
+      const done = message.status === 'completed';
+      const summary = el('summary'); summary.append(el('strong', '', outputTitle(message, messages)), el('small', 'fp-muted', done ? `${message.draft ? '초안' : '정리'} · ${localTime(message.edited_at || message.created_at)}` : '만드는 중…'));
+      card.append(summary);
+      if (done) {
+        const text = draftValues.get(message.id) ?? (message.content || '');
+        card.append(el('div', 'fp-output-text', text.replace(/\n{3,}/g, '\n\n')));
+        const actions = el('div', 'fp-output-actions');
+        const copy = el('button', 'fp-text-button', '복사'); copy.type = 'button'; copy.addEventListener('click', async () => { try { await navigator.clipboard.writeText(text); setMessage($('#project-message'), '결과물을 복사했습니다.'); } catch { setMessage($('#project-message'), '복사하지 못했습니다. 내용을 선택해 복사해 주세요.', true); } });
+        const save = el('button', 'fp-text-button', 'TXT로 저장'); save.type = 'button'; save.addEventListener('click', () => { const url = URL.createObjectURL(new Blob([text], { type: 'text/plain;charset=utf-8' })); const a = document.createElement('a'); a.href = url; a.download = `${project?.name || '업무'}-${outputTitle(message, messages).replace(/[\\/:*?"<>|]/g, '')}.txt`; a.click(); setTimeout(() => URL.revokeObjectURL(url), 1000); });
+        const go = el('button', 'fp-text-button', '대화에서 보기'); go.type = 'button'; go.addEventListener('click', () => { const row = conversation.querySelector(`[data-message-id="${CSS.escape(message.id)}"]`); if (row) { row.scrollIntoView({ block: 'center', behavior: 'smooth' }); row.classList.add('is-highlight'); setTimeout(() => row.classList.remove('is-highlight'), 1600); } });
+        const drop = el('button', 'fp-text-button', '결과물에서 빼기'); drop.type = 'button'; drop.addEventListener('click', () => setOutput(message, false));
+        actions.append(copy, save, go, drop); card.append(actions);
+      }
+      list.append(card);
+    });
   }
   $('#new-project-form').addEventListener('submit', async e => {
     e.preventDefault(); const input = $('#new-project-name'); const name = input.value.trim(); if (!name) return;
@@ -252,7 +306,17 @@
   $('#clear-file-selection').addEventListener('click', () => { explicitSelection = false; selectedFiles.clear(); fileList.querySelectorAll('input[type=checkbox]').forEach(c => c.checked = true); updateSelectionSummary(); });
   $('#refresh-project').addEventListener('click', async () => { const id = currentId, gen = generation; if (!id) return; try { await api(`/${safeId(id)}/refresh`, 'POST', {}); if (id === currentId && gen === generation) await refreshProject(id, gen); } catch (e) { if (id === currentId && gen === generation) setMessage($('#project-message'), e.message, true); } });
   $('#retry-project').addEventListener('click', () => refreshProject());
-  $('#project-material-management').addEventListener('toggle', e => { if (e.currentTarget.open) loadLibrariesForProject(currentId, generation); });
+  $('#add-menu').addEventListener('toggle', e => { if (e.currentTarget.open) loadLibrariesForProject(currentId, generation); });
+  $('#upload-files').addEventListener('click', () => addUploads(currentId, generation, false));
+  $('#upload-folder').addEventListener('click', () => addUploads(currentId, generation, true));
+  document.querySelectorAll('[data-output]').forEach(b => b.addEventListener('click', async () => {
+    const id = currentId, gen = generation; if (!id) return;
+    if (!(project?.files || []).length) { setMessage($('#project-message'), '먼저 + 자료 추가로 자료를 넣어 주세요.', true); return; }
+    if (explicitSelection && !selectedFiles.size) { setMessage($('#project-message'), '자료를 선택하거나 전체 자료로 질문을 눌러주세요.', true); return; }
+    const body = { content: b.dataset.output, file_ids: explicitSelection ? [...selectedFiles] : [], draft: !!b.dataset.draft, output: true };
+    try { await api(`/${safeId(id)}/messages`, 'POST', body); if (id === currentId && gen === generation) { setMessage($('#project-message'), `‘${b.textContent}’ 만드는 중입니다. 다 되면 결과물 칸에 표시됩니다.`); await refreshProject(id, gen); } }
+    catch (e) { if (id === currentId && gen === generation) setMessage($('#project-message'), e.message, true); }
+  }));
   $('#back-projects').addEventListener('click', e => { e.preventDefault(); showList(); loadProjects(); });
   window.addEventListener('hashchange', route);
   let importing = '';

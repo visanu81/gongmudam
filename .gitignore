@@ -31,3 +31,4 @@ tmp/
 Thumbs.db
 
 # Bundled public sources, font licenses, OCR assets and offline wheels are intentional.
+.playwright-mcp/

@@ -92,6 +92,10 @@ def safe_file(path, root):
         raise ValueError('파일을 찾지 못했습니다.')
 
 
+def excluded_id(key):
+    return hashlib.sha256(key.encode('utf-8')).hexdigest()[:16]
+
+
 def stale(file):
     try:
         path = Path(file['path'])
@@ -115,7 +119,9 @@ def detail(c, pid):
         for e in m.get('evidence', []):
             f = lookup.get(e['file_id'])
             e['stale'] = not f or e['sha256'] != f.get('sha256') or stale(f)
-    return value | {'sources': rows(c, 'project_sources', pid),
+    # Excluded files are listed by name and an opaque id; the PC path stays on the server.
+    value = value | {'excluded': [{'id': excluded_id(e['key']), 'name': e['name']} for e in value.get('excluded', [])]}
+    return value | {'sources': [{k: v for k, v in s.items() if k != 'path'} for s in rows(c, 'project_sources', pid)],
                     'files': [{k: v for k, v in f.items() if k not in ('path', 'root')} | {'stale': stale(f)} for f in files],
                     'messages': messages, 'jobs': rows(c, 'project_jobs', pid)[-20:]}
 
@@ -137,10 +143,20 @@ class Question(folders.Strict):
     content: str = Field(min_length=1, max_length=4000)
     file_ids: list[str] = Field(default_factory=list, max_length=10000)
     draft: bool = False
+    # Asked from the outputs panel: the answer is kept there as a result.
+    output: bool = False
 
 
 class Edit(folders.Strict):
     content: str = Field(min_length=1, max_length=30000)
+
+
+class Output(folders.Strict):
+    saved: bool
+
+
+class Restore(folders.Strict):
+    id: str = Field(pattern='^[0-9a-f]{16}$')
 
 
 @router.get('')
@@ -335,7 +351,8 @@ def ask(pid: str, body: Question):
         put(c, 'project_messages', user)
         answer = dict(id=uuid.uuid4().hex, project_id=pid, role='assistant', content='', status='queued',
                       created_at=now, question=body.content, user_id=user['id'], file_ids=body.file_ids,
-                      draft=body.draft or project_query.is_draft_request(body.content), evidence=[])
+                      draft=body.draft or project_query.is_draft_request(body.content), evidence=[],
+                      output=body.output or None)
         put(c, 'project_messages', answer)
         p['updated_at'] = now
         put(c, 'folder_projects', p)
@@ -350,6 +367,85 @@ def edit(pid: str, mid: str, body: Edit):
             raise HTTPException(422, '완료된 초안만 수정할 수 있습니다.')
         m.setdefault('revisions', []).append({'content': m['content'], 'at': stamp()})
         m.update(content=body.content, edited_at=stamp())
+        put(c, 'project_messages', m)
+        return detail(c, pid)
+
+
+def reading(c, pid):
+    if any(j['status'] in ('queued', 'running') for j in rows(c, 'project_jobs', pid)):
+        raise HTTPException(409, '자료를 읽는 중입니다. 읽기가 끝난 뒤 빼거나 읽기를 취소하세요.')
+
+
+def forget_files(c, files):
+    for f in files:
+        c.execute('DELETE FROM project_units WHERE file_id=?', (f['id'],))
+        c.execute('DELETE FROM project_files WHERE id=?', (f['id'],))
+
+
+@router.delete('/{pid}/sources/{sid}')
+def remove_source(pid: str, sid: str):
+    """Stop using a connected folder or file. The original on the PC is never touched."""
+    with db() as c:
+        c.execute('BEGIN IMMEDIATE')
+        p = get(c, 'folder_projects', pid)
+        source = get(c, 'project_sources', sid)
+        if source['project_id'] != pid:
+            raise HTTPException(404, '이 프로젝트의 자료가 아닙니다.')
+        reading(c, pid)
+        forget_files(c, [f for f in rows(c, 'project_files', pid) if f.get('source_id') == sid])
+        c.execute('DELETE FROM project_sources WHERE id=?', (sid,))
+        p['updated_at'] = stamp()
+        put(c, 'folder_projects', p)
+        return detail(c, pid)
+
+
+@router.delete('/{pid}/files/{fid}')
+def remove_file(pid: str, fid: str):
+    """Leave one file out of the project; a file inside a folder stays out on later reads."""
+    with db() as c:
+        c.execute('BEGIN IMMEDIATE')
+        p = get(c, 'folder_projects', pid)
+        f = get(c, 'project_files', fid)
+        if f['project_id'] != pid:
+            raise HTTPException(404, '이 프로젝트의 자료가 아닙니다.')
+        reading(c, pid)
+        source = next((s for s in rows(c, 'project_sources', pid) if s['id'] == f.get('source_id')), None)
+        if source and source['kind'] == 'file':
+            c.execute('DELETE FROM project_sources WHERE id=?', (source['id'],))
+        else:
+            key = folders.path_key(Path(f['path']))
+            excluded = p.setdefault('excluded', [])
+            if not any(e['key'] == key for e in excluded):
+                excluded.append({'key': key, 'name': f['name']})
+        forget_files(c, [f])
+        p['updated_at'] = stamp()
+        put(c, 'folder_projects', p)
+        return detail(c, pid)
+
+
+@router.post('/{pid}/excluded/restore', status_code=202)
+def restore_file(pid: str, body: Restore):
+    with db() as c:
+        c.execute('BEGIN IMMEDIATE')
+        p = get(c, 'folder_projects', pid)
+        before = len(p.get('excluded', []))
+        p['excluded'] = [e for e in p.get('excluded', []) if excluded_id(e['key']) != body.id]
+        if len(p['excluded']) == before:
+            raise HTTPException(404, '제외한 파일 목록에 없습니다.')
+        p['updated_at'] = stamp()
+        put(c, 'folder_projects', p)
+        queue(c, pid)
+        return detail(c, pid)
+
+
+@router.post('/{pid}/messages/{mid}/output')
+def keep_output(pid: str, mid: str, body: Output):
+    """Keep an answer in the outputs panel, or take it out; the conversation is unchanged."""
+    with db() as c:
+        m = get(c, 'project_messages', mid)
+        if m['project_id'] != pid or m['role'] != 'assistant' or m['status'] != 'completed':
+            raise HTTPException(422, '완료된 답변만 결과물로 저장할 수 있습니다.')
+        m['output'] = body.saved
         put(c, 'project_messages', m)
         return detail(c, pid)
 
@@ -379,8 +475,8 @@ def original(pid: str, fid: str, sha256: str = ''):
         return FileResponse(f['path'], filename=f['name'])
 
 
-def discover(sources):
-    found, seen, warnings = [], set(), []
+def discover(sources, excluded=()):
+    found, seen, warnings = [], set(excluded), []
     entries = 0
     for s in sources:
         root = Path(s['path']) if s['kind'] == 'folder' else Path(s['path']).parent
@@ -686,7 +782,7 @@ class Worker:
                 previous = rows(c, 'project_files', p['id'])
             if not sources:
                 continue
-            found, warnings = discover(sources)
+            found, warnings = discover(sources, {e['key'] for e in p.get('excluded', [])})
             if warnings:
                 continue  # A failed walk is not proof of deletion; manual retry remains available.
             old = {folders.path_key(Path(f['path'])): (f['size'], f['mtime_ns']) for f in previous if f['status'] != 'missing'}
@@ -716,9 +812,10 @@ class Worker:
             self.tick(jid)
             with db(self.path) as c:
                 sources = rows(c, 'project_sources', pid)
+                excluded = {e['key'] for e in get(c, 'folder_projects', pid).get('excluded', [])}
                 job.update(status='running', started_at=stamp())
                 put(c, 'project_jobs', job)
-            found, warnings = discover(sources)
+            found, warnings = discover(sources, excluded)
             job.update(total=len(found), processed=0, warnings=warnings, error='')
             with db(self.path) as c:
                 # Publish the inventory first: file selection is possible during reads.

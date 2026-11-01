@@ -117,6 +117,60 @@ class FolderProjectsTest(unittest.TestCase):
         self.assertEqual(self.client.get(f'/api/folder-projects/{pid}').json()['messages'][-1]['content'],'담당자가 검토한 초안')
         self.assertEqual(original.read_bytes(),before)
 
+    def test_remove_file_folder_and_restore_never_touch_originals(self):
+        folder=self.root/'교육';folder.mkdir()
+        keep=folder/'안내.txt';keep.write_text('교육 회신 마감은 11월 6일입니다.',encoding='utf-8')
+        drop=folder/'메모.txt';drop.write_text('행사 예산은 123만원입니다.',encoding='utf-8')
+        single=self.root/'단독.txt';single.write_text('단독 파일 내용입니다.',encoding='utf-8')
+        pid=self.create();self.source(pid,folder);self.source(pid,single,'file');self.start()
+        v=self.wait(pid,lambda v:v['jobs'][-1]['status']=='completed' and len(v['files'])==3)
+        self.assertNotIn('path',v['sources'][0])
+        memo=next(f for f in v['files'] if f['name']=='메모.txt')
+        v=self.client.delete(f'/api/folder-projects/{pid}/files/{memo["id"]}').json()
+        self.assertEqual(sorted(f['name'] for f in v['files']),['단독.txt','안내.txt'])
+        self.assertEqual([e['name'] for e in v['excluded']],['메모.txt'])
+        self.assertNotIn(str(folder),json.dumps(v['excluded'],ensure_ascii=False))
+        # A later read of the folder keeps the excluded file out.
+        self.client.post(f'/api/folder-projects/{pid}/refresh')
+        v=self.wait(pid,lambda v:v['jobs'][-1]['status']=='completed')
+        self.assertNotIn('메모.txt',[f['name'] for f in v['files']])
+        self.question(pid,'행사 예산은 얼마인가요?')
+        self.assertFalse(self.answered(pid)['messages'][-1]['evidence'])
+        # Putting it back reads it again.
+        self.client.post(f'/api/folder-projects/{pid}/excluded/restore',json={'id':v['excluded'][0]['id']})
+        v=self.wait(pid,lambda v:v['jobs'][-1]['status']=='completed' and len(v['files'])==3)
+        self.assertEqual(v['excluded'],[])
+        # Removing a single-file source removes the source too; removing the folder removes its files.
+        lone=next(f for f in v['files'] if f['name']=='단독.txt')
+        v=self.client.delete(f'/api/folder-projects/{pid}/files/{lone["id"]}').json()
+        self.assertEqual([s['kind'] for s in v['sources']],['folder'])
+        v=self.client.delete(f'/api/folder-projects/{pid}/sources/{v["sources"][0]["id"]}').json()
+        self.assertEqual((v['sources'],v['files']),([],[]))
+        for path in (keep,drop,single):self.assertTrue(path.exists())
+
+    def test_removal_waits_for_a_running_read(self):
+        a=self.root/'a.txt';a.write_text('내용',encoding='utf-8')
+        pid=self.create();v=self.source(pid,a,'file')
+        r=self.client.delete(f'/api/folder-projects/{pid}/sources/{v["sources"][0]["id"]}')
+        self.assertEqual(r.status_code,409)
+
+    def test_outputs_panel_keeps_and_drops_answers(self):
+        a=self.root/'a.txt';a.write_text('교육 회신 마감은 11월 6일입니다.\n참석 대상은 총무과입니다.',encoding='utf-8')
+        pid=self.create();self.source(pid,a,'file');self.start()
+        self.wait(pid,lambda v:v['jobs'][-1]['status']=='completed')
+        self.question(pid,'요약',output=True)
+        answer=self.answered(pid)['messages'][-1]
+        self.assertTrue(answer['output'])
+        self.question(pid,'회신 마감은 언제인가요?')
+        plain=self.answered(pid)['messages'][-1]
+        self.assertFalse(plain.get('output'))
+        v=self.client.post(f'/api/folder-projects/{pid}/messages/{plain["id"]}/output',json={'saved':True}).json()
+        self.assertTrue(v['messages'][-1]['output'])
+        v=self.client.post(f'/api/folder-projects/{pid}/messages/{answer["id"]}/output',json={'saved':False}).json()
+        self.assertFalse(next(m for m in v['messages'] if m['id']==answer['id'])['output'])
+        user=next(m for m in v['messages'] if m['role']=='user')
+        self.assertEqual(self.client.post(f'/api/folder-projects/{pid}/messages/{user["id"]}/output',json={'saved':True}).status_code,422)
+
     def test_project_and_explicit_file_scope_are_isolated(self):
         a=self.root/'a.txt';a.write_text('교육 회신 마감은 11월 6일입니다.',encoding='utf-8')
         b=self.root/'b.txt';b.write_text('행사 예산은 123만원입니다.',encoding='utf-8')

@@ -35,3 +35,39 @@
 
 /* The desktop already shows the local/public environment above this window. */
 .gongmudam-embedded.folder-projects-page #gongmudam-context{display:none}
+
+/* Three panes like a notebook: sources | conversation | outputs (2026-11-01). */
+.fp-three{grid-template-columns:minmax(230px,270px) minmax(0,1fr) minmax(250px,310px);gap:0;max-width:none;align-items:stretch;border:1px solid var(--fp-border);border-radius:14px;background:#fff;margin-top:10px;min-height:calc(100dvh - 170px)}
+.fp-three .fp-panel{min-width:0;padding:14px 16px}
+.fp-three .fp-sources{position:static;max-height:none;border-right:1px solid var(--fp-border);padding:14px 14px 14px 16px;background:#fbfcfc;border-radius:14px 0 0 14px;overflow:visible}
+.fp-three .fp-studio{border-left:1px solid var(--fp-border);background:#fbfcfc;border-radius:0 14px 14px 0}
+.fp-three .fp-conversation{max-width:none;display:flex;flex-direction:column;padding:14px 18px}
+.fp-panel h2{font-size:15px;margin:0;color:#244a45;font-weight:680}.fp-small{font-size:12px;line-height:1.5}
+.fp-panel-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px;position:relative}
+.fp-add-menu>summary{list-style:none;cursor:pointer;font-size:12px;padding:6px 10px;white-space:nowrap}.fp-add-menu>summary::-webkit-details-marker{display:none}
+.fp-add-options{position:absolute;right:0;top:calc(100% + 6px);z-index:5;width:min(280px,80vw);display:grid;gap:6px;padding:10px;background:#fff;border:1px solid var(--fp-border);border-radius:11px;box-shadow:0 10px 28px rgba(24,45,61,.14)}
+.fp-add-options .secondary{text-align:left;font-size:13px;padding:8px 10px}.fp-add-options p{margin:2px 0 0;font-size:12px;line-height:1.45}
+.fp-library-controls{display:grid;gap:6px;border-top:1px solid #e8eeeb;padding-top:7px}.fp-library-controls label{display:grid;gap:4px;font-size:12px;color:var(--fp-muted)}.fp-library-controls select{font-size:13px;padding:6px 8px}
+.fp-file-row{display:flex;align-items:flex-start;gap:4px;border-bottom:1px solid #e8eeeb}.fp-file-row .fp-file{flex:1;border-bottom:0;min-width:0}
+.fp-remove{flex:none;border:0;background:none;color:#8a5a4c;font-size:12px;padding:8px 4px;cursor:pointer;opacity:.75}.fp-remove:hover,.fp-remove:focus-visible{opacity:1;text-decoration:underline}
+.fp-source-row{display:flex;align-items:center;justify-content:space-between;gap:6px}.fp-source-text{display:grid;gap:1px;min-width:0}
+.fp-panel-section{margin-top:10px;border-top:1px solid var(--fp-border);padding-top:8px}.fp-panel-section>summary{cursor:pointer;color:#315c50;font-size:12px;font-weight:650}.fp-panel-section .secondary{font-size:12px;padding:6px 9px;margin-top:6px}
+.fp-three .fp-messages{flex:1;max-height:none;min-height:220px;height:calc(100dvh - 400px);overflow:auto}
+.fp-message-row.is-highlight{outline:2px solid #9cd2bf;border-radius:10px;outline-offset:4px}
+.fp-keep{margin-top:6px;font-size:12px}.fp-keep[aria-pressed="true"]{color:#516a62;text-decoration:none}
+.fp-generators{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:10px 0 12px}.fp-generators .secondary{font-size:12px;padding:8px 6px}
+.fp-output-list{display:grid;gap:8px}.fp-output{border:1px solid var(--fp-border);border-radius:10px;background:#fff;padding:8px 10px}
+.fp-output>summary{cursor:pointer;display:grid;gap:2px}.fp-output>summary strong{font-size:13px;font-weight:620;overflow-wrap:anywhere}.fp-output>summary small{font-size:11px}
+.fp-output-text{white-space:pre-wrap;overflow-wrap:anywhere;font-size:13px;line-height:1.6;max-height:340px;overflow:auto;margin:8px 0;padding-top:8px;border-top:1px solid #edf1ef}
+.fp-output-actions{display:flex;flex-wrap:wrap;gap:4px 10px}
+@media(max-width:1180px){.fp-three{grid-template-columns:minmax(185px,215px) minmax(0,1fr) minmax(200px,235px)}.fp-three .fp-panel{padding:12px}.fp-generators{grid-template-columns:1fr}}
+@media(max-width:900px){.fp-three{grid-template-columns:minmax(185px,225px) minmax(0,1fr)}.fp-three .fp-studio{grid-column:1/-1;border-left:0;border-top:1px solid var(--fp-border);border-radius:0 0 14px 14px}.fp-three .fp-sources{border-radius:14px 0 0 0}.fp-generators{grid-template-columns:repeat(5,minmax(0,1fr))}.fp-three .fp-messages{height:calc(100dvh - 430px)}}
+@media(max-width:680px){.fp-three{grid-template-columns:1fr}.fp-three .fp-sources{border-right:0;border-bottom:1px solid var(--fp-border);border-radius:14px 14px 0 0}.fp-generators{grid-template-columns:1fr 1fr}.fp-three .fp-messages{height:auto;max-height:50dvh}.fp-add-options{left:0;right:auto}}
+.gongmudam-embedded .fp-three{min-height:calc(100dvh - 120px)}.gongmudam-embedded .fp-three .fp-messages{max-height:none;height:calc(100dvh - 360px)}
+/* Panes fill the window; each scrolls inside, so the question box stays in view. */
+.fp-three{height:calc(100dvh - 205px);min-height:440px}.fp-three .fp-panel{overflow:auto}.fp-three .fp-conversation{overflow:hidden}
+.fp-three .fp-messages,.gongmudam-embedded .fp-three .fp-messages{flex:1;min-height:0;height:auto;max-height:none}
+.fp-add-options{position:static;width:auto;margin-top:8px;box-shadow:none;background:#f6f9f8}.fp-panel-head{flex-wrap:wrap}.fp-add-menu{flex:1 0 100%;order:2}.fp-add-menu>summary{display:inline-block}.fp-panel-head h2{order:1}
+.fp-panel-head{display:grid;grid-template-columns:1fr auto}.fp-panel-head .fp-add-menu{grid-column:1/-1;grid-row:2}.fp-panel-head .fp-add-menu>summary{position:absolute;right:0;top:-2px}
+.gongmudam-embedded .fp-three{height:calc(100dvh - 165px);min-height:420px}
+@media(max-width:900px){.fp-three{height:auto}.fp-three .fp-panel{overflow:visible}.fp-three .fp-messages,.gongmudam-embedded .fp-three .fp-messages{flex:none;height:45dvh;min-height:220px}}

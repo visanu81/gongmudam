@@ -4,7 +4,7 @@
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
   <title>자료에 질문하기 | 서무비서</title><link rel="icon" href="data:,">
   <link rel="preload" href="fonts/PretendardVariable.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="design.css?v=27"><link rel="stylesheet" href="folder-projects.css?v=notebook-20261026">
+  <link rel="stylesheet" href="design.css?v=27"><link rel="stylesheet" href="folder-projects.css?v=three-20261101c">
 </head>
 <body class="studio-ui folder-projects-page">
   <aside class="sidebar">
@@ -26,29 +26,54 @@
     </section>
     <section id="project-view" hidden aria-labelledby="project-title">
       <header class="fp-project-head"><div><h1 id="project-title"></h1><p id="project-summary" class="fp-muted"></p><button id="retry-project" type="button" class="fp-text-button" hidden>다시 불러오기</button></div></header>
-      <div class="fp-workspace">
-        <aside class="fp-sources" aria-label="자료 목록">
-          <div class="fp-source-actions"><button id="add-folder" class="secondary" type="button" hidden>폴더 추가</button><button id="add-file" class="secondary" type="button" hidden>파일 추가</button><button id="demo-source" class="secondary" type="button" hidden>시연 자료 추가</button></div>
-          <details id="source-details" open><summary><span>자료</span><span id="file-count" class="fp-count">0개 파일</span></summary>
-            <p id="selection-summary" class="fp-selection" aria-live="polite">전체 자료를 질문에 사용합니다.</p>
-            <div class="fp-source-tools"><button id="select-all-files" type="button" class="fp-text-button">모두 선택</button><button id="clear-file-selection" type="button" class="fp-text-button">전체 자료로 질문</button></div>
-            <div id="file-list" class="fp-file-list"></div>
-          </details>
+      <div class="fp-workspace fp-three">
+        <aside class="fp-sources fp-panel" aria-labelledby="sources-title">
+          <div class="fp-panel-head"><h2 id="sources-title">자료 <span id="file-count" class="fp-count">0개 파일</span></h2>
+            <details id="add-menu" class="fp-add-menu"><summary class="primary">+ 자료 추가</summary>
+              <div class="fp-add-options" role="group" aria-label="자료 추가 방법">
+                <button id="add-folder" class="secondary" type="button" hidden>내 PC 폴더 연결</button>
+                <button id="add-file" class="secondary" type="button" hidden>내 PC 파일 연결</button>
+                <button id="upload-files" class="secondary" type="button">파일 사본 올리기</button>
+                <button id="upload-folder" class="secondary" type="button">폴더 사본 올리기</button>
+                <button id="demo-source" class="secondary" type="button" hidden>시연 자료 추가</button>
+                <div id="library-controls" class="fp-library-controls"></div>
+                <p id="add-note" class="fp-muted"></p>
+              </div>
+            </details>
+          </div>
+          <p id="reading-progress" class="fp-notice" role="status" hidden></p>
+          <p id="selection-summary" class="fp-selection" aria-live="polite">전체 자료를 질문에 사용합니다.</p>
+          <div class="fp-source-tools"><button id="select-all-files" type="button" class="fp-text-button">모두 선택</button><button id="clear-file-selection" type="button" class="fp-text-button">전체 자료로 질문</button></div>
+          <div id="file-list" class="fp-file-list"></div>
+          <details id="source-details" class="fp-panel-section"><summary>연결한 폴더·파일 <span id="source-count" class="fp-count"></span></summary><div id="source-controls"></div></details>
+          <details id="excluded-details" class="fp-panel-section" hidden><summary>뺀 파일 <span id="excluded-count" class="fp-count"></span></summary><div id="excluded-list"></div></details>
+          <details id="job-history" class="fp-panel-section"><summary>읽기 상태</summary><section id="job-area" class="fp-jobs" aria-live="polite"></section><button id="refresh-project" class="secondary" type="button">자료 다시 읽기</button><p class="fp-muted fp-small">빼기는 이 프로젝트에서만 제외합니다. 내 PC의 원본 파일은 지우지 않습니다.</p></details>
         </aside>
-        <div class="fp-conversation">
-          <h2 class="fp-chat-title">자료에 질문하기</h2><p id="reading-progress" class="fp-notice" role="status" hidden></p><div id="conversation" class="fp-messages" aria-live="polite"></div>
+        <section class="fp-conversation fp-panel" aria-labelledby="chat-title">
+          <h2 id="chat-title" class="fp-chat-title">자료에 질문하기</h2><div id="conversation" class="fp-messages" aria-live="polite"></div>
           <form id="question-form" class="fp-composer">
             <div class="fp-suggestions" aria-label="질문 예시"><button type="button" data-prompt="요약">요약</button><button type="button" data-prompt="일정과 할 일을 정리해줘">일정과 할 일</button><button type="button" data-prompt="자료 내용을 비교해줘">비교</button><button type="button" data-prompt="보고서 초안을 작성해줘">보고서 초안</button></div>
             <label class="sr-only" for="question-input">질문</label><textarea id="question-input" rows="2" maxlength="4000" placeholder="이 프로젝트 자료에 대해 질문하세요."></textarea>
             <p id="upstage-notice" class="fp-muted" hidden>업스테이지 사용 시 질문과 검색된 자료 일부를 외부 API로 보냅니다. AI 없이 사용하려면 <a href="index.html#settings">모델 설정</a>에서 offline을 선택하세요.</p><div class="fp-composer-footer"><span class="fp-muted">선택한 자료를 답변 근거로 사용합니다.</span><div><button id="draft-toggle" class="secondary" type="button" aria-pressed="false">초안 작성</button><button id="send-question" class="primary" type="submit">질문하기</button></div></div>
             <p id="project-message" class="fp-message" role="status" aria-live="polite"></p>
           </form>
-        </div>
+        </section>
+        <aside class="fp-studio fp-panel" aria-labelledby="studio-title">
+          <h2 id="studio-title">결과물</h2>
+          <p class="fp-muted fp-small">선택한 자료로 정리·초안을 만들고 모아 둡니다. 대화의 답변도 저장할 수 있습니다.</p>
+          <div class="fp-generators" role="group" aria-label="결과물 만들기">
+            <button type="button" class="secondary" data-output="자료 전체를 요약해줘">요약 노트</button>
+            <button type="button" class="secondary" data-output="일정과 할 일을 정리해줘">일정·할 일</button>
+            <button type="button" class="secondary" data-output="자료 내용을 비교해줘">비교표</button>
+            <button type="button" class="secondary" data-output="보고서 초안을 작성해줘" data-draft="1">보고서 초안</button>
+            <button type="button" class="secondary" data-output="안내문 초안을 작성해줘" data-draft="1">안내문 초안</button>
+          </div>
+          <div id="output-list" class="fp-output-list" aria-live="polite"></div>
+        </aside>
       </div>
-      <details class="fp-advanced" id="project-material-management"><summary>자료 관리</summary><div id="source-controls" class="fp-source-controls"></div><details id="job-history" class="fp-job-history" hidden><summary>읽기 진행 및 작업 기록</summary><section id="job-area" class="fp-jobs" aria-live="polite"></section></details><button id="refresh-project" class="secondary" type="button">자료 다시 읽기</button><p>업로드 자료는 서버에 사본으로 저장되며 원본 폴더와 자동 동기화되지 않습니다. 공개 시연에서는 자료와 분석 결과를 다른 방문자도 볼 수 있으니 공개·합성 자료만 올리세요.</p><div id="library-controls"></div><a href="folders-advanced.html">기존 자료함 전체 목록 보기 →</a></details>
     </section>
   </main>
   <script src="workspace-flow.js?v=45"></script>
-  <script src="folder-projects.js?v=upstage-20261028"></script>
+  <script src="folder-projects.js?v=three-20261101b"></script>
 </body>
 </html>
