@@ -25,6 +25,19 @@ class FolderInputsTest(unittest.TestCase):
     def test_traversal_and_windows_names_rejected(self):
         for path in ['../out.txt','A/../out.txt','C:/out.txt','/out.txt','A\\out.txt','A/CON.txt','A/.secret.txt','A/run.exe','A/x:ads.txt']:
             with self.subTest(path=path):self.assertEqual(self.post([path]).status_code,422)
+    def test_public_upload_with_personal_details_is_refused_and_removed(self):
+        # A real application form was uploaded to the shared site on 2026-11-02.
+        for text in ['성명: 홍길동\n연락처: 010-2345-6789','이메일: hong@naver.com','주민등록번호: 900101-1234567']:
+            with self.subTest(text=text):
+                r=self.post(['신청/신청서.txt'],('[합성] 참가신청서\n'+text).encode())
+                self.assertEqual(r.status_code,422);self.assertIn('개인정보',r.json()['detail']);self.assertNotIn('2345',r.json()['detail'])
+        self.assertEqual(list((self.root/'synthetic-folders/uploads').iterdir()),[])
+    def test_public_upload_keeps_placeholders_and_office_contacts(self):
+        text='연락처: 010-0000-0000 / 010-1234-5678\n담당: 02-2100-3456, someone@korea.kr, a@example.test'
+        self.assertEqual(self.post(['안내/안내.txt'],('[합성] 안내\n'+text).encode()).status_code,201)
+    def test_personal_app_upload_is_not_checked(self):
+        self.app.state.public_demo=False
+        self.assertEqual(self.post(['신청/신청서.txt'],'연락처: 010-2345-6789'.encode()).status_code,201)
     def test_public_requires_consent(self):self.assertEqual(self.post(consent=False).status_code,422)
     def test_mismatched_paths(self):self.assertEqual(self.post(['A/a.txt','A/b.txt']).status_code,422)
     def test_size_limit_cleans_incomplete_upload(self):

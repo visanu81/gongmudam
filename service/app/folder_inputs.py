@@ -2,7 +2,8 @@
 from pathlib import Path, PurePosixPath
 import json, os, re, shutil, subprocess, sys, threading, uuid
 from fastapi import APIRouter, File, Form, HTTPException, Request, UploadFile
-from . import folders, native_picker
+from fastapi.concurrency import run_in_threadpool
+from . import folders, native_picker, project_text, public_privacy
 
 router = APIRouter(prefix='/api/folders', tags=['폴더 선택·업로드'])
 ROOT = Path(__file__).resolve().parents[1]
@@ -75,6 +76,13 @@ async def upload(request:Request, name:str=Form(...), paths:str=Form(...), situa
                     size+=len(chunk);total+=len(chunk)
                     if size>folders.MAX_BYTES or total>MAX_TOTAL:raise HTTPException(413,'파일당 5MB·전체 10MB까지 업로드할 수 있습니다.')
                     stream.write(chunk)
+            if public:
+                # Read what each file says before anything else does; a file with personal details is refused and removed.
+                kinds=public_privacy.found(str(path))
+                if not kinds:
+                    units=(await run_in_threadpool(project_text.extract,target)).get('units') or []
+                    kinds=public_privacy.found('\n'.join(u['text'] for u in units))
+                if kinds:raise HTTPException(422,public_privacy.refusal(str(path),kinds))
         result=folders.connect(folders.Connect(name=name.strip(),roots=[str(dest)],situation=situation))
         result['import_notice']='선택한 파일의 업로드 사본입니다. 원래 PC 폴더의 추가·수정은 자동 동기화하지 않습니다.'
         return result

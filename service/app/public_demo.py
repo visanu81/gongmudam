@@ -9,7 +9,7 @@ from urllib.parse import urlsplit
 from fastapi import HTTPException,Request
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel,ConfigDict,Field
-from . import upstage
+from . import public_privacy, upstage
 
 ROOT=Path(__file__).resolve().parents[1]
 MODELS={'local_gemma':'gemma3:4b','local_llama':'llama3.2:3b'}
@@ -128,6 +128,7 @@ def create_app():
         except ValueError as exc:raise HTTPException(422,str(exc)) from None
         path=incoming/name
         if path.is_symlink() or path.is_junction():raise HTTPException(403,'연결점 파일은 변경하지 않습니다.')
+        if kinds:=public_privacy.found(name+'\n'+body.content):raise HTTPException(422,public_privacy.refusal(name,kinds))
         with path.open('w',encoding='utf-8',newline='\n') as stream:stream.write(body.content)
         return dict(name=name,notice='공개 시연 폴더에 저장했습니다. 자동 감지 후 AI 변경 제안을 확인하세요.',library_id=definition['folder_library_id'])
     app.router.routes.append(static_mount)
