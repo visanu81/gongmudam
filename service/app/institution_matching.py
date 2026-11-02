@@ -59,9 +59,15 @@ def agency_pattern(name):
 
 def without_agency(query,name):return re.sub(agency_pattern(name),' ',query,flags=re.IGNORECASE)
 
+# Bodies a question names as a place or counterpart (건강검진, 연금), not as the asker's institution.
+PLACE_BODIES={'국민건강보험공단','국민연금공단','공무원연금공단','건강보험공단'}
+
+
 def named_agencies(query):
-    names=re.findall(r'[가-힣A-Za-z0-9]+(?:시청|군청|구청|교육청|소방서|경찰서|공단|공사|대학교|기관|의회|사무처)',query)
-    return [n for n in names if n not in {'우리기관','소속기관','본기관','국가기관','지방기관','교육기관'}]
+    # N3 (teammate r2): '요구청구', '시청각', '공사 대금' are not institution names.
+    names=re.findall(r'[가-힣A-Za-z0-9]+(?:(?:시|군|구)청(?![각률자색하한할함했구])|교육청|소방서|경찰서|공단|'
+                     r'공사(?!\s*(?:대금|비|계약|현장|기간|중|감독))|대학교|기관|의회|사무처)',query)
+    return [n for n in names if n not in {'우리기관','소속기관','본기관','국가기관','지방기관','교육기관',*PLACE_BODIES}]
 
 def relevant(query,source):
     """Require a specific subject, plus any requested discriminating facet."""

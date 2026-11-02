@@ -22,6 +22,14 @@ QUOTE=900
 # The guidelines have no section on these; a page that merely mentions the word is not practice.
 NO_PRACTICE={'pay_payday','pay_table'}
 GUIDELINE={'national_pay':'national','national_allowance':'national','welfare':'national','local_pay':'local','local_allowance':'local'}
+UNREADABLE=re.compile('[-]+')
+
+
+def readable(text):
+    """Equation fonts in the official PDFs carry private-use glyphs with no character
+    mapping (e.g. the 6/12 fraction on 226 p.76); no PDF reader recovers them. Say so
+    instead of showing broken symbols. The stored, hash-checked text is unchanged."""
+    return UNREADABLE.sub('[수식·기호: 원문 확인 필요]', text)
 
 
 @lru_cache(maxsize=1)
@@ -84,8 +92,8 @@ def search(query,topic,law):
     # Show the page from the line that names the subject; the full page stays as text.
     lines=page['text'].splitlines()
     start=next((i for i,line in enumerate(lines) if anchor in re.sub(r'\s+','',line)),0)
-    quote='\n'.join(lines[start:])[:QUOTE]
-    return [dict(id=f"{LIBRARY}:{page['sha256'][:16]}",text=page['text'],quote=quote,loc=f"p.{page['page']} · {official['article']}",
+    quote=readable('\n'.join(lines[start:])[:QUOTE])
+    return [dict(id=f"{LIBRARY}:{page['sha256'][:16]}",text=readable(page['text']),quote=quote,loc=f"p.{page['page']} · {official['article']}",
                  source_id=f"{LIBRARY}:{key}",title=f"{row['title']} {page['chapter']}",kind=row['kind'],institution=row['institution'],
                  effective_date=row['effective_date'],sha256=page['sha256'],limited=False,library_id=LIBRARY,
                  file_id=page['sha256'][:16],official=official,score=round(scores[best],2))]

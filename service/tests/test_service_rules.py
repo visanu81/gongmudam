@@ -108,6 +108,21 @@ class ServiceRulesTest(Base):
         # A question about another status keeps the question's own scope.
         self.assertEqual(scope('local_public_official', '경기도', '경기도', '소방공무원 장기재직휴가는?'), '소방공무원 장기재직휴가는?')
 
+    def test_ordinary_words_are_not_read_as_offices_or_ranks(self):
+        # N3 counterexamples from the teammate's r2 handoff, plus police rank words used as ordinary words.
+        for query in ('시청각 교육 연가', '시청한 영상 출장', '도청 방지 장비 구매', '요구청구 처리', '감시청구',
+                      '경위서 작성 연가', '징계 경감 기준', '경사진 도로 출장'):
+            with self.subTest(query=query):
+                self.assertIsNone(service_rules.status(query))
+        self.assertEqual(service_rules.status('국가공무원 시청 출장 연가'), 'national')
+        self.assertEqual(service_rules.status('수원시청 연가'), 'local')
+        self.assertEqual(service_rules.status('경위 승진 후 연가'), 'police')
+        from app import institution_matching
+        for query in ('요구청구 처리', '감시청구 공가', '국민건강보험공단 건강검진 공가', '공사 대금 지급'):
+            with self.subTest(query=query):
+                self.assertEqual(institution_matching.named_agencies(query), [])
+        self.assertEqual(institution_matching.named_agencies('수원시청 출장'), ['수원시청'])
+
     def test_overtime_is_not_a_business_trip(self):
         plan = knowledge_intent.analyze('시간외근무 명령은 누가 하나요?')
         self.assertEqual(plan['topics'], ['overtime'])

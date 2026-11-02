@@ -105,7 +105,8 @@ def search(query,k=2):
     hits=[]
     for index,score in ranked:
         unit=scoped[index];page=f"p.{unit['pages'][0]}" if unit['pages'] else ''
-        hits.append(dict(id=f"{LIBRARY}:{unit['sha256'][:16]}",text=unit['text'],loc=' · '.join(p for p in (page,unit['path']) if p),
+        from .pay_guidelines import readable
+        hits.append(dict(id=f"{LIBRARY}:{unit['sha256'][:16]}",text=readable(unit['text']),loc=' · '.join(p for p in (page,unit['path']) if p),
                          source_id=f"{LIBRARY}:{unit['chapter']}",title=f"{manifest['title']} {unit['chapter']}",kind=manifest['kind'],
                          institution=manifest['institution'],effective_date=manifest['effective_date'],sha256=unit['sha256'],
                          limited=False,library_id=LIBRARY,file_id=unit['sha256'][:16],official=_official(manifest,unit),score=round(score,2)))

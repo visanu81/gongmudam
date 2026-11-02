@@ -55,6 +55,15 @@ class PayGuidelinesTest(Base):
         welfare = self.practice('맞춤형복지 포인트 사용 기준은?')
         self.assertTrue(welfare[0]['official']['article'].startswith('제11장'))
 
+    def test_unmapped_equation_glyphs_are_marked_not_shown(self):
+        # 226 p.76: the 6/12 fraction is stored as private-use glyphs; no PDF reader recovers it.
+        row, pages = pay_guidelines.catalog()['national']
+        stored = next(p for p in pages if p['page'] == 76)['text']
+        self.assertTrue(pay_guidelines.UNREADABLE.search(stored))
+        shown = pay_guidelines.readable(stored)
+        self.assertFalse(pay_guidelines.UNREADABLE.search(shown))
+        self.assertIn('7,554,360원×[수식·기호: 원문 확인 필요]', shown)
+
     def test_holiday_bonus_is_a_pay_question_not_leave(self):
         from app import guidance
         self.assertEqual(guidance.topic('명절휴가비 얼마나 나와?')[0], 'pay')

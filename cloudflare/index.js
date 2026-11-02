@@ -27,7 +27,19 @@ export class GongmudamDemo extends Container {
       },
     });
   }
+
+  // The library waits about 20s for the port when a request wakes the container.
+  // A cold start restores the demo and loads the service, which can take longer;
+  // the first visitor after a sleep then got "Failed to start container" (2026-11-02).
+  async fetch(request) {
+    if (!this.container.running) {
+      await this.startAndWaitForPorts(this.defaultPort, WAKE, undefined).catch(() => {});
+    }
+    return super.fetch(request);
+  }
 }
+
+const WAKE = {instanceGetTimeoutMS: 30_000, portReadyTimeoutMS: 120_000};
 
 export default {
   fetch(request, env) {

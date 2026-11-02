@@ -137,11 +137,16 @@ def _source_units(query,docs,today,plan):
                 units.append(dict(id=f"{d['id']}:{i}:{offset}",text=text,loc=((official['article']+' · ') if official else '')+u['loc'],source_id=d['id'],title=d['title'],kind=d['kind'],institution=d['institution'],effective_date=d['effective_date'],sha256=d['sha256'],limited=d['limited'],library_id=d['library_id'],file_id=d['file_id'],official=official))
     return units,excluded
 
+# Up to 500 ranked units reach the intent filters. With 48, many notes that repeat a
+# question pushed the official article out before filtering (teammate r2 regression).
+# Measured 2026-11-02: no change in the 85 reviewed answers, +4% time.
+CANDIDATES=500
+
 def _rank_units(query,units):
     """Rank source units using the existing expanded-query BM25 settings."""
     hits=[]
     if units:
-        bm=BM25([u['title']+' '+u['text'] for u in units]);hits=[units[i]|{'score':round(s,2)} for i,s in bm.top(relevance.expanded_query(query),k=48,min_score=1.0)]
+        bm=BM25([u['title']+' '+u['text'] for u in units]);hits=[units[i]|{'score':round(s,2)} for i,s in bm.top(relevance.expanded_query(query),k=CANDIDATES,min_score=1.0)]
     return hits
 
 def _experience_hits(query,library_id):

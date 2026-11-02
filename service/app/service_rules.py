@@ -18,8 +18,11 @@ STATUS=(
  # 소방청과 그 소속기관은 국가 소방이라 시·도 조례를 적용하지 않습니다.
  ('fire_national',r'소방청소속|국가소방|중앙소방학교|국립소방연구원|중앙119구조본부'),
  ('fire',r'소방'),
- ('police',r'경찰|순경|경장|경사|경위|경감|경정|총경|치안'),
- ('local',r'지방공무원|지방직|지자체|지방자치단체|시청|군청|구청|도청|읍사무소|면사무소|주민센터|행정복지센터'),
+ # Rank words are also ordinary words (경위서, 징계 경감, 경사진); the question's own spacing decides.
+ ('police',r'경찰|순경|치안'),
+ # N3 (teammate r2): 시청각·시청한·도청 방지·요구청구 are words, not offices.
+ ('local',r'지방공무원|지방직|지자체|지방자치단체|(?:시|군|구)청(?![각률자색하한할함했구])|도청(?![각률자색하한할함했구]|방지|탐지|장비)|'
+          r'읍사무소|면사무소|주민센터|행정복지센터'),
  ('national',r'국가공무원|국가직|국가기관|중앙부처|중앙행정기관|정부부처'),
 )
 # Regulations read for each status; the special rules come first. Without a
@@ -116,9 +119,18 @@ SUBJECT=re.compile(r'호봉|봉급|승급|월급|급여|보수지급|보수계�
                    r'겸직|영리|정치|복장|복제|지각|조퇴|외출|휴무|포상|국외여행|여행|교대|선서|비밀|친절|복무|토요일|공휴일|근무혁신|유연근무|파견|겸임')
 
 
+POLICE_RANK=re.compile(r'(?:^|[^가-힣])(?:경장|경사|경위|경감|경정|총경)(?=\s*(?:님|으로|이|가|은|는|입니다|인데|이고|이에요|승진|계급|근무|연가|휴가|출장|당직|공가|병가))')
+EXPLICIT_NATIONAL=re.compile(r'국가공무원|국가직')
+EXPLICIT_LOCAL=re.compile(r'지방공무원|지방직')
+
+
 def status(query):
     q=re.sub(r'\s+','',query)
-    return next((key for key,pattern in STATUS if re.search(pattern,q)),None)
+    for key,pattern in STATUS:
+        # A stated 국가공무원 outranks a place word such as 시청 (N3); a stated 지방직 does not.
+        if key=='local' and EXPLICIT_NATIONAL.search(q) and not EXPLICIT_LOCAL.search(q):continue
+        if re.search(pattern,q) or key=='police' and POLICE_RANK.search(query):return key
+    return None
 
 
 def region(query):
