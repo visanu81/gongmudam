@@ -1,0 +1,767 @@
+[
+ {
+  "id": "sr-national-annual",
+  "question": "국가공무원 연가는 재직기간별로 며칠인가요?",
+  "rule": "leave",
+  "laya": "leave",
+  "confidence": 1.0,
+  "seconds": 0.393,
+  "status": 200
+ },
+ {
+  "id": "sr-national-annual-2",
+  "question": "국가직 공무원인데 입사 2년차면 연가가 며칠이에요?",
+  "rule": "leave",
+  "laya": "leave",
+  "confidence": 0.4851,
+  "seconds": 0.36,
+  "status": 200
+ },
+ {
+  "id": "sr-local-annual",
+  "question": "지방공무원 재직기간별 연가 일수 알려줘",
+  "rule": "leave",
+  "laya": "leave",
+  "confidence": 0.9937,
+  "seconds": 0.31,
+  "status": 200
+ },
+ {
+  "id": "sr-fire-annual",
+  "question": "소방공무원 연가 일수는 재직기간별로 어떻게 돼?",
+  "rule": "leave",
+  "laya": "leave",
+  "confidence": 0.9999,
+  "seconds": 0.32,
+  "status": 200
+ },
+ {
+  "id": "sr-police-annual",
+  "question": "경찰공무원 연가는 며칠인가요?",
+  "rule": "leave",
+  "laya": "leave",
+  "confidence": 0.5306,
+  "seconds": 0.33,
+  "status": 200
+ },
+ {
+  "id": "sr-local-advance",
+  "question": "지방공무원 연가 당겨쓰기 가능한가요?",
+  "rule": "leave",
+  "laya": "leave",
+  "confidence": 1.0,
+  "seconds": 0.3,
+  "status": 200
+ },
+ {
+  "id": "sr-national-sick",
+  "question": "국가공무원 병가는 연간 며칠까지 쓸 수 있나요?",
+  "rule": "leave",
+  "laya": "leave",
+  "confidence": 0.9965,
+  "seconds": 0.34,
+  "status": 200
+ },
+ {
+  "id": "sr-fire-public",
+  "question": "소방공무원 공가 사유가 뭐예요?",
+  "rule": "leave",
+  "laya": "leave",
+  "confidence": 0.4255,
+  "seconds": 0.39,
+  "status": 200
+ },
+ {
+  "id": "sr-fire-health",
+  "question": "소방관인데 특수건강진단 받으러 가면 공가인가요?",
+  "rule": "leave",
+  "laya": "duty",
+  "confidence": 0.4381,
+  "seconds": 0.35,
+  "status": 200
+ },
+ {
+  "id": "sr-police-public",
+  "question": "경찰공무원 공가는 어떤 경우에 받을 수 있나요?",
+  "rule": "leave",
+  "laya": "discipline",
+  "confidence": 0.8043,
+  "seconds": 0.32,
+  "status": 200
+ },
+ {
+  "id": "sr-fire-reward",
+  "question": "소방공무원 포상휴가는 며칠까지 가능한가요?",
+  "rule": "leave",
+  "laya": "leave",
+  "confidence": 0.4822,
+  "seconds": 0.34,
+  "status": 200
+ },
+ {
+  "id": "sr-police-reward",
+  "question": "경찰 포상휴가는 연가에 포함돼?",
+  "rule": "leave",
+  "laya": "leave",
+  "confidence": 0.9975,
+  "seconds": 0.34,
+  "status": 200
+ },
+ {
+  "id": "sr-national-holiday",
+  "question": "국가공무원 휴가기간 중 토요일이나 공휴일은 휴가일수에 포함되나요?",
+  "rule": "leave",
+  "laya": "leave",
+  "confidence": 0.6508,
+  "seconds": 0.33,
+  "status": 200
+ },
+ {
+  "id": "sr-local-holiday",
+  "question": "지방공무원 병가 중에 낀 공휴일도 휴가 일수에 들어가나요?",
+  "rule": "leave",
+  "laya": "leave",
+  "confidence": 0.9466,
+  "seconds": 0.31,
+  "status": 200
+ },
+ {
+  "id": "sr-national-hours",
+  "question": "국가공무원 근무시간은 몇 시부터 몇 시까지인가요?",
+  "rule": "general",
+  "laya": "overtime",
+  "confidence": 0.6881,
+  "seconds": 0.308,
+  "status": 200
+ },
+ {
+  "id": "sr-local-hours",
+  "question": "지방공무원 근무시간은 몇 시부터인가요?",
+  "rule": "general",
+  "laya": "overtime",
+  "confidence": 0.8717,
+  "seconds": 0.308,
+  "status": 200
+ },
+ {
+  "id": "sr-national-overtime",
+  "question": "국가공무원 시간외근무는 어떻게 명하나요?",
+  "rule": "overtime",
+  "laya": "overtime",
+  "confidence": 0.9958,
+  "seconds": 0.33,
+  "status": 200
+ },
+ {
+  "id": "sr-local-overtime",
+  "question": "지방공무원 초과근무하면 다음날 쉴 수 있나요?",
+  "rule": "overtime",
+  "laya": "overtime",
+  "confidence": 0.4143,
+  "seconds": 0.329,
+  "status": 200
+ },
+ {
+  "id": "sr-police-drinking",
+  "question": "경찰공무원 근무시간 중 음주해도 되나요?",
+  "rule": "general",
+  "laya": "overtime",
+  "confidence": 0.5574,
+  "seconds": 0.289,
+  "status": 200
+ },
+ {
+  "id": "sr-police-travel",
+  "question": "경찰공무원 휴무일에 여행 갈 때 신고해야 하나요?",
+  "rule": "leave",
+  "laya": "discipline",
+  "confidence": 0.6865,
+  "seconds": 0.309,
+  "status": 200
+ },
+ {
+  "id": "sr-fire-travel",
+  "question": "소방공무원이 비번날 멀리 여행 가면 신고해야 하나요?",
+  "rule": "general",
+  "laya": "duty",
+  "confidence": 0.5554,
+  "seconds": 0.328,
+  "status": 200
+ },
+ {
+  "id": "sr-fire-duty",
+  "question": "소방공무원 비상소집은 어떻게 하나요?",
+  "rule": "general",
+  "laya": "duty",
+  "confidence": 0.9963,
+  "seconds": 0.309,
+  "status": 200
+ },
+ {
+  "id": "sr-police-duty",
+  "question": "경찰 비상소집 절차는 누가 정하나요?",
+  "rule": "general",
+  "laya": "duty",
+  "confidence": 0.9999,
+  "seconds": 0.308,
+  "status": 200
+ },
+ {
+  "id": "sr-unknown-sick",
+  "question": "병가는 연간 며칠까지 쓸 수 있나요?",
+  "rule": "leave",
+  "laya": "leave",
+  "confidence": 1.0,
+  "seconds": 0.29,
+  "status": 200
+ },
+ {
+  "id": "sr-overtime-not-trip",
+  "question": "시간외근무 명령은 누가 하나요?",
+  "rule": "overtime",
+  "laya": "overtime",
+  "confidence": 1.0,
+  "seconds": 0.3,
+  "status": 200
+ },
+ {
+  "id": "sr-fire-occasion",
+  "question": "소방공무원 부모님 사망 경조사휴가 일수는?",
+  "rule": "leave",
+  "laya": "general",
+  "confidence": 0.1514,
+  "seconds": 0.3,
+  "status": 200
+ },
+ {
+  "id": "sr-police-occasion",
+  "question": "경찰공무원 자녀 결혼 휴가는?",
+  "rule": "leave",
+  "laya": "discipline",
+  "confidence": 0.7312,
+  "seconds": 0.299,
+  "status": 200
+ },
+ {
+  "id": "sr-fire-grandparent",
+  "question": "소방관 조부모 사망하면 특별휴가 며칠이에요?",
+  "rule": "leave",
+  "laya": "general",
+  "confidence": 0.3193,
+  "seconds": 0.31,
+  "status": 200
+ },
+ {
+  "id": "sr-police-spouse-birth",
+  "question": "경찰 배우자 출산휴가 며칠?",
+  "rule": "leave",
+  "laya": "general",
+  "confidence": 0.2276,
+  "seconds": 0.3,
+  "status": 200
+ },
+ {
+  "id": "sg-halfday",
+  "question": "국가공무원 반일연가는 몇 시 기준으로 오전 오후를 나누나요?",
+  "rule": "leave",
+  "laya": "leave",
+  "confidence": 0.9716,
+  "seconds": 0.31,
+  "status": 200
+ },
+ {
+  "id": "sg-id-card-lost",
+  "question": "공무원증 분실하면 어떻게 하나요?",
+  "rule": "general",
+  "laya": "duty",
+  "confidence": 0.6169,
+  "seconds": 0.298,
+  "status": 200
+ },
+ {
+  "id": "sg-discipline-committee",
+  "question": "징계위원회는 어떻게 구성하나요?",
+  "rule": "discipline",
+  "laya": "discipline",
+  "confidence": 0.825,
+  "seconds": 0.29,
+  "status": 200
+ },
+ {
+  "id": "sg-outside-lecture",
+  "question": "국가공무원 외부강의 신고는 어떻게 하나요?",
+  "rule": "general",
+  "laya": "general",
+  "confidence": 0.2702,
+  "seconds": 0.308,
+  "status": 200
+ },
+ {
+  "id": "sr-national-long-service",
+  "question": "국가공무원 장기재직휴가 며칠?",
+  "rule": "leave",
+  "laya": "general",
+  "confidence": 0.3686,
+  "seconds": 0.31,
+  "status": 200
+ },
+ {
+  "id": "sr-gyeonggi-long-service",
+  "question": "경기도청 지방공무원 장기재직휴가 며칠?",
+  "rule": "leave",
+  "laya": "general",
+  "confidence": 0.3463,
+  "seconds": 0.29,
+  "status": 200
+ },
+ {
+  "id": "sr-gyeonggi-fire-long-service",
+  "question": "장기재직휴가 며칠이야?\n업무환경: 경기도 소속 소방공무원",
+  "rule": "leave",
+  "laya": "overtime",
+  "confidence": 0.3337,
+  "seconds": 0.309,
+  "status": 200
+ },
+ {
+  "id": "sr-national-fire-long-service",
+  "question": "장기재직휴가 며칠이야?\n업무환경: 소방청 소속 소방공무원",
+  "rule": "leave",
+  "laya": "overtime",
+  "confidence": 0.3689,
+  "seconds": 0.301,
+  "status": 200
+ },
+ {
+  "id": "sr-fire-long-service-unbundled",
+  "question": "소방공무원 장기재직휴가 며칠?",
+  "rule": "leave",
+  "laya": "general",
+  "confidence": 0.2523,
+  "seconds": 0.3,
+  "status": 200
+ },
+ {
+  "id": "sr-city-long-service",
+  "question": "장기재직휴가 며칠이야?\n업무환경: 지방공무원",
+  "rule": "leave",
+  "laya": "overtime",
+  "confidence": 0.4031,
+  "seconds": 0.3,
+  "status": 200
+ },
+ {
+  "id": "sr-long-service-no-status",
+  "question": "장기재직휴가 며칠이야?",
+  "rule": "leave",
+  "laya": "overtime",
+  "confidence": 0.5453,
+  "seconds": 0.3,
+  "status": 200
+ },
+ {
+  "id": "sr-gyeonggi-region-leave",
+  "question": "새내기도약휴가 며칠?\n업무환경: 경기도 소속 지방공무원",
+  "rule": "leave",
+  "laya": "general",
+  "confidence": 0.3081,
+  "seconds": 0.321,
+  "status": 200
+ },
+ {
+  "id": "sr-national-election-rest",
+  "question": "국가공무원 선거사무 후 휴무 기한은?",
+  "rule": "leave",
+  "laya": "general",
+  "confidence": 0.3775,
+  "seconds": 0.309,
+  "status": 200
+ },
+ {
+  "id": "sr-local-election-rest",
+  "question": "선거사무 종사 후 휴무는 언제까지 써야 해?\n업무환경: 지방공무원",
+  "rule": "leave",
+  "laya": "general",
+  "confidence": 0.1923,
+  "seconds": 0.31,
+  "status": 200
+ },
+ {
+  "id": "sr-gyeonggi-fire-public-leave",
+  "question": "공가 사유 알려줘\n업무환경: 경기도 소속 소방공무원",
+  "rule": "leave",
+  "laya": "general",
+  "confidence": 0.3233,
+  "seconds": 0.31,
+  "status": 200
+ },
+ {
+  "id": "sa-diligence-no-status",
+  "question": "정근수당 지급 기준 알려줘",
+  "rule": "pay",
+  "laya": "pay",
+  "confidence": 0.3657,
+  "seconds": 0.299,
+  "status": 200
+ },
+ {
+  "id": "sa-national-diligence",
+  "question": "국가공무원 정근수당 언제 받아?",
+  "rule": "pay",
+  "laya": "pay",
+  "confidence": 0.6154,
+  "seconds": 0.28,
+  "status": 200
+ },
+ {
+  "id": "sa-local-family",
+  "question": "지방공무원 가족수당 얼마야?",
+  "rule": "pay",
+  "laya": "pay",
+  "confidence": 0.5882,
+  "seconds": 0.28,
+  "status": 200
+ },
+ {
+  "id": "sa-fire-family",
+  "question": "소방공무원 가족수당 기준",
+  "rule": "pay",
+  "laya": "general",
+  "confidence": 0.4725,
+  "seconds": 0.279,
+  "status": 200
+ },
+ {
+  "id": "sa-national-holiday",
+  "question": "명절휴가비 얼마나 나와?\n업무환경: 국가공무원",
+  "rule": "pay",
+  "laya": "general",
+  "confidence": 0.2961,
+  "seconds": 0.291,
+  "status": 200
+ },
+ {
+  "id": "sa-local-holiday",
+  "question": "지방공무원 명절휴가비 기준",
+  "rule": "pay",
+  "laya": "general",
+  "confidence": 0.6543,
+  "seconds": 0.289,
+  "status": 200
+ },
+ {
+  "id": "sa-local-overtime",
+  "question": "초과근무수당 지급 기준\n업무환경: 지방공무원",
+  "rule": "pay",
+  "laya": "general",
+  "confidence": 0.3309,
+  "seconds": 0.29,
+  "status": 200
+ },
+ {
+  "id": "sa-national-annual-comp",
+  "question": "연가보상비 못 받는 경우는?\n업무환경: 국가공무원",
+  "rule": "pay",
+  "laya": "leave",
+  "confidence": 0.3757,
+  "seconds": 0.29,
+  "status": 200
+ },
+ {
+  "id": "sa-allowance-clarify",
+  "question": "수당 알려줘",
+  "rule": "pay",
+  "laya": "pay",
+  "confidence": 0.949,
+  "seconds": 0.3,
+  "status": 200
+ },
+ {
+  "id": "sw-welfare-use",
+  "question": "맞춤형복지 포인트 사용 기준은?",
+  "rule": "pay",
+  "laya": "general",
+  "confidence": 0.442,
+  "seconds": 0.29,
+  "status": 200
+ },
+ {
+  "id": "sw-welfare-grant",
+  "question": "맞춤형복지 복지점수 어떻게 부여해?\n업무환경: 국가공무원",
+  "rule": "pay",
+  "laya": "general",
+  "confidence": 0.2571,
+  "seconds": 0.299,
+  "status": 200
+ },
+ {
+  "id": "sw-welfare-local",
+  "question": "맞춤형복지\n업무환경: 경기도 소속 지방공무원",
+  "rule": "pay",
+  "laya": "general",
+  "confidence": 0.3746,
+  "seconds": 0.3,
+  "status": 200
+ },
+ {
+  "id": "sd-national-duty",
+  "question": "국가공무원 당직 편성 기준",
+  "rule": "duty",
+  "laya": "duty",
+  "confidence": 0.9981,
+  "seconds": 0.35,
+  "status": 200
+ },
+ {
+  "id": "sp-local-payday",
+  "question": "월급 언제 나와?\n업무환경: 지방공무원",
+  "rule": "pay",
+  "laya": "pay",
+  "confidence": 1.0,
+  "seconds": 0.349,
+  "status": 200
+ },
+ {
+  "id": "sp-police-payday",
+  "question": "보수 지급일은?\n업무환경: 경찰공무원",
+  "rule": "pay",
+  "laya": "pay",
+  "confidence": 0.945,
+  "seconds": 0.35,
+  "status": 200
+ },
+ {
+  "id": "sp-raise-no-status",
+  "question": "승급은 언제 해?",
+  "rule": "pay",
+  "laya": "pay",
+  "confidence": 0.9971,
+  "seconds": 0.31,
+  "status": 200
+ },
+ {
+  "id": "sp-national-raise",
+  "question": "정기승급 기간\n업무환경: 국가공무원",
+  "rule": "pay",
+  "laya": "pay",
+  "confidence": 0.9214,
+  "seconds": 0.289,
+  "status": 200
+ },
+ {
+  "id": "sp-national-sick-leave-pay",
+  "question": "질병휴직하면 봉급 얼마나 받아?\n업무환경: 국가공무원",
+  "rule": "pay",
+  "laya": "pay",
+  "confidence": 0.9945,
+  "seconds": 0.32,
+  "status": 200
+ },
+ {
+  "id": "sp-local-salary-table",
+  "question": "9급 1호봉 봉급 얼마야?\n업무환경: 지방공무원",
+  "rule": "pay",
+  "laya": "pay",
+  "confidence": 1.0,
+  "seconds": 0.33,
+  "status": 200
+ },
+ {
+  "id": "sp-national-initial-step",
+  "question": "초임호봉 경력 인정 기준\n업무환경: 국가공무원",
+  "rule": "pay",
+  "laya": "pay",
+  "confidence": 0.9994,
+  "seconds": 0.31,
+  "status": 200
+ },
+ {
+  "id": "sp-local-absence",
+  "question": "결근하면 봉급 감액돼?\n업무환경: 지방공무원",
+  "rule": "pay",
+  "laya": "pay",
+  "confidence": 0.9986,
+  "seconds": 0.299,
+  "status": 200
+ },
+ {
+  "id": "sp-pay-clarify",
+  "question": "호봉 알려줘",
+  "rule": "pay",
+  "laya": "pay",
+  "confidence": 0.9984,
+  "seconds": 0.3,
+  "status": 200
+ },
+ {
+  "id": "sd-fire-duty-exemption",
+  "question": "당직 면제 대상은?\n업무환경: 경기도 소속 소방공무원",
+  "rule": "duty",
+  "laya": "duty",
+  "confidence": 0.8907,
+  "seconds": 0.32,
+  "status": 200
+ },
+ {
+  "id": "sr-busan-long-service",
+  "question": "장기재직휴가 며칠이야?\n업무환경: 부산광역시 소속 지방공무원",
+  "rule": "leave",
+  "laya": "overtime",
+  "confidence": 0.398,
+  "seconds": 0.32,
+  "status": 200
+ },
+ {
+  "id": "sr-jeju-fire-long-service",
+  "question": "장기재직휴가 며칠이야?\n업무환경: 제주특별자치도 소속 소방공무원",
+  "rule": "leave",
+  "laya": "overtime",
+  "confidence": 0.3511,
+  "seconds": 0.32,
+  "status": 200
+ },
+ {
+  "id": "sr-gyeongnam-long-service",
+  "question": "경상남도청 지방공무원 장기재직휴가는?",
+  "rule": "leave",
+  "laya": "general",
+  "confidence": 0.3464,
+  "seconds": 0.31,
+  "status": 200
+ },
+ {
+  "id": "sr-seoul-long-service",
+  "question": "장기재직휴가 며칠이야?\n업무환경: 서울특별시 소속 지방공무원",
+  "rule": "leave",
+  "laya": "overtime",
+  "confidence": 0.4097,
+  "seconds": 0.309,
+  "status": 200
+ },
+ {
+  "id": "sr-gwangju-long-service",
+  "question": "광주광역시 지방공무원 장기재직휴가는?",
+  "rule": "leave",
+  "laya": "general",
+  "confidence": 0.3976,
+  "seconds": 0.31,
+  "status": 200
+ },
+ {
+  "id": "st-gyeonggi-daily",
+  "question": "출장 일비 지급 기준\n업무환경: 경기도 소속 지방공무원",
+  "rule": "travel",
+  "laya": "general",
+  "confidence": 0.0716,
+  "seconds": 0.3,
+  "status": 200
+ },
+ {
+  "id": "st-gyeonggi-local-trip",
+  "question": "근무지내 출장 여비 기준\n업무환경: 경기도 소속 지방공무원",
+  "rule": "travel",
+  "laya": "general",
+  "confidence": 0.2498,
+  "seconds": 0.29,
+  "status": 200
+ },
+ {
+  "id": "st-gyeonggi-settlement",
+  "question": "출장 정산 증빙은 언제까지 내?\n업무환경: 경기도 소속 지방공무원",
+  "rule": "travel",
+  "laya": "general",
+  "confidence": 0.1355,
+  "seconds": 0.311,
+  "status": 200
+ },
+ {
+  "id": "sr-daegu-long-service",
+  "question": "장기재직휴가 며칠이야?\n업무환경: 대구광역시 소속 지방공무원",
+  "rule": "leave",
+  "laya": "overtime",
+  "confidence": 0.4072,
+  "seconds": 0.319,
+  "status": 200
+ },
+ {
+  "id": "sr-incheon-long-service",
+  "question": "장기재직휴가 며칠이야?\n업무환경: 인천광역시 소속 지방공무원",
+  "rule": "leave",
+  "laya": "overtime",
+  "confidence": 0.409,
+  "seconds": 0.35,
+  "status": 200
+ },
+ {
+  "id": "sr-daejeon-long-service",
+  "question": "장기재직휴가 며칠이야?\n업무환경: 대전광역시 소속 지방공무원",
+  "rule": "leave",
+  "laya": "overtime",
+  "confidence": 0.3997,
+  "seconds": 0.34,
+  "status": 200
+ },
+ {
+  "id": "sr-ulsan-long-service",
+  "question": "장기재직휴가 며칠이야?\n업무환경: 울산광역시 소속 지방공무원",
+  "rule": "leave",
+  "laya": "overtime",
+  "confidence": 0.3978,
+  "seconds": 0.35,
+  "status": 200
+ },
+ {
+  "id": "sr-sejong-long-service",
+  "question": "장기재직휴가 며칠이야?\n업무환경: 세종특별자치시 소속 지방공무원",
+  "rule": "leave",
+  "laya": "overtime",
+  "confidence": 0.3717,
+  "seconds": 0.36,
+  "status": 200
+ },
+ {
+  "id": "sr-gangwon-long-service",
+  "question": "장기재직휴가 며칠이야?\n업무환경: 강원특별자치도 소속 지방공무원",
+  "rule": "leave",
+  "laya": "overtime",
+  "confidence": 0.4118,
+  "seconds": 0.35,
+  "status": 200
+ },
+ {
+  "id": "sr-chungbuk-long-service",
+  "question": "장기재직휴가 며칠이야?\n업무환경: 충청북도 소속 지방공무원",
+  "rule": "leave",
+  "laya": "overtime",
+  "confidence": 0.4428,
+  "seconds": 0.37,
+  "status": 200
+ },
+ {
+  "id": "sr-jeonbuk-long-service",
+  "question": "장기재직휴가 며칠이야?\n업무환경: 전북특별자치도 소속 지방공무원",
+  "rule": "leave",
+  "laya": "overtime",
+  "confidence": 0.4317,
+  "seconds": 0.36,
+  "status": 200
+ },
+ {
+  "id": "sr-gyeongbuk-long-service",
+  "question": "장기재직휴가 며칠이야?\n업무환경: 경상북도 소속 지방공무원",
+  "rule": "leave",
+  "laya": "overtime",
+  "confidence": 0.4168,
+  "seconds": 0.35,
+  "status": 200
+ },
+ {
+  "id": "sr-national-annual-docnum",
+  "question": "인사혁신처예규 제2025-3호에 따른 국가공무원 연가 일수는?",
+  "rule": "leave",
+  "laya": "leave",
+  "confidence": 0.9891,
+  "seconds": 0.36,
+  "status": 200
+ }
+]
