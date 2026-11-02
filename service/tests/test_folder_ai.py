@@ -107,6 +107,13 @@ class FolderAITest(unittest.TestCase):
    with patch.object(folder_ai.httpx,'post',return_value=response) as call:
     folder_ai.call_model({'base_url':'http://127.0.0.1:11434/v1','model':'qwen3.5:9b','extra_body':extra},[{'role':'user','content':'unit'}])
    self.assertEqual(call.call_args.kwargs['json'].get('think'),think)
+ def test_strict_call_sends_the_schema_to_an_openai_style_server(self):
+  # Solar answered a compare question in prose when no response format was sent.
+  schema={'type':'object','properties':{'refs':{'type':'array','items':{'type':'integer'}}},'required':['refs'],'additionalProperties':False}
+  with patch.object(llm.OpenAICompatibleProvider,'chat',return_value='{"refs":[1]}') as chat:
+   folder_ai.call_model({'provider':'openai_compatible','base_url':'https://api.upstage.ai/v1','model':'solar-pro4'},[],schema,strict=True)
+   folder_ai.call_model({'provider':'openai_compatible','base_url':'https://api.upstage.ai/v1','model':'solar-pro4'},[],schema)
+  self.assertEqual([c.kwargs['response_schema'] for c in chat.call_args_list],[schema,None])
  def test_native_bad_http_and_unfinished_response_rejected(self):
   for response in [httpx.Response(500,text='private-server-detail'),httpx.Response(200,json={'done':False,'message':{'content':'partial'}})]:
    with patch.object(folder_ai.httpx,'post',return_value=response):

@@ -9,6 +9,7 @@ from contextlib import contextmanager
 import hashlib
 import heapq
 import json
+import math
 import os
 from pathlib import Path
 import re
@@ -578,18 +579,34 @@ def retrieve(c, pid, question, selected, draft=False):
             if fid in found:
                 found[fid].update(w for w in anchors if w in text.lower())
         files = {fid:f for fid,f in files.items() if all(w in found[fid] for w in anchors)}
-    candidates, grouped = [], {}
+    weight = dict.fromkeys(words, 1.0)
+    if words and not generic:
+        # A word found in few units says more than one repeated across a long document.
+        # Without this, a large reference file filled every slot with common words.
+        df, total = dict.fromkeys(words, 0), 0
+        for fid, _, _, text in c.execute(unit_sql, (pid,)):
+            if fid in files:
+                total += 1
+                lower = text.lower()
+                df.update({w: df[w] + 1 for w in words if w in lower})
+        weight = {w: math.log((total + 1) / (df[w] + .5)) for w in words}
+    # A unit must name the subject; "체육대회 일정" must not return every other schedule.
+    subject = project_query.subject_words(words)
+    candidates, grouped, by_file = [], {}, {}
     # Query one project's corpus only; streaming avoids loading all full texts.
     for r in c.execute(unit_sql, (pid,)):
         if r[0] not in files:
             continue
         lower = r[3].lower()
-        matches = sum(1 for w in set(words) if w in lower)
-        score = matches * 10
+        matched = [w for w in weight if w in lower]
+        matches = len(matched)
+        score = matches * 10 if generic else round(10 * sum(weight[w] for w in matched), 3)
         if pending and not project_query.has_pending_reply(r[3]):
             if not other_fields or not any(w in lower for w in other_fields):
                 continue
-        if not pending and not generic and matches < min(2, len(set(words))):
+        # One rare word can answer a question whose other words are only how it was asked
+        # ("교재비 총액은 얼마야?"); weak units are cut relative to the best one below.
+        if not pending and not generic and not (any(w in matched for w in subject) if subject else matches):
             continue
         if generic:
             score += 1 + (3 if re.search(r'기한|마감|일정|할 일|까지', r[3]) and '일정' in question else 0)
@@ -602,10 +619,17 @@ def retrieve(c, pid, question, selected, draft=False):
                 heapq.heappush(group, item)
             elif item[0] > group[0][0]:
                 heapq.heapreplace(group, item)
-        elif len(candidates) < 48:
-            heapq.heappush(candidates, item)
-        elif item[0] > candidates[0][0]:
-            heapq.heapreplace(candidates, item)
+        else:
+            # Eight per file, the most any file shows, so a long file cannot crowd out a short one.
+            heap = by_file.setdefault(r[0], [])
+            if len(heap) < 8:
+                heapq.heappush(heap, item)
+            elif item[0] > heap[0][0]:
+                heapq.heapreplace(heap, item)
+    candidates = [item for heap in by_file.values() for item in heap]
+    if candidates and not pending:
+        best = max(item[0] for item in candidates)
+        candidates = [item for item in candidates if item[0] >= best / 2]
     candidates.sort(key=lambda x: (-x[0], x[1], x[2]))
     if generic:
         grouped = {fid: sorted(values,key=lambda x:(-x[0],x[2])) for fid,values in grouped.items()}
@@ -676,7 +700,7 @@ def compose(c, message):
                        {'role': 'user', 'content': '{"question":"마감과 미회신 부서는?","documents":[{"ref":1,"text":"마감: 11월 6일"},{"ref":2,"text":"미회신 부서: 회계과"}]}'},
                        {'role': 'assistant', 'content': '{"refs":[1,2]}'},
                        {'role': 'user', 'content': json.dumps({'question': question, 'documents': [{k:e[k] for k in ('ref','name','loc','text')} for e in evidence]}, ensure_ascii=False)}]
-            raw, metadata = folder_ai.call_model(profile, prompts, schema)
+            raw, metadata = folder_ai.call_model(profile, prompts, schema, strict=True)
             parsed = llm.extract_json(raw)
             ids = parsed.get('refs') if isinstance(parsed, dict) else None
             if not isinstance(ids, list) or any(type(n) is not int or n not in {e['ref'] for e in evidence} for n in ids):

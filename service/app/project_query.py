@@ -13,7 +13,15 @@ STOP = {
     '일정과', '만들어줘', '이를', '그걸', '언제', '얼마', '누구', '알려',
     '정리해줘', '작성해줘', '어디', '어느', '어떤', '몇', '아직', '지금',
     '현재', '좀', '있을까요', '궁금해요', '부탁드립니다', '간단히', '간략히', '간단하게',
+    '얼마나', '언제까지', '며칠', '무슨', '뭐야', '뭐예요', '하는', '해야', '되나요', '돼요',
 }
+# Words naming what is asked about a subject rather than the subject itself.
+FIELDS = {
+    '일정', '날짜', '일시', '기한', '마감', '장소', '대상', '인원', '총액', '금액', '합계', '내역',
+    '항목', '방법', '기준', '절차', '담당자', '담당', '결과', '현황', '상태', '사유', '조건', '횟수', '건수',
+}
+# Question and verb endings; stripped only when two characters remain, so 손해·분야 stay whole.
+ENDINGS = re.compile(r'(이야|이에요|예요|이죠|에게|까지|부터|해야|어야|아야|하나요|해요|해|야|에)$')
 
 
 def pending_reply(question):
@@ -27,9 +35,16 @@ def terms(question):
     for word in words:
         word = re.sub(r'(해주세요|알려주세요|인가요|입니까|일까요|있나요|어디죠|해줘|알려줘|찾아줘)$', '', word)
         word = re.sub(r'(으로|에서|에는|은|는|을|를|이|가|의|와|과)$', '', word)
+        stripped = ENDINGS.sub('', word)
+        word = stripped if len(stripped) >= 2 else word
         if len(word) >= 2 and word not in STOP and word not in result:
             result.append(word)
     return result
+
+
+def subject_words(words):
+    """Search words that name the subject; empty when the question names only fields."""
+    return [word for word in words if word not in FIELDS]
 
 
 def reply_anchors(question):
@@ -73,19 +88,30 @@ def task_plan(question, draft=False):
         '마감', '기한', '장소', '대상', '해야', '할', '할일', '일', '일만', '다음', '조치',
         '기존', '까지', '간략히', '문장', 'txt', 'pdf', 'xlsx', 'docx', 'md',
     }
-    topics = []
-    for word in terms(q):
-        word = re.sub(r'(자료|문서|파일|내용)$', '', word) if len(word) > 3 else word
-        if pending_reply(question) and word == '부서':
-            continue
-        if word not in ignore and len(word) >= 2:
-            topics.append(word)
+    def topic_words(text):
+        found = []
+        for word in terms(text):
+            word = re.sub(r'(자료|문서|파일|내용)$', '', word) if len(word) > 3 else word
+            if pending_reply(question) and word == '부서':
+                continue
+            if word not in ignore and len(word) >= 2:
+                found.append(word)
+        return found
+    topics = topic_words(q)
+    # "A와 B를 비교" names two subjects; each is looked up on its own, since no one
+    # file holds both and requiring every word in one file left only a large reference.
+    subjects = []
+    if mode == 'compare':
+        parts = re.split(r'(?<=[가-힣0-9])(?:와|과|하고|이랑|랑)\s+|\s*,\s*|\s+및\s+|\s+(?:vs|VS)\.?\s+', q)
+        subjects = [words for words in map(topic_words, parts) if words]
+        if len(subjects) < 2:
+            subjects = []
     fields = [field for field, pattern in (
         ('deadline', r'마감|기한'), ('when', r'날짜|일자|교육일|일시'),
         ('where', r'장소|교육장|어디서'), ('who', r'대상'),
         ('owner', r'담당자'), ('amount', r'금액|예산'),
     ) if re.search(pattern, question)]
-    return {'mode': mode, 'topics': list(dict.fromkeys(topics)), 'fields': fields}
+    return {'mode': mode, 'topics': list(dict.fromkeys(topics)), 'fields': fields, 'subjects': subjects}
 
 
 def is_draft_request(question):

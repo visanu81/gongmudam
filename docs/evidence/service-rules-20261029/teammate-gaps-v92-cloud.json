@@ -1,0 +1,98 @@
+[
+ {
+  "question": "징계 경감 사유가 뭐야?",
+  "local": {
+   "summary": "등록 자료로 처리 방법을 함께 확인해요.",
+   "profile": null,
+   "broken_glyphs": false,
+   "marker": 0
+  },
+  "public": {
+   "summary": "등록 자료로 처리 방법을 함께 확인해요.",
+   "profile": null,
+   "broken_glyphs": false,
+   "marker": 0
+  },
+  "same_answer": true
+ },
+ {
+  "question": "공사 대금 지급 기한은?",
+  "local": {
+   "summary": "등록 자료로 처리 방법을 함께 확인해요.",
+   "profile": null,
+   "broken_glyphs": false,
+   "marker": 0
+  },
+  "public": {
+   "summary": "등록 자료로 처리 방법을 함께 확인해요.",
+   "profile": null,
+   "broken_glyphs": false,
+   "marker": 0
+  },
+  "same_answer": true
+ },
+ {
+  "question": "국민건강보험공단 건강검진 받으면 공가 되나요?",
+  "local": {
+   "http": 200,
+   "summary": "등록 자료로 처리 방법을 함께 확인해요.",
+   "broken_glyphs": false,
+   "marker": 0
+  },
+  "public": {
+   "http": 200,
+   "summary": "등록 자료로 처리 방법을 함께 확인해요.",
+   "broken_glyphs": false,
+   "marker": 0
+  },
+  "same_answer": true
+ },
+ {
+  "question": "경사 승진하면 연가 며칠이야?",
+  "local": {
+   "http": 200,
+   "summary": "등록 자료로 처리 방법을 함께 확인해요.",
+   "broken_glyphs": false,
+   "marker": 4
+  },
+  "public": {
+   "http": 200,
+   "summary": "등록 자료로 처리 방법을 함께 확인해요.",
+   "broken_glyphs": false,
+   "marker": 4
+  },
+  "same_answer": true
+ },
+ {
+  "question": "국가공무원 연가보상비 계산 방법은?",
+  "local": {
+   "http": 200,
+   "summary": "등록 자료로 처리 방법을 함께 확인해요.",
+   "broken_glyphs": false,
+   "marker": 0
+  },
+  "public": {
+   "http": 200,
+   "summary": "등록 자료로 처리 방법을 함께 확인해요.",
+   "broken_glyphs": false,
+   "marker": 0
+  },
+  "same_answer": true
+ },
+ {
+  "question": "국가공무원 정근수당 언제 받아?",
+  "local": {
+   "http": 200,
+   "summary": "등록 자료로 처리 방법을 함께 확인해요.",
+   "broken_glyphs": false,
+   "marker": 0
+  },
+  "public": {
+   "http": 200,
+   "summary": "등록 자료로 처리 방법을 함께 확인해요.",
+   "broken_glyphs": false,
+   "marker": 0
+  },
+  "same_answer": true
+ }
+]

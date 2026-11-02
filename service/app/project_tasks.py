@@ -40,7 +40,20 @@ def retrieve(c, pid, files, plan):
         for fid, _, _, text in c.execute(sql, (pid,)):
             if fid in hits:
                 hits[fid].update(word for word in topics if word in text.lower())
-        files = {fid: f for fid, f in files.items() if all(word in hits[fid] for word in topics)}
+        matched = {fid: f for fid, f in files.items() if all(word in hits[fid] for word in topics)}
+        if len(matched) < 2 and plan.get('subjects'):
+            # No one file names both compared subjects; take the best file for each,
+            # preferring the one whose name carries the subject over a long reference.
+            names = {fid: f['name'].lower() for fid, f in files.items()}
+            chosen = {}
+            for subject in plan['subjects']:
+                fits = [fid for fid in files if all(word in hits[fid] for word in subject) and fid not in chosen]
+                if fits:
+                    best = max(fits, key=lambda fid: (sum(word in names[fid] for word in subject), -len(hits[fid])))
+                    chosen[best] = files[best]
+            if len(chosen) >= 2:
+                matched = chosen
+        files = matched
     files = dict(sorted(files.items(), key=lambda item: (item[1]['name'].casefold(), item[0]))[:24])
     # At most two units per field per file. Even a long PDF is streamed, never
     # concatenated. The final source budget stays at 24 units / 24,000 characters.

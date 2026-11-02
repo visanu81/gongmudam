@@ -226,7 +226,7 @@ def model_schema(prompt):
     schema['properties']['assignments']={'type':'object','properties':{d['file_id']:{'$ref':'#/$defs/DocumentChoice'} for d in prompt['documents']},'required':[d['file_id'] for d in prompt['documents']],'additionalProperties':False}
     return schema
 
-def call_model(profile,messages,schema=None):
+def call_model(profile,messages,schema=None,strict=False):
     # Ollama is called directly below, so the AI-off switch must be honoured here too.
     if llm.disabled():raise llm.LLMError('이 요청에서는 AI를 사용하지 않도록 설정되어 있습니다.')
     parsed=urlsplit(profile['base_url'])
@@ -248,7 +248,9 @@ def call_model(profile,messages,schema=None):
         except (ValueError,KeyError,TypeError):raise llm.LLMError('로컬 모델 응답 형식 오류') from None
         return content,{'actual_response':True,'response_model':payload.get('model'),'backend':'ollama-native-schema',
                         'usage':{k:payload.get(k) for k in ('prompt_eval_count','eval_count','done_reason')}}
-    with llm.capture_calls() as calls:raw=llm.get_provider(profile).chat(messages,max_tokens=3200,temperature=0.1)
+    # strict: the schema is small enough for an OpenAI-style json_schema; without it Solar
+    # sometimes answered a compare question in prose and the selection failed (2026-11-02).
+    with llm.capture_calls() as calls:raw=llm.get_provider(profile).chat(messages,max_tokens=3200,temperature=0.1,response_schema=schema if strict else None)
     return raw,{'actual_response':bool(calls),'response_model':calls[-1]['response'].get('model') if calls else None,'backend':'openai-compatible'}
 
 def undefined_projects(raw):

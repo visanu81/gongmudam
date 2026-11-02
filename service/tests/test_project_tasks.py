@@ -246,6 +246,38 @@ class ProjectTasksTest(unittest.TestCase):
         self.assertIn('http://example.test', answer['content'])
         self.assertIn('https://example.test', answer['content'])
 
+    def _reference(self):
+        # A long reference that repeats the question words, as a budget guideline does.
+        lines = [f'{n}. 물품 구매 예산은 교육 운영 기준에 따라 편성하고 지급 내역과 일정을 관리한다.' for n in range(1, 40)]
+        self._write('예산 편성 기준.txt', '\n'.join(lines))
+
+    def test_one_rare_word_answers_and_a_long_reference_does_not_crowd_it_out(self):
+        self._write('교육 취합 보고.txt', '교육 취합 결과 보고\n소요 예산: 강사료 1,200,000원, 교재비 345,000원\n중복 신청 2건을 정리합니다.')
+        self._write('물품 구매 지침.txt', '물품 구매 지침\n제4조(견적) 2인 이상에게 견적서를 받는다.\n제7조(대금 지급) 청구를 받은 날부터 5일 이내에 대금을 지급한다.')
+        self._reference()
+        pid = self.create_ready_project()
+        for question, expected in [('교재비 총액은 얼마야?', '345,000원'), ('견적은 몇 명에게 받아야 해?', '2인 이상'),
+                                   ('물품 대금은 언제까지 지급해?', '5일 이내'), ('중복 신청은 몇 건이야?', '2건')]:
+            _, answer = self.ask(pid, question)
+            self.assertIn(expected, answer['evidence'][0]['text'], question)
+            self.assert_evidence_is_source_text(pid, answer)
+
+    def test_a_subject_missing_from_the_project_returns_no_schedule(self):
+        self._reference()
+        pid = self.create_ready_project()
+        _, answer = self.ask(pid, '체육대회 일정은 언제야?')
+        self.assertEqual(answer['evidence'], [])
+
+    def test_comparison_of_two_named_subjects_uses_one_file_for_each(self):
+        self._write('교육 취합 보고.txt', '교육 취합 결과 보고\n교육일: 2026-11-13\n금액: 1,545,000원')
+        self._write('물품 구매 지침.txt', '물품 구매 지침\n교육 관련 물품 기준\n금액: 20,000,000원 이하 견적')
+        self._reference()
+        pid = self.create_ready_project()
+        _, answer = self.ask(pid, '교육 취합 결과와 물품 구매 지침을 비교해줘')
+        self.assertEqual({e['name'] for e in answer['evidence']}, {'교육 취합 보고.txt', '물품 구매 지침.txt'})
+        self.assertIn('1,545,000원', answer['content'])
+        self.assertIn('20,000,000원', answer['content'])
+
 
 if __name__ == '__main__':
     unittest.main()
