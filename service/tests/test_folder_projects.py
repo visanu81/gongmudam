@@ -335,6 +335,39 @@ class FolderProjectsTest(unittest.TestCase):
         with patch.object(config,'active_profile',return_value={'provider':'openai_compatible','_name':'local'}),patch.object(projects.local_ai,'local_profile',return_value={'model':'bad','base_url':'http://127.0.0.1:11434/v1'}),patch.object(projects.folder_ai,'call_model',return_value=('{"refs":[999]}',{})):
             self.question(pid,'교육 마감');self.assertEqual(self.answered(pid)['messages'][-1]['mode'],'fallback')
 
+    def contest(self):
+        folder=self.root/'대회';folder.mkdir()
+        (folder/'챌린지 행사계획 안내서.txt').write_text('2026 공공 AI 챌린지 행사계획(가상)\n접수 기간: 2026-11-01 ~ 2026-11-10\n시상: 최우수 1팀 상장',encoding='utf-8')
+        (folder/'참가신청서.txt').write_text('참가신청서(합성)\n소속: 가람시 총무과\n성명: 홍길동',encoding='utf-8')
+        pid=self.create('대회 준비');self.source(pid,folder);self.start()
+        self.wait(pid,lambda v:v['jobs'] and all(j['status']=='completed' for j in v['jobs']))
+        return pid
+
+    def test_everyday_words_find_what_the_form_calls_them(self):
+        # "참가한 사람" is written as 성명 on the form, "대회" as 챌린지 on the notice.
+        pid=self.contest()
+        self.question(pid,'이 대회에 참가한 사람은?');answer=self.answered(pid)['messages'][-1]
+        self.assertIn('홍길동',' '.join(e['text'] for e in answer['evidence']))
+
+    def test_model_chooses_from_all_files_when_no_word_matches(self):
+        pid=self.contest()
+        def choose(profile,messages,schema=None,strict=False):
+            docs=json.loads(messages[-1]['content'])['documents']
+            return json.dumps({'refs':[d['ref'] for d in docs if '시상' in d['text']]}),{'actual_response':True}
+        local=dict(provider='openai_compatible',_name='local')
+        with patch.object(config,'active_profile',return_value=local),patch.object(projects.local_ai,'local_profile',return_value={'model':'t','base_url':'http://127.0.0.1:11434/v1'}),patch.object(projects.folder_ai,'call_model',side_effect=choose):
+            self.question(pid,'우승하면 무엇을 받아?');answer=self.answered(pid)['messages'][-1]
+        self.assertEqual(answer['mode'],'local_ai')
+        self.assertEqual([e['text'] for e in answer['evidence']],['시상: 최우수 1팀 상장'])
+        self.assertIn('AI가 자료 전체에서',answer['notice'])
+        # Nothing from the spread is shown when the model chooses nothing.
+        with patch.object(config,'active_profile',return_value=local),patch.object(projects.local_ai,'local_profile',return_value={'model':'t','base_url':'http://127.0.0.1:11434/v1'}),patch.object(projects.folder_ai,'call_model',return_value=('{"refs":[]}',{})):
+            self.question(pid,'우승하면 무엇을 받아?');answer=self.answered(pid)['messages'][-1]
+        self.assertEqual(answer['evidence'],[])
+        # Without AI the answer stays a plain "not found".
+        self.question(pid,'우승하면 무엇을 받아?');answer=self.answered(pid)['messages'][-1]
+        self.assertEqual((answer['mode'],answer['evidence']),('offline',[]))
+
     def test_followup_keeps_previous_scope_and_summary_includes_each_file(self):
         folder=self.root/'자료';folder.mkdir()
         for i in range(6):

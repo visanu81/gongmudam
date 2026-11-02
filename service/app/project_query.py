@@ -14,6 +14,8 @@ STOP = {
     '정리해줘', '작성해줘', '어디', '어느', '어떤', '몇', '아직', '지금',
     '현재', '좀', '있을까요', '궁금해요', '부탁드립니다', '간단히', '간략히', '간단하게',
     '얼마나', '언제까지', '며칠', '무슨', '뭐야', '뭐예요', '하는', '해야', '되나요', '돼요',
+    # Verb stems left after the endings are removed; they match any sentence.
+    '받아', '적어', '알아', '있어', '없어', '넣어', '내야', '써야', '받나', '받을', '하면',
 }
 # Words naming what is asked about a subject rather than the subject itself.
 FIELDS = {
@@ -21,7 +23,20 @@ FIELDS = {
     '항목', '방법', '기준', '절차', '담당자', '담당', '결과', '현황', '상태', '사유', '조건', '횟수', '건수',
 }
 # Question and verb endings; stripped only when two characters remain, so 손해·분야 stay whole.
-ENDINGS = re.compile(r'(이야|이에요|예요|이죠|에게|까지|부터|해야|어야|아야|하나요|해요|해|야|에)$')
+ENDINGS = re.compile(r'(이야|이에요|예요|이죠|에게|까지|부터|해야|어야|아야|하나요|해요|했던|하는|했다|되는|해|야|에|한|된|할)$')
+# Everyday words in a question and the words office documents use for them
+# ("참가한 사람" is written as 성명·참가자 on an application form).
+SYNONYMS = {
+    '사람': ('참가자', '신청자', '참석자', '성명', '이름', '명단'),
+    '참가': ('참여', '참석', '신청'),
+    '참석': ('참가', '참여'),
+    '참여': ('참가', '참석'),
+    '대회': ('챌린지', '공모', '경진', '행사'),
+    '공모전': ('공모', '챌린지', '대회'),
+    '연락처': ('전화', '휴대', '이메일'),
+    '이름': ('성명',),
+    '소속': ('부서', '기관'),
+}
 
 
 def pending_reply(question):
@@ -40,6 +55,11 @@ def terms(question):
         if len(word) >= 2 and word not in STOP and word not in result:
             result.append(word)
     return result
+
+
+def variants(word):
+    """The word and the document words that stand for it."""
+    return (word, *SYNONYMS.get(word, ()))
 
 
 def subject_words(words):
