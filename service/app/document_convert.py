@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 from pathlib import Path
 import shutil
 import subprocess
@@ -112,19 +113,69 @@ def _grid(rows):
     return grid
 
 
+# A cell that only names a field: short words, no digits, checkboxes or sentences.
+LABEL = re.compile(r'^[가-힣A-Za-z()·/\s]{1,15}$')
+
+
+def _weak(header):
+    """A first row that is a choice or a sentence, not column names (a form's 참가 구분 | ■ 개인 □ 팀)."""
+    values = [v for v in dict.fromkeys(header) if v]
+    return len(values) < 2 or any('■' in v or '□' in v or len(v) > 30 for v in values)
+
+
+def _pairs(values):
+    """A form row: "label: value", led by its group label when there is one."""
+    flat = [v.replace('\n', ' ') for v in values]
+    lead = [flat.pop(0)] if len(flat) % 2 else []
+    pairs = [f'{flat[i]}: {flat[i + 1]}' for i in range(0, len(flat), 2)]
+    return ' · '.join(lead + [' / '.join(pairs)] if pairs else lead)
+
+
 def _table_units(rows):
-    """(label, text) per row; data rows carry their column headers."""
+    """(label, text) per row; data rows carry their column headers.
+
+    Forms put labels beside values and start new header rows midway
+    (구분 | 성명 | 부서 above a person's row); those are read as such.
+    """
     grid = _grid(rows)
     header_index = next((i for i, r in enumerate(grid) if len({v for v in r if v}) >= 2), None)
+    header = grid[header_index] if header_index is not None else None
+    section, header_at, last = False, header_index, None
     units = []
     for i, row in enumerate(grid):
-        values = [v for v in row if v]
+        values = [v for v in dict.fromkeys(row) if v]
         if not values:
             continue
+        previous_row, last = last, i
         if header_index is None or i <= header_index:
-            units.append((f'{i + 1}행', ' | '.join(dict.fromkeys(values))))
+            units.append((f'{i + 1}행', ' | '.join(values)))
             continue
-        header = grid[header_index]
+        labels = len(values) >= 3 and all(LABEL.match(v) for v in values)
+        # A group label merged down the rows (기관 정보 beside 기관명 and 담당부서명)
+        # marks label-value rows, not a header over the next row.
+        below = next((r for r in grid[i + 1:] if any(r)), None)
+        labels = labels and bool(below) and len({v for v in below if v}) >= 3 and not (below[0] and below[0] == row[0])
+        # Under real column names only the row right below can add a second level;
+        # later rows of short words are data (예산전용 | 확정 | 사유발생시).
+        # A second level splits a heading merged across columns (운임 over FIRST | BUSINESS).
+        second = previous_row == header_at and any(
+            header[c] and header[c] == header[c + 1] and row[c] != row[c + 1] for c in range(min(len(header), len(row)) - 1))
+        if labels and (_weak(header) or second):
+            if not _weak(header):
+                # A second header row under the first (’26년 예산액 over 금액 | 구성비): name both.
+                header = [c if p in ('', c) else p if c in ('', p) else f'{p} {c}'
+                          for p, c in zip(header + [''] * len(row), row)]
+            else:
+                header, section = row, True
+            header_at = i
+            units.append((f'{i + 1}행', ' | '.join(v.replace('\n', ' ') for v in values)))
+            continue
+        if section and len(values) < 3:
+            # The people block above is over; back to label-value rows.
+            header, section, header_at = grid[header_index], False, header_index
+        if _weak(header):
+            units.append((f'{i + 1}행', _pairs(values)))
+            continue
         parts, previous = [], None
         for col, value in enumerate(row):
             name = header[col] if col < len(header) else ''

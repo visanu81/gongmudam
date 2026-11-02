@@ -18,7 +18,7 @@ CHUNK_CHARS = 1800
 MAX_PDF_PAGES = 1000
 # Bump when extraction changes what units a file yields; files read by an older
 # extractor are read again and their old citations are shown as changed.
-EXTRACTOR_VERSION = 'structured-20261101'
+EXTRACTOR_VERSION = 'structured-20261102'
 SUPPORTED = {'.txt', '.md', '.csv', '.pdf', '.xlsx', '.docx', '.hwpx', '.hwp'}
 
 

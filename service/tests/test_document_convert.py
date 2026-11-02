@@ -28,6 +28,31 @@ class TableUnitsTest(unittest.TestCase):
         self.assertEqual(units[0][1], '교육 취합')
         self.assertEqual(units[2][1], '부서: 총무과 / 인원: 9 / 회신: 완료')
 
+    def test_application_form_reads_label_value_rows_and_the_people_header(self):
+        # A synthetic application form: the first row is a choice, labels sit beside values,
+        # and a header row for the people starts midway.
+        rows = [[('참가\n구분', 2, 1), ('■ 개인 □ 팀 (팀명: )', 6, 1)],
+                [('기관\n정보', 1, 2), ('기관명', 1, 1), ('가람시청', 6, 1)],
+                [('담당부서명', 1, 1), ('총무과 기획팀', 6, 1)],
+                [('❷ 참가자 정보', 8, 1)],
+                [('구분', 1, 1), ('성명', 1, 1), ('부서', 1, 1), ('직급', 1, 1), ('직위', 1, 1), ('연락처', 1, 1), ('이메일', 1, 1), ('역할', 1, 1)],
+                [('개인', 1, 1), ('홍길동', 1, 1), ('민원과', 1, 1), ('주무관', 1, 1), ('', 1, 1), ('010-0000-0000', 1, 1), ('a@example.test', 1, 1), ('개발', 1, 1)],
+                [('과제명', 2, 1), ('합성 도우미', 6, 1)]]
+        texts = [text for _, text in document_convert._table_units(rows)]
+        self.assertIn('기관 정보 · 기관명: 가람시청', texts)
+        self.assertIn('기관 정보 · 담당부서명: 총무과 기획팀', texts)
+        self.assertIn('구분: 개인 / 성명: 홍길동 / 부서: 민원과 / 직급: 주무관 / 연락처: 010-0000-0000 / 이메일: a@example.test / 역할: 개발', texts)
+        self.assertIn('과제명: 합성 도우미', texts)
+
+    def test_second_header_row_names_both_levels_and_data_rows_stay_data(self):
+        rows = [[('구분', 1, 1), ('운임', 3, 1)],
+                [('도시', 1, 1), ('일등석', 1, 1), ('비즈니스', 1, 1), ('일반석', 1, 1)],
+                [('콜롬보', 1, 1), ('4,780,400', 1, 1), ('3,414,500', 1, 1), ('2,050,000', 1, 1)],
+                [('요구권자', 1, 1), ('장', 1, 1), ('부서장', 1, 1), ('장', 1, 1)]]
+        texts = [text for _, text in document_convert._table_units(rows)]
+        self.assertIn('구분 도시: 콜롬보 / 운임 일등석: 4,780,400 / 운임 비즈니스: 3,414,500 / 운임 일반석: 2,050,000', texts)
+        self.assertIn('구분 도시: 요구권자 / 운임 일등석: 장 / 운임 비즈니스: 부서장 / 운임 일반석: 장', texts)
+
 
 class ExtractTest(unittest.TestCase):
     def setUp(self):
