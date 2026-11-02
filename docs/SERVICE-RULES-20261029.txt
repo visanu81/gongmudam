@@ -229,3 +229,8 @@
 - 검색: 질문 어미 제거, 드문 낱말 가중치와 최고 점수의 절반 기준, 주제 낱말 필수, 파일별 후보 8개, 비교는 주제별 파일 선택.
 - 모델 호출: Ollama 직접 호출이 프로필의 생각 끄기 설정을 따르게(think:false), OpenAI 방식 서버에는 근거 선택 JSON 형식을 보낸다.
 - 결과: 정답 사실 6/12 → 11/12(AI 없음·솔라), Qwen 10/12. 남은 한계: 서식 칸 이름을 묻는 질문(여비 정산서 항목).
+- 2026-11-02: 첫 배포 시도는 Docker Desktop이 켜지는 중이라 설정 파일 잠김으로 실패, 재배포 후 21:38 공유 주소 v93 확인.
+  PC(8787)↔클라우드 평가 질문 85/85(parity-v93-cloud.json), 실무 27/27(practice-parity-v93-cloud.json).
+  업무자료 정리: 공유 사이트에 합성·공개 문서 4개를 올려 같은 13문항을 물음. 같은 코드·솔라로 돌린 로컬 결과와 찾은 사실이 13/13 같고
+  정답 사실 11/12(docs/evidence/model-compare-20261102/public-v93-project-search.json, tools/check_project_search_public.py).
+  개인용 DB에는 합성 프로젝트를 만들지 않으려고, PC 쪽은 임시 DB로 돌린 결과(tools/compare_project_models.py)와 비교했다.
