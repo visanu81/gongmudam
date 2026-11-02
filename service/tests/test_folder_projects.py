@@ -368,6 +368,26 @@ class FolderProjectsTest(unittest.TestCase):
         self.question(pid,'우승하면 무엇을 받아?');answer=self.answered(pid)['messages'][-1]
         self.assertEqual((answer['mode'],answer['evidence']),('offline',[]))
 
+    def test_form_field_question_lists_the_form_cells(self):
+        # "적어야 하는 항목" names no field; the form's cells are the answer.
+        import zipfile
+        ns='http://www.hancom.co.kr/hwpml/2011/paragraph'
+        def para(t):return f'<hp:p><hp:run><hp:t>{t}</hp:t></hp:run></hp:p>'
+        def cell(t,c,r):return f'<hp:tc><hp:subList>{para(t)}</hp:subList><hp:cellAddr colAddr="{c}" rowAddr="{r}"/><hp:cellSpan colSpan="1" rowSpan="1"/></hp:tc>'
+        rows=[['소속',''],['성명',''],['출장 기간',''],['숙박비','원']]
+        trs=''.join('<hp:tr>'+cell(a,0,r)+cell(b,1,r)+'</hp:tr>' for r,(a,b) in enumerate(rows))
+        xml=(f'<hs:sec xmlns:hp="{ns}" xmlns:hs="http://www.hancom.co.kr/hwpml/2011/section">{para("국내출장 여비 정산서(합성 서식)")}'
+             f'<hp:p><hp:run><hp:tbl rowCnt="4" colCnt="2">{trs}</hp:tbl></hp:run></hp:p></hs:sec>')
+        folder=self.root/'서식';folder.mkdir()
+        with zipfile.ZipFile(folder/'여비정산서.hwpx','w') as z:z.writestr('Contents/section0.xml',xml)
+        (folder/'교육.txt').write_text('교육 일정: 11월 13일',encoding='utf-8')
+        pid=self.create();self.source(pid,folder);self.start()
+        self.wait(pid,lambda v:v['jobs'] and all(j['status']=='completed' for j in v['jobs']))
+        self.question(pid,'여비 정산서에 적어야 하는 항목은?');answer=self.answered(pid)['messages'][-1]
+        texts=[e['text'] for e in answer['evidence']]
+        for field in ('소속','성명','출장 기간','숙박비: 원'):
+            self.assertIn(field,texts)
+
     def test_followup_keeps_previous_scope_and_summary_includes_each_file(self):
         folder=self.root/'자료';folder.mkdir()
         for i in range(6):

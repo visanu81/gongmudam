@@ -15,13 +15,15 @@ STOP = {
     '현재', '좀', '있을까요', '궁금해요', '부탁드립니다', '간단히', '간략히', '간단하게',
     '얼마나', '언제까지', '며칠', '무슨', '뭐야', '뭐예요', '하는', '해야', '되나요', '돼요',
     # Verb stems left after the endings are removed; they match any sentence.
-    '받아', '적어', '알아', '있어', '없어', '넣어', '내야', '써야', '받나', '받을', '하면',
+    '받아', '적어', '알아', '있어', '없어', '넣어', '내야', '써야', '받나', '받을', '하면', '적어야', '적을', '기재해야',
 }
 # Words naming what is asked about a subject rather than the subject itself.
 FIELDS = {
     '일정', '날짜', '일시', '기한', '마감', '장소', '대상', '인원', '총액', '금액', '합계', '내역',
     '항목', '방법', '기준', '절차', '담당자', '담당', '결과', '현황', '상태', '사유', '조건', '횟수', '건수',
 }
+# Asking which fields a form has ("정산서에 적어야 하는 항목은?").
+FIELD_LIST = re.compile(r'항목|칸|기재\s*사항|기재해야|적어야|적을|작성\s*항목|(?:무엇|뭘)을?\s*(?:써|적)')
 # Question and verb endings; stripped only when two characters remain, so 손해·분야 stay whole.
 ENDINGS = re.compile(r'(이야|이에요|예요|이죠|에게|까지|부터|해야|어야|아야|하나요|해요|했던|하는|했다|되는|해|야|에|한|된|할)$')
 # Everyday words in a question and the words office documents use for them

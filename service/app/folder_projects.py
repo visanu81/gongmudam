@@ -651,6 +651,15 @@ def retrieve(c, pid, question, selected, draft=False):
         f = files[fid]
         output.append(dict(ref=len(output)+1, file_id=fid, name=f['name'], unit=index, loc=loc, text=text, sha256=f['sha256'],
                            extractor=f.get('extractor'), stale=False))
+    if output and project_query.FIELD_LIST.search(question):
+        # The fields of a form are its table cells, which repeat none of the question's words;
+        # list the cells of the best-matching file after its matched unit.
+        top = output[0]
+        f = files[top['file_id']]
+        cells = [r for r in c.execute(unit_sql + ' AND u.file_id=? ORDER BY u.unit', (pid, top['file_id'])) if '표' in r[2] and r[1] != top['unit']]
+        if cells:
+            output = [top] + [dict(ref=n, file_id=fid, name=f['name'], unit=index, loc=loc, text=text, sha256=f['sha256'],
+                                   extractor=f.get('extractor'), stale=False) for n, (fid, index, loc, text) in enumerate(cells[:23], 2)]
     return output
 
 

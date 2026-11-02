@@ -44,6 +44,13 @@ class TableUnitsTest(unittest.TestCase):
         self.assertIn('구분: 개인 / 성명: 홍길동 / 부서: 민원과 / 직급: 주무관 / 연락처: 010-0000-0000 / 이메일: a@example.test / 역할: 개발', texts)
         self.assertIn('과제명: 합성 도우미', texts)
 
+    def test_blank_form_rows_are_fields_not_column_names(self):
+        # A blank form lists one label per row, then label | unit rows.
+        rows = [[('소속', 1, 1), ('', 1, 1)], [('직급', 1, 1), ('', 1, 1)], [('출장 기간', 1, 1), ('', 1, 1)],
+                [('운임', 1, 1), ('원', 1, 1)], [('숙박비', 1, 1), ('원', 1, 1)]]
+        texts = [text for _, text in document_convert._table_units(rows)]
+        self.assertEqual(texts, ['소속', '직급', '출장 기간', '운임: 원', '숙박비: 원'])
+
     def test_second_header_row_names_both_levels_and_data_rows_stay_data(self):
         rows = [[('구분', 1, 1), ('운임', 3, 1)],
                 [('도시', 1, 1), ('일등석', 1, 1), ('비즈니스', 1, 1), ('일반석', 1, 1)],

@@ -140,6 +140,11 @@ def _table_units(rows):
     grid = _grid(rows)
     header_index = next((i for i, r in enumerate(grid) if len({v for v in r if v}) >= 2), None)
     header = grid[header_index] if header_index is not None else None
+    # A blank form lists one label per row (소속, 직급, 성명 …) before rows such as 운임 | 원;
+    # that first two-cell row is a field too, not the names of columns.
+    form = header_index is not None and sum(len({v for v in r if v}) == 1 for r in grid[:header_index]) >= 2
+    if form:
+        header = header[:1]
     section, header_at, last = False, header_index, None
     units = []
     for i, row in enumerate(grid):
@@ -147,8 +152,11 @@ def _table_units(rows):
         if not values:
             continue
         previous_row, last = last, i
-        if header_index is None or i <= header_index:
+        if header_index is None or i < header_index or i == header_index and not form:
             units.append((f'{i + 1}행', ' | '.join(values)))
+            continue
+        if i == header_index:
+            units.append((f'{i + 1}행', _pairs(values)))
             continue
         labels = len(values) >= 3 and all(LABEL.match(v) for v in values)
         # A group label merged down the rows (기관 정보 beside 기관명 and 담당부서명)
