@@ -235,6 +235,10 @@ def call_model(profile,messages,schema=None):
         url=profile['base_url'].rstrip('/')[:-3]+'/api/chat'
         body={'model':profile['model'],'messages':messages,'stream':False,'format':schema or ModelOutput.model_json_schema(),
               'options':{'temperature':0.1,'num_ctx':16384,'num_predict':3200}}
+        # A thinking model (Qwen 3.5) reasons first and on a full project prompt ran ~28s, then
+        # gave no usable refs (2026-11-02). The profile's reasoning switch applies here too.
+        extra=profile.get('extra_body') or {}
+        if extra.get('reasoning_effort')=='none' or (extra.get('chat_template_kwargs') or {}).get('enable_thinking') is False:body['think']=False
         try:r=httpx.post(url,json=body,timeout=profile.get('timeout',240))
         except httpx.HTTPError:raise llm.LLMError('로컬 모델 서버 연결 실패 또는 응답 시간 초과') from None
         if r.status_code>=400:raise llm.LLMError(f'로컬 모델 서버 HTTP {r.status_code} 오류')
@@ -266,7 +270,7 @@ def execute(rid,key,input_data,snapshot,profile):
     try:
         safe_profile={k:profile[k] for k in ('provider','base_url','model','api_key','api_key_env','timeout') if k in profile}
         safe_profile['timeout']=min(float(safe_profile.get('timeout',180)),240)
-        safe_profile['extra_body']={'response_format':{'type':'json_object'}}
+        safe_profile['extra_body']={**(profile.get('extra_body') or {}),'response_format':{'type':'json_object'}}
         prompt,aliases=compact_input(input_data)
         messages=[{'role':'system','content':SYSTEM},{'role':'user','content':json.dumps(prompt,ensure_ascii=False)}]
         raw,metadata=call_model(safe_profile,messages,model_schema(prompt))

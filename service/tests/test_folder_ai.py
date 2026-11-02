@@ -100,6 +100,13 @@ class FolderAITest(unittest.TestCase):
   with patch.object(folder_ai.httpx,'post',return_value=response) as call:
    content,meta=folder_ai.call_model({'base_url':'http://127.0.0.1:11434/v1','model':'gemma3:4b'},[{'role':'user','content':'unit'}])
   self.assertEqual(call.call_args.args[0],'http://127.0.0.1:11434/api/chat');self.assertIn('$defs',call.call_args.kwargs['json']['format']);self.assertEqual(call.call_args.kwargs['json']['options']['num_ctx'],16384);self.assertTrue(meta['actual_response']);self.assertEqual(meta['usage']['eval_count'],123)
+ def test_native_call_turns_thinking_off_when_the_profile_does(self):
+  # Qwen 3.5 thinks by default; on a project prompt it ran ~28s and returned no usable refs.
+  response=httpx.Response(200,json={'model':'qwen3.5:9b','message':{'content':'{"refs":[1]}'},'done':True})
+  for extra,think in [({'reasoning_effort':'none'},False),({'chat_template_kwargs':{'enable_thinking':False}},False),({},None)]:
+   with patch.object(folder_ai.httpx,'post',return_value=response) as call:
+    folder_ai.call_model({'base_url':'http://127.0.0.1:11434/v1','model':'qwen3.5:9b','extra_body':extra},[{'role':'user','content':'unit'}])
+   self.assertEqual(call.call_args.kwargs['json'].get('think'),think)
  def test_native_bad_http_and_unfinished_response_rejected(self):
   for response in [httpx.Response(500,text='private-server-detail'),httpx.Response(200,json={'done':False,'message':{'content':'partial'}})]:
    with patch.object(folder_ai.httpx,'post',return_value=response):
