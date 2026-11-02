@@ -840,7 +840,9 @@ class Worker:
                 except OSError:
                     break
             else:
-                if current != old:
+                # Files read by an older extractor are read again (e.g. form tables, 2026-11-02).
+                outdated = any(f['status'] in ('ready', 'partial') and f.get('extractor') != project_text.EXTRACTOR_VERSION for f in previous)
+                if current != old or outdated:
                     with db(self.path) as c:
                         queue(c, p['id'])
 

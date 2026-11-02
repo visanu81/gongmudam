@@ -395,6 +395,19 @@ class FolderProjectsTest(unittest.TestCase):
         after=self.client.get(f'/api/folder-projects/{pid}').json()
         self.assertEqual(len(after['jobs']),3);self.assertEqual(after['jobs'][-1]['status'],'cancelled')
 
+    def test_files_read_by_an_older_extractor_are_read_again(self):
+        f=self.root/'교육.txt';f.write_text('교육 마감: 11월 6일',encoding='utf-8')
+        pid=self.create();self.source(pid,f,'file');self.start()
+        self.wait(pid,lambda v:v['jobs'][-1]['status']=='completed')
+        with projects.db() as c:
+            row=projects.rows(c,'project_files',pid)[0];row['extractor']='structured-older';projects.put(c,'project_files',row)
+        self.worker.check_sources()
+        v=self.wait(pid,lambda v:len(v['jobs'])==2 and v['jobs'][-1]['status']=='completed')
+        self.assertEqual(v['files'][0]['extractor'],project_text.EXTRACTOR_VERSION)
+        # Once current, an unchanged file is not read again.
+        self.worker.check_sources()
+        self.assertEqual(len(self.client.get(f'/api/folder-projects/{pid}').json()['jobs']),2)
+
     def test_summary_search_retains_bounded_context_for_large_text(self):
         f=self.root/'긴 자료.txt';f.write_text('본문',encoding='utf-8')
         pid=self.create();self.source(pid,f,'file');self.start()
