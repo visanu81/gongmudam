@@ -7,6 +7,8 @@ from pathlib import Path
 import zipfile
 import xml.etree.ElementTree as ET
 
+from .pay_guidelines import readable
+
 MAX_FILE_BYTES = 64 * 1024 * 1024
 # Uncompressed size and member limits for HWPX/DOCX/XLSX. Government guides in
 # HWPX reach ~70MB uncompressed; 20MB stopped them entirely (2026-11-01).
@@ -18,7 +20,7 @@ CHUNK_CHARS = 1800
 MAX_PDF_PAGES = 1000
 # Bump when extraction changes what units a file yields; files read by an older
 # extractor are read again and their old citations are shown as changed.
-EXTRACTOR_VERSION = 'structured-20261103'
+EXTRACTOR_VERSION = 'structured-20261103b'
 SUPPORTED = {'.txt', '.md', '.csv', '.pdf', '.xlsx', '.docx', '.hwpx', '.hwp'}
 
 
@@ -35,7 +37,8 @@ class _Collector:
     def add(self, loc, text):
         if text is None or text == '':
             return
-        text = str(text)
+        # Symbol and equation fonts leave glyphs no reader can map; store them readably.
+        text = readable(str(text))
         for start in range(0, len(text), CHUNK_CHARS):
             piece = text[start:start + CHUNK_CHARS]
             remaining = MAX_TEXT_CHARS - self.chars

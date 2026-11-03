@@ -64,6 +64,18 @@ class PayGuidelinesTest(Base):
         self.assertFalse(pay_guidelines.UNREADABLE.search(shown))
         self.assertIn('7,554,360원×[수식·기호: 원문 확인 필요]', shown)
 
+    def test_symbol_font_marks_become_brackets_boxes_and_dots(self):
+        # U+F000 wraps law names in 226·389 and marks bullets in 지방재정 전문; U+F85E is a middle dot.
+        text = '국가공무원법 및  결제대금 지각조퇴 금액×'
+        self.assertEqual(pay_guidelines.readable(text), '「국가공무원법」 및 □ 결제대금 지각ㆍ조퇴 금액×[수식·기호: 원문 확인 필요]')
+
+    def test_answers_show_unmapped_glyphs_readably(self):
+        hit = dict(id='lib:1', text='(예시)신용카드결제대금 지방회계법 제1조', title='합성 지침', loc='p.1',
+                   source_id='lib', kind='guideline', score=1.0, limited=False, official=None)
+        reply = knowledge.answer('결제대금 기준', dict(hits=[hit], experiences=[], excluded=[], intent=None), use_ai=False)
+        self.assertEqual(reply['evidence'][0]['text'], '(예시)□신용카드결제대금 「지방회계법」 제1조')
+        self.assertFalse(pay_guidelines.UNREADABLE.search(json.dumps(reply, ensure_ascii=False)))
+
     def test_holiday_bonus_is_a_pay_question_not_leave(self):
         from app import guidance
         self.assertEqual(guidance.topic('명절휴가비 얼마나 나와?')[0], 'pay')

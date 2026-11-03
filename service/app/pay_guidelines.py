@@ -22,13 +22,19 @@ QUOTE=900
 # The guidelines have no section on these; a page that merely mentions the word is not practice.
 NO_PRACTICE={'pay_payday','pay_table'}
 GUIDELINE={'national_pay':'national','national_allowance':'national','welfare':'national','local_pay':'local','local_allowance':'local'}
-UNREADABLE=re.compile('[-]+')
+UNREADABLE=re.compile('[\ue000-\uf8ff]+')
+# U+F000 is the symbol font's mark: around a law name it stands for 「 」, alone for a bullet or box.
+LAW_MARK=re.compile('\uf000([^\uf000\n]{1,40}?(?:법|령|규정|규칙|조례|법률|훈령|예규|지침))\uf000')
+SYMBOL_MARK=re.compile('[\uf000-\uf0ff]')
 
 
 def readable(text):
-    """Equation fonts in the official PDFs carry private-use glyphs with no character
-    mapping (e.g. the 6/12 fraction on 226 p.76); no PDF reader recovers them. Say so
-    instead of showing broken symbols. The stored, hash-checked text is unchanged."""
+    """Private-use glyphs in the official PDFs and HWPs have no character mapping; no reader
+    recovers them. Symbol-font marks become 「 」 or □ and the dot ㆍ; equation glyphs
+    (e.g. the 6/12 fraction on 226 p.76) are said to need the original. The stored,
+    hash-checked text is unchanged."""
+    text=LAW_MARK.sub(r'「\1」',text)
+    text=SYMBOL_MARK.sub('□',text).replace('\uf85e','ㆍ')
     return UNREADABLE.sub('[수식·기호: 원문 확인 필요]', text)
 
 

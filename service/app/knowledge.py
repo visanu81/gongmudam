@@ -7,6 +7,7 @@ from fastapi import APIRouter,HTTPException
 from pydantic import Field
 from . import folders,config,llm,official_sources,finance_knowledge,office_knowledge,institution_rules,upstage,service_rules,service_guidelines,pay_guidelines
 from .search import BM25
+from .pay_guidelines import readable
 from . import knowledge_relevance as relevance
 from . import knowledge_intent as intent
 
@@ -313,6 +314,8 @@ def answer(query,found,*,use_ai=True):
         notice='업스테이지 API 키가 없어 AI 없이 검색 원문으로 안내합니다. 모델 설정에서 키를 입력하세요.'
     selected={e['id']:e['quote'] for e in evidence}
     evidence=_context_evidence(found['hits'],selected,len(found['hits']) if found.get('office_plan') or found.get('institution') else 6)
+    # Glyphs without a character mapping (지방재정 전문, 보수 지침) are shown as 「 」, □ or a marker.
+    evidence=[e|{'text':readable(e['text']),'quote':readable(e['quote'])} for e in evidence]
     if not selected:mode='source_search'
     notice=' '.join(n for n in (notice,found.get('institution_notice',''),found.get('service_notice','')) if n)
     extra['practice']=[{'quote':p['text']}|p for p in found.get('practice',[])]

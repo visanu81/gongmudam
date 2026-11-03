@@ -19,6 +19,11 @@ class ProjectTextTest(unittest.TestCase):
     def tearDown(self):
         self.temp.cleanup()
 
+    def test_unmapped_glyphs_are_stored_readably(self):
+        path = self.root / '지침.txt'
+        path.write_text('지방회계법  결제대금 금액×', encoding='utf-8')
+        self.assertEqual(project_text.extract(path)['units'][0]['text'], '「지방회계법」 □ 결제대금 금액×[수식·기호: 원문 확인 필요]')
+
     def test_pdf_extracts_actual_page_21_text(self):
         class Page:
             def __init__(self, number):
