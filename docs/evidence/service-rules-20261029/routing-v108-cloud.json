@@ -1,0 +1,78 @@
+[
+ {
+  "question": "업무추진비 집행 기준 알려줘",
+  "same": true,
+  "local": {
+   "mode": "structured_guidance",
+   "notice": "국가기관인지 지방자치단체인지 알려주세요. 두 회계의 집행기준을 섞지 않고 확인하겠습니다.",
+   "evidence": []
+  },
+  "public": {
+   "mode": "structured_guidance",
+   "notice": "국가기관인지 지방자치단체인지 알려주세요. 두 회계의 집행기준을 섞지 않고 확인하겠습니다.",
+   "evidence": []
+  }
+ },
+ {
+  "question": "지방자치단체 업무추진비 사용 기준",
+  "same": true,
+  "local": {
+   "mode": "structured_guidance",
+   "notice": "",
+   "evidence": [
+    [
+     "지방자치단체 회계관리에 관한 훈령 별표 2의2 4. 업무추진비 공통사항",
+     "b1fae3bb4354e90c148b1d733c8b8cc09ac81fcfa27ff65d61193f9ac5673259"
+    ]
+   ]
+  },
+  "public": {
+   "mode": "structured_guidance",
+   "notice": "",
+   "evidence": [
+    [
+     "지방자치단체 회계관리에 관한 훈령 별표 2의2 4. 업무추진비 공통사항",
+     "b1fae3bb4354e90c148b1d733c8b8cc09ac81fcfa27ff65d61193f9ac5673259"
+    ]
+   ]
+  }
+ },
+ {
+  "question": "수의계약 대상자 선정 절차는?",
+  "same": true,
+  "local": {
+   "mode": "structured_guidance",
+   "notice": "",
+   "evidence": [
+    [
+     "지방자치단체를 당사자로 하는 계약에 관한 법률 시행령 제30조(수의계약대상자의 선정절차 등)",
+     "2295149b4f876d96b8378e1683281ef7780ad9671b752ae28145be3fdd22e0bb"
+    ]
+   ]
+  },
+  "public": {
+   "mode": "structured_guidance",
+   "notice": "",
+   "evidence": [
+    [
+     "지방자치단체를 당사자로 하는 계약에 관한 법률 시행령 제30조(수의계약대상자의 선정절차 등)",
+     "2295149b4f876d96b8378e1683281ef7780ad9671b752ae28145be3fdd22e0bb"
+    ]
+   ]
+  }
+ },
+ {
+  "question": "수의계약 금액 기준은?",
+  "same": true,
+  "local": {
+   "mode": "structured_guidance",
+   "notice": "수의계약을 할 수 있는 금액·요건을 정한 지방계약법 시행령 제25조(국가기관은 국가계약법 시행령 제26조)가 필요합니다.",
+   "evidence": []
+  },
+  "public": {
+   "mode": "structured_guidance",
+   "notice": "수의계약을 할 수 있는 금액·요건을 정한 지방계약법 시행령 제25조(국가기관은 국가계약법 시행령 제26조)가 필요합니다.",
+   "evidence": []
+  }
+ }
+]

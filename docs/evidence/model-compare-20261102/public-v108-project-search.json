@@ -1,0 +1,422 @@
+{
+ "site": "https://gongmudam.visanu81.workers.dev",
+ "project": "49ae842b29834d5d9d8f098db82c647e",
+ "rows": [
+  {
+   "question": "교육 일정이 언제야?",
+   "facts": [
+    "11. 13."
+   ],
+   "public": {
+    "found": [
+     "11. 13."
+    ],
+    "mode": "upstage_ai",
+    "refs": 1,
+    "files": [
+     "합성_교육취합보고.hwpx"
+    ]
+   },
+   "local": {
+    "found": [
+     "11. 13."
+    ],
+    "mode": "upstage_ai",
+    "refs": 1,
+    "files": [
+     "합성_교육취합보고.hwpx"
+    ]
+   },
+   "same_facts": true
+  },
+  {
+   "question": "미회신 부서와 재요청 기한은?",
+   "facts": [
+    "회계과",
+    "11. 7."
+   ],
+   "public": {
+    "found": [
+     "회계과",
+     "11. 7."
+    ],
+    "mode": "upstage_ai",
+    "refs": 2,
+    "files": [
+     "합성_교육취합보고.hwpx"
+    ]
+   },
+   "local": {
+    "found": [
+     "회계과",
+     "11. 7."
+    ],
+    "mode": "upstage_ai",
+    "refs": 1,
+    "files": [
+     "합성_교육취합보고.hwpx"
+    ]
+   },
+   "same_facts": true
+  },
+  {
+   "question": "교재비 총액은 얼마야?",
+   "facts": [
+    "345,000"
+   ],
+   "public": {
+    "found": [
+     "345,000"
+    ],
+    "mode": "upstage_ai",
+    "refs": 1,
+    "files": [
+     "합성_교육취합보고.hwpx"
+    ]
+   },
+   "local": {
+    "found": [
+     "345,000"
+    ],
+    "mode": "upstage_ai",
+    "refs": 1,
+    "files": [
+     "합성_교육취합보고.hwpx"
+    ]
+   },
+   "same_facts": true
+  },
+  {
+   "question": "정보화담당관 참석 인원은?",
+   "facts": [
+    "정보화담당관",
+    "7"
+   ],
+   "public": {
+    "found": [
+     "정보화담당관",
+     "7"
+    ],
+    "mode": "upstage_ai",
+    "refs": 1,
+    "files": [
+     "합성_교육취합보고.hwpx"
+    ]
+   },
+   "local": {
+    "found": [
+     "정보화담당관",
+     "7"
+    ],
+    "mode": "upstage_ai",
+    "refs": 1,
+    "files": [
+     "합성_교육취합보고.hwpx"
+    ]
+   },
+   "same_facts": true
+  },
+  {
+   "question": "교육 소요 예산 내역을 알려줘",
+   "facts": [
+    "1,200,000",
+    "345,000"
+   ],
+   "public": {
+    "found": [
+     "1,200,000",
+     "345,000"
+    ],
+    "mode": "upstage_ai",
+    "refs": 1,
+    "files": [
+     "합성_교육취합보고.hwpx"
+    ]
+   },
+   "local": {
+    "found": [
+     "1,200,000",
+     "345,000"
+    ],
+    "mode": "upstage_ai",
+    "refs": 1,
+    "files": [
+     "합성_교육취합보고.hwpx"
+    ]
+   },
+   "same_facts": true
+  },
+  {
+   "question": "중복 신청은 몇 건이야?",
+   "facts": [
+    "중복 신청 2건"
+   ],
+   "public": {
+    "found": [
+     "중복 신청 2건"
+    ],
+    "mode": "upstage_ai",
+    "refs": 1,
+    "files": [
+     "합성_교육취합보고.hwpx"
+    ]
+   },
+   "local": {
+    "found": [
+     "중복 신청 2건"
+    ],
+    "mode": "upstage_ai",
+    "refs": 1,
+    "files": [
+     "합성_교육취합보고.hwpx"
+    ]
+   },
+   "same_facts": true
+  },
+  {
+   "question": "물품 납품 후 검사는 며칠 안에 해야 해?",
+   "facts": [
+    "14일 이내에 검사"
+   ],
+   "public": {
+    "found": [
+     "14일 이내에 검사"
+    ],
+    "mode": "upstage_ai",
+    "refs": 1,
+    "files": [
+     "02_공통_물품구매지침_가상.pdf"
+    ]
+   },
+   "local": {
+    "found": [
+     "14일 이내에 검사"
+    ],
+    "mode": "upstage_ai",
+    "refs": 1,
+    "files": [
+     "02_공통_물품구매지침_가상.pdf"
+    ]
+   },
+   "same_facts": true
+  },
+  {
+   "question": "물품 대금은 언제까지 지급해?",
+   "facts": [
+    "5일 이내에 대금"
+   ],
+   "public": {
+    "found": [
+     "5일 이내에 대금"
+    ],
+    "mode": "upstage_ai",
+    "refs": 1,
+    "files": [
+     "02_공통_물품구매지침_가상.pdf"
+    ]
+   },
+   "local": {
+    "found": [
+     "5일 이내에 대금"
+    ],
+    "mode": "upstage_ai",
+    "refs": 1,
+    "files": [
+     "02_공통_물품구매지침_가상.pdf"
+    ]
+   },
+   "same_facts": true
+  },
+  {
+   "question": "물품 구매 요구서는 언제까지 내야 해?",
+   "facts": [
+    "14일 전까지"
+   ],
+   "public": {
+    "found": [
+     "14일 전까지"
+    ],
+    "mode": "upstage_ai",
+    "refs": 1,
+    "files": [
+     "02_공통_물품구매지침_가상.pdf"
+    ]
+   },
+   "local": {
+    "found": [
+     "14일 전까지"
+    ],
+    "mode": "upstage_ai",
+    "refs": 1,
+    "files": [
+     "02_공통_물품구매지침_가상.pdf"
+    ]
+   },
+   "same_facts": true
+  },
+  {
+   "question": "견적은 몇 명에게 받아야 해?",
+   "facts": [
+    "2인 이상"
+   ],
+   "public": {
+    "found": [
+     "2인 이상"
+    ],
+    "mode": "upstage_ai",
+    "refs": 1,
+    "files": [
+     "02_공통_물품구매지침_가상.pdf"
+    ]
+   },
+   "local": {
+    "found": [
+     "2인 이상"
+    ],
+    "mode": "upstage_ai",
+    "refs": 1,
+    "files": [
+     "02_공통_물품구매지침_가상.pdf"
+    ]
+   },
+   "same_facts": true
+  },
+  {
+   "question": "여비 정산서에 적어야 하는 항목은?",
+   "facts": [
+    "숙박비",
+    "출장 기간"
+   ],
+   "public": {
+    "found": [
+     "숙박비",
+     "출장 기간"
+    ],
+    "mode": "upstage_ai",
+    "refs": 12,
+    "files": [
+     "07_서식_국내출장여비정산서_가상.hwpx"
+    ]
+   },
+   "local": {
+    "found": [
+     "숙박비",
+     "출장 기간"
+    ],
+    "mode": "upstage_ai",
+    "refs": 12,
+    "files": [
+     "07_서식_국내출장여비정산서_가상.hwpx"
+    ]
+   },
+   "same_facts": true
+  },
+  {
+   "question": "교육 취합 결과와 물품 구매 지침을 비교해줘",
+   "facts": [
+    "교육",
+    "물품"
+   ],
+   "public": {
+    "found": [
+     "교육",
+     "물품"
+    ],
+    "mode": "upstage_ai",
+    "refs": 10,
+    "files": [
+     "02_공통_물품구매지침_가상.pdf",
+     "합성_교육취합보고.hwpx"
+    ]
+   },
+   "local": {
+    "found": [
+     "교육",
+     "물품"
+    ],
+    "mode": "upstage_ai",
+    "refs": 10,
+    "files": [
+     "02_공통_물품구매지침_가상.pdf",
+     "합성_교육취합보고.hwpx"
+    ]
+   },
+   "same_facts": true
+  },
+  {
+   "question": "체육대회 일정은 언제야?",
+   "facts": [],
+   "public": {
+    "found": [],
+    "mode": "fallback",
+    "refs": 1,
+    "files": [
+     "공개_지방예산편성기준2026.hwpx"
+    ]
+   },
+   "local": {
+    "found": [],
+    "mode": "fallback",
+    "refs": 1,
+    "files": [
+     "공개_지방예산편성기준2026.hwpx"
+    ]
+   },
+   "same_facts": true
+  },
+  {
+   "question": "이 대회에 참가한 사람은?",
+   "facts": [
+    "홍길동"
+   ],
+   "public": {
+    "found": [
+     "홍길동"
+    ],
+    "mode": "upstage_ai",
+    "refs": 1,
+    "files": [
+     "참가신청서_합성.txt"
+    ]
+   },
+   "local": {
+    "found": [
+     "홍길동"
+    ],
+    "mode": "upstage_ai",
+    "refs": 1,
+    "files": [
+     "참가신청서_합성.txt"
+    ]
+   },
+   "same_facts": true
+  },
+  {
+   "question": "우승하면 무엇을 받아?",
+   "facts": [
+    "최우수"
+   ],
+   "public": {
+    "found": [
+     "최우수"
+    ],
+    "mode": "upstage_ai",
+    "refs": 1,
+    "files": [
+     "챌린지 행사계획 안내서_가상.txt"
+    ]
+   },
+   "local": {
+    "found": [
+     "최우수"
+    ],
+    "mode": "upstage_ai",
+    "refs": 1,
+    "files": [
+     "챌린지 행사계획 안내서_가상.txt"
+    ]
+   },
+   "same_facts": true
+  }
+ ]
+}
