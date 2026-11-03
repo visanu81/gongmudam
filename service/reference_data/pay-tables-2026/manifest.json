@@ -1,0 +1,54 @@
+[
+ {
+  "id": "salary-general",
+  "kind": "salary",
+  "law": "공무원보수규정",
+  "title": "[별표 3] 일반직공무원과 일반직에 준하는 특정직 및 별정직 공무원 등의 봉급표",
+  "revised": "2026. 1. 2.",
+  "applies": "국가 일반직, 지방 일반직(지방공무원 보수규정 제4조제3항 준용)",
+  "source_url": "https://www.law.go.kr/LSW/lsBylInfoPLinkR.do?lsiSeq=290321&bylNo=0003&bylBrNo=00&bylCls=BE&bylEfYd=&bylEfYdYn=Y",
+  "download_url": "https://www.law.go.kr/LSW/flDownload.do?flSeq=169560643",
+  "raw_file": "salary-general.pdf",
+  "sha256": "e14f93607f225e40a44224450c99e965d3e1d3dd8e6e414002eeedd5b6c4e9ba",
+  "retrieved_at": "2026-11-03T12:48:43+00:00"
+ },
+ {
+  "id": "salary-police-fire",
+  "kind": "salary",
+  "law": "공무원보수규정",
+  "title": "[별표 10] 경찰공무원ㆍ소방공무원 및 의무경찰 등의 봉급표",
+  "revised": "2026. 1. 2.",
+  "applies": "경찰공무원, 소방공무원",
+  "source_url": "https://www.law.go.kr/LSW/lsBylInfoPLinkR.do?lsiSeq=290321&bylNo=0010&bylBrNo=00&bylCls=BE&bylEfYd=&bylEfYdYn=Y",
+  "download_url": "https://www.law.go.kr/LSW/flDownload.do?flSeq=169560697",
+  "raw_file": "salary-police-fire.pdf",
+  "sha256": "b2cc2607b65204ad726155900eec11d94101ab51c02284b9acab149731e73b0b",
+  "retrieved_at": "2026-11-03T12:48:43+00:00"
+ },
+ {
+  "id": "longevity-national",
+  "kind": "longevity",
+  "law": "공무원수당 등에 관한 규정",
+  "title": "[별표 2] 정근수당 지급 구분표(제7조제1항 관련)",
+  "revised": "2025. 1. 3.",
+  "applies": "국가공무원",
+  "source_url": "https://www.law.go.kr/LSW/lsBylInfoPLinkR.do?lsiSeq=290323&bylNo=0002&bylBrNo=00&bylCls=BE&bylEfYd=&bylEfYdYn=Y",
+  "download_url": "https://www.law.go.kr/LSW/flDownload.do?flSeq=169637279",
+  "raw_file": "longevity-national.pdf",
+  "sha256": "24d6f4d495e38fcaf7f843059250fb088d5f66e3a0ae6ef36a27742b5d19f087",
+  "retrieved_at": "2026-11-03T12:48:44+00:00"
+ },
+ {
+  "id": "longevity-local",
+  "kind": "longevity",
+  "law": "지방공무원 수당 등에 관한 규정",
+  "title": "[별표 2] 정근수당 지급구분표(제6조제1항 관련)",
+  "revised": "2025. 1. 3.",
+  "applies": "지방공무원",
+  "source_url": "https://www.law.go.kr/LSW/lsBylInfoPLinkR.do?lsiSeq=289957&bylNo=0002&bylBrNo=00&bylCls=BE&bylEfYd=&bylEfYdYn=Y",
+  "download_url": "https://www.law.go.kr/LSW/flDownload.do?flSeq=169315875",
+  "raw_file": "longevity-local.pdf",
+  "sha256": "861940ce83afff6b64656a5314d0a819c2f278f4e63fae176da927b8ba43124f",
+  "retrieved_at": "2026-11-03T12:48:44+00:00"
+ }
+]

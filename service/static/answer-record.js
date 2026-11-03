@@ -13,6 +13,15 @@
     if (response.model != null) out.push(...line("모델", response.model));
     if (response.profile != null) out.push(...line("프로필", response.profile));
     out.push("", "요약", text(response.summary));
+    const pay = response.pay_calculation && typeof response.pay_calculation === "object" ? response.pay_calculation : null;
+    if (pay) {
+      out.push("", text(pay.title));
+      list(pay.lines).forEach((l) => { if (l && typeof l === "object") out.push(`- ${text(l.label)}: ${Number(l.amount).toLocaleString("ko-KR")}원 (${text(l.formula)})`); });
+      if (list(pay.needs).length) out.push(`계산에 필요한 정보: ${list(pay.needs).map(text).join(", ")}`);
+      list(pay.notes).forEach((n) => out.push(text(n)));
+      list(pay.sources).forEach((s) => { if (s && typeof s === "object") out.push(`계산 근거: ${text(s.law)} ${text(s.title)} (개정 ${text(s.revised)}) ${text(s.source_url)} SHA-256 ${text(s.sha256)}`); });
+      out.push(text(pay.scope));
+    }
     const guidance = response.guidance && typeof response.guidance === "object" ? response.guidance : null;
     if (guidance) {
       out.push("", "실무 준비 안내", ...line("제목", guidance.title), ...line("상황", guidance.context));

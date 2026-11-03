@@ -192,13 +192,23 @@ const chatRequests = (() => {
 })();
 function sendAsk(query, options) { return chatRequests.send(query, options); }
 
+// 봉급표·수당 별표로 계산한 금액: 규정 조문 답변 위에 숫자와 계산식, 출처 별표를 보여 준다.
+function payCalculationHtml(c) {
+  if (!c) return "";
+  const rows = (c.lines || []).map((l) => `<tr><th scope="row">${esc(l.label)}</th><td>${Number(l.amount).toLocaleString("ko-KR")}원</td><td class="muted">${esc(l.formula)}</td></tr>`).join("");
+  const needs = c.needs?.length ? `<p class="pay-calc-needs">계산하려면 ${c.needs.map(esc).join(", ")}을(를) 질문에 함께 적어 주세요.</p>` : "";
+  const notes = (c.notes || []).map((n) => `<li>${esc(n)}</li>`).join("");
+  const sources = (c.sources || []).map((s) => `<li><a href="${esc(s.source_url)}" target="_blank" rel="noopener">${esc(s.law)} ${esc(s.title)}</a> <span class="muted">(개정 ${esc(s.revised)} · ${esc(s.applies)})</span></li>`).join("");
+  return `<section class="pay-calc" aria-label="봉급표 기준 계산"><h3>${esc(c.title)}</h3>${rows ? `<table>${rows}</table>` : ""}${needs}${notes ? `<ul class="pay-calc-notes">${notes}</ul>` : ""}${sources ? `<div class="pay-calc-src">계산 근거<ul>${sources}</ul></div>` : ""}<p class="muted">${esc(c.scope)}</p></section>`;
+}
+
 function renderAnswer(box, res, context = {}) {
   if (res.mode === "workflow_edit" && window.SeomuWorkflowChat) { window.SeomuWorkflowChat.render(box, res, (query, fields) => sendAsk(query, { workflowFields: fields })); return; }
   if(res.guidance && window.SeomuGuidance){
     const label=res.guidance.ai_used?`등록 자료 안내 · AI 보조 ${esc(res.model||'')}`:'등록 자료 안내 · AI 미사용';
     const tree=res.knowledge?.tree;
     const directTree=tree && tree.kind!=='extract';
-    box.innerHTML=`<div class="bot-hd">${label}</div>${directTree?answerTreeHtml(tree,res.knowledge?.evidence?.length||0):''}<div class="guidance-root"></div>${res.knowledge?.evidence?.length?`<details class="answer-original"><summary>규정 원문·근거 자세히 보기 (${res.knowledge.evidence.length}개)</summary>${knowledgeAnswerHtml(res.knowledge)}</details>`:''}${res.notice?`<p class="notice">${esc(res.notice)}</p>`:''}`;
+    box.innerHTML=`<div class="bot-hd">${label}</div>${payCalculationHtml(res.pay_calculation)}${directTree?answerTreeHtml(tree,res.knowledge?.evidence?.length||0):''}<div class="guidance-root"></div>${res.knowledge?.evidence?.length?`<details class="answer-original"><summary>규정 원문·근거 자세히 보기 (${res.knowledge.evidence.length}개)</summary>${knowledgeAnswerHtml(res.knowledge)}</details>`:''}${res.notice?`<p class="notice">${esc(res.notice)}</p>`:''}`;
     window.SeomuGuidance.render($('.guidance-root',box),res);
     if(tree)bindAnswerTree(box);
     window.SeomuTaskLinks?.render(box,res,context.today,fail);
@@ -211,6 +221,7 @@ function renderAnswer(box, res, context = {}) {
   const clarificationMode = res.mode === "source_clarification";
   const modeText = clarificationMode ? "상황 확인 · 모델 미사용" : res.mode === "travel_workflow" ? "출장정산 준비 · 대화 내용 연결 · 모델 미사용" : res.mode === "source_manual" ? "e-사람 사용법 · 등록 매뉴얼 원문" : res.mode === "folder_workflow" ? "업무자료 정리 안내 · 모델 미사용" : res.mode === "education_workflow" ? "교육 취합 업무 안내 · 모델 미사용" : res.mode === "source_unavailable" ? "추가 자료 필요" : res.mode === "source_llm" ? "등록 자료 확인 · AI 보조" : res.mode === "source_search" ? "등록 자료에서 확인" : res.mode === "leave_guide" ? "휴가·휴무 종류 확인 · 등록 안내자료 사용 (모델 미사용)" : res.mode === "llm" ? `규칙 기반 안내 · 절차 선택 보조 모델 ${esc(res.profile)} (${esc(res.model)})` : res.mode === "fallback" ? "규칙 기반 안내 (모델 응답 실패)" : "규칙 기반 안내 (오프라인)";
   let h = `<div class="bot-hd">${modeText}</div>`;
+  h += payCalculationHtml(res.pay_calculation);
   if (treeMode) h += answerTreeHtml(res.knowledge.tree, res.knowledge.evidence?.length || 0);
   else h += `<div class="answer">${esc(res.summary)}</div>`;
   if (treeMode && res.mode !== "source_unavailable" && !clarificationMode) {

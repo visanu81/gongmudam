@@ -27,7 +27,7 @@ from . import guidance, answer_reviews
 from . import service_knowledge,finance_knowledge,office_knowledge
 from . import institution_rules
 from . import regulation_monitor,regulation_registry
-from . import toolbox, folder_scan, calendar_api, education_calendar, calendar_agenda, project_export
+from . import toolbox, folder_scan, calendar_api, education_calendar, calendar_agenda, project_export, pay_tables
 from . import folder_projects
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -119,6 +119,17 @@ def api_ask(body: dict = Body(...)) -> dict:
         return _ask(body)
 
 
+def _with_pay(reply: dict, query: str, body: dict) -> dict:
+    """The table amount beside the article: the search answers with the rule, the annex gives the number."""
+    # The saved 소속 (지방공무원 etc.) decides which allowance rule is cited, as in the answer search.
+    from .institution_matching import scope_query
+    context = str(body.get('situation_context') or '') + ' ' + scope_query(query, body.get('affiliation'))
+    calculation = pay_tables.calculate(query, context)
+    if calculation:
+        reply['pay_calculation'] = calculation
+    return reply
+
+
 def _ask(body: dict) -> dict:
     query=str(body.get('query') or '').strip()
     if not query or len(query)>3000:raise HTTPException(422,'질문은 1~3000자로 입력하세요.')
@@ -128,7 +139,7 @@ def _ask(body: dict) -> dict:
         today = _today(body.get('today'))
         reply = guidance.respond(query,body,today,public_mode=bool(getattr(app.state,'public_demo',False)))
         reply['review_context'] = answer_reviews.response_context(reply.get('query',query),body,today)
-        return reply
+        return _with_pay(reply,query,body)
     manual_reply=manual_knowledge.respond(query,body.get('knowledge_library_id') or None)
     if manual_reply is not None and not body.get('card_id') and not body.get('leave_type'):return manual_reply
     task_action = task_intent.action(query)
@@ -157,7 +168,7 @@ def _ask(body: dict) -> dict:
         summary=('상황을 조금 더 확인한 뒤 맞는 근거를 찾겠습니다.' if reply['mode']=='source_clarification' else
                  '등록 원문에서 확인한 내용입니다. 인용 번호에 해당하는 출처와 적용 조건을 함께 확인하세요.' if found['hits'] else
                  '등록한 자료에서 질문에 필요한 직접 근거를 확인하지 못했습니다.')
-        return with_task_action(dict(query=query,mode=reply['mode'],model=reply['model'],profile=None,summary=summary,answer=reply['answer'],notice=reply['notice'],plan=None,alternatives=[],cited=[],related=[],personal_notes=[],knowledge=reply))
+        return _with_pay(with_task_action(dict(query=query,mode=reply['mode'],model=reply['model'],profile=None,summary=summary,answer=reply['answer'],notice=reply['notice'],plan=None,alternatives=[],cited=[],related=[],personal_notes=[],knowledge=reply)),query,body)
     # 이미 저장·선택한 합성 절차 카드는 보존하고, 새 질문은 휴가 분류부터 확인한다.
     leave_result=leave.guide(str(body.get("query") or ""),body.get("leave_type"),body.get("leave_context")) if not body.get("card_id") or body.get("leave_type") else None
     if leave_result is not None:

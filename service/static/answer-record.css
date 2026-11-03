@@ -2,3 +2,11 @@
 .answer-record-actions>span{min-width:0;overflow-wrap:anywhere;color:#68766d;font-size:12px}
 .answer-record-actions .answer-record-button{min-height:40px;flex:0 0 auto}
 .answer-record-actions .answer-record-status{flex-basis:100%}
+.pay-calc{margin:10px 0 12px;padding:12px 14px;border:1px solid #cfe0d8;border-radius:10px;background:#f5faf7}
+.pay-calc h3{margin:0 0 8px;font-size:15px;color:#244a45}
+.pay-calc table{border-collapse:collapse;width:100%}
+.pay-calc th,.pay-calc td{padding:5px 8px;border-bottom:1px solid #e1ebe6;text-align:left;font-weight:500;overflow-wrap:anywhere}
+.pay-calc td:nth-child(2){font-weight:700;color:#18453b;white-space:nowrap}
+.pay-calc-needs{color:#8d5522;margin:6px 0}
+.pay-calc-notes,.pay-calc-src ul{margin:6px 0;padding-left:18px;font-size:13px}
+.pay-calc-src{font-size:13px;margin-top:6px}
