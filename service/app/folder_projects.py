@@ -615,11 +615,12 @@ def retrieve(c, pid, question, selected, draft=False):
     if words and not generic:
         # A word found in few units says more than one repeated across a long document.
         # Without this, a large reference file filled every slot with common words.
-        df, total = dict.fromkeys(words, 0), 0
+        df, total, length = dict.fromkeys(words, 0), 0, 0
         found = {(w, v): 0 for w in words for v in project_query.variants(w)}
         for fid, _, _, text in c.execute(unit_sql, (pid,)):
             if fid in files:
                 total += 1
+                length += len(text)
                 lower = text.lower()
                 hits = {key for key in found if key[1] in lower}
                 for key in hits:
@@ -630,6 +631,7 @@ def retrieve(c, pid, question, selected, draft=False):
         # one line outranks 상금 inside every 보상금 row of a budget manual. It stays small so
         # the word weights above still decide between units that match different words.
         rarity = {key: math.log((total + 1) / (n + .5)) for key, n in found.items()}
+        average = length / total if total else 1
     # A unit must name the subject; "체육대회 일정" must not return every other schedule.
     subject = project_query.subject_words(words)
     candidates, grouped, by_file = [], {}, {}
@@ -642,6 +644,9 @@ def retrieve(c, pid, question, selected, draft=False):
         matches = len(matched)
         score = matches * 10 if generic else round(10 * sum(weight[w] for w in matched), 3)
         if rarity:
+            # Length normalization as in BM25 (k1 1.2, b 0.75): a long budget-manual row meets
+            # every word somewhere in its text, while "성명: 홍길동" on a 참가신청서 is about them.
+            score *= 2.2 / (1 + 1.2 * (.25 + .75 * len(r[3]) / average))
             score = round(score + sum(max(rarity[w, v] for v in project_query.variants(w) if v in lower) for w in matched), 3)
         if pending and not project_query.has_pending_reply(r[3]):
             if not other_fields or not any(w in lower for w in other_fields):

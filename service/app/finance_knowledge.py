@@ -49,6 +49,8 @@ def topics(query):
     if any(t in q for t in ('포인트','적립','공개','홈페이지','공시','겸직','영리업무','휴가','연가','병가','견적','수의계약','검수','검사조서')):return set()
     if context not in {'overtime_meal','meeting_meal'} and any(t in q for t in ('출장','여비')):return set()
     result={context} if context in {'overtime_meal','meeting_meal'} else set()
+    # The 업무추진비 sections answer any 업무추진비 question, not only its meal cases.
+    if '업무추진비' in q:result.add('meeting_meal')
     if any(t in q for t in ('강사료','강사수당','강연료','초빙강사','외래강사')):result.add('lecturer')
     if any(t in q for t in ('원고료','원고수당','원고작성사례금')):result.add('manuscript')
     if any(t in q for t in ('정부구매카드','지방자치단체구매카드','법인카드','업무용카드','카드증빙','카드영수증','카드사용')):result.add('card')

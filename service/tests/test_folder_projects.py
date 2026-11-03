@@ -349,6 +349,15 @@ class FolderProjectsTest(unittest.TestCase):
         self.question(pid,'이 대회에 참가한 사람은?');answer=self.answered(pid)['messages'][-1]
         self.assertIn('홍길동',' '.join(e['text'] for e in answer['evidence']))
 
+    def test_short_form_line_outranks_long_reference_rows(self):
+        # A long manual row meets 대회·참가·사람 somewhere in its text; the form's one line is about them.
+        pid=self.contest()
+        row='행사 참가자에게 지급하는 급식비 및 교통비는 교육·세미나·공청회·회의에 참석하는 민간인에게 실비로 지급하며 각종 대회 개최 경비와 구분하여 편성하고 단순 참가자에게는 지급할 수 없음 '
+        (self.root/'대회'/'공개_예산편성기준.txt').write_text('\n\n'.join(f'{i}. {row*3}' for i in range(1,30)),encoding='utf-8')
+        self.start();self.wait(pid,lambda v:len(v['files'])==3 and all(j['status']=='completed' for j in v['jobs']))
+        self.question(pid,'이 대회에 참가한 사람은?');evidence=self.answered(pid)['messages'][-1]['evidence']
+        self.assertEqual(evidence[0]['name'],'참가신청서.txt')
+
     def test_prize_question_finds_the_award_line_without_ai(self):
         # The notice writes the prize as "시상: 최우수"; "우승하면" must reach it with no model.
         pid=self.contest()

@@ -130,6 +130,7 @@ MISSING = {
     'goods_inspection_limit':'검사조서 작성 생략 금액을 정한 시행령 등 직접 기준이 필요합니다.',
     'goods_payment_deadline':'대가 지급의 구체적인 기한을 정한 시행령 등 직접 기준이 필요합니다.',
     'account_disclosure':'업무추진비 공개 항목·주기·시기를 정한 별표 2의2가 필요합니다.',
+    'goods_private_contract':'수의계약을 할 수 있는 금액·요건을 정한 지방계약법 시행령 제25조(국가기관은 국가계약법 시행령 제26조)가 필요합니다.',
     'travel_education':'교육대상자로 선발된 출장에 적용하는 인사혁신처 세부 기준이 필요합니다.',
 }
 
@@ -190,7 +191,9 @@ def analyze(query):
     own_sick=leave_situations.self_sick(query)
     leave=care or own_sick or any(t in q for t in ('휴가','휴무','연가','연차','병가','공가','육아시간','모성보호','건강검진','건강진단','헌혈'))
     sidejob=any(t in q for t in ('겸직','영리업무','유튜브수익','유튜브수입'))
-    goods=any(t in q for t in ('물품','납품','검수','검사조서','수의계약','불용','견적','법인카드','문구점','인센티브','포인트','적립금','마일리지','강사료','강연료','업무추진비','지방자치단체선금','퇴직예정자기념품'))
+    goods=any(t in q for t in ('물품','납품','검수','검사조서','수의계약','불용','견적','법인카드','문구점','인센티브','포인트','적립금','마일리지','강사료','강연료','지방자치단체선금','퇴직예정자기념품'))
+    # 업무추진비 itself is the finance pack's 업무추진비 section; only its disclosure is an account topic.
+    goods=goods or ('업무추진비' in q and '공개' in q)
     goods=goods or ('계약' in q and any(t in q for t in ('대가','대금','선금')))
     topics=[];question=''
     def add(topic):
@@ -279,8 +282,8 @@ def analyze(query):
             if '연가' in q:add('annual')
             if '병가' in q:add('sick')
     if goods and not (travel and not any(t in q for t in ('물품','납품','검수','견적'))):
-        if any(t in q for t in ('집행','공개')) and any(t in q for t in ('강사료','강연료','업무추진비')):
-            add('account_disclosure' if '업무추진비' in q else 'account_lecturer')
+        if '업무추진비' in q:add('account_disclosure')
+        elif any(t in q for t in ('집행','공개')) and any(t in q for t in ('강사료','강연료')):add('account_lecturer')
         elif '공개' in q and any(t in q for t in TOPICS['account_points'][1]):add('account_incentive_disclosure')
         elif '공개' in q and '퇴직' in q:add('account_retirement_disclosure')
         elif any(t in q for t in TOPICS['account_points'][1]):add('account_points')
@@ -289,6 +292,9 @@ def analyze(query):
             for t in ('goods_quote','goods_private_contract','goods_disposal','goods_defect'):
                 if any(a in q for a in TOPICS[t][1]):add(t)
             if 'goods_quote' in topics and 'goods_private_contract' in topics and not any(t in q for t in ('수의계약한도','수의계약가능금액','수의계약요건')):topics.remove('goods_private_contract')
+            # 제30조 is the selection procedure (견적); the amount limits are a different article.
+            if 'goods_private_contract' in topics and any(t in q for t in ('선정','절차')) and not any(t in q for t in ('한도','금액','요건','얼마','이하')):
+                topics[topics.index('goods_private_contract')]='goods_quote'
             if len(topics)==goods_start:
                 pay=any(t in q for t in ('대금','대가','선금','돈부터','돈을먼저','돈먼저'))
                 inspect=any(t in q for t in ('검사','검수','검사조서','품질인증','성능시험'))

@@ -4,9 +4,12 @@ import io, json, unittest
 from app import pay_tables
 
 
-def pdf_text(name):
+def raw_text(name):
+    data = (pay_tables.BASE / 'raw' / name).read_bytes()
+    if name.endswith('.txt'):
+        return data.decode('utf-8')
     import pypdf
-    return '\n'.join(p.extract_text() for p in pypdf.PdfReader(io.BytesIO((pay_tables.BASE / 'raw' / name).read_bytes())).pages)
+    return '\n'.join(p.extract_text() for p in pypdf.PdfReader(io.BytesIO(data)).pages)
 
 
 class TablesTest(unittest.TestCase):
@@ -14,8 +17,7 @@ class TablesTest(unittest.TestCase):
         manifest, tables = pay_tables.load()
         for key, entry in manifest.items():
             with self.subTest(key=key):
-                parse = pay_tables.parse_salary if entry['kind'] == 'salary' else pay_tables.parse_longevity
-                self.assertEqual(json.loads(json.dumps(parse(pdf_text(entry['raw_file'])))), tables[key])
+                self.assertEqual(json.loads(json.dumps(pay_tables.PARSERS[entry['kind']](raw_text(entry['raw_file'])))), tables[key])
                 self.assertTrue(entry['source_url'].startswith('https://www.law.go.kr/'))
 
     def test_known_cells(self):
@@ -26,6 +28,12 @@ class TablesTest(unittest.TestCase):
         self.assertEqual(general['32'][5], 4_967_800)           # only 6급 reaches 32호봉
         self.assertEqual(fire['5'][8], 2_427_500)               # 경장·소방교 5호봉
         self.assertEqual(t['salary-police-fire']['columns'][9], '순경/소방사')
+        # 별표 5 and the local 제10조 write the same 가족수당 differently (40,000원 / 월 4만원).
+        self.assertEqual(t['family-national'], t['family-local'])
+        self.assertEqual(t['family-national'], dict(spouse=40_000, other=20_000, children=[50_000, 80_000, 120_000]))
+        self.assertEqual(t['subsidy-national']['general'], [750_000, 650_000, 500_000, 400_000, 250_000, 185_000, 180_000, 175_000, 175_000])
+        self.assertEqual(t['subsidy-national']['police_fire'][5:7], [185_000, 185_000])   # 경감·경위 share a row
+        self.assertEqual(t['subsidy-local']['deputy_4'], [450_000])
 
 
 class CalculateTest(unittest.TestCase):
@@ -46,6 +54,27 @@ class CalculateTest(unittest.TestCase):
         self.assertEqual(self.lines('소방정 3호봉 월급 얼마?'), [('소방정 3호봉 월봉급액', 3_885_800)])
         self.assertEqual(self.lines('소방정감 1호봉 봉급 얼마'), [('소방정감 1호봉 월봉급액', 4_905_100)])
         self.assertEqual(self.lines('경감 2호봉 봉급 얼마'), [('경감 2호봉 월봉급액', 2_814_700)])
+
+    def test_family_allowance(self):
+        self.assertEqual(self.lines('배우자랑 자녀 둘 있으면 가족수당 얼마야?'),
+                         [('가족수당 배우자(매월)', 40_000), ('가족수당 첫째 자녀(매월)', 50_000), ('가족수당 둘째 자녀(매월)', 80_000)])
+        self.assertEqual(self.lines('아이 셋 가족수당 얼마'), [('가족수당 첫째 자녀(매월)', 50_000), ('가족수당 둘째 자녀(매월)', 80_000), ('가족수당 셋째 자녀(매월)', 120_000)])
+        self.assertEqual(self.lines('아내와 어머니 부양하면 가족수당 얼마 받아?'), [('가족수당 배우자(매월)', 40_000), ('가족수당 그 밖의 부양가족 1명(매월)', 20_000)])
+        # Family allowance needs no grade; 부모님 without a number is asked, not guessed.
+        r = pay_tables.calculate('가족수당 얼마 나와?')
+        self.assertEqual((r['lines'], r['needs']), ([], ['부양가족(예: 배우자, 자녀 2명)']))
+        self.assertEqual(pay_tables.calculate('부모님 모시면 가족수당 얼마')['needs'], ['자녀 외 부양가족 수(예: 부모님 2명)'])
+        r = pay_tables.calculate('배우자 부모님 2명 자녀 2명 가족수당 계산해줘')
+        self.assertIn('4명 이내', r['notes'][0])
+        local = pay_tables.calculate('배우자 가족수당 얼마', '지방공무원')
+        self.assertEqual([s['law'] for s in local['sources']], ['지방공무원 수당 등에 관한 규정'])
+
+    def test_grade_subsidy(self):
+        self.assertEqual(self.lines('7급 직급보조비 얼마야?'), [('직급보조비(매월, 7급)', 180_000)])
+        self.assertEqual(self.lines('소방위 직급보조비 얼마'), [('직급보조비(매월, 소방위)', 185_000)])
+        self.assertEqual(self.lines('9급 3호봉 봉급이랑 직급보조비 얼마'), [('9급 3호봉 월봉급액', 2_168_000), ('직급보조비(매월, 9급)', 175_000)])
+        self.assertIn('4급 부단체장은 월 450,000원', pay_tables.calculate('4급 직급보조비 얼마', '지방공무원')['notes'][0])
+        self.assertEqual(pay_tables.calculate('직급보조비 얼마 받아?')['needs'], ['직급(예: 7급, 소방교)'])
 
     def test_missing_information_is_named(self):
         r = pay_tables.calculate('명절휴가비 얼마나 나와?')

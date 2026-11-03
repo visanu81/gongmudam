@@ -1,7 +1,8 @@
-"""봉급·명절휴가비·정근수당 amounts from the official 2026 annexes, without AI.
+"""봉급·명절휴가비·정근수당·가족수당·직급보조비 amounts from the official 2026 sources, without AI.
 
 The answer search finds the articles; the amounts are in annex tables
-(공무원보수규정 별표 3·10, 수당 규정 별표 2) collected by tools/collect_pay_tables.py.
+(공무원보수규정 별표 3·10, 수당 규정 별표 2·5·14·15, and the local 가족수당 in 제10조 itself)
+collected by tools/collect_pay_tables.py.
 A question that names the grade, 호봉 or years of service gets the amount with the
 formula and the annex it came from; a question missing them is told what to add.
 Amounts are the table values before tax and deductions, never a payslip.
@@ -25,7 +26,21 @@ EXTRA = [(25, 30_000), (20, 10_000)]
 ARTICLES = {
     'holiday': {'national': '공무원수당 등에 관한 규정 제18조의3(명절휴가비)', 'local': '지방공무원 수당 등에 관한 규정 제18조의3(명절휴가비)'},
     'longevity': {'national': '공무원수당 등에 관한 규정 제7조(정근수당)', 'local': '지방공무원 수당 등에 관한 규정 제6조(정근수당)'},
+    'family': {'national': '공무원수당 등에 관한 규정 제10조(가족수당)', 'local': '지방공무원 수당 등에 관한 규정 제10조(가족수당)'},
+    'subsidy': {'national': '공무원수당 등에 관한 규정 제18조의6(직급보조비)', 'local': '지방공무원 수당 등에 관한 규정 제18조의6(직급보조비)'},
 }
+# The row label each 직급보조비 amount follows in the annex text (spaces removed), 1급~9급 and
+# the POLICE_FIRE columns; the local annex repeats 상당 in its 단체장 rows, so its labels run on.
+SUBSIDY_LABELS = {
+    'national': dict(general=['1급(상당)', '2급(상당)', '3급(상당)', '4급(상당)', '5급(상당)', '6급(상당)', '7급(상당)', '8ㆍ9급(상당)', '8ㆍ9급(상당)'],
+                     police_fire=['치안정감,소방정감', '치안감,소방감', '경무관,소방준감', '총경,소방정', '경정,소방령',
+                                  '경감ㆍ경위', '경감ㆍ경위', '경사,소방장', '경장ㆍ순경', '경장ㆍ순경']),
+    'local': dict(general=['1급(상당),개방형', '2급(상당),연구관', '3급(상당),연구관', '4급(부단체장제외,상당)', '5급(상당),연구관',
+                           '6급(상당),연구사', '7급(상당),일반임기제', '8ㆍ9급(상당),일반임기제', '8ㆍ9급(상당),일반임기제'],
+                  deputy_4=['4급부단체장']),
+}
+ORDINAL = ['첫째', '둘째', '셋째', '넷째', '다섯째']
+KOREAN_COUNT = {'한': 1, '하나': 1, '두': 2, '둘': 2, '세': 3, '셋': 3, '네': 4, '넷': 4, '다섯': 5}
 
 
 def parse_salary(text):
@@ -57,6 +72,33 @@ def parse_longevity(text):
             raise ValueError(f'가산금 {amount:,}원 not in the annex')
     under = sorted((y, p) for y, kind, p in rates if kind == '미만')
     return dict(under=under, at_least=[rates[-1][0], rates[-1][2]], bonus=BONUS, extra=EXTRA)
+
+
+def parse_family(text):
+    """가족수당 monthly amounts: 별표 5 writes 40,000원, the local 제10조 writes 월 4만원."""
+    flat = re.sub(r'\s', '', text)
+    if '지방공무원' in flat[:200] or '월4만원' in flat:
+        won = lambda pattern: int(re.search(pattern + r'(\d+)만원', flat)[1]) * 10_000
+        spouse, first, second, third, other = (won(p) for p in (r'배우자:월', r'첫째자녀:월', r'둘째자녀:월', r'셋째이후자녀:1명당월', r'부양가족:1명당월'))
+    else:
+        won = lambda pattern: int(re.search(pattern + rf'({AMOUNT})원', flat)[1].replace(',', ''))
+        spouse, first, second, third, other = (won(p) for p in (r'배우자', r'첫째자녀', r'둘째자녀', r'셋째이후자녀', r'가족1명당'))
+    return dict(spouse=spouse, other=other, children=[first, second, third])
+
+
+def parse_subsidy(text):
+    """직급보조비 by grade: the first amount after each row label in the annex."""
+    flat = re.sub(r'\s', '', text)
+    labels = SUBSIDY_LABELS['local' if '지방공무원수당' in flat[:100] else 'national']
+    def amount(label):
+        at = flat.find(label)
+        if at < 0:
+            raise ValueError('직급보조비 row not found: ' + label)
+        return int(re.compile(rf'({AMOUNT})원').search(flat, at)[1].replace(',', ''))
+    return {key: [amount(label) for label in row] for key, row in labels.items()}
+
+
+PARSERS = dict(salary=parse_salary, longevity=parse_longevity, family=parse_family, subsidy=parse_subsidy)
 
 
 @lru_cache(maxsize=1)
@@ -91,13 +133,36 @@ def _years(question):
     return int(m[1] or m[2]) if m else None
 
 
+def _count(question, pattern):
+    """How many of the family named by pattern (자녀 2명, 아이 둘); 1 when named without a number, else 0."""
+    m = re.search(rf'(?:{pattern})\s*(\d|하나|다섯|[한두세네둘셋넷])\s*(?:명|분)?', question)
+    if m:
+        return int(m[1]) if m[1].isdigit() else KOREAN_COUNT[m[1]]
+    return 1 if re.search(pattern, question) else 0
+
+
+def _family(question):
+    """(spouse, children, other dependents) named in the question; other is None for 부모님 without a number."""
+    spouse = 1 if re.search(r'배우자|아내|남편|와이프', question) else 0
+    children = _count(question, r'자녀|아이') or _count(question, r'아들') + _count(question, r'딸')
+    named = re.search(r'(?:부모님?|부양가족|직계존속)\s*(?:\d|하나|다섯|[한두세네둘셋넷])', question)
+    if named:
+        other = _count(question, r'부모님?|부양가족|직계존속')
+    elif re.search(r'부모', question):
+        other = None
+    else:
+        other = sum(_count(question, p) for p in ('어머니', '아버지', '장인', '장모'))
+    return spouse, children, other
+
+
 def _won(n):
     return f'{n:,}원'
 
 
 def calculate(question, context=''):
     """Amounts for a pay question, or what is missing; None when the question is not about these amounts."""
-    asks = [k for k, pattern in (('salary', r'봉급|월급|기본급|본봉'), ('holiday', r'명절\s*휴가비'), ('longevity', r'정근\s*수당'))
+    asks = [k for k, pattern in (('salary', r'봉급|월급|기본급|본봉'), ('holiday', r'명절\s*휴가비'), ('longevity', r'정근\s*수당'),
+                                 ('family', r'가족\s*수당'), ('subsidy', r'직급\s*보조비'))
             if re.search(pattern, question)]
     if not asks or not re.search(r'얼마|계산|금액|몇\s*원|나와|받아|받나|\d+\s*호봉|급\s*\d', question):
         return None
@@ -116,8 +181,40 @@ def calculate(question, context=''):
         else:
             lines.append(dict(label=f'{rank[2]} {int(step[1])}호봉 월봉급액', amount=monthly, formula='봉급표 금액'))
             sources.append(_source(manifest[rank[0]]))
-    else:
+    elif {'salary', 'holiday', 'longevity'} & set(asks):
         needs += [x for x, ok in (('직급(예: 7급, 소방교)', rank), ('호봉(예: 5호봉)', step)) if not ok]
+    if 'subsidy' in asks:
+        if not rank:
+            if '직급(예: 7급, 소방교)' not in needs:
+                needs.append('직급(예: 7급, 소방교)')
+        else:
+            key = 'subsidy-local' if scope == 'local' else 'subsidy-national'
+            column = 'police_fire' if rank[0] == 'salary-police-fire' else 'general'
+            lines.append(dict(label=f'직급보조비(매월, {rank[2]})', amount=tables[key][column][rank[1]], formula='직급보조비 지급구분표 금액'))
+            if scope == 'local' and rank[2] == '4급':
+                notes.append(f"4급 부단체장은 월 {_won(tables[key]['deputy_4'][0])}입니다.")
+            notes.append(f"{ARTICLES['subsidy'][scope]}: 직급별 월 지급액. 파견 근무는 가산, 전용승용차량을 제공받으면 감액하는 기준이 별표 비고에 있습니다.")
+            sources.append(_source(manifest[key]))
+    if 'family' in asks:
+        key = 'family-local' if scope == 'local' else 'family-national'
+        rule = tables[key]
+        spouse, children, other = _family(question)
+        if other is None:
+            needs.append('자녀 외 부양가족 수(예: 부모님 2명)')
+        elif not (spouse or children or other):
+            needs.append('부양가족(예: 배우자, 자녀 2명)')
+        else:
+            if spouse:
+                lines.append(dict(label='가족수당 배우자(매월)', amount=rule['spouse'], formula='배우자 지급액'))
+            for i in range(children):
+                amount = rule['children'][min(i, 2)]
+                lines.append(dict(label=f'가족수당 {ORDINAL[i] if i < len(ORDINAL) else f"{i + 1}번째"} 자녀(매월)', amount=amount, formula=['첫째', '둘째', '셋째 이후'][min(i, 2)] + ' 자녀 지급액'))
+            if other:
+                lines.append(dict(label=f'가족수당 그 밖의 부양가족 {other}명(매월)', amount=rule['other'] * other, formula=f"{_won(rule['other'])} × {other}명"))
+            if spouse + other + children > 4 and spouse + other:
+                notes.append('부양가족은 4명 이내로 인정하고 자녀만 4명을 넘어도 지급합니다. 배우자·그 밖의 부양가족 중 인정 인원은 급여 담당 부서에 확인하세요.')
+            notes.append(f"{ARTICLES['family'][scope]}: 주민등록상 세대를 같이하고 생계를 같이하는 부양가족 기준. 부부가 모두 공무원이면 한 명에게만 지급합니다.")
+            sources.append(_source(manifest[key]))
     if 'holiday' in asks and monthly:
         lines.append(dict(label='명절휴가비(설·추석 각각)', amount=monthly * 60 // 100, formula=f'{_won(monthly)} × 60%'))
         notes.append(f"{ARTICLES['holiday'][scope]}: 설날·추석날 현재 월봉급액의 60%를 각각 지급. 감봉 중이면 감액 전 봉급 기준.")
@@ -139,4 +236,4 @@ def calculate(question, context=''):
     if not lines and not needs and not notes:
         return None
     return dict(title='봉급표 기준 계산', lines=lines, needs=needs, notes=notes, sources=sources,
-                scope='2026년 봉급표·수당 규정 별표의 금액입니다. 세금·공제 전 금액이며, 실제 지급액은 기관 급여 담당 부서의 명세서로 확인하세요.')
+                scope='2026년 봉급표와 수당 규정(별표·조문)의 금액입니다. 세금·공제 전 금액이며, 실제 지급액은 기관 급여 담당 부서의 명세서로 확인하세요.')

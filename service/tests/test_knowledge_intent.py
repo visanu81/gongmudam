@@ -37,6 +37,20 @@ class KnowledgeIntentScopeTest(unittest.TestCase):
         self.assertTrue(knowledge_intent.scope_reason(query, general, "2026-10-20"))
         self.assertEqual(knowledge_intent.scope_reason(query, teacher, "2026-10-20"), "")
 
+    def test_business_expense_reaches_the_finance_sections(self):
+        # "업무추진비 집행 기준" asks for the 업무추진비 section, not the disclosure annex.
+        from app import finance_knowledge
+        for query in ("업무추진비 집행 기준 알려줘", "지방자치단체 업무추진비 사용 기준"):
+            with self.subTest(query=query):
+                self.assertIsNone(knowledge_intent.analyze(query))
+                self.assertEqual(finance_knowledge.topics(query), {"meeting_meal"})
+        self.assertEqual(knowledge_intent.analyze("업무추진비 집행 공개 주기는?")["topics"], ["account_disclosure"])
+        self.assertEqual(knowledge_intent.analyze("강사료 집행 공개")["topics"], ["account_lecturer"])
+
+    def test_private_contract_procedure_is_the_quote_article(self):
+        self.assertEqual(knowledge_intent.analyze("수의계약 대상자 선정 절차는?")["topics"], ["goods_quote"])
+        self.assertEqual(knowledge_intent.analyze("수의계약 금액 기준은?")["topics"], ["goods_private_contract"])
+
     def test_uncovered_travel_deadline_returns_unavailable_without_fallback(self):
         with tempfile.TemporaryDirectory(prefix="knowledge-intent-") as temp_dir:
             with patch.object(folders, "DB_PATH", Path(temp_dir) / "folders.db"):

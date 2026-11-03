@@ -13,7 +13,7 @@ from urllib.request import Request, urlopen
 import hashlib, io, json, re, sys
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from app.pay_tables import COLLECTION, BASE, parse_salary, parse_longevity  # noqa: E402
+from app.pay_tables import COLLECTION, BASE, PARSERS  # noqa: E402
 
 PAGE = 'https://www.law.go.kr/LSW/lsBylInfoPLinkR.do?lsiSeq={lsi}&bylNo={no}&bylBrNo=00&bylCls=BE&bylEfYd=&bylEfYdYn=Y'
 FILE = 'https://www.law.go.kr/LSW/flDownload.do?flSeq={fl}'
@@ -28,7 +28,19 @@ ANNEXES = [
          title='[별표 2] 정근수당 지급 구분표(제7조제1항 관련)', revised='2025. 1. 3.', applies='국가공무원'),
     dict(id='longevity-local', kind='longevity', law='지방공무원 수당 등에 관한 규정', lsi=289957, no='0002', fl=169315875,
          title='[별표 2] 정근수당 지급구분표(제6조제1항 관련)', revised='2025. 1. 3.', applies='지방공무원'),
+    dict(id='family-national', kind='family', law='공무원수당 등에 관한 규정', lsi=290323, no='0005', fl=169637315,
+         title='[별표 5] 가족수당 지급 구분표(제10조제1항 관련)', revised='2025. 1. 3.', applies='국가공무원'),
+    dict(id='subsidy-national', kind='subsidy', law='공무원수당 등에 관한 규정', lsi=290323, no='0015', fl=169637483,
+         title='[별표 15] 직급보조비 지급 구분표(제18조의6 관련)', revised='2026. 9. 29.', applies='국가공무원, 경찰공무원, 소방공무원'),
+    dict(id='subsidy-local', kind='subsidy', law='지방공무원 수당 등에 관한 규정', lsi=289957, no='0014', fl=169316005,
+         title='[별표 14] 직급보조비 지급구분표(제18조의6 관련)', revised='2026. 6. 23.', applies='지방공무원'),
 ]
+# The local 가족수당 amounts are in the article, already collected and hashed with the service rules.
+ARTICLES = [
+    dict(id='family-local', kind='family', law='지방공무원 수당 등에 관한 규정', article='local_allowance-10',
+         title='제10조(가족수당) 제1항', revised='2025. 1. 3.', applies='지방공무원'),
+]
+RULES = BASE.parent / 'service-rules-20261029'
 
 
 def fetch(url):
@@ -52,10 +64,25 @@ def main():
         text = '\n'.join(p.extract_text() for p in pypdf.PdfReader(io.BytesIO(data)).pages)
         if a['revised'].replace(' ', '') not in re.sub(r'\s', '', text):
             raise ValueError('Unexpected revision in ' + a['id'])
-        tables[a['id']] = parse_salary(text) if a['kind'] == 'salary' else parse_longevity(text)
+        tables[a['id']] = PARSERS[a['kind']](text)
         manifest.append({k: a[k] for k in ('id', 'kind', 'law', 'title', 'revised', 'applies')} | dict(
             source_url=PAGE.format(lsi=a['lsi'], no=a['no']), download_url=FILE.format(fl=a['fl']),
             raw_file=raw.name, sha256=digest, retrieved_at=datetime.now(timezone.utc).isoformat(timespec='seconds')))
+    rules = {e['id']: e for e in json.loads((RULES / 'manifest.json').read_text(encoding='utf-8'))}
+    for a in ARTICLES:
+        entry = rules[a['article']]
+        data = (RULES / 'excerpts' / entry['filename']).read_bytes()
+        if hashlib.sha256(data).hexdigest() != entry['sha256']:
+            raise ValueError('Article changed since the service rules were collected: ' + a['article'])
+        raw = BASE / 'raw' / f"{a['id']}.txt"
+        raw.write_bytes(data)
+        text = data.decode('utf-8')
+        if a['revised'] not in text:
+            raise ValueError('Unexpected revision in ' + a['id'])
+        tables[a['id']] = PARSERS[a['kind']](text)
+        manifest.append({k: a[k] for k in ('id', 'kind', 'law', 'title', 'revised', 'applies')} | dict(
+            source_url=entry['source_url'], download_url=entry['download_url'], raw_file=raw.name, sha256=entry['sha256'],
+            retrieved_at=entry['retrieved_at']))
     (BASE / 'manifest.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=1), encoding='utf-8')
     (BASE / 'tables.json').write_text(json.dumps(tables, ensure_ascii=False, indent=1), encoding='utf-8')
     print(json.dumps(dict(collection=COLLECTION, annexes=len(manifest)), ensure_ascii=False))
