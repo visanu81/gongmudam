@@ -18,7 +18,7 @@ from urllib.parse import urlsplit
 
 import httpx
 from fastapi import HTTPException
-from . import config, llm, upstage
+from . import config, llm, local_ai, upstage
 
 EVIDENCE_TTL = 300
 _secret = secrets.token_bytes(32)
@@ -54,7 +54,7 @@ def _target(profile, model):
             return 'invalid', None
         if upstage.matches(profile):
             return 'upstage', None
-        if url.hostname not in ('localhost', '127.0.0.1', '::1'):
+        if not local_ai.private_model_host(url.hostname):
             return 'external', None
         if not isinstance(model, str) or not model.strip():
             return 'invalid', None

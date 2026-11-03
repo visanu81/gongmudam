@@ -296,6 +296,10 @@ def _context_evidence(hits,selected,limit=6):
             e['quote']=e['text'];e['quote_basis']='original_context'
     return evidence
 
+def _private_host(host):
+    from .local_ai import private_model_host
+    return private_model_host(host)
+
 def answer(query,found,*,use_ai=True):
     evidence=[];mode='source_search';notice='';model=None
     extra={'office_plan':found['office_plan']} if found.get('office_plan') else {}
@@ -304,7 +308,7 @@ def answer(query,found,*,use_ai=True):
         return dict(evidence=[],experiences=found['experiences'],excluded=found['excluded'],mode='source_clarification' if clarify else 'source_unavailable',model=None,notice=found.get('unavailable_reason',''),answer='',intent=found.get('intent'),scope='등록한 자료의 범위에서 확인되지 않았습니다. 해당 기관·신분의 규정과 누락된 별표를 추가해 주세요.',**extra)
     profile=dict(config.active_profile());profile['timeout']=min(float(profile.get('timeout',30)),30)
     provider=llm.get_provider(profile) if use_ai else None
-    if found['hits'] and provider is not None and provider.available and (upstage.matches(profile) or urlsplit(profile.get('base_url','')).hostname in {'127.0.0.1','localhost','::1'}):
+    if found['hits'] and provider is not None and provider.available and (upstage.matches(profile) or _private_host(urlsplit(profile.get('base_url','')).hostname)):
         try:
             evidence=_model_evidence(query,found['hits'],provider)
             mode='source_llm';model=profile.get('model')

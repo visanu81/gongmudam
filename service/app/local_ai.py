@@ -1,5 +1,6 @@
 """로컬 2종 모델의 동일 서무업무 실행과 재현 가능한 검증 기록."""
 import hashlib
+import ipaddress
 import json
 import time
 import uuid
@@ -19,6 +20,17 @@ SCENARIOS={
 }
 
 
+# A model on another of the user's own PCs over Tailscale (100.64.0.0/10 or *.ts.net) counts as local:
+# the RTX PC serves Qwen through Ollama there (2026-11-03). Other hosts stay external.
+TAILNET=ipaddress.ip_network('100.64.0.0/10')
+
+
+def private_model_host(host):
+    if host in ('127.0.0.1','localhost','::1'):return True
+    try:return ipaddress.ip_address(host) in TAILNET
+    except ValueError:return bool(host) and str(host).endswith('.ts.net')
+
+
 class Run(StrictModel):
     profile: str=Field(min_length=1,max_length=60)
     scenario: str=Field(min_length=1,max_length=30)
@@ -27,7 +39,7 @@ class Run(StrictModel):
 def local_profile(name):
     profile=config.active_profile({'llm':{'active':name,'profiles':config.load().get('llm',{}).get('profiles',{})}})
     parsed=urlsplit(profile.get('base_url',''))
-    if profile.get('provider')!='openai_compatible' or parsed.scheme!='http' or parsed.hostname not in ('127.0.0.1','localhost','::1') or parsed.username or parsed.password or parsed.query or parsed.fragment:
+    if profile.get('provider')!='openai_compatible' or parsed.scheme!='http' or not private_model_host(parsed.hostname) or parsed.username or parsed.password or parsed.query or parsed.fragment:
         raise HTTPException(422,'이 검증 화면은 로컬 HTTP 모델 서버에 등록된 프로필만 사용합니다.')
     return profile
 
