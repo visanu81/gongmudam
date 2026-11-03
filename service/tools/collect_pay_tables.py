@@ -41,6 +41,15 @@ ARTICLES = [
          title='제10조(가족수당) 제1항', revised='2025. 1. 3.', applies='지방공무원'),
 ]
 RULES = BASE.parent / 'service-rules-20261029'
+# The overtime rates are a table in the pay guidelines (already collected with hashes),
+# 제7장 [별표2] 초과근무수당 지급단가; the pages holding it are stored as text.
+GUIDES = [
+    dict(id='overtime-national', kind='overtime', key='national', pages=(488, 489), law='공무원보수 등의 업무지침',
+         title='제7장 [별표2] 초과근무수당 지급단가', applies='국가공무원, 경찰공무원, 소방공무원'),
+    dict(id='overtime-local', kind='overtime', key='local', pages=(409,), law='지방공무원보수업무 등 처리지침',
+         title='제5장 【별표2】 초과근무수당 지급단가', applies='지방공무원'),
+]
+GUIDELINES = BASE.parent / 'pay-guidelines-20261031'
 
 
 def fetch(url):
@@ -83,6 +92,22 @@ def main():
         manifest.append({k: a[k] for k in ('id', 'kind', 'law', 'title', 'revised', 'applies')} | dict(
             source_url=entry['source_url'], download_url=entry['download_url'], raw_file=raw.name, sha256=entry['sha256'],
             retrieved_at=entry['retrieved_at']))
+    guides = {e['key']: e for e in json.loads((GUIDELINES / 'manifest.json').read_text(encoding='utf-8'))}
+    for a in GUIDES:
+        entry = guides[a['key']]
+        pages_file = GUIDELINES / entry['pages_file']
+        if hashlib.sha256(pages_file.read_bytes()).hexdigest() != entry['pages_sha256']:
+            raise ValueError('Pay guideline pages changed: ' + a['key'])
+        pages = [p for p in json.loads(pages_file.read_text(encoding='utf-8')) if p['page'] in a['pages']]
+        if [p['page'] for p in pages] != list(a['pages']) or any(hashlib.sha256(p['text'].encode('utf-8')).hexdigest() != p['sha256'] for p in pages):
+            raise ValueError('Pay guideline page mismatch: ' + a['id'])
+        data = '\n'.join(p['text'] for p in pages).encode('utf-8')
+        raw = BASE / 'raw' / f"{a['id']}.txt"
+        raw.write_bytes(data)
+        tables[a['id']] = PARSERS[a['kind']](data.decode('utf-8'))
+        manifest.append({k: a[k] for k in ('id', 'kind', 'law', 'title', 'applies')} | dict(
+            revised=entry['publication'], source_url=entry['page_url'], download_url=entry['download_url'], raw_file=raw.name,
+            sha256=hashlib.sha256(data).hexdigest(), pages=list(a['pages']), retrieved_at=entry['retrieved_at']))
     (BASE / 'manifest.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=1), encoding='utf-8')
     (BASE / 'tables.json').write_text(json.dumps(tables, ensure_ascii=False, indent=1), encoding='utf-8')
     print(json.dumps(dict(collection=COLLECTION, annexes=len(manifest)), ensure_ascii=False))

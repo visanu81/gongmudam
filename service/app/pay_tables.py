@@ -1,7 +1,8 @@
-"""봉급·명절휴가비·정근수당·가족수당·직급보조비 amounts from the official 2026 sources, without AI.
+"""봉급·명절휴가비·정근수당·가족수당·직급보조비·초과근무수당 amounts from the official 2026 sources, without AI.
 
 The answer search finds the articles; the amounts are in annex tables
-(공무원보수규정 별표 3·10, 수당 규정 별표 2·5·14·15, and the local 가족수당 in 제10조 itself)
+(공무원보수규정 별표 3·10, 수당 규정 별표 2·5·14·15, the local 가족수당 in 제10조 itself,
+and the 초과근무수당 지급단가 table of the national and local pay guidelines)
 collected by tools/collect_pay_tables.py.
 A question that names the grade, 호봉 or years of service gets the amount with the
 formula and the annex it came from; a question missing them is told what to add.
@@ -98,7 +99,21 @@ def parse_subsidy(text):
     return {key: [amount(label) for label in row] for key, row in labels.items()}
 
 
-PARSERS = dict(salary=parse_salary, longevity=parse_longevity, family=parse_family, subsidy=parse_subsidy)
+def parse_overtime(text):
+    """[별표2] 초과근무수당 지급단가: 시간외(시간당)·야간(시간당)·휴일(일당) for 5급~9급 and 경정~순경."""
+    row = rf'\s+({AMOUNT})\s+({AMOUNT})\s+({AMOUNT})'
+    def amounts(pattern):
+        m = re.search(pattern + row, text)
+        if not m:
+            raise ValueError('초과근무수당 row not found: ' + pattern)
+        return [int(v.replace(',', '')) for v in m.groups()[-3:]]
+    result = dict(general={str(g): amounts(rf'(?<!\d){g}\s*급(?:\s*･\s*{6 - (g - 4)}등급)?') for g in range(5, 10)})
+    if '경정' in text:
+        result['police_fire'] = {str(i): amounts(rf'{police}\s*･\s*{fire}') for i, (police, fire) in enumerate(POLICE_FIRE) if i >= 4}
+    return result
+
+
+PARSERS = dict(salary=parse_salary, longevity=parse_longevity, family=parse_family, subsidy=parse_subsidy, overtime=parse_overtime)
 
 
 @lru_cache(maxsize=1)
@@ -162,9 +177,11 @@ def _won(n):
 def calculate(question, context=''):
     """Amounts for a pay question, or what is missing; None when the question is not about these amounts."""
     asks = [k for k, pattern in (('salary', r'봉급|월급|기본급|본봉'), ('holiday', r'명절\s*휴가비'), ('longevity', r'정근\s*수당'),
-                                 ('family', r'가족\s*수당'), ('subsidy', r'직급\s*보조비'))
+                                 ('family', r'가족\s*수당'), ('subsidy', r'직급\s*보조비'),
+                                 ('overtime', r'시간외\s*(?:근무)?\s*수당|초과\s*근무|야근\s*수당|시간외\s*근무'),
+                                 ('night', r'야간\s*근무\s*수당'), ('holiday_work', r'휴일\s*근무\s*수당'))
             if re.search(pattern, question)]
-    if not asks or not re.search(r'얼마|계산|금액|몇\s*원|나와|받아|받나|\d+\s*호봉|급\s*\d', question):
+    if not asks or not re.search(r'얼마|계산|금액|몇\s*원|나와|받아|받나|단가|\d+\s*호봉|급\s*\d|\d+\s*시간', question):
         return None
     manifest, tables = load()
     rank, step, years = _rank(question), re.search(r'(\d{1,2})\s*호봉', question), _years(question)
@@ -172,7 +189,7 @@ def calculate(question, context=''):
     scope = 'local' if re.search(r'지방', question + ' ' + context) and (not rank or rank[0] == 'salary-general') else 'national'
     needs, lines, sources, notes = [], [], [], []
     monthly = None
-    if rank and step:
+    if rank and step and {'salary', 'holiday', 'longevity'} & set(asks):
         table = tables[rank[0]]
         row = table['rows'].get(str(int(step[1])))
         monthly = row[rank[1]] if row else None
@@ -232,6 +249,29 @@ def calculate(question, context=''):
                 notes.append(f'근무연수 {years}년의 정근수당은 월봉급액의 {pct}%입니다. 직급과 호봉을 알려주시면 금액을 계산합니다.')
             lines.append(dict(label='정근수당 가산금(매월)', amount=bonus, formula=f'근무연수 {years}년 구간'))
             notes.append(f"{ARTICLES['longevity'][scope]}: 1월·7월 보수지급일에 지급. 지급대상기간 중 징계처분·휴직·신규임용은 감액·제외 기준이 따로 있습니다.")
+            sources.append(_source(manifest[key]))
+    if {'overtime', 'night', 'holiday_work'} & set(asks):
+        key = 'overtime-local' if scope == 'local' else 'overtime-national'
+        police = bool(rank) and rank[0] == 'salary-police-fire'
+        rates = rank and tables[key].get('police_fire' if police else 'general', {}).get(str(rank[1] if police else rank[1] + 1))
+        if not rank:
+            if '직급(예: 7급, 소방교)' not in needs:
+                needs.append('직급(예: 7급, 소방교)')
+        elif not rates:
+            notes.append(f'{rank[2]}은 초과근무수당 지급단가표(일반직 5급~9급, 경정·소방령~순경·소방사)에 없습니다. 해당 직급의 기준은 급여 담당 부서에 확인하세요.')
+        else:
+            hours = re.search(r'(\d{1,3})\s*시간', question)
+            days = re.search(r'(\d{1,2})\s*일', question)
+            for kind, index, label, unit, count in (('overtime', 0, '시간외근무수당', '시간당', hours), ('night', 1, '야간근무수당', '시간당', hours),
+                                                    ('holiday_work', 2, '휴일근무수당', '1일', days)):
+                if kind not in asks or kind == 'night' and 'overtime' in asks:
+                    continue
+                lines.append(dict(label=f'{label} {unit} 단가({rank[2]})', amount=rates[index], formula='초과근무수당 지급단가표 금액'))
+                if count and int(count[1]):
+                    n = int(count[1]); suffix = '시간' if unit == '시간당' else '일'
+                    lines.append(dict(label=f'{label} {n}{suffix}', amount=rates[index] * n, formula=f'{_won(rates[index])} × {n}{suffix}'))
+            notes.append(f"{manifest[key]['law']}: 시간외근무수당은 매 시간 봉급기준액(기준호봉 봉급액×55%)×1/209×150%. "
+                         '일반대상자는 월 출근 15일 이상이면 월 10시간분을 정액으로 받습니다. 월 인정 한도와 현업 여부는 기관 기준을 확인하세요.')
             sources.append(_source(manifest[key]))
     if not lines and not needs and not notes:
         return None

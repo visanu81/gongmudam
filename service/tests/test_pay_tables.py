@@ -76,6 +76,20 @@ class CalculateTest(unittest.TestCase):
         self.assertIn('4급 부단체장은 월 450,000원', pay_tables.calculate('4급 직급보조비 얼마', '지방공무원')['notes'][0])
         self.assertEqual(pay_tables.calculate('직급보조비 얼마 받아?')['needs'], ['직급(예: 7급, 소방교)'])
 
+    def test_overtime_from_the_guideline_rate_table(self):
+        self.assertEqual(self.lines('7급 시간외근무수당 20시간 얼마?'),
+                         [('시간외근무수당 시간당 단가(7급)', 12_368), ('시간외근무수당 20시간', 247_360)])
+        self.assertEqual(self.lines('소방교 초과근무 15시간 수당 얼마'),
+                         [('시간외근무수당 시간당 단가(소방교)', 12_584), ('시간외근무수당 15시간', 188_760)])
+        self.assertEqual(self.lines('9급 휴일근무수당 2일 얼마'), [('휴일근무수당 1일 단가(9급)', 88_017), ('휴일근무수당 2일', 176_034)])
+        # The rate table starts at 5급; a 호봉 in the question adds no salary line.
+        self.assertIn('지급단가표', pay_tables.calculate('4급 시간외근무수당 얼마')['notes'][0])
+        self.assertEqual(self.lines('7급 5호봉 초과근무 10시간 얼마')[0], ('시간외근무수당 시간당 단가(7급)', 12_368))
+        self.assertEqual(pay_tables.calculate('시간외근무수당 얼마야?')['needs'], ['직급(예: 7급, 소방교)'])
+        self.assertIsNone(pay_tables.calculate('시간외근무 신청 방법'))
+        local = pay_tables.calculate('8급 시간외근무수당 단가', '지방공무원')
+        self.assertEqual([s['law'] for s in local['sources']], ['지방공무원보수업무 등 처리지침'])
+
     def test_missing_information_is_named(self):
         r = pay_tables.calculate('명절휴가비 얼마나 나와?')
         self.assertEqual((r['lines'], r['needs']), ([], ['직급(예: 7급, 소방교)', '호봉(예: 5호봉)']))
