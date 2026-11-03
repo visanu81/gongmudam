@@ -349,6 +349,13 @@ class FolderProjectsTest(unittest.TestCase):
         self.question(pid,'이 대회에 참가한 사람은?');answer=self.answered(pid)['messages'][-1]
         self.assertIn('홍길동',' '.join(e['text'] for e in answer['evidence']))
 
+    def test_prize_question_finds_the_award_line_without_ai(self):
+        # The notice writes the prize as "시상: 최우수"; "우승하면" must reach it with no model.
+        pid=self.contest()
+        self.question(pid,'우승하면 무엇을 받아?');answer=self.answered(pid)['messages'][-1]
+        self.assertEqual(answer['mode'],'offline')
+        self.assertIn('시상: 최우수 1팀 상장',[e['text'] for e in answer['evidence']])
+
     def test_model_chooses_from_all_files_when_no_word_matches(self):
         pid=self.contest()
         def choose(profile,messages,schema=None,strict=False):
@@ -356,16 +363,16 @@ class FolderProjectsTest(unittest.TestCase):
             return json.dumps({'refs':[d['ref'] for d in docs if '시상' in d['text']]}),{'actual_response':True}
         local=dict(provider='openai_compatible',_name='local')
         with patch.object(config,'active_profile',return_value=local),patch.object(projects.local_ai,'local_profile',return_value={'model':'t','base_url':'http://127.0.0.1:11434/v1'}),patch.object(projects.folder_ai,'call_model',side_effect=choose):
-            self.question(pid,'우승하면 무엇을 받아?');answer=self.answered(pid)['messages'][-1]
+            self.question(pid,'본선 진출 팀은 뭘 받아?');answer=self.answered(pid)['messages'][-1]
         self.assertEqual(answer['mode'],'local_ai')
         self.assertEqual([e['text'] for e in answer['evidence']],['시상: 최우수 1팀 상장'])
         self.assertIn('AI가 자료 전체에서',answer['notice'])
         # Nothing from the spread is shown when the model chooses nothing.
         with patch.object(config,'active_profile',return_value=local),patch.object(projects.local_ai,'local_profile',return_value={'model':'t','base_url':'http://127.0.0.1:11434/v1'}),patch.object(projects.folder_ai,'call_model',return_value=('{"refs":[]}',{})):
-            self.question(pid,'우승하면 무엇을 받아?');answer=self.answered(pid)['messages'][-1]
+            self.question(pid,'본선 진출 팀은 뭘 받아?');answer=self.answered(pid)['messages'][-1]
         self.assertEqual(answer['evidence'],[])
         # Without AI the answer stays a plain "not found".
-        self.question(pid,'우승하면 무엇을 받아?');answer=self.answered(pid)['messages'][-1]
+        self.question(pid,'본선 진출 팀은 뭘 받아?');answer=self.answered(pid)['messages'][-1]
         self.assertEqual((answer['mode'],answer['evidence']),('offline',[]))
 
     def test_form_field_question_lists_the_form_cells(self):
