@@ -6,6 +6,7 @@ the old library's confirmed classification. All source access is read-only.
 from __future__ import annotations
 
 from contextlib import contextmanager
+from datetime import datetime, timedelta, timezone
 import hashlib
 import heapq
 import json
@@ -467,6 +468,19 @@ def export_hwpx(pid: str, mid: str, title: str = ''):
     filename = re.sub(r'[\\/:*?"<>|\x00-\x1f]', '', f'{name}-{label}')[:100] + '.hwpx'
     return Response(data, media_type='application/hwp+zip',
                     headers={'Content-Disposition': f"attachment; filename*=UTF-8''{quote(filename)}"})
+
+
+@router.get('/{pid}/messages/{mid}/calendar')
+def calendar_candidates(pid: str, mid: str):
+    """Dated lines of an answer for the work calendar; the user checks each before saving."""
+    with db() as c:
+        m = get(c, 'project_messages', mid)
+        if m['project_id'] != pid or m['role'] != 'assistant' or m['status'] != 'completed':
+            raise HTTPException(422, '완료된 답변의 일정만 달력에 넣을 수 있습니다.')
+        name = get(c, 'folder_projects', pid)['name']
+    from . import project_calendar
+    today = datetime.now(timezone(timedelta(hours=9))).date()
+    return {'candidates': project_calendar.candidates(m.get('content') or '', today, name)}
 
 
 @router.get('/{pid}/files/{fid}/units/{unit}')

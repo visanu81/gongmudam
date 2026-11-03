@@ -180,6 +180,49 @@
     if (ev.stale) details.append(el('span', 'fp-stale', '자료가 변경되어 근거가 오래되었습니다.'));
     details.append(summary, text, links); return details;
   }
+  // Dated lines of an answer go to the work calendar only after the user checks the date and title.
+  function addDays(iso, days) { const d = new Date(`${iso}T00:00:00Z`); d.setUTCDate(d.getUTCDate() + days); return d.toISOString().slice(0, 10); }
+  function calendarBlock(message) {
+    const box = el('details', 'fp-calendar'); box.append(el('summary', '', '달력에 넣기'));
+    const list = el('div', 'fp-calendar-list'); box.append(list);
+    const id = currentId, name = project?.name || '';
+    box.addEventListener('toggle', async () => {
+      if (!box.open || box.dataset.loaded) return;
+      box.dataset.loaded = '1'; list.replaceChildren(el('p', 'fp-muted', '답변에서 날짜를 찾고 있습니다…'));
+      try {
+        const { candidates = [] } = await api(`/${safeId(id)}/messages/${safeId(message.id)}/calendar`);
+        list.replaceChildren();
+        if (!candidates.length) { list.append(el('p', 'fp-muted', '이 답변에서 날짜를 찾지 못했습니다. 업무 달력에서 직접 추가해 주세요.')); return; }
+        list.append(el('p', 'fp-muted', '원문에서 읽은 날짜입니다. 날짜와 제목을 확인한 뒤 등록하세요.'));
+        candidates.forEach(item => list.append(calendarRow(item, id, name)));
+      } catch (e) { delete box.dataset.loaded; list.replaceChildren(el('p', 'fp-error', e.message)); }
+    });
+    return box;
+  }
+  function calendarRow(item, id, name) {
+    const row = el('div', 'fp-calendar-row');
+    const title = document.createElement('input'); title.value = item.title; title.maxLength = 200; title.setAttribute('aria-label', '일정 제목');
+    const start = document.createElement('input'); start.type = 'date'; start.value = item.start; start.setAttribute('aria-label', '시작 날짜');
+    const end = document.createElement('input'); end.type = 'date'; end.value = item.end; end.setAttribute('aria-label', '마지막 날짜');
+    const dates = el('div', 'fp-calendar-dates'); dates.append(start, el('span', '', '~'), end);
+    const meta = el('small', 'fp-muted', `${item.kind === 'deadline' ? '기한' : '일정'} · ${item.source ? `${item.source} · ` : ''}${item.line}`);
+    const year = el('small', 'fp-calendar-year', item.year_written ? '' : '원문에 연도가 없습니다. 연도를 확인하세요.');
+    const add = el('button', 'secondary', '달력에 등록'); add.type = 'button';
+    const status = el('small', 'fp-muted'); status.setAttribute('role', 'status');
+    add.addEventListener('click', async () => {
+      if (!title.value.trim() || !start.value || !end.value || end.value < start.value) { status.textContent = '제목과 날짜를 확인하세요. 마지막 날짜는 시작 날짜와 같거나 뒤여야 합니다.'; return; }
+      add.disabled = true; status.textContent = '등록하고 있습니다…';
+      try {
+        const response = await fetch('/api/calendar/events', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({
+          title: title.value.trim(), start: start.value, end: addDays(end.value, 1), all_day: true, kind: item.kind,
+          notes: `업무자료 정리 · ${name}\n원문: ${item.source ? `${item.source} · ` : ''}${item.line}`, work_kind: 'project', work_id: id }) });
+        await readJson(response);
+        add.textContent = '등록됨 ✓'; status.replaceChildren('업무 달력에 넣었습니다. ');
+        const link = document.createElement('a'); link.href = `calendar.html?date=${encodeURIComponent(start.value)}`; link.textContent = '달력에서 보기'; status.append(link);
+      } catch (e) { add.disabled = false; status.textContent = e.message; }
+    });
+    row.append(title, dates, meta, year, add, status); return row;
+  }
   function renderMessage(message) {
     const article = el('article', `fp-message-row ${message.role === 'user' ? 'is-user' : 'is-assistant'}`); article.dataset.messageId = message.id;
     article.append(el('div', 'fp-message-meta', message.role === 'user' ? '질문' : (message.draft ? '보고서 초안' : '답변')));
@@ -198,6 +241,7 @@
       }
       const keep = el('button', 'fp-text-button fp-keep', isOutput(message) ? '결과물에 저장됨 ✓' : '결과물로 저장'); keep.type = 'button'; keep.setAttribute('aria-pressed', String(isOutput(message)));
       keep.addEventListener('click', () => setOutput(message, !isOutput(message))); article.append(keep);
+      article.append(calendarBlock(message));
       if (message.evidence?.length) { const group = el('details', 'fp-citations'); group.append(el('summary', '', `근거 ${message.evidence.length}개`)); message.evidence.forEach(ev => group.append(evidenceBlock(ev))); article.append(group); }
       if (message.draft) {
         const edit = el('details', 'fp-edit-draft'); const summary = el('summary', '', '초안 수정'); const area = document.createElement('textarea'); area.rows = 8; area.value = draftValues.get(message.id) ?? (message.content || ''); area.setAttribute('aria-label', '보고서 초안 수정'); area.addEventListener('input', () => draftValues.set(message.id, area.value));

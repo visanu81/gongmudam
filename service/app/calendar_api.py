@@ -59,7 +59,7 @@ class Event(BaseModel):
     kind:Literal['event','focus','deadline']='event'
     location:str=Field(default='',max_length=200)
     notes:str=Field(default='',max_length=4000)
-    work_kind:Literal['travel','collection','folder','tracked']|None=None
+    work_kind:Literal['travel','collection','folder','tracked','project']|None=None
     work_id:str|None=Field(default=None,max_length=100)
     recurrence:Literal['none','daily','weekly','monthly']='none'
     repeat_until:date|None=None
@@ -130,7 +130,7 @@ def shifted(event,original):
 def href(kind,key):
     from urllib.parse import quote
     safe=quote(key,safe='')
-    return {'travel':f'travel.html?case={safe}#settle','collection':f'adhoc.html#job-{safe}','folder':f'folders.html#{safe}','tracked':f'index.html#home'}.get(kind,'')
+    return {'travel':f'travel.html?case={safe}#settle','collection':f'adhoc.html#job-{safe}','folder':f'folders.html#{safe}','tracked':f'index.html#home','project':f'folders.html#project={safe}'}.get(kind,'')
 
 def work_items():
     items=[]
@@ -143,6 +143,12 @@ def work_items():
     with folders.db() as c:
         for r in c.execute("SELECT id,json_extract(payload,'$.name') AS name FROM libraries"):
             items.append({'kind':'folder','id':r['id'],'title':r['name'],'href':href('folder',r['id'])})
+    # 업무자료 정리 projects: a date found in a project answer links back to the project.
+    from . import folder_projects
+    folder_projects.initialize()
+    with folder_projects.db() as c:
+        for r in c.execute("SELECT id,json_extract(payload,'$.name') AS name FROM folder_projects"):
+            items.append({'kind':'project','id':r['id'],'title':r['name'],'href':href('project',r['id'])})
     for task in tracker._items():
         card=store.get_card(task['card_id'])
         if card:items.append({'kind':'tracked','id':task['id'],'title':task.get('label') or card['title'],'href':href('tracked',task['id'])})

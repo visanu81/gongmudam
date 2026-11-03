@@ -10,7 +10,7 @@ from pathlib import Path
 import json
 import shutil
 
-from . import folder_projects, folders
+from . import calendar_api, folder_projects, folders
 
 KEEP = timedelta(hours=1)
 BUSY = {'queued', 'waiting', 'running'}
@@ -35,16 +35,19 @@ def snapshot(sandbox):
         messages = {r[0] for r in c.execute('SELECT id FROM project_messages')}
     with folders.db() as c:
         libraries = {r[0] for r in c.execute('SELECT id FROM libraries')}
+    calendar_api.initialize()
+    with calendar_api.db() as c:
+        events = {r[0] for r in c.execute('SELECT id FROM calendar_events')}
     incoming = sandbox / '추가회신'
     files = {p.name for p in incoming.iterdir()} if incoming.is_dir() else set()
-    return dict(projects=projects, messages=messages, libraries=libraries, incoming=files)
+    return dict(projects=projects, messages=messages, libraries=libraries, events=events, incoming=files)
 
 
 def sweep(baseline, sandbox, now=None):
-    """Remove visitor projects, questions, libraries and files older than an hour; return the counts."""
+    """Remove visitor projects, questions, libraries, calendar events and files older than an hour; return the counts."""
     now = now or datetime.now(timezone.utc)
     cutoff = now - KEEP
-    removed = dict(projects=0, messages=0, libraries=0, uploads=0, files=0)
+    removed = dict(projects=0, messages=0, libraries=0, events=0, uploads=0, files=0)
     with folder_projects.db() as c:
         for (payload,) in c.execute('SELECT payload FROM folder_projects').fetchall():
             p = json.loads(payload)
@@ -74,6 +77,17 @@ def sweep(baseline, sandbox, now=None):
             if _old(history[0].get('at'), cutoff):
                 c.execute('DELETE FROM libraries WHERE id=?', (row[0],))
                 removed['libraries'] += 1
+    # Calendar events a visitor added, dated by their first history record ("일정 등록").
+    calendar_api.initialize()
+    with calendar_api.db() as c:
+        for (key,) in c.execute('SELECT id FROM calendar_events').fetchall():
+            if key in baseline.get('events', ()):
+                continue
+            first = c.execute('SELECT min(created_at) FROM calendar_history WHERE event_id=?', (key,)).fetchone()[0]
+            if _old(first, cutoff):
+                for table, column in (('calendar_exceptions', 'event_id'), ('calendar_history', 'event_id'), ('calendar_events', 'id')):
+                    c.execute(f'DELETE FROM {table} WHERE {column}=?', (key,))
+                removed['events'] += 1
     stale = cutoff.timestamp()
     uploads = sandbox / 'uploads'
     for folder in uploads.iterdir() if uploads.is_dir() else ():
