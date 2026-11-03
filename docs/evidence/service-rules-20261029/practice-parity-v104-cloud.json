@@ -1,0 +1,387 @@
+{
+  "summary": {
+    "total": 27,
+    "equal": 27,
+    "with_practice": 18
+  },
+  "cases": [
+    {
+      "id": "sg-halfday",
+      "equal": true,
+      "local": [],
+      "public": []
+    },
+    {
+      "id": "sg-id-card-lost",
+      "equal": true,
+      "local": [],
+      "public": []
+    },
+    {
+      "id": "sg-discipline-committee",
+      "equal": true,
+      "local": [],
+      "public": []
+    },
+    {
+      "id": "sg-outside-lecture",
+      "equal": true,
+      "local": [],
+      "public": []
+    },
+    {
+      "id": "sa-diligence-no-status",
+      "equal": true,
+      "local": [
+        [
+          "a9078016229e43971addd9f9b038c6a0c39c63b4f2d8becfbb627f646c861dc5",
+          "행정안전부예규 제389호",
+          "p.300 · 제5장 지방공무원수당 등의 업무 처리기준 > Ⅱ. 상여수당"
+        ]
+      ],
+      "public": [
+        [
+          "a9078016229e43971addd9f9b038c6a0c39c63b4f2d8becfbb627f646c861dc5",
+          "행정안전부예규 제389호",
+          "p.300 · 제5장 지방공무원수당 등의 업무 처리기준 > Ⅱ. 상여수당"
+        ]
+      ]
+    },
+    {
+      "id": "sa-national-diligence",
+      "equal": true,
+      "local": [
+        [
+          "1b26e5ace30bde9c3dd38b8d9a48ca0f09923161bec0e23f02e08ec54de8a044",
+          "인사혁신처예규 제226호",
+          "p.368 · 제7장 공무원수당 등의 업무 처리기준 > Ⅱ. 상여수당"
+        ]
+      ],
+      "public": [
+        [
+          "1b26e5ace30bde9c3dd38b8d9a48ca0f09923161bec0e23f02e08ec54de8a044",
+          "인사혁신처예규 제226호",
+          "p.368 · 제7장 공무원수당 등의 업무 처리기준 > Ⅱ. 상여수당"
+        ]
+      ]
+    },
+    {
+      "id": "sa-local-family",
+      "equal": true,
+      "local": [
+        [
+          "17930036a5ebb4e491ddce2cc1da13f9da2bd6dbb19ef2b90751203e3c546922",
+          "행정안전부예규 제389호",
+          "p.308 · 제5장 지방공무원수당 등의 업무 처리기준 > Ⅲ. 가계보전수당"
+        ]
+      ],
+      "public": [
+        [
+          "17930036a5ebb4e491ddce2cc1da13f9da2bd6dbb19ef2b90751203e3c546922",
+          "행정안전부예규 제389호",
+          "p.308 · 제5장 지방공무원수당 등의 업무 처리기준 > Ⅲ. 가계보전수당"
+        ]
+      ]
+    },
+    {
+      "id": "sa-fire-family",
+      "equal": true,
+      "local": [
+        [
+          "cde31e5436b979ab0e4baa8bd0cba1e7c83f6a3dac9452225013b4e6283ff7c0",
+          "인사혁신처예규 제226호",
+          "p.381 · 제7장 공무원수당 등의 업무 처리기준 > Ⅲ. 가계보전수당"
+        ]
+      ],
+      "public": [
+        [
+          "cde31e5436b979ab0e4baa8bd0cba1e7c83f6a3dac9452225013b4e6283ff7c0",
+          "인사혁신처예규 제226호",
+          "p.381 · 제7장 공무원수당 등의 업무 처리기준 > Ⅲ. 가계보전수당"
+        ]
+      ]
+    },
+    {
+      "id": "sa-national-holiday",
+      "equal": true,
+      "local": [
+        [
+          "7dde8158f3d2e038a817e1b08dc83cf4953bd048853df300f5c8a990f3ba591e",
+          "인사혁신처예규 제226호",
+          "p.442 · 제7장 공무원수당 등의 업무 처리기준 > Ⅶ. 실비변상 등"
+        ]
+      ],
+      "public": [
+        [
+          "7dde8158f3d2e038a817e1b08dc83cf4953bd048853df300f5c8a990f3ba591e",
+          "인사혁신처예규 제226호",
+          "p.442 · 제7장 공무원수당 등의 업무 처리기준 > Ⅶ. 실비변상 등"
+        ]
+      ]
+    },
+    {
+      "id": "sa-local-holiday",
+      "equal": true,
+      "local": [
+        [
+          "f37262901eb075234ef73afeacde3701ccd169c201f1736412c038f64fe51d58",
+          "행정안전부예규 제389호",
+          "p.367 · 제5장 지방공무원수당 등의 업무 처리기준 > Ⅶ. 실비보상 등"
+        ]
+      ],
+      "public": [
+        [
+          "f37262901eb075234ef73afeacde3701ccd169c201f1736412c038f64fe51d58",
+          "행정안전부예규 제389호",
+          "p.367 · 제5장 지방공무원수당 등의 업무 처리기준 > Ⅶ. 실비보상 등"
+        ]
+      ]
+    },
+    {
+      "id": "sa-local-overtime",
+      "equal": true,
+      "local": [
+        [
+          "87dc5f83286b19415bd0044805439e514cd0a3ddc821f2917838afe66ac5c256",
+          "행정안전부예규 제389호",
+          "p.349 · 제5장 지방공무원수당 등의 업무 처리기준 > Ⅵ. 초과근무수당 등"
+        ]
+      ],
+      "public": [
+        [
+          "87dc5f83286b19415bd0044805439e514cd0a3ddc821f2917838afe66ac5c256",
+          "행정안전부예규 제389호",
+          "p.349 · 제5장 지방공무원수당 등의 업무 처리기준 > Ⅵ. 초과근무수당 등"
+        ]
+      ]
+    },
+    {
+      "id": "sa-national-annual-comp",
+      "equal": true,
+      "local": [
+        [
+          "2335ade246ccf1e7725da70277bf704b2b4505c26c79b0c1216d265a328c914d",
+          "인사혁신처예규 제226호",
+          "p.446 · 제7장 공무원수당 등의 업무 처리기준 > Ⅶ. 실비변상 등"
+        ]
+      ],
+      "public": [
+        [
+          "2335ade246ccf1e7725da70277bf704b2b4505c26c79b0c1216d265a328c914d",
+          "인사혁신처예규 제226호",
+          "p.446 · 제7장 공무원수당 등의 업무 처리기준 > Ⅶ. 실비변상 등"
+        ]
+      ]
+    },
+    {
+      "id": "sa-allowance-clarify",
+      "equal": true,
+      "local": [],
+      "public": []
+    },
+    {
+      "id": "sw-welfare-use",
+      "equal": true,
+      "local": [
+        [
+          "6c78411d124e81769b7b8b5633356b15ac440ca80e00afb60329b1b5c8db7da5",
+          "인사혁신처예규 제226호",
+          "p.692 · 제11장 맞춤형 복지제도업무 처리기준 > Ⅴ. 복지점수 부여 및 관리"
+        ]
+      ],
+      "public": [
+        [
+          "6c78411d124e81769b7b8b5633356b15ac440ca80e00afb60329b1b5c8db7da5",
+          "인사혁신처예규 제226호",
+          "p.692 · 제11장 맞춤형 복지제도업무 처리기준 > Ⅴ. 복지점수 부여 및 관리"
+        ]
+      ]
+    },
+    {
+      "id": "sw-welfare-grant",
+      "equal": true,
+      "local": [
+        [
+          "8607dfa6e968f1937b19494d33e863686673346f5ea5fb051cfab0cfa6a351b2",
+          "인사혁신처예규 제226호",
+          "p.682 · 제11장 맞춤형 복지제도업무 처리기준 > Ⅴ. 복지점수 부여 및 관리"
+        ]
+      ],
+      "public": [
+        [
+          "8607dfa6e968f1937b19494d33e863686673346f5ea5fb051cfab0cfa6a351b2",
+          "인사혁신처예규 제226호",
+          "p.682 · 제11장 맞춤형 복지제도업무 처리기준 > Ⅴ. 복지점수 부여 및 관리"
+        ]
+      ]
+    },
+    {
+      "id": "sw-welfare-local",
+      "equal": true,
+      "local": [
+        [
+          "f938d45bd0f4b6982cd008e1c96fd52c2f92ab40e98f25e46bac2019ceda4190",
+          "인사혁신처예규 제226호",
+          "p.680 · 제11장 맞춤형 복지제도업무 처리기준 > Ⅴ. 복지점수 부여 및 관리"
+        ]
+      ],
+      "public": [
+        [
+          "f938d45bd0f4b6982cd008e1c96fd52c2f92ab40e98f25e46bac2019ceda4190",
+          "인사혁신처예규 제226호",
+          "p.680 · 제11장 맞춤형 복지제도업무 처리기준 > Ⅴ. 복지점수 부여 및 관리"
+        ]
+      ]
+    },
+    {
+      "id": "sd-national-duty",
+      "equal": true,
+      "local": [
+        [
+          "c89c09ed7040d8a526c337330727404d40272a458897ef1490c982d674023b95",
+          "인사혁신처예규 제225호",
+          "p.114 · 제5장 당직 및 비상근무 > 6. 공무원 비상근무 운영방법 > 가. 비상근무 편성·운영"
+        ]
+      ],
+      "public": [
+        [
+          "c89c09ed7040d8a526c337330727404d40272a458897ef1490c982d674023b95",
+          "인사혁신처예규 제225호",
+          "p.114 · 제5장 당직 및 비상근무 > 6. 공무원 비상근무 운영방법 > 가. 비상근무 편성·운영"
+        ]
+      ]
+    },
+    {
+      "id": "sp-local-payday",
+      "equal": true,
+      "local": [],
+      "public": []
+    },
+    {
+      "id": "sp-police-payday",
+      "equal": true,
+      "local": [],
+      "public": []
+    },
+    {
+      "id": "sp-raise-no-status",
+      "equal": true,
+      "local": [
+        [
+          "4bb9bd67958b8dbdc0d78004d33973d6e568695da4e13b1365a884de331f2252",
+          "행정안전부예규 제389호",
+          "p.53 · 제1장 지방공무원봉급업무 처리기준 > Ⅴ. 승  급(영 제12조･"
+        ]
+      ],
+      "public": [
+        [
+          "4bb9bd67958b8dbdc0d78004d33973d6e568695da4e13b1365a884de331f2252",
+          "행정안전부예규 제389호",
+          "p.53 · 제1장 지방공무원봉급업무 처리기준 > Ⅴ. 승  급(영 제12조･"
+        ]
+      ]
+    },
+    {
+      "id": "sp-national-raise",
+      "equal": true,
+      "local": [
+        [
+          "00b9ed1edab7ba67635600317be68a470fb262492cf5dbac52846c5025c20ccf",
+          "인사혁신처예규 제226호",
+          "p.50 · 제1장 공무원 봉급업무 처리기준 > Ⅴ. 승  급"
+        ]
+      ],
+      "public": [
+        [
+          "00b9ed1edab7ba67635600317be68a470fb262492cf5dbac52846c5025c20ccf",
+          "인사혁신처예규 제226호",
+          "p.50 · 제1장 공무원 봉급업무 처리기준 > Ⅴ. 승  급"
+        ]
+      ]
+    },
+    {
+      "id": "sp-national-sick-leave-pay",
+      "equal": true,
+      "local": [
+        [
+          "5cfcd4d0d2f61d11c708b82bfef77501a796bf56c1b12d059a68decde7b6460a",
+          "인사혁신처예규 제226호",
+          "p.62 · 제1장 공무원 봉급업무 처리기준 > Ⅵ. 기타사항"
+        ]
+      ],
+      "public": [
+        [
+          "5cfcd4d0d2f61d11c708b82bfef77501a796bf56c1b12d059a68decde7b6460a",
+          "인사혁신처예규 제226호",
+          "p.62 · 제1장 공무원 봉급업무 처리기준 > Ⅵ. 기타사항"
+        ]
+      ]
+    },
+    {
+      "id": "sp-local-salary-table",
+      "equal": true,
+      "local": [],
+      "public": []
+    },
+    {
+      "id": "sp-national-initial-step",
+      "equal": true,
+      "local": [
+        [
+          "b0690829c6523211a74d2cb1c7278be311fb66160cd1d4f8a9bfea8f2f232556",
+          "인사혁신처예규 제226호",
+          "p.20 · 제1장 공무원 봉급업무 처리기준 > Ⅱ. 초임호봉 획정(영 제8조, 제10조 및 별표 15)"
+        ]
+      ],
+      "public": [
+        [
+          "b0690829c6523211a74d2cb1c7278be311fb66160cd1d4f8a9bfea8f2f232556",
+          "인사혁신처예규 제226호",
+          "p.20 · 제1장 공무원 봉급업무 처리기준 > Ⅱ. 초임호봉 획정(영 제8조, 제10조 및 별표 15)"
+        ]
+      ]
+    },
+    {
+      "id": "sp-local-absence",
+      "equal": true,
+      "local": [
+        [
+          "8202059e7959d339446b08e43aaaa42b75146ba68bb8b64e68ef8d12e9234dd3",
+          "행정안전부예규 제389호",
+          "p.66 · 제1장 지방공무원봉급업무 처리기준 > Ⅴ. 승  급(영 제12조･"
+        ]
+      ],
+      "public": [
+        [
+          "8202059e7959d339446b08e43aaaa42b75146ba68bb8b64e68ef8d12e9234dd3",
+          "행정안전부예규 제389호",
+          "p.66 · 제1장 지방공무원봉급업무 처리기준 > Ⅴ. 승  급(영 제12조･"
+        ]
+      ]
+    },
+    {
+      "id": "sp-pay-clarify",
+      "equal": true,
+      "local": [],
+      "public": []
+    },
+    {
+      "id": "sd-fire-duty-exemption",
+      "equal": true,
+      "local": [
+        [
+          "fab9e4aba0418c9f5ea2bde81566c08fb7a1f25d454be2d83d5a21eac4bddb91",
+          "인사혁신처예규 제225호",
+          "p.109 · 제5장 당직 및 비상근무 > 4. 공무원 비상근무 종류"
+        ]
+      ],
+      "public": [
+        [
+          "fab9e4aba0418c9f5ea2bde81566c08fb7a1f25d454be2d83d5a21eac4bddb91",
+          "인사혁신처예규 제225호",
+          "p.109 · 제5장 당직 및 비상근무 > 4. 공무원 비상근무 종류"
+        ]
+      ]
+    }
+  ]
+}
