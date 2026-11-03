@@ -15,10 +15,18 @@
   async function api(path, method = 'GET', body) {
     const response = await fetch(`/api/folder-projects${path}`, { method, headers: body === undefined ? {} : { 'Content-Type': 'application/json' }, body: body === undefined ? undefined : JSON.stringify(body) });
     const data = await response.json().catch(() => ({}));
-    if (!response.ok) throw new Error(typeof data.detail === 'string' ? data.detail : `요청을 처리하지 못했습니다 (${response.status}).`);
+    if (!response.ok) { const error = new Error(typeof data.detail === 'string' ? data.detail : `요청을 처리하지 못했습니다 (${response.status}).`); error.status = response.status; throw error; }
     return data;
   }
   function safeId(value) { return encodeURIComponent(value); }
+  // The open project no longer exists (the shared demo resets when it sleeps or a new version starts;
+  // on the personal app another window removed it). Leave the stale view instead of retrying it.
+  async function projectGone() {
+    showList(); await loadProjects();
+    setMessage($('#list-message'), publicDemo
+      ? '열려 있던 프로젝트가 없어졌습니다. 공유 시연 사이트는 한동안 쓰지 않거나 새 버전이 올라가면 처음 시연 자료로 돌아갑니다. 프로젝트를 다시 만들어 주세요.'
+      : '열려 있던 프로젝트를 찾지 못했습니다. 다른 창에서 삭제됐을 수 있습니다.', true);
+  }
   function projectUrl(id) { return `folders.html#project=${encodeURIComponent(id)}`; }
   function showList() { resetCreateForm(); currentId = ''; generation++; requestVersion++; project = null; selectedFiles.clear(); explicitSelection = false; seenProject = ''; libraryProject = ''; lastMessagesSignature = ''; clearTimeout(timer); timer = null; listView.hidden = false; projectView.hidden = true; $('#back-projects').hidden = true; history.replaceState(null, '', 'folders.html'); question.value = ''; }
   function showProject(id) { currentId = id; generation++; requestVersion++; project = null; selectedFiles.clear(); explicitSelection = false; draftMode = false; $('#draft-toggle').setAttribute('aria-pressed','false'); $('#draft-toggle').textContent='초안 작성'; seenProject = id; libraryProject = ''; lastMessagesSignature = ''; clearTimeout(timer); timer = null; listView.hidden = true; projectView.hidden = false; $('#add-menu').open = false; $('#back-projects').hidden = false; history.replaceState(null, '', projectUrl(id)); question.value = localStorage.getItem(storageKey(id)) || ''; setMessage($('#project-message'), ''); refreshProject(); }
@@ -47,7 +55,7 @@
       const data = await api(`/${safeId(id)}`);
       if (id !== currentId || gen !== generation || version !== requestVersion) return;
       $('#retry-project').hidden = true; project = data; renderProject(data); schedulePoll(id, gen, data);
-    } catch (e) { if (id === currentId && gen === generation && version === requestVersion) { setMessage($('#project-message'), e.message, true); $('#retry-project').hidden = false; } }
+    } catch (e) { if (id === currentId && gen === generation && version === requestVersion) { if (e.status === 404) { projectGone(); return; } setMessage($('#project-message'), e.message, true); $('#retry-project').hidden = false; } }
   }
   function renderFiles(files) {
     const focused = document.activeElement?.closest('.fp-file')?.querySelector('input')?.value;
@@ -297,7 +305,7 @@
     const file_ids = explicitSelection ? [...selectedFiles] : []; const body = { content, file_ids, draft: draftMode };
     setMessage($('#project-message'), '질문을 보내고 있습니다…');
     try { question.value = ''; localStorage.removeItem(storageKey(id)); draftMode = false; $('#draft-toggle').setAttribute('aria-pressed', 'false'); $('#draft-toggle').textContent='초안 작성'; const sent = await api(`/${safeId(id)}/messages`, 'POST', body); if (id === currentId && gen === generation) { setMessage($('#project-message'),''); await refreshProject(id, gen); } }
-    catch (err) { if (id === currentId && gen === generation) { question.value = content; localStorage.setItem(storageKey(id), content); setMessage($('#project-message'), err.message, true); } }
+    catch (err) { if (id === currentId && gen === generation) { question.value = content; localStorage.setItem(storageKey(id), content); if (err.status === 404) { projectGone(); return; } setMessage($('#project-message'), err.message, true); } }
   });
   question.addEventListener('input', () => { if (currentId) localStorage.setItem(storageKey(currentId), question.value); });
   document.querySelectorAll('[data-prompt]').forEach(b => b.addEventListener('click', () => { question.value = b.dataset.prompt; question.focus(); question.dispatchEvent(new Event('input')); }));
