@@ -48,11 +48,14 @@ export class GongmudamDemo extends Container {
   // waits while any request is counted in flight. Decide from the stored last request:
   // no request here runs for 20 minutes, so a 20-minute silence means it may sleep.
   isActivityExpired() {
-    if (Date.now() - this.lastRequest >= SLEEP_MS) {
-      this.inflightRequests = 0;
-      return true;
-    }
-    return super.isActivityExpired();
+    const now = Date.now();
+    if (now - this.lastRequest < SLEEP_MS) return super.isActivityExpired();
+    // The next alarm fires at once while the container shuts down (10 stop signals in
+    // one second on 2026-11-03); signal once and give it a minute.
+    if (now - (this.stopSignalled || 0) < 60_000) return false;
+    this.stopSignalled = now;
+    this.inflightRequests = 0;
+    return true;
   }
 
   // One line per alarm (about every 3 minutes while running), read with wrangler tail.
