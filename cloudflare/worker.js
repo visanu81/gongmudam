@@ -33,8 +33,13 @@ export async function handle(request, env, backend = env.BACKEND) {
       headers, body: ['GET', 'HEAD'].includes(request.method) ? undefined : request.body,
       duplex: 'half',
       redirect: 'manual'}));
-    if (response.status >= 502) return offlineResponse(url.pathname.startsWith('/api/'));
-    const result = new Response(response.body, response);
+    // A body nobody reads keeps the container's in-flight count up, so it never sleeps; close it.
+    if (response.status >= 502) {
+      await response.body?.cancel();
+      return offlineResponse(url.pathname.startsWith('/api/'));
+    }
+    if (request.method === 'HEAD') await response.body?.cancel();
+    const result = new Response(request.method === 'HEAD' ? null : response.body, response);
     const location = result.headers.get('Location');
     if (location) {
       const redirect = new URL(location, target);

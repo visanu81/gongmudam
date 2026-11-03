@@ -14,6 +14,7 @@ export class GongmudamDemo extends Container {
 
   constructor(ctx, env) {
     super(ctx, env);
+    this.lastRequest = Date.now();
     // The Upstage key stays a Worker secret and is never baked into the image.
     this.envVars = {UPSTAGE_API_KEY: env.UPSTAGE_API_KEY || ''};
     // The durable_object scheduling policy needs the image and size at start;
@@ -32,13 +33,39 @@ export class GongmudamDemo extends Container {
   // A cold start restores the demo and loads the service, which can take longer;
   // the first visitor after a sleep then got "Failed to start container" (2026-11-02).
   async fetch(request) {
+    this.lastRequest = Date.now();
     if (!this.container.running) {
       await this.startAndWaitForPorts(this.defaultPort, WAKE, undefined).catch(() => {});
     }
     return super.fetch(request);
   }
+
+  // The container stayed up for hours with no visitors (2026-11-03). The library only
+  // sleeps once its in-flight request count is zero, and a response body nobody reads
+  // keeps that count up for good. No request here runs for 20 minutes, so a 20-minute
+  // silence means the count is stale and the container may sleep.
+  isActivityExpired() {
+    if (Date.now() - this.lastRequest >= SLEEP_MS) {
+      this.inflightRequests = 0;
+      return true;
+    }
+    return super.isActivityExpired();
+  }
+
+  // One line per alarm (about every 3 minutes while running), read with wrangler tail.
+  async alarm(props) {
+    console.log(JSON.stringify({event: 'container-alarm', running: this.container.running,
+      inflight: this.inflightRequests, idleSeconds: Math.round((Date.now() - this.lastRequest) / 1000)}));
+    return super.alarm(props);
+  }
+
+  async onActivityExpired() {
+    console.log(JSON.stringify({event: 'container-sleep', inflight: this.inflightRequests}));
+    return super.onActivityExpired();
+  }
 }
 
+const SLEEP_MS = 20 * 60_000;
 const WAKE = {instanceGetTimeoutMS: 30_000, portReadyTimeoutMS: 120_000};
 
 export default {

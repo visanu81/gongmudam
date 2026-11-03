@@ -34,3 +34,12 @@ test('backend redirects keep users on the public origin', async () => {
   const result = await handle(new Request('https://g.test/api/result'), {BACKEND: {fetch() {return new Response(null, {status: 307, headers: {Location: 'http://127.0.0.1:8892/travel.html?case=abc#settle'}});}}});
   assert.equal(result.headers.get('Location'), '/travel.html?case=abc#settle');
 });
+test('bodies the worker does not pass on are closed so the container can sleep', async () => {
+  for (const [method, status] of [['GET', 503], ['HEAD', 200]]) {
+    let cancelled = false;
+    const body = new ReadableStream({cancel() {cancelled = true;}});
+    const result = await handle(new Request('https://g.test/api/status', {method}), {BACKEND: {fetch() {return new Response(body, {status});}}});
+    assert.equal(cancelled, true, method);
+    assert.equal(method === 'HEAD' ? result.body : result.status, method === 'HEAD' ? null : 503);
+  }
+});

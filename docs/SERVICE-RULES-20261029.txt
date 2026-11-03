@@ -358,3 +358,10 @@
   이제 service/requirements*.txt를 복사하고 lock에 고정된 패키지마다 service/wheels의 휠을 찾아 넣는다. 휠이 없으면 후보 생성을 멈춘다.
 - 확인: 시험 2개(tests/test_prepare_answer_release.py). 실제 후보를 만들어 새 가상환경에 인터넷 없이 설치(--no-index) → 27개 설치,
   pip check 통과, hwpx·skdconv·Crypto import 성공. upgrade_public_runtime 미리보기도 통과(requirements 두 파일만 추가로 바뀜).
+
+24단계: 공유 컨테이너 절전 안전장치 (2026-11-03)
+- 원인 분석: @cloudflare/containers 0.3.7은 진행 중 요청 수(inflightRequests)가 0일 때만 잠든다. 응답 본문을 다 보내야 수가 줄어드는데,
+  Worker가 502 이상 응답과 HEAD 응답의 본문을 읽지 않고 버려 수가 남을 수 있다. 확인 시점 실행 인스턴스는 1개(이전 버전들은 잠듦).
+- 수정: worker.js가 버리는 본문을 닫는다(cancel). index.js는 마지막 요청 뒤 20분이 지나면 진행 중 수와 무관하게 잠들게 하고,
+  알람마다 상태(running·inflight·idleSeconds)와 잠들 때를 로그로 남긴다(wrangler tail로 확인, observability는 꺼둔 채).
+- 확인: edge 시험 7개(본문 닫기 1개 추가), wrangler dry-run 묶음 성공. 실제 절전은 배포 뒤 확인.
