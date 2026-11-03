@@ -131,5 +131,15 @@ def create_app():
         if kinds:=public_privacy.found(name+'\n'+body.content):raise HTTPException(422,public_privacy.refusal(name,kinds))
         with path.open('w',encoding='utf-8',newline='\n') as stream:stream.write(body.content)
         return dict(name=name,notice='공개 시연 폴더에 저장했습니다. 자동 감지 후 AI 변경 제안을 확인하세요.',library_id=definition['folder_library_id'])
+    # Visitor material is removed after an hour; the container does not reliably sleep and reset.
+    from . import folder_projects,public_cleanup
+    folders.initialize();folder_projects.initialize()
+    kept=public_cleanup.snapshot(sandbox)
+    def sweeper():
+        while True:
+            time.sleep(300)
+            try:public_cleanup.sweep(kept,sandbox)
+            except Exception as exc:print('공개 시연 자료 정리 실패:',type(exc).__name__,flush=True)
+    threading.Thread(target=sweeper,name='public-cleanup',daemon=True).start()
     app.router.routes.append(static_mount)
     return app

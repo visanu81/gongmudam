@@ -19,12 +19,12 @@
     return data;
   }
   function safeId(value) { return encodeURIComponent(value); }
-  // The open project no longer exists (the shared demo resets when it sleeps or a new version starts;
+  // The open project no longer exists (the shared demo removes visitor projects after an hour and resets on a new version;
   // on the personal app another window removed it). Leave the stale view instead of retrying it.
   async function projectGone() {
     showList(); await loadProjects();
     setMessage($('#list-message'), publicDemo
-      ? '열려 있던 프로젝트가 없어졌습니다. 공유 시연 사이트는 한동안 쓰지 않거나 새 버전이 올라가면 처음 시연 자료로 돌아갑니다. 프로젝트를 다시 만들어 주세요.'
+      ? '열려 있던 프로젝트가 없어졌습니다. 공유 시연 사이트에 만든 프로젝트와 올린 자료는 1시간이 지나거나 새 버전이 올라가면 지워집니다. 프로젝트를 다시 만들어 주세요.'
       : '열려 있던 프로젝트를 찾지 못했습니다. 다른 창에서 삭제됐을 수 있습니다.', true);
   }
   function projectUrl(id) { return `folders.html#project=${encodeURIComponent(id)}`; }
@@ -158,7 +158,7 @@
       const files = [...input.files]; if (!files.length || id !== currentId || gen !== generation) return;
       if (files.length > 100 || files.some(f => f.size > 5 * 1024 * 1024) || files.reduce((n, f) => n + f.size, 0) > 10 * 1024 * 1024) { setMessage($('#project-message'), '파일 최대 100개·파일당 5MB·전체 10MB까지 업로드할 수 있습니다.', true); return; }
       let name = project?.name || '새 프로젝트'; if(name.trim().length < 2) name += ' 자료';
-      const publicConsent = publicDemo && window.confirm('공개 시연 사이트에서는 다른 방문자도 업로드 자료와 분석 결과를 볼 수 있습니다. 공개 또는 합성 자료만 업로드하시겠습니까?');
+      const publicConsent = publicDemo && window.confirm('공개 시연 사이트에서는 다른 방문자도 업로드 자료와 분석 결과를 볼 수 있습니다(1시간 뒤 자동 삭제). 공개 또는 합성 자료만 업로드하시겠습니까?');
       if (publicDemo && !publicConsent) return;
       const form = new FormData(); form.append('name', name); form.append('paths', JSON.stringify(files.map(f => f.webkitRelativePath || f.name))); form.append('situation', ''); form.append('public_consent', String(!publicDemo || publicConsent));
       files.forEach(file => form.append('files', file, file.webkitRelativePath || file.name));
