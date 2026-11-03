@@ -12,6 +12,7 @@ import shutil
 from urllib.parse import urlsplit
 
 ROOT=Path(__file__).resolve().parents[1]
+OFFICE_PACKS=(('office-goods-20261026','국가·지방 물품관리 공식 근거'),('office-contract-20261104','국가·지방 수의계약 공식 근거'))
 
 
 def digest(path):return hashlib.sha256(path.read_bytes()).hexdigest()
@@ -67,9 +68,9 @@ def prepare(dest, root=ROOT, version='v79-answer-first-20261026'):
     reviewed=read(source/'submission-data/knowledge.json')
     existing={s['id']:s for s in old_bundle['sources']}
     following={s['id']:s for s in reviewed['sources']}
-    pack=source/'reference_data/office-goods-20261026'
-    goods_rows=read(pack/'manifest.json')
-    goods_by_id={row['id']:row for row in goods_rows}
+    # Office packs of pinned official law articles, added to the public bundle as a whole.
+    packs={collection:(name,read(source/'reference_data'/collection/'manifest.json')) for collection,name in OFFICE_PACKS}
+    goods_by_id={row['id']:row for _,rows in packs.values() for row in rows}
     for key,value in existing.items():
         if key in following:
             if following[key]!=value:raise ValueError('Existing reviewed source changed')
@@ -89,19 +90,20 @@ def prepare(dest, root=ROOT, version='v79-answer-first-20261026'):
             raise ValueError('Source is not the reviewed submission asset')
         out=dest/asset;out.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(source/asset,out)
         old_bundle['sources'].append(entry)
-    # New goods pack consists exclusively of pinned official law articles.
-    for row in goods_rows:
-        if row['id'] in existing:continue
-        if row['collection']!='office-goods-20261026' or not row['source_url'].startswith('https://www.law.go.kr/'):
-            raise ValueError('Unexpected goods source')
-        if digest(pack/'raw'/row['raw_file'])!=row['raw_sha256'] or digest(pack/'excerpts'/row['filename'])!=row['sha256']:
-            raise ValueError('Pinned goods source changed')
-        asset='submission-data/sources/office-goods-20261026/'+row['sha256']+'.txt'
-        out=dest/asset;out.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(pack/'excerpts'/row['filename'],out)
-        old_bundle['sources'].append(dict(id=row['id'],library_id=row['collection'],file_id=row['id'],
-            title=row['title']+' '+row['article'],sha256=row['sha256'],units=row['units'],limited=False,
-            kind=row['kind'],institution=row['institution'],effective_date=row['effective_date'],
-            official=row,asset=asset,enabled=1,library_name='국가·지방 물품관리 공식 근거'))
+    for collection,(name,rows) in packs.items():
+        pack=source/'reference_data'/collection
+        for row in rows:
+            if row['id'] in existing:continue
+            if row['collection']!=collection or not row['source_url'].startswith('https://www.law.go.kr/'):
+                raise ValueError('Unexpected office pack source')
+            if digest(pack/'raw'/row['raw_file'])!=row['raw_sha256'] or digest(pack/'excerpts'/row['filename'])!=row['sha256']:
+                raise ValueError('Pinned office pack source changed')
+            asset=f'submission-data/sources/{collection}/'+row['sha256']+'.txt'
+            out=dest/asset;out.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(pack/'excerpts'/row['filename'],out)
+            old_bundle['sources'].append(dict(id=row['id'],library_id=row['collection'],file_id=row['id'],
+                title=row['title']+' '+row['article'],sha256=row['sha256'],units=row['units'],limited=False,
+                kind=row['kind'],institution=row['institution'],effective_date=row['effective_date'],
+                official=row,asset=asset,enabled=1,library_name=name))
     old_bundle['created_at']=datetime.now(timezone.utc).isoformat()
     save(dest/'submission-data/knowledge.json',old_bundle)
     manifest=dict(old, release_version=version,sources=len(old_bundle['sources']),

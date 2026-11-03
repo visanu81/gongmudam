@@ -1,0 +1,38 @@
+[
+  {
+    "id": "office-contract-local-decree-25",
+    "title": "지방자치단체를 당사자로 하는 계약에 관한 법률 시행령",
+    "article": "제25조(수의계약에 의할 수 있는 경우)",
+    "filename": "local-decree-25.txt",
+    "kind": "법령·규정",
+    "issuer": "행정안전부",
+    "institution": "지방자치단체 계약",
+    "effective_date": "2026-06-03",
+    "publication": "대통령령 제36338호, 2026. 5. 19., 타법개정",
+    "source_url": "https://www.law.go.kr/LSW/lsSideInfoP.do?lsiSeq=286149&joNo=0025&joBrNo=00&docCls=jo&urlMode=lsScJoRltInfoR",
+    "raw_file": "local-decree-25.html",
+    "raw_sha256": "b34287518773e301f40bf1edc3d4a0b0d93d237b87e1f6801033d9897a19f0f8",
+    "retrieved_at": "2026-11-04",
+    "collection": "office-contract-20261104",
+    "office_topic": "contract",
+    "scope": "물품 제조·구매·용역·공사 수의계약의 사유와 추정가격 기준. 견적·대상자 선정 절차(시행령 제30조), 기관별 계약 규정, 조달청 계약은 별도 확인. 과거·미래 판본은 검토하지 않음."
+  },
+  {
+    "id": "office-contract-national-decree-26",
+    "title": "국가를 당사자로 하는 계약에 관한 법률 시행령",
+    "article": "제26조(수의계약에 의할 수 있는 경우)",
+    "filename": "national-decree-26.txt",
+    "kind": "법령·규정",
+    "issuer": "재정경제부",
+    "institution": "국가기관 계약",
+    "effective_date": "2026-06-03",
+    "publication": "대통령령 제36338호, 2026. 5. 19., 타법개정",
+    "source_url": "https://www.law.go.kr/LSW/lsSideInfoP.do?lsiSeq=285893&joNo=0026&joBrNo=00&docCls=jo&urlMode=lsScJoRltInfoR",
+    "raw_file": "national-decree-26.html",
+    "raw_sha256": "d8dfe054fa309ef8ccf55e36bbe9339c4185bd9770a5617c6c679cef604ef67a",
+    "retrieved_at": "2026-11-04",
+    "collection": "office-contract-20261104",
+    "office_topic": "contract",
+    "scope": "물품 제조·구매·용역·공사 수의계약의 사유와 추정가격 기준. 견적·대상자 선정 절차(시행령 제30조), 기관별 계약 규정, 조달청 계약은 별도 확인. 과거·미래 판본은 검토하지 않음."
+  }
+]

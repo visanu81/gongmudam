@@ -16,18 +16,22 @@ BASE = Path(__file__).resolve().parents[1] / 'reference_data/office-20261025'
 EXTRA_BASE = Path(__file__).resolve().parents[1] / 'reference_data/office-extra-20261025'
 DOCUMENT_BASE = Path(__file__).resolve().parents[1] / 'reference_data/office-documents-20261026'
 GOODS_BASE = Path(__file__).resolve().parents[1] / 'reference_data/office-goods-20261026'
-COLLECTIONS = frozenset({'office-20261025', 'office-extra-20261025', 'office-documents-20261026', 'office-goods-20261026'})
+CONTRACT_BASE = Path(__file__).resolve().parents[1] / 'reference_data/office-contract-20261104'
+COLLECTIONS = frozenset({'office-20261025', 'office-extra-20261025', 'office-documents-20261026', 'office-goods-20261026',
+                         'office-contract-20261104'})
 _COLLECTION_ROOTS = {
     'office-20261025': 'BASE',
     'office-extra-20261025': 'EXTRA_BASE',
     'office-documents-20261026': 'DOCUMENT_BASE',
     'office-goods-20261026': 'GOODS_BASE',
+    'office-contract-20261104': 'CONTRACT_BASE',
 }
 router = APIRouter(prefix='/api/office-sources', tags=['서무 공통 근거'])
 LABELS = {'privacy': '개인정보 처리', 'records': '기록물 관리',
           'disclosure': '정보공개 처리', 'handover': '업무 인수인계',
           'documents': '공문 접수·기안·결재',
-          'goods_management': '물품대장·재물조사·불용 처리'}
+          'goods_management': '물품대장·재물조사·불용 처리',
+          'contract': '수의계약 금액·사유'}
 
 
 def flat(value):
@@ -208,6 +212,10 @@ def classify(query):
         goods = classify_goods(query)
         if goods:
             return goods
+        from .contract_rules import classify as classify_contract
+        contract = classify_contract(query)
+        if contract:
+            return contract
     if not topics:
         return None
     unsupported = ('과태료','과징금','징역','벌금','손해배상','징계','해외법','GDPR')
@@ -235,6 +243,8 @@ def documents(query, docs, today):
     if not registered:
         if 'goods_management' in plan['topics']:
             return [], plan.get('reason') or '물품관리 원문 자료가 아직 등록되지 않았어요. 해당 국가·지자체 자료를 등록해 주세요.', plan
+        if 'contract' in plan['topics']:
+            return [], plan.get('reason') or '수의계약 조문(국가계약법 시행령 제26조·지방계약법 시행령 제25조)이 아직 등록되지 않았어요.', plan
         return None
     if plan.get('reason'):
         return [], plan['reason'], plan
