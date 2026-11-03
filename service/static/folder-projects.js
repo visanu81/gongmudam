@@ -283,9 +283,12 @@
         const actions = el('div', 'fp-output-actions');
         const copy = el('button', 'fp-text-button', '복사'); copy.type = 'button'; copy.addEventListener('click', async () => { try { await navigator.clipboard.writeText(text); setMessage($('#project-message'), '결과물을 복사했습니다.'); } catch { setMessage($('#project-message'), '복사하지 못했습니다. 내용을 선택해 복사해 주세요.', true); } });
         const save = el('button', 'fp-text-button', 'TXT로 저장'); save.type = 'button'; save.addEventListener('click', () => { const url = URL.createObjectURL(new Blob([text], { type: 'text/plain;charset=utf-8' })); const a = document.createElement('a'); a.href = url; a.download = `${project?.name || '업무'}-${outputTitle(message, messages).replace(/[\\/:*?"<>|]/g, '')}.txt`; a.click(); setTimeout(() => URL.revokeObjectURL(url), 1000); });
+        const hwpx = document.createElement('a'); hwpx.className = 'fp-text-button'; hwpx.textContent = '한글로 저장';
+        hwpx.href = `/api/folder-projects/${safeId(currentId)}/messages/${safeId(message.id)}/hwpx?title=${encodeURIComponent(outputTitle(message, messages))}`;
+        hwpx.title = draftValues.has(message.id) ? '저장하지 않은 수정은 빠집니다. 먼저 수정 저장을 누르세요.' : '근거 자료 목록이 함께 들어갑니다.';
         const go = el('button', 'fp-text-button', '대화에서 보기'); go.type = 'button'; go.addEventListener('click', () => { const row = conversation.querySelector(`[data-message-id="${CSS.escape(message.id)}"]`); if (row) { row.scrollIntoView({ block: 'center', behavior: 'smooth' }); row.classList.add('is-highlight'); setTimeout(() => row.classList.remove('is-highlight'), 1600); } });
         const drop = el('button', 'fp-text-button', '결과물에서 빼기'); drop.type = 'button'; drop.addEventListener('click', () => setOutput(message, false));
-        actions.append(copy, save, go, drop); card.append(actions);
+        actions.append(copy, save, hwpx, go, drop); card.append(actions);
       }
       list.append(card);
     });

@@ -21,7 +21,8 @@ import time
 import uuid
 
 from fastapi import APIRouter, HTTPException, Request
-from fastapi.responses import FileResponse
+from fastapi.responses import FileResponse, Response
+from urllib.parse import quote
 from pydantic import Field
 
 from . import folders, folder_inputs, folder_scan_io, config, local_ai, llm, folder_ai, project_query, project_tasks, project_text, upstage
@@ -450,6 +451,22 @@ def keep_output(pid: str, mid: str, body: Output):
         m['output'] = body.saved
         put(c, 'project_messages', m)
         return detail(c, pid)
+
+
+@router.get('/{pid}/messages/{mid}/hwpx')
+def export_hwpx(pid: str, mid: str, title: str = ''):
+    """The answer as a 한글(HWPX) document with the sources it cites."""
+    with db() as c:
+        m = get(c, 'project_messages', mid)
+        if m['project_id'] != pid or m['role'] != 'assistant' or m['status'] != 'completed':
+            raise HTTPException(422, '완료된 답변만 한글 문서로 저장할 수 있습니다.')
+        name = get(c, 'folder_projects', pid)['name']
+    label = re.sub(r'[\\/:*?"<>|\x00-\x1f]', '', (title or m.get('question') or '결과물').strip())[:60] or '결과물'
+    from . import project_export
+    data = project_export.hwpx(f'{name} · {label}', m.get('content') or '', m.get('evidence') or [])
+    filename = re.sub(r'[\\/:*?"<>|\x00-\x1f]', '', f'{name}-{label}')[:100] + '.hwpx'
+    return Response(data, media_type='application/hwp+zip',
+                    headers={'Content-Disposition': f"attachment; filename*=UTF-8''{quote(filename)}"})
 
 
 @router.get('/{pid}/files/{fid}/units/{unit}')

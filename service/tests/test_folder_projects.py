@@ -388,6 +388,22 @@ class FolderProjectsTest(unittest.TestCase):
         for field in ('소속','성명','출장 기간','숙박비: 원'):
             self.assertIn(field,texts)
 
+    def test_output_downloads_as_a_hwpx_with_its_sources(self):
+        f=self.root/'교육.txt';f.write_text('교육 일정: 11월 13일',encoding='utf-8')
+        pid=self.create();self.source(pid,f,'file');self.start()
+        self.wait(pid,lambda v:v['jobs'][-1]['status']=='completed')
+        self.question(pid,'교육 일정은?');v=self.answered(pid)
+        user,answer=v['messages'][-2],v['messages'][-1]
+        r=self.client.get(f"/api/folder-projects/{pid}/messages/{answer['id']}/hwpx",params={'title':'일정 정리'})
+        self.assertEqual(r.status_code,200,r.text);self.assertEqual(r.headers['content-type'],'application/hwp+zip')
+        self.assertIn("filename*=UTF-8''",r.headers['content-disposition'])
+        out=self.root/'결과.hwpx';out.write_bytes(r.content)
+        texts=[u['text'] for u in project_text.extract(out)['units']]
+        self.assertIn('교육 준비 · 일정 정리',texts)
+        self.assertTrue(any('11월 13일' in t for t in texts))
+        self.assertIn('근거 자료',texts);self.assertTrue(any(t.startswith('[1] 교육.txt') for t in texts))
+        self.assertEqual(self.client.get(f"/api/folder-projects/{pid}/messages/{user['id']}/hwpx").status_code,422)
+
     def test_followup_keeps_previous_scope_and_summary_includes_each_file(self):
         folder=self.root/'자료';folder.mkdir()
         for i in range(6):
