@@ -351,3 +351,10 @@
 - 2026-11-03: 사용자 배포 후 14:10 공유 주소 v103 확인. 공유 사이트에서 합성 자료로 질문한 답변을 한글로 저장해 다시 읽으니 제목·본문·근거 목록이 들어 있음
   (docs/evidence/hwpx-export-20261103/public-v103-hwpx.txt). PC(8787)↔클라우드 평가 질문 85/85, 실무 27/27(parity·practice-parity-v103-cloud.json).
   개인용 앱은 이제 RTX PC Qwen(rtx_qwen)을 쓰고 공유 사이트는 솔라를 쓴다. 비교는 AI 없는 경로로 했다.
+
+23단계: 오프라인 설치 패키지 휠 채우기 (2026-11-03, 배포 불필요)
+- tools/prepare_answer_release.py가 첫 출시 때 관리 목록에 있던 휠만 복사해, 그 뒤 추가한 skdconv·pycryptodome·python-hwpx 휠과
+  새 requirements 두 파일이 후보 패키지에서 빠져 있었다(공유 사이트 컨테이너는 pip로 설치해 영향 없음).
+  이제 service/requirements*.txt를 복사하고 lock에 고정된 패키지마다 service/wheels의 휠을 찾아 넣는다. 휠이 없으면 후보 생성을 멈춘다.
+- 확인: 시험 2개(tests/test_prepare_answer_release.py). 실제 후보를 만들어 새 가상환경에 인터넷 없이 설치(--no-index) → 27개 설치,
+  pip check 통과, hwpx·skdconv·Crypto import 성공. upgrade_public_runtime 미리보기도 통과(requirements 두 파일만 추가로 바뀜).

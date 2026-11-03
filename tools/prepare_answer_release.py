@@ -19,6 +19,28 @@ def read(path):return json.loads(path.read_text(encoding='utf-8'))
 def save(path,value):path.write_text(json.dumps(value,ensure_ascii=False,indent=2),encoding='utf-8')
 
 
+def wheel_key(name):return name.lower().replace('-','_').replace('.','_')
+
+
+def copy_dependencies(source,dest):
+    """Ship the current requirements and a wheel for every pinned package, so the offline install works.
+
+    The managed list only knows the wheels of the first release; libraries added later
+    (skdconv, pycryptodome, python-hwpx) were missing from the package.
+    """
+    for name in ('requirements.txt','requirements-travel.lock.txt'):shutil.copy2(source/name,dest/name)
+    wheels={}
+    for path in (source/'wheels').glob('*.whl'):
+        package,version=path.name.split('-')[:2];wheels[(wheel_key(package),version)]=path
+    for line in (source/'requirements-travel.lock.txt').read_text(encoding='utf-8').splitlines():
+        line=line.split('#')[0].strip()
+        if not line:continue
+        package,version=line.split('==')
+        wheel=wheels.get((wheel_key(package),version.strip()))
+        if not wheel:raise ValueError('No bundled wheel for '+line)
+        output=dest/'wheels'/wheel.name;output.parent.mkdir(exist_ok=True);shutil.copy2(wheel,output)
+
+
 def prepare(dest, root=ROOT, version='v79-answer-first-20261026'):
     source=root/'service'; public=root/'.local-runtime/service';dest=Path(dest).resolve()
     if dest.exists():raise ValueError('Use a new candidate directory')
@@ -32,6 +54,7 @@ def prepare(dest, root=ROOT, version='v79-answer-first-20261026'):
         origin=(source if name.startswith('wheels/') else public)/relative
         if digest(origin)!=expected:raise ValueError('Managed public file changed: '+name)
         output=dest/relative;output.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(origin,output)
+    copy_dependencies(source,dest)
     # Immutable reviewed travel calculation packs must not change in a prose release.
     for previous in (public/'app/rulepacks').rglob('*'):
         if previous.is_file() and previous.suffix!='.pyc':
