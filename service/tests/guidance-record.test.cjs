@@ -60,3 +60,30 @@ test('structured guidance can be saved with separate legal and e-Saram evidence'
     assert.doesNotMatch(contents, /모델:/);
   });
 });
+
+test('the same answer record can be saved as a 한글 document', async () => {
+  const anchors = [], requests = [];
+  const box = { children: [], querySelector: () => null, appendChild(node) { this.children.push(node); } };
+  const document = {
+    body: { appendChild() {} },
+    createElement(tag) {
+      const listeners = {};
+      return { tagName: tag.toUpperCase(), style: {}, setAttribute() {}, addEventListener(type, callback) { listeners[type] = callback; }, append(...nodes) { this.children = [...(this.children || []), ...nodes]; }, click() { anchors.push({ ...this }); }, remove() {}, _click: () => listeners.click?.() };
+    }
+  };
+  const fetch = async (url, init) => { requests.push({ url, init }); return { ok: true, blob: async () => new Blob(['PK']) }; };
+  const urls = { createObjectURL: () => 'blob:hwpx', revokeObjectURL() {} };
+  const c = { window: { setTimeout, URL: urls }, document, Blob, URL: urls, fetch, Intl, Date, Set, Number, String, Array, Object, JSON, Math };
+  vm.createContext(c);
+  vm.runInContext(fs.readFileSync(path.join(root, 'static/answer-record.js'), 'utf8'), c);
+  c.window.SeomuAnswerRecord.attach(box, { mode: 'source_search', query: '연가는 며칠이야?', summary: '재직기간에 따라 다릅니다.', answer: '원문 답변', knowledge: { evidence: [{ title: '복무 규정', loc: '제15조', quote: '연가 일수 원문' }] } }, { today: '2026-11-03' });
+  const hwpx = box.children[0].children[2];
+  assert.equal(hwpx.textContent, '한글로 저장');
+  await hwpx._click();
+  assert.equal(requests[0].url, '/api/exports/hwpx');
+  const sent = JSON.parse(requests[0].init.body);
+  assert.equal(sent.title, '서무비서 답변 · 연가는 며칠이야?');
+  assert.match(sent.text, /재직기간에 따라 다릅니다[\s\S]*복무 규정[\s\S]*연가 일수 원문/);
+  assert.match(sent.filename, /^seomu-answer-\d+\.hwpx$/);
+  assert.equal(anchors[0].download, sent.filename);
+});

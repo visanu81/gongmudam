@@ -27,7 +27,7 @@ from . import guidance, answer_reviews
 from . import service_knowledge,finance_knowledge,office_knowledge
 from . import institution_rules
 from . import regulation_monitor,regulation_registry
-from . import toolbox, folder_scan, calendar_api, education_calendar, calendar_agenda
+from . import toolbox, folder_scan, calendar_api, education_calendar, calendar_agenda, project_export
 from . import folder_projects
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -82,6 +82,7 @@ app.include_router(folders.router)
 app.include_router(folder_inputs.router)
 app.include_router(folder_scan.router)
 app.include_router(folder_projects.router)
+app.include_router(project_export.router)
 app.include_router(calendar_api.router)
 app.include_router(education_calendar.router)
 app.include_router(calendar_agenda.router)

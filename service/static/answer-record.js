@@ -91,7 +91,7 @@
     try { snapshot = recordText(response, options.today); } catch (_) { return; }
     const actions = document.createElement("div");
     actions.className = "answer-record-actions";
-    const help = document.createElement("span"); help.textContent = "질문·요약·원문·출처를 TXT로 보관합니다.";
+    const help = document.createElement("span"); help.textContent = "질문·요약·원문·출처를 TXT나 한글(HWPX)로 보관합니다.";
     const status = document.createElement("span"); status.className = "answer-record-status"; status.setAttribute("role", "status"); status.setAttribute("aria-live", "polite");
     const button = document.createElement("button"); button.type = "button"; button.className = "secondary answer-record-button"; button.textContent = "답변 기록 저장";
     button.addEventListener("click", () => {
@@ -109,7 +109,29 @@
         if (url) window.setTimeout(() => URL.revokeObjectURL(url), 1000);
       }
     });
-    actions.append(help, button, status);
+    // The same record as a 한글 document; the server builds the HWPX file.
+    const hwpx = document.createElement("button"); hwpx.type = "button"; hwpx.className = "secondary answer-record-hwpx"; hwpx.textContent = "한글로 저장";
+    hwpx.addEventListener("click", async () => {
+      let url;
+      let anchor;
+      const filename = `seomu-answer-${filenameTime()}.hwpx`;
+      hwpx.disabled = true; status.textContent = "한글 문서를 만들고 있습니다…";
+      try {
+        const res = await fetch("/api/exports/hwpx", { method: "POST", headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ title: `서무비서 답변 · ${text(response.query).slice(0, 60) || "질문"}`, text: snapshot, filename }) });
+        if (!res.ok) throw new Error(String(res.status));
+        url = URL.createObjectURL(await res.blob());
+        anchor = document.createElement("a"); anchor.href = url; anchor.download = filename; anchor.style.display = "none";
+        document.body.appendChild(anchor); anchor.click();
+        status.textContent = "한글 파일 저장 요청을 보냈습니다. 브라우저 다운로드를 확인하세요.";
+      } catch (_) { status.textContent = "한글 파일을 만들지 못했습니다. 잠시 후 다시 시도하거나 TXT로 저장하세요."; }
+      finally {
+        hwpx.disabled = false;
+        anchor?.remove();
+        if (url) window.setTimeout(() => URL.revokeObjectURL(url), 1000);
+      }
+    });
+    actions.append(help, button, hwpx, status);
     box.appendChild(actions);
   };
   window.SeomuAnswerRecord = Object.freeze({ attach });
