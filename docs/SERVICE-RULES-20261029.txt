@@ -348,3 +348,6 @@
   한글 Office 2024에서 직접 여는 확인은 사용자 몫으로 남김(예시: docs/evidence/hwpx-export-20261103/합성-결과물-예시.hwpx).
 - 2026-11-03: 사용자 배포 후 12:42 공유 주소 v101 확인, PC↔클라우드 평가 질문 85/85·실무 27/27(parity·practice-parity-v101-cloud.json).
   12:42에 만든 합성 표식 프로젝트(cleanup-check-marker)가 13:55 확인에서 사라짐(그 사이 v101 유지, 새 배포 없음) → 1시간 자동 삭제 동작 확인.
+- 2026-11-03: 사용자 배포 후 14:10 공유 주소 v103 확인. 공유 사이트에서 합성 자료로 질문한 답변을 한글로 저장해 다시 읽으니 제목·본문·근거 목록이 들어 있음
+  (docs/evidence/hwpx-export-20261103/public-v103-hwpx.txt). PC(8787)↔클라우드 평가 질문 85/85, 실무 27/27(parity·practice-parity-v103-cloud.json).
+  개인용 앱은 이제 RTX PC Qwen(rtx_qwen)을 쓰고 공유 사이트는 솔라를 쓴다. 비교는 AI 없는 경로로 했다.
