@@ -365,3 +365,6 @@
 - 수정: worker.js가 버리는 본문을 닫는다(cancel). index.js는 마지막 요청 뒤 20분이 지나면 진행 중 수와 무관하게 잠들게 하고,
   알람마다 상태(running·inflight·idleSeconds)와 잠들 때를 로그로 남긴다(wrangler tail로 확인, observability는 꺼둔 채).
 - 확인: edge 시험 7개(본문 닫기 1개 추가), wrangler dry-run 묶음 성공. 실제 절전은 배포 뒤 확인.
+- 배포(16:25) 뒤 관찰: 16:26 알람 정상(진행 중 0). 마지막 요청 16:27:51 뒤 16:36:34 알람이 취소되고 16:36:35 알람이 idleSeconds 1로 찍힘
+  → 요청 없이 Durable Object가 다시 떠서 메모리 시각이 초기화됨. 라이브러리의 sleepAfter 타이머도 생성자에서 다시 시작되므로
+  20분 전에 재시작이 반복되면 영영 잠들지 않는다(진짜 원인으로 판단). 마지막 요청 시각을 ctx.storage.kv에 저장해 재시작 뒤에도 이어 세도록 수정.

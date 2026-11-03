@@ -14,7 +14,9 @@ export class GongmudamDemo extends Container {
 
   constructor(ctx, env) {
     super(ctx, env);
-    this.lastRequest = Date.now();
+    // Kept in storage: the object is restarted every few minutes while idle (seen at
+    // 16:36 on 2026-11-03), which reset an in-memory time and the library's own timer.
+    this.lastRequest = ctx.storage.kv?.get('lastRequest') ?? Date.now();
     // The Upstage key stays a Worker secret and is never baked into the image.
     this.envVars = {UPSTAGE_API_KEY: env.UPSTAGE_API_KEY || ''};
     // The durable_object scheduling policy needs the image and size at start;
@@ -34,16 +36,17 @@ export class GongmudamDemo extends Container {
   // the first visitor after a sleep then got "Failed to start container" (2026-11-02).
   async fetch(request) {
     this.lastRequest = Date.now();
+    this.ctx.storage.kv?.put('lastRequest', this.lastRequest);
     if (!this.container.running) {
       await this.startAndWaitForPorts(this.defaultPort, WAKE, undefined).catch(() => {});
     }
     return super.fetch(request);
   }
 
-  // The container stayed up for hours with no visitors (2026-11-03). The library only
-  // sleeps once its in-flight request count is zero, and a response body nobody reads
-  // keeps that count up for good. No request here runs for 20 minutes, so a 20-minute
-  // silence means the count is stale and the container may sleep.
+  // The container stayed up for hours with no visitors (2026-11-03). The library keeps
+  // its idle timer in memory and restarts it whenever the object restarts, and it also
+  // waits while any request is counted in flight. Decide from the stored last request:
+  // no request here runs for 20 minutes, so a 20-minute silence means it may sleep.
   isActivityExpired() {
     if (Date.now() - this.lastRequest >= SLEEP_MS) {
       this.inflightRequests = 0;
@@ -55,7 +58,8 @@ export class GongmudamDemo extends Container {
   // One line per alarm (about every 3 minutes while running), read with wrangler tail.
   async alarm(props) {
     console.log(JSON.stringify({event: 'container-alarm', running: this.container.running,
-      inflight: this.inflightRequests, idleSeconds: Math.round((Date.now() - this.lastRequest) / 1000)}));
+      inflight: this.inflightRequests, idleSeconds: Math.round((Date.now() - this.lastRequest) / 1000),
+      stored: this.ctx.storage.kv?.get('lastRequest') !== undefined}));
     return super.alarm(props);
   }
 
