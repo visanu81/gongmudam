@@ -1,0 +1,74 @@
+[
+ {
+  "question": "이 사람의 소속은?",
+  "local": {
+   "found": true,
+   "mode": "upstage_ai",
+   "evidence": [
+    "구분: 개인 / 성명: 홍길동 / 부서: 민원과 / 직급: 주무관 / 연락처: 010-0000-0000 / 이메일: a@example.test / 역할: 개발"
+   ]
+  },
+  "public": {
+   "found": true,
+   "mode": "upstage_ai",
+   "evidence": [
+    "구분: 개인 / 성명: 홍길동 / 부서: 민원과 / 직급: 주무관 / 연락처: 010-0000-0000 / 이메일: a@example.test / 역할: 개발"
+   ]
+  },
+  "same_evidence": true
+ },
+ {
+  "question": "참가자 이름과 직급은?",
+  "local": {
+   "found": true,
+   "mode": "upstage_ai",
+   "evidence": [
+    "구분: 개인 / 성명: 홍길동 / 부서: 민원과 / 직급: 주무관 / 연락처: 010-0000-0000 / 이메일: a@example.test / 역할: 개발"
+   ]
+  },
+  "public": {
+   "found": true,
+   "mode": "upstage_ai",
+   "evidence": [
+    "구분: 개인 / 성명: 홍길동 / 부서: 민원과 / 직급: 주무관 / 연락처: 010-0000-0000 / 이메일: a@example.test / 역할: 개발"
+   ]
+  },
+  "same_evidence": true
+ },
+ {
+  "question": "담당부서는 어디야?",
+  "local": {
+   "found": true,
+   "mode": "upstage_ai",
+   "evidence": [
+    "기관 정보 · 담당부서명: 총무과 기획팀"
+   ]
+  },
+  "public": {
+   "found": true,
+   "mode": "upstage_ai",
+   "evidence": [
+    "기관 정보 · 담당부서명: 총무과 기획팀"
+   ]
+  },
+  "same_evidence": true
+ },
+ {
+  "question": "기관명은?",
+  "local": {
+   "found": true,
+   "mode": "upstage_ai",
+   "evidence": [
+    "기관 정보 · 기관명: 가람시청"
+   ]
+  },
+  "public": {
+   "found": true,
+   "mode": "upstage_ai",
+   "evidence": [
+    "기관 정보 · 기관명: 가람시청"
+   ]
+  },
+  "same_evidence": true
+ }
+]
