@@ -10,7 +10,7 @@
   "download_url": "https://www.law.go.kr/LSW/flDownload.do?flSeq=169560643",
   "raw_file": "salary-general.pdf",
   "sha256": "e14f93607f225e40a44224450c99e965d3e1d3dd8e6e414002eeedd5b6c4e9ba",
-  "retrieved_at": "2026-11-03T23:42:59+00:00"
+  "retrieved_at": "2026-11-04T00:18:32+00:00"
  },
  {
   "id": "salary-police-fire",
@@ -23,7 +23,7 @@
   "download_url": "https://www.law.go.kr/LSW/flDownload.do?flSeq=169560697",
   "raw_file": "salary-police-fire.pdf",
   "sha256": "b2cc2607b65204ad726155900eec11d94101ab51c02284b9acab149731e73b0b",
-  "retrieved_at": "2026-11-03T23:42:59+00:00"
+  "retrieved_at": "2026-11-04T00:18:32+00:00"
  },
  {
   "id": "longevity-national",
@@ -36,7 +36,7 @@
   "download_url": "https://www.law.go.kr/LSW/flDownload.do?flSeq=169637279",
   "raw_file": "longevity-national.pdf",
   "sha256": "24d6f4d495e38fcaf7f843059250fb088d5f66e3a0ae6ef36a27742b5d19f087",
-  "retrieved_at": "2026-11-03T23:43:00+00:00"
+  "retrieved_at": "2026-11-04T00:18:33+00:00"
  },
  {
   "id": "longevity-local",
@@ -49,7 +49,7 @@
   "download_url": "https://www.law.go.kr/LSW/flDownload.do?flSeq=169315875",
   "raw_file": "longevity-local.pdf",
   "sha256": "861940ce83afff6b64656a5314d0a819c2f278f4e63fae176da927b8ba43124f",
-  "retrieved_at": "2026-11-03T23:43:00+00:00"
+  "retrieved_at": "2026-11-04T00:18:33+00:00"
  },
  {
   "id": "family-national",
@@ -62,7 +62,7 @@
   "download_url": "https://www.law.go.kr/LSW/flDownload.do?flSeq=169637315",
   "raw_file": "family-national.pdf",
   "sha256": "b5289004513a625c794d2dc433f3c7cf51b8aedd3f2ecb94ae93998e5433c091",
-  "retrieved_at": "2026-11-03T23:43:00+00:00"
+  "retrieved_at": "2026-11-04T00:18:33+00:00"
  },
  {
   "id": "subsidy-national",
@@ -75,7 +75,7 @@
   "download_url": "https://www.law.go.kr/LSW/flDownload.do?flSeq=169637483",
   "raw_file": "subsidy-national.pdf",
   "sha256": "54ae22415f0645b78c13c9071ee8315c77898e596590a7918a7a7714fb0219b3",
-  "retrieved_at": "2026-11-03T23:43:00+00:00"
+  "retrieved_at": "2026-11-04T00:18:33+00:00"
  },
  {
   "id": "subsidy-local",
@@ -88,7 +88,7 @@
   "download_url": "https://www.law.go.kr/LSW/flDownload.do?flSeq=169316005",
   "raw_file": "subsidy-local.pdf",
   "sha256": "89bb717b46e0d85bb2aeddbf75d940d84b2d02c3a281195b2be078b90973b690",
-  "retrieved_at": "2026-11-03T23:43:01+00:00"
+  "retrieved_at": "2026-11-04T00:18:34+00:00"
  },
  {
   "id": "family-local",
@@ -102,6 +102,32 @@
   "raw_file": "family-local.txt",
   "sha256": "0ef8417bc8ff8f8208e0358f92f8b0011672e65cc169a4b82205c8f461c48adc",
   "retrieved_at": "2026-10-30T11:11:17.650097+00:00"
+ },
+ {
+  "id": "meal-national",
+  "kind": "meal",
+  "law": "공무원수당 등에 관한 규정",
+  "title": "제18조(정액급식비)",
+  "revised": "2026. 1. 2.",
+  "applies": "국가공무원",
+  "source_url": "https://www.law.go.kr/LSW/lsSideInfoP.do?joNo=0018&joBrNo=00&lsiSeq=290323&urlMode=lsScJoRltInfoR&docCls=jo",
+  "download_url": "https://www.law.go.kr/LSW/lsSideInfoP.do?joNo=0018&joBrNo=00&lsiSeq=290323&urlMode=lsScJoRltInfoR&docCls=jo",
+  "raw_file": "meal-national.txt",
+  "sha256": "912ffd11a12c21537eef574bd6cc75d08f61938a9ae0b4bd2454fc63169af595",
+  "retrieved_at": "2026-10-30T11:10:49.547477+00:00"
+ },
+ {
+  "id": "meal-local",
+  "kind": "meal",
+  "law": "지방공무원 수당 등에 관한 규정",
+  "title": "제18조(정액급식비)",
+  "revised": "2026. 1. 2.",
+  "applies": "지방공무원",
+  "source_url": "https://www.law.go.kr/LSW/lsSideInfoP.do?joNo=0018&joBrNo=00&lsiSeq=289957&urlMode=lsScJoRltInfoR&docCls=jo",
+  "download_url": "https://www.law.go.kr/LSW/lsSideInfoP.do?joNo=0018&joBrNo=00&lsiSeq=289957&urlMode=lsScJoRltInfoR&docCls=jo",
+  "raw_file": "meal-local.txt",
+  "sha256": "fe9d39ac8e238708e90a6eafcb2e8e2da403d7980c8dad1883183be9b47a1166",
+  "retrieved_at": "2026-10-30T11:11:26.408507+00:00"
  },
  {
   "id": "overtime-national",
@@ -133,6 +159,39 @@
   "sha256": "5571bb5afccee6336d578385573a15423b23225b9f7a263cff685cc469cca90b",
   "pages": [
    409
+  ],
+  "retrieved_at": "2026-10-31T13:39:04.495601+00:00"
+ },
+ {
+  "id": "honorary-national",
+  "kind": "honorary",
+  "law": "공무원보수 등의 업무지침",
+  "title": "제7장 [별표3] 대우공무원수당 조견표",
+  "applies": "국가공무원(일반직), 경찰공무원, 소방공무원",
+  "revised": "인사혁신처예규 제226호",
+  "source_url": "https://www.law.go.kr/LSW/admRulInfoP.do?admRulSeq=2100000285788",
+  "download_url": "https://www.law.go.kr/LSW/flDownload.do?flSeq=170002251",
+  "raw_file": "honorary-national.txt",
+  "sha256": "4e79743010b581892bcd70c3966bde8484655198475ba8221b69ec43b5ab8822",
+  "pages": [
+   490,
+   494
+  ],
+  "retrieved_at": "2026-10-31T13:38:48.995080+00:00"
+ },
+ {
+  "id": "honorary-local",
+  "kind": "honorary",
+  "law": "지방공무원보수업무 등 처리지침",
+  "title": "제5장 【별표3】 대우공무원수당 조견표",
+  "applies": "지방공무원(일반직)",
+  "revised": "행정안전부예규 제389호",
+  "source_url": "https://www.law.go.kr/LSW/admRulInfoP.do?admRulSeq=2100000285694",
+  "download_url": "https://www.law.go.kr/LSW/flDownload.do?flSeq=169846039",
+  "raw_file": "honorary-local.txt",
+  "sha256": "37a8027685c2e0432c297516b8344d1a936f4f3ad18fab6d95004fe6925dda52",
+  "pages": [
+   411
   ],
   "retrieved_at": "2026-10-31T13:39:04.495601+00:00"
  }

@@ -90,6 +90,29 @@ class CalculateTest(unittest.TestCase):
         local = pay_tables.calculate('8급 시간외근무수당 단가', '지방공무원')
         self.assertEqual([s['law'] for s in local['sources']], ['지방공무원보수업무 등 처리지침'])
 
+    def test_honorary_allowance_and_meal(self):
+        # The 조견표 already applies the promotion cap: 7급 2호봉 is 21,600원, not 4.1%.
+        self.assertEqual(self.lines('7급 2호봉 대우공무원수당 얼마?'), [('대우공무원수당(매월, 7급 2호봉)', 21_600)])
+        self.assertEqual(self.lines('6급 15호봉 대우공무원수당 얼마'), [('대우공무원수당(매월, 6급 15호봉)', 163_320)])
+        # Only 6급 reaches 32호봉, so the single amount in that row is 6급's.
+        self.assertEqual(self.lines('6급 32호봉 대우공무원수당 얼마'), [('대우공무원수당(매월, 6급 32호봉)', 203_670)])
+        self.assertEqual(self.lines('2급 5호봉 대우공무원수당 얼마', '지방공무원'), [('대우공무원수당(매월, 2급 5호봉)', 197_820)])
+        self.assertIn('조견표에 없습니다', pay_tables.calculate('2급 5호봉 대우공무원수당 얼마')['notes'][0])
+        self.assertEqual(pay_tables.calculate('대우공무원수당 얼마야?')['needs'], ['직급(예: 7급, 소방교)', '호봉(예: 5호봉)'])
+        self.assertEqual(self.lines('정액급식비 얼마야?'), [('정액급식비(매월)', 160_000)])
+
+    def test_every_honorary_row_fits_the_salary_table(self):
+        _, t = pay_tables.load()
+        for key in ('honorary-national', 'honorary-local'):
+            for part, salary in (('general', 'salary-general'), ('police_fire', 'salary-police-fire')):
+                table = t[key].get(part)
+                if not table:
+                    continue
+                columns = table['columns'] if part == 'police_fire' else [pay_tables.GENERAL.index(g) for g in table['grades']]
+                for step, values in table['rows'].items():
+                    with self.subTest(key=key, part=part, step=step):
+                        self.assertEqual(len(values), sum(t[salary]['rows'][step][c] is not None for c in columns))
+
     def test_missing_information_is_named(self):
         r = pay_tables.calculate('명절휴가비 얼마나 나와?')
         self.assertEqual((r['lines'], r['needs']), ([], ['직급(예: 7급, 소방교)', '호봉(예: 5호봉)']))

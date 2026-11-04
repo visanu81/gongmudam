@@ -39,6 +39,10 @@ ANNEXES = [
 ARTICLES = [
     dict(id='family-local', kind='family', law='지방공무원 수당 등에 관한 규정', article='local_allowance-10',
          title='제10조(가족수당) 제1항', revised='2025. 1. 3.', applies='지방공무원'),
+    dict(id='meal-national', kind='meal', law='공무원수당 등에 관한 규정', article='national_allowance-18',
+         title='제18조(정액급식비)', revised='2026. 1. 2.', applies='국가공무원'),
+    dict(id='meal-local', kind='meal', law='지방공무원 수당 등에 관한 규정', article='local_allowance-18',
+         title='제18조(정액급식비)', revised='2026. 1. 2.', applies='지방공무원'),
 ]
 RULES = BASE.parent / 'service-rules-20261029'
 # The overtime rates are a table in the pay guidelines (already collected with hashes),
@@ -48,6 +52,10 @@ GUIDES = [
          title='제7장 [별표2] 초과근무수당 지급단가', applies='국가공무원, 경찰공무원, 소방공무원'),
     dict(id='overtime-local', kind='overtime', key='local', pages=(409,), law='지방공무원보수업무 등 처리지침',
          title='제5장 【별표2】 초과근무수당 지급단가', applies='지방공무원'),
+    dict(id='honorary-national', kind='honorary', key='national', pages=(490, 494), law='공무원보수 등의 업무지침',
+         title='제7장 [별표3] 대우공무원수당 조견표', applies='국가공무원(일반직), 경찰공무원, 소방공무원'),
+    dict(id='honorary-local', kind='honorary', key='local', pages=(411,), law='지방공무원보수업무 등 처리지침',
+         title='제5장 【별표3】 대우공무원수당 조견표', applies='지방공무원(일반직)'),
 ]
 GUIDELINES = BASE.parent / 'pay-guidelines-20261031'
 

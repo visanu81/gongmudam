@@ -113,7 +113,59 @@ def parse_overtime(text):
     return result
 
 
-PARSERS = dict(salary=parse_salary, longevity=parse_longevity, family=parse_family, subsidy=parse_subsidy, overtime=parse_overtime)
+def parse_meal(text):
+    """정액급식비 monthly amount from 제18조: "월 16만원"."""
+    m = re.search(r'월\s*(\d+)\s*만원의\s*정액급식비', text)
+    if not m:
+        raise ValueError('정액급식비 amount not found')
+    return dict(monthly=int(m[1]) * 10_000)
+
+
+def parse_honorary(text):
+    """[별표3] 대우공무원수당 조견표: 호봉 → the amounts in the row, left to right (일반직, and 경찰·소방 when present).
+
+    Extracted text loses some blank cells, so a row keeps only its amounts; honorary() places
+    them on the grades whose 봉급표 has that 호봉, and the tests check every row fits.
+    """
+    def rows(block):
+        result = {}
+        for line in block.splitlines():
+            parts = [p for p in line.strip(' \t\r').split(' ') if p]
+            if len(parts) < 2 or not re.fullmatch(r'\d{1,2}', parts[0]) or not all(re.fullmatch(AMOUNT, p) or p == '　' for p in parts[1:]):
+                continue
+            result[parts[0]] = [int(c.replace(',', '')) for c in parts[1:] if c != '　']
+        if not result or sorted(map(int, result)) != list(range(2, max(map(int, result)) + 1)):
+            raise ValueError('대우공무원수당 rows are not continuous')
+        return result
+    general = text.split('일반직공무원', 1)[1]
+    grades = re.findall(r'\d급', re.search(r'호봉((?:\s+\d급)+)', general)[1])
+    # The general table ends where the next table's title begins.
+    end = min((general.find(t) for t in ('공안업무', '연구직', '경찰･소방') if general.find(t) > 0), default=len(general))
+    result = dict(general=dict(grades=grades, rows=rows(general[:end])))
+    if '경찰･소방공무원' in text:
+        result['police_fire'] = dict(columns=[3, 4, 5, 6, 7, 8, 9], rows=rows(text.split('경찰･소방공무원', 1)[1]))
+    return result
+
+
+def honorary(tables, key, rank, step):
+    """대우공무원수당 for a rank and 호봉, or None when the table has no such cell."""
+    police = rank[0] == 'salary-police-fire'
+    table = tables[key].get('police_fire' if police else 'general')
+    if not table:
+        return None
+    columns = table['columns'] if police else [GENERAL.index(g) for g in table['grades']]
+    salary = tables[rank[0]]['rows'].get(str(step))
+    values = table['rows'].get(str(step))
+    if rank[1] not in columns or not salary or values is None:
+        return None
+    present = [c for c in columns if salary[c] is not None]
+    if len(values) != len(present) or rank[1] not in present:
+        return None
+    return values[present.index(rank[1])]
+
+
+PARSERS = dict(salary=parse_salary, longevity=parse_longevity, family=parse_family, subsidy=parse_subsidy, overtime=parse_overtime,
+               honorary=parse_honorary, meal=parse_meal)
 
 
 @lru_cache(maxsize=1)
@@ -179,7 +231,8 @@ def calculate(question, context=''):
     asks = [k for k, pattern in (('salary', r'봉급|월급|기본급|본봉'), ('holiday', r'명절\s*휴가비'), ('longevity', r'정근\s*수당'),
                                  ('family', r'가족\s*수당'), ('subsidy', r'직급\s*보조비'),
                                  ('overtime', r'시간외\s*(?:근무)?\s*수당|초과\s*근무|야근\s*수당|시간외\s*근무'),
-                                 ('night', r'야간\s*근무\s*수당'), ('holiday_work', r'휴일\s*근무\s*수당'))
+                                 ('night', r'야간\s*근무\s*수당'), ('holiday_work', r'휴일\s*근무\s*수당'),
+                                 ('honorary', r'대우\s*(?:공무원\s*)?수당'), ('meal', r'정액\s*급식비'))
             if re.search(pattern, question)]
     if not asks or not re.search(r'얼마|계산|금액|몇\s*원|나와|받아|받나|단가|\d+\s*호봉|급\s*\d|\d+\s*시간', question):
         return None
@@ -273,6 +326,26 @@ def calculate(question, context=''):
             notes.append(f"{manifest[key]['law']}: 시간외근무수당은 매 시간 봉급기준액(기준호봉 봉급액×55%)×1/209×150%. "
                          '일반대상자는 월 출근 15일 이상이면 월 10시간분을 정액으로 받습니다. 월 인정 한도와 현업 여부는 기관 기준을 확인하세요.')
             sources.append(_source(manifest[key]))
+    if 'honorary' in asks:
+        key = 'honorary-local' if scope == 'local' else 'honorary-national'
+        missing = [x for x, ok in (('직급(예: 7급, 소방교)', rank), ('호봉(예: 5호봉)', step)) if not ok and x not in needs]
+        if missing:
+            needs += missing
+        else:
+            amount = honorary(tables, key, rank, int(step[1]))
+            if amount is None:
+                notes.append(f'{rank[2]} {int(step[1])}호봉은 대우공무원수당 조견표에 없습니다. 해당 직급의 기준은 급여 담당 부서에 확인하세요.')
+            else:
+                lines.append(dict(label=f'대우공무원수당(매월, {rank[2]} {int(step[1])}호봉)', amount=amount, formula='대우공무원수당 조견표 금액'))
+                article = '지방공무원 수당 등에 관한 규정 제5조의2' if scope == 'local' else '공무원수당 등에 관한 규정 제6조의2'
+                notes.append(f'{article}(대우공무원수당): 대우공무원으로 선발된 경우 월봉급액의 4.1%. 상위 직급 승진 시 월봉급액을 넘으면 그 차액만 지급하며, '
+                             '조견표에 반영돼 있습니다. 필수실무관(지방은 필수실무요원)으로 지정되면 월 10만원을 더할 수 있습니다.')
+                sources.append(_source(manifest[key]))
+    if 'meal' in asks:
+        key = 'meal-local' if scope == 'local' else 'meal-national'
+        lines.append(dict(label='정액급식비(매월)', amount=tables[key]['monthly'], formula='제18조 금액'))
+        notes.append(f"{manifest[key]['law']} 제18조: 월 {tables[key]['monthly'] // 10_000}만원. 국외파견 등 일부는 지급하지 않습니다.")
+        sources.append(_source(manifest[key]))
     if not lines and not needs and not notes:
         return None
     return dict(title='봉급표 기준 계산', lines=lines, needs=needs, notes=notes, sources=sources,
