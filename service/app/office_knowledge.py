@@ -261,6 +261,8 @@ def documents(query, docs, today):
             return [], plan.get('reason') or '물품관리 원문 자료가 아직 등록되지 않았어요. 해당 국가·지자체 자료를 등록해 주세요.', plan
         if 'contract' in plan['topics']:
             return [], plan.get('reason') or '수의계약 조문(국가계약법 시행령 제26조·지방계약법 시행령 제25조)이 아직 등록되지 않았어요.', plan
+        if 'national_contract' in plan['topics'] and plan.get('reason'):
+            return [], plan['reason'], plan
         if 'expense' in plan['topics']:
             return [], plan.get('reason') or '업무추진비 공개 기준(지방회계관리훈령 제121조·별표 2의2, 국가 예산 집행지침)이 아직 등록되지 않았어요.', plan
         return None

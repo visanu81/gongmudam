@@ -59,10 +59,20 @@ class NationalContractTest(unittest.TestCase):
                             self.assertIn(quote, reply['evidence'][item['ref'] - 1]['text'])
 
     def test_local_and_unnamed_questions_keep_their_routes(self):
-        for query in ('지자체 물품 대금 언제까지 지급해야 해?', '검사조서 작성 생략 금액은?', '물품 대금 언제까지 줘야 해?',
+        for query in ('지자체 물품 대금 언제까지 지급해야 해?', '지자체 검사조서 작성 생략 금액은?', '물품 대금 언제까지 줘야 해?',
+                      '검사조서 작성 생략 금액은?\n업무환경: 경기도 소속 지방공무원', '물품 검사조서를 생략할 수 있는 경우가 있나요?',
                       '국가기관 선금 지급 가능해?', '국가기관 물품 수의계약 얼마까지 가능해?', '국가공무원 연가 며칠?'):
             with self.subTest(query=query):
                 self.assertIsNone(national_contract.classify(query))
+
+    def test_unnamed_inspection_report_amount_is_asked_or_follows_the_affiliation(self):
+        # 국가 3천만원 이하 and 지방 3천만원 미만 differ exactly at 3천만원, so the body is not guessed.
+        reply = self.ask('검사조서 작성 생략 금액은?')['knowledge']
+        self.assertFalse(reply['evidence'])
+        self.assertIn('국가기관인지 지방자치단체인지', reply['notice'])
+        self.assertIn('3천만원 미만', reply['notice'])
+        plan = national_contract.classify('검사조서 작성 생략 금액은?\n업무환경: 국가공무원')
+        self.assertEqual(plan['rules'], ['ncontract-inspection-report'])
 
 
 if __name__ == '__main__':
