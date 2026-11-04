@@ -534,3 +534,4 @@
 - 측정(공유): 한국 접속이 Cloudflare 파리(colo=CDG)로 연결되어 요청마다 약 1~1.3초, 대화 메뉴 요청 93개·약 5.8초. 컨테이너가 주는 JS·CSS·글꼴·그림도 no-store라 메뉴마다 다시 받음. Worker에서 이 파일들만 "public, max-age=0, stale-while-revalidate=600"으로 바꿔 브라우저가 재사용하고 뒤에서 확인하게 함. HTML·API·HEAD·오류 응답은 계속 no-store. 배포 직후 한 번은 이전 파일로 열릴 수 있음.
 - 남은 원인: 파리 경유 자체는 코드로 바꿀 수 없음(Cloudflare 경로·요금제 문제). 대화 메뉴의 /api/knowledge/sources(약 0.9MB, 공유 2.5~4초)는 이번에 손대지 않음.
 - 확인: 서비스 1122 통과, 후보 시험 통과, Worker 시험 44 통과, 통합 47 통과.
+- 2026-11-04: 공유 주소 v118 확인. 캐시 머리글 반영(JS·CSS·글꼴=public, max-age=0, stale-while-revalidate=600 / HTML·API=no-store). 메뉴 JS·글꼴은 다시 열 때 브라우저 캐시에서 읽음. 하지만 메뉴가 쓸 수 있게 되는 시간은 첫 방문·다시 방문 모두 약 2.2~2.9초로 거의 그대로: 메뉴 HTML 1회+API 1회 왕복이 각각 약 1초(파리 경유)라 이것이 하한. 바탕화면(/desktop/) 파일 22개는 Cloudflare 자산 기본값(must-revalidate)이라 사이트를 새로 열 때마다 304 확인.
