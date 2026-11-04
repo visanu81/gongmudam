@@ -79,6 +79,11 @@ class AdvancePaymentTest(unittest.TestCase):
                 reply = self.ask(query)['knowledge']
                 self.assertFalse(reply['evidence'])
                 self.assertIn('국가기관인지 지방자치단체인지', reply['notice'])
+                # Only the body is missing, so it is asked back rather than reported as missing material.
+                self.assertEqual(reply['mode'], 'source_clarification')
+                self.assertEqual(reply['tree']['kind'], 'clarification')
+                self.assertEqual(reply['tree']['title'], '국가기관인지 지방자치단체인지 알려주세요')
+                self.assertNotIn('별표', reply['scope'] + json.dumps(reply['tree'], ensure_ascii=False))
 
     def test_inspection_questions_keep_the_local_contract_route(self):
         for query in ('지방자치단체 선금 지급이 검사 후 지급 원칙의 예외인가요?',

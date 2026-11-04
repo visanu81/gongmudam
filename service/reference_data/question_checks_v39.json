@@ -962,7 +962,7 @@
     "id": "goods-no-basis-01",
     "category": "물품",
     "question": "물품 검사조서를 얼마 미만 계약이면 생략하나요?",
-    "outcome": "unavailable"
+    "outcome": "clarify"
   },
   {
     "id": "goods-no-basis-02",

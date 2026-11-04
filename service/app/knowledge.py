@@ -304,8 +304,12 @@ def answer(query,found,*,use_ai=True):
     evidence=[];mode='source_search';notice='';model=None
     extra={'office_plan':found['office_plan']} if found.get('office_plan') else {}
     if not found['hits']:
-        clarify=(found.get('intent') or {}).get('status')=='clarify'
-        return dict(evidence=[],experiences=found['experiences'],excluded=found['excluded'],mode='source_clarification' if clarify else 'source_unavailable',model=None,notice=found.get('unavailable_reason',''),answer='',intent=found.get('intent'),scope='등록한 자료의 범위에서 확인되지 않았습니다. 해당 기관·신분의 규정과 누락된 별표를 추가해 주세요.',**extra)
+        # A question that only lacks the body (국가/지방) is asked back, not reported as missing material.
+        body=(found.get('office_plan') or {}).get('ask')
+        clarify=body or (found.get('intent') or {}).get('status')=='clarify'
+        scope=('국가기관과 지방자치단체의 기준이 달라 기관을 확인한 뒤 그 기준만으로 답합니다.' if body else
+               '등록한 자료의 범위에서 확인되지 않았습니다. 해당 기관·신분의 규정과 누락된 별표를 추가해 주세요.')
+        return dict(evidence=[],experiences=found['experiences'],excluded=found['excluded'],mode='source_clarification' if clarify else 'source_unavailable',model=None,notice=found.get('unavailable_reason',''),answer='',intent=found.get('intent'),scope=scope,**extra)
     profile=dict(config.active_profile());profile['timeout']=min(float(profile.get('timeout',30)),30)
     provider=llm.get_provider(profile) if use_ai else None
     if found['hits'] and provider is not None and provider.available and (upstage.matches(profile) or _private_host(urlsplit(profile.get('base_url','')).hostname)):

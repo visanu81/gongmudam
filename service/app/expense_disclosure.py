@@ -23,8 +23,8 @@ def classify(query):
     local = any(t in q for t in ('지자체', '지방자치단체', '시청', '군청', '구청', '도청', '지방의회', '시의회', '도의회', '군의회', '구의회'))
     national = any(t in q for t in ('국가기관', '중앙부처', '중앙행정기관', '정부부처'))
     if local == national:
-        return unavailable('국가기관인지 지방자치단체(지방의회 포함)인지 알려주세요. 지방은 지방회계관리훈령 제121조와 별표 2의2, '
-                           '국가기관은 예산 집행지침의 업무추진비 공통지침으로 공개 기준을 확인해요.')
+        return dict(unavailable('국가기관인지 지방자치단체(지방의회 포함)인지 알려주세요. 지방은 지방회계관리훈령 제121조와 별표 2의2, '
+                           '국가기관은 예산 집행지침의 업무추진비 공통지침으로 공개 기준을 확인해요.'), ask=True)
     plan['rules'] = ['expense-local-disclosure' if local else 'expense-national-disclosure']
     if local and any(t in q for t in ('항목', '단위', '방법', '어떻게', '무엇', '뭘')) and not any(t in q for t in ('주기', '언제', '시기', '기한')):
         plan['lead'] = '공개 단위·항목·방법'

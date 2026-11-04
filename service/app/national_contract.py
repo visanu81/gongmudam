@@ -23,7 +23,7 @@ def classify(query):
         if not (report and amount) or '지방공무원' in c:
             return None
         if '국가공무원' not in c:
-            return dict(topics=['national_contract'], rules=['unsupported'],
+            return dict(topics=['national_contract'], rules=['unsupported'], ask=True,
                         reason='국가기관인지 지방자치단체인지 알려주세요. 검사조서 작성을 생략할 수 있는 계약금액이 국가기관은 '
                                '3천만원 이하(국가계약법 시행령 제56조), 지방자치단체는 3천만원 미만(지방계약법 제17조·시행령 제65조)으로 달라요.')
     payment = any(t in q for t in ('대금', '대가'))

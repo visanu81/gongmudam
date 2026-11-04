@@ -30,6 +30,12 @@ def _build(query,reply):
     note='이해를 돕는 요약이에요. 내 기관에 적용되는 조건은 근거에서 확인하세요.'
     if not evidence:
         reason=reply.get('notice','')
+        if (reply.get('office_plan') or {}).get('ask'):
+            title='국가기관인지 지방자치단체인지 알려주세요'
+            return dict(kind='clarification',title=title,branches=[
+                dict(label='먼저 확인할 내용',items=[dict(text=reason.removeprefix(title+'. '),ref=None)]),
+                dict(label='지금 할 일',items=[dict(text='질문에 "국가기관" 또는 "지자체"를 넣어 다시 물어보세요.',ref=None)])],
+                note='기관이 정해지기 전에는 한쪽 기준을 골라 답하지 않아요.')
         if (plan or {}).get('status')=='clarify':
             return dict(kind='clarification',title='상황을 조금만 더 알려주세요',branches=[
                 dict(label='먼저 확인할 내용',items=[dict(text=plan['question'],ref=None)])],note='확인되지 않은 상황에 다른 업무의 기준을 적용하지 않아요.')
