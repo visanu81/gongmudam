@@ -1,0 +1,120 @@
+[
+  {
+    "id": "expense-local-disclosure",
+    "sources": [
+      "office-expense-local-disclosure"
+    ],
+    "branches": [
+      {
+        "label": "주기와 시기",
+        "items": [
+          {
+            "source": "office-expense-local-disclosure",
+            "text": "최소 분기마다, 매 분기가 끝난 뒤 1개월 이내에 공개해요.",
+            "requires": [
+              "공개주기와 시기는 최소 분기마다 공개하며 매 분기 후 1개월 이내에 공개한다"
+            ]
+          },
+          {
+            "source": "office-expense-local-disclosure",
+            "text": "자치단체 정보공개·업무추진비 공개 조례(규칙)로 항목을 추가하거나 주기·시기를 앞당길 수 있으니 소속 조례도 확인하세요.",
+            "requires": [
+              "공개항목을 추가하거나 주기와 시기를 앞당길 수 있다"
+            ]
+          }
+        ]
+      },
+      {
+        "label": "근거와 대상",
+        "items": [
+          {
+            "source": "office-expense-local-disclosure",
+            "text": "지방회계관리훈령 제121조는 지방자치단체와 지방의회가 집행내역을 홈페이지 등에 공개하도록 노력해야 한다고 정해요.",
+            "requires": [
+              "지방자치단체및지방의회는다음각호에해당하는집행내역을홈페이지등에공개하도록노력하여야한다"
+            ]
+          },
+          {
+            "source": "office-expense-local-disclosure",
+            "text": "대상은 기관운영·시책추진업무추진비, 의정운영공통경비, 의회운영업무추진비예요.",
+            "requires": [
+              "대상: 기관운영업무추진비, 시책추진업무추진비, 의정운영공통경비, 의회운영업무추진비"
+            ]
+          }
+        ]
+      },
+      {
+        "label": "공개 단위·항목·방법",
+        "items": [
+          {
+            "source": "office-expense-local-disclosure",
+            "text": "기관운영·시책추진업무추진비는 기관장, 부기관장, 실·국장과 과장급이 장인 부서 단위로 공개하고, 부서 내역에는 부서장 집행분을 포함해요.",
+            "requires": [
+              "기관장, 부기관장, 실ㆍ국장과 과장급이 장인 부서(부서장의 집행내역을 포함한다) 단위로 집행내역을 공개"
+            ]
+          },
+          {
+            "source": "office-expense-local-disclosure",
+            "text": "항목은 사용자, 일시, 장소, 집행목적, 대상 인원수, 금액, 결제방법, 비목이에요.",
+            "requires": [
+              "항목은 사용자, 일시, 장소, 집행목적, 대상 인원수, 금액, 결제방법(신용카드, 제로페이, 현금 등), 비목으로 구분한다"
+            ]
+          },
+          {
+            "source": "office-expense-local-disclosure",
+            "text": "해당 기관 홈페이지에 게시해요. 게시판을 사용자별로 나눠 운영하면 사용자 항목은 생략할 수 있어요.",
+            "requires": [
+              "공개방법은 해당 기관의 홈페이지에 게시하는 것으로 한다",
+              "게시판을 사용자 별로 구분하여 운영하는 경우 사용자 항목은 생략할 수 있음"
+            ]
+          }
+        ]
+      },
+      {
+        "label": "작성할 때 주의",
+        "items": [
+          {
+            "source": "office-expense-local-disclosure",
+            "text": "축·부의금 같은 현금 지급은 집행대상을 적되 개인정보에 유의하고, 대상 인원수는 사용자를 포함해 적어요(축·부의금은 지급 대상 인원만).",
+            "requires": [
+              "축ㆍ부의금 등 현금지급의 경우 집행대상 기재(개인정보 유의)",
+              "사용자를 포함하여 작성, 축ㆍ부의금의 경우 지급 대상 인원만 작성"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "expense-national-disclosure",
+    "sources": [
+      "office-expense-national-disclosure"
+    ],
+    "branches": [
+      {
+        "label": "공개 대상과 근거",
+        "items": [
+          {
+            "source": "office-expense-national-disclosure",
+            "text": "국가기관은 「공공기관의 정보공개에 관한 법률」과 같은 법 시행령에 따라 기관장의 업무추진비 사용내역을 기관 홈페이지에 공개해야 해요.",
+            "requires": [
+              "기관장의 업무추진비 사용내역을 각 기관 홈페이지에 공개하여야 한다"
+            ]
+          }
+        ]
+      },
+      {
+        "label": "주기·항목",
+        "items": [
+          {
+            "source": "office-expense-national-disclosure",
+            "text": "이 집행지침은 공개 주기나 항목을 따로 정하지 않아요. 각 기관이 이 지침 범위에서 마련한 자체 세부지침을 확인하세요.",
+            "requires": [
+              "각 기관의 실정에 맞는 자체 세부지침을 마련하여 시행하여야 한다"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

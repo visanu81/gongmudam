@@ -1,0 +1,42 @@
+[
+  {
+    "id": "office-expense-local-disclosure",
+    "title": "지방자치단체 회계관리에 관한 훈령",
+    "article": "제121조(집행현황의 공개) 및 별표 2의2 4. 업무추진비 《공개방법》",
+    "filename": "local-disclosure.txt",
+    "kind": "기관 지침",
+    "issuer": "행정안전부",
+    "institution": "지방자치단체 · 지방의회",
+    "effective_date": "2026-07-06",
+    "publication": "행정안전부훈령 제446호, 2026. 6. 28.",
+    "source_url": "https://www.law.go.kr/LSW/admRulLsInfoP.do?admRulSeq=2100000281370",
+    "download_url": "https://www.law.go.kr/LSW/flDownload.do?flSeq=166472455#page=77",
+    "raw_file": "local-accounting-446.pdf",
+    "raw_sha256": "b80bb9653ddf79cdab93148510884f35e5e6a402ac6af8d0e6e2fe4f764ba7ca",
+    "pdf_pages": [47, 77, 78],
+    "retrieved_at": "2026-10-25",
+    "collection": "office-expense-20261104",
+    "office_topic": "expense",
+    "scope": "기관운영·시책추진업무추진비, 의정운영공통경비, 의회운영업무추진비의 집행내역 공개 단위·항목·주기·방법. 자치단체 공개 조례(규칙)로 항목 추가·주기 단축 가능하므로 함께 확인. 원문 PDF 47·77·78쪽"
+  },
+  {
+    "id": "office-expense-national-disclosure",
+    "title": "2026년도 예산 및 기금운용계획 집행지침",
+    "article": "Ⅲ 4. 업무추진비(240목) 공통지침",
+    "filename": "national-disclosure.txt",
+    "kind": "기관 지침",
+    "issuer": "기획예산처",
+    "institution": "국가기관 · 2026년도 예산·기금",
+    "effective_date": "2026-01-01",
+    "publication": "2026년도 집행지침 · 공식 지침 게시 2026-01-12",
+    "source_url": "https://mpb.go.kr/web/main/bbs/b_0009/1157",
+    "download_url": "https://mpb.go.kr/web/main/file/download/uu/a0cfe2b242d047759bd51c958eabc9bb",
+    "raw_file": "national-budget-2026.hwpx",
+    "raw_sha256": "7ae70437d4aee67c74df4acf619643f2a10a80bc0d7b088523bd382a003b034f",
+    "hwpx_paragraphs": [3, 3071, 3119],
+    "retrieved_at": "2026-10-25",
+    "collection": "office-expense-20261104",
+    "office_topic": "expense",
+    "scope": "2026년도 국가기관 업무추진비 공통지침. 기관장 사용내역 공개 의무만 정하고 공개 주기·항목은 정하지 않음. 각 기관 자체 세부지침과 「공공기관의 정보공개에 관한 법률」을 함께 확인. 원문 HWPX 3구역 3071~3119문단"
+  }
+]

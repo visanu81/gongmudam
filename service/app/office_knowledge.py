@@ -17,21 +17,24 @@ EXTRA_BASE = Path(__file__).resolve().parents[1] / 'reference_data/office-extra-
 DOCUMENT_BASE = Path(__file__).resolve().parents[1] / 'reference_data/office-documents-20261026'
 GOODS_BASE = Path(__file__).resolve().parents[1] / 'reference_data/office-goods-20261026'
 CONTRACT_BASE = Path(__file__).resolve().parents[1] / 'reference_data/office-contract-20261104'
+EXPENSE_BASE = Path(__file__).resolve().parents[1] / 'reference_data/office-expense-20261104'
 COLLECTIONS = frozenset({'office-20261025', 'office-extra-20261025', 'office-documents-20261026', 'office-goods-20261026',
-                         'office-contract-20261104'})
+                         'office-contract-20261104', 'office-expense-20261104'})
 _COLLECTION_ROOTS = {
     'office-20261025': 'BASE',
     'office-extra-20261025': 'EXTRA_BASE',
     'office-documents-20261026': 'DOCUMENT_BASE',
     'office-goods-20261026': 'GOODS_BASE',
     'office-contract-20261104': 'CONTRACT_BASE',
+    'office-expense-20261104': 'EXPENSE_BASE',
 }
 router = APIRouter(prefix='/api/office-sources', tags=['서무 공통 근거'])
 LABELS = {'privacy': '개인정보 처리', 'records': '기록물 관리',
           'disclosure': '정보공개 처리', 'handover': '업무 인수인계',
           'documents': '공문 접수·기안·결재',
           'goods_management': '물품대장·재물조사·불용 처리',
-          'contract': '수의계약 금액·사유'}
+          'contract': '수의계약 금액·사유',
+          'expense': '업무추진비 집행내역 공개'}
 
 
 def flat(value):
@@ -70,7 +73,8 @@ def metadata(sha):
         if root is None:
             return None
         url = urlsplit(row['source_url'])
-        if url.scheme != 'https' or url.hostname not in {'law.go.kr', 'www.law.go.kr'}:
+        # The 집행지침 is published by 기획예산처, not on law.go.kr.
+        if url.scheme != 'https' or url.hostname not in {'law.go.kr', 'www.law.go.kr', 'mpb.go.kr', 'www.mpb.go.kr'}:
             return None
         for folder, name, expected in [('excerpts', row['filename'], sha), ('raw', row['raw_file'], row['raw_sha256'])]:
             if hashlib.sha256(asset(root / folder, name).read_bytes()).hexdigest() != expected:
@@ -216,6 +220,10 @@ def classify(query):
         contract = classify_contract(query)
         if contract:
             return contract
+        from .expense_disclosure import classify as classify_expense
+        expense = classify_expense(query)
+        if expense:
+            return expense
     if not topics:
         return None
     unsupported = ('과태료','과징금','징역','벌금','손해배상','징계','해외법','GDPR')
@@ -245,6 +253,8 @@ def documents(query, docs, today):
             return [], plan.get('reason') or '물품관리 원문 자료가 아직 등록되지 않았어요. 해당 국가·지자체 자료를 등록해 주세요.', plan
         if 'contract' in plan['topics']:
             return [], plan.get('reason') or '수의계약 조문(국가계약법 시행령 제26조·지방계약법 시행령 제25조)이 아직 등록되지 않았어요.', plan
+        if 'expense' in plan['topics']:
+            return [], plan.get('reason') or '업무추진비 공개 기준(지방회계관리훈령 제121조·별표 2의2, 국가 예산 집행지침)이 아직 등록되지 않았어요.', plan
         return None
     if plan.get('reason'):
         return [], plan['reason'], plan
@@ -320,6 +330,9 @@ def summary(query, reply):
                     return None
                 items.append(dict(text=item['text'], ref=ref, support_quotes=quotes))
             branches.append(dict(label=branch['label'], items=items))
+    # The branch the question asks about comes first, as the conclusion.
+    if plan.get('lead'):
+        branches.sort(key=lambda b: b['label'] != plan['lead'])
     return dict(kind='summary', title=' · '.join(LABELS[t] for t in plan['topics']) + ' — 먼저 확인할 내용',
                 rule_id='office:' + '+'.join(plan['rules']), branches=branches,
                 reviewed_source_sha256s=[h['sha256'] for h in evidence],

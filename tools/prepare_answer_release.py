@@ -12,7 +12,8 @@ import shutil
 from urllib.parse import urlsplit
 
 ROOT=Path(__file__).resolve().parents[1]
-OFFICE_PACKS=(('office-goods-20261026','국가·지방 물품관리 공식 근거'),('office-contract-20261104','국가·지방 수의계약 공식 근거'))
+OFFICE_PACKS=(('office-goods-20261026','국가·지방 물품관리 공식 근거'),('office-contract-20261104','국가·지방 수의계약 공식 근거'),
+            ('office-expense-20261104','국가·지방 업무추진비 공개 공식 근거'))
 
 
 def digest(path):return hashlib.sha256(path.read_bytes()).hexdigest()
@@ -94,7 +95,8 @@ def prepare(dest, root=ROOT, version='v79-answer-first-20261026'):
         pack=source/'reference_data'/collection
         for row in rows:
             if row['id'] in existing:continue
-            if row['collection']!=collection or not row['source_url'].startswith('https://www.law.go.kr/'):
+            # The 국가 집행지침 is published on mpb.go.kr, the same host the finance pack trusts.
+            if row['collection']!=collection or not row['source_url'].startswith(('https://www.law.go.kr/','https://mpb.go.kr/')):
                 raise ValueError('Unexpected office pack source')
             if digest(pack/'raw'/row['raw_file'])!=row['raw_sha256'] or digest(pack/'excerpts'/row['filename'])!=row['sha256']:
                 raise ValueError('Pinned office pack source changed')
