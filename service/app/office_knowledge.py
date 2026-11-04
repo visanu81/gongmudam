@@ -18,8 +18,10 @@ DOCUMENT_BASE = Path(__file__).resolve().parents[1] / 'reference_data/office-doc
 GOODS_BASE = Path(__file__).resolve().parents[1] / 'reference_data/office-goods-20261026'
 CONTRACT_BASE = Path(__file__).resolve().parents[1] / 'reference_data/office-contract-20261104'
 EXPENSE_BASE = Path(__file__).resolve().parents[1] / 'reference_data/office-expense-20261104'
+NATIONAL_CONTRACT_BASE = Path(__file__).resolve().parents[1] / 'reference_data/office-national-contract-20261104'
 COLLECTIONS = frozenset({'office-20261025', 'office-extra-20261025', 'office-documents-20261026', 'office-goods-20261026',
-                         'office-contract-20261104', 'office-expense-20261104'})
+                         'office-contract-20261104', 'office-expense-20261104',
+                         'office-national-contract-20261104'})
 _COLLECTION_ROOTS = {
     'office-20261025': 'BASE',
     'office-extra-20261025': 'EXTRA_BASE',
@@ -27,6 +29,7 @@ _COLLECTION_ROOTS = {
     'office-goods-20261026': 'GOODS_BASE',
     'office-contract-20261104': 'CONTRACT_BASE',
     'office-expense-20261104': 'EXPENSE_BASE',
+    'office-national-contract-20261104': 'NATIONAL_CONTRACT_BASE',
 }
 router = APIRouter(prefix='/api/office-sources', tags=['서무 공통 근거'])
 LABELS = {'privacy': '개인정보 처리', 'records': '기록물 관리',
@@ -34,7 +37,8 @@ LABELS = {'privacy': '개인정보 처리', 'records': '기록물 관리',
           'documents': '공문 접수·기안·결재',
           'goods_management': '물품대장·재물조사·불용 처리',
           'contract': '수의계약 금액·사유',
-          'expense': '업무추진비 집행내역 공개'}
+          'expense': '업무추진비 집행내역 공개',
+          'national_contract': '국가기관 계약 견적·검사·대가 지급'}
 
 
 def flat(value):
@@ -224,6 +228,10 @@ def classify(query):
         expense = classify_expense(query)
         if expense:
             return expense
+        from .national_contract import classify as classify_national_contract
+        national_contract = classify_national_contract(query)
+        if national_contract:
+            return national_contract
     if not topics:
         return None
     unsupported = ('과태료','과징금','징역','벌금','손해배상','징계','해외법','GDPR')
