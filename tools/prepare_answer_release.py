@@ -14,7 +14,8 @@ from urllib.parse import urlsplit
 ROOT=Path(__file__).resolve().parents[1]
 OFFICE_PACKS=(('office-goods-20261026','국가·지방 물품관리 공식 근거'),('office-contract-20261104','국가·지방 수의계약 공식 근거'),
             ('office-expense-20261104','국가·지방 업무추진비 공개 공식 근거'),
-            ('office-national-contract-20261104','국가기관 계약 견적·검사·대가 지급 공식 근거'))
+            ('office-national-contract-20261104','국가기관 계약 견적·검사·대가 지급 공식 근거'),
+            ('office-advance-20261104','국가·지방 선금 지급 공식 근거'))
 
 
 def digest(path):return hashlib.sha256(path.read_bytes()).hexdigest()

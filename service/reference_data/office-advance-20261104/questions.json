@@ -1,0 +1,109 @@
+[
+  {
+    "id": "advance-local",
+    "sources": ["office-advance-local-act-35", "office-advance-local-decree-44"],
+    "branches": [
+      {
+        "label": "지급 한도",
+        "items": [
+          {
+            "source": "office-advance-local-decree-44",
+            "text": "지방자치단체는 공사·제조·용역 계약이면 계약금액의 70%를 넘지 않는 범위에서 선금을 줄 수 있어요.",
+            "requires": ["공사ㆍ제조 또는 용역 계약의 대가로서 계약금액의 100분의 70을 초과하지 않는 금액"]
+          },
+          {
+            "source": "office-advance-local-decree-44",
+            "text": "이 호에는 공사·제조·용역만 적혀 있어요. 이미 만들어진 물품을 사는 구매계약이 해당하는지는 집행기준과 계약·감사부서에 확인하세요.",
+            "requires": ["공사ㆍ제조 또는 용역 계약의 대가"]
+          }
+        ]
+      },
+      {
+        "label": "지급 기한",
+        "items": [
+          {
+            "source": "office-advance-local-decree-44",
+            "text": "계약을 맺은 뒤 계약상대방이 청구한 날부터 14일 이내에 지급해야 해요.",
+            "requires": ["계약을 체결한 후 계약상대방의 청구를 받은 날부터 14일 이내에 지급하여야 한다"]
+          },
+          {
+            "source": "office-advance-local-decree-44",
+            "text": "자금사정 등 불가피한 사유로 줄 수 없으면 그 사유를 계약상대방에게 문서로 알리고 지급하지 않을 수 있어요.",
+            "requires": ["그 사유를 계약 상대방에게 문서로 통지한 경우에는 선금급을 지급하지 아니할 수 있다"]
+          }
+        ]
+      },
+      {
+        "label": "근거와 다른 선금 대상",
+        "items": [
+          {
+            "source": "office-advance-local-act-35",
+            "text": "근거는 지방회계법 제35조예요. 성질상 미리 주지 않으면 사무·사업에 지장이 있는 경비를 선금으로 줄 수 있어요.",
+            "requires": ["사무 또는 사업에 지장을 줄 우려가 있는 경우에는 선금급"]
+          },
+          {
+            "source": "office-advance-local-decree-44",
+            "text": "계약 대가 말고도 토지·건물 임차료, 정기간행물 대금, 부담금·교부금·보조금 등은 선금으로 줄 수 있는 경비예요.",
+            "requires": ["토지 또는 건물의 임차료와 용선료", "관보 등 정기간행물의 대금", "부담금ㆍ교부금 및 보조금"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "advance-national",
+    "sources": ["office-advance-national-act-26", "office-advance-national-decree-40"],
+    "branches": [
+      {
+        "label": "지급 한도",
+        "items": [
+          {
+            "source": "office-advance-national-decree-40",
+            "text": "국가기관은 공사·제조·용역 계약이면 계약금액의 70%를 넘지 않는 범위에서 선금을 줄 수 있어요.",
+            "requires": ["공사, 제조 또는 용역 계약의 대가로서 계약금액의 100분의 70"]
+          },
+          {
+            "source": "office-advance-national-decree-40",
+            "text": "원활한 공사 진행 등에 필요해 중앙관서의 장이 재정경제부장관과 협의하면 100%까지 줄 수 있어요.",
+            "requires": ["중앙관서의 장이 재정경제부장관과 협의한 경우에는 100분의 100"]
+          },
+          {
+            "source": "office-advance-national-decree-40",
+            "text": "이 호에는 공사·제조·용역만 적혀 있어요. 이미 만들어진 물품을 사는 구매계약이 해당하는지는 선금지급 요령과 계약부서에 확인하세요.",
+            "requires": ["공사, 제조 또는 용역 계약의 대가"]
+          }
+        ]
+      },
+      {
+        "label": "지급 기한",
+        "items": [
+          {
+            "source": "office-advance-national-decree-40",
+            "text": "계약을 맺은 뒤 계약 상대방이 청구한 날부터 14일 이내에 지급해야 해요.",
+            "requires": ["계약 체결 후 계약 상대방의 청구를 받은 날부터 14일 이내에 지급하여야 한다"]
+          },
+          {
+            "source": "office-advance-national-decree-40",
+            "text": "불가피한 사유로 줄 수 없으면 그 사유를 계약 상대방에게 문서로 알린 경우 예외예요.",
+            "requires": ["그 사유를 계약 상대방에게 문서로 통지한 경우에는 그러하지 아니하다"]
+          }
+        ]
+      },
+      {
+        "label": "근거와 다른 선금 대상",
+        "items": [
+          {
+            "source": "office-advance-national-act-26",
+            "text": "근거는 국고금 관리법 제26조예요. 성질상 미리 주지 않으면 사무·사업에 지장이 있는 경비를 미리 줄 수 있어요.",
+            "requires": ["이를 미리 지급하거나 개산하여 지급할 수 있다"]
+          },
+          {
+            "source": "office-advance-national-decree-40",
+            "text": "계약 대가 말고도 토지·건물 임대료, 정기간행물 구입 경비, 보조금·부담금·교부금, 조달청에 내는 조달물자 대금 등을 미리 줄 수 있어요.",
+            "requires": ["토지 또는 건물의 임대료와 용선료", "정기간행물의 구입 경비", "보조금ㆍ부담금 및 교부금", "조달청에 지급하는"]
+          }
+        ]
+      }
+    ]
+  }
+]

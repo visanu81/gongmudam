@@ -19,9 +19,10 @@ GOODS_BASE = Path(__file__).resolve().parents[1] / 'reference_data/office-goods-
 CONTRACT_BASE = Path(__file__).resolve().parents[1] / 'reference_data/office-contract-20261104'
 EXPENSE_BASE = Path(__file__).resolve().parents[1] / 'reference_data/office-expense-20261104'
 NATIONAL_CONTRACT_BASE = Path(__file__).resolve().parents[1] / 'reference_data/office-national-contract-20261104'
+ADVANCE_BASE = Path(__file__).resolve().parents[1] / 'reference_data/office-advance-20261104'
 COLLECTIONS = frozenset({'office-20261025', 'office-extra-20261025', 'office-documents-20261026', 'office-goods-20261026',
                          'office-contract-20261104', 'office-expense-20261104',
-                         'office-national-contract-20261104'})
+                         'office-national-contract-20261104', 'office-advance-20261104'})
 _COLLECTION_ROOTS = {
     'office-20261025': 'BASE',
     'office-extra-20261025': 'EXTRA_BASE',
@@ -30,6 +31,7 @@ _COLLECTION_ROOTS = {
     'office-contract-20261104': 'CONTRACT_BASE',
     'office-expense-20261104': 'EXPENSE_BASE',
     'office-national-contract-20261104': 'NATIONAL_CONTRACT_BASE',
+    'office-advance-20261104': 'ADVANCE_BASE',
 }
 router = APIRouter(prefix='/api/office-sources', tags=['서무 공통 근거'])
 LABELS = {'privacy': '개인정보 처리', 'records': '기록물 관리',
@@ -38,7 +40,8 @@ LABELS = {'privacy': '개인정보 처리', 'records': '기록물 관리',
           'goods_management': '물품대장·재물조사·불용 처리',
           'contract': '수의계약 금액·사유',
           'expense': '업무추진비 집행내역 공개',
-          'national_contract': '국가기관 계약 견적·검사·대가 지급'}
+          'national_contract': '국가기관 계약 견적·검사·대가 지급',
+          'advance': '선금 지급 대상·한도·기한'}
 
 
 def flat(value):
@@ -216,6 +219,10 @@ def classify(query):
                 generic_recipient_question and (not receipt or institution_specific)):
             rules = ['unsupported']
     if not topics:
+        from .advance_payment import classify as classify_advance
+        advance = classify_advance(query)
+        if advance:
+            return advance
         from .goods_management import classify as classify_goods
         goods = classify_goods(query)
         if goods:
@@ -263,6 +270,8 @@ def documents(query, docs, today):
             return [], plan.get('reason') or '수의계약 조문(국가계약법 시행령 제26조·지방계약법 시행령 제25조)이 아직 등록되지 않았어요.', plan
         if 'national_contract' in plan['topics'] and plan.get('reason'):
             return [], plan['reason'], plan
+        if 'advance' in plan['topics']:
+            return [], plan.get('reason') or '선금 지급 조문(지방회계법 시행령 제44조·국고금 관리법 시행령 제40조)이 아직 등록되지 않았어요.', plan
         if 'expense' in plan['topics']:
             return [], plan.get('reason') or '업무추진비 공개 기준(지방회계관리훈령 제121조·별표 2의2, 국가 예산 집행지침)이 아직 등록되지 않았어요.', plan
         return None
