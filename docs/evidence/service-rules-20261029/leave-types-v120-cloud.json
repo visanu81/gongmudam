@@ -1,0 +1,829 @@
+{
+  "today": "2026-11-05",
+  "cases": [
+    {
+      "id": "typed",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "공무원 휴가 종류 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:leave-types-both",
+        "evidence": [
+          [
+            "156f83e9646084245c69e35ee1186cdbe52101ebe6489c0f7d134e90acca7f62",
+            "국가공무원 복무규정",
+            "제20조(특별휴가)"
+          ],
+          [
+            "5c74108a041dd1484d685d9c190f97281ee609490a174fd61262384b2192320f",
+            "국가공무원 복무규정",
+            "제14조(휴가의 종류)"
+          ],
+          [
+            "ccb9ba9ecf3ebf04e3e3c21138316bf1eb38203c093651b45e09215745bcced0",
+            "지방공무원 복무규정",
+            "제6조(휴가의 종류)"
+          ],
+          [
+            "eef4fc67d715ba9bd17f85b880d3e79aa00e05a3a357ae0debd8e9b284ee6241",
+            "지방공무원 복무규정",
+            "제7조의7(특별휴가)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "공무원 휴가 종류 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:leave-types-both",
+        "evidence": [
+          [
+            "156f83e9646084245c69e35ee1186cdbe52101ebe6489c0f7d134e90acca7f62",
+            "국가공무원 복무규정",
+            "제20조(특별휴가)"
+          ],
+          [
+            "5c74108a041dd1484d685d9c190f97281ee609490a174fd61262384b2192320f",
+            "국가공무원 복무규정",
+            "제14조(휴가의 종류)"
+          ],
+          [
+            "ccb9ba9ecf3ebf04e3e3c21138316bf1eb38203c093651b45e09215745bcced0",
+            "지방공무원 복무규정",
+            "제6조(휴가의 종류)"
+          ],
+          [
+            "eef4fc67d715ba9bd17f85b880d3e79aa00e05a3a357ae0debd8e9b284ee6241",
+            "지방공무원 복무규정",
+            "제7조의7(특별휴가)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "plain",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "공무원 휴가 종류 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:leave-types-both",
+        "evidence": [
+          [
+            "156f83e9646084245c69e35ee1186cdbe52101ebe6489c0f7d134e90acca7f62",
+            "국가공무원 복무규정",
+            "제20조(특별휴가)"
+          ],
+          [
+            "5c74108a041dd1484d685d9c190f97281ee609490a174fd61262384b2192320f",
+            "국가공무원 복무규정",
+            "제14조(휴가의 종류)"
+          ],
+          [
+            "ccb9ba9ecf3ebf04e3e3c21138316bf1eb38203c093651b45e09215745bcced0",
+            "지방공무원 복무규정",
+            "제6조(휴가의 종류)"
+          ],
+          [
+            "eef4fc67d715ba9bd17f85b880d3e79aa00e05a3a357ae0debd8e9b284ee6241",
+            "지방공무원 복무규정",
+            "제7조의7(특별휴가)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "공무원 휴가 종류 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:leave-types-both",
+        "evidence": [
+          [
+            "156f83e9646084245c69e35ee1186cdbe52101ebe6489c0f7d134e90acca7f62",
+            "국가공무원 복무규정",
+            "제20조(특별휴가)"
+          ],
+          [
+            "5c74108a041dd1484d685d9c190f97281ee609490a174fd61262384b2192320f",
+            "국가공무원 복무규정",
+            "제14조(휴가의 종류)"
+          ],
+          [
+            "ccb9ba9ecf3ebf04e3e3c21138316bf1eb38203c093651b45e09215745bcced0",
+            "지방공무원 복무규정",
+            "제6조(휴가의 종류)"
+          ],
+          [
+            "eef4fc67d715ba9bd17f85b880d3e79aa00e05a3a357ae0debd8e9b284ee6241",
+            "지방공무원 복무규정",
+            "제7조의7(특별휴가)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "polite",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "공무원 휴가 종류 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:leave-types-both",
+        "evidence": [
+          [
+            "156f83e9646084245c69e35ee1186cdbe52101ebe6489c0f7d134e90acca7f62",
+            "국가공무원 복무규정",
+            "제20조(특별휴가)"
+          ],
+          [
+            "5c74108a041dd1484d685d9c190f97281ee609490a174fd61262384b2192320f",
+            "국가공무원 복무규정",
+            "제14조(휴가의 종류)"
+          ],
+          [
+            "ccb9ba9ecf3ebf04e3e3c21138316bf1eb38203c093651b45e09215745bcced0",
+            "지방공무원 복무규정",
+            "제6조(휴가의 종류)"
+          ],
+          [
+            "eef4fc67d715ba9bd17f85b880d3e79aa00e05a3a357ae0debd8e9b284ee6241",
+            "지방공무원 복무규정",
+            "제7조의7(특별휴가)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "공무원 휴가 종류 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:leave-types-both",
+        "evidence": [
+          [
+            "156f83e9646084245c69e35ee1186cdbe52101ebe6489c0f7d134e90acca7f62",
+            "국가공무원 복무규정",
+            "제20조(특별휴가)"
+          ],
+          [
+            "5c74108a041dd1484d685d9c190f97281ee609490a174fd61262384b2192320f",
+            "국가공무원 복무규정",
+            "제14조(휴가의 종류)"
+          ],
+          [
+            "ccb9ba9ecf3ebf04e3e3c21138316bf1eb38203c093651b45e09215745bcced0",
+            "지방공무원 복무규정",
+            "제6조(휴가의 종류)"
+          ],
+          [
+            "eef4fc67d715ba9bd17f85b880d3e79aa00e05a3a357ae0debd8e9b284ee6241",
+            "지방공무원 복무규정",
+            "제7조의7(특별휴가)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "other",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "공무원 휴가 종류 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:leave-types-both",
+        "evidence": [
+          [
+            "156f83e9646084245c69e35ee1186cdbe52101ebe6489c0f7d134e90acca7f62",
+            "국가공무원 복무규정",
+            "제20조(특별휴가)"
+          ],
+          [
+            "5c74108a041dd1484d685d9c190f97281ee609490a174fd61262384b2192320f",
+            "국가공무원 복무규정",
+            "제14조(휴가의 종류)"
+          ],
+          [
+            "ccb9ba9ecf3ebf04e3e3c21138316bf1eb38203c093651b45e09215745bcced0",
+            "지방공무원 복무규정",
+            "제6조(휴가의 종류)"
+          ],
+          [
+            "eef4fc67d715ba9bd17f85b880d3e79aa00e05a3a357ae0debd8e9b284ee6241",
+            "지방공무원 복무규정",
+            "제7조의7(특별휴가)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "공무원 휴가 종류 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:leave-types-both",
+        "evidence": [
+          [
+            "156f83e9646084245c69e35ee1186cdbe52101ebe6489c0f7d134e90acca7f62",
+            "국가공무원 복무규정",
+            "제20조(특별휴가)"
+          ],
+          [
+            "5c74108a041dd1484d685d9c190f97281ee609490a174fd61262384b2192320f",
+            "국가공무원 복무규정",
+            "제14조(휴가의 종류)"
+          ],
+          [
+            "ccb9ba9ecf3ebf04e3e3c21138316bf1eb38203c093651b45e09215745bcced0",
+            "지방공무원 복무규정",
+            "제6조(휴가의 종류)"
+          ],
+          [
+            "eef4fc67d715ba9bd17f85b880d3e79aa00e05a3a357ae0debd8e9b284ee6241",
+            "지방공무원 복무규정",
+            "제7조의7(특별휴가)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "special",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "공무원 휴가 종류 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:leave-types-both",
+        "evidence": [
+          [
+            "156f83e9646084245c69e35ee1186cdbe52101ebe6489c0f7d134e90acca7f62",
+            "국가공무원 복무규정",
+            "제20조(특별휴가)"
+          ],
+          [
+            "5c74108a041dd1484d685d9c190f97281ee609490a174fd61262384b2192320f",
+            "국가공무원 복무규정",
+            "제14조(휴가의 종류)"
+          ],
+          [
+            "ccb9ba9ecf3ebf04e3e3c21138316bf1eb38203c093651b45e09215745bcced0",
+            "지방공무원 복무규정",
+            "제6조(휴가의 종류)"
+          ],
+          [
+            "eef4fc67d715ba9bd17f85b880d3e79aa00e05a3a357ae0debd8e9b284ee6241",
+            "지방공무원 복무규정",
+            "제7조의7(특별휴가)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "공무원 휴가 종류 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:leave-types-both",
+        "evidence": [
+          [
+            "156f83e9646084245c69e35ee1186cdbe52101ebe6489c0f7d134e90acca7f62",
+            "국가공무원 복무규정",
+            "제20조(특별휴가)"
+          ],
+          [
+            "5c74108a041dd1484d685d9c190f97281ee609490a174fd61262384b2192320f",
+            "국가공무원 복무규정",
+            "제14조(휴가의 종류)"
+          ],
+          [
+            "ccb9ba9ecf3ebf04e3e3c21138316bf1eb38203c093651b45e09215745bcced0",
+            "지방공무원 복무규정",
+            "제6조(휴가의 종류)"
+          ],
+          [
+            "eef4fc67d715ba9bd17f85b880d3e79aa00e05a3a357ae0debd8e9b284ee6241",
+            "지방공무원 복무규정",
+            "제7조의7(특별휴가)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "national",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "공무원 휴가 종류 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:leave-types-national",
+        "evidence": [
+          [
+            "156f83e9646084245c69e35ee1186cdbe52101ebe6489c0f7d134e90acca7f62",
+            "국가공무원 복무규정",
+            "제20조(특별휴가)"
+          ],
+          [
+            "16044d5acf9548b293505d7f841ec00b89649ed14f8b4f77ef1bd6871a409c2f",
+            "국가공무원 복무규정",
+            "제15조(연가 일수)"
+          ],
+          [
+            "5c74108a041dd1484d685d9c190f97281ee609490a174fd61262384b2192320f",
+            "국가공무원 복무규정",
+            "제14조(휴가의 종류)"
+          ],
+          [
+            "c4edc04864da363cc056b9ed5ccfd1086ac5364b3fcd356e9e8492a3c2489aae",
+            "국가공무원 복무규정",
+            "제18조(병가)"
+          ],
+          [
+            "f459b93473b181b1dc9333903d8ccc97f66930fc7954fabe074a2ff8628d3533",
+            "국가공무원 복무규정",
+            "제19조(공가)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "공무원 휴가 종류 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:leave-types-national",
+        "evidence": [
+          [
+            "156f83e9646084245c69e35ee1186cdbe52101ebe6489c0f7d134e90acca7f62",
+            "국가공무원 복무규정",
+            "제20조(특별휴가)"
+          ],
+          [
+            "16044d5acf9548b293505d7f841ec00b89649ed14f8b4f77ef1bd6871a409c2f",
+            "국가공무원 복무규정",
+            "제15조(연가 일수)"
+          ],
+          [
+            "5c74108a041dd1484d685d9c190f97281ee609490a174fd61262384b2192320f",
+            "국가공무원 복무규정",
+            "제14조(휴가의 종류)"
+          ],
+          [
+            "c4edc04864da363cc056b9ed5ccfd1086ac5364b3fcd356e9e8492a3c2489aae",
+            "국가공무원 복무규정",
+            "제18조(병가)"
+          ],
+          [
+            "f459b93473b181b1dc9333903d8ccc97f66930fc7954fabe074a2ff8628d3533",
+            "국가공무원 복무규정",
+            "제19조(공가)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "local",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "공무원 휴가 종류 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:leave-types-local",
+        "evidence": [
+          [
+            "62d85a0927bcac0f6c6b8071a80553a0f5ad993cc683124dc7110f778f0bef45",
+            "지방공무원 복무규정",
+            "제7조(연가일수 및 연가보상비의 지급)"
+          ],
+          [
+            "ccb9ba9ecf3ebf04e3e3c21138316bf1eb38203c093651b45e09215745bcced0",
+            "지방공무원 복무규정",
+            "제6조(휴가의 종류)"
+          ],
+          [
+            "eba69dd54d6f84220bb6e9850334bca0ce54a6f14cc0f5ad0ea849d8b7ed9dba",
+            "지방공무원 복무규정",
+            "제7조의5(병가)"
+          ],
+          [
+            "eecb31971afab00985837016646f92af78dbf916f0fa4cb2641547af62409ad9",
+            "지방공무원 복무규정",
+            "제7조의6(공가)"
+          ],
+          [
+            "eef4fc67d715ba9bd17f85b880d3e79aa00e05a3a357ae0debd8e9b284ee6241",
+            "지방공무원 복무규정",
+            "제7조의7(특별휴가)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "공무원 휴가 종류 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:leave-types-local",
+        "evidence": [
+          [
+            "62d85a0927bcac0f6c6b8071a80553a0f5ad993cc683124dc7110f778f0bef45",
+            "지방공무원 복무규정",
+            "제7조(연가일수 및 연가보상비의 지급)"
+          ],
+          [
+            "ccb9ba9ecf3ebf04e3e3c21138316bf1eb38203c093651b45e09215745bcced0",
+            "지방공무원 복무규정",
+            "제6조(휴가의 종류)"
+          ],
+          [
+            "eba69dd54d6f84220bb6e9850334bca0ce54a6f14cc0f5ad0ea849d8b7ed9dba",
+            "지방공무원 복무규정",
+            "제7조의5(병가)"
+          ],
+          [
+            "eecb31971afab00985837016646f92af78dbf916f0fa4cb2641547af62409ad9",
+            "지방공무원 복무규정",
+            "제7조의6(공가)"
+          ],
+          [
+            "eef4fc67d715ba9bd17f85b880d3e79aa00e05a3a357ae0debd8e9b284ee6241",
+            "지방공무원 복무규정",
+            "제7조의7(특별휴가)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "affil-local",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "공무원 휴가 종류 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:leave-types-local",
+        "evidence": [
+          [
+            "62d85a0927bcac0f6c6b8071a80553a0f5ad993cc683124dc7110f778f0bef45",
+            "지방공무원 복무규정",
+            "제7조(연가일수 및 연가보상비의 지급)"
+          ],
+          [
+            "ccb9ba9ecf3ebf04e3e3c21138316bf1eb38203c093651b45e09215745bcced0",
+            "지방공무원 복무규정",
+            "제6조(휴가의 종류)"
+          ],
+          [
+            "eba69dd54d6f84220bb6e9850334bca0ce54a6f14cc0f5ad0ea849d8b7ed9dba",
+            "지방공무원 복무규정",
+            "제7조의5(병가)"
+          ],
+          [
+            "eecb31971afab00985837016646f92af78dbf916f0fa4cb2641547af62409ad9",
+            "지방공무원 복무규정",
+            "제7조의6(공가)"
+          ],
+          [
+            "eef4fc67d715ba9bd17f85b880d3e79aa00e05a3a357ae0debd8e9b284ee6241",
+            "지방공무원 복무규정",
+            "제7조의7(특별휴가)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "공무원 휴가 종류 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:leave-types-local",
+        "evidence": [
+          [
+            "62d85a0927bcac0f6c6b8071a80553a0f5ad993cc683124dc7110f778f0bef45",
+            "지방공무원 복무규정",
+            "제7조(연가일수 및 연가보상비의 지급)"
+          ],
+          [
+            "ccb9ba9ecf3ebf04e3e3c21138316bf1eb38203c093651b45e09215745bcced0",
+            "지방공무원 복무규정",
+            "제6조(휴가의 종류)"
+          ],
+          [
+            "eba69dd54d6f84220bb6e9850334bca0ce54a6f14cc0f5ad0ea849d8b7ed9dba",
+            "지방공무원 복무규정",
+            "제7조의5(병가)"
+          ],
+          [
+            "eecb31971afab00985837016646f92af78dbf916f0fa4cb2641547af62409ad9",
+            "지방공무원 복무규정",
+            "제7조의6(공가)"
+          ],
+          [
+            "eef4fc67d715ba9bd17f85b880d3e79aa00e05a3a357ae0debd8e9b284ee6241",
+            "지방공무원 복무규정",
+            "제7조의7(특별휴가)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "affil-national",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "공무원 휴가 종류 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:leave-types-national",
+        "evidence": [
+          [
+            "156f83e9646084245c69e35ee1186cdbe52101ebe6489c0f7d134e90acca7f62",
+            "국가공무원 복무규정",
+            "제20조(특별휴가)"
+          ],
+          [
+            "16044d5acf9548b293505d7f841ec00b89649ed14f8b4f77ef1bd6871a409c2f",
+            "국가공무원 복무규정",
+            "제15조(연가 일수)"
+          ],
+          [
+            "5c74108a041dd1484d685d9c190f97281ee609490a174fd61262384b2192320f",
+            "국가공무원 복무규정",
+            "제14조(휴가의 종류)"
+          ],
+          [
+            "c4edc04864da363cc056b9ed5ccfd1086ac5364b3fcd356e9e8492a3c2489aae",
+            "국가공무원 복무규정",
+            "제18조(병가)"
+          ],
+          [
+            "f459b93473b181b1dc9333903d8ccc97f66930fc7954fabe074a2ff8628d3533",
+            "국가공무원 복무규정",
+            "제19조(공가)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "공무원 휴가 종류 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:leave-types-national",
+        "evidence": [
+          [
+            "156f83e9646084245c69e35ee1186cdbe52101ebe6489c0f7d134e90acca7f62",
+            "국가공무원 복무규정",
+            "제20조(특별휴가)"
+          ],
+          [
+            "16044d5acf9548b293505d7f841ec00b89649ed14f8b4f77ef1bd6871a409c2f",
+            "국가공무원 복무규정",
+            "제15조(연가 일수)"
+          ],
+          [
+            "5c74108a041dd1484d685d9c190f97281ee609490a174fd61262384b2192320f",
+            "국가공무원 복무규정",
+            "제14조(휴가의 종류)"
+          ],
+          [
+            "c4edc04864da363cc056b9ed5ccfd1086ac5364b3fcd356e9e8492a3c2489aae",
+            "국가공무원 복무규정",
+            "제18조(병가)"
+          ],
+          [
+            "f459b93473b181b1dc9333903d8ccc97f66930fc7954fabe074a2ff8628d3533",
+            "국가공무원 복무규정",
+            "제19조(공가)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "sick",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "일반 병가는 연 60일, 공무상 부상·질병 등은 연 180일 범위예요.",
+        "kind": "summary",
+        "rule_id": "sick-leave",
+        "evidence": [
+          [
+            "5157d7899f3b59df4ff3aee140a143dc7d901ce9b8d4ef1aceefa9ff5f50a015",
+            "지방공무원 복무규정",
+            "제7조의5(병가)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "일반 병가는 연 60일, 공무상 부상·질병 등은 연 180일 범위예요.",
+        "kind": "summary",
+        "rule_id": "sick-leave",
+        "evidence": [
+          [
+            "5157d7899f3b59df4ff3aee140a143dc7d901ce9b8d4ef1aceefa9ff5f50a015",
+            "지방공무원 복무규정",
+            "제7조의5(병가)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "annual",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "지방공무원 연가는 재직기간에 따라 연 11일~21일이에요",
+        "kind": "summary",
+        "rule_id": "service-rules:local-annual",
+        "evidence": [
+          [
+            "7aac68230a13a6db61e4313fa30455cb9ba6474790abc5ba4de4f42236e7557b",
+            "지방공무원 복무규정",
+            "제7조(연가일수 및 연가보상비의 지급)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "지방공무원 연가는 재직기간에 따라 연 11일~21일이에요",
+        "kind": "summary",
+        "rule_id": "service-rules:local-annual",
+        "evidence": [
+          [
+            "7aac68230a13a6db61e4313fa30455cb9ba6474790abc5ba4de4f42236e7557b",
+            "지방공무원 복무규정",
+            "제7조(연가일수 및 연가보상비의 지급)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "official",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "혈액관리법에 따른 헌혈에 참가할 때는 공가로 신청하세요.",
+        "kind": "summary",
+        "rule_id": "blood-leave",
+        "evidence": [
+          [
+            "88a565bed1145e6cfb5db10f8185ea7c9b5ee9b6c363db8123ac022c7861cbac",
+            "지방공무원 복무규정",
+            "제7조의6(공가)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "혈액관리법에 따른 헌혈에 참가할 때는 공가로 신청하세요.",
+        "kind": "summary",
+        "rule_id": "blood-leave",
+        "evidence": [
+          [
+            "88a565bed1145e6cfb5db10f8185ea7c9b5ee9b6c363db8123ac022c7861cbac",
+            "지방공무원 복무규정",
+            "제7조의6(공가)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "family",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "가족돌봄휴가를 신청할 수 있는 상황이에요. 돌봄 대상·사유와 유급 조건을 확인하세요.",
+        "kind": "summary",
+        "rule_id": "family-care-situation",
+        "evidence": [
+          [
+            "21d5f034c4c657e13735af53a0f1ce01505505af28be35d7d3b312a66fe0181a",
+            "지방공무원 복무규정",
+            "제7조의7(특별휴가)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "가족돌봄휴가를 신청할 수 있는 상황이에요. 돌봄 대상·사유와 유급 조건을 확인하세요.",
+        "kind": "summary",
+        "rule_id": "family-care-situation",
+        "evidence": [
+          [
+            "21d5f034c4c657e13735af53a0f1ce01505505af28be35d7d3b312a66fe0181a",
+            "지방공무원 복무규정",
+            "제7조의7(특별휴가)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "marriage",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "상황을 조금만 더 알려주세요",
+        "kind": "clarification",
+        "rule_id": null,
+        "evidence": [],
+        "ai_used": false
+      },
+      "public": {
+        "title": "상황을 조금만 더 알려주세요",
+        "kind": "clarification",
+        "rule_id": null,
+        "evidence": [],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "fire",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "상황을 조금만 더 알려주세요",
+        "kind": "clarification",
+        "rule_id": null,
+        "evidence": [],
+        "ai_used": false
+      },
+      "public": {
+        "title": "상황을 조금만 더 알려주세요",
+        "kind": "clarification",
+        "rule_id": null,
+        "evidence": [],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "special-days",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "상황을 조금만 더 알려주세요",
+        "kind": "clarification",
+        "rule_id": null,
+        "evidence": [],
+        "ai_used": false
+      },
+      "public": {
+        "title": "상황을 조금만 더 알려주세요",
+        "kind": "clarification",
+        "rule_id": null,
+        "evidence": [],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "bonus",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "지방공무원 명절휴가비는 설날·추석날 현재 월봉급액의 60%예요",
+        "kind": "summary",
+        "rule_id": "service-rules:local_allowance-holiday-bonus",
+        "evidence": [
+          [
+            "0c29dd7175f8af4e55b2d77c6b4490f988c694e434f520989a3f606008742ee7",
+            "지방공무원 수당 등에 관한 규정",
+            "제18조의3(명절휴가비)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "지방공무원 명절휴가비는 설날·추석날 현재 월봉급액의 60%예요",
+        "kind": "summary",
+        "rule_id": "service-rules:local_allowance-holiday-bonus",
+        "evidence": [
+          [
+            "0c29dd7175f8af4e55b2d77c6b4490f988c694e434f520989a3f606008742ee7",
+            "지방공무원 수당 등에 관한 규정",
+            "제18조의3(명절휴가비)"
+          ]
+        ],
+        "ai_used": false
+      }
+    }
+  ],
+  "summary": {
+    "all_pass": true,
+    "passed": 17,
+    "failed": 0,
+    "total": 17
+  }
+}
