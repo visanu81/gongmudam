@@ -1,0 +1,583 @@
+{
+  "today": "2026-11-04",
+  "cases": [
+    {
+      "id": "local-limit",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "선금 지급 대상·한도·기한 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:advance-local",
+        "evidence": [
+          [
+            "07e6922c175f9c29ff69d345df9c105bc88ac733c1e34afde49f1b43c0199a79",
+            "지방회계법 시행령",
+            "제44조(선금급)"
+          ],
+          [
+            "216103d0c425ab5d860927bdb4cdc01795f4ef026495fd05bbdfbe0c06a8395f",
+            "지방회계법",
+            "제35조(선금급과 개산급)"
+          ],
+          [
+            "ffb360997ae55910a614405ccac2c5d43e1b5b40b88b35291c4ee22fe65a7137",
+            "지방자치단체 입찰 및 계약 집행기준",
+            "제1장 제2절 선금 및 대가 지급(1~5)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "선금 지급 대상·한도·기한 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:advance-local",
+        "evidence": [
+          [
+            "07e6922c175f9c29ff69d345df9c105bc88ac733c1e34afde49f1b43c0199a79",
+            "지방회계법 시행령",
+            "제44조(선금급)"
+          ],
+          [
+            "216103d0c425ab5d860927bdb4cdc01795f4ef026495fd05bbdfbe0c06a8395f",
+            "지방회계법",
+            "제35조(선금급과 개산급)"
+          ],
+          [
+            "ffb360997ae55910a614405ccac2c5d43e1b5b40b88b35291c4ee22fe65a7137",
+            "지방자치단체 입찰 및 계약 집행기준",
+            "제1장 제2절 선금 및 대가 지급(1~5)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "local-deadline",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "선금 지급 대상·한도·기한 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:advance-local",
+        "evidence": [
+          [
+            "07e6922c175f9c29ff69d345df9c105bc88ac733c1e34afde49f1b43c0199a79",
+            "지방회계법 시행령",
+            "제44조(선금급)"
+          ],
+          [
+            "216103d0c425ab5d860927bdb4cdc01795f4ef026495fd05bbdfbe0c06a8395f",
+            "지방회계법",
+            "제35조(선금급과 개산급)"
+          ],
+          [
+            "ffb360997ae55910a614405ccac2c5d43e1b5b40b88b35291c4ee22fe65a7137",
+            "지방자치단체 입찰 및 계약 집행기준",
+            "제1장 제2절 선금 및 대가 지급(1~5)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "선금 지급 대상·한도·기한 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:advance-local",
+        "evidence": [
+          [
+            "07e6922c175f9c29ff69d345df9c105bc88ac733c1e34afde49f1b43c0199a79",
+            "지방회계법 시행령",
+            "제44조(선금급)"
+          ],
+          [
+            "216103d0c425ab5d860927bdb4cdc01795f4ef026495fd05bbdfbe0c06a8395f",
+            "지방회계법",
+            "제35조(선금급과 개산급)"
+          ],
+          [
+            "ffb360997ae55910a614405ccac2c5d43e1b5b40b88b35291c4ee22fe65a7137",
+            "지방자치단체 입찰 및 계약 집행기준",
+            "제1장 제2절 선금 및 대가 지급(1~5)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "national-limit",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "선금 지급 대상·한도·기한 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:advance-national",
+        "evidence": [
+          [
+            "379301ccdca42881187706c94c4f08760a8e4915175f4b7cbef5c87bf25b7256",
+            "국고금 관리법",
+            "제26조(선급과 개산급)"
+          ],
+          [
+            "3bb6a8fa07192fa698223b55db1efbecaad2642f85d5f75b52dc0826825a8df7",
+            "정부 입찰ㆍ계약 집행기준",
+            "제34조(적용범위)"
+          ],
+          [
+            "cbdf4cb674d2cad370048565444c0f7bb3c392b7ea67fd29b61e29c795030454",
+            "국고금 관리법 시행령",
+            "제40조(선급)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "선금 지급 대상·한도·기한 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:advance-national",
+        "evidence": [
+          [
+            "379301ccdca42881187706c94c4f08760a8e4915175f4b7cbef5c87bf25b7256",
+            "국고금 관리법",
+            "제26조(선급과 개산급)"
+          ],
+          [
+            "3bb6a8fa07192fa698223b55db1efbecaad2642f85d5f75b52dc0826825a8df7",
+            "정부 입찰ㆍ계약 집행기준",
+            "제34조(적용범위)"
+          ],
+          [
+            "cbdf4cb674d2cad370048565444c0f7bb3c392b7ea67fd29b61e29c795030454",
+            "국고금 관리법 시행령",
+            "제40조(선급)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "national-deadline",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "선금 지급 대상·한도·기한 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:advance-national",
+        "evidence": [
+          [
+            "379301ccdca42881187706c94c4f08760a8e4915175f4b7cbef5c87bf25b7256",
+            "국고금 관리법",
+            "제26조(선급과 개산급)"
+          ],
+          [
+            "3bb6a8fa07192fa698223b55db1efbecaad2642f85d5f75b52dc0826825a8df7",
+            "정부 입찰ㆍ계약 집행기준",
+            "제34조(적용범위)"
+          ],
+          [
+            "cbdf4cb674d2cad370048565444c0f7bb3c392b7ea67fd29b61e29c795030454",
+            "국고금 관리법 시행령",
+            "제40조(선급)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "선금 지급 대상·한도·기한 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:advance-national",
+        "evidence": [
+          [
+            "379301ccdca42881187706c94c4f08760a8e4915175f4b7cbef5c87bf25b7256",
+            "국고금 관리법",
+            "제26조(선급과 개산급)"
+          ],
+          [
+            "3bb6a8fa07192fa698223b55db1efbecaad2642f85d5f75b52dc0826825a8df7",
+            "정부 입찰ㆍ계약 집행기준",
+            "제34조(적용범위)"
+          ],
+          [
+            "cbdf4cb674d2cad370048565444c0f7bb3c392b7ea67fd29b61e29c795030454",
+            "국고금 관리법 시행령",
+            "제40조(선급)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "unnamed",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "자료를 더 확인해야 답할 수 있어요",
+        "kind": "unavailable",
+        "rule_id": null,
+        "evidence": [],
+        "ai_used": false
+      },
+      "public": {
+        "title": "자료를 더 확인해야 답할 수 있어요",
+        "kind": "unavailable",
+        "rule_id": null,
+        "evidence": [],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "unnamed-procedure",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "자료를 더 확인해야 답할 수 있어요",
+        "kind": "unavailable",
+        "rule_id": null,
+        "evidence": [],
+        "ai_used": false
+      },
+      "public": {
+        "title": "자료를 더 확인해야 답할 수 있어요",
+        "kind": "unavailable",
+        "rule_id": null,
+        "evidence": [],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "affil-local",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "선금 지급 대상·한도·기한 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:advance-local",
+        "evidence": [
+          [
+            "07e6922c175f9c29ff69d345df9c105bc88ac733c1e34afde49f1b43c0199a79",
+            "지방회계법 시행령",
+            "제44조(선금급)"
+          ],
+          [
+            "216103d0c425ab5d860927bdb4cdc01795f4ef026495fd05bbdfbe0c06a8395f",
+            "지방회계법",
+            "제35조(선금급과 개산급)"
+          ],
+          [
+            "ffb360997ae55910a614405ccac2c5d43e1b5b40b88b35291c4ee22fe65a7137",
+            "지방자치단체 입찰 및 계약 집행기준",
+            "제1장 제2절 선금 및 대가 지급(1~5)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "선금 지급 대상·한도·기한 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:advance-local",
+        "evidence": [
+          [
+            "07e6922c175f9c29ff69d345df9c105bc88ac733c1e34afde49f1b43c0199a79",
+            "지방회계법 시행령",
+            "제44조(선금급)"
+          ],
+          [
+            "216103d0c425ab5d860927bdb4cdc01795f4ef026495fd05bbdfbe0c06a8395f",
+            "지방회계법",
+            "제35조(선금급과 개산급)"
+          ],
+          [
+            "ffb360997ae55910a614405ccac2c5d43e1b5b40b88b35291c4ee22fe65a7137",
+            "지방자치단체 입찰 및 계약 집행기준",
+            "제1장 제2절 선금 및 대가 지급(1~5)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "affil-national",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "선금 지급 대상·한도·기한 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:advance-national",
+        "evidence": [
+          [
+            "379301ccdca42881187706c94c4f08760a8e4915175f4b7cbef5c87bf25b7256",
+            "국고금 관리법",
+            "제26조(선급과 개산급)"
+          ],
+          [
+            "3bb6a8fa07192fa698223b55db1efbecaad2642f85d5f75b52dc0826825a8df7",
+            "정부 입찰ㆍ계약 집행기준",
+            "제34조(적용범위)"
+          ],
+          [
+            "cbdf4cb674d2cad370048565444c0f7bb3c392b7ea67fd29b61e29c795030454",
+            "국고금 관리법 시행령",
+            "제40조(선급)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "선금 지급 대상·한도·기한 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:advance-national",
+        "evidence": [
+          [
+            "379301ccdca42881187706c94c4f08760a8e4915175f4b7cbef5c87bf25b7256",
+            "국고금 관리법",
+            "제26조(선급과 개산급)"
+          ],
+          [
+            "3bb6a8fa07192fa698223b55db1efbecaad2642f85d5f75b52dc0826825a8df7",
+            "정부 입찰ㆍ계약 집행기준",
+            "제34조(적용범위)"
+          ],
+          [
+            "cbdf4cb674d2cad370048565444c0f7bb3c392b7ea67fd29b61e29c795030454",
+            "국고금 관리법 시행령",
+            "제40조(선급)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "local-settle",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "선금 지급 대상·한도·기한 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:advance-local-procedure",
+        "evidence": [
+          [
+            "ffb360997ae55910a614405ccac2c5d43e1b5b40b88b35291c4ee22fe65a7137",
+            "지방자치단체 입찰 및 계약 집행기준",
+            "제1장 제2절 선금 및 대가 지급(1~5)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "선금 지급 대상·한도·기한 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:advance-local-procedure",
+        "evidence": [
+          [
+            "ffb360997ae55910a614405ccac2c5d43e1b5b40b88b35291c4ee22fe65a7137",
+            "지방자치단체 입찰 및 계약 집행기준",
+            "제1장 제2절 선금 및 대가 지급(1~5)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "local-bond",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "선금 지급 대상·한도·기한 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:advance-local-procedure",
+        "evidence": [
+          [
+            "ffb360997ae55910a614405ccac2c5d43e1b5b40b88b35291c4ee22fe65a7137",
+            "지방자치단체 입찰 및 계약 집행기준",
+            "제1장 제2절 선금 및 대가 지급(1~5)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "선금 지급 대상·한도·기한 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:advance-local-procedure",
+        "evidence": [
+          [
+            "ffb360997ae55910a614405ccac2c5d43e1b5b40b88b35291c4ee22fe65a7137",
+            "지방자치단체 입찰 및 계약 집행기준",
+            "제1장 제2절 선금 및 대가 지급(1~5)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "national-bond",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "선금 지급 대상·한도·기한 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:advance-national-procedure",
+        "evidence": [
+          [
+            "4e82315c715417df6222e7ed05b96c974036a82a89b22736aa15018412350829",
+            "정부 입찰ㆍ계약 집행기준",
+            "제36조(선금의 사용)"
+          ],
+          [
+            "5d608ca8d7f7d7b3769d040fc486c49d3f113859a5901ed48234cb0f852425a4",
+            "정부 입찰ㆍ계약 집행기준",
+            "제37조(선금의 정산)"
+          ],
+          [
+            "c351159e4cb446b630a45c15891a03adcff3be3cded9b42ca758c3647ef8f920",
+            "정부 입찰ㆍ계약 집행기준",
+            "제35조(채권확보)"
+          ],
+          [
+            "d6a1edf9f3ed5d345ab4cb93c2a39ea1c9d63cea0aa8865e568f166401b421c2",
+            "정부 입찰ㆍ계약 집행기준",
+            "제38조(반환청구)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "선금 지급 대상·한도·기한 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:advance-national-procedure",
+        "evidence": [
+          [
+            "4e82315c715417df6222e7ed05b96c974036a82a89b22736aa15018412350829",
+            "정부 입찰ㆍ계약 집행기준",
+            "제36조(선금의 사용)"
+          ],
+          [
+            "5d608ca8d7f7d7b3769d040fc486c49d3f113859a5901ed48234cb0f852425a4",
+            "정부 입찰ㆍ계약 집행기준",
+            "제37조(선금의 정산)"
+          ],
+          [
+            "c351159e4cb446b630a45c15891a03adcff3be3cded9b42ca758c3647ef8f920",
+            "정부 입찰ㆍ계약 집행기준",
+            "제35조(채권확보)"
+          ],
+          [
+            "d6a1edf9f3ed5d345ab4cb93c2a39ea1c9d63cea0aa8865e568f166401b421c2",
+            "정부 입찰ㆍ계약 집행기준",
+            "제38조(반환청구)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "national-return",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "선금 지급 대상·한도·기한 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:advance-national-procedure",
+        "evidence": [
+          [
+            "4e82315c715417df6222e7ed05b96c974036a82a89b22736aa15018412350829",
+            "정부 입찰ㆍ계약 집행기준",
+            "제36조(선금의 사용)"
+          ],
+          [
+            "5d608ca8d7f7d7b3769d040fc486c49d3f113859a5901ed48234cb0f852425a4",
+            "정부 입찰ㆍ계약 집행기준",
+            "제37조(선금의 정산)"
+          ],
+          [
+            "c351159e4cb446b630a45c15891a03adcff3be3cded9b42ca758c3647ef8f920",
+            "정부 입찰ㆍ계약 집행기준",
+            "제35조(채권확보)"
+          ],
+          [
+            "d6a1edf9f3ed5d345ab4cb93c2a39ea1c9d63cea0aa8865e568f166401b421c2",
+            "정부 입찰ㆍ계약 집행기준",
+            "제38조(반환청구)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "선금 지급 대상·한도·기한 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:advance-national-procedure",
+        "evidence": [
+          [
+            "4e82315c715417df6222e7ed05b96c974036a82a89b22736aa15018412350829",
+            "정부 입찰ㆍ계약 집행기준",
+            "제36조(선금의 사용)"
+          ],
+          [
+            "5d608ca8d7f7d7b3769d040fc486c49d3f113859a5901ed48234cb0f852425a4",
+            "정부 입찰ㆍ계약 집행기준",
+            "제37조(선금의 정산)"
+          ],
+          [
+            "c351159e4cb446b630a45c15891a03adcff3be3cded9b42ca758c3647ef8f920",
+            "정부 입찰ㆍ계약 집행기준",
+            "제35조(채권확보)"
+          ],
+          [
+            "d6a1edf9f3ed5d345ab4cb93c2a39ea1c9d63cea0aa8865e568f166401b421c2",
+            "정부 입찰ㆍ계약 집행기준",
+            "제38조(반환청구)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "keep-18",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "원칙은 검사 뒤에 대금을 지급하는 거예요",
+        "kind": "summary",
+        "rule_id": "goods-payment",
+        "evidence": [
+          [
+            "9ef32ba59708e61398cba96229485881cc8b4a50ec1562cf0862ec34814e5021",
+            "지방자치단체를 당사자로 하는 계약에 관한 법률",
+            "제18조(대가의 지급)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "원칙은 검사 뒤에 대금을 지급하는 거예요",
+        "kind": "summary",
+        "rule_id": "goods-payment",
+        "evidence": [
+          [
+            "9ef32ba59708e61398cba96229485881cc8b4a50ec1562cf0862ec34814e5021",
+            "지방자치단체를 당사자로 하는 계약에 관한 법률",
+            "제18조(대가의 지급)"
+          ]
+        ],
+        "ai_used": false
+      }
+    }
+  ],
+  "summary": {
+    "all_pass": true,
+    "passed": 13,
+    "failed": 0,
+    "total": 13
+  }
+}
