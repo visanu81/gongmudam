@@ -20,9 +20,11 @@ CONTRACT_BASE = Path(__file__).resolve().parents[1] / 'reference_data/office-con
 EXPENSE_BASE = Path(__file__).resolve().parents[1] / 'reference_data/office-expense-20261104'
 NATIONAL_CONTRACT_BASE = Path(__file__).resolve().parents[1] / 'reference_data/office-national-contract-20261104'
 ADVANCE_BASE = Path(__file__).resolve().parents[1] / 'reference_data/office-advance-20261104'
+ADVANCE_RULE_BASE = Path(__file__).resolve().parents[1] / 'reference_data/office-advance-rule-20261104'
 COLLECTIONS = frozenset({'office-20261025', 'office-extra-20261025', 'office-documents-20261026', 'office-goods-20261026',
                          'office-contract-20261104', 'office-expense-20261104',
-                         'office-national-contract-20261104', 'office-advance-20261104'})
+                         'office-national-contract-20261104', 'office-advance-20261104',
+                         'office-advance-rule-20261104'})
 _COLLECTION_ROOTS = {
     'office-20261025': 'BASE',
     'office-extra-20261025': 'EXTRA_BASE',
@@ -32,6 +34,7 @@ _COLLECTION_ROOTS = {
     'office-expense-20261104': 'EXPENSE_BASE',
     'office-national-contract-20261104': 'NATIONAL_CONTRACT_BASE',
     'office-advance-20261104': 'ADVANCE_BASE',
+    'office-advance-rule-20261104': 'ADVANCE_RULE_BASE',
 }
 router = APIRouter(prefix='/api/office-sources', tags=['서무 공통 근거'])
 LABELS = {'privacy': '개인정보 처리', 'records': '기록물 관리',
@@ -83,7 +86,9 @@ def metadata(sha):
         # The 집행지침 is published by 기획예산처, not on law.go.kr.
         if url.scheme != 'https' or url.hostname not in {'law.go.kr', 'www.law.go.kr', 'mpb.go.kr', 'www.mpb.go.kr'}:
             return None
-        for folder, name, expected in [('excerpts', row['filename'], sha), ('raw', row['raw_file'], row['raw_sha256'])]:
+        # A document-viewer source is saved as several page files.
+        raws = zip(row['raw_files'], row['raw_sha256s']) if 'raw_files' in row else [(row['raw_file'], row['raw_sha256'])]
+        for folder, name, expected in [('excerpts', row['filename'], sha)] + [('raw', n, d) for n, d in raws]:
             if hashlib.sha256(asset(root / folder, name).read_bytes()).hexdigest() != expected:
                 return None
         return row
