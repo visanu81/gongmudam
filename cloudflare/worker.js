@@ -1,4 +1,5 @@
 const STATIC_PREFIX = '/desktop/';
+const STATIC_FILE = /\.(?:css|js|woff2?|ttf|png|jpe?g|svg|ico)$/;
 
 export function offlineResponse(api = false) {
   const text = '공무담 공유 서버를 준비하는 중이거나 연결하지 못했어요. 잠시 후 다시 시도해 주세요.';
@@ -45,7 +46,13 @@ export async function handle(request, env, backend = env.BACKEND) {
       const redirect = new URL(location, target);
       if (redirect.origin === target.origin) result.headers.set('Location', redirect.pathname + redirect.search + redirect.hash);
     }
-    result.headers.set('Cache-Control', 'no-store');
+    // Korean visitors are served from a European edge (colo CDG, 2026-11-04), about 1 s a
+    // request, and a menu loads 50-90 scripts and styles. The browser may reuse those while
+    // it revalidates them in the background (one stale load at most after a deploy); pages
+    // and API answers are never reused.
+    const reusable = request.method === 'GET' && response.status === 200 && !url.pathname.startsWith('/api/') &&
+      STATIC_FILE.test(url.pathname);
+    result.headers.set('Cache-Control', reusable ? 'public, max-age=0, stale-while-revalidate=600' : 'no-store');
     result.headers.set('X-Content-Type-Options', 'nosniff');
     return result;
   } catch {

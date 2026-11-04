@@ -4,7 +4,7 @@ import json
 import httpx
 from fastapi import APIRouter
 from pydantic import BaseModel,Field,ConfigDict
-from . import config,store,travel_api,adhoc,folders,travel_workflow,model_status
+from . import config,store,travel_api,adhoc,folders,travel_workflow,model_status,local_ai
 
 router=APIRouter(prefix='/api/workspace',tags=['통합 업무 시작'])
 
@@ -28,7 +28,7 @@ def selected_model_check(body:ModelCheck):
 def status():
     cfg=config.load();active=config.active_profile(cfg)
     try:
-        r=httpx.get('http://127.0.0.1:11434/api/tags',timeout=2);r.raise_for_status()
+        r=httpx.get('http://127.0.0.1:11434/api/tags',timeout=local_ai.OLLAMA_TIMEOUT);r.raise_for_status()
         models=[{'name':m['name'],'digest':m.get('digest')} for m in r.json().get('models',[])]
         available=True
     except (httpx.HTTPError,ValueError,KeyError): available=False;models=[]

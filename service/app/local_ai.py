@@ -23,6 +23,9 @@ SCENARIOS={
 # A model on another of the user's own PCs over Tailscale (100.64.0.0/10 or *.ts.net) counts as local:
 # the RTX PC serves Qwen through Ollama there (2026-11-03). Other hosts stay external.
 TAILNET=ipaddress.ip_network('100.64.0.0/10')
+# Windows retries a refused loopback connection for about 2 s, so a stopped Ollama
+# made each screen wait that long per probe (2026-11-04). A running one connects at once.
+OLLAMA_TIMEOUT=httpx.Timeout(3,connect=0.3)
 
 
 def private_model_host(host):
@@ -52,8 +55,8 @@ def options():
         except (HTTPException,ValueError): continue
         profiles.append({'id':name,'model':p.get('model'),'base_url':p['base_url']})
     try:
-        version=httpx.get('http://127.0.0.1:11434/api/version',timeout=3).json()
-        installed=httpx.get('http://127.0.0.1:11434/api/tags',timeout=3).json().get('models',[])
+        version=httpx.get('http://127.0.0.1:11434/api/version',timeout=OLLAMA_TIMEOUT).json()
+        installed=httpx.get('http://127.0.0.1:11434/api/tags',timeout=OLLAMA_TIMEOUT).json().get('models',[])
     except (httpx.HTTPError,ValueError): version={};installed=[]
     return {'profiles':profiles,'scenarios':[{'id':key,**value} for key,value in SCENARIOS.items()],
             'ollama_version':version.get('version'),'installed_models':installed,

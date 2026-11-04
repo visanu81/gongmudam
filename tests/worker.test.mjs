@@ -43,3 +43,14 @@ test('bodies the worker does not pass on are closed so the container can sleep',
     assert.equal(method === 'HEAD' ? result.body : result.status, method === 'HEAD' ? null : 503);
   }
 });
+test('scripts and styles may be reused while pages and answers never are', async () => {
+  const backend = {fetch() {return new Response('x', {headers: {'Cache-Control': 'no-cache'}});}};
+  const header = async (path, init) => (await handle(new Request('https://g.test' + path, init), {BACKEND: backend})).headers.get('Cache-Control');
+  for (const path of ['/app.js', '/style.css', '/fonts/a.woff2', '/travel-demo-hotel.png'])
+    assert.equal(await header(path), 'public, max-age=0, stale-while-revalidate=600', path);
+  for (const path of ['/index.html', '/calendar.html', '/api/knowledge/sources', '/api/x.js'])
+    assert.equal(await header(path), 'no-store', path);
+  assert.equal(await header('/app.js', {method: 'HEAD'}), 'no-store');
+  const missing = {fetch() {return new Response('no', {status: 404});}};
+  assert.equal((await handle(new Request('https://g.test/gone.js'), {BACKEND: missing})).headers.get('Cache-Control'), 'no-store');
+});
