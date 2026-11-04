@@ -76,5 +76,8 @@
     finally {loading=false;render();}
   }
   async function poll() { await load(); }
-  load(false);
+  // The panel sits on the rules page, which most visits to 출장 never open.
+  const page = root.closest('.page');
+  if (!page || !page.hidden) load(false);
+  else { const watch = new MutationObserver(() => { if (!page.hidden) { watch.disconnect(); load(false); } }); watch.observe(page, {attributes:true, attributeFilter:['hidden']}); }
 })();

@@ -69,7 +69,7 @@ async function refreshKnowledgeSources(){
  const seq=++knowledgeSourcesRequest,root=document.getElementById('knowledge-catalog');
  if(root){const details=root.querySelector('.knowledge-catalog-details');if(details)knowledgeCatalogOpen=details.open;root.dataset.loading='true'}
  try{
-  const response=await fetch('/api/knowledge/sources');
+  const response=await fetch('/api/knowledge/sources?summary=true');
   if(!response.ok)throw new Error(`HTTP ${response.status}`);
   const data=await response.json();
   if(!Array.isArray(data)||data.some(item=>!item||typeof item!=='object'||Array.isArray(item)))throw new Error('invalid response');

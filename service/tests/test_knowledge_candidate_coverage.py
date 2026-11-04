@@ -66,6 +66,17 @@ class CandidateCoverageTest(unittest.TestCase):
         self.assertIn('2주일 이내', reply['answer'])
         self.assertIn('증거서류', reply['answer'])
 
+    def test_catalog_summary_lists_the_same_sources_without_their_text(self):
+        full = self.client.get('/api/knowledge/sources', params={'library_id': self.library['id']}).json()
+        brief = self.client.get('/api/knowledge/sources', params={'library_id': self.library['id'], 'summary': True}).json()
+        self.assertEqual([r['id'] for r in brief], [r['id'] for r in full])
+        self.assertTrue(any(r.get('units') for r in full))
+        for short, long in zip(brief, full):
+            self.assertNotIn('units', short)
+            self.assertNotIn('units', short.get('official') or {})
+            self.assertEqual((short['title'], short['enabled'], short['current']), (long['title'], long['enabled'], long['current']))
+            self.assertEqual((short.get('official') or {}).get('source_url'), (long.get('official') or {}).get('source_url'))
+
     def test_disabling_the_official_source_keeps_reference_notes_out(self):
         response = self.client.get('/api/knowledge/sources', params={'library_id': self.library['id']})
         self.assertEqual(response.status_code, 200)

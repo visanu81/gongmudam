@@ -59,3 +59,15 @@ test('unavailable or malformed status stays unknown and never claims private or 
     assert.doesNotMatch(`${ui.title.textContent} ${ui.description.textContent} ${ui.mode.textContent}`, /내 PC|공개 시연|모든 방문자/);
   }
 });
+
+test('a menu frame reuses the desktop status instead of asking again', async () => {
+  const known = { known: true, publicDemo: true };
+  const document = { readyState: 'loading', querySelector: () => null, addEventListener() {} };
+  const window = { fetch() { throw new Error('must not fetch'); }, parent: { GongmudamEnvironment: { get: async () => known } } };
+  vm.runInNewContext(source, { window, document });
+  assert.equal(await window.GongmudamEnvironment.get(), known);
+  const blocked = { fetch: async () => ({ ok: true, json: async () => ({ status: 'ok', desktop_connected: true, public_demo: false }) }) };
+  Object.defineProperty(blocked, 'parent', { get() { throw new Error('cross origin'); } });
+  vm.runInNewContext(source, { window: blocked, document });
+  assert.deepEqual({ ...(await blocked.GongmudamEnvironment.get()) }, { known: true, publicDemo: false });
+});

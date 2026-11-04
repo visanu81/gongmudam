@@ -1,7 +1,7 @@
 "use strict";
 (() => {
   const mounts = () => [...document.querySelectorAll('[data-model-status]')];
-  let seq = 0, generation = 0, snapshot = null, timer = null, initialized = false, checking = false, transientNote = "", lastProfile = null;
+  let refreshedAt = 0, seq = 0, generation = 0, snapshot = null, timer = null, initialized = false, checking = false, transientNote = "", lastProfile = null;
   const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
   const dt = s => { if (!s) return "시험 이력 없음"; const d = new Date(s); return Number.isNaN(+d) ? "시간 확인 불가" : new Intl.DateTimeFormat("ko-KR", { timeZone:"Asia/Seoul", dateStyle:"medium", timeStyle:"short" }).format(d); };
   const connectionText = c => ({ready:"서버 연결됨 · 모델 확인",offline:"오프라인 안내",external:"외부 모델",invalid:"설정 확인 필요",unreachable:"서버 연결 실패",unauthorized:"인증 확인 필요",server_error:"서버 오류",unsupported:"목록 확인 미지원",invalid_response:"서버 응답 확인 필요",model_missing:"선택 모델 없음",upstage:"업스테이지 API 설정됨",key_missing:"업스테이지 API 키 입력 필요"}[c?.state] || "연결 상태 확인 불가");
@@ -34,7 +34,7 @@
     }
     catch { if(n===seq&&g===generation){snapshot=null;transientNote="선택 모델 상태를 확인할 수 없습니다. 연결을 다시 확인해 주세요.";render();}return null; }
   }
-  async function refresh(){ return get(); }
+  async function refresh(){ refreshedAt=Date.now(); return get(); }
   function changed(){generation++;seq++;snapshot=null;transientNote="";render();try{localStorage.setItem("seomu.model.selection.changed",String(Date.now())+":"+Math.random().toString(36).slice(2));}catch{} return get();}
   async function check(expectedProfile=null){
     if(checking)return null;
@@ -52,6 +52,6 @@
     } catch { if(g===generation){await refresh();transientNote="실제 응답 확인을 완료하지 못했습니다. 상태를 다시 확인해 주세요.";render();}return null; }
     finally {checking=false;render();}
   }
-  function init(){if(initialized){render();return;}initialized=true;const start=()=>{refresh();timer=setInterval(()=>{if(!document.hidden)refresh();},30000);window.addEventListener("focus",refresh);document.addEventListener("visibilitychange",()=>{if(!document.hidden)refresh();});window.addEventListener("storage",e=>{if(e.key==="seomu.model.selection.changed"){generation++;seq++;snapshot=null;transientNote="다른 탭에서 모델 선택이 바뀌어 다시 확인합니다.";render();refresh();}});};if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",start,{once:true});else start();}
+  function init(){if(initialized){render();return;}initialized=true;const start=()=>{refresh();timer=setInterval(()=>{if(!document.hidden)refresh();},30000);window.addEventListener("focus",()=>{if(Date.now()-refreshedAt>=5000)refresh();});document.addEventListener("visibilitychange",()=>{if(!document.hidden)refresh();});window.addEventListener("storage",e=>{if(e.key==="seomu.model.selection.changed"){generation++;seq++;snapshot=null;transientNote="다른 탭에서 모델 선택이 바뀌어 다시 확인합니다.";render();refresh();}});};if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",start,{once:true});else start();}
   window.SeomuModelStatus={init,refresh,changed,check};init();
 })();

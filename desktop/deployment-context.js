@@ -4,6 +4,10 @@
 
   function get() {
     if (!statusPromise) {
+      // A menu runs in a frame of the desktop, which has already asked.
+      let shell = null;
+      try { if (window.parent && window.parent !== window) shell = window.parent.GongmudamEnvironment; } catch { shell = null; }
+      if (shell) return (statusPromise = shell.get());
       statusPromise = window.fetch('/api/gongmudam/status')
         .then((response) => response.ok ? response.json() : null)
         .then((data) => data && data.status === 'ok' && data.desktop_connected === true && typeof data.public_demo === 'boolean'

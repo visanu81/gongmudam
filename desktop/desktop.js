@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
   Object.entries(serviceRoutes).forEach(([id]) => { if (!apps.has(id)) apps.set(id, { id, label: serviceLabels[id] || id, kind: 'service', icon: null }); });
   const recentWorkApps = new Set(['travel', 'collection', 'folders', 'toolbox', 'inbox', 'calendar']);
   let homeAgenda = null;
+  let workspaceRefreshedAt = 0;
   let recentWorkRequest = null;
   let recentWorkSequence = 0;
 
@@ -171,7 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
     state.window.classList.add('is-active'); state.window.style.zIndex = String(++zIndex);
     if (focus) state.window.focus({ preventScroll: true });
     renderTaskbar();
-    if (state.service && recentWorkApps.has(state.id)) refreshWorkspace();
+    if (state.service && recentWorkApps.has(state.id)) refreshWorkspaceOnReturn();
   }
   function clampWindow(state) {
     state.resizer?.cancel();
@@ -289,7 +290,7 @@ document.addEventListener('DOMContentLoaded', () => {
           history.replaceState(null, '', homeUrl); refreshWorkspace();
         },
         onChanged: refreshWorkspace,
-        onFocus: () => { if (recentWorkApps.has(id)) refreshWorkspace(); },
+        onFocus: () => { if (recentWorkApps.has(id)) refreshWorkspaceOnReturn(); },
       });
     }
     min.addEventListener('click', () => minimize(state)); max.addEventListener('click', () => toggleMaximize(state)); shut.addEventListener('click', () => close(state));
@@ -341,8 +342,14 @@ document.addEventListener('DOMContentLoaded', () => {
     } catch { return null; }
   }
   function refreshWorkspace() {
+    workspaceRefreshedAt = Date.now();
     refreshRecentWork();
     homeAgenda?.refresh();
+  }
+  // Opening a menu activates and focuses its window at once; one refresh covers them.
+  // A save or a closed window still refreshes through refreshWorkspace.
+  function refreshWorkspaceOnReturn() {
+    if (Date.now() - workspaceRefreshedAt >= 5000) refreshWorkspace();
   }
   async function refreshRecentWork() {
     const host = document.querySelector('#recent-work-items'); const status = document.querySelector('#recent-work-status');
@@ -576,6 +583,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   renderTaskbar();
   homeAgenda = window.GongmudamHomeAgenda?.mount({ root: document.querySelector('#home-agenda'), open: openHomeAgenda }) || null;
+  workspaceRefreshedAt = Date.now();
   refreshRecentWork();
   const initialService = window.GongmudamEntry?.resolveService(params.get('open') || '');
   if (initialService) openApp(initialService.id, initialService.href);

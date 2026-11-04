@@ -47,10 +47,15 @@ test('scripts and styles may be reused while pages and answers never are', async
   const backend = {fetch() {return new Response('x', {headers: {'Cache-Control': 'no-cache'}});}};
   const header = async (path, init) => (await handle(new Request('https://g.test' + path, init), {BACKEND: backend})).headers.get('Cache-Control');
   for (const path of ['/app.js', '/style.css', '/fonts/a.woff2', '/travel-demo-hotel.png'])
-    assert.equal(await header(path), 'public, max-age=0, stale-while-revalidate=600', path);
+    assert.equal(await header(path), 'public, max-age=300, stale-while-revalidate=600', path);
   for (const path of ['/index.html', '/calendar.html', '/api/knowledge/sources', '/api/x.js'])
     assert.equal(await header(path), 'no-store', path);
   assert.equal(await header('/app.js', {method: 'HEAD'}), 'no-store');
+  const confirmed = {fetch() {return new Response(null, {status: 304});}};
+  assert.match((await handle(new Request('https://g.test/app.js'), {BACKEND: confirmed})).headers.get('Cache-Control'), /max-age=300/);
+  const assets = {fetch() {return new Response('file', {headers: {'Cache-Control': 'public, max-age=0, must-revalidate'}});}};
+  assert.match((await handle(new Request('https://g.test/desktop/desktop.js'), {ASSETS: assets})).headers.get('Cache-Control'), /max-age=300/);
+  assert.match((await handle(new Request('https://g.test/desktop/'), {ASSETS: assets})).headers.get('Cache-Control'), /max-age=0/);
   const missing = {fetch() {return new Response('no', {status: 404});}};
   assert.equal((await handle(new Request('https://g.test/gone.js'), {BACKEND: missing})).headers.get('Cache-Control'), 'no-store');
 });

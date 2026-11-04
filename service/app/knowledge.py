@@ -51,7 +51,7 @@ def current_source(source):
     except (OSError,HTTPException):return False
 
 @router.get('/sources')
-def sources(library_id:str|None=None):
+def sources(library_id:str|None=None,summary:bool=False):
     initialize()
     with folders.db() as c:
         rows=c.execute('SELECT * FROM knowledge_sources'+(' WHERE library_id=?' if library_id else ''),(library_id,) if library_id else ()).fetchall()
@@ -60,7 +60,12 @@ def sources(library_id:str|None=None):
         source=json.loads(row['payload'])
         if source.get('deleted'):continue
         source=institution_rules.source_view(source)
-        result.append(source|{'enabled':bool(row['enabled']),'current':current_source(source)})
+        view=source|{'enabled':bool(row['enabled']),'current':current_source(source)}
+        # The catalog lists sources; only answers need their full text.
+        if summary:
+            view.pop('units',None)
+            if isinstance(view.get('official'),dict):view['official']={k:v for k,v in view['official'].items() if k!='units'}
+        result.append(view)
     return result
 
 @router.post('/libraries/{key}/sources',status_code=201)

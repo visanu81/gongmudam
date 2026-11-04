@@ -1,5 +1,9 @@
 const STATIC_PREFIX = '/desktop/';
 const STATIC_FILE = /\.(?:css|js|woff2?|ttf|png|jpe?g|svg|ico)$/;
+// Korean visitors are served from a European edge (colo CDG, 2026-11-04), about 1 s a request,
+// and a menu loads 50-90 scripts and styles. For 5 minutes the browser asks for none of them,
+// so a deploy can take that long to reach an open browser.
+const REUSABLE = 'public, max-age=300, stale-while-revalidate=600';
 
 export function offlineResponse(api = false) {
   const text = '공무담 공유 서버를 준비하는 중이거나 연결하지 못했어요. 잠시 후 다시 시도해 주세요.';
@@ -14,7 +18,11 @@ export async function handle(request, env, backend = env.BACKEND) {
   if (url.pathname.startsWith(STATIC_PREFIX)) {
     if (!['GET', 'HEAD'].includes(request.method)) return new Response(null, {status: 405});
     if (url.pathname === STATIC_PREFIX) url.pathname += 'index.html';
-    return env.ASSETS.fetch(new Request(url, request));
+    const asset = await env.ASSETS.fetch(new Request(url, request));
+    if (request.method !== 'GET' || !STATIC_FILE.test(url.pathname) || ![200, 304].includes(asset.status)) return asset;
+    const reused = new Response(asset.body, asset);
+    reused.headers.set('Cache-Control', REUSABLE);
+    return reused;
   }
   if (!['GET', 'HEAD', 'OPTIONS'].includes(request.method)) {
     const origin = request.headers.get('Origin');
@@ -46,13 +54,11 @@ export async function handle(request, env, backend = env.BACKEND) {
       const redirect = new URL(location, target);
       if (redirect.origin === target.origin) result.headers.set('Location', redirect.pathname + redirect.search + redirect.hash);
     }
-    // Korean visitors are served from a European edge (colo CDG, 2026-11-04), about 1 s a
-    // request, and a menu loads 50-90 scripts and styles. The browser may reuse those while
-    // it revalidates them in the background (one stale load at most after a deploy); pages
-    // and API answers are never reused.
-    const reusable = request.method === 'GET' && response.status === 200 && !url.pathname.startsWith('/api/') &&
+    // Pages and API answers are never reused. A 304 keeps the header too: no-store on it
+    // made the browser drop the file it had just confirmed (v118, 2026-11-05).
+    const reusable = request.method === 'GET' && [200, 304].includes(response.status) && !url.pathname.startsWith('/api/') &&
       STATIC_FILE.test(url.pathname);
-    result.headers.set('Cache-Control', reusable ? 'public, max-age=0, stale-while-revalidate=600' : 'no-store');
+    result.headers.set('Cache-Control', reusable ? REUSABLE : 'no-store');
     result.headers.set('X-Content-Type-Options', 'nosniff');
     return result;
   } catch {
