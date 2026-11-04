@@ -65,6 +65,17 @@ class NationalContractTest(unittest.TestCase):
             with self.subTest(query=query):
                 self.assertIsNone(national_contract.classify(query))
 
+    def test_reviewed_national_goods_case_is_answered_once_the_decree_is_registered(self):
+        # question_checks_v40 national-goods stays unavailable on its fixed extended corpus,
+        # which has no 국가계약법 시행령; with this pack the same question gets 제56조.
+        from pathlib import Path
+        cases = json.loads((Path(__file__).resolve().parents[1] / 'reference_data/question_checks_v40.json').read_text(encoding='utf-8'))
+        case = next(c for c in cases if c['id'] == 'national-goods')
+        self.assertEqual(case['outcome'], 'unavailable')
+        response = self.ask(case['question'])
+        self.assertEqual(response['knowledge']['tree']['rule_id'], 'office:ncontract-inspection-report')
+        self.assertIn('3천만원 이하', response['answer'])
+
     def test_unnamed_inspection_report_amount_is_asked_or_follows_the_affiliation(self):
         # 국가 3천만원 이하 and 지방 3천만원 미만 differ exactly at 3천만원, so the body is not guessed.
         reply = self.ask('검사조서 작성 생략 금액은?')['knowledge']
