@@ -1,0 +1,865 @@
+{
+  "today": "2026-11-04",
+  "cases": [
+    {
+      "id": "adv-local-limit",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "선금 지급 대상·한도·기한 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:advance-local",
+        "evidence": [
+          [
+            "07e6922c175f9c29ff69d345df9c105bc88ac733c1e34afde49f1b43c0199a79",
+            "지방회계법 시행령",
+            "제44조(선금급)"
+          ],
+          [
+            "216103d0c425ab5d860927bdb4cdc01795f4ef026495fd05bbdfbe0c06a8395f",
+            "지방회계법",
+            "제35조(선금급과 개산급)"
+          ],
+          [
+            "ffb360997ae55910a614405ccac2c5d43e1b5b40b88b35291c4ee22fe65a7137",
+            "지방자치단체 입찰 및 계약 집행기준",
+            "제1장 제2절 선금 및 대가 지급(1~5)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "선금 지급 대상·한도·기한 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:advance-local",
+        "evidence": [
+          [
+            "07e6922c175f9c29ff69d345df9c105bc88ac733c1e34afde49f1b43c0199a79",
+            "지방회계법 시행령",
+            "제44조(선금급)"
+          ],
+          [
+            "216103d0c425ab5d860927bdb4cdc01795f4ef026495fd05bbdfbe0c06a8395f",
+            "지방회계법",
+            "제35조(선금급과 개산급)"
+          ],
+          [
+            "ffb360997ae55910a614405ccac2c5d43e1b5b40b88b35291c4ee22fe65a7137",
+            "지방자치단체 입찰 및 계약 집행기준",
+            "제1장 제2절 선금 및 대가 지급(1~5)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "adv-local-deadline",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "선금 지급 대상·한도·기한 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:advance-local",
+        "evidence": [
+          [
+            "07e6922c175f9c29ff69d345df9c105bc88ac733c1e34afde49f1b43c0199a79",
+            "지방회계법 시행령",
+            "제44조(선금급)"
+          ],
+          [
+            "216103d0c425ab5d860927bdb4cdc01795f4ef026495fd05bbdfbe0c06a8395f",
+            "지방회계법",
+            "제35조(선금급과 개산급)"
+          ],
+          [
+            "ffb360997ae55910a614405ccac2c5d43e1b5b40b88b35291c4ee22fe65a7137",
+            "지방자치단체 입찰 및 계약 집행기준",
+            "제1장 제2절 선금 및 대가 지급(1~5)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "선금 지급 대상·한도·기한 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:advance-local",
+        "evidence": [
+          [
+            "07e6922c175f9c29ff69d345df9c105bc88ac733c1e34afde49f1b43c0199a79",
+            "지방회계법 시행령",
+            "제44조(선금급)"
+          ],
+          [
+            "216103d0c425ab5d860927bdb4cdc01795f4ef026495fd05bbdfbe0c06a8395f",
+            "지방회계법",
+            "제35조(선금급과 개산급)"
+          ],
+          [
+            "ffb360997ae55910a614405ccac2c5d43e1b5b40b88b35291c4ee22fe65a7137",
+            "지방자치단체 입찰 및 계약 집행기준",
+            "제1장 제2절 선금 및 대가 지급(1~5)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "adv-national-limit",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "선금 지급 대상·한도·기한 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:advance-national",
+        "evidence": [
+          [
+            "379301ccdca42881187706c94c4f08760a8e4915175f4b7cbef5c87bf25b7256",
+            "국고금 관리법",
+            "제26조(선급과 개산급)"
+          ],
+          [
+            "3bb6a8fa07192fa698223b55db1efbecaad2642f85d5f75b52dc0826825a8df7",
+            "정부 입찰ㆍ계약 집행기준",
+            "제34조(적용범위)"
+          ],
+          [
+            "cbdf4cb674d2cad370048565444c0f7bb3c392b7ea67fd29b61e29c795030454",
+            "국고금 관리법 시행령",
+            "제40조(선급)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "선금 지급 대상·한도·기한 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:advance-national",
+        "evidence": [
+          [
+            "379301ccdca42881187706c94c4f08760a8e4915175f4b7cbef5c87bf25b7256",
+            "국고금 관리법",
+            "제26조(선급과 개산급)"
+          ],
+          [
+            "3bb6a8fa07192fa698223b55db1efbecaad2642f85d5f75b52dc0826825a8df7",
+            "정부 입찰ㆍ계약 집행기준",
+            "제34조(적용범위)"
+          ],
+          [
+            "cbdf4cb674d2cad370048565444c0f7bb3c392b7ea67fd29b61e29c795030454",
+            "국고금 관리법 시행령",
+            "제40조(선급)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "adv-national-deadline",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "선금 지급 대상·한도·기한 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:advance-national",
+        "evidence": [
+          [
+            "379301ccdca42881187706c94c4f08760a8e4915175f4b7cbef5c87bf25b7256",
+            "국고금 관리법",
+            "제26조(선급과 개산급)"
+          ],
+          [
+            "3bb6a8fa07192fa698223b55db1efbecaad2642f85d5f75b52dc0826825a8df7",
+            "정부 입찰ㆍ계약 집행기준",
+            "제34조(적용범위)"
+          ],
+          [
+            "cbdf4cb674d2cad370048565444c0f7bb3c392b7ea67fd29b61e29c795030454",
+            "국고금 관리법 시행령",
+            "제40조(선급)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "선금 지급 대상·한도·기한 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:advance-national",
+        "evidence": [
+          [
+            "379301ccdca42881187706c94c4f08760a8e4915175f4b7cbef5c87bf25b7256",
+            "국고금 관리법",
+            "제26조(선급과 개산급)"
+          ],
+          [
+            "3bb6a8fa07192fa698223b55db1efbecaad2642f85d5f75b52dc0826825a8df7",
+            "정부 입찰ㆍ계약 집행기준",
+            "제34조(적용범위)"
+          ],
+          [
+            "cbdf4cb674d2cad370048565444c0f7bb3c392b7ea67fd29b61e29c795030454",
+            "국고금 관리법 시행령",
+            "제40조(선급)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "adv-unnamed",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "국가기관인지 지방자치단체인지 알려주세요",
+        "kind": "clarification",
+        "rule_id": null,
+        "evidence": [],
+        "ai_used": false
+      },
+      "public": {
+        "title": "국가기관인지 지방자치단체인지 알려주세요",
+        "kind": "clarification",
+        "rule_id": null,
+        "evidence": [],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "adv-unnamed-procedure",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "국가기관인지 지방자치단체인지 알려주세요",
+        "kind": "clarification",
+        "rule_id": null,
+        "evidence": [],
+        "ai_used": false
+      },
+      "public": {
+        "title": "국가기관인지 지방자치단체인지 알려주세요",
+        "kind": "clarification",
+        "rule_id": null,
+        "evidence": [],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "adv-affil-local",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "선금 지급 대상·한도·기한 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:advance-local",
+        "evidence": [
+          [
+            "07e6922c175f9c29ff69d345df9c105bc88ac733c1e34afde49f1b43c0199a79",
+            "지방회계법 시행령",
+            "제44조(선금급)"
+          ],
+          [
+            "216103d0c425ab5d860927bdb4cdc01795f4ef026495fd05bbdfbe0c06a8395f",
+            "지방회계법",
+            "제35조(선금급과 개산급)"
+          ],
+          [
+            "ffb360997ae55910a614405ccac2c5d43e1b5b40b88b35291c4ee22fe65a7137",
+            "지방자치단체 입찰 및 계약 집행기준",
+            "제1장 제2절 선금 및 대가 지급(1~5)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "선금 지급 대상·한도·기한 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:advance-local",
+        "evidence": [
+          [
+            "07e6922c175f9c29ff69d345df9c105bc88ac733c1e34afde49f1b43c0199a79",
+            "지방회계법 시행령",
+            "제44조(선금급)"
+          ],
+          [
+            "216103d0c425ab5d860927bdb4cdc01795f4ef026495fd05bbdfbe0c06a8395f",
+            "지방회계법",
+            "제35조(선금급과 개산급)"
+          ],
+          [
+            "ffb360997ae55910a614405ccac2c5d43e1b5b40b88b35291c4ee22fe65a7137",
+            "지방자치단체 입찰 및 계약 집행기준",
+            "제1장 제2절 선금 및 대가 지급(1~5)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "adv-affil-national",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "선금 지급 대상·한도·기한 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:advance-national",
+        "evidence": [
+          [
+            "379301ccdca42881187706c94c4f08760a8e4915175f4b7cbef5c87bf25b7256",
+            "국고금 관리법",
+            "제26조(선급과 개산급)"
+          ],
+          [
+            "3bb6a8fa07192fa698223b55db1efbecaad2642f85d5f75b52dc0826825a8df7",
+            "정부 입찰ㆍ계약 집행기준",
+            "제34조(적용범위)"
+          ],
+          [
+            "cbdf4cb674d2cad370048565444c0f7bb3c392b7ea67fd29b61e29c795030454",
+            "국고금 관리법 시행령",
+            "제40조(선급)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "선금 지급 대상·한도·기한 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:advance-national",
+        "evidence": [
+          [
+            "379301ccdca42881187706c94c4f08760a8e4915175f4b7cbef5c87bf25b7256",
+            "국고금 관리법",
+            "제26조(선급과 개산급)"
+          ],
+          [
+            "3bb6a8fa07192fa698223b55db1efbecaad2642f85d5f75b52dc0826825a8df7",
+            "정부 입찰ㆍ계약 집행기준",
+            "제34조(적용범위)"
+          ],
+          [
+            "cbdf4cb674d2cad370048565444c0f7bb3c392b7ea67fd29b61e29c795030454",
+            "국고금 관리법 시행령",
+            "제40조(선급)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "adv-local-settle",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "선금 지급 대상·한도·기한 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:advance-local-procedure",
+        "evidence": [
+          [
+            "ffb360997ae55910a614405ccac2c5d43e1b5b40b88b35291c4ee22fe65a7137",
+            "지방자치단체 입찰 및 계약 집행기준",
+            "제1장 제2절 선금 및 대가 지급(1~5)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "선금 지급 대상·한도·기한 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:advance-local-procedure",
+        "evidence": [
+          [
+            "ffb360997ae55910a614405ccac2c5d43e1b5b40b88b35291c4ee22fe65a7137",
+            "지방자치단체 입찰 및 계약 집행기준",
+            "제1장 제2절 선금 및 대가 지급(1~5)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "adv-local-bond",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "선금 지급 대상·한도·기한 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:advance-local-procedure",
+        "evidence": [
+          [
+            "ffb360997ae55910a614405ccac2c5d43e1b5b40b88b35291c4ee22fe65a7137",
+            "지방자치단체 입찰 및 계약 집행기준",
+            "제1장 제2절 선금 및 대가 지급(1~5)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "선금 지급 대상·한도·기한 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:advance-local-procedure",
+        "evidence": [
+          [
+            "ffb360997ae55910a614405ccac2c5d43e1b5b40b88b35291c4ee22fe65a7137",
+            "지방자치단체 입찰 및 계약 집행기준",
+            "제1장 제2절 선금 및 대가 지급(1~5)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "adv-national-bond",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "선금 지급 대상·한도·기한 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:advance-national-procedure",
+        "evidence": [
+          [
+            "4e82315c715417df6222e7ed05b96c974036a82a89b22736aa15018412350829",
+            "정부 입찰ㆍ계약 집행기준",
+            "제36조(선금의 사용)"
+          ],
+          [
+            "5d608ca8d7f7d7b3769d040fc486c49d3f113859a5901ed48234cb0f852425a4",
+            "정부 입찰ㆍ계약 집행기준",
+            "제37조(선금의 정산)"
+          ],
+          [
+            "c351159e4cb446b630a45c15891a03adcff3be3cded9b42ca758c3647ef8f920",
+            "정부 입찰ㆍ계약 집행기준",
+            "제35조(채권확보)"
+          ],
+          [
+            "d6a1edf9f3ed5d345ab4cb93c2a39ea1c9d63cea0aa8865e568f166401b421c2",
+            "정부 입찰ㆍ계약 집행기준",
+            "제38조(반환청구)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "선금 지급 대상·한도·기한 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:advance-national-procedure",
+        "evidence": [
+          [
+            "4e82315c715417df6222e7ed05b96c974036a82a89b22736aa15018412350829",
+            "정부 입찰ㆍ계약 집행기준",
+            "제36조(선금의 사용)"
+          ],
+          [
+            "5d608ca8d7f7d7b3769d040fc486c49d3f113859a5901ed48234cb0f852425a4",
+            "정부 입찰ㆍ계약 집행기준",
+            "제37조(선금의 정산)"
+          ],
+          [
+            "c351159e4cb446b630a45c15891a03adcff3be3cded9b42ca758c3647ef8f920",
+            "정부 입찰ㆍ계약 집행기준",
+            "제35조(채권확보)"
+          ],
+          [
+            "d6a1edf9f3ed5d345ab4cb93c2a39ea1c9d63cea0aa8865e568f166401b421c2",
+            "정부 입찰ㆍ계약 집행기준",
+            "제38조(반환청구)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "adv-national-return",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "선금 지급 대상·한도·기한 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:advance-national-procedure",
+        "evidence": [
+          [
+            "4e82315c715417df6222e7ed05b96c974036a82a89b22736aa15018412350829",
+            "정부 입찰ㆍ계약 집행기준",
+            "제36조(선금의 사용)"
+          ],
+          [
+            "5d608ca8d7f7d7b3769d040fc486c49d3f113859a5901ed48234cb0f852425a4",
+            "정부 입찰ㆍ계약 집행기준",
+            "제37조(선금의 정산)"
+          ],
+          [
+            "c351159e4cb446b630a45c15891a03adcff3be3cded9b42ca758c3647ef8f920",
+            "정부 입찰ㆍ계약 집행기준",
+            "제35조(채권확보)"
+          ],
+          [
+            "d6a1edf9f3ed5d345ab4cb93c2a39ea1c9d63cea0aa8865e568f166401b421c2",
+            "정부 입찰ㆍ계약 집행기준",
+            "제38조(반환청구)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "선금 지급 대상·한도·기한 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:advance-national-procedure",
+        "evidence": [
+          [
+            "4e82315c715417df6222e7ed05b96c974036a82a89b22736aa15018412350829",
+            "정부 입찰ㆍ계약 집행기준",
+            "제36조(선금의 사용)"
+          ],
+          [
+            "5d608ca8d7f7d7b3769d040fc486c49d3f113859a5901ed48234cb0f852425a4",
+            "정부 입찰ㆍ계약 집행기준",
+            "제37조(선금의 정산)"
+          ],
+          [
+            "c351159e4cb446b630a45c15891a03adcff3be3cded9b42ca758c3647ef8f920",
+            "정부 입찰ㆍ계약 집행기준",
+            "제35조(채권확보)"
+          ],
+          [
+            "d6a1edf9f3ed5d345ab4cb93c2a39ea1c9d63cea0aa8865e568f166401b421c2",
+            "정부 입찰ㆍ계약 집행기준",
+            "제38조(반환청구)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "adv-keep-18",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "원칙은 검사 뒤에 대금을 지급하는 거예요",
+        "kind": "summary",
+        "rule_id": "goods-payment",
+        "evidence": [
+          [
+            "9ef32ba59708e61398cba96229485881cc8b4a50ec1562cf0862ec34814e5021",
+            "지방자치단체를 당사자로 하는 계약에 관한 법률",
+            "제18조(대가의 지급)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "원칙은 검사 뒤에 대금을 지급하는 거예요",
+        "kind": "summary",
+        "rule_id": "goods-payment",
+        "evidence": [
+          [
+            "9ef32ba59708e61398cba96229485881cc8b4a50ec1562cf0862ec34814e5021",
+            "지방자치단체를 당사자로 하는 계약에 관한 법률",
+            "제18조(대가의 지급)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "insp-unnamed-amount",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "국가기관인지 지방자치단체인지 알려주세요",
+        "kind": "clarification",
+        "rule_id": null,
+        "evidence": [],
+        "ai_used": false
+      },
+      "public": {
+        "title": "국가기관인지 지방자치단체인지 알려주세요",
+        "kind": "clarification",
+        "rule_id": null,
+        "evidence": [],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "insp-unnamed-amount-2",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "국가기관인지 지방자치단체인지 알려주세요",
+        "kind": "clarification",
+        "rule_id": null,
+        "evidence": [],
+        "ai_used": false
+      },
+      "public": {
+        "title": "국가기관인지 지방자치단체인지 알려주세요",
+        "kind": "clarification",
+        "rule_id": null,
+        "evidence": [],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "insp-unnamed-when",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "납품을 받으면 검사와 기록부터 챙겨요",
+        "kind": "summary",
+        "rule_id": "goods-inspection",
+        "evidence": [
+          [
+            "0fdad6efb955a58d108c6c7333904de037dc928df82a45c9a95bbdc148c4b472",
+            "지방자치단체를 당사자로 하는 계약에 관한 법률",
+            "제17조(검사)"
+          ],
+          [
+            "b6fc611a79e7e9480449de9898799664f8f03611e8f99c4f9acd7069d3f5d5be",
+            "지방자치단체를 당사자로 하는 계약에 관한 법률 시행령",
+            "제65조(검사조서의 작성 생략)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "납품을 받으면 검사와 기록부터 챙겨요",
+        "kind": "summary",
+        "rule_id": "goods-inspection",
+        "evidence": [
+          [
+            "0fdad6efb955a58d108c6c7333904de037dc928df82a45c9a95bbdc148c4b472",
+            "지방자치단체를 당사자로 하는 계약에 관한 법률",
+            "제17조(검사)"
+          ],
+          [
+            "b6fc611a79e7e9480449de9898799664f8f03611e8f99c4f9acd7069d3f5d5be",
+            "지방자치단체를 당사자로 하는 계약에 관한 법률 시행령",
+            "제65조(검사조서의 작성 생략)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "insp-national",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "국가기관 계약 견적·검사·대가 지급 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:ncontract-inspection-report",
+        "evidence": [
+          [
+            "c6da40981c50fe02a1dd5d0b717f8b3fec777362652f560d2840a52e8a4208cc",
+            "국가를 당사자로 하는 계약에 관한 법률 시행령",
+            "제56조(검사조서의 작성생략)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "국가기관 계약 견적·검사·대가 지급 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:ncontract-inspection-report",
+        "evidence": [
+          [
+            "c6da40981c50fe02a1dd5d0b717f8b3fec777362652f560d2840a52e8a4208cc",
+            "국가를 당사자로 하는 계약에 관한 법률 시행령",
+            "제56조(검사조서의 작성생략)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "insp-local",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "금액에 따른 검사조서 작성 생략은 3천만원 미만 기준이에요. 정확히 3천만원인 계약은 금액 조건만으로 생략할 수 없어요.",
+        "kind": "summary",
+        "rule_id": "extended-goods_inspection_limit",
+        "evidence": [
+          [
+            "0fdad6efb955a58d108c6c7333904de037dc928df82a45c9a95bbdc148c4b472",
+            "지방자치단체를 당사자로 하는 계약에 관한 법률",
+            "제17조(검사)"
+          ],
+          [
+            "b6fc611a79e7e9480449de9898799664f8f03611e8f99c4f9acd7069d3f5d5be",
+            "지방자치단체를 당사자로 하는 계약에 관한 법률 시행령",
+            "제65조(검사조서의 작성 생략)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "금액에 따른 검사조서 작성 생략은 3천만원 미만 기준이에요. 정확히 3천만원인 계약은 금액 조건만으로 생략할 수 없어요.",
+        "kind": "summary",
+        "rule_id": "extended-goods_inspection_limit",
+        "evidence": [
+          [
+            "0fdad6efb955a58d108c6c7333904de037dc928df82a45c9a95bbdc148c4b472",
+            "지방자치단체를 당사자로 하는 계약에 관한 법률",
+            "제17조(검사)"
+          ],
+          [
+            "b6fc611a79e7e9480449de9898799664f8f03611e8f99c4f9acd7069d3f5d5be",
+            "지방자치단체를 당사자로 하는 계약에 관한 법률 시행령",
+            "제65조(검사조서의 작성 생략)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "insp-affil-national",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "국가기관 계약 견적·검사·대가 지급 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:ncontract-inspection-report",
+        "evidence": [
+          [
+            "c6da40981c50fe02a1dd5d0b717f8b3fec777362652f560d2840a52e8a4208cc",
+            "국가를 당사자로 하는 계약에 관한 법률 시행령",
+            "제56조(검사조서의 작성생략)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "국가기관 계약 견적·검사·대가 지급 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:ncontract-inspection-report",
+        "evidence": [
+          [
+            "c6da40981c50fe02a1dd5d0b717f8b3fec777362652f560d2840a52e8a4208cc",
+            "국가를 당사자로 하는 계약에 관한 법률 시행령",
+            "제56조(검사조서의 작성생략)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "insp-affil-local",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "금액에 따른 검사조서 작성 생략은 3천만원 미만 기준이에요. 정확히 3천만원인 계약은 금액 조건만으로 생략할 수 없어요.",
+        "kind": "summary",
+        "rule_id": "extended-goods_inspection_limit",
+        "evidence": [
+          [
+            "0fdad6efb955a58d108c6c7333904de037dc928df82a45c9a95bbdc148c4b472",
+            "지방자치단체를 당사자로 하는 계약에 관한 법률",
+            "제17조(검사)"
+          ],
+          [
+            "b6fc611a79e7e9480449de9898799664f8f03611e8f99c4f9acd7069d3f5d5be",
+            "지방자치단체를 당사자로 하는 계약에 관한 법률 시행령",
+            "제65조(검사조서의 작성 생략)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "금액에 따른 검사조서 작성 생략은 3천만원 미만 기준이에요. 정확히 3천만원인 계약은 금액 조건만으로 생략할 수 없어요.",
+        "kind": "summary",
+        "rule_id": "extended-goods_inspection_limit",
+        "evidence": [
+          [
+            "0fdad6efb955a58d108c6c7333904de037dc928df82a45c9a95bbdc148c4b472",
+            "지방자치단체를 당사자로 하는 계약에 관한 법률",
+            "제17조(검사)"
+          ],
+          [
+            "b6fc611a79e7e9480449de9898799664f8f03611e8f99c4f9acd7069d3f5d5be",
+            "지방자치단체를 당사자로 하는 계약에 관한 법률 시행령",
+            "제65조(검사조서의 작성 생략)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "expense-unnamed",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "국가기관인지 지방자치단체인지 알려주세요",
+        "kind": "clarification",
+        "rule_id": null,
+        "evidence": [],
+        "ai_used": false
+      },
+      "public": {
+        "title": "국가기관인지 지방자치단체인지 알려주세요",
+        "kind": "clarification",
+        "rule_id": null,
+        "evidence": [],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "expense-local",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "업무추진비 집행내역 공개 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:expense-local-disclosure",
+        "evidence": [
+          [
+            "8ff9e709f92e9661d69fe56ddb5cd1f762972048e625a00d9b60656971e59a5e",
+            "지방자치단체 회계관리에 관한 훈령",
+            "제121조(집행현황의 공개) 및 별표 2의2 4. 업무추진비 《공개방법》"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "업무추진비 집행내역 공개 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:expense-local-disclosure",
+        "evidence": [
+          [
+            "8ff9e709f92e9661d69fe56ddb5cd1f762972048e625a00d9b60656971e59a5e",
+            "지방자치단체 회계관리에 관한 훈령",
+            "제121조(집행현황의 공개) 및 별표 2의2 4. 업무추진비 《공개방법》"
+          ]
+        ],
+        "ai_used": false
+      }
+    }
+  ],
+  "summary": {
+    "all_pass": true,
+    "passed": 22,
+    "failed": 0,
+    "total": 22
+  }
+}
