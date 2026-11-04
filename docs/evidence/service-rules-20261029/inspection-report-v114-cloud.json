@@ -1,0 +1,241 @@
+{
+  "today": "2026-11-04",
+  "cases": [
+    {
+      "id": "unnamed-amount",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "자료를 더 확인해야 답할 수 있어요",
+        "kind": "unavailable",
+        "rule_id": null,
+        "evidence": [],
+        "ai_used": false
+      },
+      "public": {
+        "title": "자료를 더 확인해야 답할 수 있어요",
+        "kind": "unavailable",
+        "rule_id": null,
+        "evidence": [],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "unnamed-amount-2",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "자료를 더 확인해야 답할 수 있어요",
+        "kind": "unavailable",
+        "rule_id": null,
+        "evidence": [],
+        "ai_used": false
+      },
+      "public": {
+        "title": "자료를 더 확인해야 답할 수 있어요",
+        "kind": "unavailable",
+        "rule_id": null,
+        "evidence": [],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "unnamed-when",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "납품을 받으면 검사와 기록부터 챙겨요",
+        "kind": "summary",
+        "rule_id": "goods-inspection",
+        "evidence": [
+          [
+            "0fdad6efb955a58d108c6c7333904de037dc928df82a45c9a95bbdc148c4b472",
+            "지방자치단체를 당사자로 하는 계약에 관한 법률",
+            "제17조(검사)"
+          ],
+          [
+            "b6fc611a79e7e9480449de9898799664f8f03611e8f99c4f9acd7069d3f5d5be",
+            "지방자치단체를 당사자로 하는 계약에 관한 법률 시행령",
+            "제65조(검사조서의 작성 생략)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "납품을 받으면 검사와 기록부터 챙겨요",
+        "kind": "summary",
+        "rule_id": "goods-inspection",
+        "evidence": [
+          [
+            "0fdad6efb955a58d108c6c7333904de037dc928df82a45c9a95bbdc148c4b472",
+            "지방자치단체를 당사자로 하는 계약에 관한 법률",
+            "제17조(검사)"
+          ],
+          [
+            "b6fc611a79e7e9480449de9898799664f8f03611e8f99c4f9acd7069d3f5d5be",
+            "지방자치단체를 당사자로 하는 계약에 관한 법률 시행령",
+            "제65조(검사조서의 작성 생략)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "national",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "국가기관 계약 견적·검사·대가 지급 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:ncontract-inspection-report",
+        "evidence": [
+          [
+            "c6da40981c50fe02a1dd5d0b717f8b3fec777362652f560d2840a52e8a4208cc",
+            "국가를 당사자로 하는 계약에 관한 법률 시행령",
+            "제56조(검사조서의 작성생략)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "국가기관 계약 견적·검사·대가 지급 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:ncontract-inspection-report",
+        "evidence": [
+          [
+            "c6da40981c50fe02a1dd5d0b717f8b3fec777362652f560d2840a52e8a4208cc",
+            "국가를 당사자로 하는 계약에 관한 법률 시행령",
+            "제56조(검사조서의 작성생략)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "local",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "금액에 따른 검사조서 작성 생략은 3천만원 미만 기준이에요. 정확히 3천만원인 계약은 금액 조건만으로 생략할 수 없어요.",
+        "kind": "summary",
+        "rule_id": "extended-goods_inspection_limit",
+        "evidence": [
+          [
+            "0fdad6efb955a58d108c6c7333904de037dc928df82a45c9a95bbdc148c4b472",
+            "지방자치단체를 당사자로 하는 계약에 관한 법률",
+            "제17조(검사)"
+          ],
+          [
+            "b6fc611a79e7e9480449de9898799664f8f03611e8f99c4f9acd7069d3f5d5be",
+            "지방자치단체를 당사자로 하는 계약에 관한 법률 시행령",
+            "제65조(검사조서의 작성 생략)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "금액에 따른 검사조서 작성 생략은 3천만원 미만 기준이에요. 정확히 3천만원인 계약은 금액 조건만으로 생략할 수 없어요.",
+        "kind": "summary",
+        "rule_id": "extended-goods_inspection_limit",
+        "evidence": [
+          [
+            "0fdad6efb955a58d108c6c7333904de037dc928df82a45c9a95bbdc148c4b472",
+            "지방자치단체를 당사자로 하는 계약에 관한 법률",
+            "제17조(검사)"
+          ],
+          [
+            "b6fc611a79e7e9480449de9898799664f8f03611e8f99c4f9acd7069d3f5d5be",
+            "지방자치단체를 당사자로 하는 계약에 관한 법률 시행령",
+            "제65조(검사조서의 작성 생략)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "affil-national",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "국가기관 계약 견적·검사·대가 지급 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:ncontract-inspection-report",
+        "evidence": [
+          [
+            "c6da40981c50fe02a1dd5d0b717f8b3fec777362652f560d2840a52e8a4208cc",
+            "국가를 당사자로 하는 계약에 관한 법률 시행령",
+            "제56조(검사조서의 작성생략)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "국가기관 계약 견적·검사·대가 지급 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:ncontract-inspection-report",
+        "evidence": [
+          [
+            "c6da40981c50fe02a1dd5d0b717f8b3fec777362652f560d2840a52e8a4208cc",
+            "국가를 당사자로 하는 계약에 관한 법률 시행령",
+            "제56조(검사조서의 작성생략)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "affil-local",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "금액에 따른 검사조서 작성 생략은 3천만원 미만 기준이에요. 정확히 3천만원인 계약은 금액 조건만으로 생략할 수 없어요.",
+        "kind": "summary",
+        "rule_id": "extended-goods_inspection_limit",
+        "evidence": [
+          [
+            "0fdad6efb955a58d108c6c7333904de037dc928df82a45c9a95bbdc148c4b472",
+            "지방자치단체를 당사자로 하는 계약에 관한 법률",
+            "제17조(검사)"
+          ],
+          [
+            "b6fc611a79e7e9480449de9898799664f8f03611e8f99c4f9acd7069d3f5d5be",
+            "지방자치단체를 당사자로 하는 계약에 관한 법률 시행령",
+            "제65조(검사조서의 작성 생략)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "금액에 따른 검사조서 작성 생략은 3천만원 미만 기준이에요. 정확히 3천만원인 계약은 금액 조건만으로 생략할 수 없어요.",
+        "kind": "summary",
+        "rule_id": "extended-goods_inspection_limit",
+        "evidence": [
+          [
+            "0fdad6efb955a58d108c6c7333904de037dc928df82a45c9a95bbdc148c4b472",
+            "지방자치단체를 당사자로 하는 계약에 관한 법률",
+            "제17조(검사)"
+          ],
+          [
+            "b6fc611a79e7e9480449de9898799664f8f03611e8f99c4f9acd7069d3f5d5be",
+            "지방자치단체를 당사자로 하는 계약에 관한 법률 시행령",
+            "제65조(검사조서의 작성 생략)"
+          ]
+        ],
+        "ai_used": false
+      }
+    }
+  ],
+  "summary": {
+    "all_pass": true,
+    "passed": 7,
+    "failed": 0,
+    "total": 7
+  }
+}
