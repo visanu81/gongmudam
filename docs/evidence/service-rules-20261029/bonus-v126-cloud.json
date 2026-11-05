@@ -1,0 +1,2485 @@
+{
+  "today": "2026-11-06",
+  "cases": [
+    {
+      "id": "q01",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "지방공무원은 3급에서 2년 이상 재직해야 해요. 국가공무원 3급은 공무원임용령 제31조 일반직 기간에 없어요.",
+        "kind": "summary",
+        "rule_id": "office:promotion-both",
+        "evidence": [
+          [
+            "a3547c0e8b0bc3fcd28fb4f9d6ef2d4857ab033cdda367692402191531000e37",
+            "지방공무원 임용령",
+            "제33조(승진소요 최저연수)"
+          ],
+          [
+            "c3781a2f33b20c0282c16d2fdd4f7b57ca6bb0c74e1fee9b99e577e4dcd50f1b",
+            "공무원임용령",
+            "제31조(승진소요최저연수)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "지방공무원은 3급에서 2년 이상 재직해야 해요. 국가공무원 3급은 공무원임용령 제31조 일반직 기간에 없어요.",
+        "kind": "summary",
+        "rule_id": "office:promotion-both",
+        "evidence": [
+          [
+            "a3547c0e8b0bc3fcd28fb4f9d6ef2d4857ab033cdda367692402191531000e37",
+            "지방공무원 임용령",
+            "제33조(승진소요 최저연수)"
+          ],
+          [
+            "c3781a2f33b20c0282c16d2fdd4f7b57ca6bb0c74e1fee9b99e577e4dcd50f1b",
+            "공무원임용령",
+            "제31조(승진소요최저연수)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "q02",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "공무원임용령 제31조 일반직 기간에는 3급이 없어요. 4·5급 3년, 6급 2년, 7·8·9급 1년 이상이 정해져 있어요.",
+        "kind": "summary",
+        "rule_id": "office:promotion-national",
+        "evidence": [
+          [
+            "c3781a2f33b20c0282c16d2fdd4f7b57ca6bb0c74e1fee9b99e577e4dcd50f1b",
+            "공무원임용령",
+            "제31조(승진소요최저연수)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "공무원임용령 제31조 일반직 기간에는 3급이 없어요. 4·5급 3년, 6급 2년, 7·8·9급 1년 이상이 정해져 있어요.",
+        "kind": "summary",
+        "rule_id": "office:promotion-national",
+        "evidence": [
+          [
+            "c3781a2f33b20c0282c16d2fdd4f7b57ca6bb0c74e1fee9b99e577e4dcd50f1b",
+            "공무원임용령",
+            "제31조(승진소요최저연수)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "q03",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "3급에서 승진하려면 2년 이상 해당 계급에 재직해야 해요.",
+        "kind": "summary",
+        "rule_id": "office:promotion-local",
+        "evidence": [
+          [
+            "a3547c0e8b0bc3fcd28fb4f9d6ef2d4857ab033cdda367692402191531000e37",
+            "지방공무원 임용령",
+            "제33조(승진소요 최저연수)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "3급에서 승진하려면 2년 이상 해당 계급에 재직해야 해요.",
+        "kind": "summary",
+        "rule_id": "office:promotion-local",
+        "evidence": [
+          [
+            "a3547c0e8b0bc3fcd28fb4f9d6ef2d4857ab033cdda367692402191531000e37",
+            "지방공무원 임용령",
+            "제33조(승진소요 최저연수)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "q04",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "공무원임용령 제31조 일반직 기간에는 2급이 없어요. 4·5급 3년, 6급 2년, 7·8·9급 1년 이상이 정해져 있어요.",
+        "kind": "summary",
+        "rule_id": "office:promotion-national",
+        "evidence": [
+          [
+            "c3781a2f33b20c0282c16d2fdd4f7b57ca6bb0c74e1fee9b99e577e4dcd50f1b",
+            "공무원임용령",
+            "제31조(승진소요최저연수)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "공무원임용령 제31조 일반직 기간에는 2급이 없어요. 4·5급 3년, 6급 2년, 7·8·9급 1년 이상이 정해져 있어요.",
+        "kind": "summary",
+        "rule_id": "office:promotion-national",
+        "evidence": [
+          [
+            "c3781a2f33b20c0282c16d2fdd4f7b57ca6bb0c74e1fee9b99e577e4dcd50f1b",
+            "공무원임용령",
+            "제31조(승진소요최저연수)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "q05",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "6급으로 승진하려면 7급에서 1년 이상 해당 계급에 재직해야 해요.",
+        "kind": "summary",
+        "rule_id": "office:promotion-both",
+        "evidence": [
+          [
+            "a3547c0e8b0bc3fcd28fb4f9d6ef2d4857ab033cdda367692402191531000e37",
+            "지방공무원 임용령",
+            "제33조(승진소요 최저연수)"
+          ],
+          [
+            "c3781a2f33b20c0282c16d2fdd4f7b57ca6bb0c74e1fee9b99e577e4dcd50f1b",
+            "공무원임용령",
+            "제31조(승진소요최저연수)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "6급으로 승진하려면 7급에서 1년 이상 해당 계급에 재직해야 해요.",
+        "kind": "summary",
+        "rule_id": "office:promotion-both",
+        "evidence": [
+          [
+            "a3547c0e8b0bc3fcd28fb4f9d6ef2d4857ab033cdda367692402191531000e37",
+            "지방공무원 임용령",
+            "제33조(승진소요 최저연수)"
+          ],
+          [
+            "c3781a2f33b20c0282c16d2fdd4f7b57ca6bb0c74e1fee9b99e577e4dcd50f1b",
+            "공무원임용령",
+            "제31조(승진소요최저연수)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "q06",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "국가 일반직은 4·5급 3년, 6급 2년, 7·8·9급 1년 이상 해당 계급에 재직해야 승진할 수 있어요(공무원임용령 제31조).",
+        "kind": "summary",
+        "rule_id": "office:promotion-both",
+        "evidence": [
+          [
+            "a3547c0e8b0bc3fcd28fb4f9d6ef2d4857ab033cdda367692402191531000e37",
+            "지방공무원 임용령",
+            "제33조(승진소요 최저연수)"
+          ],
+          [
+            "c3781a2f33b20c0282c16d2fdd4f7b57ca6bb0c74e1fee9b99e577e4dcd50f1b",
+            "공무원임용령",
+            "제31조(승진소요최저연수)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "국가 일반직은 4·5급 3년, 6급 2년, 7·8·9급 1년 이상 해당 계급에 재직해야 승진할 수 있어요(공무원임용령 제31조).",
+        "kind": "summary",
+        "rule_id": "office:promotion-both",
+        "evidence": [
+          [
+            "a3547c0e8b0bc3fcd28fb4f9d6ef2d4857ab033cdda367692402191531000e37",
+            "지방공무원 임용령",
+            "제33조(승진소요 최저연수)"
+          ],
+          [
+            "c3781a2f33b20c0282c16d2fdd4f7b57ca6bb0c74e1fee9b99e577e4dcd50f1b",
+            "공무원임용령",
+            "제31조(승진소요최저연수)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "q07",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "9급에서 승진하려면 1년 이상 해당 계급에 재직해야 해요.",
+        "kind": "summary",
+        "rule_id": "office:promotion-both",
+        "evidence": [
+          [
+            "a3547c0e8b0bc3fcd28fb4f9d6ef2d4857ab033cdda367692402191531000e37",
+            "지방공무원 임용령",
+            "제33조(승진소요 최저연수)"
+          ],
+          [
+            "c3781a2f33b20c0282c16d2fdd4f7b57ca6bb0c74e1fee9b99e577e4dcd50f1b",
+            "공무원임용령",
+            "제31조(승진소요최저연수)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "9급에서 승진하려면 1년 이상 해당 계급에 재직해야 해요.",
+        "kind": "summary",
+        "rule_id": "office:promotion-both",
+        "evidence": [
+          [
+            "a3547c0e8b0bc3fcd28fb4f9d6ef2d4857ab033cdda367692402191531000e37",
+            "지방공무원 임용령",
+            "제33조(승진소요 최저연수)"
+          ],
+          [
+            "c3781a2f33b20c0282c16d2fdd4f7b57ca6bb0c74e1fee9b99e577e4dcd50f1b",
+            "공무원임용령",
+            "제31조(승진소요최저연수)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "q08",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "국가 일반직은 4·5급 3년, 6급 2년, 7·8·9급 1년 이상 해당 계급에 재직해야 승진할 수 있어요(공무원임용령 제31조).",
+        "kind": "summary",
+        "rule_id": "office:promotion-both",
+        "evidence": [
+          [
+            "a3547c0e8b0bc3fcd28fb4f9d6ef2d4857ab033cdda367692402191531000e37",
+            "지방공무원 임용령",
+            "제33조(승진소요 최저연수)"
+          ],
+          [
+            "c3781a2f33b20c0282c16d2fdd4f7b57ca6bb0c74e1fee9b99e577e4dcd50f1b",
+            "공무원임용령",
+            "제31조(승진소요최저연수)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "국가 일반직은 4·5급 3년, 6급 2년, 7·8·9급 1년 이상 해당 계급에 재직해야 승진할 수 있어요(공무원임용령 제31조).",
+        "kind": "summary",
+        "rule_id": "office:promotion-both",
+        "evidence": [
+          [
+            "a3547c0e8b0bc3fcd28fb4f9d6ef2d4857ab033cdda367692402191531000e37",
+            "지방공무원 임용령",
+            "제33조(승진소요 최저연수)"
+          ],
+          [
+            "c3781a2f33b20c0282c16d2fdd4f7b57ca6bb0c74e1fee9b99e577e4dcd50f1b",
+            "공무원임용령",
+            "제31조(승진소요최저연수)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "q09",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "지침에 정해진 지급 달은 없고, 기관이 2월 말까지 세우는 지급계획에서 지급시기를 정해요. 소속 기관의 계획을 확인하세요.",
+        "kind": "summary",
+        "rule_id": "office:bonus-timing-both",
+        "evidence": [
+          [
+            "1f46ac6b03b88e33b1ead0125bd8dd53f35b9918463a594825596067876637b3",
+            "공무원보수 등의 업무지침",
+            "제8장 Ⅶ.2. 성과상여금 지급·협의 일정"
+          ],
+          [
+            "35cb2c12915af79276626cbe0b7b136a2e4da99632636b112d6dd451786372f3",
+            "지방공무원보수업무 등 처리지침",
+            "제6장 Ⅲ. 이의제기와 성과상여금의 지급"
+          ],
+          [
+            "8f7a140a53d5f7497292e8fb49b9e67a1b35f6f854476a4a46ac05f132d98447",
+            "지방공무원보수업무 등 처리지침",
+            "제6장 Ⅷ.2. 성과상여금 지급·협의 일정"
+          ],
+          [
+            "b047ab2f7898be3a7131d986c797c598731ad9e1326c1fc0e68b79937776dff4",
+            "공무원보수 등의 업무지침",
+            "제8장 Ⅱ.1. 지급시기 및 지급액"
+          ],
+          [
+            "c3a897f63f0877539af9fda21ee905b9bca3f10ca70d3861e6933ed29a5e66f2",
+            "지방공무원보수업무 등 처리지침",
+            "제6장 Ⅱ.1. 지급시기 및 지급액"
+          ],
+          [
+            "e1d7c9af1687ec488e90f0bfa2a6bdbb1974797783ed905cb61e972921e3b18f",
+            "공무원보수 등의 업무지침",
+            "제8장 Ⅶ.2. 지급계획·운영결과 제출"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "지침에 정해진 지급 달은 없고, 기관이 2월 말까지 세우는 지급계획에서 지급시기를 정해요. 소속 기관의 계획을 확인하세요.",
+        "kind": "summary",
+        "rule_id": "office:bonus-timing-both",
+        "evidence": [
+          [
+            "1f46ac6b03b88e33b1ead0125bd8dd53f35b9918463a594825596067876637b3",
+            "공무원보수 등의 업무지침",
+            "제8장 Ⅶ.2. 성과상여금 지급·협의 일정"
+          ],
+          [
+            "35cb2c12915af79276626cbe0b7b136a2e4da99632636b112d6dd451786372f3",
+            "지방공무원보수업무 등 처리지침",
+            "제6장 Ⅲ. 이의제기와 성과상여금의 지급"
+          ],
+          [
+            "8f7a140a53d5f7497292e8fb49b9e67a1b35f6f854476a4a46ac05f132d98447",
+            "지방공무원보수업무 등 처리지침",
+            "제6장 Ⅷ.2. 성과상여금 지급·협의 일정"
+          ],
+          [
+            "b047ab2f7898be3a7131d986c797c598731ad9e1326c1fc0e68b79937776dff4",
+            "공무원보수 등의 업무지침",
+            "제8장 Ⅱ.1. 지급시기 및 지급액"
+          ],
+          [
+            "c3a897f63f0877539af9fda21ee905b9bca3f10ca70d3861e6933ed29a5e66f2",
+            "지방공무원보수업무 등 처리지침",
+            "제6장 Ⅱ.1. 지급시기 및 지급액"
+          ],
+          [
+            "e1d7c9af1687ec488e90f0bfa2a6bdbb1974797783ed905cb61e972921e3b18f",
+            "공무원보수 등의 업무지침",
+            "제8장 Ⅶ.2. 지급계획·운영결과 제출"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "q10",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "지침에 정해진 지급 달은 없고, 기관이 2월 말까지 세우는 지급계획에서 지급시기를 정해요. 소속 기관의 계획을 확인하세요.",
+        "kind": "summary",
+        "rule_id": "office:bonus-timing-both",
+        "evidence": [
+          [
+            "1f46ac6b03b88e33b1ead0125bd8dd53f35b9918463a594825596067876637b3",
+            "공무원보수 등의 업무지침",
+            "제8장 Ⅶ.2. 성과상여금 지급·협의 일정"
+          ],
+          [
+            "35cb2c12915af79276626cbe0b7b136a2e4da99632636b112d6dd451786372f3",
+            "지방공무원보수업무 등 처리지침",
+            "제6장 Ⅲ. 이의제기와 성과상여금의 지급"
+          ],
+          [
+            "8f7a140a53d5f7497292e8fb49b9e67a1b35f6f854476a4a46ac05f132d98447",
+            "지방공무원보수업무 등 처리지침",
+            "제6장 Ⅷ.2. 성과상여금 지급·협의 일정"
+          ],
+          [
+            "b047ab2f7898be3a7131d986c797c598731ad9e1326c1fc0e68b79937776dff4",
+            "공무원보수 등의 업무지침",
+            "제8장 Ⅱ.1. 지급시기 및 지급액"
+          ],
+          [
+            "c3a897f63f0877539af9fda21ee905b9bca3f10ca70d3861e6933ed29a5e66f2",
+            "지방공무원보수업무 등 처리지침",
+            "제6장 Ⅱ.1. 지급시기 및 지급액"
+          ],
+          [
+            "e1d7c9af1687ec488e90f0bfa2a6bdbb1974797783ed905cb61e972921e3b18f",
+            "공무원보수 등의 업무지침",
+            "제8장 Ⅶ.2. 지급계획·운영결과 제출"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "지침에 정해진 지급 달은 없고, 기관이 2월 말까지 세우는 지급계획에서 지급시기를 정해요. 소속 기관의 계획을 확인하세요.",
+        "kind": "summary",
+        "rule_id": "office:bonus-timing-both",
+        "evidence": [
+          [
+            "1f46ac6b03b88e33b1ead0125bd8dd53f35b9918463a594825596067876637b3",
+            "공무원보수 등의 업무지침",
+            "제8장 Ⅶ.2. 성과상여금 지급·협의 일정"
+          ],
+          [
+            "35cb2c12915af79276626cbe0b7b136a2e4da99632636b112d6dd451786372f3",
+            "지방공무원보수업무 등 처리지침",
+            "제6장 Ⅲ. 이의제기와 성과상여금의 지급"
+          ],
+          [
+            "8f7a140a53d5f7497292e8fb49b9e67a1b35f6f854476a4a46ac05f132d98447",
+            "지방공무원보수업무 등 처리지침",
+            "제6장 Ⅷ.2. 성과상여금 지급·협의 일정"
+          ],
+          [
+            "b047ab2f7898be3a7131d986c797c598731ad9e1326c1fc0e68b79937776dff4",
+            "공무원보수 등의 업무지침",
+            "제8장 Ⅱ.1. 지급시기 및 지급액"
+          ],
+          [
+            "c3a897f63f0877539af9fda21ee905b9bca3f10ca70d3861e6933ed29a5e66f2",
+            "지방공무원보수업무 등 처리지침",
+            "제6장 Ⅱ.1. 지급시기 및 지급액"
+          ],
+          [
+            "e1d7c9af1687ec488e90f0bfa2a6bdbb1974797783ed905cb61e972921e3b18f",
+            "공무원보수 등의 업무지침",
+            "제8장 Ⅶ.2. 지급계획·운영결과 제출"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "q11",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "지침에 정해진 지급 달은 없고, 기관이 2월 말까지 세우는 지급계획에서 지급시기를 정해요. 소속 기관의 계획을 확인하세요.",
+        "kind": "summary",
+        "rule_id": "office:bonus-timing-both",
+        "evidence": [
+          [
+            "1f46ac6b03b88e33b1ead0125bd8dd53f35b9918463a594825596067876637b3",
+            "공무원보수 등의 업무지침",
+            "제8장 Ⅶ.2. 성과상여금 지급·협의 일정"
+          ],
+          [
+            "35cb2c12915af79276626cbe0b7b136a2e4da99632636b112d6dd451786372f3",
+            "지방공무원보수업무 등 처리지침",
+            "제6장 Ⅲ. 이의제기와 성과상여금의 지급"
+          ],
+          [
+            "8f7a140a53d5f7497292e8fb49b9e67a1b35f6f854476a4a46ac05f132d98447",
+            "지방공무원보수업무 등 처리지침",
+            "제6장 Ⅷ.2. 성과상여금 지급·협의 일정"
+          ],
+          [
+            "b047ab2f7898be3a7131d986c797c598731ad9e1326c1fc0e68b79937776dff4",
+            "공무원보수 등의 업무지침",
+            "제8장 Ⅱ.1. 지급시기 및 지급액"
+          ],
+          [
+            "c3a897f63f0877539af9fda21ee905b9bca3f10ca70d3861e6933ed29a5e66f2",
+            "지방공무원보수업무 등 처리지침",
+            "제6장 Ⅱ.1. 지급시기 및 지급액"
+          ],
+          [
+            "e1d7c9af1687ec488e90f0bfa2a6bdbb1974797783ed905cb61e972921e3b18f",
+            "공무원보수 등의 업무지침",
+            "제8장 Ⅶ.2. 지급계획·운영결과 제출"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "지침에 정해진 지급 달은 없고, 기관이 2월 말까지 세우는 지급계획에서 지급시기를 정해요. 소속 기관의 계획을 확인하세요.",
+        "kind": "summary",
+        "rule_id": "office:bonus-timing-both",
+        "evidence": [
+          [
+            "1f46ac6b03b88e33b1ead0125bd8dd53f35b9918463a594825596067876637b3",
+            "공무원보수 등의 업무지침",
+            "제8장 Ⅶ.2. 성과상여금 지급·협의 일정"
+          ],
+          [
+            "35cb2c12915af79276626cbe0b7b136a2e4da99632636b112d6dd451786372f3",
+            "지방공무원보수업무 등 처리지침",
+            "제6장 Ⅲ. 이의제기와 성과상여금의 지급"
+          ],
+          [
+            "8f7a140a53d5f7497292e8fb49b9e67a1b35f6f854476a4a46ac05f132d98447",
+            "지방공무원보수업무 등 처리지침",
+            "제6장 Ⅷ.2. 성과상여금 지급·협의 일정"
+          ],
+          [
+            "b047ab2f7898be3a7131d986c797c598731ad9e1326c1fc0e68b79937776dff4",
+            "공무원보수 등의 업무지침",
+            "제8장 Ⅱ.1. 지급시기 및 지급액"
+          ],
+          [
+            "c3a897f63f0877539af9fda21ee905b9bca3f10ca70d3861e6933ed29a5e66f2",
+            "지방공무원보수업무 등 처리지침",
+            "제6장 Ⅱ.1. 지급시기 및 지급액"
+          ],
+          [
+            "e1d7c9af1687ec488e90f0bfa2a6bdbb1974797783ed905cb61e972921e3b18f",
+            "공무원보수 등의 업무지침",
+            "제8장 Ⅶ.2. 지급계획·운영결과 제출"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "q12",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "지침에 정해진 지급 달은 없고, 기관이 2월 말까지 세우는 지급계획에서 지급시기를 정해요. 소속 기관의 계획을 확인하세요.",
+        "kind": "summary",
+        "rule_id": "office:bonus-timing-national",
+        "evidence": [
+          [
+            "1f46ac6b03b88e33b1ead0125bd8dd53f35b9918463a594825596067876637b3",
+            "공무원보수 등의 업무지침",
+            "제8장 Ⅶ.2. 성과상여금 지급·협의 일정"
+          ],
+          [
+            "b047ab2f7898be3a7131d986c797c598731ad9e1326c1fc0e68b79937776dff4",
+            "공무원보수 등의 업무지침",
+            "제8장 Ⅱ.1. 지급시기 및 지급액"
+          ],
+          [
+            "e1d7c9af1687ec488e90f0bfa2a6bdbb1974797783ed905cb61e972921e3b18f",
+            "공무원보수 등의 업무지침",
+            "제8장 Ⅶ.2. 지급계획·운영결과 제출"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "지침에 정해진 지급 달은 없고, 기관이 2월 말까지 세우는 지급계획에서 지급시기를 정해요. 소속 기관의 계획을 확인하세요.",
+        "kind": "summary",
+        "rule_id": "office:bonus-timing-national",
+        "evidence": [
+          [
+            "1f46ac6b03b88e33b1ead0125bd8dd53f35b9918463a594825596067876637b3",
+            "공무원보수 등의 업무지침",
+            "제8장 Ⅶ.2. 성과상여금 지급·협의 일정"
+          ],
+          [
+            "b047ab2f7898be3a7131d986c797c598731ad9e1326c1fc0e68b79937776dff4",
+            "공무원보수 등의 업무지침",
+            "제8장 Ⅱ.1. 지급시기 및 지급액"
+          ],
+          [
+            "e1d7c9af1687ec488e90f0bfa2a6bdbb1974797783ed905cb61e972921e3b18f",
+            "공무원보수 등의 업무지침",
+            "제8장 Ⅶ.2. 지급계획·운영결과 제출"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "q13",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "지침에 정해진 지급 달은 없고, 기관이 2월 말까지 세우는 지급계획에서 지급시기를 정해요. 소속 기관의 계획을 확인하세요.",
+        "kind": "summary",
+        "rule_id": "office:bonus-timing-local",
+        "evidence": [
+          [
+            "35cb2c12915af79276626cbe0b7b136a2e4da99632636b112d6dd451786372f3",
+            "지방공무원보수업무 등 처리지침",
+            "제6장 Ⅲ. 이의제기와 성과상여금의 지급"
+          ],
+          [
+            "8f7a140a53d5f7497292e8fb49b9e67a1b35f6f854476a4a46ac05f132d98447",
+            "지방공무원보수업무 등 처리지침",
+            "제6장 Ⅷ.2. 성과상여금 지급·협의 일정"
+          ],
+          [
+            "c3a897f63f0877539af9fda21ee905b9bca3f10ca70d3861e6933ed29a5e66f2",
+            "지방공무원보수업무 등 처리지침",
+            "제6장 Ⅱ.1. 지급시기 및 지급액"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "지침에 정해진 지급 달은 없고, 기관이 2월 말까지 세우는 지급계획에서 지급시기를 정해요. 소속 기관의 계획을 확인하세요.",
+        "kind": "summary",
+        "rule_id": "office:bonus-timing-local",
+        "evidence": [
+          [
+            "35cb2c12915af79276626cbe0b7b136a2e4da99632636b112d6dd451786372f3",
+            "지방공무원보수업무 등 처리지침",
+            "제6장 Ⅲ. 이의제기와 성과상여금의 지급"
+          ],
+          [
+            "8f7a140a53d5f7497292e8fb49b9e67a1b35f6f854476a4a46ac05f132d98447",
+            "지방공무원보수업무 등 처리지침",
+            "제6장 Ⅷ.2. 성과상여금 지급·협의 일정"
+          ],
+          [
+            "c3a897f63f0877539af9fda21ee905b9bca3f10ca70d3861e6933ed29a5e66f2",
+            "지방공무원보수업무 등 처리지침",
+            "제6장 Ⅱ.1. 지급시기 및 지급액"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "q14",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "지침에 정해진 지급 달은 없고, 기관이 2월 말까지 세우는 지급계획에서 지급시기를 정해요. 소속 기관의 계획을 확인하세요.",
+        "kind": "summary",
+        "rule_id": "office:bonus-timing-both",
+        "evidence": [
+          [
+            "1f46ac6b03b88e33b1ead0125bd8dd53f35b9918463a594825596067876637b3",
+            "공무원보수 등의 업무지침",
+            "제8장 Ⅶ.2. 성과상여금 지급·협의 일정"
+          ],
+          [
+            "35cb2c12915af79276626cbe0b7b136a2e4da99632636b112d6dd451786372f3",
+            "지방공무원보수업무 등 처리지침",
+            "제6장 Ⅲ. 이의제기와 성과상여금의 지급"
+          ],
+          [
+            "8f7a140a53d5f7497292e8fb49b9e67a1b35f6f854476a4a46ac05f132d98447",
+            "지방공무원보수업무 등 처리지침",
+            "제6장 Ⅷ.2. 성과상여금 지급·협의 일정"
+          ],
+          [
+            "b047ab2f7898be3a7131d986c797c598731ad9e1326c1fc0e68b79937776dff4",
+            "공무원보수 등의 업무지침",
+            "제8장 Ⅱ.1. 지급시기 및 지급액"
+          ],
+          [
+            "c3a897f63f0877539af9fda21ee905b9bca3f10ca70d3861e6933ed29a5e66f2",
+            "지방공무원보수업무 등 처리지침",
+            "제6장 Ⅱ.1. 지급시기 및 지급액"
+          ],
+          [
+            "e1d7c9af1687ec488e90f0bfa2a6bdbb1974797783ed905cb61e972921e3b18f",
+            "공무원보수 등의 업무지침",
+            "제8장 Ⅶ.2. 지급계획·운영결과 제출"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "지침에 정해진 지급 달은 없고, 기관이 2월 말까지 세우는 지급계획에서 지급시기를 정해요. 소속 기관의 계획을 확인하세요.",
+        "kind": "summary",
+        "rule_id": "office:bonus-timing-both",
+        "evidence": [
+          [
+            "1f46ac6b03b88e33b1ead0125bd8dd53f35b9918463a594825596067876637b3",
+            "공무원보수 등의 업무지침",
+            "제8장 Ⅶ.2. 성과상여금 지급·협의 일정"
+          ],
+          [
+            "35cb2c12915af79276626cbe0b7b136a2e4da99632636b112d6dd451786372f3",
+            "지방공무원보수업무 등 처리지침",
+            "제6장 Ⅲ. 이의제기와 성과상여금의 지급"
+          ],
+          [
+            "8f7a140a53d5f7497292e8fb49b9e67a1b35f6f854476a4a46ac05f132d98447",
+            "지방공무원보수업무 등 처리지침",
+            "제6장 Ⅷ.2. 성과상여금 지급·협의 일정"
+          ],
+          [
+            "b047ab2f7898be3a7131d986c797c598731ad9e1326c1fc0e68b79937776dff4",
+            "공무원보수 등의 업무지침",
+            "제8장 Ⅱ.1. 지급시기 및 지급액"
+          ],
+          [
+            "c3a897f63f0877539af9fda21ee905b9bca3f10ca70d3861e6933ed29a5e66f2",
+            "지방공무원보수업무 등 처리지침",
+            "제6장 Ⅱ.1. 지급시기 및 지급액"
+          ],
+          [
+            "e1d7c9af1687ec488e90f0bfa2a6bdbb1974797783ed905cb61e972921e3b18f",
+            "공무원보수 등의 업무지침",
+            "제8장 Ⅶ.2. 지급계획·운영결과 제출"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "q15",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "지침에 정해진 지급 달은 없고, 기관이 2월 말까지 세우는 지급계획에서 지급시기를 정해요. 소속 기관의 계획을 확인하세요.",
+        "kind": "summary",
+        "rule_id": "office:bonus-timing-both",
+        "evidence": [
+          [
+            "1f46ac6b03b88e33b1ead0125bd8dd53f35b9918463a594825596067876637b3",
+            "공무원보수 등의 업무지침",
+            "제8장 Ⅶ.2. 성과상여금 지급·협의 일정"
+          ],
+          [
+            "35cb2c12915af79276626cbe0b7b136a2e4da99632636b112d6dd451786372f3",
+            "지방공무원보수업무 등 처리지침",
+            "제6장 Ⅲ. 이의제기와 성과상여금의 지급"
+          ],
+          [
+            "8f7a140a53d5f7497292e8fb49b9e67a1b35f6f854476a4a46ac05f132d98447",
+            "지방공무원보수업무 등 처리지침",
+            "제6장 Ⅷ.2. 성과상여금 지급·협의 일정"
+          ],
+          [
+            "b047ab2f7898be3a7131d986c797c598731ad9e1326c1fc0e68b79937776dff4",
+            "공무원보수 등의 업무지침",
+            "제8장 Ⅱ.1. 지급시기 및 지급액"
+          ],
+          [
+            "c3a897f63f0877539af9fda21ee905b9bca3f10ca70d3861e6933ed29a5e66f2",
+            "지방공무원보수업무 등 처리지침",
+            "제6장 Ⅱ.1. 지급시기 및 지급액"
+          ],
+          [
+            "e1d7c9af1687ec488e90f0bfa2a6bdbb1974797783ed905cb61e972921e3b18f",
+            "공무원보수 등의 업무지침",
+            "제8장 Ⅶ.2. 지급계획·운영결과 제출"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "지침에 정해진 지급 달은 없고, 기관이 2월 말까지 세우는 지급계획에서 지급시기를 정해요. 소속 기관의 계획을 확인하세요.",
+        "kind": "summary",
+        "rule_id": "office:bonus-timing-both",
+        "evidence": [
+          [
+            "1f46ac6b03b88e33b1ead0125bd8dd53f35b9918463a594825596067876637b3",
+            "공무원보수 등의 업무지침",
+            "제8장 Ⅶ.2. 성과상여금 지급·협의 일정"
+          ],
+          [
+            "35cb2c12915af79276626cbe0b7b136a2e4da99632636b112d6dd451786372f3",
+            "지방공무원보수업무 등 처리지침",
+            "제6장 Ⅲ. 이의제기와 성과상여금의 지급"
+          ],
+          [
+            "8f7a140a53d5f7497292e8fb49b9e67a1b35f6f854476a4a46ac05f132d98447",
+            "지방공무원보수업무 등 처리지침",
+            "제6장 Ⅷ.2. 성과상여금 지급·협의 일정"
+          ],
+          [
+            "b047ab2f7898be3a7131d986c797c598731ad9e1326c1fc0e68b79937776dff4",
+            "공무원보수 등의 업무지침",
+            "제8장 Ⅱ.1. 지급시기 및 지급액"
+          ],
+          [
+            "c3a897f63f0877539af9fda21ee905b9bca3f10ca70d3861e6933ed29a5e66f2",
+            "지방공무원보수업무 등 처리지침",
+            "제6장 Ⅱ.1. 지급시기 및 지급액"
+          ],
+          [
+            "e1d7c9af1687ec488e90f0bfa2a6bdbb1974797783ed905cb61e972921e3b18f",
+            "공무원보수 등의 업무지침",
+            "제8장 Ⅶ.2. 지급계획·운영결과 제출"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "q16",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "찾은 자료를 차례로 확인해요",
+        "kind": "extract",
+        "rule_id": null,
+        "evidence": [
+          [
+            "90d3293e3e1c3034fed352a8781017419014b824f21251ac3616ee3ac861c36b",
+            "지방공무원 수당 등에 관한 규정",
+            "제6조의2(성과상여금 등)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "찾은 자료를 차례로 확인해요",
+        "kind": "extract",
+        "rule_id": null,
+        "evidence": [
+          [
+            "90d3293e3e1c3034fed352a8781017419014b824f21251ac3616ee3ac861c36b",
+            "지방공무원 수당 등에 관한 규정",
+            "제6조의2(성과상여금 등)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "q17",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "찾은 자료를 차례로 확인해요",
+        "kind": "extract",
+        "rule_id": null,
+        "evidence": [
+          [
+            "90d3293e3e1c3034fed352a8781017419014b824f21251ac3616ee3ac861c36b",
+            "지방공무원 수당 등에 관한 규정",
+            "제6조의2(성과상여금 등)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "찾은 자료를 차례로 확인해요",
+        "kind": "extract",
+        "rule_id": null,
+        "evidence": [
+          [
+            "90d3293e3e1c3034fed352a8781017419014b824f21251ac3616ee3ac861c36b",
+            "지방공무원 수당 등에 관한 규정",
+            "제6조의2(성과상여금 등)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "q18",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "찾은 자료를 차례로 확인해요",
+        "kind": "extract",
+        "rule_id": null,
+        "evidence": [
+          [
+            "90d3293e3e1c3034fed352a8781017419014b824f21251ac3616ee3ac861c36b",
+            "지방공무원 수당 등에 관한 규정",
+            "제6조의2(성과상여금 등)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "찾은 자료를 차례로 확인해요",
+        "kind": "extract",
+        "rule_id": null,
+        "evidence": [
+          [
+            "90d3293e3e1c3034fed352a8781017419014b824f21251ac3616ee3ac861c36b",
+            "지방공무원 수당 등에 관한 규정",
+            "제6조의2(성과상여금 등)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "q19",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "찾은 자료를 차례로 확인해요",
+        "kind": "extract",
+        "rule_id": null,
+        "evidence": [
+          [
+            "90d3293e3e1c3034fed352a8781017419014b824f21251ac3616ee3ac861c36b",
+            "지방공무원 수당 등에 관한 규정",
+            "제6조의2(성과상여금 등)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "찾은 자료를 차례로 확인해요",
+        "kind": "extract",
+        "rule_id": null,
+        "evidence": [
+          [
+            "90d3293e3e1c3034fed352a8781017419014b824f21251ac3616ee3ac861c36b",
+            "지방공무원 수당 등에 관한 규정",
+            "제6조의2(성과상여금 등)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "q20",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "찾은 자료를 차례로 확인해요",
+        "kind": "extract",
+        "rule_id": null,
+        "evidence": [
+          [
+            "90d3293e3e1c3034fed352a8781017419014b824f21251ac3616ee3ac861c36b",
+            "지방공무원 수당 등에 관한 규정",
+            "제6조의2(성과상여금 등)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "찾은 자료를 차례로 확인해요",
+        "kind": "extract",
+        "rule_id": null,
+        "evidence": [
+          [
+            "90d3293e3e1c3034fed352a8781017419014b824f21251ac3616ee3ac861c36b",
+            "지방공무원 수당 등에 관한 규정",
+            "제6조의2(성과상여금 등)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "q21",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "자료를 더 확인해야 답할 수 있어요",
+        "kind": "unavailable",
+        "rule_id": null,
+        "evidence": [],
+        "ai_used": false
+      },
+      "public": {
+        "title": "자료를 더 확인해야 답할 수 있어요",
+        "kind": "unavailable",
+        "rule_id": null,
+        "evidence": [],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "q22",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "찾은 자료를 차례로 확인해요",
+        "kind": "extract",
+        "rule_id": null,
+        "evidence": [
+          [
+            "aaf7652e5974200e1b18f4daee24ba542c1872e26f7230ec5e6c3227ee7865c3",
+            "공무원수당 등에 관한 규정",
+            "제7조의2(성과상여금 등)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "찾은 자료를 차례로 확인해요",
+        "kind": "extract",
+        "rule_id": null,
+        "evidence": [
+          [
+            "aaf7652e5974200e1b18f4daee24ba542c1872e26f7230ec5e6c3227ee7865c3",
+            "공무원수당 등에 관한 규정",
+            "제7조의2(성과상여금 등)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "q23",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "지방공무원 명절휴가비는 설날·추석날 현재 월봉급액의 60%예요",
+        "kind": "summary",
+        "rule_id": "service-rules:local_allowance-holiday-bonus",
+        "evidence": [
+          [
+            "0c29dd7175f8af4e55b2d77c6b4490f988c694e434f520989a3f606008742ee7",
+            "지방공무원 수당 등에 관한 규정",
+            "제18조의3(명절휴가비)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "지방공무원 명절휴가비는 설날·추석날 현재 월봉급액의 60%예요",
+        "kind": "summary",
+        "rule_id": "service-rules:local_allowance-holiday-bonus",
+        "evidence": [
+          [
+            "0c29dd7175f8af4e55b2d77c6b4490f988c694e434f520989a3f606008742ee7",
+            "지방공무원 수당 등에 관한 규정",
+            "제18조의3(명절휴가비)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "q24",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "찾은 자료를 차례로 확인해요",
+        "kind": "extract",
+        "rule_id": null,
+        "evidence": [
+          [
+            "d7d3e00c01752a47737b209fa793829f413265b7bb105d145d8ea234cf405ff1",
+            "지방공무원 수당 등에 관한 규정",
+            "제18조의5(연가보상비)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "찾은 자료를 차례로 확인해요",
+        "kind": "extract",
+        "rule_id": null,
+        "evidence": [
+          [
+            "d7d3e00c01752a47737b209fa793829f413265b7bb105d145d8ea234cf405ff1",
+            "지방공무원 수당 등에 관한 규정",
+            "제18조의5(연가보상비)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "q25",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "지방공무원 정근수당은 매년 1월과 7월 보수지급일에 근무연수에 따라 받아요",
+        "kind": "summary",
+        "rule_id": "service-rules:local_allowance-diligence",
+        "evidence": [
+          [
+            "aedf37d56cbea1eca043d2996288e274b686218ff57121ada3b7d6de8a9496d3",
+            "지방공무원 수당 등에 관한 규정",
+            "제6조(정근수당)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "지방공무원 정근수당은 매년 1월과 7월 보수지급일에 근무연수에 따라 받아요",
+        "kind": "summary",
+        "rule_id": "service-rules:local_allowance-diligence",
+        "evidence": [
+          [
+            "aedf37d56cbea1eca043d2996288e274b686218ff57121ada3b7d6de8a9496d3",
+            "지방공무원 수당 등에 관한 규정",
+            "제6조(정근수당)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "q26",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "공무원의 의무는 성실, 복종, 직장 이탈 금지, 친절·공정, 종교중립, 비밀 엄수, 청렴, 품위 유지, 영리 업무·겸직 금지, 정치 운동 금지, 집단 행위 금지 등이에요. 취임할 때 선서도 해요(국가공무원법 제55조~제66조).",
+        "kind": "summary",
+        "rule_id": "office:duties-both",
+        "evidence": [
+          [
+            "1031db3b61ae32d8eb2f60a9d8fc200a974087b171937f664320d1cd99c916ea",
+            "지방공무원법",
+            "제47조(복무 선서)"
+          ],
+          [
+            "1cdd5b514c177cf52cab3ae575d135f891cb720fd3aa7f446e62d31ea7689ab1",
+            "국가공무원법",
+            "제59조(친절ㆍ공정의 의무)"
+          ],
+          [
+            "298dbbea11cd316dbbf84ed8e2a7882d1f54656d0827cb5d046bbd2a41667231",
+            "국가공무원법",
+            "제56조(성실 의무)"
+          ],
+          [
+            "36d40ca0c9b1200a587decb6f10a74ae9ec87219072d808a1c6cc7d99588b310",
+            "국가공무원법",
+            "제64조(영리 업무 및 겸직 금지)"
+          ],
+          [
+            "85fac74c7e7a047ffdd403dd4db894c3cca27f6b201fe63e65161dc068ff9b0e",
+            "국가공무원법",
+            "제62조(외국 정부의 영예 등을 받을 경우)"
+          ],
+          [
+            "8f8ffa0e9a962beba7f337ace78262aa243906df9f24f333221a189d725dddec",
+            "국가공무원법",
+            "제58조(직장 이탈 금지)"
+          ],
+          [
+            "9dfe208b321a715f0c2081492c1f78e8d9cf7f379d305f95e98c877f9d33cdd0",
+            "국가공무원법",
+            "제61조(청렴의 의무)"
+          ],
+          [
+            "a10805e9bbf980e3d0bbdba166175184d71deee65bef20c09bacd5035783c8ea",
+            "국가공무원법",
+            "제59조의2(종교중립의 의무)"
+          ],
+          [
+            "a62468b6a1882e9fbacdc8ec639769711f61a05efec04ae4992f8599fd8efa2b",
+            "국가공무원법",
+            "제57조(복종의 의무)"
+          ],
+          [
+            "b3e2e8076202bac1771c5082a115471c1da37eb132babca1c017e01d48c01482",
+            "국가공무원법",
+            "제55조(선서)"
+          ],
+          [
+            "db0cb27ec60f3f92bd4d08e5b484cec8c90f583576e551e20c03f00e463428bb",
+            "국가공무원법",
+            "제63조(품위 유지의 의무)"
+          ],
+          [
+            "ded9877d9a01c304132820b85f5b55263884623f906efe61bff9c9acbaba4dc3",
+            "국가공무원법",
+            "제60조(비밀 엄수의 의무)"
+          ],
+          [
+            "df24bd69067b8a02c2e480cae9573f590d5c98587c9e2007822df330a373bdf3",
+            "국가공무원법",
+            "제65조(정치 운동의 금지)"
+          ],
+          [
+            "f46fcdd9d4c30013b7074ac22ce098f568175cf55473e7927a22ee7063d3a604",
+            "국가공무원법",
+            "제66조(집단 행위의 금지)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "공무원의 의무는 성실, 복종, 직장 이탈 금지, 친절·공정, 종교중립, 비밀 엄수, 청렴, 품위 유지, 영리 업무·겸직 금지, 정치 운동 금지, 집단 행위 금지 등이에요. 취임할 때 선서도 해요(국가공무원법 제55조~제66조).",
+        "kind": "summary",
+        "rule_id": "office:duties-both",
+        "evidence": [
+          [
+            "1031db3b61ae32d8eb2f60a9d8fc200a974087b171937f664320d1cd99c916ea",
+            "지방공무원법",
+            "제47조(복무 선서)"
+          ],
+          [
+            "1cdd5b514c177cf52cab3ae575d135f891cb720fd3aa7f446e62d31ea7689ab1",
+            "국가공무원법",
+            "제59조(친절ㆍ공정의 의무)"
+          ],
+          [
+            "298dbbea11cd316dbbf84ed8e2a7882d1f54656d0827cb5d046bbd2a41667231",
+            "국가공무원법",
+            "제56조(성실 의무)"
+          ],
+          [
+            "36d40ca0c9b1200a587decb6f10a74ae9ec87219072d808a1c6cc7d99588b310",
+            "국가공무원법",
+            "제64조(영리 업무 및 겸직 금지)"
+          ],
+          [
+            "85fac74c7e7a047ffdd403dd4db894c3cca27f6b201fe63e65161dc068ff9b0e",
+            "국가공무원법",
+            "제62조(외국 정부의 영예 등을 받을 경우)"
+          ],
+          [
+            "8f8ffa0e9a962beba7f337ace78262aa243906df9f24f333221a189d725dddec",
+            "국가공무원법",
+            "제58조(직장 이탈 금지)"
+          ],
+          [
+            "9dfe208b321a715f0c2081492c1f78e8d9cf7f379d305f95e98c877f9d33cdd0",
+            "국가공무원법",
+            "제61조(청렴의 의무)"
+          ],
+          [
+            "a10805e9bbf980e3d0bbdba166175184d71deee65bef20c09bacd5035783c8ea",
+            "국가공무원법",
+            "제59조의2(종교중립의 의무)"
+          ],
+          [
+            "a62468b6a1882e9fbacdc8ec639769711f61a05efec04ae4992f8599fd8efa2b",
+            "국가공무원법",
+            "제57조(복종의 의무)"
+          ],
+          [
+            "b3e2e8076202bac1771c5082a115471c1da37eb132babca1c017e01d48c01482",
+            "국가공무원법",
+            "제55조(선서)"
+          ],
+          [
+            "db0cb27ec60f3f92bd4d08e5b484cec8c90f583576e551e20c03f00e463428bb",
+            "국가공무원법",
+            "제63조(품위 유지의 의무)"
+          ],
+          [
+            "ded9877d9a01c304132820b85f5b55263884623f906efe61bff9c9acbaba4dc3",
+            "국가공무원법",
+            "제60조(비밀 엄수의 의무)"
+          ],
+          [
+            "df24bd69067b8a02c2e480cae9573f590d5c98587c9e2007822df330a373bdf3",
+            "국가공무원법",
+            "제65조(정치 운동의 금지)"
+          ],
+          [
+            "f46fcdd9d4c30013b7074ac22ce098f568175cf55473e7927a22ee7063d3a604",
+            "국가공무원법",
+            "제66조(집단 행위의 금지)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "q27",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "공무원의 의무는 성실, 복종, 직장 이탈 금지, 친절·공정, 종교중립, 비밀 엄수, 청렴, 품위 유지, 영리 업무·겸직 금지, 정치 운동 금지, 집단 행위 금지 등이에요. 취임할 때 선서도 해요(국가공무원법 제55조~제66조).",
+        "kind": "summary",
+        "rule_id": "office:duties-both",
+        "evidence": [
+          [
+            "1031db3b61ae32d8eb2f60a9d8fc200a974087b171937f664320d1cd99c916ea",
+            "지방공무원법",
+            "제47조(복무 선서)"
+          ],
+          [
+            "1cdd5b514c177cf52cab3ae575d135f891cb720fd3aa7f446e62d31ea7689ab1",
+            "국가공무원법",
+            "제59조(친절ㆍ공정의 의무)"
+          ],
+          [
+            "298dbbea11cd316dbbf84ed8e2a7882d1f54656d0827cb5d046bbd2a41667231",
+            "국가공무원법",
+            "제56조(성실 의무)"
+          ],
+          [
+            "36d40ca0c9b1200a587decb6f10a74ae9ec87219072d808a1c6cc7d99588b310",
+            "국가공무원법",
+            "제64조(영리 업무 및 겸직 금지)"
+          ],
+          [
+            "85fac74c7e7a047ffdd403dd4db894c3cca27f6b201fe63e65161dc068ff9b0e",
+            "국가공무원법",
+            "제62조(외국 정부의 영예 등을 받을 경우)"
+          ],
+          [
+            "8f8ffa0e9a962beba7f337ace78262aa243906df9f24f333221a189d725dddec",
+            "국가공무원법",
+            "제58조(직장 이탈 금지)"
+          ],
+          [
+            "9dfe208b321a715f0c2081492c1f78e8d9cf7f379d305f95e98c877f9d33cdd0",
+            "국가공무원법",
+            "제61조(청렴의 의무)"
+          ],
+          [
+            "a10805e9bbf980e3d0bbdba166175184d71deee65bef20c09bacd5035783c8ea",
+            "국가공무원법",
+            "제59조의2(종교중립의 의무)"
+          ],
+          [
+            "a62468b6a1882e9fbacdc8ec639769711f61a05efec04ae4992f8599fd8efa2b",
+            "국가공무원법",
+            "제57조(복종의 의무)"
+          ],
+          [
+            "b3e2e8076202bac1771c5082a115471c1da37eb132babca1c017e01d48c01482",
+            "국가공무원법",
+            "제55조(선서)"
+          ],
+          [
+            "db0cb27ec60f3f92bd4d08e5b484cec8c90f583576e551e20c03f00e463428bb",
+            "국가공무원법",
+            "제63조(품위 유지의 의무)"
+          ],
+          [
+            "ded9877d9a01c304132820b85f5b55263884623f906efe61bff9c9acbaba4dc3",
+            "국가공무원법",
+            "제60조(비밀 엄수의 의무)"
+          ],
+          [
+            "df24bd69067b8a02c2e480cae9573f590d5c98587c9e2007822df330a373bdf3",
+            "국가공무원법",
+            "제65조(정치 운동의 금지)"
+          ],
+          [
+            "f46fcdd9d4c30013b7074ac22ce098f568175cf55473e7927a22ee7063d3a604",
+            "국가공무원법",
+            "제66조(집단 행위의 금지)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "공무원의 의무는 성실, 복종, 직장 이탈 금지, 친절·공정, 종교중립, 비밀 엄수, 청렴, 품위 유지, 영리 업무·겸직 금지, 정치 운동 금지, 집단 행위 금지 등이에요. 취임할 때 선서도 해요(국가공무원법 제55조~제66조).",
+        "kind": "summary",
+        "rule_id": "office:duties-both",
+        "evidence": [
+          [
+            "1031db3b61ae32d8eb2f60a9d8fc200a974087b171937f664320d1cd99c916ea",
+            "지방공무원법",
+            "제47조(복무 선서)"
+          ],
+          [
+            "1cdd5b514c177cf52cab3ae575d135f891cb720fd3aa7f446e62d31ea7689ab1",
+            "국가공무원법",
+            "제59조(친절ㆍ공정의 의무)"
+          ],
+          [
+            "298dbbea11cd316dbbf84ed8e2a7882d1f54656d0827cb5d046bbd2a41667231",
+            "국가공무원법",
+            "제56조(성실 의무)"
+          ],
+          [
+            "36d40ca0c9b1200a587decb6f10a74ae9ec87219072d808a1c6cc7d99588b310",
+            "국가공무원법",
+            "제64조(영리 업무 및 겸직 금지)"
+          ],
+          [
+            "85fac74c7e7a047ffdd403dd4db894c3cca27f6b201fe63e65161dc068ff9b0e",
+            "국가공무원법",
+            "제62조(외국 정부의 영예 등을 받을 경우)"
+          ],
+          [
+            "8f8ffa0e9a962beba7f337ace78262aa243906df9f24f333221a189d725dddec",
+            "국가공무원법",
+            "제58조(직장 이탈 금지)"
+          ],
+          [
+            "9dfe208b321a715f0c2081492c1f78e8d9cf7f379d305f95e98c877f9d33cdd0",
+            "국가공무원법",
+            "제61조(청렴의 의무)"
+          ],
+          [
+            "a10805e9bbf980e3d0bbdba166175184d71deee65bef20c09bacd5035783c8ea",
+            "국가공무원법",
+            "제59조의2(종교중립의 의무)"
+          ],
+          [
+            "a62468b6a1882e9fbacdc8ec639769711f61a05efec04ae4992f8599fd8efa2b",
+            "국가공무원법",
+            "제57조(복종의 의무)"
+          ],
+          [
+            "b3e2e8076202bac1771c5082a115471c1da37eb132babca1c017e01d48c01482",
+            "국가공무원법",
+            "제55조(선서)"
+          ],
+          [
+            "db0cb27ec60f3f92bd4d08e5b484cec8c90f583576e551e20c03f00e463428bb",
+            "국가공무원법",
+            "제63조(품위 유지의 의무)"
+          ],
+          [
+            "ded9877d9a01c304132820b85f5b55263884623f906efe61bff9c9acbaba4dc3",
+            "국가공무원법",
+            "제60조(비밀 엄수의 의무)"
+          ],
+          [
+            "df24bd69067b8a02c2e480cae9573f590d5c98587c9e2007822df330a373bdf3",
+            "국가공무원법",
+            "제65조(정치 운동의 금지)"
+          ],
+          [
+            "f46fcdd9d4c30013b7074ac22ce098f568175cf55473e7927a22ee7063d3a604",
+            "국가공무원법",
+            "제66조(집단 행위의 금지)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "q28",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "공무원의 의무는 성실, 복종, 직장 이탈 금지, 친절·공정, 종교중립, 비밀 엄수, 청렴, 품위 유지, 영리 업무·겸직 금지, 정치 운동 금지, 집단 행위 금지 등이에요. 취임할 때 선서도 해요(지방공무원법 제47조~제58조).",
+        "kind": "summary",
+        "rule_id": "office:duties-local",
+        "evidence": [
+          [
+            "02f75c6dce62316b989e090dba7f593c880bae5e6908ebe89ea6b729d34afb13",
+            "지방공무원법",
+            "제49조(복종의 의무)"
+          ],
+          [
+            "1031db3b61ae32d8eb2f60a9d8fc200a974087b171937f664320d1cd99c916ea",
+            "지방공무원법",
+            "제47조(복무 선서)"
+          ],
+          [
+            "20c0dc90e5c678e3cbc69ced66f2f1dbebf1eeae0ce5543794ab01491442c927",
+            "지방공무원법",
+            "제50조(직장이탈 금지)"
+          ],
+          [
+            "35740a394c580fcde69864dd764a076af236b5bb54706159e37133a159c2c2d2",
+            "지방공무원법",
+            "제51조(친절ㆍ공정의 의무)"
+          ],
+          [
+            "6dc11414cb1802b61b2ccedef153edf506919e2d9009a2b8d01a1a0386ec0668",
+            "지방공무원법",
+            "제58조(집단행위의 금지)"
+          ],
+          [
+            "738bc7c878a9127504d239eb04eb2c50c5f18720e39eef2e1c0b0a9a3f7932ac",
+            "지방공무원법",
+            "제51조의2(종교중립의 의무)"
+          ],
+          [
+            "8eda1a55e7e2c585a029e1665f5ecf5cc75832423c8db4c532b40417ef87ccff",
+            "지방공무원법",
+            "제55조(품위 유지의 의무)"
+          ],
+          [
+            "b500e7b42087378f7826a56139566766813c5949c5649c20891cdff2d48e6662",
+            "지방공무원법",
+            "제52조(비밀 엄수의 의무)"
+          ],
+          [
+            "bc14c04fc34d4f18aff02891f1df7aae26a3309e0259696981c03032837e9210",
+            "지방공무원법",
+            "제54조(외국정부의 영예 등을 받을 경우)"
+          ],
+          [
+            "d085ec325180816aa444d1b8c2a779f6a4cf827f640d26d4429bdae8aefecca9",
+            "지방공무원법",
+            "제57조(정치운동의 금지)"
+          ],
+          [
+            "d5be129e33ecfc34fc98198292d10486dc4e3989225a0cb12b664ebbde43cc42",
+            "지방공무원법",
+            "제53조(청렴의 의무)"
+          ],
+          [
+            "e725071f2166803fa141085726a27325b8e132b970a9f0b021522ec7650b1908",
+            "지방공무원법",
+            "제48조(성실의 의무)"
+          ],
+          [
+            "f2cbfe969060581230abc02f013de948274280b55fc03c170154256d1066b34c",
+            "지방공무원법",
+            "제56조(영리 업무 및 겸직 금지)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "공무원의 의무는 성실, 복종, 직장 이탈 금지, 친절·공정, 종교중립, 비밀 엄수, 청렴, 품위 유지, 영리 업무·겸직 금지, 정치 운동 금지, 집단 행위 금지 등이에요. 취임할 때 선서도 해요(지방공무원법 제47조~제58조).",
+        "kind": "summary",
+        "rule_id": "office:duties-local",
+        "evidence": [
+          [
+            "02f75c6dce62316b989e090dba7f593c880bae5e6908ebe89ea6b729d34afb13",
+            "지방공무원법",
+            "제49조(복종의 의무)"
+          ],
+          [
+            "1031db3b61ae32d8eb2f60a9d8fc200a974087b171937f664320d1cd99c916ea",
+            "지방공무원법",
+            "제47조(복무 선서)"
+          ],
+          [
+            "20c0dc90e5c678e3cbc69ced66f2f1dbebf1eeae0ce5543794ab01491442c927",
+            "지방공무원법",
+            "제50조(직장이탈 금지)"
+          ],
+          [
+            "35740a394c580fcde69864dd764a076af236b5bb54706159e37133a159c2c2d2",
+            "지방공무원법",
+            "제51조(친절ㆍ공정의 의무)"
+          ],
+          [
+            "6dc11414cb1802b61b2ccedef153edf506919e2d9009a2b8d01a1a0386ec0668",
+            "지방공무원법",
+            "제58조(집단행위의 금지)"
+          ],
+          [
+            "738bc7c878a9127504d239eb04eb2c50c5f18720e39eef2e1c0b0a9a3f7932ac",
+            "지방공무원법",
+            "제51조의2(종교중립의 의무)"
+          ],
+          [
+            "8eda1a55e7e2c585a029e1665f5ecf5cc75832423c8db4c532b40417ef87ccff",
+            "지방공무원법",
+            "제55조(품위 유지의 의무)"
+          ],
+          [
+            "b500e7b42087378f7826a56139566766813c5949c5649c20891cdff2d48e6662",
+            "지방공무원법",
+            "제52조(비밀 엄수의 의무)"
+          ],
+          [
+            "bc14c04fc34d4f18aff02891f1df7aae26a3309e0259696981c03032837e9210",
+            "지방공무원법",
+            "제54조(외국정부의 영예 등을 받을 경우)"
+          ],
+          [
+            "d085ec325180816aa444d1b8c2a779f6a4cf827f640d26d4429bdae8aefecca9",
+            "지방공무원법",
+            "제57조(정치운동의 금지)"
+          ],
+          [
+            "d5be129e33ecfc34fc98198292d10486dc4e3989225a0cb12b664ebbde43cc42",
+            "지방공무원법",
+            "제53조(청렴의 의무)"
+          ],
+          [
+            "e725071f2166803fa141085726a27325b8e132b970a9f0b021522ec7650b1908",
+            "지방공무원법",
+            "제48조(성실의 의무)"
+          ],
+          [
+            "f2cbfe969060581230abc02f013de948274280b55fc03c170154256d1066b34c",
+            "지방공무원법",
+            "제56조(영리 업무 및 겸직 금지)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "q29",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "복무 의무를 위반하거나 직무를 태만히 하면 징계 의결을 요구해야 하고, 그 결과에 따라 징계처분을 해요(국가공무원법 제78조).",
+        "kind": "summary",
+        "rule_id": "office:violation-both",
+        "evidence": [
+          [
+            "15a61bb46b1f87ffe8539520237b40531b7fac12c12181aa056b402ebef7e148",
+            "국가공무원법",
+            "제78조(징계 사유)"
+          ],
+          [
+            "8248c2d6a8eeffab50509510090de016ee9994688d694e2b7740f96399174b83",
+            "국가공무원법",
+            "제79조(징계의 종류)"
+          ],
+          [
+            "9b5de781de856bfa63be1bb60cda28d38c6ee72e07440c549e06dda7db18ab48",
+            "지방공무원법",
+            "제69조(징계사유)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "복무 의무를 위반하거나 직무를 태만히 하면 징계 의결을 요구해야 하고, 그 결과에 따라 징계처분을 해요(국가공무원법 제78조).",
+        "kind": "summary",
+        "rule_id": "office:violation-both",
+        "evidence": [
+          [
+            "15a61bb46b1f87ffe8539520237b40531b7fac12c12181aa056b402ebef7e148",
+            "국가공무원법",
+            "제78조(징계 사유)"
+          ],
+          [
+            "8248c2d6a8eeffab50509510090de016ee9994688d694e2b7740f96399174b83",
+            "국가공무원법",
+            "제79조(징계의 종류)"
+          ],
+          [
+            "9b5de781de856bfa63be1bb60cda28d38c6ee72e07440c549e06dda7db18ab48",
+            "지방공무원법",
+            "제69조(징계사유)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "q30",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "기록물 관리 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:records-retention-detail",
+        "evidence": [
+          [
+            "dc5c6c190300dd2718412565b317c0f057d87f8cb15482bff5b15248408f02b4",
+            "공공기록물 관리에 관한 법률 시행령",
+            "제26조(보존기간)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "기록물 관리 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:records-retention-detail",
+        "evidence": [
+          [
+            "dc5c6c190300dd2718412565b317c0f057d87f8cb15482bff5b15248408f02b4",
+            "공공기록물 관리에 관한 법률 시행령",
+            "제26조(보존기간)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "q31",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "기록물 관리 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:records-retention-detail",
+        "evidence": [
+          [
+            "dc5c6c190300dd2718412565b317c0f057d87f8cb15482bff5b15248408f02b4",
+            "공공기록물 관리에 관한 법률 시행령",
+            "제26조(보존기간)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "기록물 관리 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:records-retention-detail",
+        "evidence": [
+          [
+            "dc5c6c190300dd2718412565b317c0f057d87f8cb15482bff5b15248408f02b4",
+            "공공기록물 관리에 관한 법률 시행령",
+            "제26조(보존기간)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "q32",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "예비군 훈련은 법령에 따른 소집·훈련 참가로 공가 사유예요.",
+        "kind": "summary",
+        "rule_id": "office:official-leave-both",
+        "evidence": [
+          [
+            "eecb31971afab00985837016646f92af78dbf916f0fa4cb2641547af62409ad9",
+            "지방공무원 복무규정",
+            "제7조의6(공가)"
+          ],
+          [
+            "f459b93473b181b1dc9333903d8ccc97f66930fc7954fabe074a2ff8628d3533",
+            "국가공무원 복무규정",
+            "제19조(공가)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "예비군 훈련은 법령에 따른 소집·훈련 참가로 공가 사유예요.",
+        "kind": "summary",
+        "rule_id": "office:official-leave-both",
+        "evidence": [
+          [
+            "eecb31971afab00985837016646f92af78dbf916f0fa4cb2641547af62409ad9",
+            "지방공무원 복무규정",
+            "제7조의6(공가)"
+          ],
+          [
+            "f459b93473b181b1dc9333903d8ccc97f66930fc7954fabe074a2ff8628d3533",
+            "국가공무원 복무규정",
+            "제19조(공가)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "q33",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "기록물 관리 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:records-retention-detail",
+        "evidence": [
+          [
+            "dc5c6c190300dd2718412565b317c0f057d87f8cb15482bff5b15248408f02b4",
+            "공공기록물 관리에 관한 법률 시행령",
+            "제26조(보존기간)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "기록물 관리 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:records-retention-detail",
+        "evidence": [
+          [
+            "dc5c6c190300dd2718412565b317c0f057d87f8cb15482bff5b15248408f02b4",
+            "공공기록물 관리에 관한 법률 시행령",
+            "제26조(보존기간)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "q34",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "기록물 관리 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:records-retention",
+        "evidence": [
+          [
+            "444542263c8854dc080ba966cec7a26d09f8a4273116a7ddbc97d10c76fee7e6",
+            "공공기록물 관리에 관한 법률",
+            "제19조(기록물의 관리 등)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "기록물 관리 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:records-retention",
+        "evidence": [
+          [
+            "444542263c8854dc080ba966cec7a26d09f8a4273116a7ddbc97d10c76fee7e6",
+            "공공기록물 관리에 관한 법률",
+            "제19조(기록물의 관리 등)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "q35",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "결재를 받기 전에 보조·보좌기관의 검토를 받아요. 다른 부서 업무와 관련될 때는 협조도 받아야 해요. 모든 건에 같은 협조 결재선을 넣는다는 뜻은 아니에요.",
+        "kind": "summary",
+        "rule_id": "office:documents-drafting",
+        "evidence": [
+          [
+            "0cb82062deedfd535308952112435684d9127ec9a8a4438e70402878c90051de",
+            "행정업무의 운영 및 혁신에 관한 규정",
+            "제2조(적용범위)"
+          ],
+          [
+            "146254004bd0149ba5c9559a7eee3b6d9b183d0888f891701ac7d8bf1f3728a5",
+            "행정업무의 운영 및 혁신에 관한 규정",
+            "제9조(문서의 검토 및 협조)"
+          ],
+          [
+            "351e56ba273c95f3a8b7833134cdb74099e1844e4f9862fdeb5acbc7ce97ba27",
+            "행정업무의 운영 및 혁신에 관한 규정",
+            "제10조(문서의 결재)"
+          ],
+          [
+            "3bd7b36c5bf9396bcae024b49edf346a405a45d2226d761b44fb26fd293a15e7",
+            "행정업무의 운영 및 혁신에 관한 규정",
+            "제11조(문서의 등록 등)"
+          ],
+          [
+            "9a98fdad8ad11876eaf9120e7993fbe253a9fb89d8d63e00dd38f7e30c643f2e",
+            "행정업무의 운영 및 혁신에 관한 규정",
+            "제6조(문서의 성립 및 효력 발생)"
+          ],
+          [
+            "b45c6a5f9fddc45be4d05930ba33beac3f13186b12772b91924a0a841608e847",
+            "행정업무의 운영 및 혁신에 관한 규정",
+            "제8조(문서의 기안)"
+          ],
+          [
+            "bc54d5004f4d06c59944e8ec92b2cff9db136940358d2a21188da4f54d35ee35",
+            "행정업무의 운영 및 혁신에 관한 규정",
+            "제12조(시행문의 작성)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "결재를 받기 전에 보조·보좌기관의 검토를 받아요. 다른 부서 업무와 관련될 때는 협조도 받아야 해요. 모든 건에 같은 협조 결재선을 넣는다는 뜻은 아니에요.",
+        "kind": "summary",
+        "rule_id": "office:documents-drafting",
+        "evidence": [
+          [
+            "0cb82062deedfd535308952112435684d9127ec9a8a4438e70402878c90051de",
+            "행정업무의 운영 및 혁신에 관한 규정",
+            "제2조(적용범위)"
+          ],
+          [
+            "146254004bd0149ba5c9559a7eee3b6d9b183d0888f891701ac7d8bf1f3728a5",
+            "행정업무의 운영 및 혁신에 관한 규정",
+            "제9조(문서의 검토 및 협조)"
+          ],
+          [
+            "351e56ba273c95f3a8b7833134cdb74099e1844e4f9862fdeb5acbc7ce97ba27",
+            "행정업무의 운영 및 혁신에 관한 규정",
+            "제10조(문서의 결재)"
+          ],
+          [
+            "3bd7b36c5bf9396bcae024b49edf346a405a45d2226d761b44fb26fd293a15e7",
+            "행정업무의 운영 및 혁신에 관한 규정",
+            "제11조(문서의 등록 등)"
+          ],
+          [
+            "9a98fdad8ad11876eaf9120e7993fbe253a9fb89d8d63e00dd38f7e30c643f2e",
+            "행정업무의 운영 및 혁신에 관한 규정",
+            "제6조(문서의 성립 및 효력 발생)"
+          ],
+          [
+            "b45c6a5f9fddc45be4d05930ba33beac3f13186b12772b91924a0a841608e847",
+            "행정업무의 운영 및 혁신에 관한 규정",
+            "제8조(문서의 기안)"
+          ],
+          [
+            "bc54d5004f4d06c59944e8ec92b2cff9db136940358d2a21188da4f54d35ee35",
+            "행정업무의 운영 및 혁신에 관한 규정",
+            "제12조(시행문의 작성)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "q36",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "금지되는 영리 업무에 해당하지 않는 다른 직무도 겸하려면 소속 기관장의 사전 허가를 받아야 해요. 허가는 담당 직무 수행에 지장이 없는 경우로 한정돼요.",
+        "kind": "summary",
+        "rule_id": "service-v70-side_job",
+        "evidence": [
+          [
+            "66d99077842d39bb41c3c36211f1977f55ed2e31c2ffdbf18e6185a21c777230",
+            "국가공무원 복무규정",
+            "제26조(겸직 허가)"
+          ],
+          [
+            "a454f317a1a87afbfb26d58cd040a6d3ac05aa4b1dbb75633deca3f37d02dc44",
+            "국가공무원 복무규정",
+            "제25조(영리 업무의 금지)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "금지되는 영리 업무에 해당하지 않는 다른 직무도 겸하려면 소속 기관장의 사전 허가를 받아야 해요. 허가는 담당 직무 수행에 지장이 없는 경우로 한정돼요.",
+        "kind": "summary",
+        "rule_id": "service-v70-side_job",
+        "evidence": [
+          [
+            "66d99077842d39bb41c3c36211f1977f55ed2e31c2ffdbf18e6185a21c777230",
+            "국가공무원 복무규정",
+            "제26조(겸직 허가)"
+          ],
+          [
+            "a454f317a1a87afbfb26d58cd040a6d3ac05aa4b1dbb75633deca3f37d02dc44",
+            "국가공무원 복무규정",
+            "제25조(영리 업무의 금지)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "q37",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "자료를 더 확인해야 답할 수 있어요",
+        "kind": "unavailable",
+        "rule_id": null,
+        "evidence": [],
+        "ai_used": false
+      },
+      "public": {
+        "title": "자료를 더 확인해야 답할 수 있어요",
+        "kind": "unavailable",
+        "rule_id": null,
+        "evidence": [],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "q38",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "인사혁신처 제도 안내·FAQ에서 관련 설명을 찾았어요",
+        "kind": "reference",
+        "rule_id": null,
+        "evidence": [],
+        "ai_used": false
+      },
+      "public": {
+        "title": "인사혁신처 제도 안내·FAQ에서 관련 설명을 찾았어요",
+        "kind": "reference",
+        "rule_id": null,
+        "evidence": [],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "q39",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "찾은 자료를 차례로 확인해요",
+        "kind": "extract",
+        "rule_id": null,
+        "evidence": [
+          [
+            "88a565bed1145e6cfb5db10f8185ea7c9b5ee9b6c363db8123ac022c7861cbac",
+            "지방공무원 복무규정",
+            "제7조의6(공가)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "찾은 자료를 차례로 확인해요",
+        "kind": "extract",
+        "rule_id": null,
+        "evidence": [
+          [
+            "88a565bed1145e6cfb5db10f8185ea7c9b5ee9b6c363db8123ac022c7861cbac",
+            "지방공무원 복무규정",
+            "제7조의6(공가)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "q40",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "혈액관리법에 따른 헌혈에 참가할 때는 공가로 신청하세요.",
+        "kind": "summary",
+        "rule_id": "blood-leave",
+        "evidence": [
+          [
+            "88a565bed1145e6cfb5db10f8185ea7c9b5ee9b6c363db8123ac022c7861cbac",
+            "지방공무원 복무규정",
+            "제7조의6(공가)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "혈액관리법에 따른 헌혈에 참가할 때는 공가로 신청하세요.",
+        "kind": "summary",
+        "rule_id": "blood-leave",
+        "evidence": [
+          [
+            "88a565bed1145e6cfb5db10f8185ea7c9b5ee9b6c363db8123ac022c7861cbac",
+            "지방공무원 복무규정",
+            "제7조의6(공가)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "q41",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "공가는 병역 소집·훈련, 국회·법원 등 소환, 투표, 승진·전직시험, 원격지 전보 부임, 건강검진, 헌혈, 외국어능력시험, 국가·지방 주요 행사, 천재지변 등으로 출근이 불가능할 때, 노조 교섭·대의원회·회계감사, 검역 예방접종, 제1급감염병 예방접종·검사 때 받아요.",
+        "kind": "summary",
+        "rule_id": "office:official-leave-both",
+        "evidence": [
+          [
+            "eecb31971afab00985837016646f92af78dbf916f0fa4cb2641547af62409ad9",
+            "지방공무원 복무규정",
+            "제7조의6(공가)"
+          ],
+          [
+            "f459b93473b181b1dc9333903d8ccc97f66930fc7954fabe074a2ff8628d3533",
+            "국가공무원 복무규정",
+            "제19조(공가)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "공가는 병역 소집·훈련, 국회·법원 등 소환, 투표, 승진·전직시험, 원격지 전보 부임, 건강검진, 헌혈, 외국어능력시험, 국가·지방 주요 행사, 천재지변 등으로 출근이 불가능할 때, 노조 교섭·대의원회·회계감사, 검역 예방접종, 제1급감염병 예방접종·검사 때 받아요.",
+        "kind": "summary",
+        "rule_id": "office:official-leave-both",
+        "evidence": [
+          [
+            "eecb31971afab00985837016646f92af78dbf916f0fa4cb2641547af62409ad9",
+            "지방공무원 복무규정",
+            "제7조의6(공가)"
+          ],
+          [
+            "f459b93473b181b1dc9333903d8ccc97f66930fc7954fabe074a2ff8628d3533",
+            "국가공무원 복무규정",
+            "제19조(공가)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "q42",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "가족돌봄휴가를 신청할 수 있는 상황이에요. 돌봄 대상·사유와 유급 조건을 확인하세요.",
+        "kind": "summary",
+        "rule_id": "family-care-situation",
+        "evidence": [
+          [
+            "21d5f034c4c657e13735af53a0f1ce01505505af28be35d7d3b312a66fe0181a",
+            "지방공무원 복무규정",
+            "제7조의7(특별휴가)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "가족돌봄휴가를 신청할 수 있는 상황이에요. 돌봄 대상·사유와 유급 조건을 확인하세요.",
+        "kind": "summary",
+        "rule_id": "family-care-situation",
+        "evidence": [
+          [
+            "21d5f034c4c657e13735af53a0f1ce01505505af28be35d7d3b312a66fe0181a",
+            "지방공무원 복무규정",
+            "제7조의7(특별휴가)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "q43",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "가족돌봄휴가를 신청할 수 있는 상황이에요. 돌봄 대상·사유와 유급 조건을 확인하세요.",
+        "kind": "summary",
+        "rule_id": "family-care-situation",
+        "evidence": [
+          [
+            "21d5f034c4c657e13735af53a0f1ce01505505af28be35d7d3b312a66fe0181a",
+            "지방공무원 복무규정",
+            "제7조의7(특별휴가)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "가족돌봄휴가를 신청할 수 있는 상황이에요. 돌봄 대상·사유와 유급 조건을 확인하세요.",
+        "kind": "summary",
+        "rule_id": "family-care-situation",
+        "evidence": [
+          [
+            "21d5f034c4c657e13735af53a0f1ce01505505af28be35d7d3b312a66fe0181a",
+            "지방공무원 복무규정",
+            "제7조의7(특별휴가)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "q44",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "가족돌봄휴가를 신청할 수 있는 상황이에요. 돌봄 대상·사유와 유급 조건을 확인하세요.",
+        "kind": "summary",
+        "rule_id": "family-care-situation",
+        "evidence": [
+          [
+            "21d5f034c4c657e13735af53a0f1ce01505505af28be35d7d3b312a66fe0181a",
+            "지방공무원 복무규정",
+            "제7조의7(특별휴가)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "가족돌봄휴가를 신청할 수 있는 상황이에요. 돌봄 대상·사유와 유급 조건을 확인하세요.",
+        "kind": "summary",
+        "rule_id": "family-care-situation",
+        "evidence": [
+          [
+            "21d5f034c4c657e13735af53a0f1ce01505505af28be35d7d3b312a66fe0181a",
+            "지방공무원 복무규정",
+            "제7조의7(특별휴가)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "q45",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "본인의 질병이나 부상으로 직무를 수행할 수 없다면 병가로 신청하세요.",
+        "kind": "summary",
+        "rule_id": "sick-leave",
+        "evidence": [
+          [
+            "5157d7899f3b59df4ff3aee140a143dc7d901ce9b8d4ef1aceefa9ff5f50a015",
+            "지방공무원 복무규정",
+            "제7조의5(병가)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "본인의 질병이나 부상으로 직무를 수행할 수 없다면 병가로 신청하세요.",
+        "kind": "summary",
+        "rule_id": "sick-leave",
+        "evidence": [
+          [
+            "5157d7899f3b59df4ff3aee140a143dc7d901ce9b8d4ef1aceefa9ff5f50a015",
+            "지방공무원 복무규정",
+            "제7조의5(병가)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "q46",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "본인의 질병이나 부상으로 직무를 수행할 수 없다면 병가로 신청하세요.",
+        "kind": "summary",
+        "rule_id": "sick-leave",
+        "evidence": [
+          [
+            "5157d7899f3b59df4ff3aee140a143dc7d901ce9b8d4ef1aceefa9ff5f50a015",
+            "지방공무원 복무규정",
+            "제7조의5(병가)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "본인의 질병이나 부상으로 직무를 수행할 수 없다면 병가로 신청하세요.",
+        "kind": "summary",
+        "rule_id": "sick-leave",
+        "evidence": [
+          [
+            "5157d7899f3b59df4ff3aee140a143dc7d901ce9b8d4ef1aceefa9ff5f50a015",
+            "지방공무원 복무규정",
+            "제7조의5(병가)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "q47",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "본인 결혼은 5일, 자녀 결혼은 1일이에요.",
+        "kind": "summary",
+        "rule_id": "extended-occasion",
+        "evidence": [
+          [
+            "38d5095d2162c76f63f1313a5d239ddd51a2cf35bfc09dc9592a77436be6f9b1",
+            "지방공무원 복무규정",
+            "별표 1 경조사 휴가일수표"
+          ],
+          [
+            "d0729ac9f46986b5f2c1d0c3b58fe4913449276030f9240026935d686c4135d4",
+            "국가공무원 복무규정",
+            "별표 2 경조사별 휴가 일수표"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "본인 결혼은 5일, 자녀 결혼은 1일이에요.",
+        "kind": "summary",
+        "rule_id": "extended-occasion",
+        "evidence": [
+          [
+            "38d5095d2162c76f63f1313a5d239ddd51a2cf35bfc09dc9592a77436be6f9b1",
+            "지방공무원 복무규정",
+            "별표 1 경조사 휴가일수표"
+          ],
+          [
+            "d0729ac9f46986b5f2c1d0c3b58fe4913449276030f9240026935d686c4135d4",
+            "국가공무원 복무규정",
+            "별표 2 경조사별 휴가 일수표"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "q48",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "혈액관리법에 따른 헌혈에 참가할 때는 공가로 신청하세요.",
+        "kind": "summary",
+        "rule_id": "blood-leave",
+        "evidence": [
+          [
+            "88a565bed1145e6cfb5db10f8185ea7c9b5ee9b6c363db8123ac022c7861cbac",
+            "지방공무원 복무규정",
+            "제7조의6(공가)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "혈액관리법에 따른 헌혈에 참가할 때는 공가로 신청하세요.",
+        "kind": "summary",
+        "rule_id": "blood-leave",
+        "evidence": [
+          [
+            "88a565bed1145e6cfb5db10f8185ea7c9b5ee9b6c363db8123ac022c7861cbac",
+            "지방공무원 복무규정",
+            "제7조의6(공가)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "q49",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "가족돌봄휴가를 신청할 수 있는 상황이에요. 돌봄 대상·사유와 유급 조건을 확인하세요.",
+        "kind": "summary",
+        "rule_id": "family-care-situation",
+        "evidence": [
+          [
+            "21d5f034c4c657e13735af53a0f1ce01505505af28be35d7d3b312a66fe0181a",
+            "지방공무원 복무규정",
+            "제7조의7(특별휴가)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "가족돌봄휴가를 신청할 수 있는 상황이에요. 돌봄 대상·사유와 유급 조건을 확인하세요.",
+        "kind": "summary",
+        "rule_id": "family-care-situation",
+        "evidence": [
+          [
+            "21d5f034c4c657e13735af53a0f1ce01505505af28be35d7d3b312a66fe0181a",
+            "지방공무원 복무규정",
+            "제7조의7(특별휴가)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "q50",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "상황을 조금만 더 알려주세요",
+        "kind": "clarification",
+        "rule_id": null,
+        "evidence": [],
+        "ai_used": false
+      },
+      "public": {
+        "title": "상황을 조금만 더 알려주세요",
+        "kind": "clarification",
+        "rule_id": null,
+        "evidence": [],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "q51",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "상황을 조금만 더 알려주세요",
+        "kind": "clarification",
+        "rule_id": null,
+        "evidence": [],
+        "ai_used": false
+      },
+      "public": {
+        "title": "상황을 조금만 더 알려주세요",
+        "kind": "clarification",
+        "rule_id": null,
+        "evidence": [],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "q52",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "찾은 자료를 차례로 확인해요",
+        "kind": "extract",
+        "rule_id": null,
+        "evidence": [
+          [
+            "90737b912ccb405ae6b25ec4403f4637397fce412ce5c2029a96ee295f659576",
+            "국가공무원 복무·징계 관련 예규",
+            "제2장 근무사항의 관리 > 3. 근무상황부 등의 기재"
+          ],
+          [
+            "b90d82c888f3a3c6f2bef15d6731cb1b52c7e8d2c44b3deff6c053b1db947af5",
+            "국가공무원 복무·징계 관련 예규",
+            "제2장 근무사항의 관리 > 2. 개인별 근무상황부의 비치․관리"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "찾은 자료를 차례로 확인해요",
+        "kind": "extract",
+        "rule_id": null,
+        "evidence": [
+          [
+            "90737b912ccb405ae6b25ec4403f4637397fce412ce5c2029a96ee295f659576",
+            "국가공무원 복무·징계 관련 예규",
+            "제2장 근무사항의 관리 > 3. 근무상황부 등의 기재"
+          ],
+          [
+            "b90d82c888f3a3c6f2bef15d6731cb1b52c7e8d2c44b3deff6c053b1db947af5",
+            "국가공무원 복무·징계 관련 예규",
+            "제2장 근무사항의 관리 > 2. 개인별 근무상황부의 비치․관리"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "q53",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "자료를 더 확인해야 답할 수 있어요",
+        "kind": "unavailable",
+        "rule_id": null,
+        "evidence": [],
+        "ai_used": false
+      },
+      "public": {
+        "title": "자료를 더 확인해야 답할 수 있어요",
+        "kind": "unavailable",
+        "rule_id": null,
+        "evidence": [],
+        "ai_used": false
+      }
+    }
+  ],
+  "summary": {
+    "all_pass": true,
+    "passed": 53,
+    "failed": 0,
+    "total": 53
+  }
+}
