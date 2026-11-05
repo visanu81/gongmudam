@@ -16,7 +16,8 @@ ROOT = Path(__file__).resolve().parents[1]
 def register(db_path=None, *, apply=False, base=None, collection='office-20261025', name=None):
     if collection not in office.COLLECTIONS:
         raise ValueError('Unsupported office collection')
-    source_base = Path(base) if base is not None else office.BASE
+    # Stored source paths must stay valid wherever the app is started from.
+    source_base = Path(base).resolve() if base is not None else office.BASE
     target = Path(db_path or ROOT / 'data/folders.db').resolve()
     if not target.is_file():
         raise ValueError('Existing database is required')

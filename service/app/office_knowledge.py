@@ -25,12 +25,13 @@ LEAVE_TYPES_BASE = Path(__file__).resolve().parents[1] / 'reference_data/office-
 ABSENCE_BASE = Path(__file__).resolve().parents[1] / 'reference_data/office-absence-20261105'
 KINDS_BASE = Path(__file__).resolve().parents[1] / 'reference_data/office-kinds-20261105'
 DUTIES_BASE = Path(__file__).resolve().parents[1] / 'reference_data/office-duties-20261106'
+BONUS_BASE = Path(__file__).resolve().parents[1] / 'reference_data/office-bonus-20261106'
 COLLECTIONS = frozenset({'office-20261025', 'office-extra-20261025', 'office-documents-20261026', 'office-goods-20261026',
                          'office-contract-20261104', 'office-expense-20261104',
                          'office-national-contract-20261104', 'office-advance-20261104',
                          'office-advance-rule-20261104', 'office-leave-types-20261105',
                          'office-absence-20261105', 'office-kinds-20261105',
-                         'office-duties-20261106'})
+                         'office-duties-20261106', 'office-bonus-20261106'})
 _COLLECTION_ROOTS = {
     'office-20261025': 'BASE',
     'office-extra-20261025': 'EXTRA_BASE',
@@ -45,6 +46,7 @@ _COLLECTION_ROOTS = {
     'office-absence-20261105': 'ABSENCE_BASE',
     'office-kinds-20261105': 'KINDS_BASE',
     'office-duties-20261106': 'DUTIES_BASE',
+    'office-bonus-20261106': 'BONUS_BASE',
 }
 router = APIRouter(prefix='/api/office-sources', tags=['서무 공통 근거'])
 LABELS = {'privacy': '개인정보 처리', 'records': '기록물 관리',
@@ -60,7 +62,8 @@ LABELS = {'privacy': '개인정보 처리', 'records': '기록물 관리',
           'discipline': '공무원 징계',
           'flex': '유연근무',
           'duties': '공무원의 의무',
-          'promotion': '승진소요최저연수'}
+          'promotion': '승진소요최저연수',
+          'bonus': '성과상여금 지급 시기'}
 
 
 def flat(value):
@@ -305,6 +308,8 @@ def documents(query, docs, today):
             return [], plan.get('reason') or '수의계약 조문(국가계약법 시행령 제26조·지방계약법 시행령 제25조)이 아직 등록되지 않았어요.', plan
         if 'national_contract' in plan['topics'] and plan.get('reason'):
             return [], plan['reason'], plan
+        if 'bonus' in plan['topics']:
+            return [], '성과상여금 지침 쪽(공무원보수 등의 업무지침, 지방공무원보수업무 등 처리지침)이 아직 등록되지 않았어요.', plan
         if set(plan['topics']) & {'duties', 'promotion'}:
             return [], '공무원 의무·승진 조문(국가공무원법·지방공무원법, 임용령)이 아직 등록되지 않았어요.', plan
         if set(plan['topics']) & {'discipline', 'flex'}:
@@ -400,7 +405,7 @@ def summary(query, reply):
         branches.sort(key=lambda b: b['label'] != plan['lead'])
     title = ' · '.join(LABELS[t] for t in plan['topics']) + ' — 먼저 확인할 내용'
     # These topics answer one question, so its first sentence is the conclusion.
-    if set(plan['topics']) & {'absence', 'leave_types', 'discipline', 'flex', 'duties', 'promotion'}:
+    if set(plan['topics']) & {'absence', 'leave_types', 'discipline', 'flex', 'duties', 'promotion', 'bonus'}:
         title = plan.get('title') or branches[0]['items'][0]['text'].split(' 근거는 ')[0]
     return dict(kind='summary', title=title,
                 rule_id='office:' + '+'.join(plan['rules']), branches=branches,

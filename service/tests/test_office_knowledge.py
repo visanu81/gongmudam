@@ -1,4 +1,5 @@
 """Office-pack retrieval, citation, and add-only registration regressions."""
+import os
 import json
 import shutil
 import sqlite3
@@ -218,6 +219,26 @@ class OfficeKnowledgeTest(unittest.TestCase):
                     self.assertEqual(connection.execute('SELECT * FROM business_rows').fetchall(), [('row1', 'preserve')])
                     self.assertEqual(connection.execute('SELECT payload FROM libraries WHERE id="personal"').fetchone()[0], '{"private":"keep"}')
                     self.assertEqual(connection.execute('SELECT enabled FROM knowledge_sources WHERE id="business-source"').fetchone()[0], 0)
+
+    def test_registration_stores_absolute_paths_for_a_relative_base(self):
+        # A relative path would make every registered source read as changed once the app starts elsewhere.
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            pack = self.make_temp_pack(root)
+            db = root / 'folders.db'
+            self.make_db(db)
+            before = os.getcwd()
+            os.chdir(root)
+            try:
+                with patch.object(office_knowledge, 'BASE', pack):
+                    register_office_pack.register(db, apply=True, base=Path(pack.name))
+            finally:
+                os.chdir(before)
+            with closing(sqlite3.connect(db)) as connection:
+                payloads = connection.execute('SELECT payload FROM knowledge_sources WHERE id != "business-source"').fetchall()
+            self.assertEqual(len(payloads), len(self.manifest))
+            for (payload,) in payloads:
+                self.assertTrue(Path(json.loads(payload)['path']).is_absolute())
 
     def test_registration_rejects_tampered_source_metadata_without_database_changes(self):
         with tempfile.TemporaryDirectory() as folder:

@@ -67,8 +67,25 @@ class DutiesTest(unittest.TestCase):
                              ('5급 승진 소요연수', '5급에서 승진하려면 3년 이상'), ('지방공무원 3급 승진 몇 년 걸려?', '3급에서 승진하려면 2년 이상')):
             with self.subTest(query=query):
                 self.assertIn(title, self.ask(query)['knowledge']['tree']['title'])
-        # 공무원임용령 제31조 does not list 3급.
-        self.assertNotIn('3급에서', self.ask('국가공무원 3급 승진 몇 년 걸려?')['knowledge']['tree']['title'])
+
+    def test_a_rank_only_the_local_decree_lists_is_said_plainly(self):
+        national = self.ask('국가공무원 3급 승진 몇 년 걸려?')['knowledge']['tree']['title']
+        self.assertIn('제31조 일반직 기간에는 3급이 없어요', national)
+        self.assertNotIn('3급에서', national)
+        both = self.ask('3급 승진 몇 년 걸려?')['knowledge']['tree']['title']
+        self.assertIn('지방공무원은 3급에서 2년 이상', both)
+        self.assertIn('국가공무원 3급은 공무원임용령 제31조 일반직 기간에 없어요', both)
+        self.assertIn('2급이 없어요', self.ask('국가공무원 2급 승진 몇 년 걸려?')['knowledge']['tree']['title'])
+        self.assertIn('2급에서 승진하려면 2년 이상', self.ask('지방공무원 2급 승진 몇 년 걸려?')['knowledge']['tree']['title'])
+
+    def test_a_rank_being_reached_counts_from_the_rank_below(self):
+        title = self.ask('6급으로 승진 몇 년 걸려?')['knowledge']['tree']['title']
+        self.assertIn('6급으로 승진하려면 7급에서 1년 이상', title)
+        self.assertIn('5급으로 승진하려면 6급에서 2년 이상', self.ask('6급에서 5급으로 승진 몇 년 걸려?')['knowledge']['tree']['title'])
+
+    def test_a_postal_rank_is_not_read_as_a_general_rank(self):
+        title = self.ask('우정4급 승진 몇 년 걸려?')['knowledge']['tree']['title']
+        self.assertNotIn('4급에서 승진하려면 3년', title)
 
     def test_each_law_is_used_only_for_its_own_body(self):
         for query, titles in (('지방공무원 의무 알려줘', {'지방공무원법'}), ('국가공무원 승진 최저연수', {'공무원임용령'})):

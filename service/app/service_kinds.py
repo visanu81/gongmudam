@@ -1,5 +1,5 @@
 """Offline routing for "which kinds are there": 공가 사유, 징계 종류·효력, 유연근무 유형,
-공무원의 의무, 복무 위반, 승진소요최저연수.
+공무원의 의무, 복무 위반, 승진소요최저연수, 성과상여금 지급 시기.
 
 공가 and 징계 are the same in the national and local rules, so they do not wait
 for the body. 유연근무 types come from the 인사혁신처 예규, which binds national
@@ -30,7 +30,10 @@ VIOLATION_ASK = re.compile(r'(?:복무|의무).{0,6}(?:위반|어기|어겼).{0,
 VIOLATION_CASE = ('음주', '성비위', '금품', '겸직', '시효', '감경', '기준')
 PROMOTION_ASK = re.compile(r'승진.{0,10}(?:최저연수|소요|몇년|얼마나|기간|연수|걸려|걸리)')
 PROMOTION_CASE = ('시험', '가산', '심사', '명부', '후보', '점수', '호봉', '수당', '교육')
-PROMOTION_YEARS = {'3': '2년', '4': '3년', '5': '3년', '6': '2년', '7': '1년', '8': '1년', '9': '1년'}
+PROMOTION_YEARS = {4: '3년', 5: '3년', 6: '2년', 7: '1년', 8: '1년', 9: '1년'}
+BONUS_ASK = re.compile(r'(?:성과상여금|성과급).{0,8}(?:언제|시기|지급일|지급날|몇월)|언제.{0,6}(?:성과상여금|성과급)')
+BONUS_CASE = ('퇴직', '휴직', '복직', '파견', '전입', '징계', '신규', '입대', '연봉', '이의', '평가', '등급', '얼마', '재배분')
+BONUS_TITLE = '지침에 정해진 지급 달은 없고, 기관이 2월 말까지 세우는 지급계획에서 지급시기를 정해요. 소속 기관의 계획을 확인하세요.'
 # Named in 복무규정 제19조 제1호~제4호 and read there, not guessed from the word alone.
 PUBLIC_LEAVE_CASES = (('예비군', '예비군 훈련은 법령에 따른 소집·훈련 참가로 공가 사유예요.'),
                       ('민방위', '민방위 훈련도 법령에 따른 훈련 참가이면 공가 사유예요.'),
@@ -46,6 +49,25 @@ def side_of(q, c):
     if local == national:
         local, national = '지방공무원' in c, '국가공무원' in c
     return 'both' if local == national else 'local' if local else 'national'
+
+
+def promotion_title(q, side):
+    """The named rank as the conclusion. 3급 and above are in 지방공무원 임용령 제33조 only."""
+    if '우정' in q:  # 우정직 has its own periods, read in the answer.
+        return None
+    target = re.search(r'([1-8])급으로', q)
+    named = re.search(r'([2-9])급', q)
+    rank = int(target[1]) + 1 if target else int(named[1]) if named else None
+    if rank is None:
+        return None
+    start = f'{target[1]}급으로 승진하려면 {rank}급에서' if target else f'{rank}급에서 승진하려면'
+    if rank >= 4:
+        return f'{start} {PROMOTION_YEARS[rank]} 이상 해당 계급에 재직해야 해요.'
+    if side == 'local':
+        return f'{start} 2년 이상 해당 계급에 재직해야 해요.'
+    if side == 'national':
+        return f'공무원임용령 제31조 일반직 기간에는 {rank}급이 없어요. 4·5급 3년, 6급 2년, 7·8·9급 1년 이상이 정해져 있어요.'
+    return f'지방공무원은 {rank}급에서 2년 이상 재직해야 해요. 국가공무원 {rank}급은 공무원임용령 제31조 일반직 기간에 없어요.'
 
 
 def classify(query):
@@ -64,10 +86,9 @@ def classify(query):
     if VIOLATION_ASK.search(q) and not any(t in q for t in VIOLATION_CASE):
         return dict(topics=['duties'], rules=[f'violation-{side}'])
     if PROMOTION_ASK.search(q) and not any(t in q for t in PROMOTION_CASE):
-        rank = re.search(r'([3-9])급', q)
-        years = PROMOTION_YEARS.get(rank[1]) if rank and not (rank[1] == '3' and side == 'national') else None
-        title = f'{rank[1]}급에서 승진하려면 {years} 이상 해당 계급에 재직해야 해요.' if years else None
-        return dict(topics=['promotion'], rules=[f'promotion-{side}'], title=title)
+        return dict(topics=['promotion'], rules=[f'promotion-{side}'], title=promotion_title(q, side))
+    if BONUS_ASK.search(q) and not any(t in q for t in BONUS_CASE):
+        return dict(topics=['bonus'], rules=[f'bonus-timing-{side}'], title=BONUS_TITLE)
     if OFFICIAL_ASK.search(q) and not any(t in q for t in OFFICIAL_CASE):
         return dict(topics=['leave_types'], rules=[f'official-leave-{side}'])
     if not any(t in q for t in DISCIPLINE_CASE):
