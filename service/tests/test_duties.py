@@ -84,8 +84,10 @@ class DutiesTest(unittest.TestCase):
         self.assertIn('5급으로 승진하려면 6급에서 2년 이상', self.ask('6급에서 5급으로 승진 몇 년 걸려?')['knowledge']['tree']['title'])
 
     def test_a_postal_rank_is_not_read_as_a_general_rank(self):
-        title = self.ask('우정4급 승진 몇 년 걸려?')['knowledge']['tree']['title']
-        self.assertNotIn('4급에서 승진하려면 3년', title)
+        response = self.ask('우정4급 승진 몇 년 걸려?')
+        self.assertIn('우정4급에서 승진하려면 1년 6개월 이상', response['knowledge']['tree']['title'])
+        self.assertEqual(response['knowledge']['tree']['rule_id'], 'office:promotion-national')
+        self.assertIn('우정2급에서 승진하려면 3년 이상', self.ask('우정2급 승진 소요연수')['knowledge']['tree']['title'])
 
     def test_each_law_is_used_only_for_its_own_body(self):
         for query, titles in (('지방공무원 의무 알려줘', {'지방공무원법'}), ('국가공무원 승진 최저연수', {'공무원임용령'})):

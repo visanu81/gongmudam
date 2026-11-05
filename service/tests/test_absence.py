@@ -84,7 +84,7 @@ class AbsenceTest(unittest.TestCase):
             self.assertTrue(all(h['official']['title'] == title for h in evidence), query)
 
     def test_pay_procedure_and_other_bodies_keep_their_routes(self):
-        for query in ('휴직하면 월급 나와?', '질병휴직하면 봉급 얼마나 받아?\n업무환경: 국가공무원', '휴직 신청 어떻게 해?',
+        for query in ('휴직하면 월급 나와?', '질병휴직하면 봉급 얼마나 받아?\n업무환경: 국가공무원', '휴직 연장 신청 어떻게 해?',
                       '지방공무원 연가 재직기간에 일반 휴직기간을 넣나요?', '교원 육아휴직 기간', '경찰공무원 휴직 종류',
                       '육아시간 몇 시간?', '가족돌봄휴가 며칠?', '휴직자 호봉 승급은?'):
             with self.subTest(query=query):

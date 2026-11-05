@@ -31,6 +31,7 @@ VIOLATION_CASE = ('음주', '성비위', '금품', '겸직', '시효', '감경',
 PROMOTION_ASK = re.compile(r'승진.{0,10}(?:최저연수|소요|몇년|얼마나|기간|연수|걸려|걸리)')
 PROMOTION_CASE = ('시험', '가산', '심사', '명부', '후보', '점수', '호봉', '수당', '교육')
 PROMOTION_YEARS = {4: '3년', 5: '3년', 6: '2년', 7: '1년', 8: '1년', 9: '1년'}
+POSTAL_YEARS = {2: '3년', 3: '1년 6개월', 4: '1년 6개월', 5: '1년 6개월', 6: '1년 6개월', 7: '1년', 8: '1년', 9: '1년'}
 BONUS_ASK = re.compile(r'(?:성과상여금|성과급).{0,8}(?:언제|시기|지급일|지급날|몇월)|언제.{0,6}(?:성과상여금|성과급)')
 BONUS_CASE = ('퇴직', '휴직', '복직', '파견', '전입', '징계', '신규', '입대', '연봉', '이의', '평가', '등급', '얼마', '재배분')
 BONUS_TITLE = '지침에 정해진 지급 달은 없고, 기관이 2월 말까지 세우는 지급계획에서 지급시기를 정해요. 소속 기관의 계획을 확인하세요.'
@@ -53,8 +54,9 @@ def side_of(q, c):
 
 def promotion_title(q, side):
     """The named rank as the conclusion. 3급 and above are in 지방공무원 임용령 제33조 only."""
-    if '우정' in q:  # 우정직 has its own periods, read in the answer.
-        return None
+    if '우정' in q:  # 우정직 has its own periods in 공무원임용령 제31조 제1항 제2호.
+        postal = re.search(r'우정([2-9])급', q)
+        return f'우정{postal[1]}급에서 승진하려면 {POSTAL_YEARS[int(postal[1])]} 이상 해당 계급에 재직해야 해요.' if postal else None
     target = re.search(r'([1-8])급으로', q)
     named = re.search(r'([2-9])급', q)
     rank = int(target[1]) + 1 if target else int(named[1]) if named else None
@@ -86,7 +88,7 @@ def classify(query):
     if VIOLATION_ASK.search(q) and not any(t in q for t in VIOLATION_CASE):
         return dict(topics=['duties'], rules=[f'violation-{side}'])
     if PROMOTION_ASK.search(q) and not any(t in q for t in PROMOTION_CASE):
-        return dict(topics=['promotion'], rules=[f'promotion-{side}'], title=promotion_title(q, side))
+        return dict(topics=['promotion'], rules=['promotion-national' if '우정' in q else f'promotion-{side}'], title=promotion_title(q, side))
     if BONUS_ASK.search(q) and not any(t in q for t in BONUS_CASE):
         return dict(topics=['bonus'], rules=[f'bonus-timing-{side}'], title=BONUS_TITLE)
     if OFFICIAL_ASK.search(q) and not any(t in q for t in OFFICIAL_CASE):
