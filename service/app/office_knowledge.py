@@ -22,10 +22,12 @@ NATIONAL_CONTRACT_BASE = Path(__file__).resolve().parents[1] / 'reference_data/o
 ADVANCE_BASE = Path(__file__).resolve().parents[1] / 'reference_data/office-advance-20261104'
 ADVANCE_RULE_BASE = Path(__file__).resolve().parents[1] / 'reference_data/office-advance-rule-20261104'
 LEAVE_TYPES_BASE = Path(__file__).resolve().parents[1] / 'reference_data/office-leave-types-20261105'
+ABSENCE_BASE = Path(__file__).resolve().parents[1] / 'reference_data/office-absence-20261105'
 COLLECTIONS = frozenset({'office-20261025', 'office-extra-20261025', 'office-documents-20261026', 'office-goods-20261026',
                          'office-contract-20261104', 'office-expense-20261104',
                          'office-national-contract-20261104', 'office-advance-20261104',
-                         'office-advance-rule-20261104', 'office-leave-types-20261105'})
+                         'office-advance-rule-20261104', 'office-leave-types-20261105',
+                         'office-absence-20261105'})
 _COLLECTION_ROOTS = {
     'office-20261025': 'BASE',
     'office-extra-20261025': 'EXTRA_BASE',
@@ -37,6 +39,7 @@ _COLLECTION_ROOTS = {
     'office-advance-20261104': 'ADVANCE_BASE',
     'office-advance-rule-20261104': 'ADVANCE_RULE_BASE',
     'office-leave-types-20261105': 'LEAVE_TYPES_BASE',
+    'office-absence-20261105': 'ABSENCE_BASE',
 }
 router = APIRouter(prefix='/api/office-sources', tags=['서무 공통 근거'])
 LABELS = {'privacy': '개인정보 처리', 'records': '기록물 관리',
@@ -47,7 +50,8 @@ LABELS = {'privacy': '개인정보 처리', 'records': '기록물 관리',
           'expense': '업무추진비 집행내역 공개',
           'national_contract': '국가기관 계약 견적·검사·대가 지급',
           'advance': '선금 지급 대상·한도·기한',
-          'leave_types': '공무원 휴가 종류'}
+          'leave_types': '공무원 휴가 종류',
+          'absence': '공무원 휴직'}
 
 
 def flat(value):
@@ -227,6 +231,10 @@ def classify(query):
                 generic_recipient_question and (not receipt or institution_specific)):
             rules = ['unsupported']
     if not topics:
+        from .absence import classify as classify_absence
+        absence = classify_absence(query)
+        if absence:
+            return absence
         from .leave_types import classify as classify_leave_types
         leave_types = classify_leave_types(query)
         if leave_types:
@@ -282,6 +290,8 @@ def documents(query, docs, today):
             return [], plan.get('reason') or '수의계약 조문(국가계약법 시행령 제26조·지방계약법 시행령 제25조)이 아직 등록되지 않았어요.', plan
         if 'national_contract' in plan['topics'] and plan.get('reason'):
             return [], plan['reason'], plan
+        if 'absence' in plan['topics']:
+            return [], '휴직 조문(국가공무원법 제71~73조·지방공무원법 제63~65조)이 아직 등록되지 않았어요.', plan
         if 'leave_types' in plan['topics']:
             return [], '휴가의 종류를 정한 조문(국가공무원 복무규정 제14조·지방공무원 복무규정 제6조)이 아직 등록되지 않았어요.', plan
         if 'advance' in plan['topics']:
@@ -363,10 +373,17 @@ def summary(query, reply):
                     return None
                 items.append(dict(text=item['text'], ref=ref, support_quotes=quotes))
             branches.append(dict(label=branch['label'], items=items))
+    # A question about one kind shows that kind, not every other kind in the law.
+    if plan.get('only'):
+        branches = [b for name in plan['only'] for b in branches if b['label'] == name]
     # The branch the question asks about comes first, as the conclusion.
     if plan.get('lead'):
         branches.sort(key=lambda b: b['label'] != plan['lead'])
-    return dict(kind='summary', title=' · '.join(LABELS[t] for t in plan['topics']) + ' — 먼저 확인할 내용',
+    title = ' · '.join(LABELS[t] for t in plan['topics']) + ' — 먼저 확인할 내용'
+    # These topics answer one question, so its first sentence is the conclusion.
+    if set(plan['topics']) & {'absence', 'leave_types'}:
+        title = branches[0]['items'][0]['text'].split(' 근거는 ')[0]
+    return dict(kind='summary', title=title,
                 rule_id='office:' + '+'.join(plan['rules']), branches=branches,
                 reviewed_source_sha256s=[h['sha256'] for h in evidence],
                 note='보관한 공식 조문의 확인된 요약입니다. 기관별 서식·보존기간·담당자 절차는 추가 확인하고, 최신 확인일과 시행일은 원문에서 확인하세요.')

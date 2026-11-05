@@ -61,6 +61,9 @@ class LeaveTypesTest(unittest.TestCase):
                         for quote in item['support_quotes']:
                             self.assertIn(quote, reply['evidence'][item['ref'] - 1]['text'])
 
+    def test_the_title_is_the_conclusion(self):
+        self.assertIn('연가, 병가, 공가, 특별휴가', self.ask('휴가 종류 알려줘')['knowledge']['tree']['title'])
+
     def test_each_decree_is_used_only_for_its_own_body(self):
         reply = self.ask('지방공무원 휴가 종류는?')['knowledge']
         self.assertTrue(all(h['official']['title'] == '지방공무원 복무규정' for h in reply['evidence']))
