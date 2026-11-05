@@ -1,0 +1,1169 @@
+{
+  "today": "2026-11-05",
+  "cases": [
+    {
+      "id": "absence-1",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "자녀를 키우거나 임신·출산으로 쉬는 휴직은 자녀 1명에 3년 이내예요.",
+        "kind": "summary",
+        "rule_id": "office:absence-both",
+        "evidence": [
+          [
+            "220856e03ab9a9d62db9234a43bb7ca53d5f882921694286100f5c7bc94a238b",
+            "지방공무원법",
+            "제64조(휴직기간)"
+          ],
+          [
+            "2a24fbe0133097aaa54481675c59802859bbf3e20b740b3b9fa10d0182bc13c6",
+            "지방공무원법",
+            "제63조(휴직)"
+          ],
+          [
+            "33c74ac8f59f836f44915f37f10dd2fab2ea28806f0a2dcfebc40944fde9c7e0",
+            "국가공무원법",
+            "제73조(휴직의 효력)"
+          ],
+          [
+            "5a5f02e9ff48e1b8a91f371e38ef34c44a68298eb8d5e90eb5134ed068d57c3c",
+            "지방공무원법",
+            "제65조(휴직의 효력)"
+          ],
+          [
+            "ba023337d53466f0d49ff60aa87462c17a23c321fb31ef2088770625affd39d6",
+            "국가공무원법",
+            "제71조(휴직)"
+          ],
+          [
+            "e2174574786abbf8b6a662030521230217b71e92c327773324666704ccb174ea",
+            "국가공무원법",
+            "제72조(휴직 기간)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "자녀를 키우거나 임신·출산으로 쉬는 휴직은 자녀 1명에 3년 이내예요.",
+        "kind": "summary",
+        "rule_id": "office:absence-both",
+        "evidence": [
+          [
+            "220856e03ab9a9d62db9234a43bb7ca53d5f882921694286100f5c7bc94a238b",
+            "지방공무원법",
+            "제64조(휴직기간)"
+          ],
+          [
+            "2a24fbe0133097aaa54481675c59802859bbf3e20b740b3b9fa10d0182bc13c6",
+            "지방공무원법",
+            "제63조(휴직)"
+          ],
+          [
+            "33c74ac8f59f836f44915f37f10dd2fab2ea28806f0a2dcfebc40944fde9c7e0",
+            "국가공무원법",
+            "제73조(휴직의 효력)"
+          ],
+          [
+            "5a5f02e9ff48e1b8a91f371e38ef34c44a68298eb8d5e90eb5134ed068d57c3c",
+            "지방공무원법",
+            "제65조(휴직의 효력)"
+          ],
+          [
+            "ba023337d53466f0d49ff60aa87462c17a23c321fb31ef2088770625affd39d6",
+            "국가공무원법",
+            "제71조(휴직)"
+          ],
+          [
+            "e2174574786abbf8b6a662030521230217b71e92c327773324666704ccb174ea",
+            "국가공무원법",
+            "제72조(휴직 기간)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "absence-2",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "자녀를 키우거나 임신·출산으로 쉬는 휴직은 자녀 1명에 3년 이내예요.",
+        "kind": "summary",
+        "rule_id": "office:absence-both",
+        "evidence": [
+          [
+            "220856e03ab9a9d62db9234a43bb7ca53d5f882921694286100f5c7bc94a238b",
+            "지방공무원법",
+            "제64조(휴직기간)"
+          ],
+          [
+            "2a24fbe0133097aaa54481675c59802859bbf3e20b740b3b9fa10d0182bc13c6",
+            "지방공무원법",
+            "제63조(휴직)"
+          ],
+          [
+            "33c74ac8f59f836f44915f37f10dd2fab2ea28806f0a2dcfebc40944fde9c7e0",
+            "국가공무원법",
+            "제73조(휴직의 효력)"
+          ],
+          [
+            "5a5f02e9ff48e1b8a91f371e38ef34c44a68298eb8d5e90eb5134ed068d57c3c",
+            "지방공무원법",
+            "제65조(휴직의 효력)"
+          ],
+          [
+            "ba023337d53466f0d49ff60aa87462c17a23c321fb31ef2088770625affd39d6",
+            "국가공무원법",
+            "제71조(휴직)"
+          ],
+          [
+            "e2174574786abbf8b6a662030521230217b71e92c327773324666704ccb174ea",
+            "국가공무원법",
+            "제72조(휴직 기간)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "자녀를 키우거나 임신·출산으로 쉬는 휴직은 자녀 1명에 3년 이내예요.",
+        "kind": "summary",
+        "rule_id": "office:absence-both",
+        "evidence": [
+          [
+            "220856e03ab9a9d62db9234a43bb7ca53d5f882921694286100f5c7bc94a238b",
+            "지방공무원법",
+            "제64조(휴직기간)"
+          ],
+          [
+            "2a24fbe0133097aaa54481675c59802859bbf3e20b740b3b9fa10d0182bc13c6",
+            "지방공무원법",
+            "제63조(휴직)"
+          ],
+          [
+            "33c74ac8f59f836f44915f37f10dd2fab2ea28806f0a2dcfebc40944fde9c7e0",
+            "국가공무원법",
+            "제73조(휴직의 효력)"
+          ],
+          [
+            "5a5f02e9ff48e1b8a91f371e38ef34c44a68298eb8d5e90eb5134ed068d57c3c",
+            "지방공무원법",
+            "제65조(휴직의 효력)"
+          ],
+          [
+            "ba023337d53466f0d49ff60aa87462c17a23c321fb31ef2088770625affd39d6",
+            "국가공무원법",
+            "제71조(휴직)"
+          ],
+          [
+            "e2174574786abbf8b6a662030521230217b71e92c327773324666704ccb174ea",
+            "국가공무원법",
+            "제72조(휴직 기간)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "absence-3",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "본인 의사와 상관없이 명하는 휴직은 질병, 병역, 생사불명, 법률상 의무 수행, 노조 전임이에요.",
+        "kind": "summary",
+        "rule_id": "office:absence-both",
+        "evidence": [
+          [
+            "220856e03ab9a9d62db9234a43bb7ca53d5f882921694286100f5c7bc94a238b",
+            "지방공무원법",
+            "제64조(휴직기간)"
+          ],
+          [
+            "2a24fbe0133097aaa54481675c59802859bbf3e20b740b3b9fa10d0182bc13c6",
+            "지방공무원법",
+            "제63조(휴직)"
+          ],
+          [
+            "33c74ac8f59f836f44915f37f10dd2fab2ea28806f0a2dcfebc40944fde9c7e0",
+            "국가공무원법",
+            "제73조(휴직의 효력)"
+          ],
+          [
+            "5a5f02e9ff48e1b8a91f371e38ef34c44a68298eb8d5e90eb5134ed068d57c3c",
+            "지방공무원법",
+            "제65조(휴직의 효력)"
+          ],
+          [
+            "ba023337d53466f0d49ff60aa87462c17a23c321fb31ef2088770625affd39d6",
+            "국가공무원법",
+            "제71조(휴직)"
+          ],
+          [
+            "e2174574786abbf8b6a662030521230217b71e92c327773324666704ccb174ea",
+            "국가공무원법",
+            "제72조(휴직 기간)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "본인 의사와 상관없이 명하는 휴직은 질병, 병역, 생사불명, 법률상 의무 수행, 노조 전임이에요.",
+        "kind": "summary",
+        "rule_id": "office:absence-both",
+        "evidence": [
+          [
+            "220856e03ab9a9d62db9234a43bb7ca53d5f882921694286100f5c7bc94a238b",
+            "지방공무원법",
+            "제64조(휴직기간)"
+          ],
+          [
+            "2a24fbe0133097aaa54481675c59802859bbf3e20b740b3b9fa10d0182bc13c6",
+            "지방공무원법",
+            "제63조(휴직)"
+          ],
+          [
+            "33c74ac8f59f836f44915f37f10dd2fab2ea28806f0a2dcfebc40944fde9c7e0",
+            "국가공무원법",
+            "제73조(휴직의 효력)"
+          ],
+          [
+            "5a5f02e9ff48e1b8a91f371e38ef34c44a68298eb8d5e90eb5134ed068d57c3c",
+            "지방공무원법",
+            "제65조(휴직의 효력)"
+          ],
+          [
+            "ba023337d53466f0d49ff60aa87462c17a23c321fb31ef2088770625affd39d6",
+            "국가공무원법",
+            "제71조(휴직)"
+          ],
+          [
+            "e2174574786abbf8b6a662030521230217b71e92c327773324666704ccb174ea",
+            "국가공무원법",
+            "제72조(휴직 기간)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "absence-4",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "질병 휴직은 1년 이내이고, 부득이하면 1년 더 연장할 수 있어요. 요양급여 대상인 질병·부상이면 3년 이내이고, 의학적 소견 등에 따라 2년 더 연장할 수 있어요.",
+        "kind": "summary",
+        "rule_id": "office:absence-both",
+        "evidence": [
+          [
+            "220856e03ab9a9d62db9234a43bb7ca53d5f882921694286100f5c7bc94a238b",
+            "지방공무원법",
+            "제64조(휴직기간)"
+          ],
+          [
+            "2a24fbe0133097aaa54481675c59802859bbf3e20b740b3b9fa10d0182bc13c6",
+            "지방공무원법",
+            "제63조(휴직)"
+          ],
+          [
+            "33c74ac8f59f836f44915f37f10dd2fab2ea28806f0a2dcfebc40944fde9c7e0",
+            "국가공무원법",
+            "제73조(휴직의 효력)"
+          ],
+          [
+            "5a5f02e9ff48e1b8a91f371e38ef34c44a68298eb8d5e90eb5134ed068d57c3c",
+            "지방공무원법",
+            "제65조(휴직의 효력)"
+          ],
+          [
+            "ba023337d53466f0d49ff60aa87462c17a23c321fb31ef2088770625affd39d6",
+            "국가공무원법",
+            "제71조(휴직)"
+          ],
+          [
+            "e2174574786abbf8b6a662030521230217b71e92c327773324666704ccb174ea",
+            "국가공무원법",
+            "제72조(휴직 기간)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "질병 휴직은 1년 이내이고, 부득이하면 1년 더 연장할 수 있어요. 요양급여 대상인 질병·부상이면 3년 이내이고, 의학적 소견 등에 따라 2년 더 연장할 수 있어요.",
+        "kind": "summary",
+        "rule_id": "office:absence-both",
+        "evidence": [
+          [
+            "220856e03ab9a9d62db9234a43bb7ca53d5f882921694286100f5c7bc94a238b",
+            "지방공무원법",
+            "제64조(휴직기간)"
+          ],
+          [
+            "2a24fbe0133097aaa54481675c59802859bbf3e20b740b3b9fa10d0182bc13c6",
+            "지방공무원법",
+            "제63조(휴직)"
+          ],
+          [
+            "33c74ac8f59f836f44915f37f10dd2fab2ea28806f0a2dcfebc40944fde9c7e0",
+            "국가공무원법",
+            "제73조(휴직의 효력)"
+          ],
+          [
+            "5a5f02e9ff48e1b8a91f371e38ef34c44a68298eb8d5e90eb5134ed068d57c3c",
+            "지방공무원법",
+            "제65조(휴직의 효력)"
+          ],
+          [
+            "ba023337d53466f0d49ff60aa87462c17a23c321fb31ef2088770625affd39d6",
+            "국가공무원법",
+            "제71조(휴직)"
+          ],
+          [
+            "e2174574786abbf8b6a662030521230217b71e92c327773324666704ccb174ea",
+            "국가공무원법",
+            "제72조(휴직 기간)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "absence-5",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "가족을 부양하거나 돌보는 휴직은 1년 이내이고, 재직 기간 중 총 3년을 넘을 수 없어요.",
+        "kind": "summary",
+        "rule_id": "office:absence-both",
+        "evidence": [
+          [
+            "220856e03ab9a9d62db9234a43bb7ca53d5f882921694286100f5c7bc94a238b",
+            "지방공무원법",
+            "제64조(휴직기간)"
+          ],
+          [
+            "2a24fbe0133097aaa54481675c59802859bbf3e20b740b3b9fa10d0182bc13c6",
+            "지방공무원법",
+            "제63조(휴직)"
+          ],
+          [
+            "33c74ac8f59f836f44915f37f10dd2fab2ea28806f0a2dcfebc40944fde9c7e0",
+            "국가공무원법",
+            "제73조(휴직의 효력)"
+          ],
+          [
+            "5a5f02e9ff48e1b8a91f371e38ef34c44a68298eb8d5e90eb5134ed068d57c3c",
+            "지방공무원법",
+            "제65조(휴직의 효력)"
+          ],
+          [
+            "ba023337d53466f0d49ff60aa87462c17a23c321fb31ef2088770625affd39d6",
+            "국가공무원법",
+            "제71조(휴직)"
+          ],
+          [
+            "e2174574786abbf8b6a662030521230217b71e92c327773324666704ccb174ea",
+            "국가공무원법",
+            "제72조(휴직 기간)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "가족을 부양하거나 돌보는 휴직은 1년 이내이고, 재직 기간 중 총 3년을 넘을 수 없어요.",
+        "kind": "summary",
+        "rule_id": "office:absence-both",
+        "evidence": [
+          [
+            "220856e03ab9a9d62db9234a43bb7ca53d5f882921694286100f5c7bc94a238b",
+            "지방공무원법",
+            "제64조(휴직기간)"
+          ],
+          [
+            "2a24fbe0133097aaa54481675c59802859bbf3e20b740b3b9fa10d0182bc13c6",
+            "지방공무원법",
+            "제63조(휴직)"
+          ],
+          [
+            "33c74ac8f59f836f44915f37f10dd2fab2ea28806f0a2dcfebc40944fde9c7e0",
+            "국가공무원법",
+            "제73조(휴직의 효력)"
+          ],
+          [
+            "5a5f02e9ff48e1b8a91f371e38ef34c44a68298eb8d5e90eb5134ed068d57c3c",
+            "지방공무원법",
+            "제65조(휴직의 효력)"
+          ],
+          [
+            "ba023337d53466f0d49ff60aa87462c17a23c321fb31ef2088770625affd39d6",
+            "국가공무원법",
+            "제71조(휴직)"
+          ],
+          [
+            "e2174574786abbf8b6a662030521230217b71e92c327773324666704ccb174ea",
+            "국가공무원법",
+            "제72조(휴직 기간)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "absence-6",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "유학 휴직은 3년 이내이고, 부득이하면 2년 더 연장할 수 있어요.",
+        "kind": "summary",
+        "rule_id": "office:absence-both",
+        "evidence": [
+          [
+            "220856e03ab9a9d62db9234a43bb7ca53d5f882921694286100f5c7bc94a238b",
+            "지방공무원법",
+            "제64조(휴직기간)"
+          ],
+          [
+            "2a24fbe0133097aaa54481675c59802859bbf3e20b740b3b9fa10d0182bc13c6",
+            "지방공무원법",
+            "제63조(휴직)"
+          ],
+          [
+            "33c74ac8f59f836f44915f37f10dd2fab2ea28806f0a2dcfebc40944fde9c7e0",
+            "국가공무원법",
+            "제73조(휴직의 효력)"
+          ],
+          [
+            "5a5f02e9ff48e1b8a91f371e38ef34c44a68298eb8d5e90eb5134ed068d57c3c",
+            "지방공무원법",
+            "제65조(휴직의 효력)"
+          ],
+          [
+            "ba023337d53466f0d49ff60aa87462c17a23c321fb31ef2088770625affd39d6",
+            "국가공무원법",
+            "제71조(휴직)"
+          ],
+          [
+            "e2174574786abbf8b6a662030521230217b71e92c327773324666704ccb174ea",
+            "국가공무원법",
+            "제72조(휴직 기간)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "유학 휴직은 3년 이내이고, 부득이하면 2년 더 연장할 수 있어요.",
+        "kind": "summary",
+        "rule_id": "office:absence-both",
+        "evidence": [
+          [
+            "220856e03ab9a9d62db9234a43bb7ca53d5f882921694286100f5c7bc94a238b",
+            "지방공무원법",
+            "제64조(휴직기간)"
+          ],
+          [
+            "2a24fbe0133097aaa54481675c59802859bbf3e20b740b3b9fa10d0182bc13c6",
+            "지방공무원법",
+            "제63조(휴직)"
+          ],
+          [
+            "33c74ac8f59f836f44915f37f10dd2fab2ea28806f0a2dcfebc40944fde9c7e0",
+            "국가공무원법",
+            "제73조(휴직의 효력)"
+          ],
+          [
+            "5a5f02e9ff48e1b8a91f371e38ef34c44a68298eb8d5e90eb5134ed068d57c3c",
+            "지방공무원법",
+            "제65조(휴직의 효력)"
+          ],
+          [
+            "ba023337d53466f0d49ff60aa87462c17a23c321fb31ef2088770625affd39d6",
+            "국가공무원법",
+            "제71조(휴직)"
+          ],
+          [
+            "e2174574786abbf8b6a662030521230217b71e92c327773324666704ccb174ea",
+            "국가공무원법",
+            "제72조(휴직 기간)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "absence-7",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "휴직 중에는 공무원 신분은 유지되지만 직무에는 종사하지 못해요.",
+        "kind": "summary",
+        "rule_id": "office:absence-both",
+        "evidence": [
+          [
+            "220856e03ab9a9d62db9234a43bb7ca53d5f882921694286100f5c7bc94a238b",
+            "지방공무원법",
+            "제64조(휴직기간)"
+          ],
+          [
+            "2a24fbe0133097aaa54481675c59802859bbf3e20b740b3b9fa10d0182bc13c6",
+            "지방공무원법",
+            "제63조(휴직)"
+          ],
+          [
+            "33c74ac8f59f836f44915f37f10dd2fab2ea28806f0a2dcfebc40944fde9c7e0",
+            "국가공무원법",
+            "제73조(휴직의 효력)"
+          ],
+          [
+            "5a5f02e9ff48e1b8a91f371e38ef34c44a68298eb8d5e90eb5134ed068d57c3c",
+            "지방공무원법",
+            "제65조(휴직의 효력)"
+          ],
+          [
+            "ba023337d53466f0d49ff60aa87462c17a23c321fb31ef2088770625affd39d6",
+            "국가공무원법",
+            "제71조(휴직)"
+          ],
+          [
+            "e2174574786abbf8b6a662030521230217b71e92c327773324666704ccb174ea",
+            "국가공무원법",
+            "제72조(휴직 기간)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "휴직 중에는 공무원 신분은 유지되지만 직무에는 종사하지 못해요.",
+        "kind": "summary",
+        "rule_id": "office:absence-both",
+        "evidence": [
+          [
+            "220856e03ab9a9d62db9234a43bb7ca53d5f882921694286100f5c7bc94a238b",
+            "지방공무원법",
+            "제64조(휴직기간)"
+          ],
+          [
+            "2a24fbe0133097aaa54481675c59802859bbf3e20b740b3b9fa10d0182bc13c6",
+            "지방공무원법",
+            "제63조(휴직)"
+          ],
+          [
+            "33c74ac8f59f836f44915f37f10dd2fab2ea28806f0a2dcfebc40944fde9c7e0",
+            "국가공무원법",
+            "제73조(휴직의 효력)"
+          ],
+          [
+            "5a5f02e9ff48e1b8a91f371e38ef34c44a68298eb8d5e90eb5134ed068d57c3c",
+            "지방공무원법",
+            "제65조(휴직의 효력)"
+          ],
+          [
+            "ba023337d53466f0d49ff60aa87462c17a23c321fb31ef2088770625affd39d6",
+            "국가공무원법",
+            "제71조(휴직)"
+          ],
+          [
+            "e2174574786abbf8b6a662030521230217b71e92c327773324666704ccb174ea",
+            "국가공무원법",
+            "제72조(휴직 기간)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "absence-8",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "본인 의사와 상관없이 명하는 휴직은 질병, 병역, 생사불명, 법률상 의무 수행, 노조 전임이에요.",
+        "kind": "summary",
+        "rule_id": "office:absence-both",
+        "evidence": [
+          [
+            "220856e03ab9a9d62db9234a43bb7ca53d5f882921694286100f5c7bc94a238b",
+            "지방공무원법",
+            "제64조(휴직기간)"
+          ],
+          [
+            "2a24fbe0133097aaa54481675c59802859bbf3e20b740b3b9fa10d0182bc13c6",
+            "지방공무원법",
+            "제63조(휴직)"
+          ],
+          [
+            "33c74ac8f59f836f44915f37f10dd2fab2ea28806f0a2dcfebc40944fde9c7e0",
+            "국가공무원법",
+            "제73조(휴직의 효력)"
+          ],
+          [
+            "5a5f02e9ff48e1b8a91f371e38ef34c44a68298eb8d5e90eb5134ed068d57c3c",
+            "지방공무원법",
+            "제65조(휴직의 효력)"
+          ],
+          [
+            "ba023337d53466f0d49ff60aa87462c17a23c321fb31ef2088770625affd39d6",
+            "국가공무원법",
+            "제71조(휴직)"
+          ],
+          [
+            "e2174574786abbf8b6a662030521230217b71e92c327773324666704ccb174ea",
+            "국가공무원법",
+            "제72조(휴직 기간)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "본인 의사와 상관없이 명하는 휴직은 질병, 병역, 생사불명, 법률상 의무 수행, 노조 전임이에요.",
+        "kind": "summary",
+        "rule_id": "office:absence-both",
+        "evidence": [
+          [
+            "220856e03ab9a9d62db9234a43bb7ca53d5f882921694286100f5c7bc94a238b",
+            "지방공무원법",
+            "제64조(휴직기간)"
+          ],
+          [
+            "2a24fbe0133097aaa54481675c59802859bbf3e20b740b3b9fa10d0182bc13c6",
+            "지방공무원법",
+            "제63조(휴직)"
+          ],
+          [
+            "33c74ac8f59f836f44915f37f10dd2fab2ea28806f0a2dcfebc40944fde9c7e0",
+            "국가공무원법",
+            "제73조(휴직의 효력)"
+          ],
+          [
+            "5a5f02e9ff48e1b8a91f371e38ef34c44a68298eb8d5e90eb5134ed068d57c3c",
+            "지방공무원법",
+            "제65조(휴직의 효력)"
+          ],
+          [
+            "ba023337d53466f0d49ff60aa87462c17a23c321fb31ef2088770625affd39d6",
+            "국가공무원법",
+            "제71조(휴직)"
+          ],
+          [
+            "e2174574786abbf8b6a662030521230217b71e92c327773324666704ccb174ea",
+            "국가공무원법",
+            "제72조(휴직 기간)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "absence-9",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "자녀를 키우거나 임신·출산으로 쉬는 휴직은 자녀 1명에 3년 이내예요.",
+        "kind": "summary",
+        "rule_id": "office:absence-local",
+        "evidence": [
+          [
+            "220856e03ab9a9d62db9234a43bb7ca53d5f882921694286100f5c7bc94a238b",
+            "지방공무원법",
+            "제64조(휴직기간)"
+          ],
+          [
+            "2a24fbe0133097aaa54481675c59802859bbf3e20b740b3b9fa10d0182bc13c6",
+            "지방공무원법",
+            "제63조(휴직)"
+          ],
+          [
+            "5a5f02e9ff48e1b8a91f371e38ef34c44a68298eb8d5e90eb5134ed068d57c3c",
+            "지방공무원법",
+            "제65조(휴직의 효력)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "자녀를 키우거나 임신·출산으로 쉬는 휴직은 자녀 1명에 3년 이내예요.",
+        "kind": "summary",
+        "rule_id": "office:absence-local",
+        "evidence": [
+          [
+            "220856e03ab9a9d62db9234a43bb7ca53d5f882921694286100f5c7bc94a238b",
+            "지방공무원법",
+            "제64조(휴직기간)"
+          ],
+          [
+            "2a24fbe0133097aaa54481675c59802859bbf3e20b740b3b9fa10d0182bc13c6",
+            "지방공무원법",
+            "제63조(휴직)"
+          ],
+          [
+            "5a5f02e9ff48e1b8a91f371e38ef34c44a68298eb8d5e90eb5134ed068d57c3c",
+            "지방공무원법",
+            "제65조(휴직의 효력)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "absence-10",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "본인 의사와 상관없이 명하는 휴직은 질병, 병역, 생사불명, 법률상 의무 수행, 노조 전임이에요.",
+        "kind": "summary",
+        "rule_id": "office:absence-national",
+        "evidence": [
+          [
+            "33c74ac8f59f836f44915f37f10dd2fab2ea28806f0a2dcfebc40944fde9c7e0",
+            "국가공무원법",
+            "제73조(휴직의 효력)"
+          ],
+          [
+            "ba023337d53466f0d49ff60aa87462c17a23c321fb31ef2088770625affd39d6",
+            "국가공무원법",
+            "제71조(휴직)"
+          ],
+          [
+            "e2174574786abbf8b6a662030521230217b71e92c327773324666704ccb174ea",
+            "국가공무원법",
+            "제72조(휴직 기간)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "본인 의사와 상관없이 명하는 휴직은 질병, 병역, 생사불명, 법률상 의무 수행, 노조 전임이에요.",
+        "kind": "summary",
+        "rule_id": "office:absence-national",
+        "evidence": [
+          [
+            "33c74ac8f59f836f44915f37f10dd2fab2ea28806f0a2dcfebc40944fde9c7e0",
+            "국가공무원법",
+            "제73조(휴직의 효력)"
+          ],
+          [
+            "ba023337d53466f0d49ff60aa87462c17a23c321fb31ef2088770625affd39d6",
+            "국가공무원법",
+            "제71조(휴직)"
+          ],
+          [
+            "e2174574786abbf8b6a662030521230217b71e92c327773324666704ccb174ea",
+            "국가공무원법",
+            "제72조(휴직 기간)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "absence-11",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "자녀를 키우거나 임신·출산으로 쉬는 휴직은 자녀 1명에 3년 이내예요.",
+        "kind": "summary",
+        "rule_id": "office:absence-national",
+        "evidence": [
+          [
+            "33c74ac8f59f836f44915f37f10dd2fab2ea28806f0a2dcfebc40944fde9c7e0",
+            "국가공무원법",
+            "제73조(휴직의 효력)"
+          ],
+          [
+            "ba023337d53466f0d49ff60aa87462c17a23c321fb31ef2088770625affd39d6",
+            "국가공무원법",
+            "제71조(휴직)"
+          ],
+          [
+            "e2174574786abbf8b6a662030521230217b71e92c327773324666704ccb174ea",
+            "국가공무원법",
+            "제72조(휴직 기간)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "자녀를 키우거나 임신·출산으로 쉬는 휴직은 자녀 1명에 3년 이내예요.",
+        "kind": "summary",
+        "rule_id": "office:absence-national",
+        "evidence": [
+          [
+            "33c74ac8f59f836f44915f37f10dd2fab2ea28806f0a2dcfebc40944fde9c7e0",
+            "국가공무원법",
+            "제73조(휴직의 효력)"
+          ],
+          [
+            "ba023337d53466f0d49ff60aa87462c17a23c321fb31ef2088770625affd39d6",
+            "국가공무원법",
+            "제71조(휴직)"
+          ],
+          [
+            "e2174574786abbf8b6a662030521230217b71e92c327773324666704ccb174ea",
+            "국가공무원법",
+            "제72조(휴직 기간)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "absence-12",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "자녀를 키우거나 임신·출산으로 쉬는 휴직은 자녀 1명에 3년 이내예요.",
+        "kind": "summary",
+        "rule_id": "office:absence-local",
+        "evidence": [
+          [
+            "220856e03ab9a9d62db9234a43bb7ca53d5f882921694286100f5c7bc94a238b",
+            "지방공무원법",
+            "제64조(휴직기간)"
+          ],
+          [
+            "2a24fbe0133097aaa54481675c59802859bbf3e20b740b3b9fa10d0182bc13c6",
+            "지방공무원법",
+            "제63조(휴직)"
+          ],
+          [
+            "5a5f02e9ff48e1b8a91f371e38ef34c44a68298eb8d5e90eb5134ed068d57c3c",
+            "지방공무원법",
+            "제65조(휴직의 효력)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "자녀를 키우거나 임신·출산으로 쉬는 휴직은 자녀 1명에 3년 이내예요.",
+        "kind": "summary",
+        "rule_id": "office:absence-local",
+        "evidence": [
+          [
+            "220856e03ab9a9d62db9234a43bb7ca53d5f882921694286100f5c7bc94a238b",
+            "지방공무원법",
+            "제64조(휴직기간)"
+          ],
+          [
+            "2a24fbe0133097aaa54481675c59802859bbf3e20b740b3b9fa10d0182bc13c6",
+            "지방공무원법",
+            "제63조(휴직)"
+          ],
+          [
+            "5a5f02e9ff48e1b8a91f371e38ef34c44a68298eb8d5e90eb5134ed068d57c3c",
+            "지방공무원법",
+            "제65조(휴직의 효력)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "absence-13",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "공무원 휴가는 연가, 병가, 공가, 특별휴가 네 가지예요. 국가공무원은 복무규정 제14조에 정해져 있어요.",
+        "kind": "summary",
+        "rule_id": "office:leave-types-both",
+        "evidence": [
+          [
+            "156f83e9646084245c69e35ee1186cdbe52101ebe6489c0f7d134e90acca7f62",
+            "국가공무원 복무규정",
+            "제20조(특별휴가)"
+          ],
+          [
+            "5c74108a041dd1484d685d9c190f97281ee609490a174fd61262384b2192320f",
+            "국가공무원 복무규정",
+            "제14조(휴가의 종류)"
+          ],
+          [
+            "ccb9ba9ecf3ebf04e3e3c21138316bf1eb38203c093651b45e09215745bcced0",
+            "지방공무원 복무규정",
+            "제6조(휴가의 종류)"
+          ],
+          [
+            "eef4fc67d715ba9bd17f85b880d3e79aa00e05a3a357ae0debd8e9b284ee6241",
+            "지방공무원 복무규정",
+            "제7조의7(특별휴가)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "공무원 휴가는 연가, 병가, 공가, 특별휴가 네 가지예요. 국가공무원은 복무규정 제14조에 정해져 있어요.",
+        "kind": "summary",
+        "rule_id": "office:leave-types-both",
+        "evidence": [
+          [
+            "156f83e9646084245c69e35ee1186cdbe52101ebe6489c0f7d134e90acca7f62",
+            "국가공무원 복무규정",
+            "제20조(특별휴가)"
+          ],
+          [
+            "5c74108a041dd1484d685d9c190f97281ee609490a174fd61262384b2192320f",
+            "국가공무원 복무규정",
+            "제14조(휴가의 종류)"
+          ],
+          [
+            "ccb9ba9ecf3ebf04e3e3c21138316bf1eb38203c093651b45e09215745bcced0",
+            "지방공무원 복무규정",
+            "제6조(휴가의 종류)"
+          ],
+          [
+            "eef4fc67d715ba9bd17f85b880d3e79aa00e05a3a357ae0debd8e9b284ee6241",
+            "지방공무원 복무규정",
+            "제7조의7(특별휴가)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "pay",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "찾은 자료를 차례로 확인해요",
+        "kind": "extract",
+        "rule_id": null,
+        "evidence": [
+          [
+            "c49c6e8d34767b9099a4beb28183fb03485f3ed57d0fed90ac92081b0203ffff",
+            "지방공무원 보수규정",
+            "제27조(휴직기간중의 봉급감액)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "찾은 자료를 차례로 확인해요",
+        "kind": "extract",
+        "rule_id": null,
+        "evidence": [
+          [
+            "c49c6e8d34767b9099a4beb28183fb03485f3ed57d0fed90ac92081b0203ffff",
+            "지방공무원 보수규정",
+            "제27조(휴직기간중의 봉급감액)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "sick-pay",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "국가공무원이 질병휴직하면 1년까지 봉급 70%, 2년까지 50%를 받아요",
+        "kind": "summary",
+        "rule_id": "service-rules:national_pay-leave-deduction",
+        "evidence": [
+          [
+            "67618a47899a05963ef22c781aa406616dc20e422dbea05e1a310b14e8f84e51",
+            "공무원보수규정",
+            "제28조(휴직기간 중의 봉급 감액)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "국가공무원이 질병휴직하면 1년까지 봉급 70%, 2년까지 50%를 받아요",
+        "kind": "summary",
+        "rule_id": "service-rules:national_pay-leave-deduction",
+        "evidence": [
+          [
+            "67618a47899a05963ef22c781aa406616dc20e422dbea05e1a310b14e8f84e51",
+            "공무원보수규정",
+            "제28조(휴직기간 중의 봉급 감액)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "apply",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "자료를 더 확인해야 답할 수 있어요",
+        "kind": "unavailable",
+        "rule_id": null,
+        "evidence": [],
+        "ai_used": false
+      },
+      "public": {
+        "title": "자료를 더 확인해야 답할 수 있어요",
+        "kind": "unavailable",
+        "rule_id": null,
+        "evidence": [],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "annual-period",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "찾은 자료를 차례로 확인해요",
+        "kind": "extract",
+        "rule_id": null,
+        "evidence": [
+          [
+            "7aac68230a13a6db61e4313fa30455cb9ba6474790abc5ba4de4f42236e7557b",
+            "지방공무원 복무규정",
+            "제7조(연가일수 및 연가보상비의 지급)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "찾은 자료를 차례로 확인해요",
+        "kind": "extract",
+        "rule_id": null,
+        "evidence": [
+          [
+            "7aac68230a13a6db61e4313fa30455cb9ba6474790abc5ba4de4f42236e7557b",
+            "지방공무원 복무규정",
+            "제7조(연가일수 및 연가보상비의 지급)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "teacher",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "자료를 더 확인해야 답할 수 있어요",
+        "kind": "unavailable",
+        "rule_id": null,
+        "evidence": [],
+        "ai_used": false
+      },
+      "public": {
+        "title": "자료를 더 확인해야 답할 수 있어요",
+        "kind": "unavailable",
+        "rule_id": null,
+        "evidence": [],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "childcare-time",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "육아시간은 하루 최대 2시간까지 사용할 수 있어요",
+        "kind": "summary",
+        "rule_id": "childcare-time",
+        "evidence": [
+          [
+            "21d5f034c4c657e13735af53a0f1ce01505505af28be35d7d3b312a66fe0181a",
+            "지방공무원 복무규정",
+            "제7조의7(특별휴가)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "육아시간은 하루 최대 2시간까지 사용할 수 있어요",
+        "kind": "summary",
+        "rule_id": "childcare-time",
+        "evidence": [
+          [
+            "21d5f034c4c657e13735af53a0f1ce01505505af28be35d7d3b312a66fe0181a",
+            "지방공무원 복무규정",
+            "제7조의7(특별휴가)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "family-leave",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "가족돌봄휴가 10일이 모두 유급인 것은 아니에요",
+        "kind": "summary",
+        "rule_id": "family-care",
+        "evidence": [
+          [
+            "21d5f034c4c657e13735af53a0f1ce01505505af28be35d7d3b312a66fe0181a",
+            "지방공무원 복무규정",
+            "제7조의7(특별휴가)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "가족돌봄휴가 10일이 모두 유급인 것은 아니에요",
+        "kind": "summary",
+        "rule_id": "family-care",
+        "evidence": [
+          [
+            "21d5f034c4c657e13735af53a0f1ce01505505af28be35d7d3b312a66fe0181a",
+            "지방공무원 복무규정",
+            "제7조의7(특별휴가)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "sick",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "일반 병가는 연 60일, 공무상 부상·질병 등은 연 180일 범위예요.",
+        "kind": "summary",
+        "rule_id": "sick-leave",
+        "evidence": [
+          [
+            "5157d7899f3b59df4ff3aee140a143dc7d901ce9b8d4ef1aceefa9ff5f50a015",
+            "지방공무원 복무규정",
+            "제7조의5(병가)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "일반 병가는 연 60일, 공무상 부상·질병 등은 연 180일 범위예요.",
+        "kind": "summary",
+        "rule_id": "sick-leave",
+        "evidence": [
+          [
+            "5157d7899f3b59df4ff3aee140a143dc7d901ce9b8d4ef1aceefa9ff5f50a015",
+            "지방공무원 복무규정",
+            "제7조의5(병가)"
+          ]
+        ],
+        "ai_used": false
+      }
+    }
+  ],
+  "summary": {
+    "all_pass": true,
+    "passed": 21,
+    "failed": 0,
+    "total": 21
+  }
+}
