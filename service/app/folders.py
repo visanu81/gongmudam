@@ -11,7 +11,7 @@ from . import parsers
 
 DB_PATH=Path(__file__).resolve().parent.parent/'data'/'folders.db'
 router=APIRouter(prefix='/api/folders',tags=['여러 폴더·업무 묶음'])
-MAX_FILES=300;MAX_ENTRIES=5000;MAX_BYTES=5*1024*1024;TOTAL_BYTES=40*1024*1024
+MAX_FILES=300;MAX_ENTRIES=5000;MAX_BYTES=20*1024*1024;TOTAL_BYTES=100*1024*1024
 SKIP={'.git','.venv','node_modules','__pycache__','$recycle.bin','system volume information'}
 STAGES=[('계획·요청',('계획','요청','안내')),('회신·취합',('회신','명단','신청','참석자')),('실행·증빙',('견적','영수증','증빙','실시')),('결과·보고',('결과','보고','정산'))]
 def stamp():return datetime.now(timezone.utc).isoformat()

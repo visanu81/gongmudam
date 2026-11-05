@@ -23,7 +23,7 @@ test('API preserves query, method, body and download headers', async () => {
 test('cross origin writes and large uploads never reach PC', async () => {
   const backend = {fetch() {throw Error('must not fetch');}};
   assert.equal((await handle(new Request('https://g.test/api/ask', {method: 'POST', headers: {Origin: 'https://other.test'}, body: '{}'}), {BACKEND: backend})).status, 403);
-  assert.equal((await handle(new Request('https://g.test/api/upload', {method: 'POST', headers: {'Content-Length': String(13 * 1024 * 1024)}}), {BACKEND: backend})).status, 413);
+  assert.equal((await handle(new Request('https://g.test/api/upload', {method: 'POST', headers: {'Content-Length': String(61 * 1024 * 1024)}}), {BACKEND: backend})).status, 413);
 });
 test('offline backend gives an honest retryable error', async () => {
   const result = await handle(new Request('https://g.test/api/ask'), {BACKEND: {fetch() {throw Error('offline');}}});

@@ -35,7 +35,7 @@ if __name__ == '__main__':
     prepare()
     os.environ.update(GONGMUDAM_SERVICE_ROOT=str(SERVICE), GONGMUDAM_PUBLIC='1')
     # Upstage is remote, so the shared demo serves several judges at once (PC default: 30/h, 1 at a time).
-    os.environ.setdefault('GONGMUDAM_PUBLIC_HOURLY', '120')
-    os.environ.setdefault('GONGMUDAM_PUBLIC_CONCURRENCY', '4')
+    os.environ.setdefault('GONGMUDAM_PUBLIC_HOURLY', '300')
+    os.environ.setdefault('GONGMUDAM_PUBLIC_CONCURRENCY', '8')
     os.execvp(sys.executable, [sys.executable, '-X', 'utf8', '-m', 'uvicorn', 'integration.application:create_app',
                                '--factory', '--host', '0.0.0.0', '--port', '8080'])

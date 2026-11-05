@@ -156,7 +156,7 @@
     const input = document.createElement('input'); input.type = 'file'; input.multiple = true; if(folder) input.setAttribute('webkitdirectory', ''); input.accept='.txt,.md,.csv,.pdf,.xlsx,.docx,.hwpx'; input.setAttribute('aria-label', folder ? '업로드할 폴더 선택' : '업로드할 파일 선택');
     input.addEventListener('change', async () => {
       const files = [...input.files]; if (!files.length || id !== currentId || gen !== generation) return;
-      if (files.length > 100 || files.some(f => f.size > 5 * 1024 * 1024) || files.reduce((n, f) => n + f.size, 0) > 10 * 1024 * 1024) { setMessage($('#project-message'), '파일 최대 100개·파일당 5MB·전체 10MB까지 업로드할 수 있습니다.', true); return; }
+      if (files.length > 100 || files.some(f => f.size > 20 * 1024 * 1024) || files.reduce((n, f) => n + f.size, 0) > 50 * 1024 * 1024) { setMessage($('#project-message'), '파일 최대 100개·파일당 20MB·전체 50MB까지 업로드할 수 있습니다.', true); return; }
       let name = project?.name || '새 프로젝트'; if(name.trim().length < 2) name += ' 자료';
       const publicConsent = publicDemo && window.confirm('공개 시연 사이트에서는 다른 방문자도 업로드 자료와 분석 결과를 볼 수 있습니다(1시간 뒤 자동 삭제). 공개 또는 합성 자료만 업로드하시겠습니까?');
       if (publicDemo && !publicConsent) return;

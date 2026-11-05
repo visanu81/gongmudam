@@ -1,15 +1,34 @@
 """Explicit folder uploads and a loopback-only native folder chooser."""
 from pathlib import Path, PurePosixPath
-import json, os, re, shutil, subprocess, sys, threading, uuid
+import asyncio, json, os, re, shutil, subprocess, sys, threading, uuid, zipfile
 from fastapi import APIRouter, File, Form, HTTPException, Request, UploadFile
 from fastapi.concurrency import run_in_threadpool
-from . import folders, native_picker, project_text, public_privacy
+from . import folders, native_picker, public_privacy
 
 router = APIRouter(prefix='/api/folders', tags=['폴더 선택·업로드'])
 ROOT = Path(__file__).resolve().parents[1]
 EXTENSIONS = {'.txt', '.md', '.csv', '.xlsx', '.docx', '.hwpx', '.pdf'}
-MAX_TOTAL = 10*1024*1024
+MAX_TOTAL = 50*1024*1024
+# The shared server has 1 GB. A Word file is read whole, about 7 MB of memory per MB unzipped
+# (measured 2026-11-05), so a compressed document is bounded by what it unpacks to.
+PUBLIC_UNZIPPED = 60*1024*1024
+public_scan = asyncio.Lock()
 picker_lock = threading.Lock()
+
+
+def personal_details_in(path):
+    # In its own process: see app/public_scan.py. A file that cannot be read is not published.
+    service=Path(__file__).resolve().parents[1]
+    done=subprocess.run([sys.executable,'-X','utf8','-m','app.public_scan',str(path)],cwd=service,capture_output=True,text=True,encoding='utf-8',timeout=300)
+    if done.returncode:raise HTTPException(413,'문서가 너무 크거나 복잡해서 내용을 확인하지 못했습니다. 나누어 올려 주세요.')
+    return json.loads(done.stdout.strip().splitlines()[-1])
+
+
+def unzipped_size(path):
+    if path.suffix.lower() not in {'.xlsx', '.docx', '.hwpx'}: return 0
+    try:
+        with zipfile.ZipFile(path) as archive: return sum(e.file_size for e in archive.infolist())
+    except (OSError, zipfile.BadZipFile): return 0
 
 def local_picker_allowed(request):
     # Both peer and URL must be loopback: a tunnel's local peer alone is insufficient.
@@ -74,14 +93,17 @@ async def upload(request:Request, name:str=Form(...), paths:str=Form(...), situa
             with target.open('xb') as stream:
                 while chunk:=await file.read(65536):
                     size+=len(chunk);total+=len(chunk)
-                    if size>folders.MAX_BYTES or total>MAX_TOTAL:raise HTTPException(413,'파일당 5MB·전체 10MB까지 업로드할 수 있습니다.')
+                    if size>folders.MAX_BYTES or total>MAX_TOTAL:raise HTTPException(413,'파일당 20MB·전체 50MB까지 업로드할 수 있습니다.')
                     stream.write(chunk)
             if public:
                 # Read what each file says before anything else does; a file with personal details is refused and removed.
                 kinds=public_privacy.found(str(path))
                 if not kinds:
-                    units=(await run_in_threadpool(project_text.extract,target)).get('units') or []
-                    kinds=public_privacy.found('\n'.join(u['text'] for u in units))
+                    # A sheet is read row by row, so only documents read whole are bounded here.
+                    if target.suffix.lower()!='.xlsx' and unzipped_size(target)>PUBLIC_UNZIPPED:raise HTTPException(413,'압축을 풀면 60MB가 넘는 문서는 공개 시연에 올릴 수 없습니다. 나누어 올려 주세요.')
+                    # One at a time, so several large uploads cannot add up past the server's memory.
+                    async with public_scan:
+                        kinds=await run_in_threadpool(personal_details_in,target)
                 if kinds:raise HTTPException(422,public_privacy.refusal(str(path),kinds))
         result=folders.connect(folders.Connect(name=name.strip(),roots=[str(dest)],situation=situation))
         result['import_notice']='선택한 파일의 업로드 사본입니다. 원래 PC 폴더의 추가·수정은 자동 동기화하지 않습니다.'

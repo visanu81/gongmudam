@@ -9,7 +9,7 @@
  input.onchange=()=>{for(const f of input.files){const path=f.webkitRelativePath||f.name;if(!allowed.test(path)||path.split('/').some(p=>p.startsWith('.'))){skipped++;continue;}selectedFiles.set(path,f);}input.value='';paint();};
  $('folder-upload-form').onsubmit=e=>{e.preventDefault();run(async()=>{
    const files=[...selectedFiles.entries()];if(!files.length)throw Error('업로드할 폴더를 먼저 선택하세요.');
-   if(files.length>100||files.some(([,f])=>f.size>5*1024*1024)||files.reduce((s,[,f])=>s+f.size,0)>10*1024*1024)throw Error('파일 최대 100개·파일당 5MB·전체 10MB까지 선택하세요.');
+   if(files.length>100||files.some(([,f])=>f.size>20*1024*1024)||files.reduce((s,[,f])=>s+f.size,0)>50*1024*1024)throw Error('파일 최대 100개·파일당 20MB·전체 50MB까지 선택하세요.');
    const data=new FormData();data.append('name',$('upload-library-name').value);data.append('paths',JSON.stringify(files.map(([p])=>p)));data.append('situation',$('folder-situation').value);data.append('public_consent',String($('upload-public-consent').checked));
    for(const [,f] of files)data.append('files',f,f.name);
    message('선택한 폴더 자료를 업로드하고 업무 단서를 읽고 있습니다.');

@@ -22,6 +22,7 @@ def _limit(name,default):
 
 
 # The PC demo protects one local model; the cloud demo raises these by environment.
+UPLOAD_LIMIT=60*1024*1024  # 50MB of files plus the form around them.
 HOURLY=_limit('GONGMUDAM_PUBLIC_HOURLY',30)
 CONCURRENCY=_limit('GONGMUDAM_PUBLIC_CONCURRENCY',1)
 
@@ -95,11 +96,11 @@ def create_app():
             if origin and urlsplit(origin).netloc!=request.headers.get('host'):return JSONResponse({'detail':'다른 사이트에서의 요청은 허용하지 않습니다.'},403)
             try:length=int(request.headers.get('content-length','0'))
             except ValueError:return JSONResponse({'detail':'요청 크기를 확인하세요.'},400)
-            if length>12*1024*1024:return JSONResponse({'detail':'공개 시연의 업로드 한도는 12MB입니다.'},413)
+            if length>UPLOAD_LIMIT:return JSONResponse({'detail':'공개 시연의 업로드 한도는 60MB입니다.'},413)
             chunks=[];size=0
             async for chunk in request.stream():
                 size+=len(chunk)
-                if size>12*1024*1024:return JSONResponse({'detail':'공개 시연의 업로드 한도는 12MB입니다.'},413)
+                if size>UPLOAD_LIMIT:return JSONResponse({'detail':'공개 시연의 업로드 한도는 60MB입니다.'},413)
                 chunks.append(chunk)
             request._body=b''.join(chunks)
             current=time.monotonic()
@@ -107,6 +108,10 @@ def create_app():
             if len(writes)>=90:return JSONResponse({'detail':'공개 시연 요청이 많습니다. 잠시 후 다시 시도하세요.'},429,headers={'Retry-After':'60'})
             writes.append(current)
         is_model=method=='POST' and (path in ('/api/ask','/api/local-ai/run','/api/llm/test') or path.endswith('/prefill') or path.endswith('/ai-runs'))
+        # A question sent with AI off costs nothing, so it does not use the shared budget.
+        if is_model and path=='/api/ask':
+            try:is_model=json.loads(request._body).get('use_ai') is not False
+            except (ValueError,AttributeError):pass
         if is_model:
             current=time.monotonic()
             while model_calls and current-model_calls[0]>3600:model_calls.popleft()

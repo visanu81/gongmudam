@@ -134,6 +134,21 @@ class ModelBudgetTests(unittest.TestCase):
         self.assertEqual(client.post('/api/settings/llm/test').status_code, 429)
         self.assertEqual(client.get('/api/workspace/model-status').status_code, 200)
 
+    def test_questions_sent_without_ai_do_not_use_the_shared_budget(self):
+        seen = []
+        async def app(scope, receive, send):
+            seen.append((await receive()).get('body'))
+            await send({'type': 'http.response.start', 'status': 200, 'headers': []})
+            await send({'type': 'http.response.body', 'body': b'OK'})
+        client = TestClient(PublicModelBudget(app, limit=1))
+        for _ in range(3):
+            self.assertEqual(client.post('/api/ask', json={'query': 'q', 'use_ai': False}).status_code, 200)
+        self.assertIn(b'"use_ai"', seen[0])  # The app still reads the whole request.
+        self.assertEqual(client.post('/api/ask', json={'query': 'q', 'use_ai': True}).status_code, 200)
+        self.assertEqual(client.post('/api/ask', json={'query': 'q'}).status_code, 429)
+        self.assertEqual(client.post('/api/ask', content=b'not json').status_code, 429)
+        self.assertEqual(client.post('/api/ask', json={'query': 'q', 'use_ai': False}).status_code, 200)
+
     def test_limits_come_from_environment_with_pc_defaults(self):
         from integration.application import public_limit
         with patch.dict('os.environ', {}, clear=False):

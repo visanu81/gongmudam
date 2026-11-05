@@ -191,7 +191,7 @@ def analyze(query):
     own_sick=leave_situations.self_sick(query)
     # "부모님 돌아가시면 며칠 쉬어?" asks about leave without using the word.
     occasion_days=bool(re.search(r'(?:부모|아버지|어머니|배우자|할아버지|할머니|형제|자매|자녀|부친상|모친상|돌아가|별세|사망|결혼).{0,12}(?:며칠|쉬어|쉬나|쉴수|쉬는)',q))
-    leave=care or own_sick or occasion_days or any(t in q for t in ('휴가','휴무','연가','연차','병가','공가','육아시간','모성보호','건강검진','건강진단','헌혈'))
+    leave=care or own_sick or occasion_days or leave_situations.asks_which_leave(q) or any(t in q for t in ('휴가','휴무','연가','연차','병가','공가','육아시간','모성보호','건강검진','건강진단','헌혈'))
     sidejob=any(t in q for t in ('겸직','영리업무','유튜브수익','유튜브수입'))
     goods=any(t in q for t in ('물품','납품','검수','검사조서','수의계약','불용','견적','법인카드','문구점','인센티브','포인트','적립금','마일리지','강사료','강연료','지방자치단체선금','퇴직예정자기념품'))
     # 업무추진비 itself is the finance pack's 업무추진비 section; only its disclosure is an account topic.
@@ -248,7 +248,7 @@ def analyze(query):
             if 'pregnancy_check' in topics:topics.remove('pregnancy_check')
         if any(t in q for t in ('유산','사산')):add('miscarriage')
         if not any(t in SPECIAL for t in topics) and any(t in q for t in ('배우자','아내','와이프')) and '출산' in q:add('occasion')
-        if not any(t in SPECIAL for t in topics) and any(t in q for t in ('경조사','결혼','사망','입양','돌아가셨','돌아가신','돌아가시','별세','부친상','모친상','장례')):add('occasion')
+        if not any(t in SPECIAL for t in topics) and any(t in q for t in ('경조사','결혼','사망','입양','돌아가셨','돌아가셔','돌아가신','돌아가시','별세','부친상','모친상','장례')):add('occasion')
         if 'occasion' in topics and any(t in q for t in ('사용기한','분할','나눠','언제까지')):
             topics.remove('occasion');add('occasion_use')
         if not any(t in SPECIAL for t in topics) and '출산' in q:add('maternity')
@@ -275,7 +275,7 @@ def analyze(query):
                 if any(t in q for t in ('남은','남았','잔여','잔량')) and not any(t in q for t in ('근거','규정','이월','보상')):question='개인의 남은 연가는 규정만으로 알 수 없어요. 올해 부여·이월·사용한 연가 내역을 확인해 주세요.'
                 elif any(t in q for t in TOPICS['annual_use'][1]) and not any(t in q for t in ('보상','재직기간')):add('annual_use')
                 else:add('annual')
-            elif '공가' in q:
+            elif '공가' in q or (leave_situations.asks_which_leave(q) and any(t in q for t in ('예비군','민방위','병역판정','투표','승진시험','전직시험'))):
                 if any(t in q for t in ('병원','진료')):question='어떤 사유의 방문인가요? 본인 진료, 법정 건강검진, 가족 진료 동행은 적용 기준이 달라요.'
                 else:add('public_leave')
             else:question='누가 어떤 사유로 쉬어야 하나요? 본인 질병, 가족 돌봄, 검진 등 상황을 알려주시면 맞는 휴가를 안내할게요.'

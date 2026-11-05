@@ -1,3 +1,4 @@
+from types import SimpleNamespace
 import json, tempfile, unittest
 from pathlib import Path
 from unittest.mock import patch
@@ -38,6 +39,18 @@ class FolderInputsTest(unittest.TestCase):
     def test_personal_app_upload_is_not_checked(self):
         self.app.state.public_demo=False
         self.assertEqual(self.post(['신청/신청서.txt'],'연락처: 010-2345-6789'.encode()).status_code,201)
+    def test_public_refuses_a_document_that_unpacks_past_the_memory_bound(self):
+        import io,zipfile
+        data=io.BytesIO()
+        with zipfile.ZipFile(data,'w',zipfile.ZIP_DEFLATED) as z:z.writestr('word/document.xml',b' '*(inputs.PUBLIC_UNZIPPED+1))
+        r=self.post(['교육/큰문서.docx'],content=data.getvalue())
+        self.assertEqual(r.status_code,413,r.text);self.assertIn('60MB',r.json()['detail'])
+        self.assertEqual(list((self.root/'synthetic-folders/uploads').iterdir()),[])
+    def test_public_refuses_a_file_whose_reading_process_fails(self):
+        with patch.object(inputs.subprocess,'run',return_value=SimpleNamespace(returncode=137,stdout='')):
+            r=self.post()
+        self.assertEqual(r.status_code,413,r.text)
+        self.assertEqual(list((self.root/'synthetic-folders/uploads').iterdir()),[])
     def test_public_requires_consent(self):self.assertEqual(self.post(consent=False).status_code,422)
     def test_mismatched_paths(self):self.assertEqual(self.post(['A/a.txt','A/b.txt']).status_code,422)
     def test_size_limit_cleans_incomplete_upload(self):

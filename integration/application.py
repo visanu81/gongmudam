@@ -116,6 +116,25 @@ class PublicModelBudget:
             path.endswith(('/prefill', '/ai-runs')))
         if not guarded:
             return await self.app(scope, receive, send)
+        # A question sent with AI off costs nothing, so it does not use the shared budget.
+        if path == '/api/ask':
+            messages = []
+            while True:
+                message = await receive()
+                messages.append(message)
+                if message['type'] != 'http.request' or not message.get('more_body'):
+                    break
+            pending = iter(messages)
+
+            async def replay():
+                return next(pending, {'type': 'http.disconnect'})
+            try:
+                without_ai = json.loads(b''.join(m.get('body', b'') for m in messages)).get('use_ai') is False
+            except (ValueError, AttributeError):
+                without_ai = False
+            if without_ai:
+                return await self.app(scope, replay, send)
+            receive = replay
         now = time.monotonic()
         while self.calls and now - self.calls[0] > self.window:
             self.calls.popleft()

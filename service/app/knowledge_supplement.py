@@ -89,7 +89,7 @@ def occasion_event(query):
         return 'marriage-any'
     if '출산' in q:return 'birth' if any(t in q for t in ('배우자','아내','와이프')) else None
     if '입양' in q:return 'adoption'
-    if any(t in q for t in ('사망','돌아가셨','돌아가신','돌아가시','별세','부친상','모친상','장례')):
+    if any(t in q for t in ('사망','돌아가셨','돌아가셔','돌아가신','돌아가시','별세','부친상','모친상','장례')):
         if any(t in q for t in ('손자','손녀','사촌','조카','삼촌','이모','고모','형수','매형','제수','형부')) or re.search(r'(?:형제(?:자매)?|자매)(?:의)?배우자',q):return 'unsupported'
         if any(t in q for t in ('조부모','외조부모','할아버지','할머니')):return 'death-grandparent'
         if any(t in q for t in ('부모','아버지','어머니','부친상','모친상')):return 'death-parent'

@@ -135,16 +135,19 @@ def _xlsx(path, out):
             name = info.filename.casefold()
             if not (name.startswith('xl/worksheets/') and name.endswith('.xml')):
                 continue
+            # Read cell by cell: a whole sheet held as a tree took about 130 MB per MB of a
+            # dense file and ran the 1 GB shared server out of memory (2026-11-05).
             with archive.open(info) as stream:
-                root = ET.parse(stream).getroot()
-            for cell in root.iter():
-                if cell.tag.rsplit('}', 1)[-1] != 'c':
-                    continue
-                formula = next((child for child in cell if child.tag.rsplit('}', 1)[-1] == 'f'), None)
-                value = next((child for child in cell if child.tag.rsplit('}', 1)[-1] == 'v'), None)
-                if formula is not None and (value is None or not (value.text or '').strip()):
-                    missing_formula_result = True
-                    break
+                for _, cell in ET.iterparse(stream):
+                    tag = cell.tag.rsplit('}', 1)[-1]
+                    if tag == 'c':
+                        formula = next((child for child in cell if child.tag.rsplit('}', 1)[-1] == 'f'), None)
+                        value = next((child for child in cell if child.tag.rsplit('}', 1)[-1] == 'v'), None)
+                        if formula is not None and (value is None or not (value.text or '').strip()):
+                            missing_formula_result = True
+                            break
+                    elif tag == 'row':
+                        cell.clear()
             if missing_formula_result:
                 break
     finally:

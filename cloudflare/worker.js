@@ -28,7 +28,7 @@ export async function handle(request, env, backend = env.BACKEND) {
     const origin = request.headers.get('Origin');
     if (origin && origin !== url.origin) return Response.json({detail: '다른 사이트의 요청은 허용하지 않습니다.'}, {status: 403});
     const length = Number(request.headers.get('Content-Length') || 0);
-    if (length > 12 * 1024 * 1024) return Response.json({detail: '공개 시연 업로드 한도는 12MB입니다.'}, {status: 413});
+    if (length > 60 * 1024 * 1024) return Response.json({detail: '공개 시연 업로드 한도는 60MB입니다.'}, {status: 413});
   }
   const target = new URL(url.pathname + url.search, 'http://127.0.0.1:8892');
   const headers = new Headers(request.headers);

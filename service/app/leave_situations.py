@@ -5,6 +5,14 @@ Names used for search are separate from the immutable quoted source text.
 """
 import re
 
+# "복무 중 어떤 걸 써야 해?" asks which leave to use without saying 휴가.
+SERVICE_ASK=re.compile(r'복무(?:중|에서|는|를|로|상)?.{0,6}(?:뭐|뭘|무엇|어떤|어떻게).{0,5}(?:써|쓰|쓸|올|신청|처리|해야|로해|로하|해\?|해$)|근무상황.{0,6}(?:뭐|뭘|무엇|어떤).{0,5}(?:써|쓰|쓸|올|신청)')
+WHICH_ASK=re.compile(r'(?<![비값료험])(?:뭐|뭘|무엇|어떤걸|어떤거|어떤것)(?:을|로)?(?:써|쓰|쓸|올려|올리|신청)')
+
+
+def asks_which_leave(q):
+    return bool(SERVICE_ASK.search(q))
+
 
 def self_sick(query):
     """Recognize stated own illness preventing work, not a routine visit."""
@@ -12,6 +20,8 @@ def self_sick(query):
     for clause in re.split(r'[.!?\n;]|하지만|그런데', q):
         if re.search(r'아프지않|아픈(?:건|게)아니|독감이아니', clause):continue
         if re.search(r'(?:제가|내가|저는|본인).{0,15}(?:독감|질병|부상|아파|아프|아픈)', clause) and re.search(r'(?:출근|근무|직무).{0,8}(?:어려|못|불가)', clause):
+            return True
+        if re.search(r'독감|부상|다쳐|아파|아프|아픈', clause) and asks_which_leave(clause) and not re.search(r'아이|자녀|손자녀|아들|딸|부모|어머니|아버지|배우자|아내|남편|할머니|할아버지|가족', clause):
             return True
     return False
 
@@ -28,12 +38,12 @@ def family_care(query):
         if re.search(r'건강하|아프지않|아프지는않|아픈(?:건|게|것이|것은)아니',clause):continue
         m=re.search(child+r'.{0,18}?(?:'+illness+r')',clause)
         if m and not re.search(r'교사|선생|의사|친구|본인|배우자|아내|남편',m[0]):
-            if re.search(r'휴가|연가|병가|공가|쉬어|쉬고|결근|돌봐|돌보|간호|간병',q):return True
+            if re.search(r'휴가|연가|병가|공가|쉬어|쉬고|결근|돌봐|돌보|간호|간병',q) or asks_which_leave(q) or WHICH_ASK.search(q):return True
         # Hospital attendance is distinct from the disease/care clause.
         if re.search(child+r'.{0,15}(?:병원|진료|검진|예방접종)',clause):
             if re.search(r'휴가|동행|데려|같이가|함께가',clause):return True
-        if re.search(child+r'.{0,15}(?:휴교|휴원|휴업|담임.*상담)',clause) and re.search(r'휴가|쉬어|돌봐|돌보|상담',q):return True
-        if re.search(r'(?:부모|어머니|아버지|배우자|조부모|할머니|할아버지).{0,15}(?:'+illness+r')',clause) and re.search(r'휴가|돌봐|돌보|간호|간병',q):return True
+        if re.search(child+r'.{0,15}(?:휴교|휴원|휴업|담임.*상담|학교.{0,4}상담)',clause) and re.search(r'휴가|쉬어|돌봐|돌보|상담',q):return True
+        if re.search(r'(?:부모|어머니|아버지|배우자|조부모|할머니|할아버지).{0,15}(?:'+illness+r')',clause) and (re.search(r'휴가|돌봐|돌보|간호|간병',q) or asks_which_leave(q) or WHICH_ASK.search(q)):return True
     return False
 
 
