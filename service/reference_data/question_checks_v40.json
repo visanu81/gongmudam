@@ -599,13 +599,42 @@
     "id": "occasion-no-scope",
     "category": "추가 공식근거",
     "question": "배우자 출산휴가 며칠이에요?",
-    "outcome": "clarify"
+    "outcome": "answer",
+    "allow_articles": [
+      "별표 1 ",
+      "별표 2 "
+    ],
+    "require_articles": [
+      "별표 1 ",
+      "별표 2 "
+    ],
+    "require_rules": [
+      "extended-occasion"
+    ],
+    "summary_facts": [
+      "배우자 출산은 20일",
+      "일수는 같아요"
+    ]
   },
   {
     "id": "occasion-no-relation",
     "category": "추가 공식근거",
     "question": "지방공무원 결혼휴가 며칠인가요?",
-    "outcome": "clarify"
+    "outcome": "answer",
+    "allow_articles": [
+      "별표 1 ",
+      "제7조의7("
+    ],
+    "require_articles": [
+      "별표 1 ",
+      "제7조의7("
+    ],
+    "require_rules": [
+      "extended-occasion"
+    ],
+    "summary_facts": [
+      "본인 결혼은 5일, 자녀 결혼은 1일"
+    ]
   },
   {
     "id": "inspection-2999만원",

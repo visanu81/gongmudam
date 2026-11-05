@@ -45,6 +45,8 @@ def _build(query,reply):
             missing='출장비 금액이 적힌 표가 아직 없어요.'; action='여비 금액표(별표 2)를 등록해 주세요.'
         elif '별표 4' in reason:
             missing='국외 출장비 금액표가 아직 없어요.'; action='국외 여비 금액표(별표 4)를 등록해 주세요.'
+        elif '조례를 확인하세요' in reason:
+            missing=reason; action='소속 지방자치단체의 복무 조례를 확인해 주세요.'
         elif '별표 1' in reason:
             missing='경조사휴가의 일수가 적힌 표가 아직 없어요.'; action='경조사휴가 일수표(별표 1)를 등록해 주세요.'
         elif '여비 조례' in reason:

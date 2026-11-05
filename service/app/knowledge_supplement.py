@@ -45,7 +45,7 @@ def requirements(topic,query):
         'goods_payment_deadline':[(LAW,'제18조('),(DECREE,'제67조(')],
         'goods_payment_interest':[(LAW,'제18조('),(DECREE,'제68조(')],
         'goods_quote':[(DECREE,'제30조(')],
-        'occasion':[(NATIONAL,'별표 2 '),(NATIONAL,'제20조(')] if national(query) else [(LOCAL,'별표 1 '),(LOCAL,'제7조의7(')],
+        'occasion':[(NATIONAL,'별표 2 '),(LOCAL,'별표 1 ')] if occasion_same_in_both(query) else [(NATIONAL,'별표 2 '),(NATIONAL,'제20조(')] if national(query) else [(LOCAL,'별표 1 '),(LOCAL,'제7조의7(')],
     }.get(topic)
 
 
@@ -62,22 +62,41 @@ def occasion_supported(query):
     return not event or not event.startswith('death-') or national(query) or event=='death-sibling'
 
 
+# 국가 별표 2와 지방 별표 1은 결혼·배우자 출산·입양·형제자매 사망의 일수가 같다.
+SAME_IN_BOTH=('marriage-self','marriage-child','marriage-any','birth','adoption','death-sibling','overview')
+DEATH_DAYS={'death-grandparent':'본인 및 배우자의 조부모·외조부모 사망은 3일','death-parent':'본인 및 배우자의 부모 사망은 5일',
+            'death-child':'자녀와 그 자녀의 배우자 사망은 3일','death-spouse':'배우자 사망은 5일'}
+LOCAL_DEATH='지방공무원 복무규정의 경조사 휴가일수표 사망 칸에는 본인 및 배우자의 형제자매(3일)만 있어요. 그 밖의 사망은 소속 지방자치단체 조례를 확인하세요.'
+
+
+def occasion_same_in_both(query):
+    question=query.split('\n업무환경:')[0]
+    return not (national(query) or local(query)) and occasion_event(question) in SAME_IN_BOTH
+
+
+def occasion_unsupported_reason(query):
+    event=occasion_event(query)
+    if event and event.startswith('death-') and not national(query):return LOCAL_DEATH
+    return '등록한 해당 신분의 경조사 별표에 없는 사유·관계입니다. 소속 기관의 복무 조례·지침을 추가 확인해야 합니다. 다른 관계의 휴가 일수를 대신 적용하지 않습니다.'
+
+
 def occasion_event(query):
     q=flat(query)
     if '결혼' in q:
         if any(t in q for t in ('형제','자매','손자','손녀','부모','사촌','조카','며느리','사위')):return 'unsupported'
         if any(t in q for t in ('자녀','아들','딸')):return 'marriage-child'
         if any(t in q for t in ('본인','내결혼','제가결혼','나결혼')):return 'marriage-self'
-        return None
+        return 'marriage-any'
     if '출산' in q:return 'birth' if any(t in q for t in ('배우자','아내','와이프')) else None
-    if '입양' in q:return 'adoption' if '본인' in q else None
-    if any(t in q for t in ('사망','돌아가셨','돌아가신','부친상','모친상','장례')):
+    if '입양' in q:return 'adoption'
+    if any(t in q for t in ('사망','돌아가셨','돌아가신','돌아가시','별세','부친상','모친상','장례')):
         if any(t in q for t in ('손자','손녀','사촌','조카','삼촌','이모','고모','형수','매형','제수','형부')) or re.search(r'(?:형제(?:자매)?|자매)(?:의)?배우자',q):return 'unsupported'
         if any(t in q for t in ('조부모','외조부모','할아버지','할머니')):return 'death-grandparent'
         if any(t in q for t in ('부모','아버지','어머니','부친상','모친상')):return 'death-parent'
         if any(t in q for t in ('형제','자매')):return 'death-sibling'
         if '자녀' in q:return 'death-child'
         if '배우자' in q:return 'death-spouse'
+    if '경조사' in q and any(t in q for t in ('종류','일수','며칠','얼마','기준')):return 'overview'
     return None
 
 
@@ -97,7 +116,10 @@ def grade_conflict(query):
 def clarification(query,topics,hits):
     q=flat(query)
     if 'occasion' in topics and not (national(query) or local(query)):
+        if occasion_same_in_both(query):return None
         if any((h.get('official') or {}).get('collection')=='v40' for h in hits):
+            death=DEATH_DAYS.get(occasion_event(query))
+            if death:return f'국가공무원인지 지방공무원인지 알려주세요. 국가공무원 기준으로 {death}이에요. {LOCAL_DEATH}'
             return '국가공무원·지방공무원 등 적용 신분과 경조사 대상(본인·자녀·배우자 등)을 알려주세요. 별표와 기관 조례가 다를 수 있어요.'
     if 'occasion' in topics and not occasion_event(query) and '표' not in q:
         if any((h.get('official') or {}).get('collection')=='v40' for h in hits):return '어떤 경조사이며 누구에 관한 사유인가요? 본인·자녀 결혼, 배우자 출산, 사망한 분과의 관계를 알려주세요.'
@@ -171,10 +193,19 @@ def summary(query,reply):
             item(target,'수의계약은 2인 이상 견적이 원칙이에요. 추정가격 2천만원 이하 물품 제조·구매 등에는 1인 견적 예외가 있어요.','2인 이상','추정가격이 2천만원 이하','1인')
             item(target,'일부 기업·조합은 5천만원 이하 예외가 있지만 기업 유형과 고용비율 등 요건을 확인해야 해요. 계약금액과 추정가격도 구분해요.','추정가격이 5천만원 이하','고용비율')
         elif topic=='occasion':
-            target=(NATIONAL,'별표 2 ') if national(query) else (LOCAL,'별표 1 ')
+            both=occasion_same_in_both(query)
+            target=(NATIONAL,'별표 2 ') if national(query) or both else (LOCAL,'별표 1 ')
             label='국가공무원' if national(query) else '지방공무원';title=label+' 경조사 별표에서 확인해요'
             event=occasion_event(query)
-            if event in ('marriage-self','marriage-child'):
+            if event=='overview':
+                item(target,('경조사 휴가는 국가·지방 모두 ' if both else '경조사 휴가는 ')+'본인 결혼 5일, 자녀 결혼 1일, 배우자 출산 20일(한 번에 둘 이상이면 25일), 본인 입양 20일이에요.','결혼','본인','자녀','배우자','입양','20','25일')
+                if national(query) or both:
+                    item((NATIONAL,'별표 2 '),('국가공무원 ' if both else '')+'사망은 배우자·본인 및 배우자의 부모 5일, 본인 및 배우자의 조부모·외조부모 3일, 자녀와 그 자녀의 배우자 3일, 본인 및 배우자의 형제자매 3일이에요.','사망','조부모','형제자매')
+                if not national(query):
+                    item((LOCAL,'별표 1 '),LOCAL_DEATH,'사망','자매','3일')
+            elif event=='marriage-any':
+                item(target,'본인 결혼은 5일, 자녀 결혼은 1일이에요.','결혼','본인','자녀')
+            elif event in ('marriage-self','marriage-child'):
                 child=event=='marriage-child'
                 item(target,('자녀 결혼은 1일이에요.' if child else '본인 결혼은 5일이에요.'),'결혼','자녀' if child else '본인')
             elif event=='birth':
@@ -188,8 +219,9 @@ def summary(query,reply):
                       'death-spouse':'배우자 사망은 5일이에요.'}[event]
                 item(target,text,'사망')
             else:return None
+            if both and event!='overview':item((LOCAL,'별표 1 '),'국가공무원 복무규정 별표 2와 지방공무원 복무규정 별표 1의 이 일수는 같아요.','경조사')
             item(target,'원격지의 왕복 소요일수와 입양 범위는 비고를 함께 확인해요. 구체적인 사용기한·분할은 별도 복무지침을 확인해요.','원격지','입양')
-            if not national(query):item(target,'별표에 없는 경조사 사유는 소속 기관의 조례를 별도로 확인해요.','경조사')
+            if not national(query):item((LOCAL,'별표 1 '),('지방공무원은 ' if both else '')+'별표에 없는 경조사 사유를 소속 기관의 조례에서 별도로 확인해요.','경조사')
         else:return None
     except ValueError:return None
     if not nodes:return None

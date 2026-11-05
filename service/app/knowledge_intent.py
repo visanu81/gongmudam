@@ -189,7 +189,9 @@ def analyze(query):
         if allowance:return allowance
     care=leave_situations.family_care(query)
     own_sick=leave_situations.self_sick(query)
-    leave=care or own_sick or any(t in q for t in ('휴가','휴무','연가','연차','병가','공가','육아시간','모성보호','건강검진','건강진단','헌혈'))
+    # "부모님 돌아가시면 며칠 쉬어?" asks about leave without using the word.
+    occasion_days=bool(re.search(r'(?:부모|아버지|어머니|배우자|할아버지|할머니|형제|자매|자녀|부친상|모친상|돌아가|별세|사망|결혼).{0,12}(?:며칠|쉬어|쉬나|쉴수|쉬는)',q))
+    leave=care or own_sick or occasion_days or any(t in q for t in ('휴가','휴무','연가','연차','병가','공가','육아시간','모성보호','건강검진','건강진단','헌혈'))
     sidejob=any(t in q for t in ('겸직','영리업무','유튜브수익','유튜브수입'))
     goods=any(t in q for t in ('물품','납품','검수','검사조서','수의계약','불용','견적','법인카드','문구점','인센티브','포인트','적립금','마일리지','강사료','강연료','지방자치단체선금','퇴직예정자기념품'))
     # 업무추진비 itself is the finance pack's 업무추진비 section; only its disclosure is an account topic.
@@ -246,7 +248,7 @@ def analyze(query):
             if 'pregnancy_check' in topics:topics.remove('pregnancy_check')
         if any(t in q for t in ('유산','사산')):add('miscarriage')
         if not any(t in SPECIAL for t in topics) and any(t in q for t in ('배우자','아내','와이프')) and '출산' in q:add('occasion')
-        if not any(t in SPECIAL for t in topics) and any(t in q for t in ('경조사','결혼','사망','입양','돌아가셨','돌아가신','부친상','모친상','장례')):add('occasion')
+        if not any(t in SPECIAL for t in topics) and any(t in q for t in ('경조사','결혼','사망','입양','돌아가셨','돌아가신','돌아가시','별세','부친상','모친상','장례')):add('occasion')
         if 'occasion' in topics and any(t in q for t in ('사용기한','분할','나눠','언제까지')):
             topics.remove('occasion');add('occasion_use')
         if not any(t in SPECIAL for t in topics) and '출산' in q:add('maternity')
@@ -397,7 +399,7 @@ def filter_hits(query,hits,plan):
     if question:
         plan.update(status='clarify',question=question);return [],question
     if 'occasion' in topics and not supplement.occasion_supported(query):
-        return [],'등록한 해당 신분의 경조사 별표에 없는 사유·관계입니다. 소속 기관의 복무 조례·지침을 추가 확인해야 합니다. 다른 관계의 휴가 일수를 대신 적용하지 않습니다.'
+        return [],supplement.occasion_unsupported_reason(query)
     required={(t,tuple(target)) for t in topics for target in (supplement.requirements(t,query) or [(None,None)])}
     candidates=[]
     for h in hits:
