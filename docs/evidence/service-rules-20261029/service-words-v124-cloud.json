@@ -1,0 +1,431 @@
+{
+  "today": "2026-11-05",
+  "cases": [
+    {
+      "id": "child-service",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "가족돌봄휴가를 신청할 수 있는 상황이에요. 돌봄 대상·사유와 유급 조건을 확인하세요.",
+        "kind": "summary",
+        "rule_id": "family-care-situation",
+        "evidence": [
+          [
+            "21d5f034c4c657e13735af53a0f1ce01505505af28be35d7d3b312a66fe0181a",
+            "지방공무원 복무규정",
+            "제7조의7(특별휴가)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "가족돌봄휴가를 신청할 수 있는 상황이에요. 돌봄 대상·사유와 유급 조건을 확인하세요.",
+        "kind": "summary",
+        "rule_id": "family-care-situation",
+        "evidence": [
+          [
+            "21d5f034c4c657e13735af53a0f1ce01505505af28be35d7d3b312a66fe0181a",
+            "지방공무원 복무규정",
+            "제7조의7(특별휴가)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "child-leave",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "가족돌봄휴가를 신청할 수 있는 상황이에요. 돌봄 대상·사유와 유급 조건을 확인하세요.",
+        "kind": "summary",
+        "rule_id": "family-care-situation",
+        "evidence": [
+          [
+            "21d5f034c4c657e13735af53a0f1ce01505505af28be35d7d3b312a66fe0181a",
+            "지방공무원 복무규정",
+            "제7조의7(특별휴가)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "가족돌봄휴가를 신청할 수 있는 상황이에요. 돌봄 대상·사유와 유급 조건을 확인하세요.",
+        "kind": "summary",
+        "rule_id": "family-care-situation",
+        "evidence": [
+          [
+            "21d5f034c4c657e13735af53a0f1ce01505505af28be35d7d3b312a66fe0181a",
+            "지방공무원 복무규정",
+            "제7조의7(특별휴가)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "child-which",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "가족돌봄휴가를 신청할 수 있는 상황이에요. 돌봄 대상·사유와 유급 조건을 확인하세요.",
+        "kind": "summary",
+        "rule_id": "family-care-situation",
+        "evidence": [
+          [
+            "21d5f034c4c657e13735af53a0f1ce01505505af28be35d7d3b312a66fe0181a",
+            "지방공무원 복무규정",
+            "제7조의7(특별휴가)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "가족돌봄휴가를 신청할 수 있는 상황이에요. 돌봄 대상·사유와 유급 조건을 확인하세요.",
+        "kind": "summary",
+        "rule_id": "family-care-situation",
+        "evidence": [
+          [
+            "21d5f034c4c657e13735af53a0f1ce01505505af28be35d7d3b312a66fe0181a",
+            "지방공무원 복무규정",
+            "제7조의7(특별휴가)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "own",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "본인의 질병이나 부상으로 직무를 수행할 수 없다면 병가로 신청하세요.",
+        "kind": "summary",
+        "rule_id": "sick-leave",
+        "evidence": [
+          [
+            "5157d7899f3b59df4ff3aee140a143dc7d901ce9b8d4ef1aceefa9ff5f50a015",
+            "지방공무원 복무규정",
+            "제7조의5(병가)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "본인의 질병이나 부상으로 직무를 수행할 수 없다면 병가로 신청하세요.",
+        "kind": "summary",
+        "rule_id": "sick-leave",
+        "evidence": [
+          [
+            "5157d7899f3b59df4ff3aee140a143dc7d901ce9b8d4ef1aceefa9ff5f50a015",
+            "지방공무원 복무규정",
+            "제7조의5(병가)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "own2",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "본인의 질병이나 부상으로 직무를 수행할 수 없다면 병가로 신청하세요.",
+        "kind": "summary",
+        "rule_id": "sick-leave",
+        "evidence": [
+          [
+            "5157d7899f3b59df4ff3aee140a143dc7d901ce9b8d4ef1aceefa9ff5f50a015",
+            "지방공무원 복무규정",
+            "제7조의5(병가)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "본인의 질병이나 부상으로 직무를 수행할 수 없다면 병가로 신청하세요.",
+        "kind": "summary",
+        "rule_id": "sick-leave",
+        "evidence": [
+          [
+            "5157d7899f3b59df4ff3aee140a143dc7d901ce9b8d4ef1aceefa9ff5f50a015",
+            "지방공무원 복무규정",
+            "제7조의5(병가)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "marriage",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "본인 결혼은 5일, 자녀 결혼은 1일이에요.",
+        "kind": "summary",
+        "rule_id": "extended-occasion",
+        "evidence": [
+          [
+            "38d5095d2162c76f63f1313a5d239ddd51a2cf35bfc09dc9592a77436be6f9b1",
+            "지방공무원 복무규정",
+            "별표 1 경조사 휴가일수표"
+          ],
+          [
+            "d0729ac9f46986b5f2c1d0c3b58fe4913449276030f9240026935d686c4135d4",
+            "국가공무원 복무규정",
+            "별표 2 경조사별 휴가 일수표"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "본인 결혼은 5일, 자녀 결혼은 1일이에요.",
+        "kind": "summary",
+        "rule_id": "extended-occasion",
+        "evidence": [
+          [
+            "38d5095d2162c76f63f1313a5d239ddd51a2cf35bfc09dc9592a77436be6f9b1",
+            "지방공무원 복무규정",
+            "별표 1 경조사 휴가일수표"
+          ],
+          [
+            "d0729ac9f46986b5f2c1d0c3b58fe4913449276030f9240026935d686c4135d4",
+            "국가공무원 복무규정",
+            "별표 2 경조사별 휴가 일수표"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "reserve",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "찾은 자료를 차례로 확인해요",
+        "kind": "extract",
+        "rule_id": null,
+        "evidence": [
+          [
+            "88a565bed1145e6cfb5db10f8185ea7c9b5ee9b6c363db8123ac022c7861cbac",
+            "지방공무원 복무규정",
+            "제7조의6(공가)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "찾은 자료를 차례로 확인해요",
+        "kind": "extract",
+        "rule_id": null,
+        "evidence": [
+          [
+            "88a565bed1145e6cfb5db10f8185ea7c9b5ee9b6c363db8123ac022c7861cbac",
+            "지방공무원 복무규정",
+            "제7조의6(공가)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "blood",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "혈액관리법에 따른 헌혈에 참가할 때는 공가로 신청하세요.",
+        "kind": "summary",
+        "rule_id": "blood-leave",
+        "evidence": [
+          [
+            "88a565bed1145e6cfb5db10f8185ea7c9b5ee9b6c363db8123ac022c7861cbac",
+            "지방공무원 복무규정",
+            "제7조의6(공가)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "혈액관리법에 따른 헌혈에 참가할 때는 공가로 신청하세요.",
+        "kind": "summary",
+        "rule_id": "blood-leave",
+        "evidence": [
+          [
+            "88a565bed1145e6cfb5db10f8185ea7c9b5ee9b6c363db8123ac022c7861cbac",
+            "지방공무원 복무규정",
+            "제7조의6(공가)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "school",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "가족돌봄휴가를 신청할 수 있는 상황이에요. 돌봄 대상·사유와 유급 조건을 확인하세요.",
+        "kind": "summary",
+        "rule_id": "family-care-situation",
+        "evidence": [
+          [
+            "21d5f034c4c657e13735af53a0f1ce01505505af28be35d7d3b312a66fe0181a",
+            "지방공무원 복무규정",
+            "제7조의7(특별휴가)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "가족돌봄휴가를 신청할 수 있는 상황이에요. 돌봄 대상·사유와 유급 조건을 확인하세요.",
+        "kind": "summary",
+        "rule_id": "family-care-situation",
+        "evidence": [
+          [
+            "21d5f034c4c657e13735af53a0f1ce01505505af28be35d7d3b312a66fe0181a",
+            "지방공무원 복무규정",
+            "제7조의7(특별휴가)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "parent-death",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "상황을 조금만 더 알려주세요",
+        "kind": "clarification",
+        "rule_id": null,
+        "evidence": [],
+        "ai_used": false
+      },
+      "public": {
+        "title": "상황을 조금만 더 알려주세요",
+        "kind": "clarification",
+        "rule_id": null,
+        "evidence": [],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "bare",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "상황을 조금만 더 알려주세요",
+        "kind": "clarification",
+        "rule_id": null,
+        "evidence": [],
+        "ai_used": false
+      },
+      "public": {
+        "title": "상황을 조금만 더 알려주세요",
+        "kind": "clarification",
+        "rule_id": null,
+        "evidence": [],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "duty",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "자료를 더 확인해야 답할 수 있어요",
+        "kind": "unavailable",
+        "rule_id": null,
+        "evidence": [],
+        "ai_used": false
+      },
+      "public": {
+        "title": "자료를 더 확인해야 답할 수 있어요",
+        "kind": "unavailable",
+        "rule_id": null,
+        "evidence": [],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "situation",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "찾은 자료를 차례로 확인해요",
+        "kind": "extract",
+        "rule_id": null,
+        "evidence": [
+          [
+            "90737b912ccb405ae6b25ec4403f4637397fce412ce5c2029a96ee295f659576",
+            "국가공무원 복무·징계 관련 예규",
+            "제2장 근무사항의 관리 > 3. 근무상황부 등의 기재"
+          ],
+          [
+            "b90d82c888f3a3c6f2bef15d6731cb1b52c7e8d2c44b3deff6c053b1db947af5",
+            "국가공무원 복무·징계 관련 예규",
+            "제2장 근무사항의 관리 > 2. 개인별 근무상황부의 비치․관리"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "찾은 자료를 차례로 확인해요",
+        "kind": "extract",
+        "rule_id": null,
+        "evidence": [
+          [
+            "90737b912ccb405ae6b25ec4403f4637397fce412ce5c2029a96ee295f659576",
+            "국가공무원 복무·징계 관련 예규",
+            "제2장 근무사항의 관리 > 3. 근무상황부 등의 기재"
+          ],
+          [
+            "b90d82c888f3a3c6f2bef15d6731cb1b52c7e8d2c44b3deff6c053b1db947af5",
+            "국가공무원 복무·징계 관련 예규",
+            "제2장 근무사항의 관리 > 2. 개인별 근무상황부의 비치․관리"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "bill",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "자료를 더 확인해야 답할 수 있어요",
+        "kind": "unavailable",
+        "rule_id": null,
+        "evidence": [],
+        "ai_used": false
+      },
+      "public": {
+        "title": "자료를 더 확인해야 답할 수 있어요",
+        "kind": "unavailable",
+        "rule_id": null,
+        "evidence": [],
+        "ai_used": false
+      }
+    }
+  ],
+  "summary": {
+    "all_pass": true,
+    "passed": 14,
+    "failed": 0,
+    "total": 14
+  }
+}
