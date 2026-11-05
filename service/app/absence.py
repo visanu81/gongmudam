@@ -30,7 +30,7 @@ def classify(query):
     question, _, context = query.partition('\n업무환경:')
     q = re.sub(r'\s+', '', question); c = re.sub(r'\s+', '', context)
     returning = any(t in q for t in RETURN) and ('휴직' in q or '복직' in q)
-    if not ('휴직' in q or returning) or any(t in q for t in ELSEWHERE + OTHER):
+    if not ('휴직' in q or returning) or any(t in q for t in ELSEWHERE + OTHER) or any(t in c for t in OTHER):
         return None
     kinds = [label for label, words in KINDS if any(t in q for t in words)]
     if not (returning or any(t in q for t in ASKS) or (kinds and q.endswith(('휴직', '휴직?')))):
@@ -47,4 +47,6 @@ def classify(query):
         plan['only'] = kinds + ['신분과 복직']
     elif any(t in q for t in ('종류', '뭐가있', '뭐있', '무슨', '어떤', '사유')):
         plan['only'] = ['휴직 종류', '신분과 복직']
+    else:
+        plan['title'] = '휴직 기간은 종류마다 달라요. 육아 3년 이내, 질병 1년 이내(연장 가능), 가족돌봄 1년 이내(재직 중 총 3년), 유학 3년 이내(연장 가능)예요.'
     return plan

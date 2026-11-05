@@ -67,6 +67,11 @@ class AbsenceTest(unittest.TestCase):
     def test_the_title_is_the_conclusion(self):
         self.assertEqual(self.ask('육아휴직 기간은?')['knowledge']['tree']['title'], '자녀를 키우거나 임신·출산으로 쉬는 휴직은 자녀 1명에 3년 이내예요.')
 
+    def test_an_unnamed_period_question_is_titled_with_the_periods(self):
+        title = self.ask('휴직 기간은?')['knowledge']['tree']['title']
+        self.assertIn('육아 3년 이내', title)
+        self.assertIn('총 3년', title)
+
     def test_a_named_kind_leaves_the_other_kinds_out(self):
         answer = self.ask('육아휴직 기간은?')['answer']
         self.assertNotIn('유학', answer)

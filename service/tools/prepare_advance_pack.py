@@ -59,6 +59,9 @@ def build(base=BASE):
     for spec in json.loads((base / 'reviewed_sources.json').read_text(encoding='utf-8')):
         if 'raw_files' in spec:
             text = _pages(base, spec)
+        elif spec['raw_file'].endswith('.json'):
+            # One reviewed section of a long guideline, saved as its own record.
+            text = json.loads(_raw(base, spec['raw_file'], spec['raw_sha256']))['text'].strip() + '\n'
         else:
             text = _article(_raw(base, spec['raw_file'], spec['raw_sha256']), spec['article'])
         row = dict(spec, sha256=hashlib.sha256(text.encode('utf-8')).hexdigest(),

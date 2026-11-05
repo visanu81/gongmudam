@@ -18,7 +18,7 @@ NATIONAL = ('국가공무원', '국가직', '국가기관', '중앙부처', '중
 def classify(query):
     question, _, context = query.partition('\n업무환경:')
     q = re.sub(r'\s+', '', question); c = re.sub(r'\s+', '', context)
-    if not ASKS.search(q) or '휴가비' in q or any(t in q for t in OTHER + SITUATION):
+    if not ASKS.search(q) or '휴가비' in q or any(t in q for t in OTHER + SITUATION) or any(t in c for t in OTHER):
         return None
     local = any(t in q for t in LOCAL)
     national = any(t in q for t in NATIONAL)
