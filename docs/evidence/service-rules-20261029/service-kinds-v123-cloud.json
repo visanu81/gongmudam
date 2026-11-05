@@ -1,0 +1,963 @@
+{
+  "today": "2026-11-05",
+  "cases": [
+    {
+      "id": "kinds-1",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "공가는 병역 소집·훈련, 국회·법원 등 소환, 투표, 승진·전직시험, 원격지 전보 부임, 건강검진, 헌혈, 외국어능력시험, 국가·지방 주요 행사, 천재지변 등으로 출근이 불가능할 때, 노조 교섭·대의원회·회계감사, 검역 예방접종, 제1급감염병 예방접종·검사 때 받아요.",
+        "kind": "summary",
+        "rule_id": "office:official-leave-both",
+        "evidence": [
+          [
+            "eecb31971afab00985837016646f92af78dbf916f0fa4cb2641547af62409ad9",
+            "지방공무원 복무규정",
+            "제7조의6(공가)"
+          ],
+          [
+            "f459b93473b181b1dc9333903d8ccc97f66930fc7954fabe074a2ff8628d3533",
+            "국가공무원 복무규정",
+            "제19조(공가)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "공가는 병역 소집·훈련, 국회·법원 등 소환, 투표, 승진·전직시험, 원격지 전보 부임, 건강검진, 헌혈, 외국어능력시험, 국가·지방 주요 행사, 천재지변 등으로 출근이 불가능할 때, 노조 교섭·대의원회·회계감사, 검역 예방접종, 제1급감염병 예방접종·검사 때 받아요.",
+        "kind": "summary",
+        "rule_id": "office:official-leave-both",
+        "evidence": [
+          [
+            "eecb31971afab00985837016646f92af78dbf916f0fa4cb2641547af62409ad9",
+            "지방공무원 복무규정",
+            "제7조의6(공가)"
+          ],
+          [
+            "f459b93473b181b1dc9333903d8ccc97f66930fc7954fabe074a2ff8628d3533",
+            "국가공무원 복무규정",
+            "제19조(공가)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "kinds-2",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "공가는 병역 소집·훈련, 국회·법원 등 소환, 투표, 승진·전직시험, 원격지 전보 부임, 건강검진, 헌혈, 외국어능력시험, 국가·지방 주요 행사, 천재지변 등으로 출근이 불가능할 때, 노조 교섭·대의원회·회계감사, 검역 예방접종, 제1급감염병 예방접종·검사 때 받아요.",
+        "kind": "summary",
+        "rule_id": "office:official-leave-both",
+        "evidence": [
+          [
+            "eecb31971afab00985837016646f92af78dbf916f0fa4cb2641547af62409ad9",
+            "지방공무원 복무규정",
+            "제7조의6(공가)"
+          ],
+          [
+            "f459b93473b181b1dc9333903d8ccc97f66930fc7954fabe074a2ff8628d3533",
+            "국가공무원 복무규정",
+            "제19조(공가)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "공가는 병역 소집·훈련, 국회·법원 등 소환, 투표, 승진·전직시험, 원격지 전보 부임, 건강검진, 헌혈, 외국어능력시험, 국가·지방 주요 행사, 천재지변 등으로 출근이 불가능할 때, 노조 교섭·대의원회·회계감사, 검역 예방접종, 제1급감염병 예방접종·검사 때 받아요.",
+        "kind": "summary",
+        "rule_id": "office:official-leave-both",
+        "evidence": [
+          [
+            "eecb31971afab00985837016646f92af78dbf916f0fa4cb2641547af62409ad9",
+            "지방공무원 복무규정",
+            "제7조의6(공가)"
+          ],
+          [
+            "f459b93473b181b1dc9333903d8ccc97f66930fc7954fabe074a2ff8628d3533",
+            "국가공무원 복무규정",
+            "제19조(공가)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "kinds-3",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "공가는 병역 소집·훈련, 국회·법원 등 소환, 투표, 승진·전직시험, 원격지 전보 부임, 건강검진, 헌혈, 외국어능력시험, 국가·지방 주요 행사, 천재지변 등으로 출근이 불가능할 때, 노조 교섭·대의원회·회계감사, 검역 예방접종, 제1급감염병 예방접종·검사 때 받아요.",
+        "kind": "summary",
+        "rule_id": "office:official-leave-local",
+        "evidence": [
+          [
+            "eecb31971afab00985837016646f92af78dbf916f0fa4cb2641547af62409ad9",
+            "지방공무원 복무규정",
+            "제7조의6(공가)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "공가는 병역 소집·훈련, 국회·법원 등 소환, 투표, 승진·전직시험, 원격지 전보 부임, 건강검진, 헌혈, 외국어능력시험, 국가·지방 주요 행사, 천재지변 등으로 출근이 불가능할 때, 노조 교섭·대의원회·회계감사, 검역 예방접종, 제1급감염병 예방접종·검사 때 받아요.",
+        "kind": "summary",
+        "rule_id": "office:official-leave-local",
+        "evidence": [
+          [
+            "eecb31971afab00985837016646f92af78dbf916f0fa4cb2641547af62409ad9",
+            "지방공무원 복무규정",
+            "제7조의6(공가)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "kinds-4",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "공가는 병역 소집·훈련, 국회·법원 등 소환, 투표, 승진·전직시험, 원격지 전보 부임, 건강검진, 헌혈, 외국어능력시험, 국가·지방 주요 행사, 천재지변 등으로 출근이 불가능할 때, 노조 교섭·대의원회·회계감사, 검역 예방접종, 제1급감염병 예방접종·검사 때 받아요.",
+        "kind": "summary",
+        "rule_id": "office:official-leave-national",
+        "evidence": [
+          [
+            "f459b93473b181b1dc9333903d8ccc97f66930fc7954fabe074a2ff8628d3533",
+            "국가공무원 복무규정",
+            "제19조(공가)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "공가는 병역 소집·훈련, 국회·법원 등 소환, 투표, 승진·전직시험, 원격지 전보 부임, 건강검진, 헌혈, 외국어능력시험, 국가·지방 주요 행사, 천재지변 등으로 출근이 불가능할 때, 노조 교섭·대의원회·회계감사, 검역 예방접종, 제1급감염병 예방접종·검사 때 받아요.",
+        "kind": "summary",
+        "rule_id": "office:official-leave-national",
+        "evidence": [
+          [
+            "f459b93473b181b1dc9333903d8ccc97f66930fc7954fabe074a2ff8628d3533",
+            "국가공무원 복무규정",
+            "제19조(공가)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "kinds-5",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "공무원 징계는 파면, 해임, 강등, 정직, 감봉, 견책 여섯 가지예요. 국가공무원은 국가공무원법 제79조에 정해져 있어요.",
+        "kind": "summary",
+        "rule_id": "office:discipline-both",
+        "evidence": [
+          [
+            "8248c2d6a8eeffab50509510090de016ee9994688d694e2b7740f96399174b83",
+            "국가공무원법",
+            "제79조(징계의 종류)"
+          ],
+          [
+            "f64a087e59ff07990419024d7a868c06ae5b6d1b7d88fe714b15f631289d1467",
+            "국가공무원법",
+            "제80조(징계의 효력)"
+          ],
+          [
+            "ff5ee994de15123f5fbdf5960432e45b021937e130ce467029c71829b6d4c11d",
+            "지방공무원법",
+            "제70조(징계의 종류)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "공무원 징계는 파면, 해임, 강등, 정직, 감봉, 견책 여섯 가지예요. 국가공무원은 국가공무원법 제79조에 정해져 있어요.",
+        "kind": "summary",
+        "rule_id": "office:discipline-both",
+        "evidence": [
+          [
+            "8248c2d6a8eeffab50509510090de016ee9994688d694e2b7740f96399174b83",
+            "국가공무원법",
+            "제79조(징계의 종류)"
+          ],
+          [
+            "f64a087e59ff07990419024d7a868c06ae5b6d1b7d88fe714b15f631289d1467",
+            "국가공무원법",
+            "제80조(징계의 효력)"
+          ],
+          [
+            "ff5ee994de15123f5fbdf5960432e45b021937e130ce467029c71829b6d4c11d",
+            "지방공무원법",
+            "제70조(징계의 종류)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "kinds-6",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "지방공무원 징계는 파면, 해임, 강등, 정직, 감봉, 견책 여섯 가지예요(지방공무원법 제70조).",
+        "kind": "summary",
+        "rule_id": "office:discipline-local",
+        "evidence": [
+          [
+            "3fb801f68a5e9f87d06d43e8a3d2d37355802dc5496737be3bd57908a70a702e",
+            "지방공무원법",
+            "제71조(징계의 효력)"
+          ],
+          [
+            "ff5ee994de15123f5fbdf5960432e45b021937e130ce467029c71829b6d4c11d",
+            "지방공무원법",
+            "제70조(징계의 종류)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "지방공무원 징계는 파면, 해임, 강등, 정직, 감봉, 견책 여섯 가지예요(지방공무원법 제70조).",
+        "kind": "summary",
+        "rule_id": "office:discipline-local",
+        "evidence": [
+          [
+            "3fb801f68a5e9f87d06d43e8a3d2d37355802dc5496737be3bd57908a70a702e",
+            "지방공무원법",
+            "제71조(징계의 효력)"
+          ],
+          [
+            "ff5ee994de15123f5fbdf5960432e45b021937e130ce467029c71829b6d4c11d",
+            "지방공무원법",
+            "제70조(징계의 종류)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "kinds-7",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "국가공무원 징계는 파면, 해임, 강등, 정직, 감봉, 견책 여섯 가지예요(국가공무원법 제79조).",
+        "kind": "summary",
+        "rule_id": "office:discipline-national",
+        "evidence": [
+          [
+            "8248c2d6a8eeffab50509510090de016ee9994688d694e2b7740f96399174b83",
+            "국가공무원법",
+            "제79조(징계의 종류)"
+          ],
+          [
+            "f64a087e59ff07990419024d7a868c06ae5b6d1b7d88fe714b15f631289d1467",
+            "국가공무원법",
+            "제80조(징계의 효력)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "국가공무원 징계는 파면, 해임, 강등, 정직, 감봉, 견책 여섯 가지예요(국가공무원법 제79조).",
+        "kind": "summary",
+        "rule_id": "office:discipline-national",
+        "evidence": [
+          [
+            "8248c2d6a8eeffab50509510090de016ee9994688d694e2b7740f96399174b83",
+            "국가공무원법",
+            "제79조(징계의 종류)"
+          ],
+          [
+            "f64a087e59ff07990419024d7a868c06ae5b6d1b7d88fe714b15f631289d1467",
+            "국가공무원법",
+            "제80조(징계의 효력)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "kinds-8",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "감봉은 1개월 이상 3개월 이하 기간 동안 보수의 3분의 1을 감해요.",
+        "kind": "summary",
+        "rule_id": "office:discipline-both",
+        "evidence": [
+          [
+            "8248c2d6a8eeffab50509510090de016ee9994688d694e2b7740f96399174b83",
+            "국가공무원법",
+            "제79조(징계의 종류)"
+          ],
+          [
+            "f64a087e59ff07990419024d7a868c06ae5b6d1b7d88fe714b15f631289d1467",
+            "국가공무원법",
+            "제80조(징계의 효력)"
+          ],
+          [
+            "ff5ee994de15123f5fbdf5960432e45b021937e130ce467029c71829b6d4c11d",
+            "지방공무원법",
+            "제70조(징계의 종류)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "감봉은 1개월 이상 3개월 이하 기간 동안 보수의 3분의 1을 감해요.",
+        "kind": "summary",
+        "rule_id": "office:discipline-both",
+        "evidence": [
+          [
+            "8248c2d6a8eeffab50509510090de016ee9994688d694e2b7740f96399174b83",
+            "국가공무원법",
+            "제79조(징계의 종류)"
+          ],
+          [
+            "f64a087e59ff07990419024d7a868c06ae5b6d1b7d88fe714b15f631289d1467",
+            "국가공무원법",
+            "제80조(징계의 효력)"
+          ],
+          [
+            "ff5ee994de15123f5fbdf5960432e45b021937e130ce467029c71829b6d4c11d",
+            "지방공무원법",
+            "제70조(징계의 종류)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "kinds-9",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "국가공무원 유연근무는 탄력근무제, 재량근무제, 원격근무제 세 가지예요(인사혁신처 복무·징계 관련 예규).",
+        "kind": "summary",
+        "rule_id": "office:flex-both",
+        "evidence": [
+          [
+            "158e881e2153ccb53e116ec2136a96e0ada4d52b2feeae4f20d04295db796eb6",
+            "국가공무원 복무·징계 관련 예규",
+            "제4장 3. 유연근무제 유형"
+          ],
+          [
+            "2bef9450794efe7e91be0fc20075afcfb531bd0afc4e54b23e7801a15d4e6e82",
+            "지방공무원 복무규정",
+            "제3조(근무시간 등의 변경)"
+          ],
+          [
+            "6ffa1c9357599f6156e63a9dda23bc9c9854dfa4a08e896f5bfab610559c460b",
+            "국가공무원 복무규정",
+            "제10조(근무시간 등의 변경)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "국가공무원 유연근무는 탄력근무제, 재량근무제, 원격근무제 세 가지예요(인사혁신처 복무·징계 관련 예규).",
+        "kind": "summary",
+        "rule_id": "office:flex-both",
+        "evidence": [
+          [
+            "158e881e2153ccb53e116ec2136a96e0ada4d52b2feeae4f20d04295db796eb6",
+            "국가공무원 복무·징계 관련 예규",
+            "제4장 3. 유연근무제 유형"
+          ],
+          [
+            "2bef9450794efe7e91be0fc20075afcfb531bd0afc4e54b23e7801a15d4e6e82",
+            "지방공무원 복무규정",
+            "제3조(근무시간 등의 변경)"
+          ],
+          [
+            "6ffa1c9357599f6156e63a9dda23bc9c9854dfa4a08e896f5bfab610559c460b",
+            "국가공무원 복무규정",
+            "제10조(근무시간 등의 변경)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "kinds-10",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "국가공무원 유연근무는 탄력근무제, 재량근무제, 원격근무제 세 가지예요(인사혁신처 복무·징계 관련 예규).",
+        "kind": "summary",
+        "rule_id": "office:flex-national",
+        "evidence": [
+          [
+            "158e881e2153ccb53e116ec2136a96e0ada4d52b2feeae4f20d04295db796eb6",
+            "국가공무원 복무·징계 관련 예규",
+            "제4장 3. 유연근무제 유형"
+          ],
+          [
+            "6ffa1c9357599f6156e63a9dda23bc9c9854dfa4a08e896f5bfab610559c460b",
+            "국가공무원 복무규정",
+            "제10조(근무시간 등의 변경)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "국가공무원 유연근무는 탄력근무제, 재량근무제, 원격근무제 세 가지예요(인사혁신처 복무·징계 관련 예규).",
+        "kind": "summary",
+        "rule_id": "office:flex-national",
+        "evidence": [
+          [
+            "158e881e2153ccb53e116ec2136a96e0ada4d52b2feeae4f20d04295db796eb6",
+            "국가공무원 복무·징계 관련 예규",
+            "제4장 3. 유연근무제 유형"
+          ],
+          [
+            "6ffa1c9357599f6156e63a9dda23bc9c9854dfa4a08e896f5bfab610559c460b",
+            "국가공무원 복무규정",
+            "제10조(근무시간 등의 변경)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "kinds-11",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "지방공무원 복무규정 제3조에는 유연근무 유형이 적혀 있지 않아요. 소속 기관의 복무 조례·지침을 확인하세요.",
+        "kind": "summary",
+        "rule_id": "office:flex-local",
+        "evidence": [
+          [
+            "2bef9450794efe7e91be0fc20075afcfb531bd0afc4e54b23e7801a15d4e6e82",
+            "지방공무원 복무규정",
+            "제3조(근무시간 등의 변경)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "지방공무원 복무규정 제3조에는 유연근무 유형이 적혀 있지 않아요. 소속 기관의 복무 조례·지침을 확인하세요.",
+        "kind": "summary",
+        "rule_id": "office:flex-local",
+        "evidence": [
+          [
+            "2bef9450794efe7e91be0fc20075afcfb531bd0afc4e54b23e7801a15d4e6e82",
+            "지방공무원 복무규정",
+            "제3조(근무시간 등의 변경)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "kinds-12",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "휴직 기간은 종류마다 달라요. 육아 3년 이내, 질병 1년 이내(연장 가능), 가족돌봄 1년 이내(재직 중 총 3년), 유학 3년 이내(연장 가능)예요.",
+        "kind": "summary",
+        "rule_id": "office:absence-both",
+        "evidence": [
+          [
+            "220856e03ab9a9d62db9234a43bb7ca53d5f882921694286100f5c7bc94a238b",
+            "지방공무원법",
+            "제64조(휴직기간)"
+          ],
+          [
+            "2a24fbe0133097aaa54481675c59802859bbf3e20b740b3b9fa10d0182bc13c6",
+            "지방공무원법",
+            "제63조(휴직)"
+          ],
+          [
+            "33c74ac8f59f836f44915f37f10dd2fab2ea28806f0a2dcfebc40944fde9c7e0",
+            "국가공무원법",
+            "제73조(휴직의 효력)"
+          ],
+          [
+            "5a5f02e9ff48e1b8a91f371e38ef34c44a68298eb8d5e90eb5134ed068d57c3c",
+            "지방공무원법",
+            "제65조(휴직의 효력)"
+          ],
+          [
+            "ba023337d53466f0d49ff60aa87462c17a23c321fb31ef2088770625affd39d6",
+            "국가공무원법",
+            "제71조(휴직)"
+          ],
+          [
+            "e2174574786abbf8b6a662030521230217b71e92c327773324666704ccb174ea",
+            "국가공무원법",
+            "제72조(휴직 기간)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "휴직 기간은 종류마다 달라요. 육아 3년 이내, 질병 1년 이내(연장 가능), 가족돌봄 1년 이내(재직 중 총 3년), 유학 3년 이내(연장 가능)예요.",
+        "kind": "summary",
+        "rule_id": "office:absence-both",
+        "evidence": [
+          [
+            "220856e03ab9a9d62db9234a43bb7ca53d5f882921694286100f5c7bc94a238b",
+            "지방공무원법",
+            "제64조(휴직기간)"
+          ],
+          [
+            "2a24fbe0133097aaa54481675c59802859bbf3e20b740b3b9fa10d0182bc13c6",
+            "지방공무원법",
+            "제63조(휴직)"
+          ],
+          [
+            "33c74ac8f59f836f44915f37f10dd2fab2ea28806f0a2dcfebc40944fde9c7e0",
+            "국가공무원법",
+            "제73조(휴직의 효력)"
+          ],
+          [
+            "5a5f02e9ff48e1b8a91f371e38ef34c44a68298eb8d5e90eb5134ed068d57c3c",
+            "지방공무원법",
+            "제65조(휴직의 효력)"
+          ],
+          [
+            "ba023337d53466f0d49ff60aa87462c17a23c321fb31ef2088770625affd39d6",
+            "국가공무원법",
+            "제71조(휴직)"
+          ],
+          [
+            "e2174574786abbf8b6a662030521230217b71e92c327773324666704ccb174ea",
+            "국가공무원법",
+            "제72조(휴직 기간)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "kinds-13",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "소방공무원 공가는 소방공무원 복무규정에 정한 사유에 해당할 때 승인돼요",
+        "kind": "summary",
+        "rule_id": "service-rules:fire-public-leave",
+        "evidence": [
+          [
+            "f0bec32260f39ddca26b37094ec35d6e72385d86699a4d3e74faca8dc8888acb",
+            "소방공무원 복무규정",
+            "제8조의2(공가)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "소방공무원 공가는 소방공무원 복무규정에 정한 사유에 해당할 때 승인돼요",
+        "kind": "summary",
+        "rule_id": "service-rules:fire-public-leave",
+        "evidence": [
+          [
+            "f0bec32260f39ddca26b37094ec35d6e72385d86699a4d3e74faca8dc8888acb",
+            "소방공무원 복무규정",
+            "제8조의2(공가)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "kinds-14",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "자료를 더 확인해야 답할 수 있어요",
+        "kind": "unavailable",
+        "rule_id": null,
+        "evidence": [],
+        "ai_used": false
+      },
+      "public": {
+        "title": "자료를 더 확인해야 답할 수 있어요",
+        "kind": "unavailable",
+        "rule_id": null,
+        "evidence": [],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "kinds-15",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "상황을 조금만 더 알려주세요",
+        "kind": "clarification",
+        "rule_id": null,
+        "evidence": [],
+        "ai_used": false
+      },
+      "public": {
+        "title": "상황을 조금만 더 알려주세요",
+        "kind": "clarification",
+        "rule_id": null,
+        "evidence": [],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "kinds-16",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "찾은 자료를 차례로 확인해요",
+        "kind": "extract",
+        "rule_id": null,
+        "evidence": [
+          [
+            "49b711f49196c83673857618be53754486c2694e1070ab3ee532f83c9cb856c5",
+            "국가공무원 복무·징계 관련 예규",
+            "제12장 징계 > 2. 세부지침 > 나. 운전업무 관련 공무원에 대한 징계기준 명시"
+          ],
+          [
+            "4fcd49d24666397fa3b432b698c444c58364b33ba2132ce7e6b61c968757cc4b",
+            "국가공무원 복무·징계 관련 예규",
+            "제12장 징계 > 2. 징계위원회의 설치 및 구성 > 가. 징계위원회의 종류 및 관할"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "찾은 자료를 차례로 확인해요",
+        "kind": "extract",
+        "rule_id": null,
+        "evidence": [
+          [
+            "49b711f49196c83673857618be53754486c2694e1070ab3ee532f83c9cb856c5",
+            "국가공무원 복무·징계 관련 예규",
+            "제12장 징계 > 2. 세부지침 > 나. 운전업무 관련 공무원에 대한 징계기준 명시"
+          ],
+          [
+            "4fcd49d24666397fa3b432b698c444c58364b33ba2132ce7e6b61c968757cc4b",
+            "국가공무원 복무·징계 관련 예규",
+            "제12장 징계 > 2. 징계위원회의 설치 및 구성 > 가. 징계위원회의 종류 및 관할"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "blood",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "혈액관리법에 따른 헌혈에 참가할 때는 공가로 신청하세요.",
+        "kind": "summary",
+        "rule_id": "blood-leave",
+        "evidence": [
+          [
+            "88a565bed1145e6cfb5db10f8185ea7c9b5ee9b6c363db8123ac022c7861cbac",
+            "지방공무원 복무규정",
+            "제7조의6(공가)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "혈액관리법에 따른 헌혈에 참가할 때는 공가로 신청하세요.",
+        "kind": "summary",
+        "rule_id": "blood-leave",
+        "evidence": [
+          [
+            "88a565bed1145e6cfb5db10f8185ea7c9b5ee9b6c363db8123ac022c7861cbac",
+            "지방공무원 복무규정",
+            "제7조의6(공가)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "checkup",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "법정 건강검진이라면 ‘공가’로 상신하세요.",
+        "kind": "summary",
+        "rule_id": "health-leave",
+        "evidence": [
+          [
+            "88a565bed1145e6cfb5db10f8185ea7c9b5ee9b6c363db8123ac022c7861cbac",
+            "지방공무원 복무규정",
+            "제7조의6(공가)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "법정 건강검진이라면 ‘공가’로 상신하세요.",
+        "kind": "summary",
+        "rule_id": "health-leave",
+        "evidence": [
+          [
+            "88a565bed1145e6cfb5db10f8185ea7c9b5ee9b6c363db8123ac022c7861cbac",
+            "지방공무원 복무규정",
+            "제7조의6(공가)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "statute",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "찾은 자료를 차례로 확인해요",
+        "kind": "extract",
+        "rule_id": null,
+        "evidence": [
+          [
+            "39b8a5ac9ba2544b8847af5082f6f10e902a3155aa52a4b18aede5cf58926961",
+            "국가공무원 복무·징계 관련 예규",
+            "제12장 징계 > 3. 징계시효 정지 특례 > 가. 감사원에서 조사 중인 사건"
+          ],
+          [
+            "9a24160c6856dd351c185fd458daddd87c4772735553d447e969446731cbd98a",
+            "국가공무원 복무·징계 관련 예규",
+            "제12장 징계 > 3. 징계시효 정지 특례 > 다. 자체감사 등에 의해 조사 중인 사건"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "찾은 자료를 차례로 확인해요",
+        "kind": "extract",
+        "rule_id": null,
+        "evidence": [
+          [
+            "39b8a5ac9ba2544b8847af5082f6f10e902a3155aa52a4b18aede5cf58926961",
+            "국가공무원 복무·징계 관련 예규",
+            "제12장 징계 > 3. 징계시효 정지 특례 > 가. 감사원에서 조사 중인 사건"
+          ],
+          [
+            "9a24160c6856dd351c185fd458daddd87c4772735553d447e969446731cbd98a",
+            "국가공무원 복무·징계 관련 예규",
+            "제12장 징계 > 3. 징계시효 정지 특례 > 다. 자체감사 등에 의해 조사 중인 사건"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "committee",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "찾은 자료를 차례로 확인해요",
+        "kind": "extract",
+        "rule_id": null,
+        "evidence": [
+          [
+            "4fcd49d24666397fa3b432b698c444c58364b33ba2132ce7e6b61c968757cc4b",
+            "국가공무원 복무·징계 관련 예규",
+            "제12장 징계 > 2. 징계위원회의 설치 및 구성 > 가. 징계위원회의 종류 및 관할"
+          ],
+          [
+            "9d274a3134c80209d5fe61b853fecd44cfa1225d6aa27e5b18cb08a0d2afc646",
+            "국가공무원 복무·징계 관련 예규",
+            "제12장 징계 > 13. 징계위원회 사무 운영 > 가. 각급 징계위원회 사무직원의 ｢"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "찾은 자료를 차례로 확인해요",
+        "kind": "extract",
+        "rule_id": null,
+        "evidence": [
+          [
+            "4fcd49d24666397fa3b432b698c444c58364b33ba2132ce7e6b61c968757cc4b",
+            "국가공무원 복무·징계 관련 예규",
+            "제12장 징계 > 2. 징계위원회의 설치 및 구성 > 가. 징계위원회의 종류 및 관할"
+          ],
+          [
+            "9d274a3134c80209d5fe61b853fecd44cfa1225d6aa27e5b18cb08a0d2afc646",
+            "국가공무원 복무·징계 관련 예규",
+            "제12장 징계 > 13. 징계위원회 사무 운영 > 가. 각급 징계위원회 사무직원의 ｢"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "drunk",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "인사혁신처 제도 안내·FAQ에서 관련 설명을 찾았어요",
+        "kind": "reference",
+        "rule_id": null,
+        "evidence": [],
+        "ai_used": false
+      },
+      "public": {
+        "title": "인사혁신처 제도 안내·FAQ에서 관련 설명을 찾았어요",
+        "kind": "reference",
+        "rule_id": null,
+        "evidence": [],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "flex-apply",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "찾은 자료를 차례로 확인해요",
+        "kind": "extract",
+        "rule_id": null,
+        "evidence": [
+          [
+            "3c9e7dcc0704e3077fc60ee5d7ffc15b98fab20853d0ef0d884ec993ed109c1d",
+            "국가공무원 복무·징계 관련 예규",
+            "제4장 유연근무제 > 4. 공통사항 > 사. 당일유연근무 신청·취소·변경"
+          ],
+          [
+            "57b2c513483f12cffd01e2f14a049766ed7a6b579fda22adf484e27ee6e017ae",
+            "국가공무원 복무·징계 관련 예규",
+            "제4장 유연근무제 > 2. 기본방침 > 나. 유연근무 이용자에 대한 불이익 금지"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "찾은 자료를 차례로 확인해요",
+        "kind": "extract",
+        "rule_id": null,
+        "evidence": [
+          [
+            "3c9e7dcc0704e3077fc60ee5d7ffc15b98fab20853d0ef0d884ec993ed109c1d",
+            "국가공무원 복무·징계 관련 예규",
+            "제4장 유연근무제 > 4. 공통사항 > 사. 당일유연근무 신청·취소·변경"
+          ],
+          [
+            "57b2c513483f12cffd01e2f14a049766ed7a6b579fda22adf484e27ee6e017ae",
+            "국가공무원 복무·징계 관련 예규",
+            "제4장 유연근무제 > 2. 기본방침 > 나. 유연근무 이용자에 대한 불이익 금지"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "remote",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "찾은 자료를 차례로 확인해요",
+        "kind": "extract",
+        "rule_id": null,
+        "evidence": [
+          [
+            "01ebcba16cf3e9d587d56620d0f6e6931d0caf957ae0471aa1e9fb7bb5fff27c",
+            "국가공무원 복무·징계 관련 예규",
+            "제4장 유연근무제 > 3. 복무 관리 > 나. 근무시간 지정 및 변경"
+          ],
+          [
+            "2d60b89cab1722903335bf0009f2931695b9306b37b1aab152a0bb80f0e92be7",
+            "국가공무원 복무·징계 관련 예규",
+            "제4장 유연근무제 > 4. 공통사항 > 다. 점심 및 저녁시간의 운영"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "찾은 자료를 차례로 확인해요",
+        "kind": "extract",
+        "rule_id": null,
+        "evidence": [
+          [
+            "01ebcba16cf3e9d587d56620d0f6e6931d0caf957ae0471aa1e9fb7bb5fff27c",
+            "국가공무원 복무·징계 관련 예규",
+            "제4장 유연근무제 > 3. 복무 관리 > 나. 근무시간 지정 및 변경"
+          ],
+          [
+            "2d60b89cab1722903335bf0009f2931695b9306b37b1aab152a0bb80f0e92be7",
+            "국가공무원 복무·징계 관련 예규",
+            "제4장 유연근무제 > 4. 공통사항 > 다. 점심 및 저녁시간의 운영"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "flex-lunch",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "찾은 자료를 차례로 확인해요",
+        "kind": "extract",
+        "rule_id": null,
+        "evidence": [
+          [
+            "0bd0f226d60c9b9aa064e85b3e7ae43aa78a4242288df952cc0f20f4497ea224",
+            "국가공무원 복무·징계 관련 예규",
+            "제4장 유연근무제 > 3. 유연근무제 유형"
+          ],
+          [
+            "2d60b89cab1722903335bf0009f2931695b9306b37b1aab152a0bb80f0e92be7",
+            "국가공무원 복무·징계 관련 예규",
+            "제4장 유연근무제 > 4. 공통사항 > 다. 점심 및 저녁시간의 운영"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "찾은 자료를 차례로 확인해요",
+        "kind": "extract",
+        "rule_id": null,
+        "evidence": [
+          [
+            "0bd0f226d60c9b9aa064e85b3e7ae43aa78a4242288df952cc0f20f4497ea224",
+            "국가공무원 복무·징계 관련 예규",
+            "제4장 유연근무제 > 3. 유연근무제 유형"
+          ],
+          [
+            "2d60b89cab1722903335bf0009f2931695b9306b37b1aab152a0bb80f0e92be7",
+            "국가공무원 복무·징계 관련 예규",
+            "제4장 유연근무제 > 4. 공통사항 > 다. 점심 및 저녁시간의 운영"
+          ]
+        ],
+        "ai_used": false
+      }
+    }
+  ],
+  "summary": {
+    "all_pass": true,
+    "passed": 24,
+    "failed": 0,
+    "total": 24
+  }
+}
