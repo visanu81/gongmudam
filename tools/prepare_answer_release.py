@@ -19,7 +19,8 @@ OFFICE_PACKS=(('office-goods-20261026','국가·지방 물품관리 공식 근�
             ('office-advance-rule-20261104','국가·지방 선금 계약예규 공식 근거'),
             ('office-leave-types-20261105','국가·지방 공무원 휴가 종류 공식 근거'),
             ('office-absence-20261105','국가·지방 공무원 휴직 공식 근거'),
-            ('office-kinds-20261105','국가·지방 징계·유연근무 공식 근거'))
+            ('office-kinds-20261105','국가·지방 징계·유연근무 공식 근거'),
+            ('office-duties-20261106','국가·지방 공무원 의무·승진 공식 근거'))
 
 
 def digest(path):return hashlib.sha256(path.read_bytes()).hexdigest()

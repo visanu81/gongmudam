@@ -24,11 +24,13 @@ ADVANCE_RULE_BASE = Path(__file__).resolve().parents[1] / 'reference_data/office
 LEAVE_TYPES_BASE = Path(__file__).resolve().parents[1] / 'reference_data/office-leave-types-20261105'
 ABSENCE_BASE = Path(__file__).resolve().parents[1] / 'reference_data/office-absence-20261105'
 KINDS_BASE = Path(__file__).resolve().parents[1] / 'reference_data/office-kinds-20261105'
+DUTIES_BASE = Path(__file__).resolve().parents[1] / 'reference_data/office-duties-20261106'
 COLLECTIONS = frozenset({'office-20261025', 'office-extra-20261025', 'office-documents-20261026', 'office-goods-20261026',
                          'office-contract-20261104', 'office-expense-20261104',
                          'office-national-contract-20261104', 'office-advance-20261104',
                          'office-advance-rule-20261104', 'office-leave-types-20261105',
-                         'office-absence-20261105', 'office-kinds-20261105'})
+                         'office-absence-20261105', 'office-kinds-20261105',
+                         'office-duties-20261106'})
 _COLLECTION_ROOTS = {
     'office-20261025': 'BASE',
     'office-extra-20261025': 'EXTRA_BASE',
@@ -42,6 +44,7 @@ _COLLECTION_ROOTS = {
     'office-leave-types-20261105': 'LEAVE_TYPES_BASE',
     'office-absence-20261105': 'ABSENCE_BASE',
     'office-kinds-20261105': 'KINDS_BASE',
+    'office-duties-20261106': 'DUTIES_BASE',
 }
 router = APIRouter(prefix='/api/office-sources', tags=['서무 공통 근거'])
 LABELS = {'privacy': '개인정보 처리', 'records': '기록물 관리',
@@ -55,7 +58,9 @@ LABELS = {'privacy': '개인정보 처리', 'records': '기록물 관리',
           'leave_types': '공무원 휴가 종류',
           'absence': '공무원 휴직',
           'discipline': '공무원 징계',
-          'flex': '유연근무'}
+          'flex': '유연근무',
+          'duties': '공무원의 의무',
+          'promotion': '승진소요최저연수'}
 
 
 def flat(value):
@@ -193,7 +198,9 @@ def classify(query):
             if not matched and any(t in q for t in ('수집','받아','받으면','전화번호','연락처','동의','필요한항목','명단작성','명단만들')):
                 matched.append('privacy-collect')
             rules.extend(matched or ['unsupported'])
-    record = any(t in q for t in ('기록물', '회의록', '공문보관')) or (
+    # A 공문 is a record: its retention period is the 기록물 period.
+    document_retention = bool(re.search(r'(?:공문|문서|기안문|서류).{0,6}보존기간', q))
+    record = document_retention or any(t in q for t in ('기록물', '회의록', '공문보관')) or (
         any(t in q for t in ('이메일', '전자우편', '메일', '메신저')) and any(t in q for t in ('등록', '기록', '보관', '보존')))
     if record:
         topics.append('records')
@@ -204,7 +211,7 @@ def classify(query):
         elif any(t in q for t in ('회의록', '회의기록')):
             rules.append('records-meeting-detail' if any(t in q for t in ('대상','어떤회의','작성항목','참석자','작성방법','어떤내용')) else 'records-meeting')
         elif any(t in q for t in ('보존기간', '이관', '몇년', '얼마나')):
-            rules.append('records-retention-detail' if any(t in q for t in ('기준','정하','책정','분류','기산','종류')) else 'records-retention')
+            rules.append('records-retention-detail' if document_retention or any(t in q for t in ('기준','정하','책정','분류','기산','종류')) else 'records-retention')
         else:
             rules.append('records-register-detail' if any(t in q for t in ('등록절차','등록번호','수정이력')) else 'records-register')
     if any(t in q for t in ('인수인계', '인계인수', '업무인계', '업무인수', '업무편람', '후임자', '전임자')):
@@ -298,6 +305,8 @@ def documents(query, docs, today):
             return [], plan.get('reason') or '수의계약 조문(국가계약법 시행령 제26조·지방계약법 시행령 제25조)이 아직 등록되지 않았어요.', plan
         if 'national_contract' in plan['topics'] and plan.get('reason'):
             return [], plan['reason'], plan
+        if set(plan['topics']) & {'duties', 'promotion'}:
+            return [], '공무원 의무·승진 조문(국가공무원법·지방공무원법, 임용령)이 아직 등록되지 않았어요.', plan
         if set(plan['topics']) & {'discipline', 'flex'}:
             return [], '징계·유연근무 근거(국가공무원법 제79·80조, 복무규정 제10조, 인사혁신처 예규 등)가 아직 등록되지 않았어요.', plan
         if 'absence' in plan['topics']:
@@ -391,7 +400,7 @@ def summary(query, reply):
         branches.sort(key=lambda b: b['label'] != plan['lead'])
     title = ' · '.join(LABELS[t] for t in plan['topics']) + ' — 먼저 확인할 내용'
     # These topics answer one question, so its first sentence is the conclusion.
-    if set(plan['topics']) & {'absence', 'leave_types', 'discipline', 'flex'}:
+    if set(plan['topics']) & {'absence', 'leave_types', 'discipline', 'flex', 'duties', 'promotion'}:
         title = plan.get('title') or branches[0]['items'][0]['text'].split(' 근거는 ')[0]
     return dict(kind='summary', title=title,
                 rule_id='office:' + '+'.join(plan['rules']), branches=branches,

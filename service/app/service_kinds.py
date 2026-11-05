@@ -1,4 +1,5 @@
-"""Offline routing for "which kinds are there": 공가 사유, 징계 종류·효력, 유연근무 유형.
+"""Offline routing for "which kinds are there": 공가 사유, 징계 종류·효력, 유연근무 유형,
+공무원의 의무, 복무 위반, 승진소요최저연수.
 
 공가 and 징계 are the same in the national and local rules, so they do not wait
 for the body. 유연근무 types come from the 인사혁신처 예규, which binds national
@@ -6,6 +7,8 @@ officers only, and a local answer says so instead of borrowing them.
 A specific case (헌혈, 징계 시효) keeps its existing route.
 """
 import re
+
+from . import leave_situations
 
 OTHER = ('교원', '교사', '교육공무원', '경찰', '소방', '군인', '공무직', '기간제', '회사', '민간')
 LOCAL = ('지방공무원', '지방직', '지자체', '지방자치단체', '시청', '군청', '구청', '도청')
@@ -20,6 +23,21 @@ EFFECT_TITLES = (('강등', '강등은 1계급 아래로 내리고 3개월간 �
                  ('감봉', '감봉은 1개월 이상 3개월 이하 기간 동안 보수의 3분의 1을 감해요.'),
                  ('견책', '견책은 지난 잘못을 훈계하고 뉘우치게 하는 징계예요.'))
 FLEX_ASK = re.compile(r'유연근무.{0,6}(?:종류|유형|뭐가|뭐있|뭐뭐|어떤|무슨|형태)|(?:어떤|무슨).{0,6}유연근무')
+
+
+DUTY_ASK = re.compile(r'(?:공무원|복무).{0,4}의무.{0,6}(?:뭐|무엇|알려|종류|있|어떤)|(?:공무원|복무).{0,4}의무$')
+VIOLATION_ASK = re.compile(r'(?:복무|의무).{0,6}(?:위반|어기|어겼).{0,10}(?:어떻게|뭐|처벌|징계|불이익|되)')
+VIOLATION_CASE = ('음주', '성비위', '금품', '겸직', '시효', '감경', '기준')
+PROMOTION_ASK = re.compile(r'승진.{0,10}(?:최저연수|소요|몇년|얼마나|기간|연수|걸려|걸리)')
+PROMOTION_CASE = ('시험', '가산', '심사', '명부', '후보', '점수', '호봉', '수당', '교육')
+PROMOTION_YEARS = {'3': '2년', '4': '3년', '5': '3년', '6': '2년', '7': '1년', '8': '1년', '9': '1년'}
+# Named in 복무규정 제19조 제1호~제4호 and read there, not guessed from the word alone.
+PUBLIC_LEAVE_CASES = (('예비군', '예비군 훈련은 법령에 따른 소집·훈련 참가로 공가 사유예요.'),
+                      ('민방위', '민방위 훈련도 법령에 따른 훈련 참가이면 공가 사유예요.'),
+                      ('병역판정', '병역판정검사는 공가 사유예요.'),
+                      ('투표', '법률에 따른 투표 참가는 공가 사유예요.'),
+                      ('승진시험', '승진시험 응시는 공가 사유예요.'),
+                      ('전직시험', '전직시험 응시는 공가 사유예요.'))
 
 
 def side_of(q, c):
@@ -37,6 +55,19 @@ def classify(query):
     if any(t in q + c for t in OTHER):
         return None
     side = side_of(q, c)
+    if leave_situations.asks_which_leave(q):
+        named = next((t for name, t in PUBLIC_LEAVE_CASES if name in q), None)
+        if named:
+            return dict(topics=['leave_types'], rules=[f'official-leave-{side}'], title=named)
+    if DUTY_ASK.search(q):
+        return dict(topics=['duties'], rules=[f'duties-{side}'])
+    if VIOLATION_ASK.search(q) and not any(t in q for t in VIOLATION_CASE):
+        return dict(topics=['duties'], rules=[f'violation-{side}'])
+    if PROMOTION_ASK.search(q) and not any(t in q for t in PROMOTION_CASE):
+        rank = re.search(r'([3-9])급', q)
+        years = PROMOTION_YEARS.get(rank[1]) if rank and not (rank[1] == '3' and side == 'national') else None
+        title = f'{rank[1]}급에서 승진하려면 {years} 이상 해당 계급에 재직해야 해요.' if years else None
+        return dict(topics=['promotion'], rules=[f'promotion-{side}'], title=title)
     if OFFICIAL_ASK.search(q) and not any(t in q for t in OFFICIAL_CASE):
         return dict(topics=['leave_types'], rules=[f'official-leave-{side}'])
     if not any(t in q for t in DISCIPLINE_CASE):
