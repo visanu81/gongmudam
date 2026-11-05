@@ -1,0 +1,751 @@
+{
+  "today": "2026-11-05",
+  "cases": [
+    {
+      "id": "marriage-any",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "본인 결혼은 5일, 자녀 결혼은 1일이에요.",
+        "kind": "summary",
+        "rule_id": "extended-occasion",
+        "evidence": [
+          [
+            "38d5095d2162c76f63f1313a5d239ddd51a2cf35bfc09dc9592a77436be6f9b1",
+            "지방공무원 복무규정",
+            "별표 1 경조사 휴가일수표"
+          ],
+          [
+            "d0729ac9f46986b5f2c1d0c3b58fe4913449276030f9240026935d686c4135d4",
+            "국가공무원 복무규정",
+            "별표 2 경조사별 휴가 일수표"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "본인 결혼은 5일, 자녀 결혼은 1일이에요.",
+        "kind": "summary",
+        "rule_id": "extended-occasion",
+        "evidence": [
+          [
+            "38d5095d2162c76f63f1313a5d239ddd51a2cf35bfc09dc9592a77436be6f9b1",
+            "지방공무원 복무규정",
+            "별표 1 경조사 휴가일수표"
+          ],
+          [
+            "d0729ac9f46986b5f2c1d0c3b58fe4913449276030f9240026935d686c4135d4",
+            "국가공무원 복무규정",
+            "별표 2 경조사별 휴가 일수표"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "marriage-self",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "본인 결혼은 5일이에요.",
+        "kind": "summary",
+        "rule_id": "extended-occasion",
+        "evidence": [
+          [
+            "38d5095d2162c76f63f1313a5d239ddd51a2cf35bfc09dc9592a77436be6f9b1",
+            "지방공무원 복무규정",
+            "별표 1 경조사 휴가일수표"
+          ],
+          [
+            "d0729ac9f46986b5f2c1d0c3b58fe4913449276030f9240026935d686c4135d4",
+            "국가공무원 복무규정",
+            "별표 2 경조사별 휴가 일수표"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "본인 결혼은 5일이에요.",
+        "kind": "summary",
+        "rule_id": "extended-occasion",
+        "evidence": [
+          [
+            "38d5095d2162c76f63f1313a5d239ddd51a2cf35bfc09dc9592a77436be6f9b1",
+            "지방공무원 복무규정",
+            "별표 1 경조사 휴가일수표"
+          ],
+          [
+            "d0729ac9f46986b5f2c1d0c3b58fe4913449276030f9240026935d686c4135d4",
+            "국가공무원 복무규정",
+            "별표 2 경조사별 휴가 일수표"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "marriage-child",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "자녀 결혼은 1일이에요.",
+        "kind": "summary",
+        "rule_id": "extended-occasion",
+        "evidence": [
+          [
+            "38d5095d2162c76f63f1313a5d239ddd51a2cf35bfc09dc9592a77436be6f9b1",
+            "지방공무원 복무규정",
+            "별표 1 경조사 휴가일수표"
+          ],
+          [
+            "d0729ac9f46986b5f2c1d0c3b58fe4913449276030f9240026935d686c4135d4",
+            "국가공무원 복무규정",
+            "별표 2 경조사별 휴가 일수표"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "자녀 결혼은 1일이에요.",
+        "kind": "summary",
+        "rule_id": "extended-occasion",
+        "evidence": [
+          [
+            "38d5095d2162c76f63f1313a5d239ddd51a2cf35bfc09dc9592a77436be6f9b1",
+            "지방공무원 복무규정",
+            "별표 1 경조사 휴가일수표"
+          ],
+          [
+            "d0729ac9f46986b5f2c1d0c3b58fe4913449276030f9240026935d686c4135d4",
+            "국가공무원 복무규정",
+            "별표 2 경조사별 휴가 일수표"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "birth",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "배우자 출산은 20일이며, 한 번에 둘 이상의 자녀를 출산하면 25일이에요.",
+        "kind": "summary",
+        "rule_id": "extended-occasion",
+        "evidence": [
+          [
+            "38d5095d2162c76f63f1313a5d239ddd51a2cf35bfc09dc9592a77436be6f9b1",
+            "지방공무원 복무규정",
+            "별표 1 경조사 휴가일수표"
+          ],
+          [
+            "d0729ac9f46986b5f2c1d0c3b58fe4913449276030f9240026935d686c4135d4",
+            "국가공무원 복무규정",
+            "별표 2 경조사별 휴가 일수표"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "배우자 출산은 20일이며, 한 번에 둘 이상의 자녀를 출산하면 25일이에요.",
+        "kind": "summary",
+        "rule_id": "extended-occasion",
+        "evidence": [
+          [
+            "38d5095d2162c76f63f1313a5d239ddd51a2cf35bfc09dc9592a77436be6f9b1",
+            "지방공무원 복무규정",
+            "별표 1 경조사 휴가일수표"
+          ],
+          [
+            "d0729ac9f46986b5f2c1d0c3b58fe4913449276030f9240026935d686c4135d4",
+            "국가공무원 복무규정",
+            "별표 2 경조사별 휴가 일수표"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "adoption",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "본인 입양은 20일이며, 비고에서 정한 입양의 범위를 확인해요.",
+        "kind": "summary",
+        "rule_id": "extended-occasion",
+        "evidence": [
+          [
+            "38d5095d2162c76f63f1313a5d239ddd51a2cf35bfc09dc9592a77436be6f9b1",
+            "지방공무원 복무규정",
+            "별표 1 경조사 휴가일수표"
+          ],
+          [
+            "d0729ac9f46986b5f2c1d0c3b58fe4913449276030f9240026935d686c4135d4",
+            "국가공무원 복무규정",
+            "별표 2 경조사별 휴가 일수표"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "본인 입양은 20일이며, 비고에서 정한 입양의 범위를 확인해요.",
+        "kind": "summary",
+        "rule_id": "extended-occasion",
+        "evidence": [
+          [
+            "38d5095d2162c76f63f1313a5d239ddd51a2cf35bfc09dc9592a77436be6f9b1",
+            "지방공무원 복무규정",
+            "별표 1 경조사 휴가일수표"
+          ],
+          [
+            "d0729ac9f46986b5f2c1d0c3b58fe4913449276030f9240026935d686c4135d4",
+            "국가공무원 복무규정",
+            "별표 2 경조사별 휴가 일수표"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "sibling",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "본인 및 배우자의 형제자매 사망은 3일이에요.",
+        "kind": "summary",
+        "rule_id": "extended-occasion",
+        "evidence": [
+          [
+            "38d5095d2162c76f63f1313a5d239ddd51a2cf35bfc09dc9592a77436be6f9b1",
+            "지방공무원 복무규정",
+            "별표 1 경조사 휴가일수표"
+          ],
+          [
+            "d0729ac9f46986b5f2c1d0c3b58fe4913449276030f9240026935d686c4135d4",
+            "국가공무원 복무규정",
+            "별표 2 경조사별 휴가 일수표"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "본인 및 배우자의 형제자매 사망은 3일이에요.",
+        "kind": "summary",
+        "rule_id": "extended-occasion",
+        "evidence": [
+          [
+            "38d5095d2162c76f63f1313a5d239ddd51a2cf35bfc09dc9592a77436be6f9b1",
+            "지방공무원 복무규정",
+            "별표 1 경조사 휴가일수표"
+          ],
+          [
+            "d0729ac9f46986b5f2c1d0c3b58fe4913449276030f9240026935d686c4135d4",
+            "국가공무원 복무규정",
+            "별표 2 경조사별 휴가 일수표"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "parent-unnamed",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "상황을 조금만 더 알려주세요",
+        "kind": "clarification",
+        "rule_id": null,
+        "evidence": [],
+        "ai_used": false
+      },
+      "public": {
+        "title": "상황을 조금만 더 알려주세요",
+        "kind": "clarification",
+        "rule_id": null,
+        "evidence": [],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "grandparent-unnamed",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "상황을 조금만 더 알려주세요",
+        "kind": "clarification",
+        "rule_id": null,
+        "evidence": [],
+        "ai_used": false
+      },
+      "public": {
+        "title": "상황을 조금만 더 알려주세요",
+        "kind": "clarification",
+        "rule_id": null,
+        "evidence": [],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "types",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "경조사 휴가는 국가·지방 모두 본인 결혼 5일, 자녀 결혼 1일, 배우자 출산 20일(한 번에 둘 이상이면 25일), 본인 입양 20일이에요.",
+        "kind": "summary",
+        "rule_id": "extended-occasion",
+        "evidence": [
+          [
+            "38d5095d2162c76f63f1313a5d239ddd51a2cf35bfc09dc9592a77436be6f9b1",
+            "지방공무원 복무규정",
+            "별표 1 경조사 휴가일수표"
+          ],
+          [
+            "d0729ac9f46986b5f2c1d0c3b58fe4913449276030f9240026935d686c4135d4",
+            "국가공무원 복무규정",
+            "별표 2 경조사별 휴가 일수표"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "경조사 휴가는 국가·지방 모두 본인 결혼 5일, 자녀 결혼 1일, 배우자 출산 20일(한 번에 둘 이상이면 25일), 본인 입양 20일이에요.",
+        "kind": "summary",
+        "rule_id": "extended-occasion",
+        "evidence": [
+          [
+            "38d5095d2162c76f63f1313a5d239ddd51a2cf35bfc09dc9592a77436be6f9b1",
+            "지방공무원 복무규정",
+            "별표 1 경조사 휴가일수표"
+          ],
+          [
+            "d0729ac9f46986b5f2c1d0c3b58fe4913449276030f9240026935d686c4135d4",
+            "국가공무원 복무규정",
+            "별표 2 경조사별 휴가 일수표"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "days",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "경조사 휴가는 국가·지방 모두 본인 결혼 5일, 자녀 결혼 1일, 배우자 출산 20일(한 번에 둘 이상이면 25일), 본인 입양 20일이에요.",
+        "kind": "summary",
+        "rule_id": "extended-occasion",
+        "evidence": [
+          [
+            "38d5095d2162c76f63f1313a5d239ddd51a2cf35bfc09dc9592a77436be6f9b1",
+            "지방공무원 복무규정",
+            "별표 1 경조사 휴가일수표"
+          ],
+          [
+            "d0729ac9f46986b5f2c1d0c3b58fe4913449276030f9240026935d686c4135d4",
+            "국가공무원 복무규정",
+            "별표 2 경조사별 휴가 일수표"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "경조사 휴가는 국가·지방 모두 본인 결혼 5일, 자녀 결혼 1일, 배우자 출산 20일(한 번에 둘 이상이면 25일), 본인 입양 20일이에요.",
+        "kind": "summary",
+        "rule_id": "extended-occasion",
+        "evidence": [
+          [
+            "38d5095d2162c76f63f1313a5d239ddd51a2cf35bfc09dc9592a77436be6f9b1",
+            "지방공무원 복무규정",
+            "별표 1 경조사 휴가일수표"
+          ],
+          [
+            "d0729ac9f46986b5f2c1d0c3b58fe4913449276030f9240026935d686c4135d4",
+            "국가공무원 복무규정",
+            "별표 2 경조사별 휴가 일수표"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "parent-national",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "본인 및 배우자의 부모 사망은 5일이에요.",
+        "kind": "summary",
+        "rule_id": "extended-occasion",
+        "evidence": [
+          [
+            "156f83e9646084245c69e35ee1186cdbe52101ebe6489c0f7d134e90acca7f62",
+            "국가공무원 복무규정",
+            "제20조(특별휴가)"
+          ],
+          [
+            "d0729ac9f46986b5f2c1d0c3b58fe4913449276030f9240026935d686c4135d4",
+            "국가공무원 복무규정",
+            "별표 2 경조사별 휴가 일수표"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "본인 및 배우자의 부모 사망은 5일이에요.",
+        "kind": "summary",
+        "rule_id": "extended-occasion",
+        "evidence": [
+          [
+            "156f83e9646084245c69e35ee1186cdbe52101ebe6489c0f7d134e90acca7f62",
+            "국가공무원 복무규정",
+            "제20조(특별휴가)"
+          ],
+          [
+            "d0729ac9f46986b5f2c1d0c3b58fe4913449276030f9240026935d686c4135d4",
+            "국가공무원 복무규정",
+            "별표 2 경조사별 휴가 일수표"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "parent-local",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "자료를 더 확인해야 답할 수 있어요",
+        "kind": "unavailable",
+        "rule_id": null,
+        "evidence": [],
+        "ai_used": false
+      },
+      "public": {
+        "title": "자료를 더 확인해야 답할 수 있어요",
+        "kind": "unavailable",
+        "rule_id": null,
+        "evidence": [],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "spouse-parent-local",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "자료를 더 확인해야 답할 수 있어요",
+        "kind": "unavailable",
+        "rule_id": null,
+        "evidence": [],
+        "ai_used": false
+      },
+      "public": {
+        "title": "자료를 더 확인해야 답할 수 있어요",
+        "kind": "unavailable",
+        "rule_id": null,
+        "evidence": [],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "national-all",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "경조사 휴가는 본인 결혼 5일, 자녀 결혼 1일, 배우자 출산 20일(한 번에 둘 이상이면 25일), 본인 입양 20일이에요.",
+        "kind": "summary",
+        "rule_id": "extended-occasion",
+        "evidence": [
+          [
+            "156f83e9646084245c69e35ee1186cdbe52101ebe6489c0f7d134e90acca7f62",
+            "국가공무원 복무규정",
+            "제20조(특별휴가)"
+          ],
+          [
+            "d0729ac9f46986b5f2c1d0c3b58fe4913449276030f9240026935d686c4135d4",
+            "국가공무원 복무규정",
+            "별표 2 경조사별 휴가 일수표"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "경조사 휴가는 본인 결혼 5일, 자녀 결혼 1일, 배우자 출산 20일(한 번에 둘 이상이면 25일), 본인 입양 20일이에요.",
+        "kind": "summary",
+        "rule_id": "extended-occasion",
+        "evidence": [
+          [
+            "156f83e9646084245c69e35ee1186cdbe52101ebe6489c0f7d134e90acca7f62",
+            "국가공무원 복무규정",
+            "제20조(특별휴가)"
+          ],
+          [
+            "d0729ac9f46986b5f2c1d0c3b58fe4913449276030f9240026935d686c4135d4",
+            "국가공무원 복무규정",
+            "별표 2 경조사별 휴가 일수표"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "local-all",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "경조사 휴가는 본인 결혼 5일, 자녀 결혼 1일, 배우자 출산 20일(한 번에 둘 이상이면 25일), 본인 입양 20일이에요.",
+        "kind": "summary",
+        "rule_id": "extended-occasion",
+        "evidence": [
+          [
+            "21d5f034c4c657e13735af53a0f1ce01505505af28be35d7d3b312a66fe0181a",
+            "지방공무원 복무규정",
+            "제7조의7(특별휴가)"
+          ],
+          [
+            "38d5095d2162c76f63f1313a5d239ddd51a2cf35bfc09dc9592a77436be6f9b1",
+            "지방공무원 복무규정",
+            "별표 1 경조사 휴가일수표"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "경조사 휴가는 본인 결혼 5일, 자녀 결혼 1일, 배우자 출산 20일(한 번에 둘 이상이면 25일), 본인 입양 20일이에요.",
+        "kind": "summary",
+        "rule_id": "extended-occasion",
+        "evidence": [
+          [
+            "21d5f034c4c657e13735af53a0f1ce01505505af28be35d7d3b312a66fe0181a",
+            "지방공무원 복무규정",
+            "제7조의7(특별휴가)"
+          ],
+          [
+            "38d5095d2162c76f63f1313a5d239ddd51a2cf35bfc09dc9592a77436be6f9b1",
+            "지방공무원 복무규정",
+            "별표 1 경조사 휴가일수표"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "affil-local",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "본인 결혼은 5일, 자녀 결혼은 1일이에요.",
+        "kind": "summary",
+        "rule_id": "extended-occasion",
+        "evidence": [
+          [
+            "21d5f034c4c657e13735af53a0f1ce01505505af28be35d7d3b312a66fe0181a",
+            "지방공무원 복무규정",
+            "제7조의7(특별휴가)"
+          ],
+          [
+            "38d5095d2162c76f63f1313a5d239ddd51a2cf35bfc09dc9592a77436be6f9b1",
+            "지방공무원 복무규정",
+            "별표 1 경조사 휴가일수표"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "본인 결혼은 5일, 자녀 결혼은 1일이에요.",
+        "kind": "summary",
+        "rule_id": "extended-occasion",
+        "evidence": [
+          [
+            "21d5f034c4c657e13735af53a0f1ce01505505af28be35d7d3b312a66fe0181a",
+            "지방공무원 복무규정",
+            "제7조의7(특별휴가)"
+          ],
+          [
+            "38d5095d2162c76f63f1313a5d239ddd51a2cf35bfc09dc9592a77436be6f9b1",
+            "지방공무원 복무규정",
+            "별표 1 경조사 휴가일수표"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "affil-national",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "본인 및 배우자의 부모 사망은 5일이에요.",
+        "kind": "summary",
+        "rule_id": "extended-occasion",
+        "evidence": [
+          [
+            "156f83e9646084245c69e35ee1186cdbe52101ebe6489c0f7d134e90acca7f62",
+            "국가공무원 복무규정",
+            "제20조(특별휴가)"
+          ],
+          [
+            "d0729ac9f46986b5f2c1d0c3b58fe4913449276030f9240026935d686c4135d4",
+            "국가공무원 복무규정",
+            "별표 2 경조사별 휴가 일수표"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "본인 및 배우자의 부모 사망은 5일이에요.",
+        "kind": "summary",
+        "rule_id": "extended-occasion",
+        "evidence": [
+          [
+            "156f83e9646084245c69e35ee1186cdbe52101ebe6489c0f7d134e90acca7f62",
+            "국가공무원 복무규정",
+            "제20조(특별휴가)"
+          ],
+          [
+            "d0729ac9f46986b5f2c1d0c3b58fe4913449276030f9240026935d686c4135d4",
+            "국가공무원 복무규정",
+            "별표 2 경조사별 휴가 일수표"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "leave-types",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "공무원 휴가 종류 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:leave-types-both",
+        "evidence": [
+          [
+            "156f83e9646084245c69e35ee1186cdbe52101ebe6489c0f7d134e90acca7f62",
+            "국가공무원 복무규정",
+            "제20조(특별휴가)"
+          ],
+          [
+            "5c74108a041dd1484d685d9c190f97281ee609490a174fd61262384b2192320f",
+            "국가공무원 복무규정",
+            "제14조(휴가의 종류)"
+          ],
+          [
+            "ccb9ba9ecf3ebf04e3e3c21138316bf1eb38203c093651b45e09215745bcced0",
+            "지방공무원 복무규정",
+            "제6조(휴가의 종류)"
+          ],
+          [
+            "eef4fc67d715ba9bd17f85b880d3e79aa00e05a3a357ae0debd8e9b284ee6241",
+            "지방공무원 복무규정",
+            "제7조의7(특별휴가)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "공무원 휴가 종류 — 먼저 확인할 내용",
+        "kind": "summary",
+        "rule_id": "office:leave-types-both",
+        "evidence": [
+          [
+            "156f83e9646084245c69e35ee1186cdbe52101ebe6489c0f7d134e90acca7f62",
+            "국가공무원 복무규정",
+            "제20조(특별휴가)"
+          ],
+          [
+            "5c74108a041dd1484d685d9c190f97281ee609490a174fd61262384b2192320f",
+            "국가공무원 복무규정",
+            "제14조(휴가의 종류)"
+          ],
+          [
+            "ccb9ba9ecf3ebf04e3e3c21138316bf1eb38203c093651b45e09215745bcced0",
+            "지방공무원 복무규정",
+            "제6조(휴가의 종류)"
+          ],
+          [
+            "eef4fc67d715ba9bd17f85b880d3e79aa00e05a3a357ae0debd8e9b284ee6241",
+            "지방공무원 복무규정",
+            "제7조의7(특별휴가)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "sick",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "일반 병가는 연 60일, 공무상 부상·질병 등은 연 180일 범위예요.",
+        "kind": "summary",
+        "rule_id": "sick-leave",
+        "evidence": [
+          [
+            "5157d7899f3b59df4ff3aee140a143dc7d901ce9b8d4ef1aceefa9ff5f50a015",
+            "지방공무원 복무규정",
+            "제7조의5(병가)"
+          ]
+        ],
+        "ai_used": false
+      },
+      "public": {
+        "title": "일반 병가는 연 60일, 공무상 부상·질병 등은 연 180일 범위예요.",
+        "kind": "summary",
+        "rule_id": "sick-leave",
+        "evidence": [
+          [
+            "5157d7899f3b59df4ff3aee140a143dc7d901ce9b8d4ef1aceefa9ff5f50a015",
+            "지방공무원 복무규정",
+            "제7조의5(병가)"
+          ]
+        ],
+        "ai_used": false
+      }
+    },
+    {
+      "id": "not-leave",
+      "status": "pass",
+      "equal": true,
+      "mismatches": [],
+      "local": {
+        "title": "자료를 더 확인해야 답할 수 있어요",
+        "kind": "unavailable",
+        "rule_id": null,
+        "evidence": [],
+        "ai_used": false
+      },
+      "public": {
+        "title": "자료를 더 확인해야 답할 수 있어요",
+        "kind": "unavailable",
+        "rule_id": null,
+        "evidence": [],
+        "ai_used": false
+      }
+    }
+  ],
+  "summary": {
+    "all_pass": true,
+    "passed": 20,
+    "failed": 0,
+    "total": 20
+  }
+}
