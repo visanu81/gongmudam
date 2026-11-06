@@ -16,9 +16,21 @@ HEALTH_WORK=re.compile(r'예산|품의|지출|집행|계약|업체|대행기관|
 HEALTH_TIME_OFF=re.compile(r'공가|휴가|연가|병가|복무|상신|근무일|근무중|출근|결근|다녀|쉬[어고나는려면]|며칠|하루|동행')
 
 
+# "건강검진 결과로 병가" is about the illness a check found, not time off for the check.
+HEALTH_FINDING=re.compile(r'결과|이상|소견|판정|발견|진단받')
+HEALTH_ILLNESS=re.compile(r'병가|쉬어야|쉬려|쉬고|치료|입원|수술|요양|통원')
+HEALTH_FAMILY=re.compile(r'배우자|아내|남편|부모|아버지|어머니|가족|자녀|아이|아들|딸')
+HEALTH_MONEY=re.compile(r'비용|예산|품의|지출|집행|계약|지원|치료비|입원비|수술비')
+
+
+def after_health_check(query):
+    q=re.sub(r'\s+','',query.split('\n업무환경:')[0])
+    return bool(HEALTH_CHECK.search(q) and HEALTH_FINDING.search(q) and HEALTH_ILLNESS.search(q) and '공가' not in q and not HEALTH_FAMILY.search(q) and not HEALTH_MONEY.search(q))
+
+
 def health_work(query):
     q=re.sub(r'\s+','',query.split('\n업무환경:')[0])
-    return bool(HEALTH_CHECK.search(q) and HEALTH_WORK.search(q) and not HEALTH_TIME_OFF.search(q))
+    return bool(HEALTH_CHECK.search(q) and HEALTH_WORK.search(q) and not HEALTH_TIME_OFF.search(q) and not after_health_check(query))
 
 
 def asks_which_leave(q):

@@ -5,7 +5,7 @@ from pathlib import Path
 from urllib.parse import urlsplit
 from fastapi import APIRouter,HTTPException
 from pydantic import Field
-from . import folders,config,llm,official_sources,finance_knowledge,office_knowledge,institution_rules,upstage,service_rules,service_guidelines,pay_guidelines
+from . import folders,config,llm,official_sources,finance_knowledge,office_knowledge,institution_rules,upstage,service_rules,service_guidelines,pay_guidelines,leave_situations
 from .search import BM25
 from .pay_guidelines import readable
 from . import knowledge_relevance as relevance
@@ -175,8 +175,9 @@ def _with_guidelines(query,plan,hits,reason,missing,today):
     if intent.scope_reason(query,dict(title=service_guidelines.SOURCE_TITLE,institution='국가공무원'),today):return hits,reason,'',[]
     # Pay, allowance and welfare questions take the pay guidelines, not the conduct guideline.
     if service_rules.domain(query):return hits,reason,'',[]
-    # A health check is answered as 공가, so its operating standard comes from that section.
-    guidance=service_guidelines.search(query+' 공가' if 'public_health' in (plan or {}).get('topics',[]) else query)
+    # A health check is answered as 공가 and an illness it found as 병가; the operating standard follows.
+    wanted=query+' 공가' if 'public_health' in (plan or {}).get('topics',[]) else leave_situations.HEALTH_CHECK.sub('',query)+' 병가' if leave_situations.after_health_check(query) else query
+    guidance=service_guidelines.search(wanted)
     if not guidance:return hits,reason,'',[]
     # Articles stay the evidence; the guideline is shown separately as practice.
     if hits:return hits,reason,'',guidance[:1]

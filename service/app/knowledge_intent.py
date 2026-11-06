@@ -257,9 +257,9 @@ def analyze(query):
             add('leave_holiday')
         if not any(t in SPECIAL for t in topics) and 'leave_holiday' not in topics:
             if '연가' in q and '병가' in q and any(t in q for t in ('가산','더해','추가','안썼','미사용','사용하지않','22일')):add('annual')
-            elif any(a in q for a in TOPICS['public_health'][1]):add('public_health')
+            elif any(a in q for a in TOPICS['public_health'][1]) and not leave_situations.after_health_check(query):add('public_health')
             elif '헌혈' in q:add('public_blood')
-            elif '병가' in q or own_sick:add('sick')
+            elif '병가' in q or own_sick or leave_situations.after_health_check(query):add('sick')
             elif any(t in q for t in ('대체휴무','대체휴가')):add('compensatory')
             elif '포상휴가' in q:add('reward_leave')
             elif '장기재직' in q or any(t in q for t in TOPICS['region_leave'][1][:3]):
