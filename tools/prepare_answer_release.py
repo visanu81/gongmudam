@@ -23,7 +23,8 @@ OFFICE_PACKS=(('office-goods-20261026','국가·지방 물품관리 공식 근�
             ('office-duties-20261106','국가·지방 공무원 의무·승진 공식 근거'),
             ('office-bonus-20261106','국가·지방 성과상여금 지급 시기 공식 근거'),
             ('office-absence-procedure-20261106','국가·지방 휴직 신청·복직 절차 공식 근거'),
-            ('office-police-fire-20261106','경찰·소방 휴직·징계·휴가 공식 근거'))
+            ('office-police-fire-20261106','경찰·소방 휴직·징계·휴가 공식 근거'),
+            ('office-police-fire-procedure-20261106','경찰·소방 휴직 신청·복직 절차 공식 근거'))
 
 
 def digest(path):return hashlib.sha256(path.read_bytes()).hexdigest()
