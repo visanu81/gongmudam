@@ -60,6 +60,35 @@ class HealthAnswerActionTest(Base):
                 self.assertIn('확진검사는 공가 대상이 아님', practice[0]['text'])
                 self.assertNotIn('토요민원상황실', practice[0]['text'])
 
+    def test_fire_officer_is_answered_from_the_fire_decree(self):
+        for query in ('소방공무원인데 근무일에 건강검진 다녀와야 해요', '소방 건강검진', '소방공무원 건강검진 복무처리',
+                      '소방공무원 건강검진은 어떤 복무로 신청하나요?', '소방서 근무자 건강진단 받으러 가요'):
+            with self.subTest(query=query):
+                result = self.ask(query)
+                reply = result['knowledge']; tree = reply['tree']
+                self.assertEqual(tree['rule_id'], 'service-rules:fire-health-leave')
+                self.assertEqual(tree['title'], '법정 건강검진이라면 ‘공가’로 상신하세요.')
+                self.assertEqual([b['label'] for b in tree['branches']], ['신청할 복무', '사용 기간·시간', '신청 전 확인'])
+                self.assertEqual(reply['evidence'][tree['branches'][0]['items'][0]['ref']-1]['official']['article'], '제8조의2(공가)')
+                text = ' '.join(i['text'] for b in tree['branches'] for i in b['items'])
+                for needed in ('국민건강보험법', '특수·정밀건강진단', '119구조', '같은 날', '별도 확인'):
+                    self.assertIn(needed, text)
+                self.assertIn('같은 날', ' '.join(d['text'] for d in result['guidance']['deadlines']))
+                self.assertFalse(result['guidance']['ai_used'])
+
+    def test_other_fire_leave_questions_keep_the_general_answer(self):
+        for query in ('소방공무원 공가 사유', '소방공무원인데 헌혈 다녀와야 해요', '소방공무원 배우자 건강검진',
+                      '소방공무원 건강검진 비용 지원', '소방공무원 건강검진 결과 제출'):
+            with self.subTest(query=query):
+                self.assertEqual(self.ask(query)['knowledge']['tree']['rule_id'], 'service-rules:fire-public-leave')
+
+    def test_police_and_national_keep_the_national_decree(self):
+        for query in ('경찰공무원인데 근무일에 건강검진 다녀와야 해요', '국가공무원인데 근무일에 건강검진 다녀와야 해요'):
+            with self.subTest(query=query):
+                reply = self.ask(query)['knowledge']
+                self.assertEqual(reply['tree']['rule_id'], 'service-v70-public_health')
+                self.assertTrue(reply['evidence'][0]['official']['article'].startswith('제19조('))
+
     def test_child_check_is_not_own_health_check(self):
         result = self.ask('지방공무원이 아이 건강검진에 동행할 때 공가인가요?')
         self.assertNotIn(result['knowledge']['tree'].get('rule_id'), ('health-leave', 'service-v70-public_health'))

@@ -115,7 +115,7 @@ DOMAINS=(('welfare',r'맞춤형복지|복지점수|복지포인트|후생복지'
          ('pay',r'호봉|봉급|승급|월급|급여|보수지급|보수계산|보수감액|보수가|보수는|근속가봉'))
 # 시·도 소방의 장기재직휴가는 국가 기준이 아니라 조례로 정합니다(소방공무원 복무규정 제11조②).
 FIRE_ORDINANCE=('long_service','region_leave')
-SUBJECT=re.compile(r'호봉|봉급|승급|월급|급여|보수지급|보수계산|보수감액|보수가|보수는|근속가봉|수당|명절휴가비|연가보상|정액급식비|직급보조비|성과상여금|성과급|맞춤형복지|복지점수|복지포인트|후생복지|장기재직|새내기|생일특별|휴가|연가|병가|공가|특별휴가|경조사|출산|육아시간|모성보호|난임|근무시간|시간외|초과근무|당직|비상근무|비상소집|'
+SUBJECT=re.compile(r'호봉|봉급|승급|월급|급여|보수지급|보수계산|보수감액|보수가|보수는|근속가봉|수당|명절휴가비|연가보상|정액급식비|직급보조비|성과상여금|성과급|맞춤형복지|복지점수|복지포인트|후생복지|장기재직|새내기|생일특별|휴가|연가|병가|공가|건강검진|건강진단|헌혈|특별휴가|경조사|출산|육아시간|모성보호|난임|근무시간|시간외|초과근무|당직|비상근무|비상소집|'
                    r'겸직|영리|정치|복장|복제|지각|조퇴|외출|휴무|포상|국외여행|여행|교대|선서|비밀|친절|복무|토요일|공휴일|근무혁신|유연근무|파견|겸임')
 
 
@@ -260,10 +260,15 @@ def summary(query,reply):
         for item in card['items']:
             quotes=[re.search(r'\s*'.join(map(re.escape,re.sub(r'\s+','',anchor))),text) for anchor in item['anchors']]
             if not all(quotes):break
-            items.append(dict(text=item['text'],ref=ref,support_quotes=[m[0] for m in quotes]))
+            items.append(dict(label=item.get('label',card.get('label')),node=dict(text=item['text'],ref=ref,support_quotes=[m[0] for m in quotes])))
         else:
+            # A card keeps one branch unless its items name their own.
+            branches=[]
+            for row in items:
+                if not branches or branches[-1]['label']!=row['label']:branches.append(dict(label=row['label'],items=[]))
+                branches[-1]['items'].append(row['node'])
             return dict(kind='summary',title=card['title'],rule_id='service-rules:'+card['id'],
-                        reviewed_source_sha256s=[evidence[ref-1]['sha256']],branches=[dict(label=card['label'],items=items)],
+                        reviewed_source_sha256s=[evidence[ref-1]['sha256']],branches=branches,
                         note=f"{TITLES[card['law']]}에서 확인한 요약이에요. 소속 기관의 세부 지침·절차는 따로 확인하세요.")
     return None
 
