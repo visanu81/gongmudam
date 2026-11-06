@@ -50,6 +50,16 @@ class HealthAnswerActionTest(Base):
             self.assertIn('별도 확인', text)
             self.assertIn('하루 전체가 자동', text)
 
+    def test_practice_excerpt_is_the_official_leave_section(self):
+        for query in ('근무일에 건강검진 다녀와야하는데 복무처리는 어떤걸로 상신해야할까', '건강검진',
+                      '국가공무원인데 근무일에 건강검진 다녀와야 해요'):
+            with self.subTest(query=query):
+                practice = self.ask(query)['guidance']['practice']
+                self.assertEqual(len(practice), 1)
+                self.assertIn('다. 공 가', practice[0]['loc'])
+                self.assertIn('확진검사는 공가 대상이 아님', practice[0]['text'])
+                self.assertNotIn('토요민원상황실', practice[0]['text'])
+
     def test_child_check_is_not_own_health_check(self):
         result = self.ask('지방공무원이 아이 건강검진에 동행할 때 공가인가요?')
         self.assertNotIn(result['knowledge']['tree'].get('rule_id'), ('health-leave', 'service-v70-public_health'))

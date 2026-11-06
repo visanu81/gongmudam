@@ -175,7 +175,8 @@ def _with_guidelines(query,plan,hits,reason,missing,today):
     if intent.scope_reason(query,dict(title=service_guidelines.SOURCE_TITLE,institution='국가공무원'),today):return hits,reason,'',[]
     # Pay, allowance and welfare questions take the pay guidelines, not the conduct guideline.
     if service_rules.domain(query):return hits,reason,'',[]
-    guidance=service_guidelines.search(query)
+    # A health check is answered as 공가, so its operating standard comes from that section.
+    guidance=service_guidelines.search(query+' 공가' if 'public_health' in (plan or {}).get('topics',[]) else query)
     if not guidance:return hits,reason,'',[]
     # Articles stay the evidence; the guideline is shown separately as practice.
     if hits:return hits,reason,'',guidance[:1]

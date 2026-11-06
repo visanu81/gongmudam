@@ -53,3 +53,27 @@ class ServiceGuidelinesTest(Base):
                              ('징계위원회는 어떻게 구성하나요?', '징계위원회의 구성')):
             with self.subTest(query=query):
                 self.assertIn(title, service_guidelines.search(query)[0]['loc'])
+
+    def test_time_phrase_does_not_choose_the_working_day_chapter(self):
+        for query, name in (('근무일에 병원 가야 하는데 어떻게 처리해요', None),
+                            ('근무일에 출장 가요', '제6장'),
+                            ('근무일에 연가 쓸 수 있나요', '제8장'),
+                            ('근무일이 뭐예요', '제3장'),
+                            ('근무일과 근무시간 기준', '제3장'),
+                            ('근무일 기준 알려줘', '제3장')):
+            with self.subTest(query=query):
+                self.assertEqual(service_guidelines.chapter(query), name)
+
+    def test_health_check_practice_is_the_official_leave_section(self):
+        for query in ('근무일에 건강검진 다녀와야하는데 복무처리는 어떤걸로 상신해야할까', '국가공무원 건강검진은 어떤 복무로 신청하나요?'):
+            with self.subTest(query=query):
+                found = self.retrieve(query)
+                self.assertEqual([p['library_id'] for p in found['practice']], [service_guidelines.LIBRARY])
+                self.assertIn('다. 공 가', found['practice'][0]['loc'])
+                self.assertIn('건강검진', found['practice'][0]['text'])
+                self.assertNotIn('토요민원상황실', found['practice'][0]['text'])
+
+    def test_other_health_check_questions_keep_their_own_scope(self):
+        self.assertFalse(self.retrieve('지방공무원인데 근무일에 건강검진 다녀와야 해요').get('practice'))
+        found = self.retrieve('자녀 건강검진 같이 가야 해요')
+        self.assertNotIn('다. 공 가', ' '.join(p['loc'] for p in found.get('practice', [])))
