@@ -191,7 +191,7 @@ def analyze(query):
     own_sick=leave_situations.self_sick(query)
     # "부모님 돌아가시면 며칠 쉬어?" asks about leave without using the word.
     occasion_days=bool(re.search(r'(?:부모|아버지|어머니|배우자|할아버지|할머니|형제|자매|자녀|부친상|모친상|돌아가|별세|사망|결혼).{0,12}(?:며칠|쉬어|쉬나|쉴수|쉬는)',q))
-    leave=care or own_sick or occasion_days or leave_situations.asks_which_leave(q) or any(t in q for t in ('휴가','휴무','연가','연차','병가','공가','육아시간','모성보호','건강검진','건강진단','헌혈'))
+    leave=care or own_sick or occasion_days or leave_situations.asks_which_leave(q) or any(t in q for t in ('휴가','휴무','연가','연차','병가','공가','육아시간','모성보호','헌혈')) or (any(t in q for t in ('건강검진','건강진단')) and not leave_situations.health_work(query))
     sidejob=any(t in q for t in ('겸직','영리업무','유튜브수익','유튜브수입'))
     goods=any(t in q for t in ('물품','납품','검수','검사조서','수의계약','불용','견적','법인카드','문구점','인센티브','포인트','적립금','마일리지','강사료','강연료','지방자치단체선금','퇴직예정자기념품'))
     # 업무추진비 itself is the finance pack's 업무추진비 section; only its disclosure is an account topic.

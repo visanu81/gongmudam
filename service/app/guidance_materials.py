@@ -4,10 +4,13 @@ Only used after retrieval found no direct evidence. These are requests for
 materials, not legal rules or automatic connections to business databases.
 """
 import re
+from . import leave_situations
 
 
 def needed(query):
     q=re.sub(r'\s+','',query)
+    if leave_situations.health_work(query):
+        return ('건강검진 업무 자료', '건강검진의 예산·계약·비용·채용 서류·결과 처리 기준은 공무담에 등록되어 있지 않아요. 소속 기관 담당자와 관련 지침을 확인해 주세요. 본인이 검진을 받는 복무처리를 물으신다면 ‘건강검진 공가’로 다시 물어보세요.')
     if '예산' in q and any(w in q for w in ('잔액','집행률','얼마남','남은예산')):
         return ('부서 예산·집행 내역', '기관의 해당 연도 예산 배정액과 기준일별 집행 내역이 필요해요. 규정만으로 실제 잔액이나 집행률을 알 수는 없어요.')
     if '예산' in q and any(w in q for w in ('요구서','제출마감','편성일정')):

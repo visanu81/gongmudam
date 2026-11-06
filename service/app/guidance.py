@@ -59,7 +59,9 @@ def topic(query):
     # Pay, allowance and welfare words (명절휴가비 contains 휴가) are not leave questions.
     area=knowledge.service_rules.domain(query)
     if area:return 'pay',{'pay':'보수·호봉','allowance':'수당','welfare':'맞춤형복지'}[area]
-    matched=next(((key,label) for key,label,pattern in TOPICS if re.search(pattern,query)),None)
+    # Office work about a health check is sorted by the work, not by the words 건강검진.
+    probe=leave_situations.HEALTH_CHECK.sub('',query) if leave_situations.health_work(query) else query
+    matched=next(((key,label) for key,label,pattern in TOPICS if re.search(pattern,probe)),None)
     if matched:return matched
     domain=service_knowledge.domain(query)
     if domain:return domain[0],domain[1]
@@ -150,7 +152,7 @@ def respond(query,body,today,public_mode=False):
         reply=dict(evidence=[],experiences=[],excluded=[],mode='source_search',model=None,answer='',notice='',scope='')
     else:
         # A conduct subject covered only by the national guideline still reaches retrieval.
-        if key=='general' and not knowledge.intent.analyze(effective) and not knowledge.service_guidelines.chapter(effective):
+        if (key=='general' or leave_situations.health_work(effective)) and not knowledge.intent.analyze(effective) and not knowledge.service_guidelines.chapter(effective):
             found=dict(hits=[],experiences=[],excluded=[],intent=None,unavailable_reason='이 질문에 직접 답하는 등록 근거를 확인하지 못했어요. 업무 종류와 관련 규정·지침을 알려주세요.')
         else:found=knowledge.retrieve(effective,library,today,**({'institution_rule_id':body['institution_rule_id']} if body.get('institution_rule_id') else {}),**({'affiliation':affiliation} if affiliation else {}))
         reply=knowledge.answer(effective,found,use_ai=body.get('use_ai') is True)

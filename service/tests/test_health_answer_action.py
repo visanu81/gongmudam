@@ -78,7 +78,7 @@ class HealthAnswerActionTest(Base):
 
     def test_other_fire_leave_questions_keep_the_general_answer(self):
         for query in ('소방공무원 공가 사유', '소방공무원인데 헌혈 다녀와야 해요', '소방공무원 배우자 건강검진',
-                      '소방공무원 건강검진 비용 지원', '소방공무원 건강검진 결과 제출'):
+                      '소방공무원 건강검진 비용 내고 다녀왔는데 공가 되나요'):
             with self.subTest(query=query):
                 self.assertEqual(self.ask(query)['knowledge']['tree']['rule_id'], 'service-rules:fire-public-leave')
 
@@ -88,6 +88,35 @@ class HealthAnswerActionTest(Base):
                 reply = self.ask(query)['knowledge']
                 self.assertEqual(reply['tree']['rule_id'], 'service-v70-public_health')
                 self.assertTrue(reply['evidence'][0]['official']['article'].startswith('제19조('))
+
+    def test_work_about_a_health_check_is_not_a_leave_answer(self):
+        for query in ('건강검진 예산 품의', '건강검진 업체 계약', '직원 건강검진 예산 집행', '채용 건강진단서 비용', '신규 임용 건강진단서',
+                      '공무원 건강검진 비용 지원', '건강검진 결과 제출해야 하나요', '건강검진비 지출 품의', '건강검진 대행기관 선정',
+                      '건강검진 대상자 명단 정리', '지방공무원 건강검진 예산', '국가공무원 건강검진 비용 지원', '경찰 건강검진 예산',
+                      '소방공무원 건강검진 비용 지원', '소방공무원 건강검진 결과 제출', '직원 건강검진 비용은 어떤 예산으로 집행하나요',
+                      '건강검진 구매'):
+            with self.subTest(query=query):
+                result = self.ask(query)
+                reply = result['knowledge']; tree = reply['tree']
+                self.assertEqual(tree['title'], '건강검진 업무 자료가 필요해요')
+                self.assertFalse(reply['evidence'])
+                self.assertNotEqual(result['guidance']['topic'], 'leave')
+                text = ' '.join(i['text'] for b in tree['branches'] for i in b['items'])
+                self.assertIn('예산·계약·비용', text)
+                self.assertIn('‘건강검진 공가’', text)
+                self.assertFalse(result['guidance']['ai_used'])
+
+    def test_health_check_contract_keeps_the_contract_topic(self):
+        self.assertEqual(knowledge.intent.analyze('건강검진 수의계약')['topics'], ['goods_private_contract'])
+
+    def test_leave_questions_with_the_same_words_keep_the_answer(self):
+        for query in ('건강검진', '건강검진 받으려면', '건강검진 비용 내고 다녀왔는데 공가 되나요', '건강검진 다녀오면 결과지 제출해야 하나요',
+                      '건강검진 진단서 제출해야 공가 되나요', '건강검진 결과 나왔는데 재검사도 공가인가요',
+                      '국가공무원 건강검진은 어떤 복무로 신청하나요?', '근무일에 건강검진 다녀와야하는데 복무처리는 어떤걸로 상신해야할까'):
+            with self.subTest(query=query):
+                result = self.ask(query)
+                self.assertIn('공가’로 상신', result['knowledge']['tree']['title'])
+                self.assertEqual(result['guidance']['topic'], 'leave')
 
     def test_child_check_is_not_own_health_check(self):
         result = self.ask('지방공무원이 아이 건강검진에 동행할 때 공가인가요?')

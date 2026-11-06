@@ -161,7 +161,11 @@ def reads(query):
 
 
 def is_subject(query):
-    return bool(SUBJECT.search(re.sub(r'\s+','',query)))
+    from . import leave_situations
+    q=re.sub(r'\s+','',query)
+    # Office work about a health check does not read the conduct decrees for those words.
+    if leave_situations.health_work(query):q=leave_situations.HEALTH_CHECK.sub('',q)
+    return bool(SUBJECT.search(q))
 
 
 @lru_cache(maxsize=1)

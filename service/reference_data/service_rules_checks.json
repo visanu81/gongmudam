@@ -52,6 +52,16 @@
   "rule": "service-rules:fire-health-leave"
  },
  {
+  "id": "sr-health-budget",
+  "question": "건강검진 예산 품의",
+  "not_mode": "source_search"
+ },
+ {
+  "id": "sr-health-contract",
+  "question": "건강검진 업체 계약",
+  "not_mode": "source_search"
+ },
+ {
   "id": "sr-fire-health-workday",
   "question": "소방공무원인데 근무일에 건강검진 다녀와야 해요",
   "article": "소방공무원 복무규정 제8조의2(",

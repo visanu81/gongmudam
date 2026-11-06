@@ -10,6 +10,17 @@ SERVICE_ASK=re.compile(r'복무(?:중|에서|는|를|로|상)?.{0,6}(?:뭐|뭘|�
 WHICH_ASK=re.compile(r'(?<![비값료험])(?:뭐|뭘|무엇|어떤걸|어떤거|어떤것)(?:을|로)?(?:써|쓰|쓸|올려|올리|신청)')
 
 
+# "건강검진 예산 품의" is office work about a health check, not time off for one.
+HEALTH_CHECK=re.compile(r'건강검진|건강진단')
+HEALTH_WORK=re.compile(r'예산|품의|지출|집행|계약|업체|대행기관|입찰|구매|결산|비용|검진비|지원|채용|임용|신규|건강진단서|대상자|명단|결과|통보')
+HEALTH_TIME_OFF=re.compile(r'공가|휴가|연가|병가|복무|상신|근무일|근무중|출근|결근|다녀|쉬[어고나는려면]|며칠|하루|동행')
+
+
+def health_work(query):
+    q=re.sub(r'\s+','',query.split('\n업무환경:')[0])
+    return bool(HEALTH_CHECK.search(q) and HEALTH_WORK.search(q) and not HEALTH_TIME_OFF.search(q))
+
+
 def asks_which_leave(q):
     return bool(SERVICE_ASK.search(q))
 
