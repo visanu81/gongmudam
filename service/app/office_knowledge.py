@@ -27,13 +27,14 @@ KINDS_BASE = Path(__file__).resolve().parents[1] / 'reference_data/office-kinds-
 DUTIES_BASE = Path(__file__).resolve().parents[1] / 'reference_data/office-duties-20261106'
 BONUS_BASE = Path(__file__).resolve().parents[1] / 'reference_data/office-bonus-20261106'
 ABSENCE_PROCEDURE_BASE = Path(__file__).resolve().parents[1] / 'reference_data/office-absence-procedure-20261106'
+POLICE_FIRE_BASE = Path(__file__).resolve().parents[1] / 'reference_data/office-police-fire-20261106'
 COLLECTIONS = frozenset({'office-20261025', 'office-extra-20261025', 'office-documents-20261026', 'office-goods-20261026',
                          'office-contract-20261104', 'office-expense-20261104',
                          'office-national-contract-20261104', 'office-advance-20261104',
                          'office-advance-rule-20261104', 'office-leave-types-20261105',
                          'office-absence-20261105', 'office-kinds-20261105',
                          'office-duties-20261106', 'office-bonus-20261106',
-                         'office-absence-procedure-20261106'})
+                         'office-absence-procedure-20261106', 'office-police-fire-20261106'})
 _COLLECTION_ROOTS = {
     'office-20261025': 'BASE',
     'office-extra-20261025': 'EXTRA_BASE',
@@ -50,6 +51,7 @@ _COLLECTION_ROOTS = {
     'office-duties-20261106': 'DUTIES_BASE',
     'office-bonus-20261106': 'BONUS_BASE',
     'office-absence-procedure-20261106': 'ABSENCE_PROCEDURE_BASE',
+    'office-police-fire-20261106': 'POLICE_FIRE_BASE',
 }
 router = APIRouter(prefix='/api/office-sources', tags=['서무 공통 근거'])
 LABELS = {'privacy': '개인정보 처리', 'records': '기록물 관리',
@@ -249,6 +251,10 @@ def classify(query):
                 generic_recipient_question and (not receipt or institution_specific)):
             rules = ['unsupported']
     if not topics:
+        from .police_fire import classify as classify_police_fire
+        police_fire = classify_police_fire(query)
+        if police_fire:
+            return police_fire
         from .service_kinds import classify as classify_kinds
         kinds = classify_kinds(query)
         if kinds:

@@ -1,0 +1,302 @@
+[
+  {
+    "id": "office-pf-pl1",
+    "title": "경찰공무원법",
+    "article": "제1조(목적)",
+    "filename": "pl1.txt",
+    "issuer": "경찰청",
+    "institution": "경찰공무원",
+    "effective_date": "2025-01-07",
+    "publication": "법률 제20646호, 2025. 1. 7., 일부개정",
+    "source_url": "https://www.law.go.kr/LSW/lsSideInfoP.do?lsiSeq=268093&joNo=0001&joBrNo=00&docCls=jo&urlMode=lsScJoRltInfoR",
+    "raw_file": "pl1.html",
+    "raw_sha256": "4709024cbeb7076b652df0649306e50866c3569eaabce17a10dcf5ef465bb415",
+    "scope": "경찰·소방공무원의 휴직·징계·휴가 종류에 적용되는 특례. 신청 절차, 징계 양정, 교원·군인 등 다른 법령과 과거·미래 판본은 검토하지 않음.",
+    "kind": "법령·규정",
+    "retrieved_at": "2026-11-06",
+    "collection": "office-police-fire-20261106",
+    "office_topic": "police_fire",
+    "sha256": "54745985107f30c2f0f401ed4e3ce8fe7b5daeae662877faf678498cc73e322b",
+    "units": [
+      {
+        "loc": "제1조(목적) 全文",
+        "text": "제1조(목적) 이 법은 경찰공무원의 책임 및 직무의 중요성과 신분 및 근무조건의 특수성에 비추어 그 임용, 교육훈련, 복무(服務), 신분보장 등에 관하여 「국가공무원법」에 대한 특례를 규정함을 목적으로 한다."
+      }
+    ]
+  },
+  {
+    "id": "office-pf-pl29",
+    "title": "경찰공무원법",
+    "article": "제29조(공상경찰공무원 등의 휴직기간)",
+    "filename": "pl29.txt",
+    "issuer": "경찰청",
+    "institution": "경찰공무원",
+    "effective_date": "2025-01-07",
+    "publication": "법률 제20646호, 2025. 1. 7., 일부개정",
+    "source_url": "https://www.law.go.kr/LSW/lsSideInfoP.do?lsiSeq=268093&joNo=0029&joBrNo=00&docCls=jo&urlMode=lsScJoRltInfoR",
+    "raw_file": "pl29.html",
+    "raw_sha256": "5128826aa0820abbd276cefb2e3c6ad7de8cef91729a16902447ef50ea089a9f",
+    "scope": "경찰·소방공무원의 휴직·징계·휴가 종류에 적용되는 특례. 신청 절차, 징계 양정, 교원·군인 등 다른 법령과 과거·미래 판본은 검토하지 않음.",
+    "kind": "법령·규정",
+    "retrieved_at": "2026-11-06",
+    "collection": "office-police-fire-20261106",
+    "office_topic": "police_fire",
+    "sha256": "8389ab585194d92e4074005ee23c7c09ff480e9f66893b2f4c15af252439b0e8",
+    "units": [
+      {
+        "loc": "제29조(공상경찰공무원 등의 휴직기간) 全文",
+        "text": "제29조(공상경찰공무원 등의 휴직기간) ① 경찰공무원이 「공무원 재해보상법」 제5조제1호 각 목에 해당하는 직무를 수행하다가 「국가공무원법」 제72조제1호 각 목의 어느 하나에 해당하는 공무상 질병 또는 부상을 입어 휴직하는 경우 그 휴직기간은 같은 조 제1호 단서에도 불구하고 5년 이내로 하되, 의학적 소견 등을 고려하여 대통령령으로 정하는 바에 따라 3년의 범위에서 연장할 수 있다. <신설 2024. 2. 13.>\n② 「국가공무원법」 제71조제1항제4호의 사유로 인한 경찰공무원의 휴직기간은 같은 법 제72조제3호에도 불구하고 법원의 실종선고를 받는 날까지로 한다. <개정 2024. 2. 13.>\n③ 제2항에 따른 휴직자가 있는 경우에는 그 휴직자의 계급에 해당하는 정원이 따로 있는 것으로 보고, 결원을 보충할 수 있다. <개정 2024. 2. 13.>\n[제목개정 2024. 2. 13.]"
+      }
+    ]
+  },
+  {
+    "id": "office-pf-pl36",
+    "title": "경찰공무원법",
+    "article": "제36조(「국가공무원법」과의 관계)",
+    "filename": "pl36.txt",
+    "issuer": "경찰청",
+    "institution": "경찰공무원",
+    "effective_date": "2025-01-07",
+    "publication": "법률 제20646호, 2025. 1. 7., 일부개정",
+    "source_url": "https://www.law.go.kr/LSW/lsSideInfoP.do?lsiSeq=268093&joNo=0036&joBrNo=00&docCls=jo&urlMode=lsScJoRltInfoR",
+    "raw_file": "pl36.html",
+    "raw_sha256": "71387886d26db3cebb7b16b9c661724e9b84b25426669a06929646f0192b04b2",
+    "scope": "경찰·소방공무원의 휴직·징계·휴가 종류에 적용되는 특례. 신청 절차, 징계 양정, 교원·군인 등 다른 법령과 과거·미래 판본은 검토하지 않음.",
+    "kind": "법령·규정",
+    "retrieved_at": "2026-11-06",
+    "collection": "office-police-fire-20261106",
+    "office_topic": "police_fire",
+    "sha256": "043020472cfc584de5f66240711f1ad79447297e722e16dc316d695f6729e55a",
+    "units": [
+      {
+        "loc": "제36조(「국가공무원법」과의 관계) 全文",
+        "text": "제36조(「국가공무원법」과의 관계) ① 경찰공무원에 대해서는 「국가공무원법」 제73조의4, 제76조제2항부터 제5항까지의 규정을 적용하지 아니하며, 치안총감과 치안정감에 대해서는 「국가공무원법」 제68조 본문을 적용하지 아니한다.\n② 「국가공무원법」을 경찰공무원에게 적용할 때에는 다음 각 호에 따른다.\n1. 「국가공무원법」 제32조의5 및 제43조 중 “직급”은 “계급”으로 본다.\n2. 「국가공무원법」 제42조제2항, 제85조제1항 및 제2항 중 “인사혁신처장”은 “경찰청장 또는 해양경찰청장”으로 본다.\n3. 「국가공무원법」 제67조, 제68조, 제78조제1항제1호 및 같은 조 제2항, 제80조제7항 및 제8항 중 “이 법”은 “이 법 및 「국가공무원법」”으로 본다.\n4. 「국가공무원법」 제71조제2항제3호 중 “중앙인사관장기관의 장”은 “경찰청장 또는 해양경찰청장”으로 본다."
+      }
+    ]
+  },
+  {
+    "id": "office-pf-ps18",
+    "title": "경찰공무원 복무규정",
+    "article": "제18조(포상휴가)",
+    "filename": "ps18.txt",
+    "issuer": "경찰청",
+    "institution": "경찰공무원",
+    "effective_date": "2021-01-05",
+    "publication": "대통령령 제31380호, 2021. 1. 5., 타법개정",
+    "source_url": "https://www.law.go.kr/LSW/lsSideInfoP.do?lsiSeq=227157&joNo=0018&joBrNo=00&docCls=jo&urlMode=lsScJoRltInfoR",
+    "raw_file": "ps18.html",
+    "raw_sha256": "84a197dbce655454632ea82d123e603e3b57c8c3cfffb3584b18617c077c96c7",
+    "scope": "경찰·소방공무원의 휴직·징계·휴가 종류에 적용되는 특례. 신청 절차, 징계 양정, 교원·군인 등 다른 법령과 과거·미래 판본은 검토하지 않음.",
+    "kind": "법령·규정",
+    "retrieved_at": "2026-11-06",
+    "collection": "office-police-fire-20261106",
+    "office_topic": "police_fire",
+    "sha256": "1bb0e61d1724d8a701b79dc39506d491f1d49743ee9ef84ed8e5a4935f99eda9",
+    "units": [
+      {
+        "loc": "제18조(포상휴가) 全文",
+        "text": "제18조(포상휴가) 경찰기관의 장은 근무성적이 탁월하거나 다른 경찰공무원의 모범이 될 공적이 있는 경찰공무원에 대하여 1회10일이내의 포상휴가를 허가할 수 있다. 이 경우의 포상휴가기간은 연가일수에 산입하지 아니한다."
+      }
+    ]
+  },
+  {
+    "id": "office-pf-ps20",
+    "title": "경찰공무원 복무규정",
+    "article": "제20조(「국가공무원 복무규정」의 준용)",
+    "filename": "ps20.txt",
+    "issuer": "경찰청",
+    "institution": "경찰공무원",
+    "effective_date": "2021-01-05",
+    "publication": "대통령령 제31380호, 2021. 1. 5., 타법개정",
+    "source_url": "https://www.law.go.kr/LSW/lsSideInfoP.do?lsiSeq=227157&joNo=0020&joBrNo=00&docCls=jo&urlMode=lsScJoRltInfoR",
+    "raw_file": "ps20.html",
+    "raw_sha256": "5eec4b7e033571a0ce7c32eedc1a3a872a7c142b10d1551dd66a16470425bb4b",
+    "scope": "경찰·소방공무원의 휴직·징계·휴가 종류에 적용되는 특례. 신청 절차, 징계 양정, 교원·군인 등 다른 법령과 과거·미래 판본은 검토하지 않음.",
+    "kind": "법령·규정",
+    "retrieved_at": "2026-11-06",
+    "collection": "office-police-fire-20261106",
+    "office_topic": "police_fire",
+    "sha256": "319fa1b06439e7e7c6c74b15ad36a75769015c30074c2eb47c39fd671c55f82c",
+    "units": [
+      {
+        "loc": "제20조(「국가공무원 복무규정」의 준용) 全文",
+        "text": "제20조(「국가공무원 복무규정」의 준용) 경찰공무원의 복무에 관하여 이 영에서 규정한 사항 외에는 「국가공무원 복무규정」을 적용한다.\n[전문개정 2008. 11. 11.]"
+      }
+    ]
+  },
+  {
+    "id": "office-pf-fl1",
+    "title": "소방공무원법",
+    "article": "제1조(목적)",
+    "filename": "fl1.txt",
+    "issuer": "소방청",
+    "institution": "소방공무원",
+    "effective_date": "2024-08-14",
+    "publication": "법률 제20411호, 2024. 3. 26., 일부개정",
+    "source_url": "https://www.law.go.kr/LSW/lsSideInfoP.do?lsiSeq=261437&joNo=0001&joBrNo=00&docCls=jo&urlMode=lsScJoRltInfoR",
+    "raw_file": "fl1.html",
+    "raw_sha256": "be4f9f67277e5a6fd592f535a3519b90fb739de6df4b79d64619a1871f88602c",
+    "scope": "경찰·소방공무원의 휴직·징계·휴가 종류에 적용되는 특례. 신청 절차, 징계 양정, 교원·군인 등 다른 법령과 과거·미래 판본은 검토하지 않음.",
+    "kind": "법령·규정",
+    "retrieved_at": "2026-11-06",
+    "collection": "office-police-fire-20261106",
+    "office_topic": "police_fire",
+    "sha256": "c6d96ef732271a0245f9b5dd51deb81794b17a33378fae217c83965718137bb3",
+    "units": [
+      {
+        "loc": "제1조(목적) 全文",
+        "text": "제1조(목적) 이 법은 소방공무원의 책임 및 직무의 중요성과 신분 및 근무조건의 특수성에 비추어 그 임용, 교육훈련, 복무, 신분보장 등에 관하여 「국가공무원법」에 대한 특례를 규정하는 것을 목적으로 한다."
+      }
+    ]
+  },
+  {
+    "id": "office-pf-fl24-2",
+    "title": "소방공무원법",
+    "article": "제24조의2(공상소방공무원의 휴직기간)",
+    "filename": "fl24-2.txt",
+    "issuer": "소방청",
+    "institution": "소방공무원",
+    "effective_date": "2024-08-14",
+    "publication": "법률 제20411호, 2024. 3. 26., 일부개정",
+    "source_url": "https://www.law.go.kr/LSW/lsSideInfoP.do?lsiSeq=261437&joNo=0024&joBrNo=02&docCls=jo&urlMode=lsScJoRltInfoR",
+    "raw_file": "fl24-2.html",
+    "raw_sha256": "9d74a3eae26850ec005fc78da839a1476f99be06c3f12614cf96c235bc0d00b1",
+    "scope": "경찰·소방공무원의 휴직·징계·휴가 종류에 적용되는 특례. 신청 절차, 징계 양정, 교원·군인 등 다른 법령과 과거·미래 판본은 검토하지 않음.",
+    "kind": "법령·규정",
+    "retrieved_at": "2026-11-06",
+    "collection": "office-police-fire-20261106",
+    "office_topic": "police_fire",
+    "sha256": "d247c5275b3d9c5e1a82ee957398aaf77959255e203848efa1a239f685e11b3b",
+    "units": [
+      {
+        "loc": "제24조의2(공상소방공무원의 휴직기간) 全文",
+        "text": "제24조의2(공상소방공무원의 휴직기간) 소방공무원이 「공무원 재해보상법」 제5조제2호 각 목에 해당하는 직무를 수행하다가 「국가공무원법」 제72조제1호 각 목의 어느 하나에 해당하는 공무상 질병 또는 부상을 입어 휴직하는 경우 그 휴직기간은 같은 호 단서에도 불구하고 5년 이내로 하되, 의학적 소견 등을 고려하여 대통령령으로 정하는 바에 따라 3년의 범위에서 연장할 수 있다.\n[본조신설 2024. 3. 26.]"
+      }
+    ]
+  },
+  {
+    "id": "office-pf-fl33",
+    "title": "소방공무원법",
+    "article": "제33조(「국가공무원법」과의 관계)",
+    "filename": "fl33.txt",
+    "issuer": "소방청",
+    "institution": "소방공무원",
+    "effective_date": "2024-08-14",
+    "publication": "법률 제20411호, 2024. 3. 26., 일부개정",
+    "source_url": "https://www.law.go.kr/LSW/lsSideInfoP.do?lsiSeq=261437&joNo=0033&joBrNo=00&docCls=jo&urlMode=lsScJoRltInfoR",
+    "raw_file": "fl33.html",
+    "raw_sha256": "92bf2fb67a656217b5f41de7b65b947a0f211df2e25414429faebbcc0b7e040f",
+    "scope": "경찰·소방공무원의 휴직·징계·휴가 종류에 적용되는 특례. 신청 절차, 징계 양정, 교원·군인 등 다른 법령과 과거·미래 판본은 검토하지 않음.",
+    "kind": "법령·규정",
+    "retrieved_at": "2026-11-06",
+    "collection": "office-police-fire-20261106",
+    "office_topic": "police_fire",
+    "sha256": "f77b4be327d5e355f04c61d8e634d08d522ca9e06a81f86ca0c5c3067f9db89e",
+    "units": [
+      {
+        "loc": "제33조(「국가공무원법」과의 관계) 全文",
+        "text": "제33조(「국가공무원법」과의 관계) ① 「국가공무원법」을 소방공무원에게 적용할 때에는 다음 각 호에 따른다.\n1. 「국가공무원법」 제32조의4제1항 중 “국가기관의 장”은 “임용권자 또는 임용제청권자”로 본다.\n2. 「국가공무원법」 제32조의5제1항 및 제43조 중 “직급”은 “계급”으로 본다.\n3. 「국가공무원법」 제68조, 제78조제1항제1호 및 같은 조 제2항, 제80조제7항 및 제8항 중 “이 법”은 “이 법 및 「국가공무원법」”으로 본다.\n4. 「국가공무원법」 제71조제2항제3호 중 “중앙인사관장기관의 장”은 “소방청장”으로 본다.\n5. 「국가공무원법」 제73조의4제2항 중 “제40조ㆍ제40조의2 및 제41조”는 “이 법 제14조 및 제16조”로, “직급”은 “계급”으로 본다.\n② 제1항제3호에도 불구하고 소방공무원 중 소방총감과 소방정감에 대해서는 「국가공무원법」 제68조 본문을 적용하지 아니한다."
+      }
+    ]
+  },
+  {
+    "id": "office-pf-fs8-2",
+    "title": "소방공무원 복무규정",
+    "article": "제8조의2(공가)",
+    "filename": "fs8-2.txt",
+    "issuer": "소방청",
+    "institution": "소방공무원",
+    "effective_date": "2026-10-02",
+    "publication": "대통령령 제36728호, 2026. 9. 29., 타법개정",
+    "source_url": "https://www.law.go.kr/LSW/lsSideInfoP.do?lsiSeq=290449&joNo=0008&joBrNo=02&docCls=jo&urlMode=lsScJoRltInfoR",
+    "raw_file": "fs8-2.html",
+    "raw_sha256": "f14b7d81986a0c9b5990b3267a6511d532a7e8d0b75ef18d88b048ef960aa46e",
+    "scope": "경찰·소방공무원의 휴직·징계·휴가 종류에 적용되는 특례. 신청 절차, 징계 양정, 교원·군인 등 다른 법령과 과거·미래 판본은 검토하지 않음.",
+    "kind": "법령·규정",
+    "retrieved_at": "2026-11-06",
+    "collection": "office-police-fire-20261106",
+    "office_topic": "police_fire",
+    "sha256": "f0bec32260f39ddca26b37094ec35d6e72385d86699a4d3e74faca8dc8888acb",
+    "units": [
+      {
+        "loc": "제8조의2(공가) 全文",
+        "text": "제8조의2(공가) 소방기관의 장은 소방공무원이 다음 각 호의 어느 하나에 해당하는 때에는 이에 직접 필요한 기간을 공가로 승인해야 한다. <개정 2020. 3. 10., 2023. 3. 28., 2026. 9. 29.>\n1. 「병역법」이나 그 밖의 다른 법령에 따른 병역판정검사ㆍ소집ㆍ검열점호 등에 응하거나 동원 또는 훈련에 참가할 때\n2. 공무와 관련하여 국회, 법원, 공소청 또는 그 밖의 국가기관에 소환되었을 때\n3. 법률에 따라 투표에 참가할 때\n4. 승진시험ㆍ전직시험에 응시할 때\n5. 원격지(遠隔地)로 전보 발령을 받고 부임할 때\n6. 다음 각 목의 어느 하나에 해당하는 건강검진 또는 건강진단을 받을 때. 다만, 특별한 사정이 없으면 같은 날에 받는 경우로 한정한다.\n가. 「국민건강보험법」 제52조에 따른 건강검진\n나. 「소방공무원 보건안전 및 복지 기본법」 제16조에 따른 특수건강진단 또는 정밀건강진단\n다. 「119구조ㆍ구급에 관한 법률 시행령」 제27조에 따른 건강검진\n7. 「혈액관리법」에 따라 헌혈에 참가할 때\n8. 「공무원 인재개발법 시행령」 제32조제5호 또는 「소방공무원 교육훈련규정」 제38조제5호에 따른 외국어능력에 관한 시험에 응시할 때\n9. 올림픽, 전국체전 등 국가 또는 지방 단위의 주요 행사에 참가할 때\n10. 천재지변, 교통 차단 또는 그 밖의 사유로 출근이 불가능할 때\n11. 「공무원의 노동조합 설립 및 운영 등에 관한 법률」 제9조에 따른 교섭위원으로 선임(選任)되어 단체교섭 및 단체협약 체결에 참석하거나 같은 법 제17조 및 「노동조합 및 노동관계조정법」 제17조에 따른 대의원회(「공무원의 노동조합 설립 및 운영 등에 관한 법률」에 따라 설립된 공무원 노동조합의 대의원회를 말하며, 연 1회로 한정한다)에 참석할 때\n12. 「검역법」 제5조제1항에 따른 오염지역 또는 같은 법 제5조의2제1항에 따른 오염인근지역으로 공무국외출장, 파견 또는 교육훈련을 가기 위하여 같은 법 제2조제1호에 따른 검역감염병의 예방접종을 할 때\n[본조신설 2019. 12. 24.]"
+      }
+    ]
+  },
+  {
+    "id": "office-pf-fs9",
+    "title": "소방공무원 복무규정",
+    "article": "제9조(포상휴가)",
+    "filename": "fs9.txt",
+    "issuer": "소방청",
+    "institution": "소방공무원",
+    "effective_date": "2026-10-02",
+    "publication": "대통령령 제36728호, 2026. 9. 29., 타법개정",
+    "source_url": "https://www.law.go.kr/LSW/lsSideInfoP.do?lsiSeq=290449&joNo=0009&joBrNo=00&docCls=jo&urlMode=lsScJoRltInfoR",
+    "raw_file": "fs9.html",
+    "raw_sha256": "050c5ee0ca49ac99c400ab967491805cf20d7fa5c22beb33ead99d6086246f39",
+    "scope": "경찰·소방공무원의 휴직·징계·휴가 종류에 적용되는 특례. 신청 절차, 징계 양정, 교원·군인 등 다른 법령과 과거·미래 판본은 검토하지 않음.",
+    "kind": "법령·규정",
+    "retrieved_at": "2026-11-06",
+    "collection": "office-police-fire-20261106",
+    "office_topic": "police_fire",
+    "sha256": "f64fefcb8f0ae75d566b51e6b49d613c4ae286c52ed0776a9874336f85c5c149",
+    "units": [
+      {
+        "loc": "제9조(포상휴가) 全文",
+        "text": "제9조(포상휴가) 소방기관의 장은 근무성적이 뛰어나거나 다른 소방공무원의 모범이 될 공적이 있는 소방공무원에게 1회 10일 이내의 포상휴가를 줄 수 있다. 이 경우 포상휴가기간은 연가일수에 산입(算入)하지 아니한다. <개정 2019. 12. 24.>"
+      }
+    ]
+  },
+  {
+    "id": "office-pf-fs10",
+    "title": "소방공무원 복무규정",
+    "article": "제10조(준용)",
+    "filename": "fs10.txt",
+    "issuer": "소방청",
+    "institution": "소방공무원",
+    "effective_date": "2026-10-02",
+    "publication": "대통령령 제36728호, 2026. 9. 29., 타법개정",
+    "source_url": "https://www.law.go.kr/LSW/lsSideInfoP.do?lsiSeq=290449&joNo=0010&joBrNo=00&docCls=jo&urlMode=lsScJoRltInfoR",
+    "raw_file": "fs10.html",
+    "raw_sha256": "48cd0099a83f18a65ac123988684b8c3d2468463fb4442b3a160bab91a9ab875",
+    "scope": "경찰·소방공무원의 휴직·징계·휴가 종류에 적용되는 특례. 신청 절차, 징계 양정, 교원·군인 등 다른 법령과 과거·미래 판본은 검토하지 않음.",
+    "kind": "법령·규정",
+    "retrieved_at": "2026-11-06",
+    "collection": "office-police-fire-20261106",
+    "office_topic": "police_fire",
+    "sha256": "aecce753d7ec50710b415f73aa2b079a032409bc192b99d7f0aa01eb1c8a1f18",
+    "units": [
+      {
+        "loc": "제10조(준용) 全文",
+        "text": "제10조(준용) 소방공무원의 복무에 관하여 이 영에서 규정한 사항 외에는 「국가공무원 복무규정」을 준용한다. 다만, 특별시ㆍ통합특별시ㆍ광역시ㆍ특별자치시ㆍ도 및 특별자치도(이하 “시ㆍ도”라 한다) 소속 소방공무원에 대하여 준용하는 경우 “소속 기관의 장”, “중앙행정기관의 장”, “행정기관의 장” 및 “소속 장관”은 각각 “특별시장ㆍ통합특별시장ㆍ광역시장ㆍ특별자치시장ㆍ도지사 및 특별자치도지사”로 본다. <개정 2026. 6. 23.>\n[전문개정 2020. 3. 10.]"
+      }
+    ]
+  },
+  {
+    "id": "office-pf-fs11",
+    "title": "소방공무원 복무규정",
+    "article": "제11조(시ㆍ도 소속 소방공무원의 특별휴가에 관한 특례)",
+    "filename": "fs11.txt",
+    "issuer": "소방청",
+    "institution": "소방공무원",
+    "effective_date": "2026-10-02",
+    "publication": "대통령령 제36728호, 2026. 9. 29., 타법개정",
+    "source_url": "https://www.law.go.kr/LSW/lsSideInfoP.do?lsiSeq=290449&joNo=0011&joBrNo=00&docCls=jo&urlMode=lsScJoRltInfoR",
+    "raw_file": "fs11.html",
+    "raw_sha256": "f42007f9bf2509fceb9e8c3698ff286fe2c4b3cf438b22e790f5ab779dd62547",
+    "scope": "경찰·소방공무원의 휴직·징계·휴가 종류에 적용되는 특례. 신청 절차, 징계 양정, 교원·군인 등 다른 법령과 과거·미래 판본은 검토하지 않음.",
+    "kind": "법령·규정",
+    "retrieved_at": "2026-11-06",
+    "collection": "office-police-fire-20261106",
+    "office_topic": "police_fire",
+    "sha256": "77f39fb000d1e534792bda5f7a74597bef6233cbd349cf0da0200c876dafbeaf",
+    "units": [
+      {
+        "loc": "제11조(시ㆍ도 소속 소방공무원의 특별휴가에 관한 특례) 全文",
+        "text": "제11조(시ㆍ도 소속 소방공무원의 특별휴가에 관한 특례) ① 시ㆍ도 소속 소방공무원의 특별휴가에 관하여는 이 영 및 「국가공무원 복무규정」에서 규정한 사항 외에는 소속 지방자치단체의 특별휴가에 관한 조례를 적용한다. <개정 2025. 7. 22.>\n② 제1항 및 「국가공무원 복무규정」 제20조제18항에도 불구하고 시ㆍ도 소속 소방공무원의 장기재직휴가에 관하여는 소속 지방자치단체의 장기재직휴가에 관한 조례를 적용한다. <신설 2025. 7. 22.>\n[본조신설 2020. 3. 10.]"
+      }
+    ]
+  }
+]

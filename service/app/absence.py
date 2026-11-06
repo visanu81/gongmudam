@@ -80,6 +80,11 @@ def procedure(q, c):
         national = '국가공무원은 매 반기 복무상황을 보고해요.'
         local = '지방공무원은 매 반기, 질병·유학·육아·자기개발 휴직은 매 분기 복무상황을 보고해요.'
         return dict(plan, only=['휴직 중 보고'], title={'national': national, 'local': local}.get(side, f'{national} {local}'))
+    # Only the national rule has a form for returning; the local guideline has none.
+    if '복직원' in q or '복직' in q and '서식' in q:
+        national = '복직원 서식은 공무원 임용규칙 별지 제48호예요.'
+        local = '지방공무원 인사제도 운영지침에는 복직원 서식이 없어요. 소속 기관 인사부서에 확인하세요.'
+        return dict(plan, only=['복직'], title={'national': national, 'local': local}.get(side, f'국가공무원 {national} {local}'))
     # "휴직 복직 절차" asks about both; "육아휴직 복직 절차" and "복직 서류" ask about returning.
     if '복직' in q and (kind or not re.search(r'휴직(?:및|과|,|·|ㆍ)?복직|휴직신청', q)):
         if kind == '질병 휴직':
