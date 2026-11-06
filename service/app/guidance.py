@@ -50,7 +50,7 @@ MANUAL_QUERY = {'travel':'e-사람 출장 정산 내역 불러오는 방법', 'l
 
 
 def topic(query):
-    if leave_situations.family_care(query):return 'leave','휴가·복무'
+    if leave_situations.family_care(query) or leave_situations.self_sick(query):return 'leave','휴가·복무'
     office=knowledge.office_knowledge.classify(query)
     if office:return 'office',' · '.join(knowledge.office_knowledge.LABELS[t] for t in office['topics'])
     context=knowledge.relevance.evidence_context(query)

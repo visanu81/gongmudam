@@ -134,6 +134,24 @@ class HealthAnswerActionTest(Base):
                         self.assertIn('병', result['guidance']['practice'][0]['loc'])
                         self.assertNotIn('공 가', result['guidance']['practice'][0]['loc'])
 
+    def test_saying_one_is_ill_gets_the_sick_leave_answer(self):
+        for prefix, article in (('', '제7조의5('), ('국가공무원인데 ', '제18조('), ('지방공무원인데 ', '제7조의5('), ('소방공무원인데 ', '제18조('), ('경찰공무원인데 ', '제18조(')):
+            for question in ('아파서 쉬어야 해요', '아파서 출근 못 해요', '독감 걸렸어요', '입원해야 해요'):
+                with self.subTest(query=prefix+question):
+                    result = self.ask(prefix+question)
+                    reply = result['knowledge']
+                    self.assertEqual(reply['intent']['topics'], ['sick'])
+                    self.assertIn('병가', reply['tree']['title'])
+                    self.assertEqual(result['guidance']['topic'], 'leave')
+                    self.assertTrue(reply['evidence'][0]['official']['article'].startswith(article), reply['evidence'][0]['title'])
+                    self.assertFalse(result['guidance']['ai_used'])
+                    if prefix != '지방공무원인데 ':
+                        self.assertIn('병가', result['guidance']['practice'][0]['loc'])
+
+    def test_a_teacher_saying_they_are_ill_is_not_told_the_civil_service_rule(self):
+        reply = self.ask('교사인데 아파서 쉬어야 해요')['knowledge']
+        self.assertFalse(reply['evidence'])
+
     def test_a_check_as_the_purpose_keeps_the_official_leave_answer(self):
         for query in ('건강검진 받으러 병가 써도 되나요', '건강검진을 병가로 처리해도 되나요', '건강검진 때문에 병가 써야 하나요',
                       '건강검진은 병가인가요 공가인가요', '건강검진 결과 때문에 공가 쓸 수 있나요'):

@@ -176,7 +176,7 @@ def _with_guidelines(query,plan,hits,reason,missing,today):
     # Pay, allowance and welfare questions take the pay guidelines, not the conduct guideline.
     if service_rules.domain(query):return hits,reason,'',[]
     # A health check is answered as 공가 and an illness it found as 병가; the operating standard follows.
-    wanted=query+' 공가' if 'public_health' in (plan or {}).get('topics',[]) else leave_situations.HEALTH_CHECK.sub('',query)+' 병가' if leave_situations.after_health_check(query) else query
+    wanted=query+' 공가' if 'public_health' in (plan or {}).get('topics',[]) else leave_situations.HEALTH_CHECK.sub('',query)+' 병가' if leave_situations.after_health_check(query) or 'sick' in (plan or {}).get('topics',[]) and leave_situations.self_sick(query) else query
     guidance=service_guidelines.search(wanted)
     if not guidance:return hits,reason,'',[]
     # Articles stay the evidence; the guideline is shown separately as practice.
