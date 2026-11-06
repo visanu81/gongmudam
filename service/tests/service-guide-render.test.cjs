@@ -64,7 +64,23 @@ test('institution rule evidence replaces generic preparation and empty-deadline 
 
   const otherTopicHtml = render({ topic: 'leave', steps: [], deadlines: [] }, [rule]);
   assert.match(otherTopicHtml, /등록된 처리 순서가 없습니다/);
-  assert.match(otherTopicHtml, /정확한 기한을 확인할 등록 근거가 부족해요/);
+  assert.match(otherTopicHtml, /따로 정리한 기한은 없어요/);
+  assert.doesNotMatch(otherTopicHtml, /별도 기한 판정은 제공하지 않습니다/);
+});
+
+test('empty deadlines say evidence is lacking only when the answer has none', () => {
+  const law = { title: '국가공무원법 제73조' };
+  const grounded = render({ topic: 'general', steps: [], deadlines: [] }, [law]);
+  assert.match(grounded, /따로 정리한 기한은 없어요\. 위 답변과 아래 원문에 적힌 기한·기간을 확인하세요\./);
+  assert.doesNotMatch(grounded, /근거가 부족해요/);
+
+  const empty = render({ topic: 'general', steps: [], deadlines: [] }, []);
+  assert.match(empty, /정확한 기한을 확인할 등록 근거가 부족해요/);
+  assert.doesNotMatch(empty, /따로 정리한 기한은 없어요/);
+
+  const listed = render({ topic: 'general', steps: [], deadlines: [{ text: '30일 이내에 신고해요', ref: 1 }] }, [law]);
+  assert.match(listed, /30일 이내에 신고해요/);
+  assert.doesNotMatch(listed, /따로 정리한 기한은 없어요|근거가 부족해요/);
 });
 
 test('managed institution forms link only to the local original and derive a fixed manager link', () => {

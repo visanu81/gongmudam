@@ -30,7 +30,7 @@ window.SeomuGuidance = (() => {
     const legalEvidence = result.knowledge?.evidence;
     const hasInstitutionRuleEvidence = guidance.topic === "institution" && Array.isArray(legalEvidence) && legalEvidence.some(item => item?.reference_kind === "institution_rule");
     const legalRefs = new Set(Array.isArray(legalEvidence) ? legalEvidence.map((item, index) => index + 1) : []);
-    const deadlineHtml = `<section><h3>기한</h3>${deadlines.length ? `<ul>${deadlines.map(item => `<li>${esc(item?.text)}${Number.isSafeInteger(item?.ref) && legalRefs.has(item.ref) ? ` <button type="button" class="guidance-ref" data-guidance-evidence="${item.ref}">[근거 ${item.ref}]</button>` : ""}</li>`).join("")}</ul>` : `<p class="guidance-note">${hasInstitutionRuleEvidence ? "기관 자료의 기한은 위 원문 발췌와 적용 조건에서 확인하세요. 별도 기한 판정은 제공하지 않습니다." : "질문에 적용할 정확한 기한을 확인할 등록 근거가 부족해요. 아래 원문과 적용 조건을 확인해 주세요."}</p>`}</section>`;
+    const deadlineHtml = `<section><h3>기한</h3>${deadlines.length ? `<ul>${deadlines.map(item => `<li>${esc(item?.text)}${Number.isSafeInteger(item?.ref) && legalRefs.has(item.ref) ? ` <button type="button" class="guidance-ref" data-guidance-evidence="${item.ref}">[근거 ${item.ref}]</button>` : ""}</li>`).join("")}</ul>` : `<p class="guidance-note">${hasInstitutionRuleEvidence ? "기관 자료의 기한은 위 원문 발췌와 적용 조건에서 확인하세요. 별도 기한 판정은 제공하지 않습니다." : legalRefs.size ? "따로 정리한 기한은 없어요. 위 답변과 아래 원문에 적힌 기한·기간을 확인하세요." : "질문에 적용할 정확한 기한을 확인할 등록 근거가 부족해요. 아래 원문과 적용 조건을 확인해 주세요."}</p>`}</section>`;
     const formHtml = forms.length ? forms.map(form => {
       const href = localFormHref(form);
       const managed = form?.kind === "서식" && form?.reference_kind === "institution_rule" && href.match(/^\/api\/institution-rules\/([a-f0-9]{32})\/versions\/([a-f0-9]{32})\/original$/);
