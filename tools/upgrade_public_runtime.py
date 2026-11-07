@@ -58,7 +58,8 @@ def plan(source, target):
             path = owned(root, name)
             if not path.is_file() or digest(path) != expected:
                 raise ValueError('Managed file was changed: ' + str(path))
-    if old['files'].keys() - new['files'].keys():
+    # Wheels are not installed in the runtime, so a wheel replaced by a newer pin may leave the list.
+    if any(not name.startswith('wheels/') for name in old['files'].keys() - new['files'].keys()):
         raise ValueError('This upgrade cannot remove managed files')
     before, after = read(target / 'submission-data/knowledge.json'), read(source / 'submission-data/knowledge.json')
     if before.get('regulation_snapshot') != after.get('regulation_snapshot') or before.get('regulation_objects') != after.get('regulation_objects'):

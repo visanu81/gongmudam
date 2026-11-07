@@ -7,9 +7,9 @@ files are never replaced; a newer issue needs a new collection and review.
 """
 from pathlib import Path
 from datetime import datetime,timezone
-from urllib.request import Request,urlopen
 from urllib.parse import urlsplit,unquote
 import hashlib,io,json,re,sys
+import httpx
 
 COLLECTION='pay-guidelines-20261031'
 BASE=Path(__file__).resolve().parents[1]/'reference_data'/COLLECTION
@@ -30,11 +30,11 @@ MAX_BYTES=30*1024*1024
 
 
 def fetch(source):
-    request=Request(source['download_url'],headers={'User-Agent':'SeomuAssistant-public-source-review/1.0'})
-    with urlopen(request,timeout=180) as response:
-        if urlsplit(response.url).hostname not in {'law.go.kr','www.law.go.kr'}:raise ValueError('Unexpected redirect')
-        name=unquote(response.headers.get('Content-Disposition',''))
-        raw=response.read(MAX_BYTES+1)
+    response=httpx.get(source['download_url'],headers={'User-Agent':'SeomuAssistant-public-source-review/1.0'},timeout=180,follow_redirects=True)
+    response.raise_for_status()
+    if urlsplit(str(response.url)).hostname not in {'law.go.kr','www.law.go.kr'}:raise ValueError('Unexpected redirect')
+    name=unquote(response.headers.get('Content-Disposition',''))
+    raw=response.content
     if len(raw)>MAX_BYTES or not raw.startswith(b'%PDF'):raise ValueError('Unexpected download')
     return raw,name
 

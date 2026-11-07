@@ -13,7 +13,8 @@ import zipfile
 import zlib
 import warnings
 from pathlib import Path
-from xml.etree import ElementTree as ET
+from defusedxml import ElementTree as ET
+from defusedxml.common import DefusedXmlException
 
 SUPPORTED = {".hwp", ".hwpx", ".pdf", ".xlsx", ".xlsm", ".docx", ".txt", ".md", ".csv"}
 
@@ -33,7 +34,7 @@ def parse_file(path: Path) -> list[dict]:
         raise ParseError(f"지원하지 않는 형식: {ext}")
     try:
         units = fn(path)
-    except (ET.ParseError, csv.Error, struct.error, UnicodeError, zlib.error, KeyError, zipfile.BadZipFile) as e:
+    except (ET.ParseError, DefusedXmlException, csv.Error, struct.error, UnicodeError, zlib.error, KeyError, zipfile.BadZipFile) as e:
         raise ParseError(f"문서 구조 또는 인코딩이 올바르지 않습니다: {e}") from e
     return [u for u in units if u["text"].strip()]
 

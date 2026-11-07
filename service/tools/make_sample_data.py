@@ -13,10 +13,14 @@ import subprocess
 import sys
 import tempfile
 from pathlib import Path
-from xml.sax.saxutils import escape
+from html import escape as html_escape
 
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "sample_data" / "규정자료"
+
+
+def escape(text):
+    return html_escape(text, quote=False)
 SKILL = Path(os.environ.get("HWPX_SKILL_DIR", ""))
 
 # ------------------------------------------------------------------ 본문

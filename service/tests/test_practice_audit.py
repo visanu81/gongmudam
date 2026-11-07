@@ -3,8 +3,9 @@ import csv
 import json
 import tempfile
 from pathlib import Path
-from unittest.mock import Mock
 from unittest.mock import patch
+
+import httpx
 
 from tools.audit_practice_questions import evaluate_case, run_cases, write_reports, _validate_cases, _compare_live_catalog, _all_evidence
 
@@ -131,14 +132,11 @@ class PracticeAuditTests(unittest.TestCase):
         evidence = {"source_id": "law1", "sha256": "hash1", "title": "연가 규정", "loc": "제1조",
                     "quote": "연가는 1년에 21일입니다."}
         reply = response([evidence])
-        api_response = Mock()
-        api_response.__enter__ = Mock(return_value=api_response)
-        api_response.__exit__ = Mock(return_value=False)
-        api_response.read.return_value = json.dumps(reply, ensure_ascii=False).encode("utf-8")
+        api_response = httpx.Response(200, json=reply, request=httpx.Request("POST", "http://127.0.0.1:8787/api/ask"))
         catalog = [{key: value for key, value in local.items() if key != "units"}]
         with patch("app.knowledge.sources", return_value=[local]), \
              patch("tools.audit_practice_questions._fetch_json", return_value=catalog), \
-             patch("tools.audit_practice_questions.urllib.request.urlopen", return_value=api_response):
+             patch("tools.audit_practice_questions.httpx.post", return_value=api_response):
             rows, registry = run_cases([case()], "http://127.0.0.1:8787", "2026-10-26", in_process=False)
         self.assertIn("units", registry[0])
         self.assertEqual(rows[0]["verdict"], "근거 연결 확인")

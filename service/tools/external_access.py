@@ -5,7 +5,7 @@ from __future__ import annotations
 import argparse,json,os,re,shutil,subprocess,sys,uuid
 from datetime import datetime,timezone
 from pathlib import Path
-from urllib.request import urlopen
+import httpx
 
 ROOT=Path(__file__).resolve().parents[1]
 PRIVATE=ROOT/'data'/'external-access'
@@ -30,7 +30,7 @@ def origin(port):
     return f'http://127.0.0.1:{port}'
 def app_ready(url):
     try:
-        with urlopen(url+'/openapi.json',timeout=5) as r:doc=json.load(r)
+        response=httpx.get(url+'/openapi.json',timeout=5);response.raise_for_status();doc=response.json()
         return doc.get('info',{}).get('title')=='서무비서' and '/api/folders/change-inbox' in doc.get('paths',{})
     except Exception:return False
 

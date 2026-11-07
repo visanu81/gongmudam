@@ -7,9 +7,9 @@ new collection directory and review.
 """
 from pathlib import Path
 from datetime import datetime,timezone
-from urllib.request import Request,urlopen
 from urllib.parse import urlsplit,unquote
 import hashlib,io,json,re
+import httpx
 
 COLLECTION='service-guidelines-20261029'
 BASE=Path(__file__).resolve().parents[1]/'reference_data'/COLLECTION
@@ -32,11 +32,11 @@ def heading(match):
 
 
 def fetch():
-    request=Request(SOURCE['download_url'],headers={'User-Agent':'SeomuAssistant-public-source-review/1.0'})
-    with urlopen(request,timeout=120) as response:
-        if urlsplit(response.url).hostname not in {'law.go.kr','www.law.go.kr'}:raise ValueError('Unexpected redirect')
-        name=unquote(response.headers.get('Content-Disposition',''))
-        raw=response.read(30*1024*1024+1)
+    response=httpx.get(SOURCE['download_url'],headers={'User-Agent':'SeomuAssistant-public-source-review/1.0'},timeout=120,follow_redirects=True)
+    response.raise_for_status()
+    if urlsplit(str(response.url)).hostname not in {'law.go.kr','www.law.go.kr'}:raise ValueError('Unexpected redirect')
+    name=unquote(response.headers.get('Content-Disposition',''))
+    raw=response.content
     if len(raw)>30*1024*1024 or not raw.startswith(b'%PDF'):raise ValueError('Unexpected download')
     if '제225호' not in name:raise ValueError('Unexpected guideline issue: '+name)
     return raw

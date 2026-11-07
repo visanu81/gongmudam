@@ -65,6 +65,8 @@ def prepare(dest, root=ROOT, version='v79-answer-first-20261026'):
         relative=Path(name)
         if relative.is_absolute() or '..' in relative.parts:raise ValueError('Invalid managed path')
         origin=(source if name.startswith('wheels/') else public)/relative
+        # A wheel replaced by a newer pin is gone; copy_dependencies still stops if a pinned one is missing.
+        if name.startswith('wheels/') and not origin.exists():continue
         if digest(origin)!=expected:raise ValueError('Managed public file changed: '+name)
         output=dest/relative;output.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(origin,output)
     copy_dependencies(source,dest)

@@ -22,9 +22,9 @@ class ExternalAccessTest(unittest.TestCase):
  def test_auth_unsupported_client_rejected_before_publication(self):
   with patch.object(ext.shutil,'which',return_value='fake.exe'),patch.object(ext.subprocess,'check_output',return_value='old client no flag'),self.assertRaises(ValueError):ext.cloudflared()
  def test_app_identity_requires_expected_openapi_title_and_routes(self):
-  import io,json
+  import httpx
   for obj,wanted in [({'info':{'title':'another app'},'paths':{}},False),({'info':{'title':'서무비서'},'paths':{'/api/folders/change-inbox':{}}},True)]:
-   with patch.object(ext,'urlopen',return_value=io.BytesIO(json.dumps(obj).encode())):self.assertEqual(ext.app_ready('http://127.0.0.1:8766'),wanted)
+   with patch.object(ext.httpx,'get',return_value=httpx.Response(200,json=obj,request=httpx.Request('GET','http://127.0.0.1:8766/openapi.json'))):self.assertEqual(ext.app_ready('http://127.0.0.1:8766'),wanted)
  def test_log_url_is_only_a_valid_trycloudflare_hostname(self):
   with tempfile.TemporaryDirectory() as temp,patch.object(ext,'PRIVATE',Path(temp)):
    log=Path(temp)/'a.log';log.write_text('https://evil.example https://demo-good.trycloudflare.com https://evil.trycloudflare.com.evil.org',encoding='utf-8');self.assertEqual(ext.public_url({'log':str(log)}),'https://demo-good.trycloudflare.com')

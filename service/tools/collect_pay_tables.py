@@ -9,7 +9,7 @@ usage (from service/): python -X utf8 tools/collect_pay_tables.py
 """
 from datetime import datetime, timezone
 from pathlib import Path
-from urllib.request import Request, urlopen
+import httpx
 import hashlib, io, json, re, sys
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
@@ -61,8 +61,9 @@ GUIDELINES = BASE.parent / 'pay-guidelines-20261031'
 
 
 def fetch(url):
-    with urlopen(Request(url, headers={'User-Agent': 'SeomuAssistant-public-source-review/1.0'}), timeout=60) as r:
-        return r.read()
+    response = httpx.get(url, headers={'User-Agent': 'SeomuAssistant-public-source-review/1.0'}, timeout=60, follow_redirects=True)
+    response.raise_for_status()
+    return response.content
 
 
 def main():

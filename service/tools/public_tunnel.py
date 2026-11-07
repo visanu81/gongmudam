@@ -1,14 +1,14 @@
 """Anonymous sharing is restricted to the separately built synthetic demo on 8767."""
 from pathlib import Path
 import argparse,json,subprocess,sys,uuid
-from urllib.request import urlopen
+import httpx
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 from tools import external_access as ext
 PRIVATE=ext.ROOT/'data'/'public-external-access'
 ORIGIN='http://127.0.0.1:8767'
 def check_origin():
     try:
-        with urlopen(ORIGIN+'/api/public-demo/status',timeout=5) as response:value=json.load(response)
+        response=httpx.get(ORIGIN+'/api/public-demo/status',timeout=5);response.raise_for_status();value=response.json()
         return value.get('mode')=='public-synthetic-demo' and value.get('private_data_isolated') is True and value.get('pc_root_access') is False
     except Exception:return False
 

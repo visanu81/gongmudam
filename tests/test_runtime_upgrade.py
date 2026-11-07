@@ -93,6 +93,26 @@ class RuntimeUpgradeTests(unittest.TestCase):
         self.assertEqual((self.target / 'output/evidence.pdf').read_bytes(), b'attachment unchanged')
         self.assertEqual(upgrade.upgrade(self.source, self.target, self.root / 'backups')['status'], 'already_current')
 
+    def retire_from_runtime_manifest(self, name):
+        manifest = upgrade.read(self.target / 'submission-manifest.json')
+        manifest['files'][name] = 'c' * 64
+        write(self.target / 'submission-manifest.json', manifest)
+        write(self.target / 'gongmudam-runtime.json', {'source_manifest_sha256': upgrade.digest(self.target / 'submission-manifest.json')})
+
+    def test_a_wheel_replaced_by_a_newer_pin_may_leave_the_managed_list(self):
+        self.retire_from_runtime_manifest('wheels/pypdf-6.21.1-py3-none-any.whl')
+        self.assertEqual(upgrade.plan(self.source, self.target)['to'], 'v70')
+
+    def test_any_other_managed_file_may_not_leave_the_list(self):
+        self.retire_from_runtime_manifest('app/retired.py')
+        (self.target / 'app/retired.py').write_text('x')
+        manifest = upgrade.read(self.target / 'submission-manifest.json')
+        manifest['files']['app/retired.py'] = upgrade.digest(self.target / 'app/retired.py')
+        write(self.target / 'submission-manifest.json', manifest)
+        write(self.target / 'gongmudam-runtime.json', {'source_manifest_sha256': upgrade.digest(self.target / 'submission-manifest.json')})
+        with self.assertRaisesRegex(ValueError, 'cannot remove managed files'):
+            upgrade.plan(self.source, self.target)
+
     def test_modified_managed_file_is_rejected_before_writing(self):
         (self.target / 'app/main.py').write_text('local edit')
         with self.assertRaisesRegex(ValueError, 'Managed file was changed'):

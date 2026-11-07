@@ -1,8 +1,8 @@
 """Add a complete national special-leave article without replacing older evidence."""
 from pathlib import Path
 from datetime import datetime, timezone
-from urllib.request import Request, urlopen
 from urllib.parse import urlsplit
+import httpx
 import hashlib, json
 from tools.prepare_official_pack import Tree
 
@@ -11,9 +11,10 @@ URL='https://law.go.kr/LSW/lsLinkCommonInfo.do?lsJoLnkSeq=1033978333'
 
 
 def collect():
-    with urlopen(Request(URL,headers={'User-Agent':'SeomuAssistant-public-source-review/1.0'}),timeout=30) as response:
-        if urlsplit(response.url).hostname not in {'law.go.kr','www.law.go.kr'}:raise ValueError('Unexpected source host')
-        raw=response.read(2*1024*1024+1)
+    response=httpx.get(URL,headers={'User-Agent':'SeomuAssistant-public-source-review/1.0'},timeout=30,follow_redirects=True)
+    response.raise_for_status()
+    if urlsplit(str(response.url)).hostname not in {'law.go.kr','www.law.go.kr'}:raise ValueError('Unexpected source host')
+    raw=response.content
     if len(raw)>2*1024*1024:raise ValueError('Source too large')
     html=raw.decode('utf-8');tree=Tree(html)
     if '2026. 10. 2.' not in tree.root.text() or '제36728호' not in tree.root.text():raise ValueError('Review the new effective version first')

@@ -8,12 +8,12 @@ import json
 import re
 import sys
 import time
-import urllib.error
-import urllib.request
 from datetime import date
 from pathlib import Path
 from typing import Any
 from urllib.parse import urlsplit
+
+import httpx
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_CASES = ROOT / "reference_data" / "practice_questions_100.json"
@@ -195,8 +195,9 @@ def _validate_cases(cases: Any) -> list[dict[str, Any]]:
 
 
 def _fetch_json(base_url: str, path: str) -> Any:
-    with urllib.request.urlopen(base_url.rstrip("/") + path, timeout=30) as response:
-        return json.loads(response.read().decode("utf-8"))
+    response = httpx.get(base_url.rstrip("/") + path, timeout=30, follow_redirects=True)
+    response.raise_for_status()
+    return response.json()
 
 
 def _compare_live_catalog(local_sources: list[dict[str, Any]], catalog: Any) -> None:
@@ -240,8 +241,9 @@ def run_cases(cases: list[dict[str, Any]], base_url: str, today: str, in_process
                     reply = main.api_ask(request)
             else:
                 data = json.dumps(request, ensure_ascii=False).encode("utf-8")
-                req = urllib.request.Request(base_url.rstrip("/") + "/api/ask", data=data, headers={"Content-Type": "application/json"})
-                with urllib.request.urlopen(req, timeout=60) as response: reply = json.loads(response.read().decode("utf-8"))
+                response = httpx.post(base_url.rstrip("/") + "/api/ask", content=data, headers={"Content-Type": "application/json"}, timeout=60, follow_redirects=True)
+                response.raise_for_status()
+                reply = response.json()
             check = evaluate_case(case, reply, registry)
         except Exception as exc:
             reply = None; check = {"verdict": "답변 점검 필요", "failures": [f"{type(exc).__name__}: {exc}"], "checks": {}}

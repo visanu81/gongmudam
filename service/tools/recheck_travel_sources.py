@@ -7,7 +7,7 @@ from html.parser import HTMLParser
 import hashlib
 import json
 import re
-import urllib.request
+import httpx
 
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'reference_data/travel-recheck-20261020'
@@ -51,13 +51,13 @@ def paragraph_digest(raw):
 
 def fetch(item):
     key,url=item
-    req=urllib.request.Request(quote(url,safe=':/?=&'),headers={'User-Agent':'SeomuAssistant-source-review/1.0'})
-    with urllib.request.urlopen(req,timeout=40) as response:
-        if urlsplit(response.url).hostname not in {'law.go.kr','www.law.go.kr','www.mpm.go.kr'}:
-            raise ValueError('예상하지 않은 출처 주소')
-        raw=response.read(10*1024*1024+1)
-        if len(raw)>10*1024*1024:raise ValueError('원문 용량 초과')
-        final_url=response.url
+    response=httpx.get(quote(url,safe=':/?=&'),headers={'User-Agent':'SeomuAssistant-source-review/1.0'},timeout=40,follow_redirects=True)
+    response.raise_for_status()
+    final_url=str(response.url)
+    if urlsplit(final_url).hostname not in {'law.go.kr','www.law.go.kr','www.mpm.go.kr'}:
+        raise ValueError('예상하지 않은 출처 주소')
+    raw=response.content
+    if len(raw)>10*1024*1024:raise ValueError('원문 용량 초과')
     suffix='.pdf' if raw.startswith(b'%PDF-') else '.html'
     target=OUT/(key+suffix);target.write_bytes(raw)
     return dict(id=key,url=url,final_url=final_url,file=target.name,sha256=hashlib.sha256(raw).hexdigest(),

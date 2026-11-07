@@ -4,9 +4,10 @@ import hashlib
 import json
 import platform
 import sys
-import urllib.request
 from datetime import datetime,timezone
 from pathlib import Path
+
+import httpx
 
 ROOT=Path(__file__).resolve().parent.parent
 
@@ -17,8 +18,9 @@ def main():
     parser.add_argument('--output',default=str(ROOT/'docs'/'local-ai-evidence'))
     args=parser.parse_args();folder=Path(args.output);folder.mkdir(parents=True,exist_ok=True)
     def request(path,body=None):
-        req=urllib.request.Request(args.base_url+path,data=json.dumps(body).encode() if body is not None else None,headers={'Content-Type':'application/json'})
-        return json.load(urllib.request.urlopen(req,timeout=240))
+        response=httpx.request('POST' if body is not None else 'GET',args.base_url+path,content=json.dumps(body).encode() if body is not None else None,headers={'Content-Type':'application/json'},timeout=240)
+        response.raise_for_status()
+        return response.json()
     def save(path,data): path.write_text(json.dumps(data,ensure_ascii=False,indent=2),encoding='utf-8')
     options=request('/api/local-ai/options')
     result={'schema':'local-ai-proof/1','created_at':datetime.now(timezone.utc).isoformat(),'environment':{'os':platform.platform(),'python':platform.python_version(),'ollama_version':options['ollama_version'],'installed_models':options['installed_models']},

@@ -6,10 +6,10 @@ import json
 import platform
 import subprocess
 import sys
-import urllib.request
 import zipfile
 from datetime import datetime,timezone
 from importlib.metadata import version
+import httpx
 from pathlib import Path
 
 
@@ -17,8 +17,9 @@ def main():
     parser=argparse.ArgumentParser();parser.add_argument('--candidate',required=True);parser.add_argument('--output',required=True);parser.add_argument('--url',default='http://127.0.0.1:8771')
     args=parser.parse_args();root=Path(args.candidate).resolve();out=Path(args.output);out.mkdir(parents=True,exist_ok=True)
     def request(path,body=None):
-        req=urllib.request.Request(args.url+path,data=json.dumps(body).encode() if body is not None else None,headers={'Content-Type':'application/json'})
-        return json.load(urllib.request.urlopen(req,timeout=240))
+        response=httpx.request('POST' if body is not None else 'GET',args.url+path,content=json.dumps(body).encode() if body is not None else None,headers={'Content-Type':'application/json'},timeout=240)
+        response.raise_for_status()
+        return response.json()
     def save(path,value): path.write_text(json.dumps(value,ensure_ascii=False,indent=2),encoding='utf-8')
     assert Path(sys.prefix).resolve()==root/'.venv','새 후보의 Python으로 실행해야 합니다.'
     manifest=json.loads((root/'submission-manifest.json').read_text(encoding='utf-8'))
@@ -46,7 +47,7 @@ def main():
         result=request('/api/travel/demo-scenarios/'+scenario+'/prepare',{'new_copy':True})
         assert result['calculation']['result']['estimated_total']==amount
         assert result['demo_report']['passed']
-        draft=result['prepared_draft_id'];raw=urllib.request.urlopen(args.url+'/api/travel/drafts/'+draft+'/package',timeout=60).read()
+        draft=result['prepared_draft_id'];response=httpx.get(args.url+'/api/travel/drafts/'+draft+'/package',timeout=60);response.raise_for_status();raw=response.content
         with zipfile.ZipFile(io.BytesIO(raw)) as z:
             assert z.testzip() is None;m=json.loads(z.read('manifest.json'))
             assert all(hashlib.sha256(z.read(f['path'])).hexdigest()==f['sha256'] for f in m['files'])

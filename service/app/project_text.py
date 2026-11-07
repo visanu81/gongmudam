@@ -5,7 +5,7 @@ import csv
 import io
 from pathlib import Path
 import zipfile
-import xml.etree.ElementTree as ET
+from defusedxml import ElementTree as ET
 
 from .pay_guidelines import readable
 

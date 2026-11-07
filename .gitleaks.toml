@@ -1,0 +1,7 @@
+# The flagged values are SHA-256 file hashes in the release manifest, not credentials.
+[extend]
+useDefault = true
+
+[allowlist]
+description = "File hashes in the release manifest"
+paths = ['''(^|/)service/submission-manifest\.json$''']

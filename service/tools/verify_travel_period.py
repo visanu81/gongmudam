@@ -1,14 +1,15 @@
 """v42 로컬 HTTP 검증. 합성 사례만 추가하며 사용자 출장은 변경하지 않는다."""
 from pathlib import Path
-import json,urllib.request,hashlib,io,zipfile
+import json,hashlib,io,zipfile
+import httpx
 ROOT=Path(__file__).resolve().parents[1]
 BASE='http://127.0.0.1:8766/api/travel'
 
 
 def call(path,body=None,method=None,raw=False):
-    req=urllib.request.Request(BASE+path,data=None if body is None else json.dumps(body,ensure_ascii=False).encode(),
-        headers={'Content-Type':'application/json'},method=method or ('POST' if body is not None else 'GET'))
-    with urllib.request.urlopen(req,timeout=30) as response:data=response.read()
+    response=httpx.request(method or ('POST' if body is not None else 'GET'),BASE+path,content=None if body is None else json.dumps(body,ensure_ascii=False).encode(),
+        headers={'Content-Type':'application/json'},timeout=30)
+    response.raise_for_status();data=response.content
     return data if raw else json.loads(data)
 
 

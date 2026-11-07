@@ -1,7 +1,8 @@
 """Start the existing apps for this review only; no boot tasks or hosting changes."""
 from pathlib import Path
 import re
-import subprocess,json,shutil,time,urllib.request,argparse
+import subprocess,json,shutil,time,argparse
+import httpx
 ROOT=Path(__file__).resolve().parents[1]
 def merge_public_html(main_html,public_html):
  notice=re.search(r'<div class="public-notice">.*?</div>',public_html,re.DOTALL)
@@ -18,7 +19,7 @@ def merge_public_html(main_html,public_html):
  return merged[:body.end()]+'\n'+notice.group(0)+merged[body.end():]
 def ready(port):
  try:
-  with urllib.request.urlopen(f'http://127.0.0.1:{port}/openapi.json',timeout=2) as r:return json.load(r).get('info',{}).get('title')=='서무비서'
+  response=httpx.get(f'http://127.0.0.1:{port}/openapi.json',timeout=2);response.raise_for_status();return response.json().get('info',{}).get('title')=='서무비서'
  except Exception:return False
 def start(refresh=False,local_only=False):
  dest=ROOT.parent/'work/public-demo-v28b'

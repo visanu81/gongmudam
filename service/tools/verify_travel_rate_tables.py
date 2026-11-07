@@ -4,7 +4,7 @@ import argparse
 import hashlib
 import io
 import json
-import urllib.request
+import httpx
 import zipfile
 from datetime import datetime, timezone
 
@@ -15,9 +15,9 @@ def run(port):
     base=f'http://127.0.0.1:{port}/api/travel'
     def request(path,body=None,method=None,raw=False):
         payload=None if body is None else json.dumps(body,ensure_ascii=False).encode('utf-8')
-        req=urllib.request.Request(base+path,data=payload,method=method or ('POST' if payload is not None else 'GET'),headers={'Content-Type':'application/json'})
-        with urllib.request.urlopen(req,timeout=30) as response:
-            data=response.read()
+        response=httpx.request(method or ('POST' if payload is not None else 'GET'),base+path,content=payload,headers={'Content-Type':'application/json'},timeout=30)
+        response.raise_for_status()
+        data=response.content
         return data if raw else json.loads(data)
     def create(transport='철도',inside=False):
         case=request('/cases',dict(organization_id='national-general',work_pattern='일반근무',destination='부산',

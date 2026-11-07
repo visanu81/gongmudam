@@ -6,9 +6,9 @@ a changed source must be reviewed as a new collection.
 """
 from pathlib import Path
 from datetime import datetime,timezone
-from urllib.request import Request,urlopen
 from urllib.parse import urlsplit
 import hashlib,json,re,sys,time
+import httpx
 from tools.prepare_official_pack import Tree
 
 COLLECTION='service-rules-20261029'
@@ -111,11 +111,12 @@ def url(lsi,article):
 def fetch(address,attempts=4):
     for attempt in range(attempts):
         try:
-            with urlopen(Request(address,headers={'User-Agent':'SeomuAssistant-public-source-review/1.0'}),timeout=60) as response:
-                if urlsplit(response.url).hostname not in {'law.go.kr','www.law.go.kr'}:raise ValueError('Unexpected redirect')
-                raw=response.read(MAX_BYTES+1)
+            response=httpx.get(address,headers={'User-Agent':'SeomuAssistant-public-source-review/1.0'},timeout=60,follow_redirects=True)
+            response.raise_for_status()
+            if urlsplit(str(response.url)).hostname not in {'law.go.kr','www.law.go.kr'}:raise ValueError('Unexpected redirect')
+            raw=response.content
             break
-        except (TimeoutError,OSError):
+        except (TimeoutError,OSError,httpx.HTTPError):
             if attempt==attempts-1:raise
             time.sleep(5*(attempt+1))
     if len(raw)>MAX_BYTES:raise ValueError('Source too large')

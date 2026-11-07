@@ -2,7 +2,7 @@
 from datetime import datetime, timezone
 from pathlib import Path
 from urllib.parse import urljoin, urlsplit
-from urllib.request import Request, urlopen
+import httpx
 import hashlib
 import json
 import re
@@ -25,11 +25,11 @@ BOARD_URL = 'https://www.mpm.go.kr/mpm/info/infoService/serviceBoard/'
 def _fetch(url):
     if urlsplit(url).hostname not in HOSTS or not url.startswith('https://'):
         raise ValueError('Source URL is outside the official MPM host')
-    request = Request(url, headers={'User-Agent': 'SeomuAssistant-public-source-archive/1.0'})
-    with urlopen(request, timeout=40) as response:
-        if urlsplit(response.url).hostname not in HOSTS:
-            raise ValueError('Unexpected redirect host: ' + response.url)
-        raw = response.read(8 * 1024 * 1024 + 1)
+    response = httpx.get(url, headers={'User-Agent': 'SeomuAssistant-public-source-archive/1.0'}, timeout=40, follow_redirects=True)
+    response.raise_for_status()
+    if urlsplit(str(response.url)).hostname not in HOSTS:
+        raise ValueError('Unexpected redirect host: ' + str(response.url))
+    raw = response.content
     if len(raw) > 8 * 1024 * 1024:
         raise ValueError('Source exceeds 8 MB: ' + url)
     return raw

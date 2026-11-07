@@ -1,8 +1,8 @@
 """Append reviewed national sick/public-leave and side-job articles for v70 QA."""
 from pathlib import Path
 from datetime import datetime,timezone
-from urllib.request import Request,urlopen
 from urllib.parse import urlsplit
+import httpx
 import hashlib,json
 from tools.prepare_official_pack import Tree
 
@@ -19,9 +19,10 @@ def collect():
         name=f'국가공무원 복무규정_제{number}조_전체_v70.txt';old=next((r for r in rows if r['filename']==name),None)
         if old:added.append(old);continue
         url=f'https://www.law.go.kr/LSW/lsSideInfoP.do?joNo={number:04}&joBrNo=00&lsiSeq=290349&urlMode=lsScJoRltInfoR&docCls=jo'
-        with urlopen(Request(url,headers={'User-Agent':'SeomuAssistant-public-source-review/1.0'}),timeout=30) as response:
-            if urlsplit(response.url).hostname not in {'law.go.kr','www.law.go.kr'}:raise ValueError('Unexpected redirect')
-            raw=response.read(2*1024*1024+1)
+        response=httpx.get(url,headers={'User-Agent':'SeomuAssistant-public-source-review/1.0'},timeout=30,follow_redirects=True)
+        response.raise_for_status()
+        if urlsplit(str(response.url)).hostname not in {'law.go.kr','www.law.go.kr'}:raise ValueError('Unexpected redirect')
+        raw=response.content
         if len(raw)>2*1024*1024:raise ValueError('Source too large')
         tree=Tree(raw.decode('utf-8'));containers=[n for n in tree.root.walk() if 'lawcon' in n.attrs.get('class','').split()]
         if len(containers)!=1:raise ValueError('Unexpected article layout')

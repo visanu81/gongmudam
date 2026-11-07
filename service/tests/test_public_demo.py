@@ -44,5 +44,5 @@ class PublicDemoTest(unittest.TestCase):
  def test_tunnel_requires_explicit_public_demo_origin(self):
   samples=[({},False),({'mode':'public-synthetic-demo','private_data_isolated':True,'pc_root_access':False},True),({'mode':'private','private_data_isolated':True,'pc_root_access':False},False),({'mode':'public-synthetic-demo','private_data_isolated':False,'pc_root_access':False},False),({'mode':'public-synthetic-demo','private_data_isolated':True,'pc_root_access':True},False)]
   for body,expected in samples:
-   with self.subTest(body=body),patch.object(public_tunnel,'urlopen',return_value=io.BytesIO(json.dumps(body).encode())):self.assertEqual(public_tunnel.check_origin(),expected)
+   with self.subTest(body=body),patch.object(public_tunnel.httpx,'get',return_value=public_tunnel.httpx.Response(200,json=body,request=public_tunnel.httpx.Request('GET',public_tunnel.ORIGIN))):self.assertEqual(public_tunnel.check_origin(),expected)
  def test_anonymous_tunnel_has_no_private_port_option(self):self.assertEqual(public_tunnel.ORIGIN,'http://127.0.0.1:8767')

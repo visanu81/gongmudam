@@ -1,20 +1,21 @@
 """Run the chat-edit flow against running apps using newly created synthetic jobs only."""
 import argparse
 import json
-import urllib.request
 import uuid
 from pathlib import Path
+
+import httpx
 
 
 def check(port):
     base = f'http://127.0.0.1:{port}'
     trace = []
     def req(method, path, body=None):
-        request = urllib.request.Request(base + path, method=method,
-            data=json.dumps(body, ensure_ascii=False).encode() if body is not None else None,
-            headers={'Content-Type': 'application/json'})
-        with urllib.request.urlopen(request, timeout=20) as response:
-            return json.load(response)
+        response = httpx.request(method, base + path,
+            content=json.dumps(body, ensure_ascii=False).encode() if body is not None else None,
+            headers={'Content-Type': 'application/json'}, timeout=20)
+        response.raise_for_status()
+        return response.json()
     settings = dict(title='[합성 검증 v37] 대화로 교육 진행표 수정', situation='교육 참석 희망자 취합',
         course='합성 AI 활용 교육', event_date='2026-11-06', deadline='2026-10-30', departments=['합성총무팀','합성행정팀'])
     job = req('POST', '/api/adhoc/jobs', settings)
