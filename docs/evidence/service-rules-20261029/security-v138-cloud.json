@@ -1,0 +1,49 @@
+{
+ "version": "v138-security-scan-20261107",
+ "checked": "2026-11-07",
+ "use_ai": false,
+ "deployment": "d7eaf86d-f33f-48aa-a62f-5a004cf834ab",
+ "local": "http://127.0.0.1:8787",
+ "public": "https://gongmudam.visanu81.workers.dev",
+ "chains": {
+  "total": 26,
+  "equal": 26
+ },
+ "answers": {
+  "all_pass": true,
+  "passed": 351,
+  "failed": 0,
+  "total": 351
+ },
+ "rules": {
+  "all_pass": true,
+  "passed": 88,
+  "failed": 0,
+  "total": 88
+ },
+ "practice": {
+  "total": 27,
+  "equal": 27,
+  "with_practice": 18
+ },
+ "changed_practice": {
+  "total": 84,
+  "equal": 84,
+  "with_practice": 11
+ },
+ "documents": {
+  "total": 44,
+  "parse_file_equal": 44,
+  "extract_equal": 44
+ },
+ "screen": {
+  "files": [
+   "security-v138-shared.png"
+  ],
+  "width": 1920,
+  "horizontal_scroll": false,
+  "console_errors": 0,
+  "ai_off_flows": 3,
+  "ai_on_questions": 1
+ }
+}
