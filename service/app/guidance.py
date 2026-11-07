@@ -6,7 +6,7 @@ graph (including Graphify output) is never accepted as an authoritative rule.
 import re
 from . import knowledge, manual_knowledge, answer_tree, task_intent, store, leave_situations, service_knowledge
 from . import institution_matching as institution_match
-from . import guidance_materials
+from . import guidance_materials, personnel_scope
 
 TOPICS = (
     ('goods', '물품 구매·검수', r'물품|사무용품|구매|검수|예산\s*목|예산\s*과목'),
@@ -70,10 +70,74 @@ def topic(query):
     return 'general','서무 업무'
 
 
+# What a person types back when the app has just asked them something.
+_STATUS_WORD=r'국가공무원|국가직|지방공무원|지방직|소방공무원|소방관|경찰공무원|경찰관|교육공무원|교사|교원|공무직|무기계약직|기간제\s*근로자|기간제|군인'
+_STATUS_WORDS=re.compile(_STATUS_WORD)
+_ENDING=r'(?:이에요|예요|입니다|이요|요|이야|야|인데요|이고요|임)?[.!?\s]*'
+_STATUS_REPLY=re.compile(r'\s*(?:저는|나는|본인은|제가)?\s*(?:'+_STATUS_WORD+r'|소방|경찰)'+_ENDING)
+_LOCAL_PARTY=re.compile(r'\s*(?:지방자치단체|지자체|시\s*·?\s*도|시청|도청|군청|구청|지방직|지방공무원)(?:\s*소속)?'+_ENDING)
+_NATIONAL_PARTY=re.compile(r'\s*(?:국가기관|국가직|국가공무원|소방청|중앙부처)(?:\s*소속)?'+_ENDING)
+_ASKING=re.compile(r'[?？]|뭐|뭘|무엇|무슨|어떻게|어떤|어느|언제|왜|몇|어디|얼마|누가|나요|까요|는지|을까|인가요')
+_SMALL_TALK=re.compile(r'\s*(?:네|넵|예|응|아니요?|아뇨|감사(?:합니다|해요)?|고마워요?|고맙습니다|알겠(?:어요|습니다)|좋아요|됐어요|안녕하세요|수고(?:하세요|하셨습니다)?)[.!~\s]*')
+# The app's own follow-up asks for these when the answer did not ask anything back.
+_SLOT_VALUE=re.compile(r'\d|공무상|썼|사용했|없어요|있어요|처음')
+# A question with no subject of its own, such as '진단서는 언제 내요?', is about the task at hand.
+_TASK_DETAIL=re.compile(r'진단서|증빙|서류|서식|양식|기한|언제|며칠|몇\s*일|일수|제출|신청|승인|결재')
+_WHAT_IF=re.compile(r'.{1,24}(?:면요|경우는요)\s*[?？]?\s*$')
+_ELLIPTICAL=re.compile(r'.{1,20}(?:은요|는요|도요|은\s*\?|는\s*\?|도\s*\?)\??\s*$')
+
+
+def _last_task(context):
+    return next((line for line in reversed(context.splitlines()) if line.strip() and not _STATUS_REPLY.fullmatch(line) and topic(line)[0]!='general'),None)
+
+
+def _task_so_far(context,anchor):
+    """The task with the replies that narrowed it and the status said since."""
+    lines=context.splitlines()
+    start=max(i for i,line in enumerate(lines) if line==anchor)
+    plan=knowledge.intent.analyze(anchor)
+    if plan and plan.get('status')=='clarify':return '\n'.join(lines[start:])
+    stated=[line for line in lines[start+1:] if _STATUS_REPLY.fullmatch(line)]
+    return re.sub(r'\s+',' ',_STATUS_WORDS.sub(' ',anchor)).strip()+'\n'+stated[-1] if stated else anchor
+
+
+def _joined(anchor,query):
+    return (anchor[:max(0,2999-len(query))]+'\n'+query).strip()
+
+
+def _continued(query,context):
+    """The earlier question plus this reply, when this message answers what was asked."""
+    if _SMALL_TALK.fullmatch(query):return None
+    anchor=_last_task(context)
+    if not anchor:return None
+    plan=knowledge.intent.analyze(anchor)
+    asked_back=bool(plan and plan.get('status')=='clarify')
+    # The party decides the contract law, so the reply is stated as the party.
+    if asked_back and '계약당사자' in plan.get('question',''):
+        if _LOCAL_PARTY.fullmatch(query):return _joined(anchor,'계약당사자는 지방자치단체입니다.')
+        if _NATIONAL_PARTY.fullmatch(query):return _joined(anchor,'계약당사자는 국가기관입니다.')
+    if _STATUS_REPLY.fullmatch(query):
+        # Only the status said last counts.
+        return _joined(re.sub(r'\s+',' ',_STATUS_WORDS.sub(' ',anchor)).strip(),query)
+    general=topic(query)[0]=='general'
+    if general and len(query)<=30 and (_TASK_DETAIL.search(query) or _WHAT_IF.fullmatch(query)) and not institution_match.concepts(query,institution_match.SUBJECTS):
+        return _joined(_task_so_far(context,anchor),query)
+    if len(query)>60 or _ASKING.search(query):return None
+    if asked_back and topic(query)[0]==topic(anchor)[0]:
+        # '초임호봉 획정이요' already says which one; repeating the vague opening would ask again.
+        reply=knowledge.intent.analyze(query)
+        if reply and reply.get('status')=='ready':
+            stated=_STATUS_WORDS.search(personnel_scope.subject_query(anchor))
+            return (stated[0]+' '+query) if stated else query
+        return _joined(anchor,query)
+    if general and (asked_back or _SLOT_VALUE.search(query)):return _joined(anchor,query)
+    return None
+
+
 def effective_query(query, context):
     """Only short follow-ups inherit bounded user text; explicit new topics win."""
     if not isinstance(context,str) or len(context)>3000:return query
-    if knowledge.finance_knowledge.topics(context) and re.fullmatch(r'\s*(?:국가기관|국가직|국가공무원|중앙부처|지방자치단체|지자체|지방직|지방공무원|시청|군청|구청)(?:입니다|이에요|이야|야|예요)?[.!?\s]*',query):
+    if knowledge.finance_knowledge.topics(context) and re.fullmatch(r'\s*(?:국가기관|국가직|국가공무원|중앙부처|지방자치단체|지자체|지방직|지방공무원|시청|군청|구청)(?:입니다|이에요|이요|요|이야|야|예요)?[.!?\s]*',query):
         # Scope-only follow-ups keep the immediately requested finance purpose.
         return (context[:max(0,2999-len(query))]+'\n'+query).strip()
     if leave_situations.family_care(context) and topic(query)[0]=='general':
@@ -81,6 +145,8 @@ def effective_query(query, context):
             if re.search(r'지방직|지방공무원',query):context=re.sub(r'국가공무원|국가직|국가기관|중앙부처|소방공무원','',context)
             elif re.search(r'국가공무원|국가직',query):context=re.sub(r'지방공무원|지방직','',context)
             return (context[:max(0,2999-len(query))]+'\n'+query).strip()
+    continued=_continued(query,context)
+    if continued:return continued
     # A short, subject-free follow-up such as '그럼 어떤 양식을 써요?' keeps
     # the most recent task. A new subject (병가, 출장, 예산...) always wins.
     if not institution_match.concepts(query,institution_match.SUBJECTS) and institution_match.concepts(query,institution_match.FACETS):
@@ -88,6 +154,7 @@ def effective_query(query, context):
             lines=context.splitlines()
             anchor=next((line for line in reversed(lines) if topic(line)[0]!='general'),None)
             if anchor:
+                anchor=_task_so_far(context,anchor)
                 # Keep the task, not an earlier question's requested answer.
                 # '마감은?' -> '양식은?' -> '뭘 적어요?' must not require a
                 # form to contain a deadline just because the first turn did.
@@ -97,6 +164,11 @@ def effective_query(query, context):
                     for facet in old_facets-new_facets-{'budget','form'}:
                         for word in sorted(institution_match.FACETS[facet],key=len,reverse=True):anchor=anchor.replace(word,' ')
                 return (anchor[:max(0,2999-len(query))]+'\n'+query).strip()
+    # '병가는요?' after '소방공무원인데 연가 며칠이야?' changes the subject, not the person.
+    if topic(query)[0]!='general' and _ELLIPTICAL.fullmatch(query) and not _STATUS_WORDS.search(query):
+        for line in reversed(context.splitlines()):
+            stated=_STATUS_WORDS.search(personnel_scope.subject_query(line))
+            if stated:return stated[0]+' '+query
     if topic(query)[0]!='general':return query
     if re.search(r'^(?:(?:그럼|그러면|그리고|그런데|좋아|그거|이거)\s*)?(?:정산|계산|도와|기한|언제|서류|서식|어디|신청|숙박|차량|개인차량|자가용|\d+박)',query):
         lines=context.splitlines()

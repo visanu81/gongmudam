@@ -13,6 +13,8 @@ def scope_hold(reasons):
     """Say why the registered text was held back, instead of reporting it as missing."""
     if '사건일' in reasons or '과거 시점' in reasons:
         return ('질문한 시점의 원문 자료', '질문한 시점에 시행된 원문이 등록되어 있지 않아요. 등록된 판본은 그 뒤에 시행된 것이라 소급해 안내하지 않아요. 내용이 달랐다는 뜻은 아니니, 법제처 연혁 법령에서 당시 판본과 부칙을 확인해 주세요.')
+    if '계약당사자가 지방자치단체인지' in reasons:
+        return ('계약당사자 확인 자료', '계약당사자가 지방자치단체로 확인되지 않으면 지방계약법을 대신 적용하지 않아요. 국가기관 계약이면 국가를 당사자로 하는 계약에 관한 법률과 소속 기관 계약 담당자를 확인해 주세요.')
     if '적용 신분 표현' in reasons:
         return ('적용 신분 정보', '국가공무원인지 지방공무원인지 다시 알려주세요. 신분 표현이 불분명하면 어느 기준도 임의로 적용하지 않아요.')
     return None

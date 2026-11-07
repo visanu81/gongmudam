@@ -332,7 +332,7 @@ def analyze(query):
         return None
     if supplement.national(query) and any(t in flat(personnel_scope.subject_query(query)) for t in ('지방공무원','지방직','지자체','지방자치단체')) and not _explicit_local_contract_party(query):
         question='국가기관과 지방기관의 기준은 적용 범위가 달라요. 기관별 질문을 나누어 알려주시면 각각 맞는 근거로 확인할게요.'
-    elif goods and not question and 'fire' in personnel_scope.analyze(query)['roles'] and not _explicit_local_contract_party(query):
+    elif goods and not question and 'fire' in personnel_scope.analyze(query)['roles'] and '당사자' not in q:
         question='소방공무원은 소속에 따라 적용되는 계약 법령이 달라요. 계약당사자가 지방자치단체(시·도)인지 국가기관(소방청·소속기관)인지 알려주세요.'
     return dict(topics=topics,status='clarify' if question else 'ready',question=question,
                 recognized=True,labels=[TOPICS[t][0] for t in topics])
