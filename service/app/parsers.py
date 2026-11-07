@@ -98,14 +98,28 @@ def _parse_xlsx(path: Path) -> list[dict]:
         wb = openpyxl.load_workbook(path, read_only=True, data_only=True)
     except Exception as e:  # noqa: BLE001
         raise ParseError(f"엑셀을 열 수 없습니다: {e}") from e
+    formula_book = None
     units = []
-    for ws in wb.worksheets:
-        rows = []
-        for row in ws.iter_rows(values_only=True):
-            rows.append([_cell(c) for c in row])
-        units += _rows_to_units(rows, ws.title)
-    wb.close()
-    return units
+    try:
+        # data_only has no result for uncached formula cells. Keep the expression
+        # without evaluating it, and never treat it as a blank.
+        formula_book = openpyxl.load_workbook(path, read_only=True, data_only=False)
+        for ws in wb.worksheets:
+            rows = []
+            raw_ws = formula_book[ws.title]
+            for values, cells in zip(ws.iter_rows(values_only=True), raw_ws.iter_rows(), strict=True):
+                row = [_cell(c) for c in values]
+                for column, cell in enumerate(cells):
+                    if cell.data_type == 'f':
+                        cached = row[column]
+                        row[column] = f'{cached} · {cell.value}' if cached else f'{cell.value} (계산 결과 미저장)'
+                rows.append(row)
+            units += _rows_to_units(rows, ws.title)
+        return units
+    finally:
+        wb.close()
+        if formula_book is not None:
+            formula_book.close()
 
 
 def _cell(v):

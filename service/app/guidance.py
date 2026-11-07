@@ -61,6 +61,7 @@ def topic(query):
     if area:return 'pay',{'pay':'보수·호봉','allowance':'수당','welfare':'맞춤형복지'}[area]
     # Office work about a health check is sorted by the work, not by the words 건강검진.
     probe=leave_situations.HEALTH_CHECK.sub('',query) if leave_situations.health_work(query) else query
+    if knowledge.intent.private_card_use(query):probe=re.sub(r'출장|여비','',probe)
     matched=next(((key,label) for key,label,pattern in TOPICS if re.search(pattern,probe)),None)
     if matched:return matched
     domain=service_knowledge.domain(query)
@@ -152,7 +153,9 @@ def respond(query,body,today,public_mode=False):
         reply=dict(evidence=[],experiences=[],excluded=[],mode='source_search',model=None,answer='',notice='',scope='')
     else:
         # A conduct subject covered only by the national guideline still reaches retrieval.
-        if (key=='general' or leave_situations.health_work(effective)) and not knowledge.intent.analyze(effective) and not knowledge.service_guidelines.chapter(effective):
+        # 출장 in a question about private card use must not reach the travel chapter or decree.
+        private_card=knowledge.intent.private_card_use(effective) and key!='finance' and not knowledge.intent.analyze(effective)
+        if private_card or ((key=='general' or leave_situations.health_work(effective)) and not knowledge.intent.analyze(effective) and not knowledge.service_guidelines.chapter(effective)):
             found=dict(hits=[],experiences=[],excluded=[],intent=None,unavailable_reason='이 질문에 직접 답하는 등록 근거를 확인하지 못했어요. 업무 종류와 관련 규정·지침을 알려주세요.')
         else:found=knowledge.retrieve(effective,library,today,**({'institution_rule_id':body['institution_rule_id']} if body.get('institution_rule_id') else {}),**({'affiliation':affiliation} if affiliation else {}))
         reply=knowledge.answer(effective,found,use_ai=body.get('use_ai') is True)
@@ -205,10 +208,15 @@ def respond(query,body,today,public_mode=False):
             questions.insert(0,clarification)
         elif found.get('finance') and '질문을 나누어' in reply.get('notice',''):
             questions.insert(0,'출장 식비와 초과근무 식비 중 어느 것부터 확인할까요? 소속 기관·회계 구분도 알려주세요.')
-        material=guidance_materials.needed(effective)
+        private_card=knowledge.intent.private_card_use(effective) and key!='finance'
+        # A question that is already being asked back keeps that question.
+        hold=None if reply.get('mode')=='source_clarification' else guidance_materials.scope_hold(' '.join(e.get('reason','') for e in found.get('excluded',[])))
+        material=(guidance_materials.CARD_USE if private_card else None) or guidance_materials.needed(effective) or hold
         if material:
             title,detail=material
-            reply['notice']=(reply.get('notice','')+' '+detail).strip()
+            # These say why nothing is shown, so a generic line about missing sources must not lead them.
+            generic=reply.get('tree',{}).get('kind')=='reference' or material is hold or private_card
+            reply['notice']=detail if generic else (reply.get('notice','')+' '+detail).strip()
             reply['tree']=dict(kind='unavailable',title=title+'가 필요해요',branches=[
                 dict(label='현재 확인한 범위',items=[dict(text=reply['notice'],ref=None)]),
                 dict(label='다음 할 일',items=[dict(text='기관 규정·서식 관리에 기준 자료를 등록하거나, 프로젝트에 업무자료를 추가한 뒤 질문해 주세요.',ref=None)])],

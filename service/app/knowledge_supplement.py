@@ -1,5 +1,6 @@
 """Reviewed source requirements for newly collected tables and delegated contract rules."""
 import re
+from . import document_context, personnel_scope
 
 TRAVEL='공무원 여비 규정'
 LOCAL='지방공무원 복무규정'
@@ -12,19 +13,16 @@ def flat(text):return re.sub(r'\s+','',text)
 
 
 # An issuance number such as 예규 제2025-3호 is not the year a question is about.
-DOCUMENT_NUMBER=re.compile(r'(?:제\s*)?20\d{2}\s*-\s*\d+\s*호')
-
-
-def without_document_numbers(query):return DOCUMENT_NUMBER.sub(' ',query)
+def without_document_numbers(query):return document_context.without_document_numbers(query)
 
 
 def national(query):
     # Fire and police officers apply the national conduct regulation where their own decree is silent.
     from . import service_rules
-    return any(t in flat(query) for t in ('국가공무원','국가직','국가기관','중앙부처','소방공무원')) or service_rules.status(query) in ('fire','fire_national','police')
+    return any(t in flat(personnel_scope.subject_query(query)) for t in ('국가공무원','국가직','국가기관','중앙부처','소방공무원')) or service_rules.status(query) in ('fire','fire_national','police')
 
 
-def local(query):return any(t in flat(query) for t in ('지방공무원','지방직','지자체공무원'))
+def local(query):return any(t in flat(personnel_scope.subject_query(query)) for t in ('지방공무원','지방직','지자체공무원'))
 
 
 def foreign_query(query):

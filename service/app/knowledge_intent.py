@@ -1,7 +1,9 @@
 """Question intent and direct-source coverage. Never infers an allowance or leave entitlement."""
 import re
+from . import document_context
 from . import knowledge_supplement as supplement
 from . import leave_situations
+from . import personnel_scope
 
 
 def flat(text):
@@ -184,6 +186,8 @@ def analyze(query):
         return None
     # '시간외근무' contains '외근' but is overtime, not a business trip.
     travel=any(t in q for t in ('출장','여비','일비','숙박비','숙박료','호텔비','기름값','택시비','주유비','항공권')) or bool(re.search(r'(?<!시간)외근',q))
+    # Private use of a work card is not a travel question, whatever else the sentence says about 출장.
+    if private_card_use(query):travel=False
     if not travel:
         allowance=_allowance(q)
         if allowance:return allowance
@@ -197,6 +201,8 @@ def analyze(query):
     # 업무추진비 itself is the finance pack's 업무추진비 section; only its disclosure is an account topic.
     goods=goods or ('업무추진비' in q and '공개' in q)
     goods=goods or ('계약' in q and any(t in q for t in ('대가','대금','선금')))
+    goods=goods or (not leave and _explicit_local_contract_party(query))
+    if private_card_use(query):goods=False
     topics=[];question=''
     def add(topic):
         if topic not in topics:topics.append(topic)
@@ -324,8 +330,10 @@ def analyze(query):
         question='어떤 업무와 상황인지 함께 알려주세요. 다른 업무의 기준을 임의로 적용하지 않을게요.'
     elif not (travel or leave or goods or sidejob or conduct):
         return None
-    if supplement.national(query) and any(t in q for t in ('지방공무원','지방직','지자체','지방자치단체')):
+    if supplement.national(query) and any(t in flat(personnel_scope.subject_query(query)) for t in ('지방공무원','지방직','지자체','지방자치단체')) and not _explicit_local_contract_party(query):
         question='국가기관과 지방기관의 기준은 적용 범위가 달라요. 기관별 질문을 나누어 알려주시면 각각 맞는 근거로 확인할게요.'
+    elif goods and not question and 'fire' in personnel_scope.analyze(query)['roles'] and not _explicit_local_contract_party(query):
+        question='소방공무원은 소속에 따라 적용되는 계약 법령이 달라요. 계약당사자가 지방자치단체(시·도)인지 국가기관(소방청·소속기관)인지 알려주세요.'
     return dict(topics=topics,status='clarify' if question else 'ready',question=question,
                 recognized=True,labels=[TOPICS[t][0] for t in topics])
 
@@ -334,19 +342,106 @@ def expanded_terms(plan):
     return ' '.join(a for t in (plan or {}).get('topics',[]) for a in TOPICS[t][1][:2])
 
 
-def scope_reason(query, source, today):
+def private_card_use(query):
+    q=flat(query)
+    # Card points have their own rule in the accounting directive.
+    return any(t in q for t in ('구매카드','법인카드','업무용카드')) and bool(re.search(r'사적|개인적|개인용|개인사용',q)) and not any(t in q for t in ('포인트','적립금','마일리지','인센티브'))
+
+
+def _scope_clauses(text):
+    """Retain question endings when checking an asserted identity/party."""
+    return [(flat(m[1]),m[2]) for m in re.finditer(r'([^.!?？。;\n]+)([.!?？。;\n]?)',text) if flat(m[1])]
+
+
+def _retracted_scope_claim(clause,subject_pattern):
+    return bool(re.search(subject_pattern+r'.*?(?:전제|주장|진술)(?:은|는|이|가)(?:사실)?(?:이)?(?:아니|아닙|아님)',clause))
+
+
+def _explicit_local_contract_party(query):
+    clauses=_scope_clauses(query)
+    claims=[(part,end) for part,end in clauses if '당사자' in part]
+    if len(claims)!=1 or claims[0][0].count('계약당사자')!=1:
+        return False
+    # A later correction can retract a previous assertion. Ordinary questions
+    # such as "확인할 수 있나요" do not express uncertainty about the party.
+    if any(re.search(r'정정|철회|미확인|불명|불분명|불확실|확인하지않|거짓|허위',part) or _retracted_scope_claim(part,r'계약당사자') for part,end in clauses):
+        return False
+    claim,end=claims[0]
+    if re.fullmatch(r'계약당사자(?:가|는)지방자치단체(?:입니다|이다)',claim):
+        return end not in ('?','？')
+    # Close the affirmative relative phrase at the contract noun and its case
+    # marker, instead of accepting an uncertain/negated noun prefix.
+    return bool(re.match(r'계약당사자(?:가|는)지방자치단체인(?:물품|공사|용역|구매|납품)+계약(?:의|에서)(?:\d{4}년\d{1,2}월\d{1,2}일)?(?:납품)?(?:검사|검수|대가|대금|수의계약|제\d+조|원문|절차|기준)',claim))
+
+
+def _explicit_national_travel_staff(query):
+    subject=personnel_scope.subject_text(query)
+    clauses=_scope_clauses(subject)
+    identity_claim=r'(?:국가직|국가공무원)(?:인)?(?:소방공무원|소방관|교육공무원|교사|교원|신분)?(?:이?라는)'
+    if any(_retracted_scope_claim(part,identity_claim) for part,end in clauses):
+        return False
+    if re.search(r'정정|철회|(?:국가직|국가공무원)(?:신분)?(?:이|은|는)?(?:아니|아닙|아님|아닌|인지|미확인|불명|불분명|불확실)|신분(?:이|은|는)?(?:미확인|불명|불분명|불확실)',flat(subject)):
+        return False
+    if re.search(r'(?:사립|민간)(?:학교)?(?:의)?(?:교사|교원|교육공무원)',flat(subject)):
+        return False
+    # An institution visited/inviting the employee is not an employee category.
+    # Only the confirmed 업무환경 marker or a clear own declaration opens this exception.
+    asserted=bool(re.search(r'(?m)^\s*업무환경:\s*국가공무원\s*$',query))
+    for part,end in clauses:
+        identity=r'(?:저는|나는|본인은)?(?:국가직|국가공무원(?:인)?)(?:소방공무원|소방관|교육공무원|교사|교원)'
+        if re.fullmatch(r'(?:저는|나는|본인은)?(?:국가직|국가공무원)(?:입니다|이다|이에요)',part) or re.fullmatch(identity+r'(?:입니다|이다|이에요)',part):
+            if end in ('?','？'):
+                return False
+            asserted=True
+        elif re.match(identity+r'(?=여비|출장|국내|국외|\d{4}년)',part):
+            asserted=True
+    return asserted
+
+
+CONTRACT_LAWS={'지방자치단체를당사자로하는계약에관한법률','지방자치단체를당사자로하는계약에관한법률시행령'}
+
+
+def scope_reason(query, source, today, personnel=None):
     official=source.get('official') or {}
     q=flat(query);title=official.get('title','') or source.get('title','')
     scope=flat(title+' '+source.get('institution',''))
+    personnel=personnel or personnel_scope.analyze(query)
+    if re.search(r'지방지(?:인데|이에|으로)',q):return '적용 신분 표현을 확인해 주세요. 국가·지방 기준을 임의로 정하지 않습니다.'
+    if personnel['conflict']:return '국가·지방의 적용 대상을 나누어 확인해야 합니다.'
+    # A named local-government contract concerns the contracting institution, not the
+    # asker's personnel rules. This does not authorize a contract or a payment.
+    contract_law=flat(title) in CONTRACT_LAWS
+    local_contract=(contract_law and flat(official.get('title','')) in CONTRACT_LAWS
+                    and personnel['framework']=='local' and _explicit_local_contract_party(query))
+    # 공무원 여비 규정 also covers a clearly national fire or education official.
+    national_travel=(personnel['framework']=='national' and personnel['roles'] in (['fire'],['teacher'])
+                     and flat(official.get('title',''))=='공무원여비규정' and _explicit_national_travel_staff(query))
+    # A fire officer may belong to a province or to the national fire agency, so the party decides.
+    if contract_law and not local_contract and 'fire' in personnel['roles']:
+        return '계약당사자가 지방자치단체인지 국가기관인지 확인해야 적용 법령을 고를 수 있습니다.'
+    # Fire officers follow their own decree and the national one, never the local one.
+    if 'fire' in personnel['roles'] and '지방공무원복무규정' in flat(title):
+        return '질문한 직군·기관에 적용할 별도의 근거가 필요합니다.'
+    subject=flat(personnel_scope.subject_query(query))
     # Mentioning a child's teacher does not make the questioner a teacher.
-    employee_q=re.sub(r'(?:담임)?교사(?:와의|와|상담)', '',q)
+    employee_q=re.sub(r'(?:담임)?교사(?:와의|와|상담)', '',subject)
     jobs=('군인','공무직','교육공무원','교사','교원','공기업','사기업','민간기업','회사원')
     requested=[t for t in jobs if t in employee_q]
-    if requested and not any(t in scope for t in requested):
+    # 무기계약·기간제 workers are under employment terms, not the conduct decrees.
+    if 'public_worker' in personnel['roles'] and '공무직' not in requested:requested.append('공무직')
+    if not local_contract and requested and not any(t in scope for t in requested) and not (national_travel and set(requested)<={'교육공무원','교사','교원'}):
         return '질문한 직군·기관에 적용할 별도의 근거가 필요합니다.'
-    if any(t in q for t in ('국가기관','국가공무원','국가직','중앙부처','국가회계')) and any(t in scope for t in ('지방공무원','지방자치단체','교육청','학교')) and '국가공무원' not in scope:
+    if any(t in subject for t in ('국가기관','국가공무원','국가직','중앙부처','국가회계')) and any(t in scope for t in ('지방공무원','지방자치단체','교육청','학교')) and '국가공무원' not in scope:
         return '국가기관·국가공무원에 적용할 근거가 필요합니다.'
     if supplement.local(query) and '국가공무원복무규정' in flat(title):return '지방공무원에게 국가공무원 복무규정을 대신 적용하지 않습니다.'
+    effective=source.get('effective_date') or ''
+    # A later edition is not applied to an earlier event. A month is compared from its
+    # first day only as a bound; no incident day is invented for the answer.
+    dates=document_context.event_dates(query)
+    if dates and effective and min(dates).isoformat()<effective:
+        return '질문한 사건일에 시행된 원문이 필요합니다. 이후 시행본을 소급 적용하지 않습니다.'
+    if effective and any(not 1<=month<=12 or f'{year:04d}-{month:02d}-01'<effective for year,month in document_context.event_months(query)):
+        return '질문한 사건일에 시행된 원문이 필요합니다. 이후 시행본을 소급 적용하지 않습니다.'
     years={int(y) for y in re.findall(r'(?<!\d)(20\d{2})(?!\d)',supplement.without_document_numbers(query))}
     if years and min(years)<int(source.get('effective_date','0000')[:4] or 0):
         return '질문한 과거 시점에 시행된 원문이 필요합니다. 현재 등록한 판본을 소급 적용하지 않습니다.'

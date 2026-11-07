@@ -125,7 +125,9 @@ EXPLICIT_LOCAL=re.compile(r'지방공무원|지방직')
 
 
 def status(query):
-    q=re.sub(r'\s+','',query)
+    from . import personnel_scope
+    # Another person's status or a labeled organization name is not the asker's.
+    q=re.sub(r'\s+','',personnel_scope.subject_query(query))
     for key,pattern in STATUS:
         # A stated 국가공무원 outranks a place word such as 시청 (N3); a stated 지방직 does not.
         if key=='local' and EXPLICIT_NATIONAL.search(q) and not EXPLICIT_LOCAL.search(q):continue

@@ -33,10 +33,19 @@ def fetch(url):
         return raw
 
 class Material(HTMLParser):
-    def __init__(self):super().__init__();self.skip=0;self.rows=[];self.current='';self.links=[]
+    TABLE_TAGS={'table','thead','tbody','tfoot','tr','td','th','colgroup','col'}
+    def __init__(self):super().__init__();self.skip=0;self.rows=[];self.current='';self.links=[];self.text_length=0
     def handle_starttag(self,tag,attrs):
         if tag in ('script','style','head'):self.skip+=1
         if self.skip:return
+        if tag in self.TABLE_TAGS:
+            self.flush();values=dict(attrs);spans=[]
+            for name in (('colspan','rowspan') if tag in ('td','th') else ('span',) if tag in ('col','colgroup') else ()):
+                value=values.get(name) or '1'
+                try:value=str(int(value))
+                except ValueError:value='invalid:'+registry.sha(value.encode('utf-8'))
+                spans.append(name+'='+value)
+            self.rows.append('표구조:<'+tag+(' '+','.join(spans) if spans else '')+'>')
         if tag in ('p','td','th','li','h1','h2','h3','h4','h5','h6','br','div','tr'):self.flush()
         for k,v in attrs:
             if v and k in ('src','data') and tag in ('img','object','embed','iframe'):
@@ -48,16 +57,18 @@ class Material(HTMLParser):
     def handle_endtag(self,tag):
         if tag in ('script','style','head'):
             self.skip=max(0,self.skip-1);return
-        if not self.skip and tag in ('p','td','th','li','div','tr'):self.flush()
+        if not self.skip and tag in self.TABLE_TAGS and tag!='col':
+            self.flush();self.rows.append('표구조:</'+tag+'>')
+        elif not self.skip and tag in ('p','li','div'):self.flush()
     def handle_data(self,data):
         if not self.skip:self.current+=data
     def flush(self):
         value=re.sub(r'\s+','',self.current);self.current=''
-        if value:self.rows.append(value)
+        if value:self.rows.append(value);self.text_length+=len(value)
 
 def material(raw):
     p=Material();p.feed(raw.decode('utf-8-sig'));p.flush()
-    if len(''.join(p.rows))<100 or not any('제1조' in s or '제1장' in s or '목적' in s for s in p.rows):raise ValueError('정상 법령·지침 본문을 확인하지 못했습니다.')
+    if p.text_length<100 or not any('제1조' in s or '제1장' in s or '목적' in s for s in p.rows):raise ValueError('정상 법령·지침 본문을 확인하지 못했습니다.')
     p.links.extend(re.findall(r'flSeq[=\W]+(\d{6,})',raw.decode('utf-8-sig')))
     return p.rows+['첨부식별자:'+','.join(sorted(set(p.links)))]
 

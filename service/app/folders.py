@@ -76,10 +76,14 @@ def extract(path,raw):
         try:
             limited=len(wb.worksheets)>5
             for ws in wb.worksheets[:5]:
-                limited=limited or ws.max_row>200 or ws.max_column>30
+                # Read-only worksheets may omit dimensions; keep the preview bounded
+                # and never certify the unobserved remainder as a complete extraction.
+                limited=limited or ws.max_row is None or ws.max_column is None or ws.max_row>200 or ws.max_column>30
                 header=[]
-                for n,row in enumerate(ws.iter_rows(max_row=min(ws.max_row,200),max_col=min(ws.max_column,30)),1):
-                    values=[str(c.value)[:1000] if c.value is not None and c.data_type!='f' else '' for c in row]
+                for n,row in enumerate(ws.iter_rows(max_row=min(ws.max_row or 200,200),max_col=min(ws.max_column or 30,30)),1):
+                    full_values=[str(c.value) if c.value is not None and c.data_type!='f' else '' for c in row]
+                    limited=limited or any(len(v)>1000 for v in full_values)
+                    values=[v[:1000] for v in full_values]
                     labels={'행사명','업무명','사업명','교육명','연도','사업연도','개최일','행사일','교육일','주관부서','주관기관'}
                     text=' / '.join(v for v in values if v)
                     if len(values)>1 and values[0].rstrip(':：').strip() in labels and values[1] and values[1] not in labels:
@@ -107,7 +111,7 @@ def extract(path,raw):
         with tempfile.TemporaryDirectory(prefix='seomu-folder-') as directory:
             snapshot=Path(directory)/('source'+ext);snapshot.write_bytes(raw);units=parsers.parse_file(snapshot)
     limited=limited or len(units)>256
-    return [{'text':u['text'][:2000],'loc':u['loc']} for u in units[:256]],('본문 일부 확인' if limited else '본문 확인' if units else '추출 본문 없음 · 파일명만 확인'),limited
+    return [{'text':u['text'][:2000],'loc':u['loc']} for u in units[:256]],('본문 일부 확인' if limited and units else '본문 확인' if units else '추출 본문 없음 · 파일명만 확인'),limited
 
 def norm(v):return re.sub(r'[\W_]+','',v).casefold()
 def clues(name,units):
