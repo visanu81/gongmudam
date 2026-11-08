@@ -21,5 +21,9 @@ COPY integration integration
 COPY desktop desktop
 COPY service-template service-template
 COPY start.py start.py
+# Run as an ordinary user. start.py rebuilds the runtime under /data on every start, so only /data needs to be writable.
+RUN useradd --system --uid 10001 --create-home --shell /usr/sbin/nologin gongmudam \
+ && mkdir -p /data && chown gongmudam:gongmudam /data
+USER gongmudam
 EXPOSE 8080
 CMD ["python", "/app/start.py"]
