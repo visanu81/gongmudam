@@ -1,0 +1,175 @@
+{
+ "version": "v141-ai-criteria-20261111",
+ "worker_versions": {
+  "v140": "e67cf2e1",
+  "v141": "see wrangler deployments"
+ },
+ "ai_off_parity": {
+  "questions": {
+   "all_pass": true,
+   "passed": 351,
+   "failed": 0,
+   "total": 351
+  },
+  "rules": {
+   "all_pass": true,
+   "passed": 88,
+   "failed": 0,
+   "total": 88
+  },
+  "practice": {
+   "total": 27,
+   "equal": 27,
+   "with_practice": 18
+  },
+  "changed_practice": {
+   "total": 84,
+   "equal": 84,
+   "with_practice": 11
+  },
+  "chains": "26/26 equal"
+ },
+ "ai_on_public_runtime": [
+  {
+   "question": "꽃다발은 어느 예산으로 사야 하나요?",
+   "mode": "ai_answer",
+   "tree": "ai_summary",
+   "seconds": 13.0,
+   "conclusion": "꽃다발은 용도에 따라 예산이 달라집니다. 축하·격려 등 업무추진 목적이면 업무추진비(지방자치단체) 또는 일반수용비(210-01목, 국가기관)로 집행할 수 있고, 소모성 물품 구입 성격이면 사무관리비(지방자치단체)나 일반수용비(210-01목, 국가기관)에서 집행할 수 있습니다.",
+   "run": "flower2.json"
+  },
+  {
+   "question": "꽃다발은 어느 예산으로 사야 하나요?",
+   "mode": "ai_answer",
+   "tree": "ai_summary",
+   "seconds": 8.4,
+   "conclusion": "꽃다발은 용도에 따라 예산 과목이 달라집니다. 축의·조의 등 경조사 목적이면 업무추진비(지방자치단체) 또는 기관운영업무추진비·시책추진업무추진비 등에서 집행할 수 있고, 홍보·기념·행사 목적이면 일반수용비(210-01목)나 사무관리비에서 집행할 수 있습니다.",
+   "run": "flower2.json"
+  },
+  {
+   "question": "꽃다발은 어느 예산으로 사야 하나요?",
+   "mode": "ai_answer",
+   "tree": "ai_summary",
+   "seconds": 10.6,
+   "conclusion": "꽃다발은 용도에 따라 예산이 달라집니다. 행사·홍보·기념 목적이면 일반수용비(210-01목)나 사무관리비에서, 간담회·업무추진 목적이면 업무추진비에서 집행할 수 있습니다.",
+   "run": "flower2.json"
+  },
+  {
+   "question": "꽃다발은 어느 예산으로 사야 하나요?",
+   "mode": "ai_answer",
+   "tree": "ai_summary",
+   "seconds": 13.1,
+   "conclusion": "꽃다발은 용도에 따라 예산 과목이 달라집니다. 행사·홍보·기념 목적이면 일반수용비(210-01목)나 사무관리비에서, 업무추진비(간담회·접대 등) 목적이면 업무추진비에서 집행할 수 있습니다.",
+   "run": "flower2.json"
+  },
+  {
+   "question": "꽃다발은 어느 예산으로 사야 하나요?",
+   "mode": "ai_answer",
+   "tree": "ai_summary",
+   "seconds": 7.0,
+   "conclusion": "꽃다발은 용도에 따라 예산이 달라집니다. 행사·홍보·기념 목적이면 일반수용비(210-01목)나 사무관리비에서, 업무추진 과정에서 간담회·격려 등 목적이면 업무추진비에서 집행할 수 있습니다.",
+   "run": "flower2.json"
+  },
+  {
+   "question": "직원 생일 케이크를 업무추진비로 사도 되나요?",
+   "mode": "ai_answer",
+   "tree": "ai_summary",
+   "seconds": 11.6,
+   "conclusion": "직원 생일 케이크를 업무추진비로 살 수 있는지는 자료에 직접 나오지 않지만, 업무추진비는 직무 관련 공식 업무에 쓰는 돈이므로 개인 생일 축하 같은 사적 목적이면 사용할 수 없어요. 다만 직원 격려나 공식 행사·간담회 등 직무 관련성이 입증되면, 그 목적에 맞는 증빙서류와 집행기준에 따라 집행할 수 있어요.",
+   "run": "flower2.json"
+  },
+  {
+   "question": "사무실 화분은 어느 예산으로 사나요?",
+   "mode": "source_unavailable",
+   "tree": "unavailable",
+   "seconds": 9.3,
+   "conclusion": "자료를 더 확인해야 답할 수 있어요",
+   "run": "flower2.json"
+  },
+  {
+   "question": "꽃다발은 어느 예산으로 사야 하나요?",
+   "mode": "ai_answer",
+   "tree": "ai_summary",
+   "seconds": 7.7,
+   "conclusion": "꽃다발은 용도에 따라 예산이 달라집니다. 축의·조의 등 업무추진비 성격이면 기관운영·시책추진·의정운영·의회운영업무추진비에서, 기념품·홍보물 성격이면 일반수용비(210-01목) 등 사무관리비에서 집행합니다.",
+   "run": "flower4.json"
+  },
+  {
+   "question": "꽃다발은 어느 예산으로 사야 하나요?",
+   "mode": "ai_answer",
+   "tree": "ai_summary",
+   "seconds": 17.2,
+   "conclusion": "꽃다발은 용도에 따라 예산이 달라집니다. 경조사 목적이면 업무추진비에서, 행사·홍보·기념 목적이면 일반수용비(210-01목)나 사무관리비에서 집행할 수 있습니다.",
+   "run": "flower4.json"
+  },
+  {
+   "question": "꽃다발은 어느 예산으로 사야 하나요?",
+   "mode": "ai_answer",
+   "tree": "ai_summary",
+   "seconds": 9.1,
+   "conclusion": "꽃다발은 용도에 따라 예산이 달라집니다. 축의·조의 등 경조사 목적이면 업무추진비(기관운영·시책추진·의정운영공통·의회운영업무추진비)로 집행할 수 있고, 홍보·기념·행사 운영 목적이면 일반수용비(210-01목)나 사무관리비에서 집행할 수 있습니다.",
+   "run": "flower4.json"
+  },
+  {
+   "question": "꽃다발은 어느 예산으로 사야 하나요?",
+   "mode": "ai_answer",
+   "tree": "ai_summary",
+   "seconds": 7.8,
+   "conclusion": "꽃다발은 어느 예산으로 사야 하는지는 자료에 직접 명시되어 있지 않지만, 국가기관의 일반수용비(210-01목) 기준에서는 기념품·홍보물·인쇄물 등 경상적 수용비로, 지방자치단체의 사무관리비 기준에서는 소모성 물품구입비 등으로 볼 여지가 있습니다. 다만 꽃다발의 용도(기념품·홍보물·업무추진비 등)에 따라 적용 비목이 달라질 수 있으므로, 집행 목적과 소속 기관의 예산 편성 내역을 먼저 확인해야 합니다.",
+   "run": "flower4.json"
+  },
+  {
+   "question": "당직 근무 다음날 쉴 수 있나요?",
+   "mode": "ai_answer",
+   "tree": "ai_summary",
+   "seconds": 10.5,
+   "conclusion": "당직 근무 다음날을 쉬는 날로 보장하는 규정은 제공된 자료에 직접 나오지 않습니다. 다만 당직근무 후 특근매식비나 급식비를 받을 수 있는 조건과 당직근무자가 문서를 인계하는 절차는 자료에 나와 있습니다.",
+   "run": "flower4.json"
+  },
+  {
+   "question": "휴직 중에 아르바이트를 해도 되나요?",
+   "mode": "ai_answer",
+   "tree": "clarification",
+   "seconds": 6.3,
+   "conclusion": "자료에 직접 나오지 않아 관련 기준을 보여드려요",
+   "run": "flower4.json"
+  },
+  {
+   "question": "휴직 중에 아르바이트를 해도 되나요?",
+   "mode": "ai_answer",
+   "tree": "clarification",
+   "seconds": 5.3,
+   "conclusion": "자료에 직접 나오지 않아 관련 기준을 보여드려요",
+   "run": "flower5.json"
+  },
+  {
+   "question": "꽃다발은 어느 예산으로 사야 하나요?",
+   "mode": "ai_answer",
+   "tree": "ai_summary",
+   "seconds": 5.7,
+   "conclusion": "꽃다발은 국가공무원 예산에서는 일반수용비(210-01목)에서 집행할 수 있고, 지방자치단체 예산에서는 사무관리비(일반수용비) 중 소모성 물품구입비 등으로 볼 수 있습니다. 다만 꽃다발의 용도(기념품·홍보물·축의금 등)에 따라 적용 기준과 공개·집행 원칙이 달라질 수 있습니다.",
+   "run": "flower5.json"
+  },
+  {
+   "question": "고마워요",
+   "mode": "source_unavailable",
+   "tree": "unavailable",
+   "seconds": 0.5,
+   "conclusion": "자료를 더 확인해야 답할 수 있어요",
+   "run": "flower5.json"
+  },
+  {
+   "question": "자녀 입학식에 참석하려면 어떤 휴가를 쓰나요?",
+   "mode": "ai_answer",
+   "tree": "ai_summary",
+   "seconds": 7.4,
+   "conclusion": "자녀 입학식 참석은 지방공무원이라면 가족돌봄휴가, 국가공무원이라면 연가 등 별도 규정을 확인해야 합니다. 지방공무원 복무규정에는 자녀 입학식 참석을 위한 가족돌봄휴가가 명시되어 있습니다.",
+   "run": "flower5.json"
+  }
+ ],
+ "gitlab": {
+  "main": "c2a39c9",
+  "equals_github": "f4a5e6c",
+  "files": 2388
+ }
+}
