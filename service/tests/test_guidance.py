@@ -26,7 +26,8 @@ class GuidanceTest(Base):
 
     def test_ai_opt_in_selects_validated_original_only(self):
         provider=llm.BaseProvider({})
-        with patch.object(llm,'get_provider',return_value=provider),patch.object(provider,'chat',return_value='{"selected_quote_id":"q1"}') as call,patch.object(knowledge.config,'active_profile',return_value=dict(base_url='http://127.0.0.1:11434/v1',model='test-model')):
+        # When the written AI answer is not available, the quote-selection assist still runs.
+        with patch.object(llm,'get_provider',return_value=provider),patch.object(provider,'chat',return_value='{"selected_quote_id":"q1"}') as call,patch.object(knowledge.config,'active_profile',return_value=dict(base_url='http://127.0.0.1:11434/v1',model='test-model')),patch('app.ai_answer.compose',return_value=None):
             result=self.run_guide(use_ai=True)
         call.assert_called_once();self.assertTrue(result['guidance']['ai_used'])
         self.assertEqual(result['knowledge']['evidence'][0]['quote'],self.hit['text'])

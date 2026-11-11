@@ -230,10 +230,19 @@ def respond(query,body,today,public_mode=False):
         if private_card or ((key=='general' or leave_situations.health_work(effective)) and not knowledge.intent.analyze(effective) and not knowledge.service_guidelines.chapter(effective)):
             found=dict(hits=[],experiences=[],excluded=[],intent=None,unavailable_reason='이 질문에 직접 답하는 등록 근거를 확인하지 못했어요. 업무 종류와 관련 규정·지침을 알려주세요.')
         else:found=knowledge.retrieve(effective,library,today,**({'institution_rule_id':body['institution_rule_id']} if body.get('institution_rule_id') else {}),**({'affiliation':affiliation} if affiliation else {}))
-        reply=knowledge.answer(effective,found,use_ai=body.get('use_ai') is True)
-        reply['tree']=answer_tree.build(effective,reply)
-        if (reply.get('office_plan') or found.get('institution')) and reply['tree'].get('kind') in {'summary','reference'}:
-            reply['answer']='\n\n'.join(i['text']+f" [근거 {i['ref']}]" for b in reply['tree']['branches'] for i in b['items'])
+        def rule_reply(use_ai):
+            reply=knowledge.answer(effective,found,use_ai=use_ai)
+            reply['tree']=answer_tree.build(effective,reply)
+            if (reply.get('office_plan') or found.get('institution')) and reply['tree'].get('kind') in {'summary','reference'}:
+                reply['answer']='\n\n'.join(i['text']+f" [근거 {i['ref']}]" for b in reply['tree']['branches'] for i in b['items'])
+            return reply
+        reply=rule_reply(False)
+        # With AI on, the model reads the registered sources and writes the answer.
+        # If its conclusion is not supported by a quoted source, the earlier
+        # quote-selection assist runs instead, so one question costs one model call when it works.
+        if body.get('use_ai') is True:
+            from . import ai_answer
+            reply=ai_answer.compose(effective,found,reply,library,today) or rule_reply(True)
     manual_query=effective if manual_only else MANUAL_QUERY.get(key,'')
     if not manual_only and key=='travel' and re.search(r'신청|출장\s*전|출장계획',effective) and not re.search(r'정산|다녀',effective):manual_query='e-사람 출장 신청 입력 방법'
     if key=='leave' and not manual_only:
@@ -272,7 +281,10 @@ def respond(query,body,today,public_mode=False):
     elif key=='sidejob':questions.extend(['소속 기관·적용 신분과 겸하려는 업무 내용을 알려주세요. 국가공무원 기준을 다른 신분에 그대로 적용하지 않아요.',
         '보수·수익 여부, 계속성, 업무 시간과 담당 직무의 관련성을 확인한 뒤 소속 기관의 사전 허가 절차를 확인해요.'])
     elif key=='general':questions.append('어떤 서무업무인지, 지금 무엇을 처리하려는지 알려주세요.')
-    if not manual_only and not reply.get('evidence'):
+    if reply.get('mode')=='ai_answer' and reply.get('tree',{}).get('kind')=='clarification':
+        # The model already said what it needs from the registered sources; keep that question.
+        questions=[i['text'] for b in reply['tree']['branches'] for i in b['items']]
+    elif not manual_only and not reply.get('evidence'):
         # Show the already detected clarification rather than repeating a
         # generic topic question. Missing operational facts need actual data.
         clarification=(reply.get('intent') or {}).get('question')
@@ -304,7 +316,7 @@ def respond(query,body,today,public_mode=False):
     guide=dict(topic=key,title=label+' 처리 방법',context=query,questions=questions,steps=steps,deadlines=deadlines,forms=forms,
                service_guide=service,institution_scope=found.get('institution_scope'),practice=reply.get('practice',[]),
                manual=dict(evidence=manuals,scope=manual_k.get('scope',''),notice=manual_k.get('notice','') if manual_query else '이 업무에 맞는 시스템 매뉴얼을 등록하면 사용법을 연결할 수 있어요.'),
-               ai_requested=body.get('use_ai') is True,ai_used=reply.get('mode')=='source_llm',
+               ai_requested=body.get('use_ai') is True,ai_used=reply.get('mode') in ('source_llm','ai_answer'),
                notice='진행 순서는 실무 준비 제안입니다. 법정 기한·필수 서류·적용 조건은 아래 등록 근거에서 확인하세요.')
     guide['map']=source_map(key,steps,reply.get('evidence',[])+service['evidence'],manuals,forms)
     result=dict(query=effective,mode='structured_guidance',model=reply.get('model'),profile=None,summary='등록 자료로 처리 방법을 함께 확인해요.',
