@@ -1,0 +1,171 @@
+{
+ "version": "v139-ai-answer-20261111",
+ "deployed": "2026-11-11T08:29:27Z",
+ "worker_version": "cea6c285",
+ "ai_off_parity": {
+  "questions": {
+   "all_pass": true,
+   "passed": 351,
+   "failed": 0,
+   "total": 351
+  },
+  "rules": {
+   "all_pass": true,
+   "passed": 88,
+   "failed": 0,
+   "total": 88
+  },
+  "practice": {
+   "total": 27,
+   "equal": 27,
+   "with_practice": 18
+  },
+  "changed_practice": {
+   "total": 84,
+   "equal": 84,
+   "with_practice": 11
+  },
+  "chains": "26/26 equal"
+ },
+ "ai_on_public_runtime": {
+  "model": "solar-pro4",
+  "note": "public-data runtime restored from the submission bundle; answers vary between runs",
+  "results": [
+   {
+    "question": "연가는 몇 일인가요?",
+    "mode": "ai_answer",
+    "tree": "ai_summary",
+    "seconds": 13.4,
+    "dropped": 0,
+    "conclusion": "연가일수는 재직기간에 따라 1개월 이상 1년 미만 11일, 1년 이상 3년 미만 15일, 3년 이상 4년 미만 16일, 4년 이상 5년 미만 17일, 5년 이상 6년 미만 20일, 6년 이상 21일입니다. 다만 이 기준은 지방공무원 복무규정(제7조)과 국가공무원 복무규정(제15조)에 각각 규정되어 있으므로, 질문자의 신분(지방공무원 또는 국가공무원)에 따라 적용되는 규정이 달라집니다."
+   },
+   {
+    "question": "지방공무원 연가 일수는 재직기간별로 어떻게 되나요?",
+    "mode": "ai_answer",
+    "tree": "ai_summary",
+    "seconds": 11.8,
+    "dropped": 0,
+    "conclusion": "지방공무원의 재직기간별 연가일수는 1개월 이상 1년 미만 11일, 1년 이상 3년 미만 15일, 3년 이상 4년 미만 16일, 4년 이상 5년 미만 17일, 5년 이상 6년 미만 20일, 6년 이상 21일입니다. 다만, 특정 경력직공무원·특수경력직공무원으로 임용되어 재직기간이 5년 미만이면서 조례로 정하는 유사경력이 있는 경우에는 5년 미만 각 재직기간별 연가일수에 3일을 더합니다."
+   },
+   {
+    "question": "국가공무원 병가 진단서는 언제 내야 하나요?",
+    "mode": "ai_answer",
+    "tree": "ai_summary",
+    "seconds": 6.6,
+    "dropped": 0,
+    "conclusion": "국가공무원은 병가 일수가 연간 6일을 초과하는 경우에 의사의 진단서를 첨부해야 합니다. 진단서를 내야 하는 시점은 병가 일수가 연 6일을 넘는 때이며, 그 이전에는 진단서 첨부가 규정상 요구되지 않습니다."
+   },
+   {
+    "question": "출장 정산은 언제까지 해야 하나요?",
+    "mode": "ai_answer",
+    "tree": "ai_summary",
+    "seconds": 8.2,
+    "dropped": 2,
+    "conclusion": "국내·국외 여행자는 여행을 마친 날의 다음 날부터 2주일 이내에 운임과 숙박비의 정산을 신청해야 합니다. 다만 국외 여행자의 숙박비 정산 신청기한은 인사혁신처장이 정하는 바에 따라 연장할 수 있습니다."
+   },
+   {
+    "question": "관외 출장 4시간 미만이면 여비가 어떻게 되나요?",
+    "mode": "ai_answer",
+    "tree": "ai_summary",
+    "seconds": 8.2,
+    "dropped": 1,
+    "conclusion": "관외 출장이 근무지 내 국내 출장에 해당하고 여행시간이 4시간 미만이면 1만원을 지급합니다. 다만 전용 차량 배정자나 공무용 차량 이용 등 인사혁신처장이 정하는 경우에는 지급하지 않거나 1만원을 감액하여 지급합니다."
+   },
+   {
+    "question": "공가는 어떤 경우에 쓸 수 있나요?",
+    "mode": "ai_answer",
+    "tree": "ai_summary",
+    "seconds": 17.3,
+    "dropped": 0,
+    "conclusion": "공가는 소속 공무원이 법령에 정해진 특정 사유에 해당할 때, 그 사유 처리에 직접 필요한 기간 또는 시간을 부여받는 휴가입니다. 어떤 규정이 적용되는지는 국가공무원·지방공무원·소방공무원 등 신분과 소속에 따라 달라집니다."
+   },
+   {
+    "question": "배우자 출산휴가는 며칠인가요?",
+    "mode": "ai_answer",
+    "tree": "ai_summary",
+    "seconds": 10.1,
+    "dropped": 1,
+    "conclusion": "배우자 출산경조사휴가는 국가공무원과 지방공무원 모두 20일이며, 한 번에 둘 이상의 자녀를 출산한 경우에는 25일입니다. 다만 이 규정은 국가공무원 복무규정 별표 2와 지방공무원 복무규정 별표 1의 경조사휴가 기준이며, 임신·출산 여성공무원 본인의 출산휴가(90일 등)와는 다른 제도입니다."
+   },
+   {
+    "question": "시간외근무수당은 어떻게 계산하나요?",
+    "mode": "ai_answer",
+    "tree": "ai_summary",
+    "seconds": 8.4,
+    "dropped": 0,
+    "conclusion": "시간외근무수당은 근무명령에 따라 규정된 근무시간 외에 근무한 지방공무원에게 예산의 범위 안에서 지급하며, 매 시간당 기준호봉 봉급액의 일정 비율(55% 또는 60%)의 209분의 1의 150%로 계산합니다. 다만 1개월 시간외근무명령 시간은 57시간을 초과할 수 없고, 현업공무원등·재난·불가피한 사유 등 예외 사유가 있으면 57시간을 초과할 수 있습니다."
+   },
+   {
+    "question": "겸직 허가는 어떻게 받나요?",
+    "mode": "ai_answer",
+    "tree": "ai_summary",
+    "seconds": 6.4,
+    "dropped": 1,
+    "conclusion": "겸직 허가는 소속 기관의 장에게 사전 허가를 신청하는 방식으로 받습니다. 다만 국가공무원과 지방공무원은 허가 주체와 근거 규정이 다르므로, 먼저 어느 신분인지 확인해야 합니다."
+   },
+   {
+    "question": "물품 불용 처리는 어떻게 하나요?",
+    "mode": "ai_answer",
+    "tree": "ai_summary",
+    "seconds": 13.7,
+    "dropped": 3,
+    "conclusion": "물품 불용 처리는 먼저 불용 결정을 하고, 그 뒤 매각·폐기 등 처분 방법을 정한 뒤 장부에 정리하는 순서로 진행해요. 다만 국가기관과 지방자치단체는 적용 법령과 주체가 달라서, 어느 쪽 물품인지에 따라 절차를 구분해서 봐야 해요."
+   },
+   {
+    "question": "업무추진비로 직원 생일 선물을 사도 되나요?",
+    "mode": "ai_answer",
+    "tree": "ai_summary",
+    "seconds": 8.5,
+    "dropped": 1,
+    "conclusion": "업무추진비로 직원 생일 선물을 사는 것은 원칙적으로 금지되지 않지만, 상품권·기념품·특산품 등을 구매한 경우에는 지급관리대장에 지급일시·대상자·수량 등을 반드시 기재하여 결재를 받아 사적으로 사용되지 않도록 관리해야 합니다. 다만, 개인 명의의 불우이웃돕기 성금이나 개인별로 거두어 내는 성금 등 사적 목적에는 사용할 수 없으므로, 생일 선물이 직무 관련성과 공적 목적에 부합하는지, 기관 자체 세부지침에서 허용하는지 확인이 필요합니다."
+   },
+   {
+    "question": "공문서 결재권자가 출장 중이면 어떻게 하나요?",
+    "mode": "ai_answer",
+    "tree": "ai_summary",
+    "seconds": 5.5,
+    "dropped": 0,
+    "conclusion": "결재권자가 출장 등으로 결재할 수 없을 때에는 그 직무를 대리하는 사람이 대결하고, 내용이 중요한 문서는 사후에 보고하여야 합니다."
+   },
+   {
+    "question": "정기승급은 언제 하나요?",
+    "mode": "ai_answer",
+    "tree": "ai_summary",
+    "seconds": 5.5,
+    "dropped": 0,
+    "conclusion": "지방공무원의 정기승급은 매달 1일자로 합니다. 다만 승급제한을 받고 있는 공무원은 승급제한기간이 만료된 날의 다음 날에 승급합니다."
+   },
+   {
+    "question": "휴직 중에 아르바이트를 해도 되나요?",
+    "mode": "ai_answer",
+    "tree": "clarification",
+    "seconds": 6.8,
+    "dropped": null,
+    "conclusion": "답하려면 조금 더 알려주세요"
+   },
+   {
+    "question": "퇴근 후 교육을 받으면 초과근무로 인정되나요?",
+    "mode": "ai_answer",
+    "tree": "ai_summary",
+    "seconds": 6.0,
+    "dropped": 0,
+    "conclusion": "퇴근 후 교육을 받았다고 해서 자동으로 초과근무로 인정되는 것은 아닙니다. 초과근무는 지방자치단체의 장이나 지방의회의 의장이 공무수행상 필요하다고 인정하여 근무시간 외의 근무를 명한 경우에만 명령할 수 있습니다."
+   },
+   {
+    "question": "자녀 입학식에 참석하려면 어떤 휴가를 쓰나요?",
+    "mode": "ai_answer",
+    "tree": "ai_summary",
+    "seconds": 9.6,
+    "dropped": 0,
+    "conclusion": "자녀 입학식 참석은 지방공무원이라면 가족돌봄휴가, 국가공무원이라면 연가 등 별도 휴가를 사용해야 합니다. 자료에는 자녀 입학식 자체를 위한 경조사휴가는 규정되어 있지 않습니다."
+   }
+  ]
+ },
+ "shared_screen": {
+  "question": "물품을 수의계약으로 살 수 있는 금액 기준이 뭔가요?",
+  "ai": "on",
+  "header": "등록 자료 안내 · AI 보조 solar-pro4",
+  "evidence_buttons": 7,
+  "screenshot": "ai-answer-v139-shared.png"
+ }
+}
