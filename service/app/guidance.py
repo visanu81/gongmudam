@@ -281,9 +281,10 @@ def respond(query,body,today,public_mode=False):
     elif key=='sidejob':questions.extend(['소속 기관·적용 신분과 겸하려는 업무 내용을 알려주세요. 국가공무원 기준을 다른 신분에 그대로 적용하지 않아요.',
         '보수·수익 여부, 계속성, 업무 시간과 담당 직무의 관련성을 확인한 뒤 소속 기관의 사전 허가 절차를 확인해요.'])
     elif key=='general':questions.append('어떤 서무업무인지, 지금 무엇을 처리하려는지 알려주세요.')
-    if reply.get('mode')=='ai_answer' and reply.get('tree',{}).get('kind')=='clarification':
-        # The model already said what it needs from the registered sources; keep that question.
-        questions=[i['text'] for b in reply['tree']['branches'] for i in b['items']]
+    if reply.get('mode')=='ai_answer':
+        # The model already said what it needs from the registered sources; a generic
+        # topic question ("어떤 서무업무인지") would only repeat what it answered.
+        questions=list((reply.get('ai_answer') or {}).get('missing') or [])
     elif not manual_only and not reply.get('evidence'):
         # Show the already detected clarification rather than repeating a
         # generic topic question. Missing operational facts need actual data.

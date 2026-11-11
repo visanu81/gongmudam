@@ -56,17 +56,18 @@ class QuoteCheck(unittest.TestCase):
 class FakeProvider:
     available = True
 
-    def __init__(self, reply):
-        self.reply, self.calls = reply, []
+    def __init__(self, *replies):
+        self.replies, self.calls = list(replies), []
 
     def chat(self, messages, **kw):
-        self.calls.append((messages, kw))
-        return json.dumps(self.reply, ensure_ascii=False)
+        self.calls.append((list(messages), kw))
+        reply = self.replies[min(len(self.calls), len(self.replies)) - 1]
+        return json.dumps(reply, ensure_ascii=False)
 
 
 class Compose(unittest.TestCase):
-    def run_compose(self, reply):
-        provider = FakeProvider(reply)
+    def run_compose(self, *replies):
+        provider = FakeProvider(*replies)
         with mock.patch.object(ai_answer, 'provider_for_answer', return_value=(provider, {'model': 'solar-pro4'})), \
              mock.patch.object(ai_answer, 'passages', return_value=ITEMS):
             out = ai_answer.compose('지방공무원 병가 며칠?', {'hits': []}, {'mode': 'source_search', 'evidence': []})
@@ -85,9 +86,34 @@ class Compose(unittest.TestCase):
         self.assertEqual(kw['response_schema'], ai_answer.SCHEMA)
         self.assertIn('S2', messages[1]['content'])
 
-    def test_unsupported_conclusion_keeps_the_rule_answer(self):
-        out, _ = self.run_compose(answer(conclusion_quote='연 99일의 범위에서 병가를 허가할 수 있다'))
+    def test_unsupported_conclusion_keeps_the_rule_answer_after_one_retry(self):
+        out, provider = self.run_compose(answer(conclusion_quote='연 99일의 범위에서 병가를 허가할 수 있다'))
         self.assertIsNone(out)
+        self.assertEqual(len(provider.calls), 2)
+        self.assertEqual(provider.calls[1][0][-1]['content'], ai_answer.RETRY)
+
+    def test_a_paraphrased_quote_is_corrected_once(self):
+        out, provider = self.run_compose(answer(conclusion_quote='병가는 연 60일까지예요(S1).'), answer())
+        self.assertEqual(out['mode'], 'ai_answer')
+        self.assertEqual(len(provider.calls), 2)
+
+    def test_broken_json_is_retried_once(self):
+        class Broken(FakeProvider):
+            def chat(self, messages, **kw):
+                self.calls.append((list(messages), kw))
+                return '{"can_answer": true, "conclusion": "끊긴' if len(self.calls) == 1 else json.dumps(answer(), ensure_ascii=False)
+        provider = Broken()
+        with mock.patch.object(ai_answer, 'provider_for_answer', return_value=(provider, {'model': 'm'})), \
+             mock.patch.object(ai_answer, 'passages', return_value=ITEMS):
+            out = ai_answer.compose('질문', {'hits': []}, {})
+        self.assertEqual(out['mode'], 'ai_answer')
+        self.assertEqual(provider.calls[1][0][-1]['content'], ai_answer.RETRY_FORMAT)
+
+    def test_cannot_answer_is_not_retried(self):
+        out, provider = self.run_compose(dict(can_answer=False, conclusion='', conclusion_refs=[], conclusion_quote='',
+                                              points=[], missing=['어느 기관 소속인가요?']))
+        self.assertEqual(out['tree']['kind'], 'clarification')
+        self.assertEqual(len(provider.calls), 1)
 
     def test_model_error_keeps_the_rule_answer(self):
         class Broken(FakeProvider):
