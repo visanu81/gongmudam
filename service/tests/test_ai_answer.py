@@ -50,7 +50,16 @@ class QuoteCheck(unittest.TestCase):
 
     def test_cannot_answer_keeps_only_questions(self):
         result = ai_answer.validate(dict(can_answer=False, missing=['어느 기관 소속인가요?']), ITEMS)
-        self.assertEqual(result, {'can_answer': False, 'missing': ['어느 기관 소속인가요?']})
+        self.assertEqual(result, {'can_answer': False, 'missing': ['어느 기관 소속인가요?'], 'points': [], 'dropped': 0})
+
+    def test_a_refusal_keeps_its_checked_criteria(self):
+        points = [dict(kind='참고', text='6일을 넘으면 진단서를 내요.', refs=['S1'], quote='의사의 진단서를 첨부해야 한다'),
+                  dict(kind='참고', text='지어낸 기준이에요.', refs=['S1'], quote='국무총리가 정하는 경우')]
+        result = ai_answer.validate(dict(can_answer=False, points=points, missing=['소속이 어디인가요?']), ITEMS)
+        self.assertEqual([p['text'] for p in result['points']], ['6일을 넘으면 진단서를 내요.'])
+        self.assertEqual(result['dropped'], 1)
+        unrelated = [dict(kind='참고', text='이 조문은 휴직 중 아르바이트와는 관련이 없습니다.', refs=['S1'], quote='의사의 진단서를 첨부해야 한다')]
+        self.assertEqual(ai_answer.validate(dict(can_answer=False, points=unrelated, missing=[]), ITEMS)['points'], [])
 
 
 class FakeProvider:
@@ -113,7 +122,17 @@ class Compose(unittest.TestCase):
         out, provider = self.run_compose(dict(can_answer=False, conclusion='', conclusion_refs=[], conclusion_quote='',
                                               points=[], missing=['어느 기관 소속인가요?']))
         self.assertEqual(out['tree']['kind'], 'clarification')
+        self.assertEqual(out['evidence'], [])
         self.assertEqual(len(provider.calls), 1)
+
+    def test_refusal_with_criteria_shows_them_with_evidence(self):
+        points = [dict(kind='참고', text='6일을 넘으면 진단서를 내요.', refs=['S1'], quote='의사의 진단서를 첨부해야 한다')]
+        out, _ = self.run_compose(dict(can_answer=False, conclusion='', conclusion_refs=[], conclusion_quote='',
+                                       points=points, missing=['소속이 어디인가요?']))
+        self.assertEqual(out['tree']['kind'], 'clarification')
+        self.assertEqual([b['label'] for b in out['tree']['branches']], ['자료에서 찾은 관련 기준', '확인할 내용'])
+        self.assertEqual(out['tree']['branches'][0]['items'][0]['ref'], 1)
+        self.assertEqual([e['title'] for e in out['evidence']], [ITEMS[0]['title']])
 
     def test_model_error_keeps_the_rule_answer(self):
         class Broken(FakeProvider):
